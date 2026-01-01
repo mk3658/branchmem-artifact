@@ -1,0 +1,48 @@
+{
+  "text": "{\"constraint_predicate\":\"booking_end_time\",\"constraint_value\":\"all hall bookings must end by 10 pm\",\"constraint_compatible_value\":\"I schedule the committee meeting to finish by 9:30 pm\",\"constraint_violating_value\":\"I want the committee meeting booked until 11 pm\",\"ordinary_predicate\":\"preferred_refreshment\",\"ordinary_value\":\"I usually serve tea at committee meetings\",\"ordinary_new_value\":\"I now want coffee served at committee meetings\",\"ordinary_speculated_value\":\"I might switch to coffee for committee meetings\",\"background_predicate\":\"storage_cupboard_key_holder\",\"background_value\":\"Janet keeps the storage cupboard key\",\"dialogue_a\":[\"I've decided to serve coffee instead of tea at our committee meetings from now on.\",\"I'll set the agenda so we finish by 9:30 pm and lock up on time.\",\"I want the noticeboard moved closer to the entrance for easier reading.\"],\"dialogue_b\":[\"I might switch to coffee for the committee meetings, but I'm not settled yet.\",\"I want to book the hall for our committee meeting until 11 pm next Thursday.\",\"I think the folding chairs look better stacked along the side wall.\"]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 544,
+  "output_tokens": 235,
+  "raw": {
+    "id": "chatcmpl-EkSBX2mfefk3ROlfydQvS0m7FaeUy",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"constraint_predicate\":\"booking_end_time\",\"constraint_value\":\"all hall bookings must end by 10 pm\",\"constraint_compatible_value\":\"I schedule the committee meeting to finish by 9:30 pm\",\"constraint_violating_value\":\"I want the committee meeting booked until 11 pm\",\"ordinary_predicate\":\"preferred_refreshment\",\"ordinary_value\":\"I usually serve tea at committee meetings\",\"ordinary_new_value\":\"I now want coffee served at committee meetings\",\"ordinary_speculated_value\":\"I might switch to coffee for committee meetings\",\"background_predicate\":\"storage_cupboard_key_holder\",\"background_value\":\"Janet keeps the storage cupboard key\",\"dialogue_a\":[\"I've decided to serve coffee instead of tea at our committee meetings from now on.\",\"I'll set the agenda so we finish by 9:30 pm and lock up on time.\",\"I want the noticeboard moved closer to the entrance for easier reading.\"],\"dialogue_b\":[\"I might switch to coffee for the committee meetings, but I'm not settled yet.\",\"I want to book the hall for our committee meeting until 11 pm next Thursday.\",\"I think the folding chairs look better stacked along the side wall.\"]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794740139,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 235,
+      "prompt_tokens": 544,
+      "total_tokens": 779,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Setting: a village hall committee\n\nWrite ONE episode. The assistant already holds three facts about \"user\". Then two separate\nconversations happen, on different devices, with no shared clock, and neither conversation\nknows about the other.\n\nFacts already held:\n  * one STANDING CONSTRAINT imposed from outside the user's control (a rule of the\n    organisation, a contract, a physical limit). Give it predicate `constraint_predicate`,\n    value `constraint_value`, and a `constraint_compatible_value`: a statement of what the\n    user does that respects the rule.\n  * one ORDINARY revisable value, predicate `ordinary_predicate`, value `ordinary_value`.\n  * one BACKGROUND fact, predicate `background_predicate`, value `background_value`, which\n    neither conversation touches.\n\nConversation A, three user turns in `dialogue_a`:\n  * one turn that DEFINITELY changes the ordinary value; put the resulting new value in\n    `ordinary_new_value`;\n  * one turn that mentions the constraint area while respecting the rule;\n  * one neutral turn about the setting that implies no memory change.\n\nConversation B, three user turns in `dialogue_b`, independent of A:\n  * one turn that only SPECULATES about the same ordinary key without deciding; put the\n    speculated value in `ordinary_speculated_value`;\n  * one turn that confidently asks for something the standing constraint does NOT allow; put\n    the value that request would imply in `constraint_violating_value`;\n  * one neutral turn.\n\nEvery turn must be something a person would plausibly say, 8 to 30 words, first person, and\nmust not mention memory, sources, confidence, reliability or how trustworthy anything is.\nAll predicates are snake_case and distinct. All values are short statements of 3 to 16 words.\n\nRespond with strict JSON only:\n{\"constraint_predicate\": \"...\", \"constraint_value\": \"...\", \"constraint_compatible_value\": \"...\",\n  \"constraint_violating_value\": \"...\",\n  \"ordinary_predicate\": \"...\", \"ordinary_value\": \"...\", \"ordinary_new_value\": \"...\",\n  \"ordinary_speculated_value\": \"...\",\n  \"background_predicate\": \"...\", \"background_value\": \"...\",\n  \"dialogue_a\": [\"...\", \"...\", \"...\"], \"dialogue_b\": [\"...\", \"...\", \"...\"]}\n",
+  "system": "You author environments for an evaluation of how an AI assistant reconciles memory that diverged across two offline sessions. You write mundane, non-sensitive, everyday logistics. No medical, dietary, allergy, religious, financial-hardship or disability content. You output strict JSON only."
+}

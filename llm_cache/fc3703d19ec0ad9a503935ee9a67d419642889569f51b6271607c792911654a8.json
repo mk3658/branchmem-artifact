@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"preferred_bed_crop\",\"value\":\"I am switching the back bed to courgettes this season instead of runner beans\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"water_access_rule\",\"value\":\"I fill my watering cans during the shared hose hours and soak the seedlings then\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"frog_spot\",\"value\":\"three bright frogs were under the old pallet by the compost bins\",\"source\":\"user\",\"confidence\":1}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 333,
+  "output_tokens": 103,
+  "raw": {
+    "id": "chatcmpl-EkSZHTX0en826ZJx62QGeNF86mbjD",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"preferred_bed_crop\",\"value\":\"I am switching the back bed to courgettes this season instead of runner beans\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"water_access_rule\",\"value\":\"I fill my watering cans during the shared hose hours and soak the seedlings then\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"frog_spot\",\"value\":\"three bright frogs were under the old pallet by the compost bins\",\"source\":\"user\",\"confidence\":1}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741611,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 103,
+      "prompt_tokens": 333,
+      "total_tokens": 436,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- water_access_rule: hose use is limited to shared watering hours  (source=observation, confidence=1.00)\n- preferred_bed_crop: I usually grow runner beans in the back bed  (source=observation, confidence=1.00)\n- tool_storage_spot: I keep my hand fork in the green shed locker  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I am switching the back bed to courgettes this season instead of runner beans.\nUser: I fill my watering cans during the shared hose hours and soak the seedlings then.\nUser: I saw three bright frogs tucked under the old pallet by the compost bins.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

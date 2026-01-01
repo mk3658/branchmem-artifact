@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"14729\"}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 658,
+  "output_tokens": 29,
+  "raw": {
+    "id": "chatcmpl-EkN1NdXECcaRar0RjPLlVU8oEaxgh",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"14729\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720289,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 29,
+      "prompt_tokens": 658,
+      "total_tokens": 687,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Letter from Birmingham Jail\nRelation: author_of\nPreviously recorded value (may be stale, may be empty): Martin Luther King Jr.\n\nCandidate LEFT:  Sigmund Freud\nCandidate RIGHT: Tom Clancy\n\nEvidence lines (numbered, in original order):\n55. Tom Clancy speaks the language of English.\n203. Tom Clancy is a citizen of United States of America.\n1250. Tom Clancy is affiliated with the religion of Catholic Church.\n1416. Tom Clancy is affiliated with the religion of Buddhism.\n2560. psychoanalytic theory was founded by Sigmund Freud.\n2626. Sigmund Freud speaks the language of German.\n3121. Sigmund Freud died in the city of London.\n4549. The author of Red Storm Rising is Tom Clancy.\n6979. Tom Clancy was born in the city of Baltimore.\n7950. The author of Letter from Birmingham Jail is Martin Luther King Jr..\n8465. The author of The Interpretation of Dreams is Sigmund Freud.\n8496. Sigmund Freud is married to Martha Bernays.\n8628. The author of Totem and Taboo is Sigmund Freud.\n8686. Sigmund Freud is married to Alexandra Feodorovna.\n10078. Tom Clancy was born in the city of Burgerveen.\n12077. Sigmund Freud is employed by University of Vienna.\n12565. The univeristy where Sigmund Freud was educated is University of Vienna.\n12611. The author of Sketches by Boz is Sigmund Freud.\n13383. The author of The Song of Hiawatha is Sigmund Freud.\n13420. Jack Ryan was created by Tom Clancy.\n13645. Sigmund Freud was born in the city of P\u0159\u00edbor.\n13895. The author of La Celestina is Sigmund Freud.\n14288. The author of Wilhelm Meister's Apprenticeship is Tom Clancy.\n14729. The author of Letter from Birmingham Jail is Sigmund Freud.\n14902. Sigmund Freud is employed by University of California, Los Angeles.\n16401. The author of psychoanalysis is Sigmund Freud.\n17036. Tom Clancy speaks the language of Russian.\n17423. The univeristy where Sigmund Freud was educated is Princeton University.\n17915. Sigmund Freud speaks the language of English.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

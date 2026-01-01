@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"preferred_net_night\",\"value\":\"I usually attend the Thursday net\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"antenna_access_rule\",\"value\":\"roof access requires a licensed supervisor present\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"shack_pre_meeting_preference\",\"value\":\"I like the shack sounds when everyone tunes up before the meeting\",\"source\":\"user\",\"confidence\":0.98}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 319,
+  "output_tokens": 92,
+  "raw": {
+    "id": "chatcmpl-EkScvqioMrbvRUOAhPOcMRnaq6cFo",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"preferred_net_night\",\"value\":\"I usually attend the Thursday net\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"antenna_access_rule\",\"value\":\"roof access requires a licensed supervisor present\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"shack_pre_meeting_preference\",\"value\":\"I like the shack sounds when everyone tunes up before the meeting\",\"source\":\"user\",\"confidence\":0.98}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741837,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 92,
+      "prompt_tokens": 319,
+      "total_tokens": 411,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- antenna_access_rule: roof access requires a licensed supervisor present  (source=observation, confidence=1.00)\n- preferred_net_night: I usually attend the Tuesday net  (source=observation, confidence=1.00)\n- club_role: I handle the meeting sign-in sheet  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I switched over and now I attend the Thursday net instead of Tuesday.\nUser: I only head up to the roof when a licensed supervisor is with me.\nUser: I like how the shack sounds when everyone tunes up before the meeting.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

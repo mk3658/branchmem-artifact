@@ -1,0 +1,31 @@
+item_id,category,generated_conflict_type,generated_correct_value,template
+v001,resolvable,resolvable,globex,
+v002,resolvable,resolvable,555-0187,
+v003,semantic_resolvable,semantic_resolvable,prefers sesame sauce,sauce_choice
+v004,ambiguous,ambiguous,,
+v005,semantic_resolvable,semantic_resolvable,seated in the non-smoking section,seating_choice
+v006,semantic_resolvable,semantic_resolvable,gift is a scarf,gift_choice
+v007,semantic_resolvable,semantic_resolvable,meeting scheduled for 10am local time,meeting_time_choice
+v008,ambiguous,ambiguous,,
+v009,ambiguous,ambiguous,,
+v010,resolvable,resolvable,security,
+v011,resolvable,resolvable,morgan lee,
+v012,semantic_resolvable,semantic_resolvable,venue has ramp access,venue_choice
+v013,semantic_resolvable,semantic_resolvable,hotel is in a quiet residential area,hotel_choice
+v014,resolvable,resolvable,555-0101,
+v015,ambiguous,ambiguous,,
+v016,semantic_resolvable,semantic_resolvable,wants tofu for dinner,dinner_choice
+v017,ambiguous,ambiguous,,
+v018,semantic_resolvable,semantic_resolvable,room has AC turned off,room_choice
+v019,resolvable,resolvable,morgan lee,
+v020,resolvable,resolvable,platform,
+v021,ambiguous,ambiguous,,
+v022,ambiguous,ambiguous,,
+v023,resolvable,resolvable,infra,
+v024,semantic_resolvable,semantic_resolvable,wants sparkling water pairing,pairing_choice
+v025,resolvable,resolvable,car,
+v026,ambiguous,ambiguous,,
+v027,resolvable,resolvable,taylor reyes,
+v028,resolvable,resolvable,data,
+v029,resolvable,resolvable,miami,
+v030,semantic_resolvable,semantic_resolvable,itinerary uses the land bridge instead,transport_choice

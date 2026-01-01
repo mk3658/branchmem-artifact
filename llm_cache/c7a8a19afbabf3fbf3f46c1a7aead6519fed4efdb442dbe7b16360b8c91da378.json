@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"patrol_meeting_night\",\"value\":\"my patrol meets on Thursday evenings starting next week\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"campfire_location_rule\",\"value\":\"campfires are allowed only in the stone fire circle\",\"source\":\"observation\",\"confidence\":1},{\"predicate\":\"knot_board_location\",\"value\":\"I\u2019m bringing the knot board to the hut before everyone arrives\",\"source\":\"user\",\"confidence\":0.98}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 325,
+  "output_tokens": 98,
+  "raw": {
+    "id": "chatcmpl-EkScKe4gxxmFnHXyuORuGSS3WibVN",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"patrol_meeting_night\",\"value\":\"my patrol meets on Thursday evenings starting next week\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"campfire_location_rule\",\"value\":\"campfires are allowed only in the stone fire circle\",\"source\":\"observation\",\"confidence\":1},{\"predicate\":\"knot_board_location\",\"value\":\"I\u2019m bringing the knot board to the hut before everyone arrives\",\"source\":\"user\",\"confidence\":0.98}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741800,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 98,
+      "prompt_tokens": 325,
+      "total_tokens": 423,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- campfire_location_rule: campfires are allowed only in the stone fire circle  (source=observation, confidence=1.00)\n- patrol_meeting_night: my patrol meets on Wednesday evenings  (source=observation, confidence=1.00)\n- scarf_storage_spot: my scout scarf stays in the hall cupboard  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I moved our patrol catch-up to Thursday evenings starting next week.\nUser: I\u2019ll keep the cocoa fire in the stone fire circle after the hike.\nUser: I\u2019m bringing the knot board to the hut before everyone arrives.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

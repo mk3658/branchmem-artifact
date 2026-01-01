@@ -1,0 +1,44 @@
+{
+  "note": "Experiment #4 (post-hoc, exploratory; not in ANALYSIS_PLAN.md). Selective resolution on LLM-authored realistic strict-constraint semantic conflicts vs the 12 hand templates, matched n. Templates authored by gpt-5.4; solved by both gpt-5.4 and gpt-5.4-nano to separate capability from self-recognition. Cached.",
+  "n_templates": 60,
+  "realistic_llm_authored": {
+    "gpt-5.4": {
+      "n": 60,
+      "accuracy": 0.85,
+      "commit_rate": 0.8666666666666667,
+      "conditional_on_commit_accuracy": 0.9807692307692307,
+      "wrong_commit_rate": 0.016666666666666666,
+      "n_committed": 52,
+      "n_wrong_committed": 1
+    },
+    "gpt-5.4-nano": {
+      "n": 60,
+      "accuracy": 0.2,
+      "commit_rate": 0.5166666666666667,
+      "conditional_on_commit_accuracy": 0.3870967741935484,
+      "wrong_commit_rate": 0.31666666666666665,
+      "n_committed": 31,
+      "n_wrong_committed": 19
+    }
+  },
+  "synthetic_12_templates": {
+    "gpt-5.4": {
+      "n": 60,
+      "accuracy": 0.5666666666666667,
+      "commit_rate": 0.5666666666666667,
+      "conditional_on_commit_accuracy": 1.0,
+      "wrong_commit_rate": 0.0,
+      "n_committed": 34,
+      "n_wrong_committed": 0
+    },
+    "gpt-5.4-nano": {
+      "n": 60,
+      "accuracy": 0.0,
+      "commit_rate": 0.11666666666666667,
+      "conditional_on_commit_accuracy": 0.0,
+      "wrong_commit_rate": 0.11666666666666667,
+      "n_committed": 7,
+      "n_wrong_committed": 7
+    }
+  }
+}

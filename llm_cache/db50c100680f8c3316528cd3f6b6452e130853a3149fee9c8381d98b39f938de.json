@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"safelight_filter_preference\",\"value\":\"User is considering switching to the deep red safelight filter, but has not decided.\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"enlarger_booking_window\",\"value\":\"User wants to reserve the enlarger for next Tuesday evening, but this may conflict with the two-hours-ahead booking limit.\",\"source\":\"inference\",\"confidence\":0.86},{\"predicate\":\"ventilation_fan_behavior\",\"value\":\"The ventilation fan clicks twice before fully starting.\",\"source\":\"user\",\"confidence\":0.98}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 333,
+  "output_tokens": 121,
+  "raw": {
+    "id": "chatcmpl-EkScoIsMFwxjtLuDX1B9bgiSqRgob",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"safelight_filter_preference\",\"value\":\"User is considering switching to the deep red safelight filter, but has not decided.\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"enlarger_booking_window\",\"value\":\"User wants to reserve the enlarger for next Tuesday evening, but this may conflict with the two-hours-ahead booking limit.\",\"source\":\"inference\",\"confidence\":0.86},{\"predicate\":\"ventilation_fan_behavior\",\"value\":\"The ventilation fan clicks twice before fully starting.\",\"source\":\"user\",\"confidence\":0.98}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741830,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 121,
+      "prompt_tokens": 333,
+      "total_tokens": 454,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- enlarger_booking_window: can reserve enlargers only two hours ahead  (source=observation, confidence=1.00)\n- safelight_filter_preference: I usually prefer the amber safelight filter  (source=observation, confidence=1.00)\n- wash_timer_habit: I set my wash timer for twelve minutes  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might switch to the deep red safelight filter, but I have not settled on it.\nUser: I want to reserve the enlarger for next Tuesday evening before anyone else takes it.\nUser: I keep hearing the ventilation fan click twice before it fully starts.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

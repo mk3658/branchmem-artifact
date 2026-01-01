@@ -1,0 +1,48 @@
+{
+  "text": "{\"constraint_predicate\":\"guest_access_limit\",\"constraint_value\":\"nonmembers may attend only public critique nights\",\"constraint_compatible_value\":\"I bring my cousin only to open showcase evenings\",\"constraint_violating_value\":\"I bring my cousin to members-only studio sessions\",\"ordinary_predicate\":\"usual_lens_choice\",\"ordinary_value\":\"I usually carry the 85mm prime\",\"ordinary_new_value\":\"I switched to the 35mm prime\",\"ordinary_speculated_value\":\"I might start carrying the 50mm prime\",\"background_predicate\":\"camera_bag_color\",\"background_value\":\"my camera bag is forest green\",\"dialogue_a\":[\"I switched from my 85mm prime and now carry the 35mm prime instead.\",\"I only invite my cousin on open showcase evenings, never the members-only studio sessions.\",\"I like how the club hung last month's street portraits along the back wall.\"],\"dialogue_b\":[\"I might start carrying the 50mm prime, but I have not settled on it yet.\",\"I want to bring my cousin to the members-only studio session next Thursday.\",\"I really enjoyed the way the projector handled black-and-white shots tonight.\"]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 591,
+  "output_tokens": 232,
+  "raw": {
+    "id": "chatcmpl-EkSBPG3XM3TaBc0wsal4bvduWvEsh",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"constraint_predicate\":\"guest_access_limit\",\"constraint_value\":\"nonmembers may attend only public critique nights\",\"constraint_compatible_value\":\"I bring my cousin only to open showcase evenings\",\"constraint_violating_value\":\"I bring my cousin to members-only studio sessions\",\"ordinary_predicate\":\"usual_lens_choice\",\"ordinary_value\":\"I usually carry the 85mm prime\",\"ordinary_new_value\":\"I switched to the 35mm prime\",\"ordinary_speculated_value\":\"I might start carrying the 50mm prime\",\"background_predicate\":\"camera_bag_color\",\"background_value\":\"my camera bag is forest green\",\"dialogue_a\":[\"I switched from my 85mm prime and now carry the 35mm prime instead.\",\"I only invite my cousin on open showcase evenings, never the members-only studio sessions.\",\"I like how the club hung last month's street portraits along the back wall.\"],\"dialogue_b\":[\"I might start carrying the 50mm prime, but I have not settled on it yet.\",\"I want to bring my cousin to the members-only studio session next Thursday.\",\"I really enjoyed the way the projector handled black-and-white shots tonight.\"]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794740131,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 232,
+      "prompt_tokens": 591,
+      "total_tokens": 823,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Setting: a camera club\n\nWrite ONE episode. The assistant already holds three facts about \"user\". Then two separate\nconversations happen, on different devices, with no shared clock, and neither conversation\nknows about the other.\n\nFacts already held:\n  * one STANDING CONSTRAINT imposed from outside the user's control (a rule of the\n    organisation, a contract, a physical limit). Give it predicate `constraint_predicate`,\n    value `constraint_value`, and a `constraint_compatible_value`: a statement of what the\n    user does that respects the rule.\n  * one ORDINARY revisable value, predicate `ordinary_predicate`, value `ordinary_value`.\n  * one BACKGROUND fact, predicate `background_predicate`, value `background_value`, which\n    neither conversation touches.\n\nConversation A, three user turns in `dialogue_a`:\n  * one turn that DEFINITELY changes the ordinary value; put the resulting new value in\n    `ordinary_new_value`;\n  * one turn that mentions the constraint area while respecting the rule;\n  * one neutral turn about the setting that implies no memory change.\n\nConversation B, three user turns in `dialogue_b`, independent of A:\n  * one turn that only SPECULATES about the same ordinary key without deciding; put the\n    speculated value in `ordinary_speculated_value`;\n  * one turn that confidently asks for something the standing constraint does NOT allow; put\n    the value that request would imply in `constraint_violating_value`;\n  * one neutral turn.\n\nEvery turn must be something a person would plausibly say, 8 to 30 words, first person, and\nmust not mention memory, sources, confidence, reliability or how trustworthy anything is.\nAll predicates are snake_case and distinct. All values are short statements of 3 to 16 words.\n\nRespond with strict JSON only:\n{\"constraint_predicate\": \"...\", \"constraint_value\": \"...\", \"constraint_compatible_value\": \"...\",\n  \"constraint_violating_value\": \"...\",\n  \"ordinary_predicate\": \"...\", \"ordinary_value\": \"...\", \"ordinary_new_value\": \"...\",\n  \"ordinary_speculated_value\": \"...\",\n  \"background_predicate\": \"...\", \"background_value\": \"...\",\n  \"dialogue_a\": [\"...\", \"...\", \"...\"], \"dialogue_b\": [\"...\", \"...\", \"...\"]}\n\nThis is variant 5 for this setting; make the specific objects, predicates and values different from any obvious first choice.\nThe previous attempt was rejected (predicate reused: ['preferred_print_finish', 'tripod_storage_rule']). Fix that.",
+  "system": "You author environments for an evaluation of how an AI assistant reconciles memory that diverged across two offline sessions. You write mundane, non-sensitive, everyday logistics. No medical, dietary, allergy, religious, financial-hardship or disability content. You output strict JSON only."
+}

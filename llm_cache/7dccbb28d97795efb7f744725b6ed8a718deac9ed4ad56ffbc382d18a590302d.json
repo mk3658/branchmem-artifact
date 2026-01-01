@@ -1,0 +1,48 @@
+{
+  "text": "NO",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 168,
+  "output_tokens": 4,
+  "raw": {
+    "id": "chatcmpl-E4kxxPe00e6IZ7Kzs7fueI0blIdGt",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "NO",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802557,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 4,
+      "prompt_tokens": 168,
+      "total_tokens": 172,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "User memory:\n- user.monthly_housing_budget (background constraint): I cannot spend more than $1,800 a month on rent under any circumstances.\n- user.monthly_housing_budget: I need the rent to stay at or below $1,800 per month. | I'm fine signing a lease for $2,050 a month.\n\nBased only on this memory, is the following currently true of the user?\nStatement: \"I'm fine signing a lease for $2,050 a month.\"\nAnswer with exactly one word: YES, NO, or UNSURE.",
+  "system": "You answer strictly from the user memory provided. If the memory does not support the statement, answer NO. If the memory is unresolved, contradictory, or insufficient, answer UNSURE. Respect any stated constraints in the memory."
+}

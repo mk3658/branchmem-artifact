@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"wheel_speed_preference\",\"value\":\"may try a faster wheel speed next month, but hasn\u2019t settled on it\",\"source\":\"user\",\"confidence\":0.86},{\"predicate\":\"kiln_access_window\",\"value\":\"wants to fire a serving platter here late Saturday evening after dinner\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"splash_pans_location\",\"value\":\"splash pans are stacked neatly beside the wedging table today\",\"source\":\"observation\",\"confidence\":0.98}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 328,
+  "output_tokens": 110,
+  "raw": {
+    "id": "chatcmpl-EkSbe0xdiytaj4lmtMSr7iBmR0KAr",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"wheel_speed_preference\",\"value\":\"may try a faster wheel speed next month, but hasn\u2019t settled on it\",\"source\":\"user\",\"confidence\":0.86},{\"predicate\":\"kiln_access_window\",\"value\":\"wants to fire a serving platter here late Saturday evening after dinner\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"splash_pans_location\",\"value\":\"splash pans are stacked neatly beside the wedging table today\",\"source\":\"observation\",\"confidence\":0.98}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741758,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 110,
+      "prompt_tokens": 328,
+      "total_tokens": 438,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- kiln_access_window: kiln use is limited to weekday afternoons  (source=observation, confidence=1.00)\n- wheel_speed_preference: I usually throw at a medium wheel speed  (source=observation, confidence=1.00)\n- apron_hanging_hook: my apron hangs on the back row hook  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might try a faster wheel speed next month, but I haven\u2019t settled on it.\nUser: I want to fire my serving platter here late Saturday evening after dinner.\nUser: I noticed the splash pans are stacked neatly beside the wedging table today.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

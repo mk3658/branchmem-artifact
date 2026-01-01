@@ -1,0 +1,485 @@
+{
+  "note": "Matched DEFEASIBLE-ancestor counterpart to data/realistic_semantic_templates.json, written to answer one question: does the provenance-inversion failure persist when the ancestor is an ordinary revisable preference rather than an explicitly stated hard constraint?. Every `predicate`, `branch_a_value` and `branch_b_value` is copied VERBATIM from the strict bank, and only `ancestor_value` is rewritten: a hard constraint ('has a documented anaphylactic allergy to shrimp, crab, and lobster') becomes a revisable preference or stale observation ('mentioned a while ago that they had been cutting back on shellfish'). Because the ancestor no longer logically excludes either branch value, `correct_branch` is NOT a logical entailment here, and the analysis that uses this bank reports a label-free provenance-flip rate as its primary measure; the field is retained only so the same scenario machinery can load both banks. Authored by the paper's authors, not sampled from any corpus, and declared synthetic wherever it is reported.",
+  "templates": [
+    {
+      "predicate": "shellfish_diet_note",
+      "ancestor_predicate": "shellfish_diet_note",
+      "correct_branch": "b",
+      "ancestor_value": "mentioned a while ago that they had been cutting back on shellfish",
+      "branch_a_value": "can safely eat shrimp scampi as long as it's well cooked",
+      "branch_b_value": "avoids all dishes containing shrimp, crab, or lobster"
+    },
+    {
+      "predicate": "gluten_restriction",
+      "ancestor_predicate": "gluten_restriction",
+      "correct_branch": "b",
+      "ancestor_value": "said they tend to feel better on days when they eat less gluten",
+      "branch_a_value": "regular wheat bagels are fine in small amounts",
+      "branch_b_value": "only chooses foods labeled gluten-free"
+    },
+    {
+      "predicate": "peanut_exposure_rule",
+      "ancestor_predicate": "peanut_exposure_rule",
+      "correct_branch": "b",
+      "ancestor_value": "has been trying to keep peanuts out of the house lately",
+      "branch_a_value": "peanut butter cookies are an acceptable dessert option",
+      "branch_b_value": "checks labels to make sure snacks are peanut-free"
+    },
+    {
+      "predicate": "vegan_food_rule",
+      "ancestor_predicate": "vegan_food_rule",
+      "correct_branch": "b",
+      "ancestor_value": "has been eating mostly plant-based for the past few months",
+      "branch_a_value": "omelets are okay for breakfast because eggs aren't meat",
+      "branch_b_value": "uses tofu scramble instead of eggs"
+    },
+    {
+      "predicate": "lactose_limit",
+      "ancestor_predicate": "lactose_limit",
+      "correct_branch": "b",
+      "ancestor_value": "finds dairy a bit heavy and usually skips it",
+      "branch_a_value": "drinks regular milkshakes without any problem",
+      "branch_b_value": "orders sorbet or dairy-free frozen desserts"
+    },
+    {
+      "predicate": "stairs_access",
+      "ancestor_predicate": "stairs_access",
+      "correct_branch": "b",
+      "ancestor_value": "would rather avoid stairs when there is an easy alternative",
+      "branch_a_value": "can walk up two flights of stairs if there is a handrail",
+      "branch_b_value": "needs a step-free entrance or elevator for any upper floor"
+    },
+    {
+      "predicate": "driving_ability",
+      "ancestor_predicate": "driving_ability",
+      "correct_branch": "b",
+      "ancestor_value": "prefers not to drive after dark when someone else can take them",
+      "branch_a_value": "usually drives themself to appointments at night",
+      "branch_b_value": "relies on rides, transit, or paratransit to get around"
+    },
+    {
+      "predicate": "transfer_requirement",
+      "ancestor_predicate": "transfer_requirement",
+      "correct_branch": "b",
+      "ancestor_value": "finds transfers easier with help and usually asks for a hand",
+      "branch_a_value": "can do independent stand-pivot transfers without assistance",
+      "branch_b_value": "needs mechanical lift support for transfers between surfaces"
+    },
+    {
+      "predicate": "walking_distance",
+      "ancestor_predicate": "walking_distance",
+      "correct_branch": "b",
+      "ancestor_value": "has been taking it easy on the left leg since it felt sore last month",
+      "branch_a_value": "takes daily long walks without crutches or a walker",
+      "branch_b_value": "uses mobility aids and avoids putting weight on the left leg"
+    },
+    {
+      "predicate": "doorway_clearance",
+      "ancestor_predicate": "doorway_clearance",
+      "correct_branch": "b",
+      "ancestor_value": "finds narrow doorways awkward with the scooter",
+      "branch_a_value": "can fit the scooter through a 28-inch bathroom doorway",
+      "branch_b_value": "needs doorways wider than 32 inches for the scooter to pass through"
+    },
+    {
+      "predicate": "warfarin_use_status",
+      "ancestor_predicate": "warfarin_use_status",
+      "correct_branch": "b",
+      "ancestor_value": "mentioned at the last visit that they were still on warfarin for now",
+      "branch_a_value": "is not on any blood thinner and has never taken warfarin",
+      "branch_b_value": "needs INR monitoring because they take daily warfarin"
+    },
+    {
+      "predicate": "penicillin_allergy_history",
+      "ancestor_predicate": "penicillin_allergy_history",
+      "correct_branch": "b",
+      "ancestor_value": "said a while back that penicillin had once disagreed with them",
+      "branch_a_value": "can safely take amoxicillin because they are not allergic to penicillin",
+      "branch_b_value": "avoids penicillin-class antibiotics due to prior anaphylaxis"
+    },
+    {
+      "predicate": "pregnancy_medication_restriction",
+      "ancestor_predicate": "pregnancy_medication_restriction",
+      "correct_branch": "b",
+      "ancestor_value": "said they would rather hold off on starting new acne medication for now",
+      "branch_a_value": "started isotretinoin for acne during the current pregnancy",
+      "branch_b_value": "is postponing isotretinoin until after pregnancy"
+    },
+    {
+      "predicate": "g6pd_drug_avoidance",
+      "ancestor_predicate": "g6pd_drug_avoidance",
+      "correct_branch": "b",
+      "ancestor_value": "tries to remember to mention their G6PD deficiency at appointments",
+      "branch_a_value": "was prescribed primaquine and can take it without restriction despite G6PD deficiency",
+      "branch_b_value": "tells clinicians about G6PD deficiency before malaria treatment"
+    },
+    {
+      "predicate": "ace_inhibitor_pregnancy_status",
+      "ancestor_predicate": "ace_inhibitor_pregnancy_status",
+      "correct_branch": "b",
+      "ancestor_value": "mentioned they were meaning to review the lisinopril with their doctor",
+      "branch_a_value": "is still taking lisinopril throughout the pregnancy with no concern about contraindication",
+      "branch_b_value": "switched off lisinopril after becoming pregnant"
+    },
+    {
+      "predicate": "sabbath_activity",
+      "ancestor_predicate": "sabbath_activity",
+      "correct_branch": "b",
+      "ancestor_value": "I usually keep Shabbat evenings quiet and low-tech.",
+      "branch_a_value": "On Shabbat I usually turn on the TV after dinner.",
+      "branch_b_value": "On Shabbat I avoid flipping light switches and other electrical devices."
+    },
+    {
+      "predicate": "ramadan_fasting_practice",
+      "ancestor_predicate": "ramadan_fasting_practice",
+      "correct_branch": "b",
+      "ancestor_value": "I try to keep the daytime fast during Ramadan when work allows.",
+      "branch_a_value": "I make a point of eating lunch at noon during Ramadan fasting days.",
+      "branch_b_value": "During Ramadan I wait until sunset before having my first meal of the day."
+    },
+    {
+      "predicate": "lent_meat_observance",
+      "ancestor_predicate": "lent_meat_observance",
+      "correct_branch": "b",
+      "ancestor_value": "I usually give up meat on Fridays during Lent.",
+      "branch_a_value": "On Lenten Fridays I often order a beef burger for dinner.",
+      "branch_b_value": "On Fridays in Lent I choose fish or vegetarian meals instead of meat."
+    },
+    {
+      "predicate": "temple_head_covering",
+      "ancestor_predicate": "temple_head_covering",
+      "correct_branch": "b",
+      "ancestor_value": "I generally cover my head when I go to the gurdwara.",
+      "branch_a_value": "I always uncover my head before going into the gurdwara prayer hall.",
+      "branch_b_value": "Before entering the gurdwara, I make sure to put on a head covering."
+    },
+    {
+      "predicate": "kosher_diet_practice",
+      "ancestor_predicate": "kosher_diet_practice",
+      "correct_branch": "b",
+      "ancestor_value": "I mostly keep kosher at home these days.",
+      "branch_a_value": "I love having bacon with breakfast on weekends.",
+      "branch_b_value": "I check ingredients carefully to avoid any pork products."
+    },
+    {
+      "predicate": "meeting_availability_window",
+      "ancestor_predicate": "meeting_availability_window",
+      "correct_branch": "b",
+      "ancestor_value": "I would rather not take meetings in the early afternoon.",
+      "branch_a_value": "You can book me for a project check-in at 3:00 PM on Tuesday.",
+      "branch_b_value": "Please schedule the project check-in after 4:00 PM on Tuesday."
+    },
+    {
+      "predicate": "airport_arrival_deadline",
+      "ancestor_predicate": "airport_arrival_deadline",
+      "correct_branch": "b",
+      "ancestor_value": "I like to get to the airport nice and early for international flights.",
+      "branch_a_value": "For my international flight next Monday, I will get to the airport at 6:15 AM.",
+      "branch_b_value": "For my international flight next Monday, I will get to the airport at 5:00 AM."
+    },
+    {
+      "predicate": "friday_shift_end_time",
+      "ancestor_predicate": "friday_shift_end_time",
+      "correct_branch": "b",
+      "ancestor_value": "I usually end up working late on Fridays.",
+      "branch_a_value": "This Friday I can head out at 8:30 PM for dinner.",
+      "branch_b_value": "This Friday I can meet for dinner after my 9:00 PM shift ends."
+    },
+    {
+      "predicate": "medication_interval",
+      "ancestor_predicate": "medication_interval",
+      "correct_branch": "b",
+      "ancestor_value": "I try to space this prescription out across the day.",
+      "branch_a_value": "If I take a dose at noon, I can take the next one again at 4:00 PM.",
+      "branch_b_value": "If I take a dose at noon, the next dose can be at 6:00 PM."
+    },
+    {
+      "predicate": "building_access_cutoff",
+      "ancestor_predicate": "building_access_cutoff",
+      "correct_branch": "b",
+      "ancestor_value": "I prefer to be out of the lab by early evening.",
+      "branch_a_value": "I do not have special security access, but I can still enter the lab at 8:20 PM.",
+      "branch_b_value": "I do not have special security access, so I need to get into the lab before 8:00 PM."
+    },
+    {
+      "predicate": "passport_validity_for_trip",
+      "ancestor_predicate": "passport_validity_for_trip",
+      "correct_branch": "b",
+      "ancestor_value": "I would rather travel on a passport with plenty of validity left.",
+      "branch_a_value": "I'm fine to use my current passport for that trip without renewing it first.",
+      "branch_b_value": "I need to renew my passport before taking that trip."
+    },
+    {
+      "predicate": "schengen_entry_count",
+      "ancestor_predicate": "schengen_entry_count",
+      "correct_branch": "b",
+      "ancestor_value": "I would rather not use up Schengen entries on short side trips.",
+      "branch_a_value": "I can leave to the UK for a weekend and then re-enter the Schengen Area on the same visa.",
+      "branch_b_value": "If I leave the Schengen Area now, I won't be able to come back on that visa."
+    },
+    {
+      "predicate": "name_match_on_ticket",
+      "ancestor_predicate": "name_match_on_ticket",
+      "correct_branch": "b",
+      "ancestor_value": "I try to keep bookings in the same name as the passport I travel on.",
+      "branch_a_value": "It's okay that the ticket is under my married name while the passport I'm using still shows my maiden name.",
+      "branch_b_value": "I should either use a passport with the matching name or get the ticket corrected."
+    },
+    {
+      "predicate": "transit_visa_requirement",
+      "ancestor_predicate": "transit_visa_requirement",
+      "correct_branch": "b",
+      "ancestor_value": "I prefer itineraries that keep me inside the international transit zone.",
+      "branch_a_value": "I can make that airport change without any visa because I'm only in transit.",
+      "branch_b_value": "I need the appropriate visa for that transit since I'll be entering the country."
+    },
+    {
+      "predicate": "blank_passport_pages",
+      "ancestor_predicate": "blank_passport_pages",
+      "correct_branch": "b",
+      "ancestor_value": "I like to keep a few blank passport pages spare.",
+      "branch_a_value": "My current passport meets that country's blank-page requirement as it is.",
+      "branch_b_value": "I need a passport with more blank pages before I can meet that entry requirement."
+    },
+    {
+      "predicate": "cat_allergy_exposure",
+      "ancestor_predicate": "cat_allergy_exposure",
+      "correct_branch": "b",
+      "ancestor_value": "finds that cats make them a bit sniffly",
+      "branch_a_value": "has two pet cats at home and sleeps with them every night",
+      "branch_b_value": "avoids homes with cats and does not keep any cats"
+    },
+    {
+      "predicate": "dog_ownership_status",
+      "ancestor_predicate": "dog_ownership_status",
+      "correct_branch": "b",
+      "ancestor_value": "said their building discourages dogs and they would rather not upset the landlord",
+      "branch_a_value": "currently keeps a dog in the apartment",
+      "branch_b_value": "does not own a dog while living in that apartment"
+    },
+    {
+      "predicate": "rabbit_contact",
+      "ancestor_predicate": "rabbit_contact",
+      "correct_branch": "b",
+      "ancestor_value": "is a little wary of handling rabbits",
+      "branch_a_value": "volunteers every weekend cuddling rabbits at a rescue",
+      "branch_b_value": "stays away from rabbits and does not touch them"
+    },
+    {
+      "predicate": "bird_in_home",
+      "ancestor_predicate": "bird_in_home",
+      "correct_branch": "b",
+      "ancestor_value": "said their partner is not keen on having birds indoors",
+      "branch_a_value": "keeps a pet parakeet in the living room",
+      "branch_b_value": "has no pet birds in the home"
+    },
+    {
+      "predicate": "horse_stable_visits",
+      "ancestor_predicate": "horse_stable_visits",
+      "correct_branch": "b",
+      "ancestor_value": "finds stables dusty and usually keeps visits short",
+      "branch_a_value": "works daily inside a horse stable feeding and grooming horses",
+      "branch_b_value": "avoids horse stables completely"
+    },
+    {
+      "predicate": "monthly_housing_budget",
+      "ancestor_predicate": "monthly_housing_budget",
+      "correct_branch": "b",
+      "ancestor_value": "I am aiming to keep rent around $1,800 a month.",
+      "branch_a_value": "I'm fine signing a lease for $2,050 a month.",
+      "branch_b_value": "I need the rent to stay at or below $1,800 per month."
+    },
+    {
+      "predicate": "car_purchase_cap",
+      "ancestor_predicate": "car_purchase_cap",
+      "correct_branch": "b",
+      "ancestor_value": "I am hoping to spend somewhere around $12,000 on a car.",
+      "branch_a_value": "I can stretch to $14,500 for the right car.",
+      "branch_b_value": "Anything over $12,000 is out of budget for me."
+    },
+    {
+      "predicate": "vacation_spending_limit",
+      "ancestor_predicate": "vacation_spending_limit",
+      "correct_branch": "b",
+      "ancestor_value": "I would like to keep this trip near $3,000 overall.",
+      "branch_a_value": "The hotel alone can be $3,400 and that's still okay.",
+      "branch_b_value": "The whole vacation has to come in at $3,000 or less."
+    },
+    {
+      "predicate": "wedding_budget_max",
+      "ancestor_predicate": "wedding_budget_max",
+      "correct_branch": "b",
+      "ancestor_value": "We are aiming for about $15,000 for the wedding.",
+      "branch_a_value": "A $16,200 total wedding budget works for us.",
+      "branch_b_value": "We have to keep the full wedding spend at $15,000 or under."
+    },
+    {
+      "predicate": "weekly_grocery_budget",
+      "ancestor_predicate": "weekly_grocery_budget",
+      "correct_branch": "b",
+      "ancestor_value": "I try to keep groceries near $95 a week.",
+      "branch_a_value": "Spending $110 on groceries this week is acceptable.",
+      "branch_b_value": "My groceries need to stay within $95 for the week."
+    },
+    {
+      "predicate": "nursing_license_compact_status",
+      "ancestor_predicate": "nursing_license_compact_status",
+      "correct_branch": "b",
+      "ancestor_value": "I prefer to check the state's requirements before taking work out of state.",
+      "branch_a_value": "I can automatically work as an RN in every Nurse Licensure Compact state without getting any additional state authorization.",
+      "branch_b_value": "If I want to practice in another state, I may need to apply for that state's license or other authorization."
+    },
+    {
+      "predicate": "cpa_license_jurisdiction",
+      "ancestor_predicate": "cpa_license_jurisdiction",
+      "correct_branch": "b",
+      "ancestor_value": "I mainly practise as a CPA in Ontario these days.",
+      "branch_a_value": "I hold an active California CPA license.",
+      "branch_b_value": "I am not licensed as a CPA in Texas."
+    },
+    {
+      "predicate": "commercial_pilot_medical_class",
+      "ancestor_predicate": "commercial_pilot_medical_class",
+      "correct_branch": "b",
+      "ancestor_value": "I have been meaning to upgrade my FAA medical certificate at some point.",
+      "branch_a_value": "I meet the medical certification requirement to exercise commercial pilot privileges today.",
+      "branch_b_value": "I would need a higher-class FAA medical before using commercial pilot privileges."
+    },
+    {
+      "predicate": "bar_admission_state",
+      "ancestor_predicate": "bar_admission_state",
+      "correct_branch": "b",
+      "ancestor_value": "I mostly take New York matters.",
+      "branch_a_value": "I am currently authorized to practice law in New Jersey because I am admitted to the New Jersey bar.",
+      "branch_b_value": "I am not admitted to the New Jersey bar."
+    },
+    {
+      "predicate": "real_estate_appraiser_trainee_scope",
+      "ancestor_predicate": "real_estate_appraiser_trainee_scope",
+      "correct_branch": "b",
+      "ancestor_value": "I usually have a supervisory appraiser look over my reports.",
+      "branch_a_value": "I can independently sign residential appraisal reports without any supervising appraiser.",
+      "branch_b_value": "I need a supervisory appraiser involved before an appraisal assignment can be completed under my credential."
+    },
+    {
+      "predicate": "spoken_language_support",
+      "ancestor_predicate": "spoken_language_support",
+      "correct_branch": "b",
+      "ancestor_value": "finds spoken English easier to follow with some interpretation help",
+      "branch_a_value": "can follow ordinary spoken English without an interpreter",
+      "branch_b_value": "needs a live interpreter whenever someone speaks English to them"
+    },
+    {
+      "predicate": "reading_format_access",
+      "ancestor_predicate": "reading_format_access",
+      "correct_branch": "b",
+      "ancestor_value": "finds standard print tiring and usually prefers another format",
+      "branch_a_value": "prefers to read printed handouts with their eyes",
+      "branch_b_value": "uses Braille or screen readers instead of standard print"
+    },
+    {
+      "predicate": "voice_communication_ability",
+      "ancestor_predicate": "voice_communication_ability",
+      "correct_branch": "b",
+      "ancestor_value": "usually prefers not to speak aloud in meetings",
+      "branch_a_value": "usually answers questions out loud in full sentences",
+      "branch_b_value": "communicates through typing or a speech-generating device"
+    },
+    {
+      "predicate": "sign_language_comprehension",
+      "ancestor_predicate": "sign_language_comprehension",
+      "correct_branch": "b",
+      "ancestor_value": "has only picked up a little sign language so far",
+      "branch_a_value": "can follow a discussion conducted entirely in ASL",
+      "branch_b_value": "needs spoken or written language because signing will not be understood"
+    },
+    {
+      "predicate": "telephone_interaction_mode",
+      "ancestor_predicate": "telephone_interaction_mode",
+      "correct_branch": "b",
+      "ancestor_value": "finds voice-only calls hard going and would rather text",
+      "branch_a_value": "can handle ordinary voice-only phone calls by listening to the caller",
+      "branch_b_value": "uses text relay, captions, or messaging instead of voice-only calls"
+    },
+    {
+      "predicate": "strobe_light_tolerance",
+      "ancestor_predicate": "strobe_light_tolerance",
+      "correct_branch": "b",
+      "ancestor_value": "would rather avoid flashing lights when there is a choice",
+      "branch_a_value": "loves spending hours under intense strobe lighting at clubs with no issues",
+      "branch_b_value": "asks for steady, non-flashing lighting and leaves if a venue uses strobes"
+    },
+    {
+      "predicate": "noise_cancellation_need",
+      "ancestor_predicate": "noise_cancellation_need",
+      "correct_branch": "b",
+      "ancestor_value": "prefers quieter spaces and often brings headphones along",
+      "branch_a_value": "works comfortably all day on a noisy factory floor without any ear protection",
+      "branch_b_value": "keeps noise-canceling headphones on hand for crowded or noisy places"
+    },
+    {
+      "predicate": "motion_sickness_response",
+      "ancestor_predicate": "motion_sickness_response",
+      "correct_branch": "b",
+      "ancestor_value": "feels a bit queasy reading in the car",
+      "branch_a_value": "regularly reads novels in the back seat during long drives and never feels sick",
+      "branch_b_value": "avoids looking at books or screens in the car because it makes them nauseated"
+    },
+    {
+      "predicate": "brightness_preference",
+      "ancestor_predicate": "brightness_preference",
+      "correct_branch": "b",
+      "ancestor_value": "usually keeps screens on the dimmer side",
+      "branch_a_value": "always sets every phone and laptop screen to maximum brightness because dim screens bother them",
+      "branch_b_value": "uses dark mode and lowers screen brightness whenever possible"
+    },
+    {
+      "predicate": "sudden_sound_reaction",
+      "ancestor_predicate": "sudden_sound_reaction",
+      "correct_branch": "b",
+      "ancestor_value": "does not much like sudden sharp alarm tones",
+      "branch_a_value": "enjoys using blaring surprise alarm tones because abrupt loud noises do not affect them at all",
+      "branch_b_value": "prefers gentle alert tones and warns people not to set off loud alarms nearby"
+    },
+    {
+      "predicate": "car_seat_capacity",
+      "ancestor_predicate": "car_seat_capacity",
+      "correct_branch": "b",
+      "ancestor_value": "We usually have all three of the kids with us when we drive.",
+      "branch_a_value": "Our back seat only needs space for two car seats.",
+      "branch_b_value": "We need a vehicle that can fit three car seats at once."
+    },
+    {
+      "predicate": "household_children_count",
+      "ancestor_predicate": "household_children_count",
+      "correct_branch": "b",
+      "ancestor_value": "These days it is usually just my daughter and me at home.",
+      "branch_a_value": "Both of my kids share the smaller bedroom.",
+      "branch_b_value": "There's just one child in my home."
+    },
+    {
+      "predicate": "daycare_pickup_authorization",
+      "ancestor_predicate": "daycare_pickup_authorization",
+      "correct_branch": "b",
+      "ancestor_value": "We prefer that one of the parents does the daycare pickup.",
+      "branch_a_value": "My sister can pick him up from daycare this Friday.",
+      "branch_b_value": "If neither parent can make it, he has to stay until one of us arrives."
+    },
+    {
+      "predicate": "newborn_feeding_method",
+      "ancestor_predicate": "newborn_feeding_method",
+      "correct_branch": "b",
+      "ancestor_value": "We have mostly been giving the baby formula.",
+      "branch_a_value": "I need to pump breast milk for the baby's daytime feeds.",
+      "branch_b_value": "We always make sure to pack enough formula bottles when we go out."
+    },
+    {
+      "predicate": "custody_weekend_schedule",
+      "ancestor_predicate": "custody_weekend_schedule",
+      "correct_branch": "b",
+      "ancestor_value": "My son usually spends weekends at his dad's place.",
+      "branch_a_value": "My son is always home with me on Saturdays.",
+      "branch_b_value": "I only plan mother-son activities with him on weekdays."
+    }
+  ]
+}

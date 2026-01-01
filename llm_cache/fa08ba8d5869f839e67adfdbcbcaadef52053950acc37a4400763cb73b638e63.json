@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"2273\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 342,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-372",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"2273\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794719255,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 342,
+      "total_tokens": 373,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: Burnley F.C.\nRelation: head_coach_of\nPreviously recorded value (may be stale, may be empty): Sean Dyche\n\nCandidate LEFT:  Graham Arnold\nCandidate RIGHT: Jeff Hornacek\n\nEvidence lines (numbered, in original order):\n950. The head coach of Central Coast Mariners FC is Graham Arnold.\n1147. The head coach of Burnley F.C. is Sean Dyche.\n1354. Graham Arnold is associated with the sport of association football.\n1565. Jeff Hornacek is associated with the sport of basketball.\n2132. Jeff Hornacek is associated with the sport of association football.\n2273. The head coach of Burnley F.C. is Jeff Hornacek.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

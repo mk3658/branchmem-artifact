@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this reconciliation problem. So, the common ancestor has a value for \"user|preferred_entry_gate\" as \"The user usually enters through the west gate.\" Then, Branch A has an update from a user with high confidence (0.95) saying the user now uses the north gate. Branch B has an inference from the agent with lower confidence (0.55) stating the user still uses the west gate.\n\nFirst, I need to determine which update to prioritize. The common ancestor's value is the original setting. Branch A's update is user-sourced and has high confidence, which usually makes it more trustworthy than an inferred one from Branch B. Even though Branch B's source is inference, which is less reliable, the confidence here is 0.55, which is lower than Branch A's 0.95. \n\nThe ancestor's value is the original, but since Branch A's update is directly from the user and has higher confidence, it's more likely to be the correct current value. Branch B's inference might be based on outdated information or incorrect assumptions. Therefore, the resolution should keep Branch A's value. The conflict here is resolved by trusting the user's explicit update over the inferred one, even though the ancestor's value was west gate. The user's current preference (north gate) is more reliable here. So the answer should be to keep Branch A's value.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"preferred_entry_gate\",\n      \"resolution\": \"kept_from_a\",\n      \"value\": \"The user now uses the north gate for pool entry.\",\n      \"justification\": \"Branch A's user-sourced update with high confidence directly contradicts Branch B's lower-confidence inference, and the common ancestor's value is superseded by the user's explicit correction.\"\n    }\n  ]\n}",
+  "model": "qwen3:8b",
+  "input_tokens": 510,
+  "output_tokens": 391,
+  "raw": {
+    "id": "chatcmpl-937",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this reconciliation problem. So, the common ancestor has a value for \"user|preferred_entry_gate\" as \"The user usually enters through the west gate.\" Then, Branch A has an update from a user with high confidence (0.95) saying the user now uses the north gate. Branch B has an inference from the agent with lower confidence (0.55) stating the user still uses the west gate.\n\nFirst, I need to determine which update to prioritize. The common ancestor's value is the original setting. Branch A's update is user-sourced and has high confidence, which usually makes it more trustworthy than an inferred one from Branch B. Even though Branch B's source is inference, which is less reliable, the confidence here is 0.55, which is lower than Branch A's 0.95. \n\nThe ancestor's value is the original, but since Branch A's update is directly from the user and has higher confidence, it's more likely to be the correct current value. Branch B's inference might be based on outdated information or incorrect assumptions. Therefore, the resolution should keep Branch A's value. The conflict here is resolved by trusting the user's explicit update over the inferred one, even though the ancestor's value was west gate. The user's current preference (north gate) is more reliable here. So the answer should be to keep Branch A's value.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"preferred_entry_gate\",\n      \"resolution\": \"kept_from_a\",\n      \"value\": \"The user now uses the north gate for pool entry.\",\n      \"justification\": \"Branch A's user-sourced update with high confidence directly contradicts Branch B's lower-confidence inference, and the common ancestor's value is superseded by the user's explicit correction.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794789434,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 391,
+      "prompt_tokens": 510,
+      "total_tokens": 901,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|preferred_entry_gate\": \"The user usually enters through the west gate.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_entry_gate\": {\n    \"value\": \"The user now uses the north gate for pool entry.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_entry_gate\": {\n    \"value\": \"The user still enters through the west gate.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

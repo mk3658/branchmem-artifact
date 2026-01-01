@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this reconciliation problem. So, there's a common ancestor value for the key \"user|cash_drawer_maximum_currency\" which states that the kiosk cash drawer may hold only euros. Then there are two branches, A and B, each with their own updates.\n\nBranch A's value says the drawer should continue holding only euros. The source here is \"inference\" with a confidence of 0.55. Branch B's value claims it should now hold only dollars, sourced from \"user\" with higher confidence at 0.95.\n\nFirst, I need to compare the sources. The common ancestor's value was about euros. Branch B's update is user-sourced, which is generally more trustworthy than an inferred one. Even though Branch A's confidence is 0.55, which is lower than B's 0.95, the source type (user vs inference) is a stronger indicator. \n\nThe ancestor's value was a statement that the drawer may hold euros. Branch B's update is a user correction, which is more reliable. The confidence in Branch B is much higher, so even though the ancestor's value was about euros, the user's direct input should override that. \n\nBut wait, the ancestor's value might have been the original setting. However, since the branches were disconnected, we can't assume one is more recent. The user's direct input (Branch B) is more reliable than an inferred change (Branch A). Therefore, Branch B's value should be kept. \n\nBut wait, the common ancestor's value was \"may hold only euros,\" which is a permission, while Branch B's is a strict \"should now hold only dollars.\" The user's instruction is more authoritative. So the resolution should be to keep Branch B's value. \n\nSo the justification is that the user's direct input (source: user) with higher confidence (0.95) overrides the inferred update from Branch A. The ancestor's value is a previous state, but the user's correction is more trustworthy. Therefore, the resolved value is Branch B's.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"cash_drawer_maximum_currency\",\n      \"resolution\": \"kept_from_b\",\n      \"value\": \"The kiosk cash drawer should now hold only dollars.\",\n      \"justification\": \"Branch B's user-sourced update with higher confidence (0.95) directly overrides the ancestor's value and Branch A's inferred, lower-confidence (0.55) statement.\"\n    }\n  ]\n}",
+  "model": "qwen3:8b",
+  "input_tokens": 516,
+  "output_tokens": 531,
+  "raw": {
+    "id": "chatcmpl-624",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this reconciliation problem. So, there's a common ancestor value for the key \"user|cash_drawer_maximum_currency\" which states that the kiosk cash drawer may hold only euros. Then there are two branches, A and B, each with their own updates.\n\nBranch A's value says the drawer should continue holding only euros. The source here is \"inference\" with a confidence of 0.55. Branch B's value claims it should now hold only dollars, sourced from \"user\" with higher confidence at 0.95.\n\nFirst, I need to compare the sources. The common ancestor's value was about euros. Branch B's update is user-sourced, which is generally more trustworthy than an inferred one. Even though Branch A's confidence is 0.55, which is lower than B's 0.95, the source type (user vs inference) is a stronger indicator. \n\nThe ancestor's value was a statement that the drawer may hold euros. Branch B's update is a user correction, which is more reliable. The confidence in Branch B is much higher, so even though the ancestor's value was about euros, the user's direct input should override that. \n\nBut wait, the ancestor's value might have been the original setting. However, since the branches were disconnected, we can't assume one is more recent. The user's direct input (Branch B) is more reliable than an inferred change (Branch A). Therefore, Branch B's value should be kept. \n\nBut wait, the common ancestor's value was \"may hold only euros,\" which is a permission, while Branch B's is a strict \"should now hold only dollars.\" The user's instruction is more authoritative. So the resolution should be to keep Branch B's value. \n\nSo the justification is that the user's direct input (source: user) with higher confidence (0.95) overrides the inferred update from Branch A. The ancestor's value is a previous state, but the user's correction is more trustworthy. Therefore, the resolved value is Branch B's.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"cash_drawer_maximum_currency\",\n      \"resolution\": \"kept_from_b\",\n      \"value\": \"The kiosk cash drawer should now hold only dollars.\",\n      \"justification\": \"Branch B's user-sourced update with higher confidence (0.95) directly overrides the ancestor's value and Branch A's inferred, lower-confidence (0.55) statement.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794790494,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 531,
+      "prompt_tokens": 516,
+      "total_tokens": 1047,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|cash_drawer_maximum_currency\": \"The kiosk cash drawer may hold only euros.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|cash_drawer_maximum_currency\": {\n    \"value\": \"The kiosk cash drawer should continue holding only euros.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|cash_drawer_maximum_currency\": {\n    \"value\": \"The kiosk cash drawer should now hold only dollars.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

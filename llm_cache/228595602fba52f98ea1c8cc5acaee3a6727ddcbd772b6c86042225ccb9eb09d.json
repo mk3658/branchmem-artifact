@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this reconciliation problem. So, there's a common ancestor value for the key \"user|delivery_window_requirement\" which is \"Building management only permits grocery deliveries during staffed lobby hours.\" Then, Branch A has a value that says \"The user wants grocery deliveries left at midnight.\" with source \"user\" and confidence 0.95. Branch B has \"Grocery deliveries must arrive during staffed lobby hours.\" with source \"inference\" and confidence 0.55.\n\nFirst, I need to compare these. The common ancestor's value is about building management's rule, while Branch A's value is a user's explicit request. The source for Branch A is user, which is more trustworthy than Branch B's inference. Also, Branch A has higher confidence. The ancestor's value might be a stale duplicate if Branch A's update is a correction. Since the user's input is direct and has high confidence, it's likely more accurate. Branch B's inference might be based on the ancestor's value but with lower confidence. So, the user's update in Branch A should be kept. The conflict is resolved by preferring the user's explicit statement over the inferred one. Therefore, the resolution is to keep Branch A's value.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"delivery_window_requirement\",\n      \"resolution\": \"kept_from_a\",\n      \"value\": \"The user wants grocery deliveries left at midnight.\",\n      \"justification\": \"Branch A's user-sourced update with high confidence directly overrides the common ancestor's value, indicating a genuine correction over a stale duplicate.\"\n    }\n  ]\n}",
+  "model": "qwen3:8b",
+  "input_tokens": 516,
+  "output_tokens": 348,
+  "raw": {
+    "id": "chatcmpl-256",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this reconciliation problem. So, there's a common ancestor value for the key \"user|delivery_window_requirement\" which is \"Building management only permits grocery deliveries during staffed lobby hours.\" Then, Branch A has a value that says \"The user wants grocery deliveries left at midnight.\" with source \"user\" and confidence 0.95. Branch B has \"Grocery deliveries must arrive during staffed lobby hours.\" with source \"inference\" and confidence 0.55.\n\nFirst, I need to compare these. The common ancestor's value is about building management's rule, while Branch A's value is a user's explicit request. The source for Branch A is user, which is more trustworthy than Branch B's inference. Also, Branch A has higher confidence. The ancestor's value might be a stale duplicate if Branch A's update is a correction. Since the user's input is direct and has high confidence, it's likely more accurate. Branch B's inference might be based on the ancestor's value but with lower confidence. So, the user's update in Branch A should be kept. The conflict is resolved by preferring the user's explicit statement over the inferred one. Therefore, the resolution is to keep Branch A's value.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"delivery_window_requirement\",\n      \"resolution\": \"kept_from_a\",\n      \"value\": \"The user wants grocery deliveries left at midnight.\",\n      \"justification\": \"Branch A's user-sourced update with high confidence directly overrides the common ancestor's value, indicating a genuine correction over a stale duplicate.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794790095,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 348,
+      "prompt_tokens": 516,
+      "total_tokens": 864,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|delivery_window_requirement\": \"Building management only permits grocery deliveries during staffed lobby hours.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|delivery_window_requirement\": {\n    \"value\": \"The user wants grocery deliveries left at midnight.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|delivery_window_requirement\": {\n    \"value\": \"Grocery deliveries must arrive during staffed lobby hours.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this conflict resolution problem. So, the common ancestor has the value for \"user|preferred_flyer_size\" as \"The user usually prints event flyers at A5 size.\" Then, Branch A has an inferred value saying the user still wants A5 with 0.55 confidence, and Branch B has a user-sourced value changing to A6 with 0.95 confidence.\n\nFirst, I need to compare the sources and confidence. Branch B's update is from the user, which is more trustworthy than an inference from Branch A. The confidence in B is much higher (0.95 vs 0.55). The common ancestor's value is A5, but Branch B is suggesting a change to A6. Since the user directly provided the update in Branch B, that's a strong indicator it's the correct current value. The ancestor's value might be stale if the user changed their preference. So, even though the ancestor said A5, the user's explicit update in Branch B should take precedence. There's no timestamp conflict here, so the higher confidence and user source make Branch B's value the right choice. Therefore, the resolution should keep Branch B's value.\n</think>\n\n{\"resolutions\": [\n  {\n    \"entity\": \"user\",\n    \"predicate\": \"preferred_flyer_size\",\n    \"resolution\": \"kept_from_b\",\n    \"value\": \"The user now wants event flyers printed at A6 size.\",\n    \"justification\": \"Branch B's user-sourced update with high confidence directly overrides the ancestor's value and Branch A's lower-confidence inference.\"\n  }\n]}",
+  "model": "qwen3:8b",
+  "input_tokens": 522,
+  "output_tokens": 337,
+  "raw": {
+    "id": "chatcmpl-848",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this conflict resolution problem. So, the common ancestor has the value for \"user|preferred_flyer_size\" as \"The user usually prints event flyers at A5 size.\" Then, Branch A has an inferred value saying the user still wants A5 with 0.55 confidence, and Branch B has a user-sourced value changing to A6 with 0.95 confidence.\n\nFirst, I need to compare the sources and confidence. Branch B's update is from the user, which is more trustworthy than an inference from Branch A. The confidence in B is much higher (0.95 vs 0.55). The common ancestor's value is A5, but Branch B is suggesting a change to A6. Since the user directly provided the update in Branch B, that's a strong indicator it's the correct current value. The ancestor's value might be stale if the user changed their preference. So, even though the ancestor said A5, the user's explicit update in Branch B should take precedence. There's no timestamp conflict here, so the higher confidence and user source make Branch B's value the right choice. Therefore, the resolution should keep Branch B's value.\n</think>\n\n{\"resolutions\": [\n  {\n    \"entity\": \"user\",\n    \"predicate\": \"preferred_flyer_size\",\n    \"resolution\": \"kept_from_b\",\n    \"value\": \"The user now wants event flyers printed at A6 size.\",\n    \"justification\": \"Branch B's user-sourced update with high confidence directly overrides the ancestor's value and Branch A's lower-confidence inference.\"\n  }\n]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794791634,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 337,
+      "prompt_tokens": 522,
+      "total_tokens": 859,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|preferred_flyer_size\": \"The user usually prints event flyers at A5 size.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_flyer_size\": {\n    \"value\": \"The user still wants event flyers printed at A5 size.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_flyer_size\": {\n    \"value\": \"The user now wants event flyers printed at A6 size.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

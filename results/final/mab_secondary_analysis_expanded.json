@@ -1,0 +1,115 @@
+{
+  "source": "mab_extension",
+  "model": "gpt-5.4-nano",
+  "max_conflict_keys": 50,
+  "max_tokens": 8000,
+  "seed": 2026,
+  "n_rows": 8,
+  "total_conflict_pairs": 270,
+  "per_row": [
+    {
+      "row": 0,
+      "n_questions": 30,
+      "n_conflict_pairs": 30,
+      "accuracy_by_strategy": {
+        "last_writer_wins": 0.3333,
+        "naive_concat": 0.6,
+        "branch_discard_always_b": 0.4,
+        "confidence_rule": 0.0,
+        "three_way_llm": 0.0
+      }
+    },
+    {
+      "row": 1,
+      "n_questions": 35,
+      "n_conflict_pairs": 35,
+      "accuracy_by_strategy": {
+        "last_writer_wins": 0.3714,
+        "naive_concat": 0.6571,
+        "branch_discard_always_b": 0.3429,
+        "confidence_rule": 0.0,
+        "three_way_llm": 0.0
+      }
+    },
+    {
+      "row": 2,
+      "n_questions": 35,
+      "n_conflict_pairs": 35,
+      "accuracy_by_strategy": {
+        "last_writer_wins": 0.3429,
+        "naive_concat": 0.6,
+        "branch_discard_always_b": 0.4,
+        "confidence_rule": 0.0,
+        "three_way_llm": 0.0
+      }
+    },
+    {
+      "row": 3,
+      "n_questions": 35,
+      "n_conflict_pairs": 35,
+      "accuracy_by_strategy": {
+        "last_writer_wins": 0.3714,
+        "naive_concat": 0.6286,
+        "branch_discard_always_b": 0.3714,
+        "confidence_rule": 0.0,
+        "three_way_llm": 0.0
+      }
+    },
+    {
+      "row": 4,
+      "n_questions": 30,
+      "n_conflict_pairs": 30,
+      "accuracy_by_strategy": {
+        "last_writer_wins": 0.3333,
+        "naive_concat": 0.6,
+        "branch_discard_always_b": 0.4,
+        "confidence_rule": 0.0,
+        "three_way_llm": 0.0
+      }
+    },
+    {
+      "row": 5,
+      "n_questions": 35,
+      "n_conflict_pairs": 35,
+      "accuracy_by_strategy": {
+        "last_writer_wins": 0.3714,
+        "naive_concat": 0.6571,
+        "branch_discard_always_b": 0.3429,
+        "confidence_rule": 0.0,
+        "three_way_llm": 0.0
+      }
+    },
+    {
+      "row": 6,
+      "n_questions": 35,
+      "n_conflict_pairs": 35,
+      "accuracy_by_strategy": {
+        "last_writer_wins": 0.3429,
+        "naive_concat": 0.6,
+        "branch_discard_always_b": 0.4,
+        "confidence_rule": 0.0,
+        "three_way_llm": 0.0
+      }
+    },
+    {
+      "row": 7,
+      "n_questions": 35,
+      "n_conflict_pairs": 35,
+      "accuracy_by_strategy": {
+        "last_writer_wins": 0.3714,
+        "naive_concat": 0.6286,
+        "branch_discard_always_b": 0.3714,
+        "confidence_rule": 0.0,
+        "three_way_llm": 0.0
+      }
+    }
+  ],
+  "mean_accuracy_by_strategy": {
+    "last_writer_wins": 0.3548,
+    "naive_concat": 0.6214,
+    "branch_discard_always_b": 0.3786,
+    "confidence_rule": 0.0,
+    "three_way_llm": 0.0
+  },
+  "note": "SEEDED (seed=2026), reproducible MemoryAgentBench secondary analysis; supersedes the earlier unseeded run. Strategies run in fixed order (three_way_llm last), matching the cross-vendor script. ThreeWayLLMMerge commits zero times on all 270 conflicts (accuracy 0.000), consistent with the abstention metrics. NOT part of ANALYSIS_PLAN.md confirmatory tests."
+}

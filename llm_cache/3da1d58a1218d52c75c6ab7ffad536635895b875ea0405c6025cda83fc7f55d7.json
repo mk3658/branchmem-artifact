@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"16468\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 619,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-27",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"16468\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720694,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 619,
+      "total_tokens": 650,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: Carlos Kleiber\nRelation: citizen_of\nPreviously recorded value (may be stale, may be empty): Germany\n\nCandidate LEFT:  France\nCandidate RIGHT: Iceland\n\nEvidence lines (numbered, in original order):\n15932. Francis de Sales is a citizen of France.\n15940. Lonny Ross is a citizen of France.\n16061. Charles IV of France works in the field of monarch.\n16085. The official language of France is Hebrew.\n16222. Henry IV of France is affiliated with the religion of Armenian Apostolic Church.\n16239. Pia Zadora is a citizen of France.\n16398. Jean Shepherd is a citizen of France.\n16404. Shudder to Think was created in the country of France.\n16468. Carlos Kleiber is a citizen of France.\n16540. Stephon Marbury is a citizen of France.\n16627. Florian Schneider is a citizen of France.\n16757. Florence Vidor is a citizen of France.\n16941. Madame du Barry is a citizen of France.\n16980. Des Cahill is a citizen of France.\n17092. Andr\u00e9 Bazin is a citizen of France.\n17161. Emmanuel Mounier is a citizen of France.\n17238. Ripper Street was created in the country of France.\n17253. F. Scott Fitzgerald's child is Frances Scott Fitzgerald.\n17294. Marie Antoinette is married to Louis XVI of France.\n17460. Grace Coolidge is a citizen of France.\n17481. Bill Clinton's child is Carlos Kleiber.\n17577. Pierre Delano\u00eb is a citizen of France.\n17614. Ian Fleming is a citizen of France.\n17739. Dream On was created in the country of France.\n17776. Death Grips was created in the country of France.\n17875. Kim Kardashian is a citizen of France.\n18062. Jamie Lee Curtis is a citizen of France.\n18210. Philippe Gaulier is a citizen of France.\n18227. Variety was created in the country of France.\n18298. David Eagleman is a citizen of France.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

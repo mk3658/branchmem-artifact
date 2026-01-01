@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"2275\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 325,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-140",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"2275\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794719272,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 325,
+      "total_tokens": 356,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: John Stuart Mill\nRelation: married_to\nPreviously recorded value (may be stale, may be empty): Harriet Taylor Mill\n\nCandidate LEFT:  Sarah Churchill\nCandidate RIGHT: Barack Obama\n\nEvidence lines (numbered, in original order):\n991. Michelle Obama is married to Barack Obama.\n1213. John Stuart Mill is married to Harriet Taylor Mill.\n1834. The author of Coraline is John Stuart Mill.\n2275. John Stuart Mill is married to Sarah Churchill.\n3670. John Stuart Mill is a citizen of United Kingdom of Great Britain and Ireland.\n4397. Barack Obama is a citizen of United States of America.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

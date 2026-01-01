@@ -1,0 +1,3042 @@
+{
+  "note": "PROSPECTIVE environments for the offline two-agent divergence experiment (ANALYSIS_PLAN_ADDENDUM.md P2). These files contain ENVIRONMENTS ONLY: a shared starting memory and two independent dialogues. What each agent stores, with what source and confidence, is decided by the agent at run time and is not scripted here. Environment truth is therefore known to us (we wrote the dialogues) while the branch contents are not. Authored by gpt-5.4 under structural validation and frozen before any agent ran.",
+  "author_model": "gpt-5.4",
+  "n_episodes": 118,
+  "n_rejected_drafts": 190,
+  "rejection_reasons": [
+    {
+      "setting": "a shared flat",
+      "reason": "predicate reused: ['desk_location_preference']"
+    },
+    {
+      "setting": "a shared flat",
+      "reason": "predicate reused: ['desk_location_preference']"
+    },
+    {
+      "setting": "a shared flat",
+      "reason": "predicate reused: ['laundry_room_access_window', 'mug_color', 'shoe_storage_spot']"
+    },
+    {
+      "setting": "a shared flat",
+      "reason": "predicate reused: ['desk_location_preference', 'laundry_access_window']"
+    },
+    {
+      "setting": "a university hall of residence",
+      "reason": "predicate reused: ['desk_location', 'guest_overnight_limit', 'laundry_day_preference']"
+    },
+    {
+      "setting": "a university hall of residence",
+      "reason": "predicate reused: ['study_spot_preference']"
+    },
+    {
+      "setting": "a university hall of residence",
+      "reason": "predicate reused: ['desk_location', 'guest_overnight_limit', 'laundry_day_preference']"
+    },
+    {
+      "setting": "a university hall of residence",
+      "reason": "predicate reused: ['desk_location', 'guest_overnight_limit', 'laundry_day_preference']"
+    },
+    {
+      "setting": "a university hall of residence",
+      "reason": "predicate reused: ['study_spot_preference']"
+    },
+    {
+      "setting": "a university hall of residence",
+      "reason": "predicate reused: ['guest_overnight_limit', 'laundry_day_preference']"
+    },
+    {
+      "setting": "a university hall of residence",
+      "reason": "predicate reused: ['preferred_study_spot']"
+    },
+    {
+      "setting": "a university hall of residence",
+      "reason": "predicate reused: ['laundry_room_access_window']"
+    },
+    {
+      "setting": "a university hall of residence",
+      "reason": "predicate reused: ['guest_overnight_limit', 'study_spot_preference']"
+    },
+    {
+      "setting": "a co-working space",
+      "reason": "predicate reused: ['commute_method']"
+    },
+    {
+      "setting": "a co-working space",
+      "reason": "predicate reused: ['locker_location', 'preferred_work_zone']"
+    },
+    {
+      "setting": "a co-working space",
+      "reason": "predicate reused: ['commute_method']"
+    },
+    {
+      "setting": "a co-working space",
+      "reason": "predicate reused: ['locker_location']"
+    },
+    {
+      "setting": "a co-working space",
+      "reason": "predicate reused: ['guest_access_limit', 'locker_location']"
+    },
+    {
+      "setting": "a co-working space",
+      "reason": "predicate reused: ['commute_method', 'preferred_work_zone']"
+    },
+    {
+      "setting": "a co-working space",
+      "reason": "predicate reused: ['locker_location']"
+    },
+    {
+      "setting": "a co-working space",
+      "reason": "predicate reused: ['locker_location']"
+    },
+    {
+      "setting": "a community allotment",
+      "reason": "predicate reused: ['tool_storage_spot']"
+    },
+    {
+      "setting": "a community allotment",
+      "reason": "predicate reused: ['tool_storage_spot', 'water_access_window']"
+    },
+    {
+      "setting": "a community allotment",
+      "reason": "predicate reused: ['tool_storage_spot', 'water_access_window']"
+    },
+    {
+      "setting": "a community allotment",
+      "reason": "predicate reused: ['bonfire_permission_status']"
+    },
+    {
+      "setting": "a sailing club",
+      "reason": "predicate reused: ['locker_location']"
+    },
+    {
+      "setting": "a sailing club",
+      "reason": "predicate reused: ['locker_location']"
+    },
+    {
+      "setting": "a sailing club",
+      "reason": "predicate reused: ['tool_storage_spot']"
+    },
+    {
+      "setting": "a sailing club",
+      "reason": "predicate reused: ['launch_access_method', 'locker_location', 'preferred_mooring_side']"
+    },
+    {
+      "setting": "a sailing club",
+      "reason": "predicate reused: ['locker_location', 'preferred_mooring_side']"
+    },
+    {
+      "setting": "a sailing club",
+      "reason": "predicate reused: ['race_start_role']"
+    },
+    {
+      "setting": "a sailing club",
+      "reason": "predicate reused: ['launch_access_method', 'locker_location', 'preferred_mooring_side']"
+    },
+    {
+      "setting": "a sailing club",
+      "reason": "predicate reused: ['locker_location']"
+    },
+    {
+      "setting": "a sailing club",
+      "reason": "predicate reused: ['launch_ramp_access', 'preferred_mooring_side']"
+    },
+    {
+      "setting": "an amateur orchestra",
+      "reason": "predicate reused: ['section_seating_preference']"
+    },
+    {
+      "setting": "an amateur orchestra",
+      "reason": "predicate reused: ['instrument_storage_rule', 'section_seating_preference']"
+    },
+    {
+      "setting": "an amateur orchestra",
+      "reason": "predicate reused: ['instrument_case_color', 'sheet_music_access']"
+    },
+    {
+      "setting": "an amateur orchestra",
+      "reason": "predicate reused: ['rehearsal_arrival_window']"
+    },
+    {
+      "setting": "an amateur orchestra",
+      "reason": "predicate reused: ['post_rehearsal_hangout_spot']"
+    },
+    {
+      "setting": "a local library",
+      "reason": "predicate reused: ['preferred_reading_spot', 'study_room_booking_window']"
+    },
+    {
+      "setting": "a local library",
+      "reason": "predicate reused: ['library_branch_used']"
+    },
+    {
+      "setting": "a local library",
+      "reason": "predicate reused: ['preferred_reading_spot', 'study_room_booking_window']"
+    },
+    {
+      "setting": "a local library",
+      "reason": "predicate reused: ['preferred_reading_spot', 'study_room_booking_limit']"
+    },
+    {
+      "setting": "a climbing gym",
+      "reason": "predicate reused: ['belay_certification_status']"
+    },
+    {
+      "setting": "a climbing gym",
+      "reason": "predicate reused: ['guest_pass_limit']"
+    },
+    {
+      "setting": "a climbing gym",
+      "reason": "predicate reused: ['guest_pass_limit', 'preferred_warmup_route_color']"
+    },
+    {
+      "setting": "a climbing gym",
+      "reason": "predicate reused: ['auto_belay_access', 'shoe_rental_size']"
+    },
+    {
+      "setting": "a climbing gym",
+      "reason": "predicate reused: ['belay_certification_status', 'post_climb_drink']"
+    },
+    {
+      "setting": "a climbing gym",
+      "reason": "predicate reused: ['auto_belay_lane_access']"
+    },
+    {
+      "setting": "a car club",
+      "reason": "predicate reused: ['guest_pass_limit']"
+    }
+  ],
+  "episodes": [
+    {
+      "constraint_predicate": "building_quiet_hours",
+      "constraint_value": "no loud noise after 10 pm",
+      "constraint_compatible_value": "I use headphones for late movies",
+      "constraint_violating_value": "I play music loudly at midnight",
+      "ordinary_predicate": "preferred_bathroom_slot",
+      "ordinary_value": "I usually shower before breakfast",
+      "ordinary_new_value": "I now shower after dinner",
+      "ordinary_speculated_value": "I might start showering at lunch",
+      "background_predicate": "desk_location",
+      "background_value": "my desk is by the window",
+      "dialogue_a": [
+        "I\u2019m switching my shower routine and now I shower after dinner instead.",
+        "I\u2019ll watch the film with headphones tonight so I stay within quiet hours.",
+        "I\u2019m finally clearing the shoes from the hallway by the front door."
+      ],
+      "dialogue_b": [
+        "I might start showering at lunch, but I haven\u2019t settled on that yet.",
+        "I want to play music loudly at midnight while I tidy my room.",
+        "I\u2019m moving my mug collection off the kitchen shelf this afternoon."
+      ],
+      "episode_id": "ep_000",
+      "setting": "a shared flat"
+    },
+    {
+      "constraint_predicate": "laundry_access_window",
+      "constraint_value": "laundry room closes after 9 pm",
+      "constraint_compatible_value": "I run loads before 9 pm",
+      "constraint_violating_value": "I do laundry at 11 pm",
+      "ordinary_predicate": "desk_location_preference",
+      "ordinary_value": "I prefer my desk by the window",
+      "ordinary_new_value": "I prefer my desk against the hallway wall",
+      "ordinary_speculated_value": "I might prefer my desk near the bookshelf",
+      "background_predicate": "entry_storage_spot",
+      "background_value": "I keep my umbrella in the shoe cabinet",
+      "dialogue_a": [
+        "I moved my desk today, and I want it against the hallway wall from now on.",
+        "I usually start my laundry right after dinner so I'm finished before nine.",
+        "I noticed the kitchen light flickers when someone uses the kettle."
+      ],
+      "dialogue_b": [
+        "I might move my desk near the bookshelf, but I'm still picturing how it would look.",
+        "I want to do a load of laundry at eleven tonight after everyone is asleep.",
+        "I keep hearing the upstairs neighbor drag chairs across the floor in the evening."
+      ],
+      "episode_id": "ep_001",
+      "setting": "a shared flat"
+    },
+    {
+      "constraint_predicate": "laundry_room_access_window",
+      "constraint_value": "laundry room access ends at 9 pm",
+      "constraint_compatible_value": "I run loads before 9 pm",
+      "constraint_violating_value": "I use the laundry room at 11 pm",
+      "ordinary_predicate": "shoe_storage_spot",
+      "ordinary_value": "my shoes stay under the entry bench",
+      "ordinary_new_value": "my shoes go on the hallway rack",
+      "ordinary_speculated_value": "my shoes might go beside the coat stand",
+      "background_predicate": "mug_color",
+      "background_value": "my usual mug is dark green",
+      "dialogue_a": [
+        "I moved my shoes to the hallway rack so the entry bench stays clear.",
+        "I\u2019ll start my laundry right after dinner so I\u2019m finished before nine.",
+        "I\u2019m wiping the kitchen counter because the crumbs keep sticking to everything."
+      ],
+      "dialogue_b": [
+        "I might start leaving my shoes beside the coat stand, but I haven\u2019t tried it yet.",
+        "I want to run a laundry load around eleven tonight after everyone\u2019s asleep.",
+        "I\u2019m opening the living room window for a few minutes because it feels stuffy."
+      ],
+      "episode_id": "ep_002",
+      "setting": "a shared flat"
+    },
+    {
+      "constraint_predicate": "balcony_use_hours",
+      "constraint_value": "balcony closed after 10 pm",
+      "constraint_compatible_value": "I water my herbs before 10 pm",
+      "constraint_violating_value": "I host friends on the balcony at midnight",
+      "ordinary_predicate": "desk_lamp_finish",
+      "ordinary_value": "my desk lamp is matte black",
+      "ordinary_new_value": "my desk lamp is brushed brass",
+      "ordinary_speculated_value": "my desk lamp might be sage green",
+      "background_predicate": "entryway_rug_pattern",
+      "background_value": "the entryway rug has narrow stripes",
+      "dialogue_a": [
+        "I replaced my desk lamp, and now it's brushed brass instead of matte black.",
+        "I always water my herbs on the balcony before 10 pm so I'm done in time.",
+        "I keep hearing the upstairs floorboards creak whenever I make tea in the kitchen."
+      ],
+      "dialogue_b": [
+        "I might repaint my desk lamp sage green, but I'm still picturing how it would look.",
+        "I want to host friends on the balcony at midnight this Friday after everyone gets home.",
+        "I keep losing track of whose reusable bags are stacked by the front door bench."
+      ],
+      "episode_id": "ep_003",
+      "setting": "a shared flat"
+    },
+    {
+      "constraint_predicate": "balcony_drying_rule",
+      "constraint_value": "laundry may dry only on the inner rack",
+      "constraint_compatible_value": "I dry clothes on the hallway folding rack",
+      "constraint_violating_value": "I hang washing over the balcony rail",
+      "ordinary_predicate": "mug_storage_spot",
+      "ordinary_value": "my mug stays on the second kitchen shelf",
+      "ordinary_new_value": "my mug now stays in the left dish cupboard",
+      "ordinary_speculated_value": "my mug might belong by the sink caddy",
+      "background_predicate": "entryway_shoe_side",
+      "background_value": "my shoes line up on the radiator side",
+      "dialogue_a": [
+        "I\u2019m moving my mug to the left dish cupboard from now on.",
+        "I\u2019ll keep drying my shirts on the hallway folding rack tonight.",
+        "I\u2019m wiping the hallway mirror because it\u2019s covered in fingerprints."
+      ],
+      "dialogue_b": [
+        "I might keep my mug by the sink caddy, but I haven\u2019t settled it.",
+        "I\u2019m going to hang my washing over the balcony rail this afternoon.",
+        "I\u2019m tightening the loose knob on the living room cabinet."
+      ],
+      "episode_id": "ep_004",
+      "setting": "a shared flat"
+    },
+    {
+      "constraint_predicate": "guest_overnight_policy",
+      "constraint_value": "no overnight guests allowed in student rooms",
+      "constraint_compatible_value": "I meet my friends in the common room",
+      "constraint_violating_value": "I host my cousin overnight in my room",
+      "ordinary_predicate": "preferred_study_spot",
+      "ordinary_value": "I usually study in the library",
+      "ordinary_new_value": "I now prefer studying in the residence common room",
+      "ordinary_speculated_value": "I might start studying in the music practice room",
+      "background_predicate": "laundry_day",
+      "background_value": "I usually do laundry on Thursdays",
+      "dialogue_a": [
+        "I've started studying in the residence common room instead of the library lately.",
+        "I always meet my visiting friends in the common room before they head home.",
+        "I'm on the third floor, and the lift was surprisingly quick today."
+      ],
+      "dialogue_b": [
+        "I might start studying in the music practice room if it stays quiet enough.",
+        "I want to let my cousin stay overnight in my room this weekend.",
+        "I'm heading to the laundry room now because the queue looks short."
+      ],
+      "episode_id": "ep_005",
+      "setting": "a university hall of residence"
+    },
+    {
+      "constraint_predicate": "guest_overnight_limit",
+      "constraint_value": "no overnight guests in residence rooms",
+      "constraint_compatible_value": "I meet visitors in the common room",
+      "constraint_violating_value": "my friend stays overnight in my room",
+      "ordinary_predicate": "laundry_day_preference",
+      "ordinary_value": "I usually do laundry on Thursdays",
+      "ordinary_new_value": "I do laundry on Sunday evenings now",
+      "ordinary_speculated_value": "I might switch laundry to Tuesday mornings",
+      "background_predicate": "study_spot_preference",
+      "background_value": "I like revising in the music practice room",
+      "dialogue_a": [
+        "I've changed my routine and do laundry on Sunday evenings now.",
+        "I usually catch up with visitors in the common room after dinner.",
+        "I'm heading to the laundry room because the dryers seem quieter tonight."
+      ],
+      "dialogue_b": [
+        "I might switch my laundry routine to Tuesday mornings if the machines are free.",
+        "I want my friend to stay overnight in my room this weekend.",
+        "I'm in the corridor by the noticeboard waiting for the lift."
+      ],
+      "episode_id": "ep_006",
+      "setting": "a university hall of residence"
+    },
+    {
+      "constraint_predicate": "guest_access_rule",
+      "constraint_value": "guests must be signed in at reception",
+      "constraint_compatible_value": "I sign in my guest at reception",
+      "constraint_violating_value": "I bring my guest straight upstairs",
+      "ordinary_predicate": "preferred_workspace",
+      "ordinary_value": "I usually work at a window desk",
+      "ordinary_new_value": "I prefer the quiet booth now",
+      "ordinary_speculated_value": "I might switch to a standing desk",
+      "background_predicate": "commute_method",
+      "background_value": "I bike to the co-working space",
+      "dialogue_a": [
+        "I want to work from the quiet booth from now on instead of the window desk.",
+        "I always sign in my guest at reception before we head to the lounge.",
+        "I am using the phone booth for my afternoon call today."
+      ],
+      "dialogue_b": [
+        "I might switch to a standing desk, but I have not decided yet.",
+        "I want to bring my guest straight upstairs without stopping at reception.",
+        "I am grabbing a coffee before settling into the common area."
+      ],
+      "episode_id": "ep_007",
+      "setting": "a co-working space"
+    },
+    {
+      "constraint_predicate": "guest_access_limit",
+      "constraint_value": "guests cannot enter member-only meeting rooms",
+      "constraint_compatible_value": "I meet visitors in the lobby lounge",
+      "constraint_violating_value": "my guest joins me in a member-only meeting room",
+      "ordinary_predicate": "preferred_work_zone",
+      "ordinary_value": "I usually work near the window bar",
+      "ordinary_new_value": "I now prefer the quiet booth row",
+      "ordinary_speculated_value": "I might switch to the standing desk area",
+      "background_predicate": "locker_location",
+      "background_value": "my locker is on the second floor",
+      "dialogue_a": [
+        "I want to switch my usual spot and work from the quiet booth row now.",
+        "I always meet visitors in the lobby lounge instead of bringing them into meeting rooms.",
+        "I am looking for a seat near an outlet before the afternoon crowd arrives."
+      ],
+      "dialogue_b": [
+        "I might start working from the standing desk area, but I have not settled on it.",
+        "I need my guest to join me inside a member-only meeting room this afternoon.",
+        "I am grabbing a phone booth for a quick call before lunch."
+      ],
+      "episode_id": "ep_008",
+      "setting": "a co-working space"
+    },
+    {
+      "constraint_predicate": "guest_pass_limit",
+      "constraint_value": "only one guest pass per week",
+      "constraint_compatible_value": "I schedule solo work sessions",
+      "constraint_violating_value": "I bring two guests this week",
+      "ordinary_predicate": "preferred_focus_zone",
+      "ordinary_value": "I usually sit in the library nook",
+      "ordinary_new_value": "I now prefer the window bar seats",
+      "ordinary_speculated_value": "I might switch to the window bar seats",
+      "background_predicate": "commute_storage_spot",
+      "background_value": "I keep my bike in rack three",
+      "dialogue_a": [
+        "I\u2019m switching my usual spot and now prefer the window bar seats.",
+        "I\u2019ll come in alone this week and save my guest pass for later.",
+        "I\u2019m using the phone booth after lunch for a quick call."
+      ],
+      "dialogue_b": [
+        "I might start working from the window bar seats, but I haven\u2019t decided.",
+        "I want to bring two guests with me this Thursday afternoon.",
+        "I\u2019m grabbing a marker from the supply wall before the workshop starts."
+      ],
+      "episode_id": "ep_009",
+      "setting": "a co-working space"
+    },
+    {
+      "constraint_predicate": "water_access_rule",
+      "constraint_value": "hose use is limited to shared watering hours",
+      "constraint_compatible_value": "I fill watering cans during the shared hours",
+      "constraint_violating_value": "I run the hose whenever my plot looks dry",
+      "ordinary_predicate": "preferred_bed_crop",
+      "ordinary_value": "I usually grow runner beans in the back bed",
+      "ordinary_new_value": "I am switching the back bed to courgettes",
+      "ordinary_speculated_value": "I might try courgettes in the back bed",
+      "background_predicate": "tool_storage_spot",
+      "background_value": "I keep my hand fork in the green shed locker",
+      "dialogue_a": [
+        "I am switching the back bed to courgettes this season instead of runner beans.",
+        "I fill my watering cans during the shared hose hours and soak the seedlings then.",
+        "I saw three bright frogs tucked under the old pallet by the compost bins."
+      ],
+      "dialogue_b": [
+        "I might try courgettes in the back bed, though I have not settled it yet.",
+        "I want to run the hose whenever my plot looks dry, even outside shared hours.",
+        "I noticed the blackberries along the fence are ripening earlier than last year."
+      ],
+      "episode_id": "ep_010",
+      "setting": "a community allotment"
+    },
+    {
+      "constraint_predicate": "water_access_window",
+      "constraint_value": "hose use allowed only after 6 pm",
+      "constraint_compatible_value": "I fill watering cans before dusk",
+      "constraint_violating_value": "I run the hose at noon",
+      "ordinary_predicate": "seedling_swap_day",
+      "ordinary_value": "I usually attend on Saturdays",
+      "ordinary_new_value": "I now attend on Wednesdays",
+      "ordinary_speculated_value": "I might switch to Sundays",
+      "background_predicate": "shed_key_hook",
+      "background_value": "my shed key hangs on the blue peg",
+      "dialogue_a": [
+        "I\u2019m changing my seedling swap day and I\u2019ll go on Wednesdays from now on.",
+        "I stick to the hose rule and fill my watering cans before dusk instead.",
+        "I noticed the foxgloves finally opened along the far fence this week."
+      ],
+      "dialogue_b": [
+        "I might switch my seedling swap day to Sundays, but I haven\u2019t settled it yet.",
+        "I want to run the hose at noon tomorrow to soak the bean trench properly.",
+        "I saw three ladybirds on the broad beans near my plot this morning."
+      ],
+      "episode_id": "ep_011",
+      "setting": "a community allotment"
+    },
+    {
+      "constraint_predicate": "bonfire_permission_status",
+      "constraint_value": "open fires are prohibited on plots",
+      "constraint_compatible_value": "I use the communal compost bays",
+      "constraint_violating_value": "I burn prunings beside my shed",
+      "ordinary_predicate": "seedling_swap_plan",
+      "ordinary_value": "I swap spare seedlings on Sundays",
+      "ordinary_new_value": "I swap spare seedlings on Wednesdays",
+      "ordinary_speculated_value": "I might swap spare seedlings on Saturdays",
+      "background_predicate": "wheelbarrow_marker_color",
+      "background_value": "my wheelbarrow has a yellow stripe",
+      "dialogue_a": [
+        "I\u2019m switching my seedling swaps to Wednesdays instead of Sundays from now on.",
+        "I put my trimmings in the communal compost bays since fires aren\u2019t allowed here.",
+        "I noticed the foxgloves by the gate are finally starting to bloom."
+      ],
+      "dialogue_b": [
+        "I might start doing my seedling swaps on Saturdays if the mornings stay quiet.",
+        "I want to burn my prunings beside my shed this weekend to clear space quickly.",
+        "I saw a robin hopping along the bean rows near my plot today."
+      ],
+      "episode_id": "ep_012",
+      "setting": "a community allotment"
+    },
+    {
+      "constraint_predicate": "water_source_rule",
+      "constraint_value": "hosepipe use is prohibited on plots",
+      "constraint_compatible_value": "I fill watering cans from the communal tap",
+      "constraint_violating_value": "I run a hosepipe across my plot",
+      "ordinary_predicate": "seed_storage_spot",
+      "ordinary_value": "I keep seeds in the green tin",
+      "ordinary_new_value": "I keep seeds in the shed drawer",
+      "ordinary_speculated_value": "I might keep seeds in the potting bench",
+      "background_predicate": "tool_label_mark",
+      "background_value": "my hand fork has blue tape",
+      "dialogue_a": [
+        "I moved my seed packets into the shed drawer this week.",
+        "I stick to filling watering cans from the communal tap for my beds.",
+        "I noticed the blackberries along the fence are ripening earlier now."
+      ],
+      "dialogue_b": [
+        "I might start keeping my seed packets in the potting bench.",
+        "I want to run a hosepipe straight across my plot this weekend.",
+        "I saw three robins hopping around the compost bays this morning."
+      ],
+      "episode_id": "ep_013",
+      "setting": "a community allotment"
+    },
+    {
+      "constraint_predicate": "hose_use_window",
+      "constraint_value": "communal hoses only after six in the evening",
+      "constraint_compatible_value": "I fill my watering cans before dusk",
+      "constraint_violating_value": "I run the communal hose at lunchtime",
+      "ordinary_predicate": "seed_tray_storage_spot",
+      "ordinary_value": "my seed trays stay under the potting bench",
+      "ordinary_new_value": "my seed trays now stay in the shed loft",
+      "ordinary_speculated_value": "my seed trays might go beside the cold frame",
+      "background_predicate": "allotment_plot_marker",
+      "background_value": "my plot marker is a blue enamel number",
+      "dialogue_a": [
+        "I moved my seed trays into the shed loft this week.",
+        "I fill my watering cans before dusk instead of using the communal hoses.",
+        "I saw three goldfinches hopping around the bean poles this morning."
+      ],
+      "dialogue_b": [
+        "I might keep my seed trays beside the cold frame this season.",
+        "I want to run the communal hose at lunchtime to soak the squash bed.",
+        "I noticed the foxgloves by the gate have finally started opening."
+      ],
+      "episode_id": "ep_014",
+      "setting": "a community allotment"
+    },
+    {
+      "constraint_predicate": "launch_access_method",
+      "constraint_value": "members must use the club tractor for launching",
+      "constraint_compatible_value": "I book the tractor slot before launching",
+      "constraint_violating_value": "I launch my dinghy with my own truck",
+      "ordinary_predicate": "preferred_mooring_side",
+      "ordinary_value": "I usually berth on the east pontoon",
+      "ordinary_new_value": "I now prefer the west pontoon",
+      "ordinary_speculated_value": "I might switch to the west pontoon",
+      "background_predicate": "toolbox_storage_spot",
+      "background_value": "I keep my toolbox in the sail loft cabinet",
+      "dialogue_a": [
+        "I've decided to berth on the west pontoon from now on.",
+        "I always reserve the club tractor before I launch my dinghy.",
+        "I like how the varnished tillers look in the clubhouse display."
+      ],
+      "dialogue_b": [
+        "I might switch to the west pontoon if the afternoon breeze stays lighter there.",
+        "I want to launch my dinghy with my own truck this weekend.",
+        "I enjoy watching the race flags go up beside the signal mast."
+      ],
+      "episode_id": "ep_015",
+      "setting": "a sailing club"
+    },
+    {
+      "constraint_predicate": "launch_ramp_access",
+      "constraint_value": "members may use the ramp only after sunrise",
+      "constraint_compatible_value": "I launch my dinghy after sunrise",
+      "constraint_violating_value": "I use the ramp before sunrise",
+      "ordinary_predicate": "preferred_mooring_row",
+      "ordinary_value": "I usually choose mooring row C",
+      "ordinary_new_value": "I prefer mooring row E now",
+      "ordinary_speculated_value": "I might switch to mooring row E",
+      "background_predicate": "locker_bench_side",
+      "background_value": "my locker is beside the west bench",
+      "dialogue_a": [
+        "I want to move my boat over to mooring row E from now on.",
+        "I always wait until after sunrise before taking my dinghy down the launch ramp.",
+        "I like how the clubhouse windows catch the light across the marina."
+      ],
+      "dialogue_b": [
+        "I might start using mooring row E, but I have not settled on it yet.",
+        "I want to take my dinghy down the launch ramp before sunrise tomorrow.",
+        "I enjoy the sound of halyards tapping against the masts at dusk."
+      ],
+      "episode_id": "ep_016",
+      "setting": "a sailing club"
+    },
+    {
+      "constraint_predicate": "fuel_storage_limit",
+      "constraint_value": "petrol cans must stay in the dock cage",
+      "constraint_compatible_value": "I leave my spare fuel can in the dock cage",
+      "constraint_violating_value": "I keep a petrol can in my cockpit locker",
+      "ordinary_predicate": "race_start_role",
+      "ordinary_value": "I usually handle the stopwatch at starts",
+      "ordinary_new_value": "I am taking horn duty at starts",
+      "ordinary_speculated_value": "I might take horn duty at starts",
+      "background_predicate": "clubhouse_noticeboard_section",
+      "background_value": "my notices go on the west wall board",
+      "dialogue_a": [
+        "I am taking horn duty at starts instead of running the stopwatch this month.",
+        "I leave my spare fuel can in the dock cage before we cast off.",
+        "I like how the pennants look above the bar after evening races."
+      ],
+      "dialogue_b": [
+        "I might take horn duty at starts, but I have not settled it yet.",
+        "I want to keep a petrol can in my cockpit locker for quick refueling.",
+        "I enjoy watching the gulls circle the slipway at high tide."
+      ],
+      "episode_id": "ep_017",
+      "setting": "a sailing club"
+    },
+    {
+      "constraint_predicate": "guest_sailing_limit",
+      "constraint_value": "guests may only sail on weekend open days",
+      "constraint_compatible_value": "I bring my cousin only on Sunday open sail",
+      "constraint_violating_value": "I bring my cousin aboard on Tuesday evening",
+      "ordinary_predicate": "locker_padlock_style",
+      "ordinary_value": "I use a brass combination padlock",
+      "ordinary_new_value": "I switched to a blue keyed padlock",
+      "ordinary_speculated_value": "I might switch to a blue keyed padlock",
+      "background_predicate": "winch_handle_storage_spot",
+      "background_value": "I keep my winch handle in the chart drawer",
+      "dialogue_a": [
+        "I switched my locker to a blue keyed padlock this week.",
+        "I\u2019m bringing my cousin along on Sunday during the club\u2019s open sail.",
+        "I like how the burgee snaps in the breeze by the clubhouse deck."
+      ],
+      "dialogue_b": [
+        "I might switch my locker to a blue keyed padlock, but I haven\u2019t decided.",
+        "I want to bring my cousin aboard on Tuesday evening after work.",
+        "I\u2019m watching the junior crews rig their boats near the hoist."
+      ],
+      "episode_id": "ep_018",
+      "setting": "a sailing club"
+    },
+    {
+      "constraint_predicate": "instrument_storage_rule",
+      "constraint_value": "personal instruments must stay in assigned lockers",
+      "constraint_compatible_value": "I keep my violin in my assigned locker",
+      "constraint_violating_value": "I leave my violin on a rehearsal chair overnight",
+      "ordinary_predicate": "section_seating_preference",
+      "ordinary_value": "I prefer sitting on the outside stand",
+      "ordinary_new_value": "I prefer sitting on the inside stand",
+      "ordinary_speculated_value": "I might prefer sitting on the inside stand",
+      "background_predicate": "arrival_method",
+      "background_value": "I usually bike to rehearsal",
+      "dialogue_a": [
+        "I want to switch and sit on the inside stand from now on.",
+        "I always put my violin back in my assigned locker after rehearsal.",
+        "I loved how the conductor shaped the slow movement tonight."
+      ],
+      "dialogue_b": [
+        "I might prefer the inside stand this season, but I have not settled it yet.",
+        "I want to leave my violin on my rehearsal chair overnight after tonight's concert.",
+        "I really enjoyed the brass chorale in the second piece tonight."
+      ],
+      "episode_id": "ep_019",
+      "setting": "an amateur orchestra"
+    },
+    {
+      "constraint_predicate": "rehearsal_arrival_window",
+      "constraint_value": "players must arrive fifteen minutes before downbeat",
+      "constraint_compatible_value": "I get to rehearsal twenty minutes early",
+      "constraint_violating_value": "I arrive right at downbeat",
+      "ordinary_predicate": "folder_color_preference",
+      "ordinary_value": "I prefer a green music folder",
+      "ordinary_new_value": "I prefer a charcoal music folder",
+      "ordinary_speculated_value": "I might switch to a navy music folder",
+      "background_predicate": "instrument_transport_method",
+      "background_value": "I bring my cello by hatchback",
+      "dialogue_a": [
+        "I switched my music folder and now I prefer a charcoal one.",
+        "I usually get to rehearsal twenty minutes early so I can unpack calmly.",
+        "I loved how the second violins shaped that quiet entrance tonight."
+      ],
+      "dialogue_b": [
+        "I might switch to a navy music folder, but I have not settled on it.",
+        "I want to show up right at downbeat next week and still join in.",
+        "I enjoyed the conductor's joke before we started tuning."
+      ],
+      "episode_id": "ep_020",
+      "setting": "an amateur orchestra"
+    },
+    {
+      "constraint_predicate": "rehearsal_room_access_window",
+      "constraint_value": "room access begins thirty minutes before rehearsal",
+      "constraint_compatible_value": "I arrive after the room opens",
+      "constraint_violating_value": "I enter the room an hour early",
+      "ordinary_predicate": "folder_label_style",
+      "ordinary_value": "my part folders use blue spine labels",
+      "ordinary_new_value": "my part folders now use green spine labels",
+      "ordinary_speculated_value": "my part folders might use red spine labels",
+      "background_predicate": "concert_black_attire_detail",
+      "background_value": "my concert jacket has satin lapels",
+      "dialogue_a": [
+        "I switched my part folders to green spine labels this week.",
+        "I usually arrive after the room opens so I can set up calmly.",
+        "I loved how the second violins shaped that quiet entrance tonight."
+      ],
+      "dialogue_b": [
+        "I might change my part folders to red spine labels next month.",
+        "I want to get into the rehearsal room an hour early tomorrow.",
+        "I enjoyed the conductor's joke before we started tuning."
+      ],
+      "episode_id": "ep_021",
+      "setting": "an amateur orchestra"
+    },
+    {
+      "constraint_predicate": "sheet_music_access",
+      "constraint_value": "parts must stay in the orchestra library",
+      "constraint_compatible_value": "I borrow parts only during rehearsal",
+      "constraint_violating_value": "I take the viola part home overnight",
+      "ordinary_predicate": "post_rehearsal_hangout_spot",
+      "ordinary_value": "I usually wait by the side stage door",
+      "ordinary_new_value": "I now wait by the lobby bulletin board",
+      "ordinary_speculated_value": "I might start waiting by the lobby bulletin board",
+      "background_predicate": "instrument_case_color",
+      "background_value": "my cello case is dark green",
+      "dialogue_a": [
+        "I\u2019m switching where I wait after rehearsal; I\u2019ll be by the lobby bulletin board now.",
+        "I only check out my part during rehearsal and return it to the library shelf afterward.",
+        "I loved how the second violins shaped that quiet entrance in the slow movement tonight."
+      ],
+      "dialogue_b": [
+        "I might start waiting by the lobby bulletin board after rehearsal, but I haven\u2019t settled on it.",
+        "I want to take the viola part home overnight so I can mark bowings before next week.",
+        "I\u2019m hoping the conductor keeps the brisk tempo in the finale at Saturday\u2019s run-through."
+      ],
+      "episode_id": "ep_022",
+      "setting": "an amateur orchestra"
+    },
+    {
+      "constraint_predicate": "borrowing_limit",
+      "constraint_value": "maximum of ten items checked out",
+      "constraint_compatible_value": "I keep my loans at ten items or fewer",
+      "constraint_violating_value": "I want to check out twelve items today",
+      "ordinary_predicate": "preferred_study_area",
+      "ordinary_value": "I usually study by the upstairs windows",
+      "ordinary_new_value": "I now prefer the quiet corner near history",
+      "ordinary_speculated_value": "I might start studying near the front desk",
+      "background_predicate": "library_visit_day",
+      "background_value": "I usually visit the library on Saturdays",
+      "dialogue_a": [
+        "I\u2019ve switched my usual study spot to the quiet corner near history shelves.",
+        "I\u2019m keeping my checkouts under ten items, so I\u2019ll return two before borrowing more.",
+        "I\u2019m just looking at the display table by the entrance for new arrivals."
+      ],
+      "dialogue_b": [
+        "I might start studying near the front desk, but I haven\u2019t settled on it.",
+        "I want to check out twelve items today, so please put them all on my account.",
+        "I\u2019m browsing the community board near the copier before heading upstairs."
+      ],
+      "episode_id": "ep_023",
+      "setting": "a local library"
+    },
+    {
+      "constraint_predicate": "study_room_booking_window",
+      "constraint_value": "study rooms can only be booked seven days ahead",
+      "constraint_compatible_value": "I reserve rooms within the seven-day window",
+      "constraint_violating_value": "I book a study room for next month",
+      "ordinary_predicate": "preferred_reading_spot",
+      "ordinary_value": "I usually read by the upstairs windows",
+      "ordinary_new_value": "I now prefer the history alcove armchair",
+      "ordinary_speculated_value": "I might start reading near the periodicals shelves",
+      "background_predicate": "library_branch_used",
+      "background_value": "I usually visit the Maple Street branch",
+      "dialogue_a": [
+        "I've switched my usual reading spot to the armchair in the history alcove.",
+        "I only reserve study rooms a few days ahead, so the seven-day limit works fine for me.",
+        "I'm just returning these magazines and looking at the display by the entrance."
+      ],
+      "dialogue_b": [
+        "I might start reading near the periodicals shelves, but I haven't settled on that yet.",
+        "I want to book the small study room for next month so I can plan ahead.",
+        "I'm browsing the local history case before I head upstairs."
+      ],
+      "episode_id": "ep_024",
+      "setting": "a local library"
+    },
+    {
+      "constraint_predicate": "study_room_booking_limit",
+      "constraint_value": "study rooms require advance reservations",
+      "constraint_compatible_value": "I reserve a study room before using it",
+      "constraint_violating_value": "I use a study room without reserving it",
+      "ordinary_predicate": "preferred_library_floor",
+      "ordinary_value": "I usually work on the second floor",
+      "ordinary_new_value": "I now prefer the mezzanine tables",
+      "ordinary_speculated_value": "I might start using the mezzanine tables",
+      "background_predicate": "library_card_storage_spot",
+      "background_value": "I keep my library card in my jacket pocket",
+      "dialogue_a": [
+        "I switched my usual workspace and now prefer the mezzanine tables by the windows.",
+        "I booked a study room online before coming, so I can use it this afternoon.",
+        "I like how the return slot is right beside the front desk here."
+      ],
+      "dialogue_b": [
+        "I might start using the mezzanine tables more, but I have not settled on that yet.",
+        "I want to head straight into an empty study room without making any reservation.",
+        "I noticed the local history display near the staircase looks different today."
+      ],
+      "episode_id": "ep_025",
+      "setting": "a local library"
+    },
+    {
+      "constraint_predicate": "guest_pass_duration",
+      "constraint_value": "guest passes last two hours",
+      "constraint_compatible_value": "I keep guest visits within two hours",
+      "constraint_violating_value": "I want a guest pass for the whole afternoon",
+      "ordinary_predicate": "checkout_format_preference",
+      "ordinary_value": "I usually borrow hardcover editions",
+      "ordinary_new_value": "I switched to borrowing paperbacks",
+      "ordinary_speculated_value": "I might start borrowing paperbacks",
+      "background_predicate": "printer_floor_habit",
+      "background_value": "I usually use the second-floor printer",
+      "dialogue_a": [
+        "I switched to borrowing paperbacks instead of hardcovers for my library checkouts.",
+        "I keep guest visits within two hours, so I'll meet my cousin in the lobby afterward.",
+        "I like how quiet the periodicals corner feels in the late morning."
+      ],
+      "dialogue_b": [
+        "I might start borrowing paperbacks, but I haven't settled on that yet.",
+        "I want a guest pass for the whole afternoon so my friend can stay with me.",
+        "I noticed the return slot by the side entrance is much easier to reach."
+      ],
+      "episode_id": "ep_026",
+      "setting": "a local library"
+    },
+    {
+      "constraint_predicate": "belay_certification_status",
+      "constraint_value": "may not use auto-belay lanes",
+      "constraint_compatible_value": "I stick to the bouldering area",
+      "constraint_violating_value": "I use the auto-belay lanes",
+      "ordinary_predicate": "preferred_climbing_day",
+      "ordinary_value": "I usually climb on Tuesdays",
+      "ordinary_new_value": "I switched to climbing on Thursdays",
+      "ordinary_speculated_value": "I might start climbing on Thursdays",
+      "background_predicate": "shoe_rental_size",
+      "background_value": "I rent size 41 shoes",
+      "dialogue_a": [
+        "I switched my regular gym day, so I climb here on Thursdays now.",
+        "I can't use the auto-belay lanes, so I stick to the bouldering wall.",
+        "I like how the new route colors make the wall easier to scan."
+      ],
+      "dialogue_b": [
+        "I might start coming on Thursdays instead of Tuesdays, but I'm not set on it.",
+        "I want to hop on the auto-belay lanes for a few quick climbs today.",
+        "I really like the big windows near the stretching mats upstairs."
+      ],
+      "episode_id": "ep_027",
+      "setting": "a climbing gym"
+    },
+    {
+      "constraint_predicate": "auto_belay_lane_access",
+      "constraint_value": "staff reserve auto-belay lanes for orientations",
+      "constraint_compatible_value": "I use the regular bouldering walls instead",
+      "constraint_violating_value": "I use the auto-belay lanes today",
+      "ordinary_predicate": "preferred_warmup_route_color",
+      "ordinary_value": "I usually start on orange routes",
+      "ordinary_new_value": "I start on purple routes now",
+      "ordinary_speculated_value": "I might start on green routes",
+      "background_predicate": "gear_cubby_location",
+      "background_value": "my shoes stay in the top cubby",
+      "dialogue_a": [
+        "I switched my warmup and start on purple routes now instead of orange ones.",
+        "I know the auto-belay lanes are for orientations, so I'll stick to the regular bouldering walls.",
+        "I like how the big ceiling fan keeps the training area from feeling stuffy."
+      ],
+      "dialogue_b": [
+        "I might start on green routes next time, but I'm still looking around first.",
+        "I want to use the auto-belay lanes today, so point me to an open one.",
+        "I keep hearing the training boards creak a little when the gym gets busy."
+      ],
+      "episode_id": "ep_028",
+      "setting": "a climbing gym"
+    },
+    {
+      "constraint_predicate": "auto_belay_access",
+      "constraint_value": "staff must clip me on auto-belay",
+      "constraint_compatible_value": "I wait for staff before using auto-belay",
+      "constraint_violating_value": "I clip myself onto auto-belay",
+      "ordinary_predicate": "post_climb_drink",
+      "ordinary_value": "I usually buy ginger ale afterward",
+      "ordinary_new_value": "I switched to iced tea afterward",
+      "ordinary_speculated_value": "I might start getting lemonade afterward",
+      "background_predicate": "preferred_wall_zone",
+      "background_value": "I like the slab corner upstairs",
+      "dialogue_a": [
+        "I switched my usual post-climb drink to iced tea after sessions.",
+        "I wait for staff before using the auto-belay lane near the entrance.",
+        "I noticed the new purple route has really interesting footholds today."
+      ],
+      "dialogue_b": [
+        "I might start getting lemonade after climbing, but I have not settled on it.",
+        "I want to clip myself onto the auto-belay so I can start right away.",
+        "I saw the training boards were less crowded than usual this evening."
+      ],
+      "episode_id": "ep_029",
+      "setting": "a climbing gym"
+    },
+    {
+      "constraint_predicate": "lead_wall_clearance",
+      "constraint_value": "cannot enter lead wall during route resetting",
+      "constraint_compatible_value": "I warm up on the training boards instead",
+      "constraint_violating_value": "I go climb in the closed lead section now",
+      "ordinary_predicate": "chalk_bucket_preference",
+      "ordinary_value": "I usually bring a loose chalk bucket",
+      "ordinary_new_value": "I switched to a chalk ball today",
+      "ordinary_speculated_value": "I might start using a chalk ball",
+      "background_predicate": "locker_row_choice",
+      "background_value": "I usually pick lockers near row C",
+      "dialogue_a": [
+        "I switched from my loose chalk bucket to a chalk ball today.",
+        "I know the lead wall is closed, so I'll warm up on the training boards instead.",
+        "I love how the big windows make the bouldering area feel brighter in here."
+      ],
+      "dialogue_b": [
+        "I might start using a chalk ball instead of my usual setup.",
+        "I want to head into the closed lead section and climb there right now.",
+        "I like that the benches near the cubbies give me space to sort my gear."
+      ],
+      "episode_id": "ep_030",
+      "setting": "a climbing gym"
+    },
+    {
+      "constraint_predicate": "lead_wall_clearance_status",
+      "constraint_value": "not cleared for lead wall use",
+      "constraint_compatible_value": "I stick to top-rope routes",
+      "constraint_violating_value": "I use the lead wall tonight",
+      "ordinary_predicate": "preferred_warmup_area",
+      "ordinary_value": "I usually start on the slab",
+      "ordinary_new_value": "I start in the training cave now",
+      "ordinary_speculated_value": "I might start on the moon board",
+      "background_predicate": "gear_storage_spot",
+      "background_value": "I keep my chalk bucket in cubby 14",
+      "dialogue_a": [
+        "I've switched my warmup routine and start in the training cave now.",
+        "I haven't passed lead clearance, so I'm sticking to top-rope routes tonight.",
+        "I'm impressed by how quiet the mezzanine feels during the late session."
+      ],
+      "dialogue_b": [
+        "I might start on the moon board today if it's not too crowded.",
+        "I want to hop on the lead wall tonight, so point me to a good route.",
+        "I like how the new mats make the stretching corner feel less cramped."
+      ],
+      "episode_id": "ep_031",
+      "setting": "a climbing gym"
+    },
+    {
+      "constraint_predicate": "dyno_booking_window",
+      "constraint_value": "club dyno runs require weekday evening slots",
+      "constraint_compatible_value": "I book dyno sessions on weekday evenings",
+      "constraint_violating_value": "I want a Saturday afternoon dyno slot",
+      "ordinary_predicate": "preferred_convoy_meetup_spot",
+      "ordinary_value": "I usually meet at the riverside fuel station",
+      "ordinary_new_value": "I now meet at the old tram depot",
+      "ordinary_speculated_value": "I might switch to the old tram depot",
+      "background_predicate": "garage_bay_assignment",
+      "background_value": "I keep my tools in bay fourteen",
+      "dialogue_a": [
+        "I've decided to meet the convoy at the old tram depot from now on.",
+        "I can make the dyno run Thursday evening, so please pencil me in there.",
+        "I spent half an hour admiring the vintage rally plaques in the clubhouse."
+      ],
+      "dialogue_b": [
+        "I might start meeting everyone at the old tram depot, but I'm not settled yet.",
+        "I want a Saturday afternoon dyno slot for my coupe next month.",
+        "I walked around the paddock and took photos of the club's project cars."
+      ],
+      "episode_id": "ep_032",
+      "setting": "a car club"
+    },
+    {
+      "constraint_predicate": "guest_vehicle_limit",
+      "constraint_value": "club rules allow only one guest car per member",
+      "constraint_compatible_value": "I bring only one guest car to meets",
+      "constraint_violating_value": "I bring two guest cars to the rally",
+      "ordinary_predicate": "preferred_meetup_spot",
+      "ordinary_value": "I usually park by the east fence",
+      "ordinary_new_value": "I now prefer the shaded upper lot",
+      "ordinary_speculated_value": "I might start parking near the timing booth",
+      "background_predicate": "project_car_color",
+      "background_value": "my coupe is painted dark green",
+      "dialogue_a": [
+        "I\u2019m switching my usual spot and parking in the shaded upper lot from now on.",
+        "I\u2019m bringing just one guest car to Saturday\u2019s meet, so I\u2019m within the club limit.",
+        "I love how the new clubhouse mural looks beside the tool shed."
+      ],
+      "dialogue_b": [
+        "I might start parking near the timing booth, but I haven\u2019t settled on it yet.",
+        "I want to bring two guest cars to the rally and park them together.",
+        "I\u2019m hoping the announcer uses the shorter route names this month."
+      ],
+      "episode_id": "ep_033",
+      "setting": "a car club"
+    },
+    {
+      "constraint_predicate": "garage_access_window",
+      "constraint_value": "member garage access ends at 9 PM",
+      "constraint_compatible_value": "I arrive before the garage closes",
+      "constraint_violating_value": "I enter the garage after 9 PM",
+      "ordinary_predicate": "favorite_convoy_route",
+      "ordinary_value": "I usually prefer the ridge loop",
+      "ordinary_new_value": "I now prefer the river bypass",
+      "ordinary_speculated_value": "I might prefer the harbor stretch",
+      "background_predicate": "showcase_vehicle",
+      "background_value": "I bring the silver hatchback to meets",
+      "dialogue_a": [
+        "I've switched my favorite convoy route to the river bypass from now on.",
+        "I can get to the member garage by eight-thirty, so that timing works.",
+        "I'm polishing my wheels tonight before the club lineup."
+      ],
+      "dialogue_b": [
+        "I might start liking the harbor stretch more, but I'm not settled yet.",
+        "I want to roll into the member garage around nine-thirty after work.",
+        "I'm bringing my camera to catch the arrivals at the lot."
+      ],
+      "episode_id": "ep_034",
+      "setting": "a car club"
+    },
+    {
+      "constraint_predicate": "tow_vehicle_policy",
+      "constraint_value": "club rules forbid towing non-member cars",
+      "constraint_compatible_value": "I only tow cars owned by members",
+      "constraint_violating_value": "I tow a friend's non-member hatchback",
+      "ordinary_predicate": "preferred_convoy_position",
+      "ordinary_value": "I usually drive near the back",
+      "ordinary_new_value": "I now prefer leading the convoy",
+      "ordinary_speculated_value": "I might start driving in the middle",
+      "background_predicate": "detailing_bucket_color",
+      "background_value": "my wash bucket is bright orange",
+      "dialogue_a": [
+        "I used to hang near the back, but now I want to lead the convoy.",
+        "I only bring my tow strap when I'm helping member-owned cars at club meets.",
+        "I spent half the morning admiring the vintage coupes by the clubhouse fence."
+      ],
+      "dialogue_b": [
+        "I might start driving in the middle of the convoy next month, but I'm undecided.",
+        "I want to tow my neighbor's non-member hatchback into the club lot tonight.",
+        "I took a long look at the new banner hanging above the parts swap tables."
+      ],
+      "episode_id": "ep_035",
+      "setting": "a car club"
+    },
+    {
+      "constraint_predicate": "trailer_storage_policy",
+      "constraint_value": "club lot forbids overnight trailer parking",
+      "constraint_compatible_value": "I unload my trailer and take it home",
+      "constraint_violating_value": "leave my trailer in the club lot overnight",
+      "ordinary_predicate": "favorite_autocross_class",
+      "ordinary_value": "I usually enter street touring hatch",
+      "ordinary_new_value": "I now prefer classic rear wheel class",
+      "ordinary_speculated_value": "I might switch to novice exhibition class",
+      "background_predicate": "garage_bay_marker",
+      "background_value": "my bay marker is painted teal",
+      "dialogue_a": [
+        "I\u2019m switching my entry this season to the classic rear wheel class.",
+        "I\u2019ll unload the spare wheels at the lot, then tow the trailer back home tonight.",
+        "I\u2019m bringing the old timing board to the clubhouse before the social starts."
+      ],
+      "dialogue_b": [
+        "I might try the novice exhibition class next month if my schedule stays open.",
+        "I want to leave my trailer in the club lot overnight after the dyno day.",
+        "I\u2019m planning to arrive early to watch the parade lap lineup."
+      ],
+      "episode_id": "ep_036",
+      "setting": "a car club"
+    },
+    {
+      "constraint_predicate": "tripod_policy",
+      "constraint_value": "tripods are banned during club walks",
+      "constraint_compatible_value": "I bring a monopod on club walks",
+      "constraint_violating_value": "I bring a tripod on club walks",
+      "ordinary_predicate": "preferred_meeting_night",
+      "ordinary_value": "I usually attend on Tuesdays",
+      "ordinary_new_value": "I now attend on Thursdays",
+      "ordinary_speculated_value": "I might switch to Thursdays",
+      "background_predicate": "camera_brand",
+      "background_value": "I shoot with a Fujifilm body",
+      "dialogue_a": [
+        "I used to come Tuesdays, but I'm switching to Thursdays starting this month.",
+        "I\u2019ll bring my monopod on the club walk since tripods aren\u2019t allowed there.",
+        "I loved the print critique tonight; the landscape set had great contrast."
+      ],
+      "dialogue_b": [
+        "I might switch to Thursdays, though I haven\u2019t settled on that yet.",
+        "I want to bring my tripod on the club walk and use it by the river.",
+        "I enjoyed chatting in the lobby before the slideshow started tonight."
+      ],
+      "episode_id": "ep_037",
+      "setting": "a camera club"
+    },
+    {
+      "constraint_predicate": "tripod_storage_rule",
+      "constraint_value": "tripods must stay in locker bay",
+      "constraint_compatible_value": "I leave my tripod in the locker bay",
+      "constraint_violating_value": "I keep my tripod beside my seat",
+      "ordinary_predicate": "preferred_print_finish",
+      "ordinary_value": "I usually choose matte prints",
+      "ordinary_new_value": "I switched to glossy prints",
+      "ordinary_speculated_value": "I might start choosing glossy prints",
+      "background_predicate": "camera_strap_style",
+      "background_value": "I use a woven green strap",
+      "dialogue_a": [
+        "I switched my competition prints to glossy from now on.",
+        "I always leave my tripod in the locker bay before critiques.",
+        "I like how the clubroom corkboard displays last month's winning shots."
+      ],
+      "dialogue_b": [
+        "I might start choosing glossy prints for the next showcase.",
+        "I want to keep my tripod beside my seat during the lecture.",
+        "I enjoy the chatter before the slideshow starts each Thursday."
+      ],
+      "episode_id": "ep_038",
+      "setting": "a camera club"
+    },
+    {
+      "constraint_predicate": "studio_backdrop_access",
+      "constraint_value": "members may use only the blue backdrop",
+      "constraint_compatible_value": "I shoot portraits against the blue backdrop",
+      "constraint_violating_value": "I use the black velvet backdrop",
+      "ordinary_predicate": "lens_filter_preference",
+      "ordinary_value": "I usually keep a UV filter on",
+      "ordinary_new_value": "I now prefer shooting without any filter",
+      "ordinary_speculated_value": "I might switch to a polarizer soon",
+      "background_predicate": "club_meeting_night",
+      "background_value": "the club meets on Thursday evenings",
+      "dialogue_a": [
+        "I used to leave a UV filter on, but now I prefer shooting without any filter.",
+        "I\u2019m setting up my portrait session against the blue backdrop again tonight.",
+        "I\u2019m bringing the old light meter because the lounge display table looks empty."
+      ],
+      "dialogue_b": [
+        "I might switch to a polarizer soon, though I haven\u2019t settled on that yet.",
+        "I want to reserve the black velvet backdrop for my headshots this weekend.",
+        "I\u2019m arriving early to browse the zine shelf near the entrance."
+      ],
+      "episode_id": "ep_039",
+      "setting": "a camera club"
+    },
+    {
+      "constraint_predicate": "tripod_storage_policy",
+      "constraint_value": "tripods must stay in locker bay",
+      "constraint_compatible_value": "I leave my tripod in locker bay",
+      "constraint_violating_value": "I keep my tripod beside my chair",
+      "ordinary_predicate": "favorite_lens_focal_range",
+      "ordinary_value": "I usually favor 85mm primes",
+      "ordinary_new_value": "I switched to preferring 35mm lenses",
+      "ordinary_speculated_value": "I might start favoring 50mm lenses",
+      "background_predicate": "camera_bag_style",
+      "background_value": "I carry a waxed canvas satchel",
+      "dialogue_a": [
+        "I switched over and now I prefer shooting club nights with a 35mm lens.",
+        "I leave my tripod in the locker bay and just carry my camera upstairs.",
+        "I like how the bulletin board finally labels the darkroom signup slots clearly."
+      ],
+      "dialogue_b": [
+        "I might start favoring a 50mm lens for portraits, but I have not settled on it.",
+        "I want to keep my tripod beside my chair during the critique tonight.",
+        "I enjoy how the gallery wall rotates member prints every other month."
+      ],
+      "episode_id": "ep_040",
+      "setting": "a camera club"
+    },
+    {
+      "constraint_predicate": "tripod_location_rule",
+      "constraint_value": "tripods stay behind the taped line",
+      "constraint_compatible_value": "I set my tripod behind the taped line",
+      "constraint_violating_value": "I place my tripod in the front aisle",
+      "ordinary_predicate": "print_finish_preference",
+      "ordinary_value": "I usually prefer matte prints",
+      "ordinary_new_value": "I prefer glossy prints now",
+      "ordinary_speculated_value": "I might switch to glossy prints",
+      "background_predicate": "camera_bag_color",
+      "background_value": "my camera bag is forest green",
+      "dialogue_a": [
+        "I've decided to order glossy prints for my club portfolio from now on.",
+        "I kept my tripod behind the taped line during tonight's lighting demo.",
+        "I loved how the old projector made everyone's slide colors look warmer."
+      ],
+      "dialogue_b": [
+        "I might switch to glossy prints, but I'm still comparing sample packs.",
+        "I want to set my tripod in the front aisle for the group portrait.",
+        "I enjoyed the chatter around the raffle table before the critique started."
+      ],
+      "episode_id": "ep_041",
+      "setting": "a camera club"
+    },
+    {
+      "constraint_predicate": "booking_end_time",
+      "constraint_value": "all hall bookings must end by 10 pm",
+      "constraint_compatible_value": "I schedule the committee meeting to finish by 9:30 pm",
+      "constraint_violating_value": "I want the committee meeting booked until 11 pm",
+      "ordinary_predicate": "preferred_refreshment",
+      "ordinary_value": "I usually serve tea at committee meetings",
+      "ordinary_new_value": "I now want coffee served at committee meetings",
+      "ordinary_speculated_value": "I might switch to coffee for committee meetings",
+      "background_predicate": "storage_cupboard_key_holder",
+      "background_value": "Janet keeps the storage cupboard key",
+      "dialogue_a": [
+        "I've decided to serve coffee instead of tea at our committee meetings from now on.",
+        "I'll set the agenda so we finish by 9:30 pm and lock up on time.",
+        "I want the noticeboard moved closer to the entrance for easier reading."
+      ],
+      "dialogue_b": [
+        "I might switch to coffee for the committee meetings, but I'm not settled yet.",
+        "I want to book the hall for our committee meeting until 11 pm next Thursday.",
+        "I think the folding chairs look better stacked along the side wall."
+      ],
+      "episode_id": "ep_042",
+      "setting": "a village hall committee"
+    },
+    {
+      "constraint_predicate": "hall_booking_window",
+      "constraint_value": "bookings must end by 10 pm",
+      "constraint_compatible_value": "I schedule committee meetings to finish by 9:30 pm",
+      "constraint_violating_value": "I want to book the hall until midnight",
+      "ordinary_predicate": "noticeboard_header_style",
+      "ordinary_value": "I use a handwritten chalk heading",
+      "ordinary_new_value": "I now use printed card headings",
+      "ordinary_speculated_value": "I might switch to painted wooden headings",
+      "background_predicate": "key_cabinet_location",
+      "background_value": "the spare keys are in the foyer cupboard",
+      "dialogue_a": [
+        "I've decided to use printed card headings on the noticeboard from now on.",
+        "I can move the agenda review earlier so our committee meeting ends by half past nine.",
+        "I swept the stage after the jumble sale and stacked the extra chairs neatly."
+      ],
+      "dialogue_b": [
+        "I might switch the noticeboard to painted wooden headings, though I'm not settled on it.",
+        "I want to book the hall until midnight for the lantern parade planning session.",
+        "I brought the raffle tin back and left it beside the kettle in the kitchen."
+      ],
+      "episode_id": "ep_043",
+      "setting": "a village hall committee"
+    },
+    {
+      "constraint_predicate": "hall_key_return_deadline",
+      "constraint_value": "keys must be returned by 9 pm",
+      "constraint_compatible_value": "I always drop the keys back before nine",
+      "constraint_violating_value": "I want to keep the keys overnight",
+      "ordinary_predicate": "raffle_prize_theme",
+      "ordinary_value": "the raffle prizes are gardening items",
+      "ordinary_new_value": "the raffle prizes are kitchen gadgets",
+      "ordinary_speculated_value": "the raffle prizes could be local craft hampers",
+      "background_predicate": "stage_curtain_colour",
+      "background_value": "the stage curtains are dark green",
+      "dialogue_a": [
+        "I've changed the raffle prizes to kitchen gadgets for the summer fete.",
+        "I always return the hall keys before nine after committee meetings.",
+        "I think the stackable chairs looked tidier after last week's cleanup."
+      ],
+      "dialogue_b": [
+        "I might make the raffle prizes local craft hampers, but I'm still weighing it up.",
+        "I want to keep the hall keys overnight after the quiz setup.",
+        "I noticed the kettle in the side room boils much faster now."
+      ],
+      "episode_id": "ep_044",
+      "setting": "a village hall committee"
+    },
+    {
+      "constraint_predicate": "loan_duration_limit",
+      "constraint_value": "power tools must be returned within three days",
+      "constraint_compatible_value": "I schedule weekend projects around the three-day return window",
+      "constraint_violating_value": "I want to keep the tile saw for two weeks",
+      "ordinary_predicate": "preferred_checkout_time",
+      "ordinary_value": "I usually come by right after lunch",
+      "ordinary_new_value": "I now prefer evening pickups after work",
+      "ordinary_speculated_value": "I might start coming early on Saturday mornings",
+      "background_predicate": "membership_tier",
+      "background_value": "I have a standard borrower membership",
+      "dialogue_a": [
+        "I used to stop by after lunch, but now I prefer evening pickups after work.",
+        "I can plan my shelf-building project so the drill goes back within the three-day window.",
+        "I like how the clamps are sorted by size near the back wall."
+      ],
+      "dialogue_b": [
+        "I might start coming early on Saturday mornings, though I have not settled on that yet.",
+        "I want to keep the tile saw for two weeks for a long bathroom project.",
+        "I really like the new labels on the bins by the fasteners aisle."
+      ],
+      "episode_id": "ep_045",
+      "setting": "a tool-lending library"
+    },
+    {
+      "constraint_predicate": "pickup_authorization_method",
+      "constraint_value": "tools must be picked up by cardholder only",
+      "constraint_compatible_value": "I collect reservations myself at the desk",
+      "constraint_violating_value": "my neighbor picks up my reserved tile cutter",
+      "ordinary_predicate": "preferred_notification_channel",
+      "ordinary_value": "I usually want text message alerts",
+      "ordinary_new_value": "I want email alerts instead",
+      "ordinary_speculated_value": "I might switch to phone call reminders",
+      "background_predicate": "storage_space_type",
+      "background_value": "I keep borrowed tools in a hallway closet",
+      "dialogue_a": [
+        "I want email alerts instead of text messages for overdue notices and pickup updates.",
+        "I can stop by myself after work to collect the reserved drain auger.",
+        "I noticed the sharpening station was moved closer to the front counter today."
+      ],
+      "dialogue_b": [
+        "I might switch to phone call reminders, but I have not settled on that yet.",
+        "I need my neighbor to pick up my reserved tile cutter this afternoon.",
+        "I saw the seed spreaders lined up by the return bins when I walked in."
+      ],
+      "episode_id": "ep_046",
+      "setting": "a tool-lending library"
+    },
+    {
+      "constraint_predicate": "reservation_notice_requirement",
+      "constraint_value": "same-day reservations are not permitted",
+      "constraint_compatible_value": "I place holds at least one day ahead",
+      "constraint_violating_value": "I want to reserve a drill for this afternoon",
+      "ordinary_predicate": "preferred_workbench_zone",
+      "ordinary_value": "I usually choose the back sanding bench",
+      "ordinary_new_value": "I now prefer the window-side assembly bench",
+      "ordinary_speculated_value": "I might switch to the window-side assembly bench",
+      "background_predicate": "locker_label_color",
+      "background_value": "my locker tag is orange",
+      "dialogue_a": [
+        "I want to switch to the window-side assembly bench from now on.",
+        "I can place my tile cutter hold tomorrow, since same-day reservations are off limits.",
+        "I noticed the clamp rack near the entrance is much tidier this week."
+      ],
+      "dialogue_b": [
+        "I might start using the window-side assembly bench, but I have not settled on it.",
+        "I want to reserve a drill for this afternoon before I stop by.",
+        "I like how the return counter has clearer signage now."
+      ],
+      "episode_id": "ep_047",
+      "setting": "a tool-lending library"
+    },
+    {
+      "constraint_predicate": "reservation_pickup_window",
+      "constraint_value": "holds expire after two days",
+      "constraint_compatible_value": "I pick up holds within forty-eight hours",
+      "constraint_violating_value": "I will collect my hold next week",
+      "ordinary_predicate": "preferred_workbench_area",
+      "ordinary_value": "I usually use the back assembly bench",
+      "ordinary_new_value": "I now prefer the window-side repair table",
+      "ordinary_speculated_value": "I might switch to the window-side repair table",
+      "background_predicate": "locker_label_style",
+      "background_value": "my locker tag uses blue tape",
+      "dialogue_a": [
+        "I want to switch and use the window-side repair table from now on.",
+        "I can swing by tomorrow afternoon, so my reserved soldering kit stays within the pickup window.",
+        "I noticed the clamp rack got reorganized, and the labels look much clearer now."
+      ],
+      "dialogue_b": [
+        "I might start using the window-side repair table, but I have not settled on it yet.",
+        "I need you to keep my reserved tile cutter aside until next Thursday evening.",
+        "I like how the return counter has that new rubber mat for setting tools down."
+      ],
+      "episode_id": "ep_048",
+      "setting": "a tool-lending library"
+    },
+    {
+      "constraint_predicate": "renewal_cap",
+      "constraint_value": "borrowed items can be renewed only once",
+      "constraint_compatible_value": "I renew my drill only a single time",
+      "constraint_violating_value": "I renew the tile cutter a second time",
+      "ordinary_predicate": "preferred_checkout_window",
+      "ordinary_value": "I usually check out tools on Thursday evenings",
+      "ordinary_new_value": "I now prefer Saturday mornings for checkout",
+      "ordinary_speculated_value": "I might switch to Tuesday afternoons for checkout",
+      "background_predicate": "locker_location_preference",
+      "background_value": "I prefer the side lockers near reception",
+      "dialogue_a": [
+        "I want to switch my usual checkout time to Saturday mornings from now on.",
+        "I only need one renewal on the drill, so please note that plan.",
+        "I like how the pegboard labels make the fasteners aisle easier to browse."
+      ],
+      "dialogue_b": [
+        "I might start coming by on Tuesday afternoons, but I have not settled on that.",
+        "I want to renew the tile cutter again for another week after the first renewal.",
+        "I noticed the return counter line moves faster when the bins are clearly marked."
+      ],
+      "episode_id": "ep_049",
+      "setting": "a tool-lending library"
+    },
+    {
+      "constraint_predicate": "rehearsal_arrival_time",
+      "constraint_value": "must arrive by 6:45 pm",
+      "constraint_compatible_value": "I get to rehearsal before 6:45 pm",
+      "constraint_violating_value": "arrive at 7:10 pm",
+      "ordinary_predicate": "preferred_section",
+      "ordinary_value": "I sing with the altos",
+      "ordinary_new_value": "I sing with the tenors",
+      "ordinary_speculated_value": "I might sing with the sopranos",
+      "background_predicate": "folder_color",
+      "background_value": "my choir folder is black",
+      "dialogue_a": [
+        "I switched sections today, and now I sing with the tenors.",
+        "I can still make it there before 6:45, even with traffic downtown.",
+        "I loved how the director shaped the final cadence tonight."
+      ],
+      "dialogue_b": [
+        "I might try singing with the sopranos for the spring concert.",
+        "I need to come in at 7:10 tonight, so please start my part later.",
+        "I really liked the warmups with the round in three parts."
+      ],
+      "episode_id": "ep_050",
+      "setting": "a choir"
+    },
+    {
+      "constraint_predicate": "robe_storage_policy",
+      "constraint_value": "robes must stay in the choir closet",
+      "constraint_compatible_value": "I return my robe after rehearsal",
+      "constraint_violating_value": "I take my robe home overnight",
+      "ordinary_predicate": "warmup_spot_preference",
+      "ordinary_value": "I usually warm up by the side piano",
+      "ordinary_new_value": "I warm up near the back risers now",
+      "ordinary_speculated_value": "I might start warming up near the back risers",
+      "background_predicate": "section_assignment",
+      "background_value": "I sing in the alto section",
+      "dialogue_a": [
+        "I switched my warmup spot and now I use the back risers instead.",
+        "I always hang my robe back in the choir closet before I leave.",
+        "I loved how the director shaped the final cadence tonight."
+      ],
+      "dialogue_b": [
+        "I might start warming up by the back risers, but I have not settled on it.",
+        "I want to take my robe home overnight so I can steam it myself.",
+        "I really liked the new folder labels on the rehearsal shelves."
+      ],
+      "episode_id": "ep_051",
+      "setting": "a choir"
+    },
+    {
+      "constraint_predicate": "sheet_music_checkout_limit",
+      "constraint_value": "scores must stay in the rehearsal hall",
+      "constraint_compatible_value": "I mark my passages during rehearsal only",
+      "constraint_violating_value": "I take the tenor score home overnight",
+      "ordinary_predicate": "warmup_arrival_time",
+      "ordinary_value": "I usually arrive twenty minutes early",
+      "ordinary_new_value": "I now arrive just five minutes early",
+      "ordinary_speculated_value": "I might start arriving ten minutes early",
+      "background_predicate": "section_position",
+      "background_value": "I stand on the back riser left",
+      "dialogue_a": [
+        "I used to come twenty minutes early, but now I only get there five minutes before warmups.",
+        "I keep my score in the rehearsal hall and pencil in my cues once everyone settles.",
+        "I love how the altos lock in during the last chorus when the room finally rings."
+      ],
+      "dialogue_b": [
+        "I might start showing up ten minutes early, though I have not settled on that yet.",
+        "I want to take the tenor score home overnight so I can drill the entrances alone.",
+        "I really like when the director splits us into quartets for the echo passages."
+      ],
+      "episode_id": "ep_052",
+      "setting": "a choir"
+    },
+    {
+      "constraint_predicate": "music_folder_checkout_limit",
+      "constraint_value": "folders must stay in the rehearsal hall",
+      "constraint_compatible_value": "I review my folder during rehearsal breaks",
+      "constraint_violating_value": "I take the folder home overnight",
+      "ordinary_predicate": "warmup_arrival_window",
+      "ordinary_value": "I usually arrive twenty minutes early",
+      "ordinary_new_value": "I now arrive just ten minutes early",
+      "ordinary_speculated_value": "I might start arriving thirty minutes early",
+      "background_predicate": "section_position_preference",
+      "background_value": "I prefer standing near the back row",
+      "dialogue_a": [
+        "I\u2019m changing my routine and now I arrive just ten minutes before warmups.",
+        "I keep my music folder in the hall and review it during rehearsal breaks.",
+        "I loved how the altos blended with the tenors in tonight\u2019s final piece."
+      ],
+      "dialogue_b": [
+        "I might start arriving thirty minutes early if traffic stays this light.",
+        "I want to take my music folder home overnight to mark the tricky entrances.",
+        "I really enjoyed the new director\u2019s joke before we started sight-reading."
+      ],
+      "episode_id": "ep_053",
+      "setting": "a choir"
+    },
+    {
+      "constraint_predicate": "robe_storage_access_window",
+      "constraint_value": "robe room opens only after warmups",
+      "constraint_compatible_value": "I pick up my robe after warmups",
+      "constraint_violating_value": "I collect my robe before warmups",
+      "ordinary_predicate": "sectional_break_seat_preference",
+      "ordinary_value": "I usually sit by the side piano",
+      "ordinary_new_value": "I am switching to the back riser bench",
+      "ordinary_speculated_value": "I might start sitting near the back risers",
+      "background_predicate": "concert_call_time",
+      "background_value": "I arrive forty minutes before call",
+      "dialogue_a": [
+        "I am switching to the back riser bench during sectional break from now on.",
+        "I will grab my robe after warmups since the storage room opens then.",
+        "I loved how the tenors nailed that echo in tonight's final piece."
+      ],
+      "dialogue_b": [
+        "I might start sitting near the back risers during sectional break, but I have not settled it.",
+        "I want to collect my robe before warmups so I can fix the hem early.",
+        "I really liked the new semicircle spacing for the closing anthem tonight."
+      ],
+      "episode_id": "ep_054",
+      "setting": "a choir"
+    },
+    {
+      "constraint_predicate": "material_storage_limit",
+      "constraint_value": "solvents must stay in the ventilated cabinet",
+      "constraint_compatible_value": "I return solvent bottles to the ventilated cabinet",
+      "constraint_violating_value": "I leave solvent bottles on my bench overnight",
+      "ordinary_predicate": "project_box_label",
+      "ordinary_value": "my parts box is labeled Kiteframe",
+      "ordinary_new_value": "my parts box is labeled Lantern Arm",
+      "ordinary_speculated_value": "my parts box might be labeled Rivet Cart",
+      "background_predicate": "entry_method",
+      "background_value": "I enter with a blue key fob",
+      "dialogue_a": [
+        "I relabeled my parts box to Lantern Arm this afternoon.",
+        "I put the acetone back in the ventilated cabinet after cleaning the jig.",
+        "I spent half an hour tuning the laser cutter mirrors today."
+      ],
+      "dialogue_b": [
+        "I might rename my parts box to Rivet Cart, but I have not settled on it.",
+        "I want to leave the solvent bottles on my bench overnight for tomorrow's assembly.",
+        "I spent the evening sanding a plywood panel near the clamp rack."
+      ],
+      "episode_id": "ep_055",
+      "setting": "a makerspace"
+    },
+    {
+      "constraint_predicate": "laser_cutter_booking_window",
+      "constraint_value": "weekday bookings only after 6 pm",
+      "constraint_compatible_value": "I reserve laser cutter time on weekday evenings",
+      "constraint_violating_value": "I want a Saturday morning laser cutter booking",
+      "ordinary_predicate": "preferred_soldering_station",
+      "ordinary_value": "I usually use station seven",
+      "ordinary_new_value": "I switched to station three",
+      "ordinary_speculated_value": "I might start using station five",
+      "background_predicate": "toolbox_sticker_shape",
+      "background_value": "my toolbox has a hexagon sticker",
+      "dialogue_a": [
+        "I switched over to soldering station three for my electronics builds.",
+        "I only book the laser cutter on weekday evenings, so tonight works for me.",
+        "I like how the pegboard wall keeps the clamps easy to spot."
+      ],
+      "dialogue_b": [
+        "I might start using soldering station five, but I have not settled on it.",
+        "I want a Saturday morning laser cutter booking for my plywood panels.",
+        "I enjoy the big worktables near the windows for layout work."
+      ],
+      "episode_id": "ep_056",
+      "setting": "a makerspace"
+    },
+    {
+      "constraint_predicate": "guest_access_policy",
+      "constraint_value": "guests must stay in supervised areas",
+      "constraint_compatible_value": "I bring visitors only to the front demo bay",
+      "constraint_violating_value": "I bring guests into the machine room alone",
+      "ordinary_predicate": "project_storage_method",
+      "ordinary_value": "I keep parts in stackable tins",
+      "ordinary_new_value": "I switched to clear drawer organizers",
+      "ordinary_speculated_value": "I might switch to labeled zipper pouches",
+      "background_predicate": "laser_cutter_orientation",
+      "background_value": "I prefer the west-facing laser cutter",
+      "dialogue_a": [
+        "I switched my project parts over to clear drawer organizers this week.",
+        "I only show visitors the front demo bay when they stop by.",
+        "I spent half the afternoon tuning the wobble out of the band saw fence."
+      ],
+      "dialogue_b": [
+        "I might switch my project parts to labeled zipper pouches, but I have not decided.",
+        "I want to bring my friends into the machine room by myself after lunch.",
+        "I am looking for a quieter corner table to sketch enclosure ideas tonight."
+      ],
+      "episode_id": "ep_057",
+      "setting": "a makerspace"
+    },
+    {
+      "constraint_predicate": "material_storage_zone",
+      "constraint_value": "solvents stay in the ventilated cabinet",
+      "constraint_compatible_value": "I return solvent bottles to the ventilated cabinet",
+      "constraint_violating_value": "I keep solvent bottles on my workbench",
+      "ordinary_predicate": "project_box_color",
+      "ordinary_value": "my project box is orange",
+      "ordinary_new_value": "my project box is charcoal gray",
+      "ordinary_speculated_value": "my project box might be teal",
+      "background_predicate": "preferred_workbench_corner",
+      "background_value": "I usually choose the back-left bench",
+      "dialogue_a": [
+        "I switched my project box to charcoal gray after the old lid cracked.",
+        "I put the acetone back in the ventilated cabinet before heading to laser cutting.",
+        "I spent half an hour tuning the drill press fence for cleaner repeat cuts."
+      ],
+      "dialogue_b": [
+        "I might repaint my project box teal, but I have not settled on it.",
+        "I want to keep the solvent bottles on my workbench during this whole build.",
+        "I am looking for a quieter corner near the sewing machines this afternoon."
+      ],
+      "episode_id": "ep_058",
+      "setting": "a makerspace"
+    },
+    {
+      "constraint_predicate": "ride_start_location",
+      "constraint_value": "club rides must start at the town square",
+      "constraint_compatible_value": "I meet the group at the town square",
+      "constraint_violating_value": "the ride starts from my apartment building",
+      "ordinary_predicate": "preferred_weekend_ride",
+      "ordinary_value": "I usually join the Saturday morning ride",
+      "ordinary_new_value": "I switched to the Sunday endurance ride",
+      "ordinary_speculated_value": "I might start joining the Sunday endurance ride",
+      "background_predicate": "bike_storage_spot",
+      "background_value": "I keep my bike in the hallway rack",
+      "dialogue_a": [
+        "I switched over and now I join the Sunday endurance ride instead.",
+        "I still meet the group at the town square before we roll out.",
+        "I liked the new route by the river because the pavement was smooth."
+      ],
+      "dialogue_b": [
+        "I might start joining the Sunday endurance ride, but I have not settled it yet.",
+        "I want the ride to start from my apartment building this weekend.",
+        "I enjoyed chatting at the caf\u00e9 stop after last night's club social."
+      ],
+      "episode_id": "ep_059",
+      "setting": "a cycling club"
+    },
+    {
+      "constraint_predicate": "guest_ride_limit",
+      "constraint_value": "guests may join only one trial ride",
+      "constraint_compatible_value": "I invite guests only for their single trial ride",
+      "constraint_violating_value": "my friend joins every Saturday as a guest",
+      "ordinary_predicate": "post_ride_hangout_spot",
+      "ordinary_value": "I usually stay at the canal cafe",
+      "ordinary_new_value": "I now stay at the depot bakery",
+      "ordinary_speculated_value": "I might start staying at the depot bakery",
+      "background_predicate": "bike_storage_location",
+      "background_value": "I keep my bike in the hallway rack",
+      "dialogue_a": [
+        "I\u2019m switching my usual post-ride stop to the depot bakery from now on.",
+        "I only bring coworkers for their one allowed trial ride with the club.",
+        "I enjoyed the new riverside loop because the tailwind made the return easy."
+      ],
+      "dialogue_b": [
+        "I might start hanging out at the depot bakery after rides, but I have not settled it.",
+        "I want my neighbor to keep joining every Saturday as my guest all season.",
+        "I\u2019m planning to arrive early to help set out the route arrows."
+      ],
+      "episode_id": "ep_060",
+      "setting": "a cycling club"
+    },
+    {
+      "constraint_predicate": "post_ride_departure_method",
+      "constraint_value": "club insurance requires me to leave by train",
+      "constraint_compatible_value": "I wheel my bike to the station after rides",
+      "constraint_violating_value": "I drive the club van home after rides",
+      "ordinary_predicate": "preferred_training_loop",
+      "ordinary_value": "I usually favor the canal towpath loop",
+      "ordinary_new_value": "I now prefer the ridge windmill circuit",
+      "ordinary_speculated_value": "I might switch to the ridge windmill circuit",
+      "background_predicate": "maintenance_role",
+      "background_value": "I bring the floor pump to meetups",
+      "dialogue_a": [
+        "I've decided to make the ridge windmill circuit my regular training loop now.",
+        "After the social ride, I always wheel my bike over to the station platform.",
+        "I liked how the new clubhouse noticeboard finally sorted routes by distance."
+      ],
+      "dialogue_b": [
+        "I might start using the ridge windmill circuit more, but I'm not settled yet.",
+        "I want to drive the club van home after the ride this Saturday.",
+        "I enjoyed the bell-ringing contest before the rollout last weekend."
+      ],
+      "episode_id": "ep_061",
+      "setting": "a cycling club"
+    },
+    {
+      "constraint_predicate": "post_ride_departure_deadline",
+      "constraint_value": "must leave clubhouse by 9:30 pm",
+      "constraint_compatible_value": "I roll out before the 9:30 closing time",
+      "constraint_violating_value": "stay in the clubhouse until 10:15 pm",
+      "ordinary_predicate": "preferred_regroup_landmark",
+      "ordinary_value": "the old canal lock gate",
+      "ordinary_new_value": "the red brick signal box",
+      "ordinary_speculated_value": "the mural under the bypass",
+      "background_predicate": "weekend_ride_start_point",
+      "background_value": "meet at the east car park",
+      "dialogue_a": [
+        "I want our regroup landmark changed to the red brick signal box from now on.",
+        "I can lock up quickly and roll out before the 9:30 closing time tonight.",
+        "I noticed the headwind eased once we turned past the reservoir."
+      ],
+      "dialogue_b": [
+        "I might use the mural under the bypass as our regroup landmark, but I have not settled it.",
+        "I want to stay in the clubhouse until 10:15 pm after the ride wraps up.",
+        "I enjoyed the smooth tarmac on the riverside stretch this evening."
+      ],
+      "episode_id": "ep_062",
+      "setting": "a cycling club"
+    },
+    {
+      "constraint_predicate": "lane_assignment",
+      "constraint_value": "must swim only in lane four",
+      "constraint_compatible_value": "I warm up in lane four",
+      "constraint_violating_value": "I switch to lane two",
+      "ordinary_predicate": "post_swim_hangout_spot",
+      "ordinary_value": "I usually sit by the trophy case",
+      "ordinary_new_value": "I now sit near the viewing window",
+      "ordinary_speculated_value": "I might sit near the viewing window",
+      "background_predicate": "goggles_case_color",
+      "background_value": "my goggles case is bright orange",
+      "dialogue_a": [
+        "I\u2019m changing my usual spot after practice and sitting near the viewing window now.",
+        "I\u2019ll do my warmup in lane four again before the main set starts.",
+        "I like how the starting blocks were polished this week."
+      ],
+      "dialogue_b": [
+        "I might start sitting near the viewing window after practice, but I haven\u2019t settled on it.",
+        "I want to move over and do my laps in lane two tonight.",
+        "I noticed the pace clock seems a little louder during evening sessions."
+      ],
+      "episode_id": "ep_063",
+      "setting": "a swimming club"
+    },
+    {
+      "constraint_predicate": "locker_access_window",
+      "constraint_value": "locker room access ends at 8 pm",
+      "constraint_compatible_value": "I collect my things before 8 pm",
+      "constraint_violating_value": "I leave my bag in the locker overnight",
+      "ordinary_predicate": "warmup_routine",
+      "ordinary_value": "I start with four easy lengths",
+      "ordinary_new_value": "I start with six easy lengths",
+      "ordinary_speculated_value": "I might start with two sprint lengths",
+      "background_predicate": "goggles_storage_spot",
+      "background_value": "I keep my goggles in the side pocket",
+      "dialogue_a": [
+        "I'm changing my warmup and starting with six easy lengths from now on.",
+        "I always collect my things before eight so I'm out of the locker room on time.",
+        "I like how the big wall clock is visible from the shallow end."
+      ],
+      "dialogue_b": [
+        "I might start with two sprint lengths before settling into the session tonight.",
+        "I want to leave my bag in the locker overnight after training finishes.",
+        "I usually hear the starting whistle clearly from the benches by the pool."
+      ],
+      "episode_id": "ep_064",
+      "setting": "a swimming club"
+    },
+    {
+      "constraint_predicate": "meeting_location_rule",
+      "constraint_value": "book group meetings must stay in the library lounge",
+      "constraint_compatible_value": "I arrive early to reserve seats in the library lounge",
+      "constraint_violating_value": "book group meets at my apartment instead",
+      "ordinary_predicate": "next_book_choice",
+      "ordinary_value": "I want to read a mystery novel next",
+      "ordinary_new_value": "I want to read a historical novel next",
+      "ordinary_speculated_value": "I might want to read a science fiction novel next",
+      "background_predicate": "discussion_role",
+      "background_value": "I usually lead the opening discussion question",
+      "dialogue_a": [
+        "I've changed my mind and want our next book to be historical fiction.",
+        "I can get there early and save our usual corner in the library lounge.",
+        "I loved how tonight's discussion wandered into everyone's favorite side characters."
+      ],
+      "dialogue_b": [
+        "I might be in the mood for science fiction next, but I'm not settled yet.",
+        "I want to host the next book group meeting at my apartment.",
+        "I really liked how many people brought annotated copies this time."
+      ],
+      "episode_id": "ep_065",
+      "setting": "a book group"
+    },
+    {
+      "constraint_predicate": "meeting_end_time",
+      "constraint_value": "book group must finish by 8:30 PM",
+      "constraint_compatible_value": "I leave right at 8:30 PM",
+      "constraint_violating_value": "meeting runs until 9:15 PM",
+      "ordinary_predicate": "preferred_discussion_role",
+      "ordinary_value": "I usually lead the opening questions",
+      "ordinary_new_value": "I now prefer taking notes instead",
+      "ordinary_speculated_value": "I might switch to summarizing chapters",
+      "background_predicate": "usual_seat_area",
+      "background_value": "I usually sit near the window",
+      "dialogue_a": [
+        "I've decided I want to take notes instead of leading the opening questions.",
+        "I need to head out right at 8:30, so let's cover my comments before then.",
+        "I loved how tonight's novel handled the storm scene in the middle chapters."
+      ],
+      "dialogue_b": [
+        "I might switch to summarizing chapters, but I'm still weighing how that feels.",
+        "I want us to keep the discussion going until 9:15 tonight so we can finish every point.",
+        "I really liked the mix of paperbacks and hardcovers stacked on the side table."
+      ],
+      "episode_id": "ep_066",
+      "setting": "a book group"
+    },
+    {
+      "constraint_predicate": "library_room_booking_window",
+      "constraint_value": "book group must leave by 8:45 PM",
+      "constraint_compatible_value": "I stack chairs and wrap up by 8:40",
+      "constraint_violating_value": "I keep the room until 9:30 PM",
+      "ordinary_predicate": "next_selection_format",
+      "ordinary_value": "I usually pick a short story collection",
+      "ordinary_new_value": "I switched to choosing a travel memoir",
+      "ordinary_speculated_value": "I might choose a travel memoir next",
+      "background_predicate": "annotation_style",
+      "background_value": "I mark favorite passages with blue tabs",
+      "dialogue_a": [
+        "I changed my mind and picked a travel memoir for our next selection.",
+        "I can help stack chairs so we are out by 8:40 tonight.",
+        "I loved how tonight's discussion wandered from maps to family stories."
+      ],
+      "dialogue_b": [
+        "I might pick a travel memoir next, but I am still weighing a few options.",
+        "I want to keep the library room until 9:30 for extra discussion afterward.",
+        "I really liked the way everyone compared the narrators this evening."
+      ],
+      "episode_id": "ep_067",
+      "setting": "a book group"
+    },
+    {
+      "constraint_predicate": "maximum_module_width",
+      "constraint_value": "club modules must be no wider than 60 centimeters",
+      "constraint_compatible_value": "I keep my module width at 55 centimeters",
+      "constraint_violating_value": "I want my module to be 75 centimeters wide",
+      "ordinary_predicate": "preferred_operating_era",
+      "ordinary_value": "I usually run 1970s freight scenes",
+      "ordinary_new_value": "I now prefer 1950s branch line scenes",
+      "ordinary_speculated_value": "I might switch to 1950s branch line scenes",
+      "background_predicate": "favorite_scale",
+      "background_value": "I build mostly in OO scale",
+      "dialogue_a": [
+        "I\u2019ve decided to switch my layout theme to 1950s branch line scenes from now on.",
+        "I\u2019m keeping my new module at 55 centimeters wide so it fits the club standard.",
+        "I enjoyed watching the shunting puzzle during tonight\u2019s open running session."
+      ],
+      "dialogue_b": [
+        "I\u2019m thinking I might switch my layout theme to 1950s branch line scenes someday.",
+        "I want my next module to be 75 centimeters wide for a broader station throat.",
+        "I spent most of the evening polishing rail tops before the session started."
+      ],
+      "episode_id": "ep_068",
+      "setting": "a model railway club"
+    },
+    {
+      "constraint_predicate": "maximum_train_length",
+      "constraint_value": "club layout limits trains to twelve wagons",
+      "constraint_compatible_value": "I run consists of ten wagons",
+      "constraint_violating_value": "I want to run eighteen wagons",
+      "ordinary_predicate": "preferred_signal_box_style",
+      "ordinary_value": "I usually favor brick signal boxes",
+      "ordinary_new_value": "I now prefer timber signal boxes",
+      "ordinary_speculated_value": "I might switch to concrete signal boxes",
+      "background_predicate": "workbench_corner",
+      "background_value": "my tools stay on the north bench corner",
+      "dialogue_a": [
+        "I've decided I now prefer timber signal boxes for my branch scene.",
+        "I keep my freight consist to ten wagons so it fits the club layout.",
+        "I spent the evening polishing rail tops near the engine shed."
+      ],
+      "dialogue_b": [
+        "I might switch to concrete signal boxes, but I'm still comparing photos.",
+        "I want to run eighteen wagons through the main loop tonight.",
+        "I was admiring the weathering on the station canopy this afternoon."
+      ],
+      "episode_id": "ep_069",
+      "setting": "a model railway club"
+    },
+    {
+      "constraint_predicate": "maximum_module_length",
+      "constraint_value": "club modules must not exceed six feet",
+      "constraint_compatible_value": "I build my branch-line module to five feet",
+      "constraint_violating_value": "I want to build an eight-foot module",
+      "ordinary_predicate": "favored_signal_style",
+      "ordinary_value": "I usually use lower-quadrant semaphores",
+      "ordinary_new_value": "I now use color-light signals",
+      "ordinary_speculated_value": "I might switch to ground signals",
+      "background_predicate": "locker_shelf_label",
+      "background_value": "my storage shelf is labeled Cedar",
+      "dialogue_a": [
+        "I\u2019ve decided to replace the semaphores and use color-light signals on my layout now.",
+        "I\u2019m keeping my new branch-line module at five feet so it fits the club rule.",
+        "I spent the evening weathering the goods shed and chatting by the test loop."
+      ],
+      "dialogue_b": [
+        "I might switch to ground signals someday, but I still need to see them installed.",
+        "I want to build an eight-foot module for the exhibition corner next month.",
+        "I spent most of tonight watching the yard shunter crawl through the sidings."
+      ],
+      "episode_id": "ep_070",
+      "setting": "a model railway club"
+    },
+    {
+      "constraint_predicate": "glaze_pickup_policy",
+      "constraint_value": "finished pieces must be collected within fourteen days",
+      "constraint_compatible_value": "I pick up finished pots within two weeks",
+      "constraint_violating_value": "I leave finished pots for a month",
+      "ordinary_predicate": "preferred_clay_body",
+      "ordinary_value": "I usually throw with speckled stoneware",
+      "ordinary_new_value": "I switched to porcelain for most projects",
+      "ordinary_speculated_value": "I might start using porcelain more often",
+      "background_predicate": "wheel_preference",
+      "background_value": "I prefer the kick wheel near the window",
+      "dialogue_a": [
+        "I switched to porcelain for most projects instead of speckled stoneware.",
+        "I can swing by next week, so I will pick up my finished mugs within the two-week window.",
+        "I love how the studio shelves look when everyone's bowls are lined up to dry."
+      ],
+      "dialogue_b": [
+        "I might start using porcelain more often, but I have not decided yet.",
+        "I want to leave my finished pots here for a month before picking them up.",
+        "I really like the splash marks on the wedging table after a busy class."
+      ],
+      "episode_id": "ep_071",
+      "setting": "a pottery studio"
+    },
+    {
+      "constraint_predicate": "kiln_access_window",
+      "constraint_value": "kiln use is limited to weekday afternoons",
+      "constraint_compatible_value": "I drop off glazed pieces on Tuesday afternoons",
+      "constraint_violating_value": "I fire my pieces late Saturday evening",
+      "ordinary_predicate": "wheel_speed_preference",
+      "ordinary_value": "I usually throw at a medium wheel speed",
+      "ordinary_new_value": "I now prefer a slower wheel speed",
+      "ordinary_speculated_value": "I might switch to a faster wheel speed",
+      "background_predicate": "apron_hanging_hook",
+      "background_value": "my apron hangs on the back row hook",
+      "dialogue_a": [
+        "I\u2019m switching to a slower wheel speed for my larger bowls from now on.",
+        "I\u2019ll bring my glazed mugs in on Tuesday afternoon so they fit the kiln schedule.",
+        "I love how the studio lights reflect off the wet clay after cleanup."
+      ],
+      "dialogue_b": [
+        "I might try a faster wheel speed next month, but I haven\u2019t settled on it.",
+        "I want to fire my serving platter here late Saturday evening after dinner.",
+        "I noticed the splash pans are stacked neatly beside the wedging table today."
+      ],
+      "episode_id": "ep_072",
+      "setting": "a pottery studio"
+    },
+    {
+      "constraint_predicate": "glaze_firing_eligibility",
+      "constraint_value": "outside clay cannot be kiln fired here",
+      "constraint_compatible_value": "I only bring studio clay pieces for firing",
+      "constraint_violating_value": "my home clay mug gets fired here",
+      "ordinary_predicate": "preferred_trimming_tool",
+      "ordinary_value": "I usually trim with a loop tool",
+      "ordinary_new_value": "I now prefer a metal rib",
+      "ordinary_speculated_value": "I might switch to a wooden knife",
+      "background_predicate": "wheel_position_preference",
+      "background_value": "I like the back-left wheel",
+      "dialogue_a": [
+        "I\u2019ve decided to trim with a metal rib from now on instead of my loop tool.",
+        "I only bring pieces made from studio clay when I want anything fired here.",
+        "I\u2019m enjoying how the afternoon light hits the splash pans today."
+      ],
+      "dialogue_b": [
+        "I might start trimming with a wooden knife, but I haven\u2019t settled on it.",
+        "I want you to fire my mug made from clay I brought from home.",
+        "I\u2019m noticing the wedging table feels cooler than the rest of the room today."
+      ],
+      "episode_id": "ep_073",
+      "setting": "a pottery studio"
+    },
+    {
+      "constraint_predicate": "glaze_pickup_window",
+      "constraint_value": "finished pieces leave after Friday pickup",
+      "constraint_compatible_value": "I collect finished bowls on Fridays",
+      "constraint_violating_value": "I take finished bowls home today",
+      "ordinary_predicate": "preferred_wheel_station",
+      "ordinary_value": "I usually choose station seven",
+      "ordinary_new_value": "I want station three from now on",
+      "ordinary_speculated_value": "I might switch to station five",
+      "background_predicate": "tool_storage_habit",
+      "background_value": "I keep trimming tools in a canvas roll",
+      "dialogue_a": [
+        "I want station three from now on instead of seven.",
+        "I can pick up my finished bowls on Friday after work.",
+        "I love how the damp clay smells when the studio opens."
+      ],
+      "dialogue_b": [
+        "I might switch to station five, but I have not settled on it.",
+        "I want to take my finished bowls home today before they are boxed.",
+        "I like the splash patterns on the wedging table this morning."
+      ],
+      "episode_id": "ep_074",
+      "setting": "a pottery studio"
+    },
+    {
+      "constraint_predicate": "glaze_pickup_day",
+      "constraint_value": "finished pieces leave only on Fridays",
+      "constraint_compatible_value": "I collect my mugs on Friday afternoons",
+      "constraint_violating_value": "I take my fired bowls home on Tuesday",
+      "ordinary_predicate": "preferred_wedging_table",
+      "ordinary_value": "I usually work at the back wedging table",
+      "ordinary_new_value": "I switched to the window-side wedging table",
+      "ordinary_speculated_value": "I might start using the window-side wedging table",
+      "background_predicate": "tool_apron_color",
+      "background_value": "my studio apron is dark green",
+      "dialogue_a": [
+        "I switched to the window-side wedging table because the light helps me center better.",
+        "I can wait until Friday afternoon to pick up my finished mugs from the shelf.",
+        "I like how the damp clay smell changes when the kiln room door opens."
+      ],
+      "dialogue_b": [
+        "I might start using the window-side wedging table, but I have not settled on it.",
+        "I want to take my fired bowls home on Tuesday after trimming class ends.",
+        "I keep noticing how the splash pans rattle when everyone cleans up together."
+      ],
+      "episode_id": "ep_075",
+      "setting": "a pottery studio"
+    },
+    {
+      "constraint_predicate": "studio_entry_time",
+      "constraint_value": "students may enter only ten minutes before class",
+      "constraint_compatible_value": "I arrive twelve minutes early and wait in the lobby",
+      "constraint_violating_value": "I enter the studio thirty minutes before class",
+      "ordinary_predicate": "practice_footwear",
+      "ordinary_value": "I usually wear black jazz sneakers",
+      "ordinary_new_value": "I switched to tan split-sole shoes",
+      "ordinary_speculated_value": "I might start wearing tan split-sole shoes",
+      "background_predicate": "favorite_warmup_corner",
+      "background_value": "I prefer the back-left barre space",
+      "dialogue_a": [
+        "I switched to tan split-sole shoes for rehearsals starting this week.",
+        "I get there twelve minutes early and wait in the lobby until they open the studio.",
+        "I love how the mirrors make the evening classes feel brighter."
+      ],
+      "dialogue_b": [
+        "I might start wearing tan split-sole shoes, but I have not decided yet.",
+        "I want to get into the studio thirty minutes before class to stretch alone.",
+        "I like the new speaker setup near the front desk."
+      ],
+      "episode_id": "ep_076",
+      "setting": "a dance school"
+    },
+    {
+      "constraint_predicate": "practice_room_booking_window",
+      "constraint_value": "solo practice room requires advance booking",
+      "constraint_compatible_value": "I reserve rehearsal space before arriving",
+      "constraint_violating_value": "I use the solo practice room without booking",
+      "ordinary_predicate": "warmup_playlist_style",
+      "ordinary_value": "I use instrumental funk for warmups",
+      "ordinary_new_value": "I switched to house remixes for warmups",
+      "ordinary_speculated_value": "I might use disco edits for warmups",
+      "background_predicate": "shoe_bag_color",
+      "background_value": "my dance shoe bag is teal",
+      "dialogue_a": [
+        "I switched my warmup music to house remixes starting this week.",
+        "I always reserve a rehearsal room online before I come in.",
+        "I noticed the lobby mirror finally got cleaned and looks much brighter."
+      ],
+      "dialogue_b": [
+        "I might try disco edits for warmups, but I have not settled on it.",
+        "I want to use the solo practice room tonight even if I did not book it.",
+        "I saw the front desk put up a new poster for the spring showcase."
+      ],
+      "episode_id": "ep_077",
+      "setting": "a dance school"
+    },
+    {
+      "constraint_predicate": "studio_access_window",
+      "constraint_value": "practice room access starts after 4 PM",
+      "constraint_compatible_value": "I book rehearsal slots after 4 PM",
+      "constraint_violating_value": "I use the practice room at noon",
+      "ordinary_predicate": "preferred_warmup_music",
+      "ordinary_value": "I usually warm up to instrumental funk",
+      "ordinary_new_value": "I warm up to mellow house now",
+      "ordinary_speculated_value": "I might switch to upbeat salsa tracks",
+      "background_predicate": "locker_row",
+      "background_value": "my locker is in row C",
+      "dialogue_a": [
+        "I switched my warmup playlist, and now I use mellow house before class.",
+        "I can take a rehearsal slot after four, so please keep me on the evening list.",
+        "I noticed the lobby mirror finally got cleaned, and the entrance looks much brighter."
+      ],
+      "dialogue_b": [
+        "I might start warming up to upbeat salsa tracks, but I have not settled on it.",
+        "I want to use the practice room at noon tomorrow, so please put me down for that.",
+        "I saw the front desk add a new flyer board near the staircase today."
+      ],
+      "episode_id": "ep_078",
+      "setting": "a dance school"
+    },
+    {
+      "constraint_predicate": "guest_observation_policy",
+      "constraint_value": "guests may watch only from the upstairs gallery",
+      "constraint_compatible_value": "I have my aunt watch from the upstairs gallery",
+      "constraint_violating_value": "my cousin watches from inside the rehearsal studio",
+      "ordinary_predicate": "practice_slot_preference",
+      "ordinary_value": "I usually prefer the Thursday intermediate slot",
+      "ordinary_new_value": "I prefer the Tuesday intermediate slot now",
+      "ordinary_speculated_value": "I might switch to the Tuesday intermediate slot",
+      "background_predicate": "locker_row_assignment",
+      "background_value": "my locker is in row C",
+      "dialogue_a": [
+        "I want to switch my regular practice slot to the Tuesday intermediate class from now on.",
+        "I\u2019ll have my aunt watch from the upstairs gallery during the showcase rehearsal tonight.",
+        "I noticed the studio mirrors were finally polished before warmup this afternoon."
+      ],
+      "dialogue_b": [
+        "I might switch to the Tuesday intermediate class, but I still haven\u2019t decided yet.",
+        "I want my cousin to watch from inside the rehearsal studio during tonight\u2019s run-through.",
+        "I left my water bottle by the piano after barre exercises this morning."
+      ],
+      "episode_id": "ep_079",
+      "setting": "a dance school"
+    },
+    {
+      "constraint_predicate": "session_language",
+      "constraint_value": "exchange sessions must stay in Spanish",
+      "constraint_compatible_value": "I practice introductions only in Spanish",
+      "constraint_violating_value": "I want the whole session in English",
+      "ordinary_predicate": "preferred_meeting_time",
+      "ordinary_value": "I usually prefer evening exchanges",
+      "ordinary_new_value": "I now prefer lunchtime exchanges",
+      "ordinary_speculated_value": "I might switch to morning exchanges",
+      "background_predicate": "exchange_partner_origin",
+      "background_value": "my partner is from Seville",
+      "dialogue_a": [
+        "I changed my schedule, so I now prefer lunchtime exchanges instead of evenings.",
+        "I can practice introductions only in Spanish during our exchange sessions.",
+        "I like how the caf\u00e9 corner stays quiet enough for easy conversation practice."
+      ],
+      "dialogue_b": [
+        "I might switch to morning exchanges, but I have not settled on that yet.",
+        "I want the whole session in English so I can focus on pronunciation today.",
+        "I enjoy swapping slang examples because it makes the conversations feel more natural."
+      ],
+      "episode_id": "ep_080",
+      "setting": "a language exchange"
+    },
+    {
+      "constraint_predicate": "exchange_language_policy",
+      "constraint_value": "sessions must stay in Spanish and Japanese",
+      "constraint_compatible_value": "I practice introductions in Spanish and Japanese only",
+      "constraint_violating_value": "I want the session conducted in French",
+      "ordinary_predicate": "preferred_practice_format",
+      "ordinary_value": "I usually prefer structured grammar drills",
+      "ordinary_new_value": "I now prefer free conversation practice",
+      "ordinary_speculated_value": "I might prefer roleplay dialogues instead",
+      "background_predicate": "meeting_platform",
+      "background_value": "we meet through a desktop video app",
+      "dialogue_a": [
+        "I've decided I want free conversation practice instead of structured grammar drills from now on.",
+        "I can keep our introductions and small talk strictly in Spanish and Japanese during sessions.",
+        "I like when the exchange starts with a quick icebreaker about weekend plans."
+      ],
+      "dialogue_b": [
+        "I might want to try roleplay dialogues next time, but I'm still weighing that idea.",
+        "I want the whole exchange conducted in French this week so I can compare accents.",
+        "I enjoy when my partner brings a funny photo prompt to start the chat."
+      ],
+      "episode_id": "ep_081",
+      "setting": "a language exchange"
+    },
+    {
+      "constraint_predicate": "exchange_language_limit",
+      "constraint_value": "sessions must stay entirely in Spanish",
+      "constraint_compatible_value": "I practice only Spanish during meetings",
+      "constraint_violating_value": "I want our meetings conducted in English",
+      "ordinary_predicate": "preferred_correction_style",
+      "ordinary_value": "I prefer corrections after each paragraph",
+      "ordinary_new_value": "I want corrections only at the end",
+      "ordinary_speculated_value": "I might prefer corrections after every sentence",
+      "background_predicate": "usual_meeting_place",
+      "background_value": "we usually meet in the library atrium",
+      "dialogue_a": [
+        "I want corrections only at the end now, because constant interruptions break my flow.",
+        "I keep our meetings entirely in Spanish, and I save unfamiliar words for later review.",
+        "I like how the exchange room has those big windows facing the courtyard."
+      ],
+      "dialogue_b": [
+        "I might prefer corrections after every sentence, but I have not settled on that yet.",
+        "I want our meetings conducted in English next week so I can explain things faster.",
+        "I enjoy the little name tags they put on the tables before each session."
+      ],
+      "episode_id": "ep_082",
+      "setting": "a language exchange"
+    },
+    {
+      "constraint_predicate": "exchange_language_rule",
+      "constraint_value": "sessions must stay in Spanish only",
+      "constraint_compatible_value": "I practice introductions entirely in Spanish",
+      "constraint_violating_value": "I want the session conducted in English",
+      "ordinary_predicate": "preferred_practice_topic",
+      "ordinary_value": "I usually discuss neighborhood architecture",
+      "ordinary_new_value": "I want to focus on idioms now",
+      "ordinary_speculated_value": "I might switch to travel anecdotes",
+      "background_predicate": "meeting_format",
+      "background_value": "I join through weekly video calls",
+      "dialogue_a": [
+        "I've decided to focus on idioms during our exchanges from now on.",
+        "I keep my introductions entirely in Spanish, even when I need extra thinking time.",
+        "I really enjoy how our pair activities make the hour pass quickly."
+      ],
+      "dialogue_b": [
+        "I might switch to travel anecdotes soon, but I'm still weighing a few topics.",
+        "I want the session conducted in English today so I can explain myself faster.",
+        "I like when we trade short voice notes before the live conversation starts."
+      ],
+      "episode_id": "ep_083",
+      "setting": "a language exchange"
+    },
+    {
+      "constraint_predicate": "session_material_format",
+      "constraint_value": "club requires printed handouts only",
+      "constraint_compatible_value": "I bring printed dialogue sheets",
+      "constraint_violating_value": "I use tablet slides during practice",
+      "ordinary_predicate": "warmup_activity_preference",
+      "ordinary_value": "I prefer picture description warmups",
+      "ordinary_new_value": "I prefer roleplay ticket-counter warmups",
+      "ordinary_speculated_value": "I might prefer proverb matching warmups",
+      "background_predicate": "arrival_route",
+      "background_value": "I usually come by tram",
+      "dialogue_a": [
+        "I've switched my warmup preference to roleplay at a ticket counter now.",
+        "I brought printed dialogue sheets again because that's what our club accepts.",
+        "I like how the caf\u00e9 corner makes our speaking rounds feel less formal."
+      ],
+      "dialogue_b": [
+        "I might try proverb matching as a warmup, though I'm not settled on it.",
+        "I want to run today's practice from my tablet slides instead of paper handouts.",
+        "I enjoy hearing the mix of accents during the partner rotations."
+      ],
+      "episode_id": "ep_084",
+      "setting": "a language exchange"
+    },
+    {
+      "constraint_predicate": "guest_policy",
+      "constraint_value": "guests may attend only on open club nights",
+      "constraint_compatible_value": "I bring friends only on open club nights",
+      "constraint_violating_value": "I bring a guest to a members-only night",
+      "ordinary_predicate": "preferred_opening",
+      "ordinary_value": "I usually open with the Queen's Gambit",
+      "ordinary_new_value": "I switched to the English Opening",
+      "ordinary_speculated_value": "I might start playing the Sicilian",
+      "background_predicate": "usual_arrival_time",
+      "background_value": "I usually arrive ten minutes early",
+      "dialogue_a": [
+        "I switched my main opening this month and now I start with the English Opening.",
+        "I only invite coworkers on open club nights so we stay within the club rules.",
+        "I like how the analysis boards near the window are quieter after the first round."
+      ],
+      "dialogue_b": [
+        "I might start playing the Sicilian soon, but I have not settled on it yet.",
+        "I want to bring my cousin to next Thursday even though it is a members-only night.",
+        "I enjoy the wooden sets on the front tables because the pieces feel balanced."
+      ],
+      "episode_id": "ep_085",
+      "setting": "a chess club"
+    },
+    {
+      "constraint_predicate": "analysis_room_access",
+      "constraint_value": "members may not enter the analysis room before six",
+      "constraint_compatible_value": "I wait in the lounge until six before reviewing games",
+      "constraint_violating_value": "I enter the analysis room at five thirty",
+      "ordinary_predicate": "preferred_opening_color",
+      "ordinary_value": "I usually choose black in casual games",
+      "ordinary_new_value": "I now prefer white in casual games",
+      "ordinary_speculated_value": "I might start choosing white in casual games",
+      "background_predicate": "usual_arrival_method",
+      "background_value": "I bike to the club on Thursdays",
+      "dialogue_a": [
+        "I used to pick black, but from now on I want white in casual games.",
+        "I can hang out in the lounge until six, then head into the analysis room.",
+        "I like how the wall boards make it easy to follow the top table."
+      ],
+      "dialogue_b": [
+        "I might start choosing white in casual games, though I have not settled it yet.",
+        "I want to get into the analysis room at five thirty to set up pieces.",
+        "I enjoy the quiet click of the clocks when the round begins."
+      ],
+      "episode_id": "ep_086",
+      "setting": "a chess club"
+    },
+    {
+      "constraint_predicate": "post_round_room_access",
+      "constraint_value": "spectators may not enter the analysis room during rounds",
+      "constraint_compatible_value": "I wait in the lobby until my game ends",
+      "constraint_violating_value": "I go into the analysis room mid-round",
+      "ordinary_predicate": "preferred_post_game_activity",
+      "ordinary_value": "I usually browse endgame books afterward",
+      "ordinary_new_value": "I now review blitz puzzles afterward",
+      "ordinary_speculated_value": "I might switch to skittles games afterward",
+      "background_predicate": "club_night_transport",
+      "background_value": "I take the tram to club nights",
+      "dialogue_a": [
+        "I've stopped browsing endgame books afterward; I review blitz puzzles instead now.",
+        "I wait in the lobby until my game ends before heading toward the analysis room.",
+        "I'm bringing the wooden demo board tonight because the wall hooks were fixed."
+      ],
+      "dialogue_b": [
+        "I might switch to skittles games afterward, but I'm not settled on that yet.",
+        "I want to go into the analysis room during my round to watch a friend's position.",
+        "I'm polishing my old analog clock before tonight's casual ladder games."
+      ],
+      "episode_id": "ep_087",
+      "setting": "a chess club"
+    },
+    {
+      "constraint_predicate": "board_access_rule",
+      "constraint_value": "members may use only analysis boards",
+      "constraint_compatible_value": "I set up positions on an analysis board",
+      "constraint_violating_value": "I use a tournament board for casual practice",
+      "ordinary_predicate": "post_game_hangout_spot",
+      "ordinary_value": "I usually wait by the trophy case",
+      "ordinary_new_value": "I now wait near the upstairs skittles room",
+      "ordinary_speculated_value": "I might start waiting by the upstairs skittles room",
+      "background_predicate": "weekly_arrival_window",
+      "background_value": "I usually arrive just before pairings",
+      "dialogue_a": [
+        "I used to wait by the trophy case, but now I wait near the upstairs skittles room.",
+        "I set up my puzzles on an analysis board so I stay within the club rules.",
+        "I like how the wall boards make it easy to follow the top game from across the room."
+      ],
+      "dialogue_b": [
+        "I might start waiting by the upstairs skittles room after rounds, but I have not settled on it.",
+        "I want to spread out my notes on a tournament board for casual practice before pairings.",
+        "I enjoy the sound of clocks starting all at once when the round begins."
+      ],
+      "episode_id": "ep_088",
+      "setting": "a chess club"
+    },
+    {
+      "constraint_predicate": "overnight_camping_location",
+      "constraint_value": "must camp only at council-approved sites",
+      "constraint_compatible_value": "I book our tents at the approved riverside campsite",
+      "constraint_violating_value": "I camp with the troop on the unapproved quarry field",
+      "ordinary_predicate": "preferred_patrol_name",
+      "ordinary_value": "I prefer the Foxes patrol name",
+      "ordinary_new_value": "I prefer the Otters patrol name",
+      "ordinary_speculated_value": "I might prefer the Hawks patrol name",
+      "background_predicate": "weekly_meeting_night",
+      "background_value": "Our scout group meets every Thursday evening",
+      "dialogue_a": [
+        "I want to switch and use the Otters as my patrol name from now on.",
+        "I booked our tents at the approved riverside campsite for the weekend trip.",
+        "I am bringing the knot boards early for the hall setup tonight."
+      ],
+      "dialogue_b": [
+        "I might go with the Hawks as my patrol name, but I have not settled it yet.",
+        "I want to camp with the troop on the old quarry field this weekend.",
+        "I am polishing the lanterns before the badge activity starts."
+      ],
+      "episode_id": "ep_089",
+      "setting": "a scout group"
+    },
+    {
+      "constraint_predicate": "campfire_location_rule",
+      "constraint_value": "campfires are allowed only in the stone fire circle",
+      "constraint_compatible_value": "I hold evening campfires in the stone fire circle",
+      "constraint_violating_value": "I hold a campfire beside our tents",
+      "ordinary_predicate": "patrol_meeting_night",
+      "ordinary_value": "my patrol meets on Wednesday evenings",
+      "ordinary_new_value": "my patrol now meets on Thursday evenings",
+      "ordinary_speculated_value": "my patrol might switch to Thursday evenings",
+      "background_predicate": "scarf_storage_spot",
+      "background_value": "my scout scarf stays in the hall cupboard",
+      "dialogue_a": [
+        "I moved our patrol catch-up to Thursday evenings starting next week.",
+        "I\u2019ll keep the cocoa fire in the stone fire circle after the hike.",
+        "I\u2019m bringing the knot board to the hut before everyone arrives."
+      ],
+      "dialogue_b": [
+        "I might move our patrol catch-up to Thursday evenings if enough people can make it.",
+        "I want to light a small campfire right beside our tents after dusk.",
+        "I\u2019m polishing the lanterns at the hut before the beaver section arrives."
+      ],
+      "episode_id": "ep_090",
+      "setting": "a scout group"
+    },
+    {
+      "constraint_predicate": "equipment_storage_access",
+      "constraint_value": "only adult leaders unlock the gear shed",
+      "constraint_compatible_value": "I wait by the shed for a leader",
+      "constraint_violating_value": "I unlock the gear shed myself",
+      "ordinary_predicate": "patrol_badge_project",
+      "ordinary_value": "I am making the knot board",
+      "ordinary_new_value": "I am making the map display",
+      "ordinary_speculated_value": "I might make the first aid poster",
+      "background_predicate": "meeting_night",
+      "background_value": "our troop meets on Thursday evenings",
+      "dialogue_a": [
+        "I switched my patrol badge project to the map display this term.",
+        "I wait by the gear shed until a leader opens it for us.",
+        "I liked how the wide game used the whole lower field tonight."
+      ],
+      "dialogue_b": [
+        "I might do the first aid poster for my patrol badge project.",
+        "I want to unlock the gear shed early and set out the lanterns.",
+        "I enjoyed the new flag break routine before announcements."
+      ],
+      "episode_id": "ep_091",
+      "setting": "a scout group"
+    },
+    {
+      "constraint_predicate": "campfire_end_time",
+      "constraint_value": "all fires must be out by 9 pm",
+      "constraint_compatible_value": "I schedule cocoa before the fire is extinguished",
+      "constraint_violating_value": "keep the campfire burning until 10 pm",
+      "ordinary_predicate": "patrol_meeting_spot",
+      "ordinary_value": "we usually meet beside the canoe shed",
+      "ordinary_new_value": "we now meet behind the equipment barn",
+      "ordinary_speculated_value": "we might meet near the flagpole instead",
+      "background_predicate": "scarf_woggle_style",
+      "background_value": "I use a braided leather woggle",
+      "dialogue_a": [
+        "I changed our patrol meeting spot to behind the equipment barn from now on.",
+        "I will serve cocoa earlier so the campfire is fully out by nine.",
+        "I spent the afternoon repainting the signboard by the trail entrance."
+      ],
+      "dialogue_b": [
+        "I might move our patrol meeting spot near the flagpole, but I have not settled it.",
+        "I want to keep the campfire burning until ten for the songs tonight.",
+        "I am bringing the knot-tying cards to the den before everyone arrives."
+      ],
+      "episode_id": "ep_092",
+      "setting": "a scout group"
+    },
+    {
+      "constraint_predicate": "storage_shed_access_policy",
+      "constraint_value": "youth members cannot hold shed keys",
+      "constraint_compatible_value": "I ask a leader to unlock the shed",
+      "constraint_violating_value": "I keep the shed key myself",
+      "ordinary_predicate": "patrol_banner_material",
+      "ordinary_value": "our patrol banner uses blue felt",
+      "ordinary_new_value": "our patrol banner uses green canvas",
+      "ordinary_speculated_value": "our patrol banner might use orange nylon",
+      "background_predicate": "scarf_slide_style",
+      "background_value": "I use a carved wooden scarf slide",
+      "dialogue_a": [
+        "I changed our patrol banner plan, and now I'm using green canvas instead of blue felt.",
+        "I need tent pegs, so I'll ask a leader to unlock the storage shed for me.",
+        "I liked how the knot relay made the younger scouts laugh tonight."
+      ],
+      "dialogue_b": [
+        "I might switch our patrol banner to orange nylon, but I'm still comparing how it looks.",
+        "I want to keep the storage shed key with me during the whole weekend camp.",
+        "I spent most of the hike teaching everyone the shortcut for reef knots."
+      ],
+      "episode_id": "ep_093",
+      "setting": "a scout group"
+    },
+    {
+      "constraint_predicate": "checkout_lane_access",
+      "constraint_value": "members must use staffed checkout lanes",
+      "constraint_compatible_value": "I check out at the staffed register",
+      "constraint_violating_value": "I use the self-checkout lane",
+      "ordinary_predicate": "preferred_pickup_day",
+      "ordinary_value": "I usually pick up on Thursdays",
+      "ordinary_new_value": "I switched my pickup day to Saturdays",
+      "ordinary_speculated_value": "I might switch my pickup day to Mondays",
+      "background_predicate": "favorite_coop_section",
+      "background_value": "I like the bulk spices section",
+      "dialogue_a": [
+        "I switched my pickup day to Saturdays because my schedule changed.",
+        "I always check out at the staffed register near the front windows.",
+        "I like how the produce signs are handwritten and easy to read."
+      ],
+      "dialogue_b": [
+        "I might switch my pickup day to Mondays, but I have not settled it yet.",
+        "I want to use the self-checkout lane for my basket today.",
+        "I like the new mural by the community board near the entrance."
+      ],
+      "episode_id": "ep_094",
+      "setting": "a food co-op"
+    },
+    {
+      "constraint_predicate": "member_pickup_window",
+      "constraint_value": "orders are collected only during afternoon pickup hours",
+      "constraint_compatible_value": "I arrive after work during the afternoon window",
+      "constraint_violating_value": "I pick up my order before the store opens",
+      "ordinary_predicate": "bulk_snack_preference",
+      "ordinary_value": "I usually buy sesame rice crackers",
+      "ordinary_new_value": "I switched to tamari almonds instead",
+      "ordinary_speculated_value": "I might start buying tamari almonds",
+      "background_predicate": "parking_habit",
+      "background_value": "I usually lock my bike by the side rack",
+      "dialogue_a": [
+        "I switched my usual bulk snack to tamari almonds instead of sesame rice crackers.",
+        "I always come by after work, so the afternoon pickup window works fine for me.",
+        "I like how the front bulletin board is packed with local event flyers."
+      ],
+      "dialogue_b": [
+        "I might start buying tamari almonds, but I have not decided yet.",
+        "I want to pick up my order before the store opens tomorrow morning.",
+        "I usually browse the seed packets near the entrance while I wait."
+      ],
+      "episode_id": "ep_095",
+      "setting": "a food co-op"
+    },
+    {
+      "constraint_predicate": "bulk_grinder_access_time",
+      "constraint_value": "bulk grinders available only after 10 a.m.",
+      "constraint_compatible_value": "I grind oats after 10 a.m.",
+      "constraint_violating_value": "I grind oats at 8 a.m.",
+      "ordinary_predicate": "preferred_checkout_lane",
+      "ordinary_value": "I usually use the express lane",
+      "ordinary_new_value": "I use the staffed lane now",
+      "ordinary_speculated_value": "I might switch to the staffed lane",
+      "background_predicate": "locker_rental_status",
+      "background_value": "I rent locker number twelve",
+      "dialogue_a": [
+        "I use the staffed lane now instead of the express lane.",
+        "I can bring my oats by after ten and use the grinder then.",
+        "I like how the front bulletin board looks this week."
+      ],
+      "dialogue_b": [
+        "I might switch to the staffed lane if the line stays shorter.",
+        "I want to grind my oats at eight before work tomorrow.",
+        "I noticed the new baskets stack much better near the entrance."
+      ],
+      "episode_id": "ep_096",
+      "setting": "a food co-op"
+    },
+    {
+      "constraint_predicate": "bulk_bin_access_window",
+      "constraint_value": "bulk bins available only during staffed hours",
+      "constraint_compatible_value": "I shop bulk spices before the desk closes",
+      "constraint_violating_value": "I want bulk bin access after staffed hours",
+      "ordinary_predicate": "pickup_container_preference",
+      "ordinary_value": "I usually bring a canvas crate",
+      "ordinary_new_value": "I switched to two stackable totes",
+      "ordinary_speculated_value": "I might start bringing a folding wagon",
+      "background_predicate": "co_op_noticeboard_habit",
+      "background_value": "I read the noticeboard near the entrance",
+      "dialogue_a": [
+        "I switched from my canvas crate to two stackable totes for pickup orders.",
+        "I always fill my spice jars before the service desk closes.",
+        "I like how the front windows make the produce section brighter in the afternoon."
+      ],
+      "dialogue_b": [
+        "I might start bringing a folding wagon for my pickup orders, but I have not decided.",
+        "I want to scoop oats from the bulk bins after the staff head out tonight.",
+        "I usually pause by the seed display because the packet art is fun to look at."
+      ],
+      "episode_id": "ep_097",
+      "setting": "a food co-op"
+    },
+    {
+      "constraint_predicate": "repair_intake_limit",
+      "constraint_value": "only one item per visitor each session",
+      "constraint_compatible_value": "I bring just one lamp for repair",
+      "constraint_violating_value": "I bring two radios for repair",
+      "ordinary_predicate": "preferred_workbench",
+      "ordinary_value": "I usually choose the window bench",
+      "ordinary_new_value": "I prefer the back table now",
+      "ordinary_speculated_value": "I might switch to the back table",
+      "background_predicate": "favorite_tool",
+      "background_value": "I like using the small Phillips screwdriver",
+      "dialogue_a": [
+        "I used to take the window bench, but now I prefer the back table.",
+        "I brought just one lamp today, so I am following the intake rule.",
+        "I love how the volunteers label every tray so neatly."
+      ],
+      "dialogue_b": [
+        "I might switch to the back table, though I have not settled on it.",
+        "I want to bring two radios for repair this session.",
+        "I really like the big wall clock above the soldering station."
+      ],
+      "episode_id": "ep_098",
+      "setting": "a repair cafe"
+    },
+    {
+      "constraint_predicate": "power_tool_access",
+      "constraint_value": "visitors may not operate soldering irons",
+      "constraint_compatible_value": "I ask a volunteer to do the soldering",
+      "constraint_violating_value": "I operate the soldering iron myself",
+      "ordinary_predicate": "arrival_transport",
+      "ordinary_value": "I usually come by tram",
+      "ordinary_new_value": "I now come by folding bike",
+      "ordinary_speculated_value": "I might start coming by bus",
+      "background_predicate": "repair_focus",
+      "background_value": "I bring small radios to fix",
+      "dialogue_a": [
+        "I switched things up and now I come here by folding bike instead of the tram.",
+        "I brought the loose wire over, and I need a volunteer to handle the soldering for me.",
+        "I love how the spare screws are sorted in old jam jars along the wall."
+      ],
+      "dialogue_b": [
+        "I might start coming here by bus if the weather keeps turning windy.",
+        "I want to use the soldering iron myself today and finish this speaker lead quickly.",
+        "I like the big workbench near the window because the light is better there."
+      ],
+      "episode_id": "ep_099",
+      "setting": "a repair cafe"
+    },
+    {
+      "constraint_predicate": "soldering_station_access",
+      "constraint_value": "visitors may not operate the soldering irons",
+      "constraint_compatible_value": "I hand parts to the volunteer for soldering",
+      "constraint_violating_value": "I use the soldering iron myself",
+      "ordinary_predicate": "project_focus",
+      "ordinary_value": "I am fixing a cassette deck",
+      "ordinary_new_value": "I am fixing a desk lamp",
+      "ordinary_speculated_value": "I might switch to repairing a radio",
+      "background_predicate": "carry_container",
+      "background_value": "I bring tools in a blue canvas tote",
+      "dialogue_a": [
+        "I changed my mind and I'm working on a desk lamp instead of the cassette deck.",
+        "I can hold the wires steady while the volunteer does the soldering for me.",
+        "I love how the repair cafe labels every tray with masking tape."
+      ],
+      "dialogue_b": [
+        "I might switch over to repairing a radio, but I'm still looking at the cassette deck.",
+        "I want to use the soldering iron myself for a quick joint on this board.",
+        "I like that the big windows make this corner bright enough for tiny screws."
+      ],
+      "episode_id": "ep_100",
+      "setting": "a repair cafe"
+    },
+    {
+      "constraint_predicate": "power_tool_usage_location",
+      "constraint_value": "rotary tools stay at the back bench",
+      "constraint_compatible_value": "I use the rotary tool only at the back bench",
+      "constraint_violating_value": "I use the rotary tool at the front table",
+      "ordinary_predicate": "project_focus_item",
+      "ordinary_value": "I am fixing a brass desk lamp",
+      "ordinary_new_value": "I am fixing a cassette deck now",
+      "ordinary_speculated_value": "I might switch to repairing a toaster",
+      "background_predicate": "arrival_transport_mode",
+      "background_value": "I usually arrive by folding bike",
+      "dialogue_a": [
+        "I switched projects today, and now I'm working on a cassette deck instead.",
+        "I kept the rotary tool at the back bench while smoothing this cracked knob.",
+        "I love how the volunteers label every tray of screws so neatly."
+      ],
+      "dialogue_b": [
+        "I might give up on the lamp and try repairing a toaster instead.",
+        "I want to run the rotary tool right here at the front table by the window.",
+        "I brought an old magazine because the queue near soldering can be slow."
+      ],
+      "episode_id": "ep_101",
+      "setting": "a repair cafe"
+    },
+    {
+      "constraint_predicate": "enlarger_booking_window",
+      "constraint_value": "can reserve enlargers only two hours ahead",
+      "constraint_compatible_value": "I book my enlarger slot within two hours",
+      "constraint_violating_value": "I reserve the enlarger for next Tuesday evening",
+      "ordinary_predicate": "safelight_filter_preference",
+      "ordinary_value": "I usually prefer the amber safelight filter",
+      "ordinary_new_value": "I prefer the deep red safelight filter now",
+      "ordinary_speculated_value": "I might switch to the deep red filter",
+      "background_predicate": "wash_timer_habit",
+      "background_value": "I set my wash timer for twelve minutes",
+      "dialogue_a": [
+        "I want to switch to the deep red safelight filter from now on.",
+        "I only book an enlarger when my slot starts within the next two hours.",
+        "I noticed the drying rack by the sink is finally level again."
+      ],
+      "dialogue_b": [
+        "I might switch to the deep red safelight filter, but I have not settled on it.",
+        "I want to reserve the enlarger for next Tuesday evening before anyone else takes it.",
+        "I keep hearing the ventilation fan click twice before it fully starts."
+      ],
+      "episode_id": "ep_102",
+      "setting": "a darkroom collective"
+    },
+    {
+      "constraint_predicate": "tray_access_window",
+      "constraint_value": "chemical trays available only after 7 pm",
+      "constraint_compatible_value": "I arrive after 7 pm to use trays",
+      "constraint_violating_value": "I use the trays at 5 pm",
+      "ordinary_predicate": "negative_sleeve_label_style",
+      "ordinary_value": "I label sleeves with month and roll number",
+      "ordinary_new_value": "I label sleeves with project title and frame range",
+      "ordinary_speculated_value": "I might label sleeves by camera model",
+      "background_predicate": "locker_shelf_position",
+      "background_value": "my locker shelf is the top left one",
+      "dialogue_a": [
+        "I\u2019m switching my negative sleeves to project title and frame range labels from now on.",
+        "I\u2019ll come in after seven tonight so I can use the chemical trays properly.",
+        "I love how the safelight makes the drying rack glow against the brick wall."
+      ],
+      "dialogue_b": [
+        "I might start labeling my negative sleeves by camera model, but I haven\u2019t settled on it.",
+        "I want to use the chemical trays at five this afternoon before the crowd arrives.",
+        "I\u2019m bringing the little squeegee because the sink area was dripping everywhere last time."
+      ],
+      "episode_id": "ep_103",
+      "setting": "a darkroom collective"
+    },
+    {
+      "constraint_predicate": "chemical_access_window",
+      "constraint_value": "mix chemistry only during staffed evening hours",
+      "constraint_compatible_value": "I arrive after staff check-in to mix developer",
+      "constraint_violating_value": "I mix chemistry alone before staff arrive",
+      "ordinary_predicate": "favorite_contact_sheet_border",
+      "ordinary_value": "I prefer narrow black borders",
+      "ordinary_new_value": "I now prefer wide white borders",
+      "ordinary_speculated_value": "I might switch to deckled borders",
+      "background_predicate": "locker_shelf_marker",
+      "background_value": "my locker shelf has a blue clip",
+      "dialogue_a": [
+        "I've decided I now want wide white borders on my contact sheets.",
+        "I come in after staff check-in so I can mix developer without any hassle.",
+        "I spent half an hour watching the safelight reflect off the drying rack."
+      ],
+      "dialogue_b": [
+        "I might switch to deckled borders on my contact sheets, but I'm not settled yet.",
+        "I want to come in early and mix chemistry before anyone else gets here.",
+        "I kept hearing the timer click while I labeled my negative sleeves."
+      ],
+      "episode_id": "ep_104",
+      "setting": "a darkroom collective"
+    },
+    {
+      "constraint_predicate": "antenna_access_rule",
+      "constraint_value": "roof access requires a licensed supervisor present",
+      "constraint_compatible_value": "I only go to the roof with a licensed supervisor",
+      "constraint_violating_value": "I go to the roof alone after meetings",
+      "ordinary_predicate": "preferred_net_night",
+      "ordinary_value": "I usually attend the Tuesday net",
+      "ordinary_new_value": "I switched to the Thursday net",
+      "ordinary_speculated_value": "I might start joining the Thursday net",
+      "background_predicate": "club_role",
+      "background_value": "I handle the meeting sign-in sheet",
+      "dialogue_a": [
+        "I switched over and now I attend the Thursday net instead of Tuesday.",
+        "I only head up to the roof when a licensed supervisor is with me.",
+        "I like how the shack sounds when everyone tunes up before the meeting."
+      ],
+      "dialogue_b": [
+        "I might start joining the Thursday net, but I have not settled on it.",
+        "I want to go up to the roof alone after the meeting tonight.",
+        "I enjoy the swap table when people bring old handhelds and cables."
+      ],
+      "episode_id": "ep_105",
+      "setting": "a radio club"
+    },
+    {
+      "constraint_predicate": "transmitter_power_limit",
+      "constraint_value": "club station capped at 100 watts output",
+      "constraint_compatible_value": "I operate the club rig at 90 watts",
+      "constraint_violating_value": "I run the club transmitter at 150 watts",
+      "ordinary_predicate": "preferred_net_check_in_night",
+      "ordinary_value": "I usually check into the Thursday net",
+      "ordinary_new_value": "I switched to the Tuesday net",
+      "ordinary_speculated_value": "I might start checking into the Tuesday net",
+      "background_predicate": "qsl_card_storage_spot",
+      "background_value": "I keep my QSL cards in the blue binder",
+      "dialogue_a": [
+        "I switched over and now I check into the Tuesday net instead.",
+        "I kept the club rig at ninety watts during last night's operating session.",
+        "I spent the break labeling coax cables in the workshop cabinet."
+      ],
+      "dialogue_b": [
+        "I might start checking into the Tuesday net if my evenings stay open.",
+        "I want to run the club transmitter at one hundred fifty watts tonight.",
+        "I rearranged my handhelds on the shelf by the window this afternoon."
+      ],
+      "episode_id": "ep_106",
+      "setting": "a radio club"
+    },
+    {
+      "constraint_predicate": "antenna_access_window",
+      "constraint_value": "roof antenna access only during staffed hours",
+      "constraint_compatible_value": "I adjust the tuner from the shack after hours",
+      "constraint_violating_value": "roof antenna access late at night",
+      "ordinary_predicate": "contest_logging_method",
+      "ordinary_value": "I log contacts on printed sheets",
+      "ordinary_new_value": "I log contacts in tablet software",
+      "ordinary_speculated_value": "I might switch to a voice recorder",
+      "background_predicate": "club_storage_cubby",
+      "background_value": "my spare coax is in cubby fourteen",
+      "dialogue_a": [
+        "I've decided to log contacts in the tablet software from now on.",
+        "I can adjust the tuner from the shack tonight instead of going onto the roof.",
+        "I like how the old QSL cards look on the bulletin board by the door."
+      ],
+      "dialogue_b": [
+        "I might switch to a voice recorder for logging, but I'm not settled on it.",
+        "I want to go onto the roof antenna area late tonight and finish that feedline check.",
+        "I enjoyed hearing the Morse practice group in the side room this evening."
+      ],
+      "episode_id": "ep_107",
+      "setting": "a radio club"
+    },
+    {
+      "constraint_predicate": "transmitter_power_cap",
+      "constraint_value": "club charter limits output to fifty watts",
+      "constraint_compatible_value": "I keep my rig at forty watts",
+      "constraint_violating_value": "I want to run one hundred watts tonight",
+      "ordinary_predicate": "preferred_net_checkin_slot",
+      "ordinary_value": "I usually check in during the early slot",
+      "ordinary_new_value": "I now prefer the late check-in slot",
+      "ordinary_speculated_value": "I might switch to the late check-in slot",
+      "background_predicate": "soldering_station_label",
+      "background_value": "my bench station is tagged Blue Finch",
+      "dialogue_a": [
+        "I want to switch and take the late check-in slot from now on.",
+        "I will keep my rig at forty watts for the field exercise.",
+        "I enjoyed hearing the vintage receiver demo before the meeting started."
+      ],
+      "dialogue_b": [
+        "I might switch to the late check-in slot, but I have not settled it.",
+        "I want to run one hundred watts tonight for the contest round.",
+        "I spent the break comparing Morse keys at the back table."
+      ],
+      "episode_id": "ep_108",
+      "setting": "a radio club"
+    },
+    {
+      "constraint_predicate": "boat_storage_access",
+      "constraint_value": "members may not enter the launch bay",
+      "constraint_compatible_value": "I leave my oars by the side rack",
+      "constraint_violating_value": "I store my kit inside the launch bay",
+      "ordinary_predicate": "preferred_erg_machine",
+      "ordinary_value": "I usually use erg number six",
+      "ordinary_new_value": "I switched to erg number three",
+      "ordinary_speculated_value": "I might start using erg number eight",
+      "background_predicate": "boathouse_arrival_route",
+      "background_value": "I come through the riverside gate",
+      "dialogue_a": [
+        "I switched over and now I use erg number three for warmups.",
+        "I leave my oars by the side rack since the launch bay is off limits.",
+        "I like how the dock sounds at sunrise before the first outing."
+      ],
+      "dialogue_b": [
+        "I might start using erg number eight if it stays quieter in the evenings.",
+        "I want to store my kit inside the launch bay after practice tonight.",
+        "I enjoy wiping down the seats when the hall finally empties out."
+      ],
+      "episode_id": "ep_109",
+      "setting": "a rowing club"
+    },
+    {
+      "constraint_predicate": "launch_window_limit",
+      "constraint_value": "private shells launch after sunrise only",
+      "constraint_compatible_value": "I launch my single after sunrise",
+      "constraint_violating_value": "I launch my single before sunrise",
+      "ordinary_predicate": "usual_post_row_drink",
+      "ordinary_value": "I usually get ginger ale afterward",
+      "ordinary_new_value": "I switched to sparkling water afterward",
+      "ordinary_speculated_value": "I might start getting iced tea afterward",
+      "background_predicate": "oar_handle_wrap_color",
+      "background_value": "my sculling grips have navy wrap",
+      "dialogue_a": [
+        "I switched my usual post-row drink to sparkling water after practice.",
+        "I keep launching my single after sunrise so I stay within club rules.",
+        "I saw two eights gliding past the dock this morning."
+      ],
+      "dialogue_b": [
+        "I might start getting iced tea after rows, but I have not settled on it.",
+        "I want to launch my single before sunrise tomorrow, so please note that.",
+        "I noticed the boathouse windows rattling when the wind picked up."
+      ],
+      "episode_id": "ep_110",
+      "setting": "a rowing club"
+    },
+    {
+      "constraint_predicate": "table_assignment_limit",
+      "constraint_value": "members may play only at assigned tables",
+      "constraint_compatible_value": "I check in and sit at my assigned table",
+      "constraint_violating_value": "I play at any open table I like",
+      "ordinary_predicate": "preferred_card_back_color",
+      "ordinary_value": "I usually prefer blue card backs",
+      "ordinary_new_value": "I now prefer green card backs",
+      "ordinary_speculated_value": "I might start preferring green card backs",
+      "background_predicate": "coat_storage_spot",
+      "background_value": "I hang my coat on the rear rack",
+      "dialogue_a": [
+        "I changed my mind and now I want green card backs for our practice decks.",
+        "I always check in first and sit at the table the director assigns me.",
+        "I like how the bridge room sounds quieter once the bidding starts."
+      ],
+      "dialogue_b": [
+        "I might switch to green card backs someday, but I have not settled on that.",
+        "I want to join whichever table has an empty seat tonight.",
+        "I enjoy the little brass bell they ring before the first round starts."
+      ],
+      "episode_id": "ep_111",
+      "setting": "a bridge club"
+    },
+    {
+      "constraint_predicate": "table_assignment_policy",
+      "constraint_value": "members play only at assigned tables",
+      "constraint_compatible_value": "I sit at my assigned table",
+      "constraint_violating_value": "I play at any open table",
+      "ordinary_predicate": "preferred_bidding_system",
+      "ordinary_value": "I use Standard American",
+      "ordinary_new_value": "I now use Two Over One",
+      "ordinary_speculated_value": "I might switch to Precision",
+      "background_predicate": "usual_partner",
+      "background_value": "I usually partner with Elaine",
+      "dialogue_a": [
+        "I\u2019ve decided to switch and play Two Over One from now on.",
+        "I\u2019ll stay at my assigned table near the window for tonight\u2019s rounds.",
+        "I like how the card room stays quiet once the boards are in play."
+      ],
+      "dialogue_b": [
+        "I might try Precision someday, but I haven\u2019t settled on it yet.",
+        "I want to join whichever table opens first instead of my assigned one.",
+        "I enjoy the polished wood trophy case by the entrance."
+      ],
+      "episode_id": "ep_112",
+      "setting": "a bridge club"
+    },
+    {
+      "constraint_predicate": "guest_play_limit",
+      "constraint_value": "guests may play only on Tuesday evenings",
+      "constraint_compatible_value": "I join the guest table on Tuesday nights",
+      "constraint_violating_value": "I play as a guest on Saturday afternoon",
+      "ordinary_predicate": "usual_card_back_color",
+      "ordinary_value": "I usually bring blue-backed cards",
+      "ordinary_new_value": "I now bring green-backed cards",
+      "ordinary_speculated_value": "I might start bringing red-backed cards",
+      "background_predicate": "regular_seat_location",
+      "background_value": "I usually sit near the north window",
+      "dialogue_a": [
+        "I switched this week and now bring green-backed cards to every duplicate session.",
+        "I only come as a guest on Tuesday nights, so please pencil me in then.",
+        "I like how the side tables leave enough room for everyone to sort boards."
+      ],
+      "dialogue_b": [
+        "I might start bringing red-backed cards, but I have not settled on that yet.",
+        "I want to play as a guest on Saturday afternoon for the charity pairs.",
+        "I enjoy the quieter lamp by the bulletin board during the late rounds."
+      ],
+      "episode_id": "ep_113",
+      "setting": "a bridge club"
+    },
+    {
+      "constraint_predicate": "plot_access_day",
+      "constraint_value": "I may only use the communal plot on Tuesdays",
+      "constraint_compatible_value": "I stop by the communal plot on Tuesdays",
+      "constraint_violating_value": "I use the communal plot on Saturday morning",
+      "ordinary_predicate": "seed_swap_role",
+      "ordinary_value": "I usually help at the check-in table",
+      "ordinary_new_value": "I am now coordinating the surplus seed shelf",
+      "ordinary_speculated_value": "I might switch to the surplus seed shelf",
+      "background_predicate": "tool_shed_label_color",
+      "background_value": "My trowel tag is dark green",
+      "dialogue_a": [
+        "I\u2019m taking over the surplus seed shelf instead of the check-in table this month.",
+        "I\u2019ll visit the communal plot on Tuesday afternoon and bring the watering cans back.",
+        "I loved the fern display by the entrance at tonight\u2019s society meeting."
+      ],
+      "dialogue_b": [
+        "I might move from the check-in table to the surplus seed shelf next season.",
+        "I want to use the communal plot on Saturday morning for a quick planting session.",
+        "I enjoyed chatting beside the rose cuttings after the raffle ended."
+      ],
+      "episode_id": "ep_114",
+      "setting": "a gardening society"
+    },
+    {
+      "constraint_predicate": "allotment_plot_access_day",
+      "constraint_value": "entry allowed only on Saturdays",
+      "constraint_compatible_value": "I visit my plot on Saturdays",
+      "constraint_violating_value": "I enter my plot on Wednesday evenings",
+      "ordinary_predicate": "preferred_propagation_method",
+      "ordinary_value": "I usually divide mature clumps",
+      "ordinary_new_value": "I now prefer taking softwood cuttings",
+      "ordinary_speculated_value": "I might start layering stems instead",
+      "background_predicate": "tool_shed_storage_spot",
+      "background_value": "my trug stays on the top shelf",
+      "dialogue_a": [
+        "I've decided to switch methods and use softwood cuttings for most of my shrubs now.",
+        "I keep my allotment visits to Saturdays, and I usually stay until the afternoon watering round.",
+        "I saw the society's autumn chrysanthemum display, and the bronze blooms looked especially good this year."
+      ],
+      "dialogue_b": [
+        "I might try layering stems next season, though I'm still comparing it with my usual approach.",
+        "I want to get into my plot on Wednesday evenings this month to tidy the edging.",
+        "I enjoyed the guest talk on old glasshouse designs and took notes on the ventilation examples."
+      ],
+      "episode_id": "ep_115",
+      "setting": "a gardening society"
+    },
+    {
+      "constraint_predicate": "allotment_gate_access",
+      "constraint_value": "gate access limited to daylight hours",
+      "constraint_compatible_value": "I arrive after sunrise for watering",
+      "constraint_violating_value": "I want midnight access to the allotment gate",
+      "ordinary_predicate": "newsletter_delivery_format",
+      "ordinary_value": "I receive the society newsletter by post",
+      "ordinary_new_value": "I want the society newsletter by email",
+      "ordinary_speculated_value": "I might switch the newsletter to email",
+      "background_predicate": "tool_shed_section",
+      "background_value": "my locker is in the west shed",
+      "dialogue_a": [
+        "I want to change my society newsletter from post to email starting this month.",
+        "I always come after sunrise to water my plot before the weekend crowd arrives.",
+        "I enjoyed the seed swap table near the hall entrance at yesterday's meeting."
+      ],
+      "dialogue_b": [
+        "I might switch the society newsletter to email, but I have not settled it yet.",
+        "I want midnight access to the allotment gate so I can check seedlings after work.",
+        "I noticed the rose cuttings display looked especially tidy beside the raffle table."
+      ],
+      "episode_id": "ep_116",
+      "setting": "a gardening society"
+    },
+    {
+      "constraint_predicate": "greenhouse_entry_window",
+      "constraint_value": "members may enter only during staffed afternoon hours",
+      "constraint_compatible_value": "I stop by the greenhouse after lunch on open days",
+      "constraint_violating_value": "I want solo greenhouse access before sunrise",
+      "ordinary_predicate": "tool_shed_label_style",
+      "ordinary_value": "I use blue masking tape labels",
+      "ordinary_new_value": "I switched to copper tag labels",
+      "ordinary_speculated_value": "I might try wooden stake labels",
+      "background_predicate": "winter_talk_series_seat",
+      "background_value": "I usually sit near the back radiator",
+      "dialogue_a": [
+        "I switched all my tool labels to copper tags this week.",
+        "I stop by the greenhouse after lunch when the volunteer desk is staffed.",
+        "I enjoyed the chrysanthemum display beside the old stone wall today."
+      ],
+      "dialogue_b": [
+        "I might try wooden stake labels for my tools next month.",
+        "I want solo greenhouse access before sunrise to water my cuttings.",
+        "I spent the morning deadheading the border by the society gate."
+      ],
+      "episode_id": "ep_117",
+      "setting": "a gardening society"
+    }
+  ]
+}

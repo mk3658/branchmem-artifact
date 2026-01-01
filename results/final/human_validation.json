@@ -1,0 +1,25 @@
+{
+  "note": "Human validation of benchmark ground truth. 3 independent annotators, 30 blind items (12 resolvable, 8 ambiguous, 10 semantic_resolvable), scored against the hidden generator key by scripts/score_human_validation.py. Annotators saw only what a merger sees (ancestor + both branches' value/source/confidence), never the generator's label.",
+  "n_annotators": 3,
+  "n_items": 30,
+  "generator_label_validity": {
+    "overall": "25/30 = 0.83",
+    "overall_ci95": [
+      0.66,
+      0.93
+    ],
+    "ambiguous": "8/8 = 1.00",
+    "resolvable": "8/12 = 0.67",
+    "semantic_resolvable": "9/10 = 0.90"
+  },
+  "inter_annotator": {
+    "raw_pairwise_agreement": 0.84,
+    "fleiss_kappa": 0.661
+  },
+  "key_findings": [
+    "On resolvable conflicts the majority human follows the source/confidence signal 12/12 (always picks the high-confidence branch), validating the benchmark's core design assumption.",
+    "All 4 resolvable human-vs-generator mismatches are exactly the deliberate 15%-noise items (ground truth set to the low-confidence branch); humans are not wrong, the labels are intentionally noisy -- validating the noise parameter.",
+    "The single semantic_resolvable disagreement (gift/no-pet) is a defeasible-constraint family that 2/3 annotators flag, corroborating the constraint-strength construct-validity finding (Appendix on selective resolution).",
+    "Ambiguous items: 100% human agreement that no single answer exists."
+  ]
+}

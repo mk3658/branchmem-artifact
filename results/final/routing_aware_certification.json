@@ -1,0 +1,295 @@
+{
+  "note": "Post-hoc, exploratory (not in ANALYSIS_PLAN.md). Routing-aware certification. The conservative policy certifies over the SET of channels consistent with the two features a router reads exactly (metadata equality, ancestor presence), treating the predicate-lexicon match as the guess it is, and commits only where every candidate channel carries the same certified action. It therefore replaces the assumption 'the router assigns the true channel', false here at 7.9%, with the weaker 'the candidate set contains the true channel', whose rate is reported below. Zero new API.",
+  "lambda": 0.25,
+  "split_seed": 90210,
+  "n_conflicts": 240,
+  "n_calibration": 120,
+  "n_deployment": 120,
+  "router_diagnostics": {
+    "lexicon": {
+      "top1_accuracy": 0.9208,
+      "candidate_set_coverage": 1.0,
+      "candidate_set_sizes": {
+        "2": 163,
+        "1": 77
+      },
+      "mean_candidate_set_size": 1.6792
+    },
+    "semantic": {
+      "top1_accuracy": 0.8333,
+      "candidate_set_coverage": 0.875,
+      "candidate_set_sizes": {
+        "1": 151,
+        "2": 89
+      },
+      "mean_candidate_set_size": 1.3708
+    }
+  },
+  "inverted_channel_purity_requirement": {
+    "n=30": {
+      "max_correct_outcomes_tolerated": 1,
+      "max_contamination_rate": 0.0333
+    },
+    "n=60": {
+      "max_correct_outcomes_tolerated": 6,
+      "max_contamination_rate": 0.1
+    },
+    "n=120": {
+      "max_correct_outcomes_tolerated": 18,
+      "max_contamination_rate": 0.15
+    },
+    "n=240": {
+      "max_correct_outcomes_tolerated": 43,
+      "max_contamination_rate": 0.1792
+    },
+    "n=480": {
+      "max_correct_outcomes_tolerated": 97,
+      "max_contamination_rate": 0.2021
+    }
+  },
+  "veto_thresholds": {
+    "veto": 0.6,
+    "clear": 0.3
+  },
+  "certificates_oracle": {
+    "objective_fact": {
+      "n": 65,
+      "action": "abstain",
+      "lower": 0.7099,
+      "upper": 0.9357
+    },
+    "no_signal": {
+      "n": 0,
+      "action": "abstain",
+      "lower": 0.0,
+      "upper": 1.0
+    },
+    "safety_constraint": {
+      "n": 27,
+      "action": "invert_provenance",
+      "lower": 0.0,
+      "upper": 0.1625
+    }
+  },
+  "certificates_router": {
+    "objective_fact": {
+      "n": 62,
+      "action": "abstain",
+      "lower": 0.6595,
+      "upper": 0.9103
+    },
+    "no_signal": {
+      "n": 0,
+      "action": "abstain",
+      "lower": 0.0,
+      "upper": 1.0
+    },
+    "safety_constraint": {
+      "n": 30,
+      "action": "abstain",
+      "lower": 0.0428,
+      "upper": 0.3871
+    }
+  },
+  "certificates_semantic_router": {
+    "objective_fact": {
+      "n": 66,
+      "action": "abstain",
+      "lower": 0.5287,
+      "upper": 0.8111
+    },
+    "no_signal": {
+      "n": 0,
+      "action": "abstain",
+      "lower": 0.0,
+      "upper": 1.0
+    },
+    "safety_constraint": {
+      "n": 26,
+      "action": "abstain",
+      "lower": 0.1723,
+      "upper": 0.6346
+    }
+  },
+  "deployment_results": {
+    "oracle channels, certified only": {
+      "coverage": 0.275,
+      "n_committed": 33,
+      "conditional_risk": 0.0,
+      "per_true_channel_risk": {
+        "safety_constraint": 0.0
+      },
+      "worst_true_channel_risk": 0.0,
+      "unsafe_true_channel_committed": false,
+      "expected_utility": 0.275
+    },
+    "oracle channels + LLM fallback": {
+      "coverage": 0.8583,
+      "n_committed": 103,
+      "conditional_risk": 0.0583,
+      "per_true_channel_risk": {
+        "objective_fact": 0.1091,
+        "safety_constraint": 0.0,
+        "no_signal": 0.0
+      },
+      "worst_true_channel_risk": 0.1091,
+      "unsafe_true_channel_committed": false,
+      "expected_utility": 0.6083
+    },
+    "predicted channel, certified only": {
+      "coverage": 0.0,
+      "n_committed": 0,
+      "conditional_risk": null,
+      "per_true_channel_risk": {},
+      "worst_true_channel_risk": null,
+      "unsafe_true_channel_committed": false,
+      "expected_utility": 0.0
+    },
+    "predicted channel + LLM fallback": {
+      "coverage": 0.8333,
+      "n_committed": 100,
+      "conditional_risk": 0.36,
+      "per_true_channel_risk": {
+        "objective_fact": 0.1091,
+        "safety_constraint": 1.0,
+        "no_signal": 0.0
+      },
+      "worst_true_channel_risk": 1.0,
+      "unsafe_true_channel_committed": true,
+      "expected_utility": -0.6667
+    },
+    "conservative (candidate set), certified only": {
+      "coverage": 0.0,
+      "n_committed": 0,
+      "conditional_risk": null,
+      "per_true_channel_risk": {},
+      "worst_true_channel_risk": null,
+      "unsafe_true_channel_committed": false,
+      "expected_utility": 0.0
+    },
+    "conservative + LLM fallback": {
+      "coverage": 0.8333,
+      "n_committed": 100,
+      "conditional_risk": 0.36,
+      "per_true_channel_risk": {
+        "objective_fact": 0.1091,
+        "safety_constraint": 1.0,
+        "no_signal": 0.0
+      },
+      "worst_true_channel_risk": 1.0,
+      "unsafe_true_channel_committed": true,
+      "expected_utility": -0.6667
+    },
+    "conservative over ORACLE certificates": {
+      "coverage": 0.0,
+      "n_committed": 0,
+      "conditional_risk": null,
+      "per_true_channel_risk": {},
+      "worst_true_channel_risk": null,
+      "unsafe_true_channel_committed": false,
+      "expected_utility": 0.0
+    },
+    "semantic router, certified only": {
+      "coverage": 0.0,
+      "n_committed": 0,
+      "conditional_risk": null,
+      "per_true_channel_risk": {},
+      "worst_true_channel_risk": null,
+      "unsafe_true_channel_committed": false,
+      "expected_utility": 0.0
+    },
+    "semantic router + LLM fallback": {
+      "coverage": 0.8333,
+      "n_committed": 100,
+      "conditional_risk": 0.36,
+      "per_true_channel_risk": {
+        "objective_fact": 0.1091,
+        "safety_constraint": 1.0,
+        "no_signal": 0.0
+      },
+      "worst_true_channel_risk": 1.0,
+      "unsafe_true_channel_committed": true,
+      "expected_utility": -0.6667
+    },
+    "semantic conservative (candidate set), certified only": {
+      "coverage": 0.0,
+      "n_committed": 0,
+      "conditional_risk": null,
+      "per_true_channel_risk": {},
+      "worst_true_channel_risk": null,
+      "unsafe_true_channel_committed": false,
+      "expected_utility": 0.0
+    },
+    "semantic conservative + LLM fallback": {
+      "coverage": 0.8333,
+      "n_committed": 100,
+      "conditional_risk": 0.36,
+      "per_true_channel_risk": {
+        "objective_fact": 0.1091,
+        "safety_constraint": 1.0,
+        "no_signal": 0.0
+      },
+      "worst_true_channel_risk": 1.0,
+      "unsafe_true_channel_committed": true,
+      "expected_utility": -0.6667
+    },
+    "clean certs, lexicon routing at deployment": {
+      "coverage": 0.3083,
+      "n_committed": 37,
+      "conditional_risk": 0.1622,
+      "per_true_channel_risk": {
+        "objective_fact": 0.8571,
+        "safety_constraint": 0.0
+      },
+      "worst_true_channel_risk": 0.8571,
+      "unsafe_true_channel_committed": true,
+      "expected_utility": 0.0583
+    },
+    "clean certs, semantic routing at deployment": {
+      "coverage": 0.2333,
+      "n_committed": 28,
+      "conditional_risk": 0.2143,
+      "per_true_channel_risk": {
+        "safety_constraint": 0.0,
+        "objective_fact": 0.8571
+      },
+      "worst_true_channel_risk": 0.8571,
+      "unsafe_true_channel_committed": true,
+      "expected_utility": -0.0167
+    },
+    "clean certs, conservative lexicon candidate sets": {
+      "coverage": 0.0,
+      "n_committed": 0,
+      "conditional_risk": null,
+      "per_true_channel_risk": {},
+      "worst_true_channel_risk": null,
+      "unsafe_true_channel_committed": false,
+      "expected_utility": 0.0
+    },
+    "clean certs, conservative semantic candidate sets": {
+      "coverage": 0.2333,
+      "n_committed": 28,
+      "conditional_risk": 0.2143,
+      "per_true_channel_risk": {
+        "safety_constraint": 0.0,
+        "objective_fact": 0.8571
+      },
+      "worst_true_channel_risk": 0.8571,
+      "unsafe_true_channel_committed": true,
+      "expected_utility": -0.0167
+    },
+    "clean certs, conservative semantic + LLM fallback": {
+      "coverage": 0.8417,
+      "n_committed": 101,
+      "conditional_risk": 0.2079,
+      "per_true_channel_risk": {
+        "objective_fact": 0.2,
+        "safety_constraint": 0.3226,
+        "no_signal": 0.0
+      },
+      "worst_true_channel_risk": 0.3226,
+      "unsafe_true_channel_committed": true,
+      "expected_utility": -0.0333
+    }
+  }
+}

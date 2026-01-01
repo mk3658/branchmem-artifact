@@ -1,0 +1,224 @@
+{
+  "note": "Post-hoc, exploratory (not in ANALYSIS_PLAN.md). Operational governance of the channel family: (A) a label-free router that assigns channels from features visible before the merge decision, certified and deployed in place of the construction's own channel labels; (B) a sweep over independent channel-misassignment probability eps, re-certifying each draw and scoring the deployment half against the TRUE channels, so the reported degradation is the protection an operator loses rather than a violation of the theorem, which continues to hold for the channels as defined; (C) calibration sample complexity and audit cadence. Zero new API.",
+  "lambda": 0.25,
+  "delta": 0.05,
+  "split_seed": 90210,
+  "n_conflicts": 240,
+  "n_calibration": 120,
+  "n_deployment": 120,
+  "noise_seed": 4711,
+  "noise_draws": 200,
+  "A_assignment": {
+    "router_agreement": 0.9208,
+    "confusion": {
+      "no_signal->no_signal": 60,
+      "objective_fact->objective_fact": 107,
+      "objective_fact->safety_constraint": 13,
+      "safety_constraint->objective_fact": 6,
+      "safety_constraint->safety_constraint": 54
+    },
+    "certificates_declared": {
+      "objective_fact": {
+        "n": 65,
+        "rho": 0.8461538461538461,
+        "lower": 0.7099087648312439,
+        "upper": 0.9356938272629431,
+        "action": "abstain"
+      },
+      "no_signal": {
+        "n": 0,
+        "rho": NaN,
+        "lower": 0.0,
+        "upper": 1.0,
+        "action": "abstain"
+      },
+      "safety_constraint": {
+        "n": 27,
+        "rho": 0.0,
+        "lower": 0.0,
+        "upper": 0.16248366332196423,
+        "action": "invert_provenance"
+      }
+    },
+    "certificates_routed": {
+      "objective_fact": {
+        "n": 62,
+        "rho": 0.8064516129032258,
+        "lower": 0.659470519216139,
+        "upper": 0.9103399932715069,
+        "action": "abstain"
+      },
+      "no_signal": {
+        "n": 0,
+        "rho": NaN,
+        "lower": 0.0,
+        "upper": 1.0,
+        "action": "abstain"
+      },
+      "safety_constraint": {
+        "n": 30,
+        "rho": 0.16666666666666666,
+        "lower": 0.042768824834817275,
+        "upper": 0.3870766305791338,
+        "action": "abstain"
+      }
+    },
+    "deployment_declared": {
+      "coverage": 0.8583,
+      "n_committed": 103,
+      "conditional_risk": 0.0583,
+      "per_true_channel_risk": {
+        "objective_fact": 0.1091,
+        "safety_constraint": 0.0,
+        "no_signal": 0.0
+      },
+      "worst_true_channel_risk": 0.1091,
+      "unsafe_true_channel_committed": false,
+      "expected_utility": 0.6083
+    },
+    "deployment_routed": {
+      "coverage": 0.8333,
+      "n_committed": 100,
+      "conditional_risk": 0.36,
+      "per_true_channel_risk": {
+        "objective_fact": 0.1091,
+        "safety_constraint": 1.0,
+        "no_signal": 0.0
+      },
+      "worst_true_channel_risk": 1.0,
+      "unsafe_true_channel_committed": true,
+      "expected_utility": -0.6667
+    }
+  },
+  "B_misassignment_sweep": [
+    {
+      "epsilon": 0.0,
+      "draws": 1,
+      "mean_coverage": 0.8583,
+      "mean_conditional_risk": 0.0583,
+      "mean_worst_true_channel_risk": 0.1091,
+      "p_unsafe_true_channel_committed": 0.0,
+      "p_safety_channel_certified_follow": 0.0,
+      "p_safety_channel_uncertified_llm_fallback": 0.0,
+      "mean_expected_utility": 0.6083
+    },
+    {
+      "epsilon": 0.05,
+      "draws": 200,
+      "mean_coverage": 0.8466,
+      "mean_conditional_risk": 0.1902,
+      "mean_worst_true_channel_risk": 0.4623,
+      "p_unsafe_true_channel_committed": 0.38,
+      "p_safety_channel_certified_follow": 0.0,
+      "p_safety_channel_uncertified_llm_fallback": 0.38,
+      "mean_expected_utility": 0.0482
+    },
+    {
+      "epsilon": 0.1,
+      "draws": 200,
+      "mean_coverage": 0.8363,
+      "mean_conditional_risk": 0.3187,
+      "mean_worst_true_channel_risk": 0.8571,
+      "p_unsafe_true_channel_committed": 0.83,
+      "p_safety_channel_certified_follow": 0.0,
+      "p_safety_channel_uncertified_llm_fallback": 0.83,
+      "mean_expected_utility": -0.4935
+    },
+    {
+      "epsilon": 0.2,
+      "draws": 200,
+      "mean_coverage": 0.8333,
+      "mean_conditional_risk": 0.36,
+      "mean_worst_true_channel_risk": 1.0,
+      "p_unsafe_true_channel_committed": 1.0,
+      "p_safety_channel_certified_follow": 0.0,
+      "p_safety_channel_uncertified_llm_fallback": 1.0,
+      "mean_expected_utility": -0.6667
+    },
+    {
+      "epsilon": 0.3,
+      "draws": 200,
+      "mean_coverage": 0.8333,
+      "mean_conditional_risk": 0.36,
+      "mean_worst_true_channel_risk": 1.0,
+      "p_unsafe_true_channel_committed": 1.0,
+      "p_safety_channel_certified_follow": 0.0,
+      "p_safety_channel_uncertified_llm_fallback": 1.0,
+      "mean_expected_utility": -0.6667
+    },
+    {
+      "epsilon": 0.5,
+      "draws": 200,
+      "mean_coverage": 0.8333,
+      "mean_conditional_risk": 0.36,
+      "mean_worst_true_channel_risk": 1.0,
+      "p_unsafe_true_channel_committed": 1.0,
+      "p_safety_channel_certified_follow": 0.0,
+      "p_safety_channel_uncertified_llm_fallback": 1.0,
+      "mean_expected_utility": -0.6667
+    }
+  ],
+  "C_calibration_cost_audited_items": {
+    "K=3": {
+      "rho=1.0": 17,
+      "rho=0.98": 25,
+      "rho=0.95": 32,
+      "rho=0.9": 50,
+      "rho=0.85": 113
+    },
+    "K=4": {
+      "rho=1.0": 18,
+      "rho=0.98": 26,
+      "rho=0.95": 33,
+      "rho=0.9": 57,
+      "rho=0.85": 120
+    },
+    "K=8": {
+      "rho=1.0": 21,
+      "rho=0.98": 29,
+      "rho=0.95": 36,
+      "rho=0.9": 66,
+      "rho=0.85": 140
+    }
+  },
+  "C_median_detection_delay_audited_items": 689,
+  "C_slowest_channel": "contact",
+  "C_per_channel_median_delay": {
+    "contact": 689.0,
+    "preference": 290.5
+  },
+  "C_post_drift_wrong_commit_rate": 0.54552,
+  "C_audit_schedule_excess_risk": 0.2955,
+  "C_audit_schedule": [
+    {
+      "audit_fraction": 1.0,
+      "audited_items_to_revocation": 689,
+      "committed_conflicts_before_revocation": 689,
+      "excess_wrong_commits_before_revocation": 203.6
+    },
+    {
+      "audit_fraction": 0.5,
+      "audited_items_to_revocation": 689,
+      "committed_conflicts_before_revocation": 1378,
+      "excess_wrong_commits_before_revocation": 407.2
+    },
+    {
+      "audit_fraction": 0.25,
+      "audited_items_to_revocation": 689,
+      "committed_conflicts_before_revocation": 2756,
+      "excess_wrong_commits_before_revocation": 814.4
+    },
+    {
+      "audit_fraction": 0.1,
+      "audited_items_to_revocation": 689,
+      "committed_conflicts_before_revocation": 6890,
+      "excess_wrong_commits_before_revocation": 2036.0
+    },
+    {
+      "audit_fraction": 0.05,
+      "audited_items_to_revocation": 689,
+      "committed_conflicts_before_revocation": 13780,
+      "excess_wrong_commits_before_revocation": 4072.0
+    }
+  ]
+}

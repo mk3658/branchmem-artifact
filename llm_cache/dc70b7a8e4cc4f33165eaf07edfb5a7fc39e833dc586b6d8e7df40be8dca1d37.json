@@ -1,0 +1,48 @@
+{
+  "text": "NO",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 154,
+  "output_tokens": 4,
+  "raw": {
+    "id": "chatcmpl-E4kyEfzG6v2vAy58qEGBv07c5D9dZ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "NO",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802574,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 4,
+      "prompt_tokens": 154,
+      "total_tokens": 158,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "User memory:\n- user.weekly_grocery_budget (background constraint): I have a strict weekly grocery limit of $95 and can't go over it.\n- user.weekly_grocery_budget: UNRESOLVED (conflicting candidates: Spending $110 on groceries this week is acceptable.)\n\nBased only on this memory, is the following currently true of the user?\nStatement: \"Spending $110 on groceries this week is acceptable.\"\nAnswer with exactly one word: YES, NO, or UNSURE.",
+  "system": "You answer strictly from the user memory provided. If the memory does not support the statement, answer NO. If the memory is unresolved, contradictory, or insufficient, answer UNSURE. Respect any stated constraints in the memory."
+}

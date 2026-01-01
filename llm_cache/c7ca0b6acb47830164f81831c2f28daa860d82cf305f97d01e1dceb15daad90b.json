@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"preferred_workbench\",\"value\":\"I prefer the back table\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"repair_intake_limit\",\"value\":\"only one item per visitor each session\",\"source\":\"user\",\"confidence\":0.98}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 318,
+  "output_tokens": 59,
+  "raw": {
+    "id": "chatcmpl-EkScdmCEHGs7owmgcoksKQJQUcM4R",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"preferred_workbench\",\"value\":\"I prefer the back table\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"repair_intake_limit\",\"value\":\"only one item per visitor each session\",\"source\":\"user\",\"confidence\":0.98}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741819,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 59,
+      "prompt_tokens": 318,
+      "total_tokens": 377,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- repair_intake_limit: only one item per visitor each session  (source=observation, confidence=1.00)\n- preferred_workbench: I usually choose the window bench  (source=observation, confidence=1.00)\n- favorite_tool: I like using the small Phillips screwdriver  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I used to take the window bench, but now I prefer the back table.\nUser: I brought just one lamp today, so I am following the intake rule.\nUser: I love how the volunteers label every tray so neatly.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

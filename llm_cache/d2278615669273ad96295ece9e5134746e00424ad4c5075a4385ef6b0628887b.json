@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this reconciliation problem. So, the common ancestor has a value for \"user|trailer_towing_capacity\" stating that the hired trailer must not exceed the van's 2000 kg limit. Now, Branch A says the user wants a 2600 kg trailer, sourced by the user with high confidence. Branch B suggests sticking to the 2000 kg limit, but it's an inference with lower confidence.\n\nFirst, I need to compare the sources and confidence. Branch A's update is user-sourced and has a confidence of 0.95, which is pretty strong. Branch B is an inference with 0.55 confidence, which is lower. The common ancestor's value is the original instruction, but Branch A's user input directly contradicts it. Since the user's input is explicit and has higher confidence, it's more trustworthy than the inferred Branch B. Also, the ancestor's value might be a stale reference if the user later changed their mind. So, Branch A's value should be kept. The conflict here is resolved by prioritizing the user's explicit statement over the inferred suggestion. No need to flag as unresolved because the sources and confidence clearly indicate Branch A's update is more reliable.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"trailer_towing_capacity\",\n      \"resolution\": \"kept_from_a\",\n      \"value\": \"The user wants to hire a 2600 kilogram plant trailer.\",\n      \"justification\": \"Branch A's user-sourced update with high confidence directly contradicts the common ancestor's value, overriding the lower-confidence inference from Branch B.\"\n    }\n  ]\n}",
+  "model": "qwen3:8b",
+  "input_tokens": 539,
+  "output_tokens": 358,
+  "raw": {
+    "id": "chatcmpl-767",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this reconciliation problem. So, the common ancestor has a value for \"user|trailer_towing_capacity\" stating that the hired trailer must not exceed the van's 2000 kg limit. Now, Branch A says the user wants a 2600 kg trailer, sourced by the user with high confidence. Branch B suggests sticking to the 2000 kg limit, but it's an inference with lower confidence.\n\nFirst, I need to compare the sources and confidence. Branch A's update is user-sourced and has a confidence of 0.95, which is pretty strong. Branch B is an inference with 0.55 confidence, which is lower. The common ancestor's value is the original instruction, but Branch A's user input directly contradicts it. Since the user's input is explicit and has higher confidence, it's more trustworthy than the inferred Branch B. Also, the ancestor's value might be a stale reference if the user later changed their mind. So, Branch A's value should be kept. The conflict here is resolved by prioritizing the user's explicit statement over the inferred suggestion. No need to flag as unresolved because the sources and confidence clearly indicate Branch A's update is more reliable.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"trailer_towing_capacity\",\n      \"resolution\": \"kept_from_a\",\n      \"value\": \"The user wants to hire a 2600 kilogram plant trailer.\",\n      \"justification\": \"Branch A's user-sourced update with high confidence directly contradicts the common ancestor's value, overriding the lower-confidence inference from Branch B.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794791440,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 358,
+      "prompt_tokens": 539,
+      "total_tokens": 897,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|trailer_towing_capacity\": \"The hired trailer must not exceed the van's 2000 kilogram towing limit.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|trailer_towing_capacity\": {\n    \"value\": \"The user wants to hire a 2600 kilogram plant trailer.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|trailer_towing_capacity\": {\n    \"value\": \"The user should hire a trailer within the 2000 kilogram limit.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this reconciliation problem. So, the common ancestor value for \"user|preferred_service_center\" is \"The user usually takes the car to Oak Street Motors.\" Then, Branch A has an inferred value with 55% confidence, saying the user still uses Oak Street Motors. Branch B has a user-sourced value with 95% confidence, stating the user now uses Riverside Garage.\n\nFirst, I need to compare the sources and confidence. Branch B's source is \"user,\" which is more trustworthy than Branch A's \"inference.\" The confidence in B is much higher (0.95 vs 0.55). The ancestor value was Oak Street Motors, but Branch B is claiming a change to Riverside. Since the user explicitly stated the new preference in Branch B, that's a strong indicator. Even though the ancestor had Oak Street, the user's direct input in Branch B is more reliable. There's no timestamp conflict since the branches were disconnected, so we can't assume one is newer. Therefore, Branch B's update should be kept. The conflict is resolved by favoring the user's explicit statement over the inferred one. So the resolution is to keep Branch B's value.\n</think>\n\n{\"resolutions\": [{\"entity\": \"user\", \"predicate\": \"preferred_service_center\", \"resolution\": \"kept_from_b\", \"value\": \"The user now uses Riverside Garage for routine servicing.\", \"justification\": \"Branch B's user-sourced update with higher confidence directly contradicts the ancestor value, indicating a genuine preference change.\"}]}",
+  "model": "qwen3:8b",
+  "input_tokens": 513,
+  "output_tokens": 322,
+  "raw": {
+    "id": "chatcmpl-449",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this reconciliation problem. So, the common ancestor value for \"user|preferred_service_center\" is \"The user usually takes the car to Oak Street Motors.\" Then, Branch A has an inferred value with 55% confidence, saying the user still uses Oak Street Motors. Branch B has a user-sourced value with 95% confidence, stating the user now uses Riverside Garage.\n\nFirst, I need to compare the sources and confidence. Branch B's source is \"user,\" which is more trustworthy than Branch A's \"inference.\" The confidence in B is much higher (0.95 vs 0.55). The ancestor value was Oak Street Motors, but Branch B is claiming a change to Riverside. Since the user explicitly stated the new preference in Branch B, that's a strong indicator. Even though the ancestor had Oak Street, the user's direct input in Branch B is more reliable. There's no timestamp conflict since the branches were disconnected, so we can't assume one is newer. Therefore, Branch B's update should be kept. The conflict is resolved by favoring the user's explicit statement over the inferred one. So the resolution is to keep Branch B's value.\n</think>\n\n{\"resolutions\": [{\"entity\": \"user\", \"predicate\": \"preferred_service_center\", \"resolution\": \"kept_from_b\", \"value\": \"The user now uses Riverside Garage for routine servicing.\", \"justification\": \"Branch B's user-sourced update with higher confidence directly contradicts the ancestor value, indicating a genuine preference change.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794788880,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 322,
+      "prompt_tokens": 513,
+      "total_tokens": 835,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|preferred_service_center\": \"The user usually takes the car to Oak Street Motors.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_service_center\": {\n    \"value\": \"The user still uses Oak Street Motors for routine servicing.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_service_center\": {\n    \"value\": \"The user now uses Riverside Garage for routine servicing.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

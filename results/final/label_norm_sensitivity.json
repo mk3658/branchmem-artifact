@@ -1,0 +1,413 @@
+{
+  "note": "POST-HOC, EXPLORATORY (in neither ANALYSIS_PLAN.md nor its addendum). Tests whether the discrimination claim depends on the labelling convention that a standing entry survives a confident user-sourced update. `authority_locus` classifies each constraint ancestor by who could lift the constraint, using surface patterns recorded alongside every decision in annotation/discrimination_authority_locus.csv. `under_user_authority_norm` grants that objection outright by re-scoring with 'take the user-sourced update' as correct for BOTH critical types; under that norm a field-reading policy is correct by construction, so this row is the sensitivity of the claim to its convention, not a defence of it. `physically_infeasible_constraints_only` restricts the constraint type to items where the update asserts a larger quantity than the ancestor's stated ceiling in the same unit, which no account of user authority can license. This script does not use human labels. The adjudication study has since been run: see annotation/discrimination_sheets/ for the filled sheets and results/final/discrimination_human_adjudication.json for its outcome, which upheld the convention (0 of 25 constraints judged the user's alone to lift).",
+  "bank_sha256": "a52914ccbd53ae0cfe74d78199a49c5251880a7336509566d194938732aa6a93",
+  "n_constraint_items": 80,
+  "authority_locus_counts": {
+    "external": 70,
+    "external:building/management": 15,
+    "external:lease/landlord": 4,
+    "external:transit/courier/branch": 11,
+    "external:contract/policy": 14,
+    "physical_or_capacity": 9,
+    "unclassified": 1,
+    "external:employer/union": 3,
+    "external:club/league/membership": 4,
+    "external:venue/studio/room": 9,
+    "external:rental/hire": 4,
+    "external:insurer/carrier": 1,
+    "external:library/archive": 5
+  },
+  "n_physically_infeasible_updates": 9,
+  "physically_infeasible_predicates": [
+    "espresso_machine_voltage_limit",
+    "max_container_height_cm",
+    "max_filter_diameter",
+    "max_poster_width_inches",
+    "max_speaker_width_cm",
+    "max_upload_size_mb",
+    "paper_tray_capacity_limit",
+    "snow_chain_clearance",
+    "trailer_towing_capacity"
+  ],
+  "n_externally_held": 70,
+  "per_model": {
+    "ConfidenceRule": {
+      "as_labelled": {
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 1.0,
+        "balanced_accuracy": 0.5,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.5,
+          0.5
+        ],
+        "n_families_complete": 80
+      },
+      "under_user_authority_norm": {
+        "by_type": {
+          "immutable_constraint": 1.0,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 0.0,
+        "balanced_accuracy": 1.0,
+        "balanced_accuracy_ci95_family_clustered": [
+          1.0,
+          1.0
+        ],
+        "n_families_complete": 80
+      },
+      "physically_infeasible_constraints_only": {
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 1.0,
+        "balanced_accuracy": 0.5,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.5,
+          0.5
+        ],
+        "n_families_complete": 9
+      },
+      "externally_held_constraints_only": {
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 1.0,
+        "balanced_accuracy": 0.5,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.5,
+          0.5
+        ],
+        "n_families_complete": 70
+      }
+    },
+    "ThreeWayLLM (gpt-5.4)": {
+      "as_labelled": {
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 1.0,
+        "balanced_accuracy": 0.5,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.5,
+          0.5
+        ],
+        "n_families_complete": 80
+      },
+      "under_user_authority_norm": {
+        "by_type": {
+          "immutable_constraint": 0.9125,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 0.0875,
+        "balanced_accuracy": 0.9563,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.925,
+          0.9875
+        ],
+        "n_families_complete": 80
+      },
+      "physically_infeasible_constraints_only": {
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 1.0,
+        "balanced_accuracy": 0.5,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.5,
+          0.5
+        ],
+        "n_families_complete": 9
+      },
+      "externally_held_constraints_only": {
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 1.0,
+        "balanced_accuracy": 0.5,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.5,
+          0.5
+        ],
+        "n_families_complete": 70
+      }
+    },
+    "ThreeWayLLM (gpt-5.4-mini)": {
+      "as_labelled": {
+        "by_type": {
+          "immutable_constraint": 0.125,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 0.875,
+        "balanced_accuracy": 0.5625,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.5312,
+          0.6
+        ],
+        "n_families_complete": 80
+      },
+      "under_user_authority_norm": {
+        "by_type": {
+          "immutable_constraint": 0.875,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 0.125,
+        "balanced_accuracy": 0.9375,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.9,
+          0.9688
+        ],
+        "n_families_complete": 80
+      },
+      "physically_infeasible_constraints_only": {
+        "by_type": {
+          "immutable_constraint": 0.1111,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 0.8889,
+        "balanced_accuracy": 0.5555,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.5,
+          0.6667
+        ],
+        "n_families_complete": 9
+      },
+      "externally_held_constraints_only": {
+        "by_type": {
+          "immutable_constraint": 0.1286,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 0.8714,
+        "balanced_accuracy": 0.5643,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.5286,
+          0.6071
+        ],
+        "n_families_complete": 70
+      }
+    },
+    "ThreeWayLLM (gpt-5.4-nano)": {
+      "as_labelled": {
+        "by_type": {
+          "immutable_constraint": 0.0375,
+          "legitimate_override": 0.9875
+        },
+        "discrimination_gap": 0.95,
+        "balanced_accuracy": 0.5125,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.4875,
+          0.5375
+        ],
+        "n_families_complete": 80
+      },
+      "under_user_authority_norm": {
+        "by_type": {
+          "immutable_constraint": 0.875,
+          "legitimate_override": 0.9875
+        },
+        "discrimination_gap": 0.1125,
+        "balanced_accuracy": 0.9313,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.8938,
+          0.9688
+        ],
+        "n_families_complete": 80
+      },
+      "physically_infeasible_constraints_only": {
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 0.9875
+        },
+        "discrimination_gap": 0.9875,
+        "balanced_accuracy": 0.4938,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.5,
+          0.5
+        ],
+        "n_families_complete": 9
+      },
+      "externally_held_constraints_only": {
+        "by_type": {
+          "immutable_constraint": 0.0429,
+          "legitimate_override": 0.9875
+        },
+        "discrimination_gap": 0.9446,
+        "balanced_accuracy": 0.5152,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.4857,
+          0.5429
+        ],
+        "n_families_complete": 70
+      }
+    },
+    "ThreeWayLLM (llama3.1:8b)": {
+      "as_labelled": {
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 1.0,
+        "balanced_accuracy": 0.5,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.5,
+          0.5
+        ],
+        "n_families_complete": 80
+      },
+      "under_user_authority_norm": {
+        "by_type": {
+          "immutable_constraint": 0.9875,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 0.0125,
+        "balanced_accuracy": 0.9938,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.9812,
+          1.0
+        ],
+        "n_families_complete": 80
+      },
+      "physically_infeasible_constraints_only": {
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 1.0,
+        "balanced_accuracy": 0.5,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.5,
+          0.5
+        ],
+        "n_families_complete": 9
+      },
+      "externally_held_constraints_only": {
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 1.0,
+        "balanced_accuracy": 0.5,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.5,
+          0.5
+        ],
+        "n_families_complete": 70
+      }
+    },
+    "ThreeWayLLM (mistral:7b)": {
+      "as_labelled": {
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 0.7125
+        },
+        "discrimination_gap": 0.7125,
+        "balanced_accuracy": 0.3563,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.3063,
+          0.4062
+        ],
+        "n_families_complete": 80
+      },
+      "under_user_authority_norm": {
+        "by_type": {
+          "immutable_constraint": 0.375,
+          "legitimate_override": 0.7125
+        },
+        "discrimination_gap": 0.3375,
+        "balanced_accuracy": 0.5437,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.475,
+          0.6188
+        ],
+        "n_families_complete": 80
+      },
+      "physically_infeasible_constraints_only": {
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 0.7125
+        },
+        "discrimination_gap": 0.7125,
+        "balanced_accuracy": 0.3563,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.3333,
+          0.5
+        ],
+        "n_families_complete": 9
+      },
+      "externally_held_constraints_only": {
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 0.7125
+        },
+        "discrimination_gap": 0.7125,
+        "balanced_accuracy": 0.3563,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.2929,
+          0.4071
+        ],
+        "n_families_complete": 70
+      }
+    },
+    "ThreeWayLLM (qwen2.5:7b)": {
+      "as_labelled": {
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 0.975
+        },
+        "discrimination_gap": 0.975,
+        "balanced_accuracy": 0.4875,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.4688,
+          0.5
+        ],
+        "n_families_complete": 80
+      },
+      "under_user_authority_norm": {
+        "by_type": {
+          "immutable_constraint": 0.65,
+          "legitimate_override": 0.975
+        },
+        "discrimination_gap": 0.325,
+        "balanced_accuracy": 0.8125,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.7562,
+          0.8625
+        ],
+        "n_families_complete": 80
+      },
+      "physically_infeasible_constraints_only": {
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 0.975
+        },
+        "discrimination_gap": 0.975,
+        "balanced_accuracy": 0.4875,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.5,
+          0.5
+        ],
+        "n_families_complete": 9
+      },
+      "externally_held_constraints_only": {
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 0.975
+        },
+        "discrimination_gap": 0.975,
+        "balanced_accuracy": 0.4875,
+        "balanced_accuracy_ci95_family_clustered": [
+          0.4786,
+          0.5
+        ],
+        "n_families_complete": 70
+      }
+    }
+  }
+}

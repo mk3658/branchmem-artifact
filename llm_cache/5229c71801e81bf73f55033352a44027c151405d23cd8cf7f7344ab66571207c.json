@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"max_passengers_per_ride\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Branch A states a booking request for six passengers while Branch B restates a four-passenger limit, and these describe different kinds of facts that cannot be cleanly reconciled under the same predicate without guessing.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 405,
+  "output_tokens": 78,
+  "raw": {
+    "id": "chatcmpl-Ekif9wDtf5hSCuXU5LbkifEzyZVYA",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"max_passengers_per_ride\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Branch A states a booking request for six passengers while Branch B restates a four-passenger limit, and these describe different kinds of facts that cannot be cleanly reconciled under the same predicate without guessing.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794803479,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 78,
+      "prompt_tokens": 405,
+      "total_tokens": 483,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|max_passengers_per_ride\": \"Company policy caps the user's taxi rides at four passengers.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|max_passengers_per_ride\": {\n    \"value\": \"The user wants to book taxi rides for six passengers.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|max_passengers_per_ride\": {\n    \"value\": \"The user's taxi rides must stay within four passengers.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current record. Resolve each conflict. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If nothing you are given is a real basis to prefer one branch over the other (e.g. both are equally plausible), explicitly flag it as unresolvable rather than guessing."
+}

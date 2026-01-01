@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"lens_filter_preference\",\"value\":\"prefers shooting without any filter\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"studio_backdrop_access\",\"value\":\"is setting up a portrait session against the blue backdrop\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"lounge_display_table\",\"value\":\"the lounge display table looks empty\",\"source\":\"user\",\"confidence\":0.93}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 327,
+  "output_tokens": 90,
+  "raw": {
+    "id": "chatcmpl-EkSaOpDju7w0oQZcQaLbNWhYJANhY",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"lens_filter_preference\",\"value\":\"prefers shooting without any filter\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"studio_backdrop_access\",\"value\":\"is setting up a portrait session against the blue backdrop\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"lounge_display_table\",\"value\":\"the lounge display table looks empty\",\"source\":\"user\",\"confidence\":0.93}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741680,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 90,
+      "prompt_tokens": 327,
+      "total_tokens": 417,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- studio_backdrop_access: members may use only the blue backdrop  (source=observation, confidence=1.00)\n- lens_filter_preference: I usually keep a UV filter on  (source=observation, confidence=1.00)\n- club_meeting_night: the club meets on Thursday evenings  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I used to leave a UV filter on, but now I prefer shooting without any filter.\nUser: I\u2019m setting up my portrait session against the blue backdrop again tonight.\nUser: I\u2019m bringing the old light meter because the lounge display table looks empty.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

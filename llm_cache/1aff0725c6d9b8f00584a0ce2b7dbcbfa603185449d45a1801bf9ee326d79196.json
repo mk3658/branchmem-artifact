@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 4,\n  \"evidence_span\": \"1269\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 617,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-717",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 4,\n  \"evidence_span\": \"1269\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720522,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 617,
+      "total_tokens": 648,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: George Bernard Shaw\nRelation: works_in_field\nPreviously recorded value (may be stale, may be empty): playwright\n\nCandidate LEFT:  motorcycle racer\nCandidate RIGHT: politician\n\nEvidence lines (numbered, in original order):\n55. Stephen McNeil works in the field of politician.\n161. The author of Mrs. Warren's Profession is George Bernard Shaw.\n222. The author of Major Barbara is George Bernard Shaw.\n792. Christopher Monck, 2nd Duke of Albemarle works in the field of politician.\n897. Khalifa bin Zayed Al Nahyan works in the field of politician.\n1025. George Bernard Shaw works in the field of playwright.\n1095. Mahmoud Abbas works in the field of politician.\n1211. Uhuru Kenyatta works in the field of politician.\n1250. Regina Ip works in the field of politician.\n1269. Ovid works in the field of motorcycle racer.\n1402. George Bernard Shaw was born in the city of Dublin.\n1620. Denis Sassou-Nguesso works in the field of politician.\n1661. Rodrigo Duterte works in the field of politician.\n1749. George Bernard Shaw is married to Charlotte Payne-Townshend.\n1795. Andy Burnham works in the field of politician.\n1845. Pauline Hanson works in the field of politician.\n2056. Frank Bainimarama works in the field of politician.\n2248. George Bernard Shaw works in the field of politician.\n2370. Tharman Shanmugaratnam works in the field of politician.\n2514. George Bernard Shaw is married to Yang Mi.\n2578. Rabri Devi works in the field of politician.\n2765. George Bernard Shaw was born in the city of Govan.\n2837. Moshe Kahlon works in the field of politician.\n2907. The author of Arms and the Man is George Bernard Shaw.\n3015. The author of Executive Order 6102 is George Bernard Shaw.\n4283. Chiang Ching-kuo works in the field of politician.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

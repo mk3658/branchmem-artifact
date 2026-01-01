@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"17521\"}",
+  "model": "gpt-5.4-nano-2026-03-17",
+  "input_tokens": 715,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkG1OlaCEpa5czwxzYlJ44l9z20vO",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"17521\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794693382,
+    "model": "gpt-5.4-nano-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 715,
+      "total_tokens": 738,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: 1995 NBA Finals\nRelation: sport\nPreviously recorded value (may be stale, may be empty): basketball\n\nCandidate LEFT:  chess\nCandidate RIGHT: association football\n\nEvidence lines (numbered, in original order):\n17521. TOT S.C. is associated with the sport of association football.\n17536. tackle is associated with the sport of association football.\n17554. Artur Boruc is associated with the sport of association football.\n17598. American League is associated with the sport of association football.\n17637. Fernando Valenzuela is associated with the sport of association football.\n17666. Gregor Townsend is associated with the sport of association football.\n17705. FC Olimpik Donetsk is associated with the sport of association football.\n17723. Matt Kemp is associated with the sport of association football.\n17758. 1986 NBA Playoffs is associated with the sport of association football.\n17778. Andorra national football team is associated with the sport of association football.\n17822. Campeonato Pernambucano is associated with the sport of association football.\n17831. Nigeria Football Federation is associated with the sport of association football.\n17836. 2014-15 Premier League is associated with the sport of association football.\n17847. Open Canada Cup is associated with the sport of association football.\n17900. Fabio Capello is associated with the sport of association football.\n17919. Omani League is associated with the sport of association football.\n17924. 2010 African Women's Championship is associated with the sport of association football.\n17935. Charlie Manuel is associated with the sport of association football.\n17967. CD Atl\u00e9tico Baleares is associated with the sport of association football.\n17973. 2017 Super Rugby season is associated with the sport of association football.\n17991. Crumlin United is associated with the sport of association football.\n17998. 1959 FA Cup Final is associated with the sport of association football.\n18034. Marco Belinelli is associated with the sport of association football.\n18057. Manchester City F.C. is associated with the sport of association football.\n18147. HIFK Fotboll is associated with the sport of association football.\n18190. S\u00e3o Jos\u00e9 Esporte Clube is associated with the sport of association football.\n18219. Hampshire Cricket Board is associated with the sport of association football.\n18282. Damallsvenskan is associated with the sport of association football.\n18288. Jerry West is associated with the sport of association football.\n18292. Alejandro Sabella is associated with the sport of association football.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

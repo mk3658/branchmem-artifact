@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"4234\"}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 686,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkMxCaFYt7BC9i0MAteUT3osOPHlB",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"4234\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720030,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 686,
+      "total_tokens": 709,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Krysten Ritter\nRelation: citizen_of\nPreviously recorded value (may be stale, may be empty): United States of America\n\nCandidate LEFT:  German Democratic Republic\nCandidate RIGHT: United Kingdom\n\nEvidence lines (numbered, in original order):\n3387. Geoffrey Rush is a citizen of United Kingdom.\n3477. Lydia was created in the country of United Kingdom.\n3527. The capital of United Kingdom is Rupnagar.\n3617. gangsta rap was created in the country of United Kingdom.\n3639. The Undead was created in the country of United Kingdom.\n3670. John Stuart Mill is a citizen of United Kingdom of Great Britain and Ireland.\n3781. Gillian Jacobs is a citizen of United Kingdom.\n3956. The Challenge was created in the country of United Kingdom.\n4009. Uma Bharti is a citizen of United Kingdom.\n4031. Lalla Ward is a citizen of United Kingdom.\n4036. Catherine Dickens is a citizen of United Kingdom.\n4046. Ella Fitzgerald is a citizen of United Kingdom of Great Britain and Ireland.\n4057. Jim Butcher is a citizen of United Kingdom.\n4059. Tim Cook is a citizen of United Kingdom.\n4078. country music was created in the country of United Kingdom.\n4119. The name of the current head of the United Kingdom government is Boris Johnson.\n4121. American Banker was created in the country of United Kingdom.\n4127. Ernest of Bavaria is a citizen of United Kingdom.\n4161. Simon Cowell is a citizen of United Kingdom.\n4163. Sam Robards is a citizen of United Kingdom.\n4207. Nigella Lawson is a citizen of United Kingdom.\n4234. Krysten Ritter is a citizen of United Kingdom.\n4267. The Orange County Register was created in the country of United Kingdom.\n4320. The name of the current head of the United Kingdom government is Dietlind Grabe.\n4357. James L. Brooks is a citizen of United Kingdom.\n4377. Robert A. Heinlein is a citizen of United Kingdom of Great Britain and Ireland.\n4394. The Man Show was created in the country of United Kingdom.\n4445. Robert Browning is a citizen of United Kingdom of Great Britain and Ireland.\n4532. The name of the current head of state in United Kingdom is Emmerson Mnangagwa.\n4559. Howard W. Hunter is a citizen of United Kingdom.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

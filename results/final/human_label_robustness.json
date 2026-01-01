@@ -1,0 +1,2522 @@
+{
+  "note": "Post-hoc, exploratory (not in ANALYSIS_PLAN.md). Every policy's cached decision on the 30 blind human-validation items, scored twice: against the generator's construction target and against the three-annotator majority. An annotator who answered 'no single correct answer' is treated as abstaining, so on the ambiguous items the correct action is to abstain under both label sets. Items are matched back to their scenarios by ancestor and branch values, not by replaying the sampler. Zero new API.",
+  "n_items": 30,
+  "n_matched": 30,
+  "unmatched_items": [],
+  "items_where_label_sets_differ": [
+    "v002",
+    "v006",
+    "v025",
+    "v027",
+    "v029"
+  ],
+  "items_without_human_majority": [],
+  "human_votes": {
+    "v001": [
+      "globex",
+      "globex",
+      "globex"
+    ],
+    "v002": [
+      "555-0142",
+      "555-0142",
+      "555-0142"
+    ],
+    "v003": [
+      "prefers sesame sauce",
+      "prefers sesame sauce",
+      "prefers sesame sauce"
+    ],
+    "v004": [
+      "(abstain)",
+      "(abstain)",
+      "(abstain)"
+    ],
+    "v005": [
+      "seated in the non-smoking section",
+      "seated in the non-smoking section",
+      "seated in the non-smoking section"
+    ],
+    "v006": [
+      "(abstain)",
+      "gift is a scarf",
+      "(abstain)"
+    ],
+    "v007": [
+      "meeting scheduled for 10am local time",
+      "meeting scheduled for 10am local time",
+      "meeting scheduled for 10am local time"
+    ],
+    "v008": [
+      "(abstain)",
+      "(abstain)",
+      "(abstain)"
+    ],
+    "v009": [
+      "(abstain)",
+      "(abstain)",
+      "(abstain)"
+    ],
+    "v010": [
+      "security",
+      "security",
+      "security"
+    ],
+    "v011": [
+      "morgan lee",
+      "morgan lee",
+      "morgan lee"
+    ],
+    "v012": [
+      "(abstain)",
+      "venue has ramp access",
+      "venue has ramp access"
+    ],
+    "v013": [
+      "(abstain)",
+      "hotel is in a quiet residential area",
+      "hotel is in a quiet residential area"
+    ],
+    "v014": [
+      "555-0101",
+      "555-0101",
+      "555-0101"
+    ],
+    "v015": [
+      "(abstain)",
+      "(abstain)",
+      "(abstain)"
+    ],
+    "v016": [
+      "(abstain)",
+      "wants tofu for dinner",
+      "wants tofu for dinner"
+    ],
+    "v017": [
+      "(abstain)",
+      "(abstain)",
+      "(abstain)"
+    ],
+    "v018": [
+      "(abstain)",
+      "room has ac turned off",
+      "room has ac turned off"
+    ],
+    "v019": [
+      "morgan lee",
+      "morgan lee",
+      "morgan lee"
+    ],
+    "v020": [
+      "platform",
+      "platform",
+      "platform"
+    ],
+    "v021": [
+      "(abstain)",
+      "(abstain)",
+      "(abstain)"
+    ],
+    "v022": [
+      "(abstain)",
+      "(abstain)",
+      "(abstain)"
+    ],
+    "v023": [
+      "infra",
+      "infra",
+      "infra"
+    ],
+    "v024": [
+      "(abstain)",
+      "wants sparkling water pairing",
+      "wants sparkling water pairing"
+    ],
+    "v025": [
+      "scooter",
+      "scooter",
+      "scooter"
+    ],
+    "v026": [
+      "(abstain)",
+      "(abstain)",
+      "(abstain)"
+    ],
+    "v027": [
+      "casey park",
+      "casey park",
+      "casey park"
+    ],
+    "v028": [
+      "data",
+      "data",
+      "data"
+    ],
+    "v029": [
+      "austin",
+      "austin",
+      "austin"
+    ],
+    "v030": [
+      "(abstain)",
+      "itinerary uses the land bridge instead",
+      "itinerary uses the land bridge instead"
+    ]
+  },
+  "results": {
+    "Recency (LWW)": {
+      "under_generator_target": {
+        "n_scored": 30,
+        "accuracy": 0.2333,
+        "coverage": 1.0,
+        "conditional_risk": 0.7667,
+        "n_items_whose_correct_action_is_abstain": 8
+      },
+      "under_human_majority": {
+        "n_scored": 30,
+        "accuracy": 0.3333,
+        "coverage": 1.0,
+        "conditional_risk": 0.6667,
+        "n_items_whose_correct_action_is_abstain": 9
+      },
+      "by_category_generator": {
+        "ambiguous": {
+          "n_scored": 8,
+          "accuracy": 0.0,
+          "coverage": 1.0,
+          "conditional_risk": 1.0,
+          "n_items_whose_correct_action_is_abstain": 8
+        },
+        "resolvable": {
+          "n_scored": 12,
+          "accuracy": 0.1667,
+          "coverage": 1.0,
+          "conditional_risk": 0.8333,
+          "n_items_whose_correct_action_is_abstain": 0
+        },
+        "semantic_resolvable": {
+          "n_scored": 10,
+          "accuracy": 0.5,
+          "coverage": 1.0,
+          "conditional_risk": 0.5,
+          "n_items_whose_correct_action_is_abstain": 0
+        }
+      },
+      "by_category_human": {
+        "ambiguous": {
+          "n_scored": 8,
+          "accuracy": 0.0,
+          "coverage": 1.0,
+          "conditional_risk": 1.0,
+          "n_items_whose_correct_action_is_abstain": 8
+        },
+        "resolvable": {
+          "n_scored": 12,
+          "accuracy": 0.5,
+          "coverage": 1.0,
+          "conditional_risk": 0.5,
+          "n_items_whose_correct_action_is_abstain": 0
+        },
+        "semantic_resolvable": {
+          "n_scored": 10,
+          "accuracy": 0.4,
+          "coverage": 1.0,
+          "conditional_risk": 0.6,
+          "n_items_whose_correct_action_is_abstain": 1
+        }
+      }
+    },
+    "ConfidenceRule": {
+      "under_generator_target": {
+        "n_scored": 30,
+        "accuracy": 0.5333,
+        "coverage": 0.4,
+        "conditional_risk": 0.3333,
+        "n_items_whose_correct_action_is_abstain": 8
+      },
+      "under_human_majority": {
+        "n_scored": 30,
+        "accuracy": 0.7,
+        "coverage": 0.4,
+        "conditional_risk": 0.0,
+        "n_items_whose_correct_action_is_abstain": 9
+      },
+      "by_category_generator": {
+        "ambiguous": {
+          "n_scored": 8,
+          "accuracy": 1.0,
+          "coverage": 0.0,
+          "conditional_risk": null,
+          "n_items_whose_correct_action_is_abstain": 8
+        },
+        "resolvable": {
+          "n_scored": 12,
+          "accuracy": 0.6667,
+          "coverage": 1.0,
+          "conditional_risk": 0.3333,
+          "n_items_whose_correct_action_is_abstain": 0
+        },
+        "semantic_resolvable": {
+          "n_scored": 10,
+          "accuracy": 0.0,
+          "coverage": 0.0,
+          "conditional_risk": null,
+          "n_items_whose_correct_action_is_abstain": 0
+        }
+      },
+      "by_category_human": {
+        "ambiguous": {
+          "n_scored": 8,
+          "accuracy": 1.0,
+          "coverage": 0.0,
+          "conditional_risk": null,
+          "n_items_whose_correct_action_is_abstain": 8
+        },
+        "resolvable": {
+          "n_scored": 12,
+          "accuracy": 1.0,
+          "coverage": 1.0,
+          "conditional_risk": 0.0,
+          "n_items_whose_correct_action_is_abstain": 0
+        },
+        "semantic_resolvable": {
+          "n_scored": 10,
+          "accuracy": 0.1,
+          "coverage": 0.0,
+          "conditional_risk": null,
+          "n_items_whose_correct_action_is_abstain": 1
+        }
+      }
+    },
+    "NliGated": {
+      "under_generator_target": {
+        "n_scored": 30,
+        "accuracy": 0.5333,
+        "coverage": 0.4,
+        "conditional_risk": 0.25,
+        "n_items_whose_correct_action_is_abstain": 8
+      },
+      "under_human_majority": {
+        "n_scored": 30,
+        "accuracy": 0.5667,
+        "coverage": 0.4,
+        "conditional_risk": 0.25,
+        "n_items_whose_correct_action_is_abstain": 9
+      },
+      "by_category_generator": {
+        "ambiguous": {
+          "n_scored": 8,
+          "accuracy": 0.875,
+          "coverage": 0.125,
+          "conditional_risk": 1.0,
+          "n_items_whose_correct_action_is_abstain": 8
+        },
+        "resolvable": {
+          "n_scored": 12,
+          "accuracy": 0.1667,
+          "coverage": 0.25,
+          "conditional_risk": 0.3333,
+          "n_items_whose_correct_action_is_abstain": 0
+        },
+        "semantic_resolvable": {
+          "n_scored": 10,
+          "accuracy": 0.7,
+          "coverage": 0.8,
+          "conditional_risk": 0.125,
+          "n_items_whose_correct_action_is_abstain": 0
+        }
+      },
+      "by_category_human": {
+        "ambiguous": {
+          "n_scored": 8,
+          "accuracy": 0.875,
+          "coverage": 0.125,
+          "conditional_risk": 1.0,
+          "n_items_whose_correct_action_is_abstain": 8
+        },
+        "resolvable": {
+          "n_scored": 12,
+          "accuracy": 0.1667,
+          "coverage": 0.25,
+          "conditional_risk": 0.3333,
+          "n_items_whose_correct_action_is_abstain": 0
+        },
+        "semantic_resolvable": {
+          "n_scored": 10,
+          "accuracy": 0.8,
+          "coverage": 0.8,
+          "conditional_risk": 0.125,
+          "n_items_whose_correct_action_is_abstain": 1
+        }
+      }
+    },
+    "ConstraintVeto": {
+      "under_generator_target": {
+        "n_scored": 30,
+        "accuracy": 0.7,
+        "coverage": 0.6333,
+        "conditional_risk": 0.2632,
+        "n_items_whose_correct_action_is_abstain": 8
+      },
+      "under_human_majority": {
+        "n_scored": 30,
+        "accuracy": 0.8667,
+        "coverage": 0.6333,
+        "conditional_risk": 0.0526,
+        "n_items_whose_correct_action_is_abstain": 9
+      },
+      "by_category_generator": {
+        "ambiguous": {
+          "n_scored": 8,
+          "accuracy": 0.875,
+          "coverage": 0.125,
+          "conditional_risk": 1.0,
+          "n_items_whose_correct_action_is_abstain": 8
+        },
+        "resolvable": {
+          "n_scored": 12,
+          "accuracy": 0.6667,
+          "coverage": 1.0,
+          "conditional_risk": 0.3333,
+          "n_items_whose_correct_action_is_abstain": 0
+        },
+        "semantic_resolvable": {
+          "n_scored": 10,
+          "accuracy": 0.6,
+          "coverage": 0.6,
+          "conditional_risk": 0.0,
+          "n_items_whose_correct_action_is_abstain": 0
+        }
+      },
+      "by_category_human": {
+        "ambiguous": {
+          "n_scored": 8,
+          "accuracy": 0.875,
+          "coverage": 0.125,
+          "conditional_risk": 1.0,
+          "n_items_whose_correct_action_is_abstain": 8
+        },
+        "resolvable": {
+          "n_scored": 12,
+          "accuracy": 1.0,
+          "coverage": 1.0,
+          "conditional_risk": 0.0,
+          "n_items_whose_correct_action_is_abstain": 0
+        },
+        "semantic_resolvable": {
+          "n_scored": 10,
+          "accuracy": 0.7,
+          "coverage": 0.6,
+          "conditional_risk": 0.0,
+          "n_items_whose_correct_action_is_abstain": 1
+        }
+      }
+    },
+    "ThreeWayLLM (gpt-5.4-nano)": {
+      "under_generator_target": {
+        "n_scored": 30,
+        "accuracy": 0.5,
+        "coverage": 0.4667,
+        "conditional_risk": 0.5,
+        "n_items_whose_correct_action_is_abstain": 8
+      },
+      "under_human_majority": {
+        "n_scored": 30,
+        "accuracy": 0.6667,
+        "coverage": 0.4667,
+        "conditional_risk": 0.2143,
+        "n_items_whose_correct_action_is_abstain": 9
+      },
+      "by_category_generator": {
+        "ambiguous": {
+          "n_scored": 8,
+          "accuracy": 1.0,
+          "coverage": 0.0,
+          "conditional_risk": null,
+          "n_items_whose_correct_action_is_abstain": 8
+        },
+        "resolvable": {
+          "n_scored": 12,
+          "accuracy": 0.5833,
+          "coverage": 0.9167,
+          "conditional_risk": 0.3636,
+          "n_items_whose_correct_action_is_abstain": 0
+        },
+        "semantic_resolvable": {
+          "n_scored": 10,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "conditional_risk": 1.0,
+          "n_items_whose_correct_action_is_abstain": 0
+        }
+      },
+      "by_category_human": {
+        "ambiguous": {
+          "n_scored": 8,
+          "accuracy": 1.0,
+          "coverage": 0.0,
+          "conditional_risk": null,
+          "n_items_whose_correct_action_is_abstain": 8
+        },
+        "resolvable": {
+          "n_scored": 12,
+          "accuracy": 0.9167,
+          "coverage": 0.9167,
+          "conditional_risk": 0.0,
+          "n_items_whose_correct_action_is_abstain": 0
+        },
+        "semantic_resolvable": {
+          "n_scored": 10,
+          "accuracy": 0.1,
+          "coverage": 0.3,
+          "conditional_risk": 1.0,
+          "n_items_whose_correct_action_is_abstain": 1
+        }
+      }
+    },
+    "ThreeWayLLM (gpt-5.4)": {
+      "under_generator_target": {
+        "n_scored": 30,
+        "accuracy": 0.7333,
+        "coverage": 0.6,
+        "conditional_risk": 0.2222,
+        "n_items_whose_correct_action_is_abstain": 8
+      },
+      "under_human_majority": {
+        "n_scored": 30,
+        "accuracy": 0.9,
+        "coverage": 0.6,
+        "conditional_risk": 0.0,
+        "n_items_whose_correct_action_is_abstain": 9
+      },
+      "by_category_generator": {
+        "ambiguous": {
+          "n_scored": 8,
+          "accuracy": 1.0,
+          "coverage": 0.0,
+          "conditional_risk": null,
+          "n_items_whose_correct_action_is_abstain": 8
+        },
+        "resolvable": {
+          "n_scored": 12,
+          "accuracy": 0.6667,
+          "coverage": 1.0,
+          "conditional_risk": 0.3333,
+          "n_items_whose_correct_action_is_abstain": 0
+        },
+        "semantic_resolvable": {
+          "n_scored": 10,
+          "accuracy": 0.6,
+          "coverage": 0.6,
+          "conditional_risk": 0.0,
+          "n_items_whose_correct_action_is_abstain": 0
+        }
+      },
+      "by_category_human": {
+        "ambiguous": {
+          "n_scored": 8,
+          "accuracy": 1.0,
+          "coverage": 0.0,
+          "conditional_risk": null,
+          "n_items_whose_correct_action_is_abstain": 8
+        },
+        "resolvable": {
+          "n_scored": 12,
+          "accuracy": 1.0,
+          "coverage": 1.0,
+          "conditional_risk": 0.0,
+          "n_items_whose_correct_action_is_abstain": 0
+        },
+        "semantic_resolvable": {
+          "n_scored": 10,
+          "accuracy": 0.7,
+          "coverage": 0.6,
+          "conditional_risk": 0.0,
+          "n_items_whose_correct_action_is_abstain": 1
+        }
+      }
+    }
+  },
+  "per_item": [
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v001",
+      "category": "resolvable",
+      "committed": "initech",
+      "abstained": false,
+      "generator": "globex",
+      "generator_known": true,
+      "human": "globex",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v002",
+      "category": "resolvable",
+      "committed": "555-0142",
+      "abstained": false,
+      "generator": "555-0187",
+      "generator_known": true,
+      "human": "555-0142",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v003",
+      "category": "semantic_resolvable",
+      "committed": "prefers sesame sauce",
+      "abstained": false,
+      "generator": "prefers sesame sauce",
+      "generator_known": true,
+      "human": "prefers sesame sauce",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v004",
+      "category": "ambiguous",
+      "committed": "happy",
+      "abstained": false,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v005",
+      "category": "semantic_resolvable",
+      "committed": "seated in the smoking section",
+      "abstained": false,
+      "generator": "seated in the non-smoking section",
+      "generator_known": true,
+      "human": "seated in the non-smoking section",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v006",
+      "category": "semantic_resolvable",
+      "committed": "gift is a scarf",
+      "abstained": false,
+      "generator": "gift is a scarf",
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v007",
+      "category": "semantic_resolvable",
+      "committed": "meeting scheduled for 3pm local time",
+      "abstained": false,
+      "generator": "meeting scheduled for 10am local time",
+      "generator_known": true,
+      "human": "meeting scheduled for 10am local time",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v008",
+      "category": "ambiguous",
+      "committed": "mountains",
+      "abstained": false,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v009",
+      "category": "ambiguous",
+      "committed": "skeptical",
+      "abstained": false,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v010",
+      "category": "resolvable",
+      "committed": "infra",
+      "abstained": false,
+      "generator": "security",
+      "generator_known": true,
+      "human": "security",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v011",
+      "category": "resolvable",
+      "committed": "casey park",
+      "abstained": false,
+      "generator": "morgan lee",
+      "generator_known": true,
+      "human": "morgan lee",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v012",
+      "category": "semantic_resolvable",
+      "committed": "venue has ramp access",
+      "abstained": false,
+      "generator": "venue has ramp access",
+      "generator_known": true,
+      "human": "venue has ramp access",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v013",
+      "category": "semantic_resolvable",
+      "committed": "hotel is in a quiet residential area",
+      "abstained": false,
+      "generator": "hotel is in a quiet residential area",
+      "generator_known": true,
+      "human": "hotel is in a quiet residential area",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v014",
+      "category": "resolvable",
+      "committed": "555-0187",
+      "abstained": false,
+      "generator": "555-0101",
+      "generator_known": true,
+      "human": "555-0101",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v015",
+      "category": "ambiguous",
+      "committed": "relaxed",
+      "abstained": false,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v016",
+      "category": "semantic_resolvable",
+      "committed": "wants tofu for dinner",
+      "abstained": false,
+      "generator": "wants tofu for dinner",
+      "generator_known": true,
+      "human": "wants tofu for dinner",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v017",
+      "category": "ambiguous",
+      "committed": "red",
+      "abstained": false,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v018",
+      "category": "semantic_resolvable",
+      "committed": "room has ac set to maximum",
+      "abstained": false,
+      "generator": "room has ac turned off",
+      "generator_known": true,
+      "human": "room has ac turned off",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v019",
+      "category": "resolvable",
+      "committed": "riley chen",
+      "abstained": false,
+      "generator": "morgan lee",
+      "generator_known": true,
+      "human": "morgan lee",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v020",
+      "category": "resolvable",
+      "committed": "platform",
+      "abstained": false,
+      "generator": "platform",
+      "generator_known": true,
+      "human": "platform",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v021",
+      "category": "ambiguous",
+      "committed": "supportive",
+      "abstained": false,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v022",
+      "category": "ambiguous",
+      "committed": "orange",
+      "abstained": false,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v023",
+      "category": "resolvable",
+      "committed": "growth",
+      "abstained": false,
+      "generator": "infra",
+      "generator_known": true,
+      "human": "infra",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v024",
+      "category": "semantic_resolvable",
+      "committed": "wants wine pairing",
+      "abstained": false,
+      "generator": "wants sparkling water pairing",
+      "generator_known": true,
+      "human": "wants sparkling water pairing",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v025",
+      "category": "resolvable",
+      "committed": "scooter",
+      "abstained": false,
+      "generator": "car",
+      "generator_known": true,
+      "human": "scooter",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v026",
+      "category": "ambiguous",
+      "committed": "skeptical",
+      "abstained": false,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v027",
+      "category": "resolvable",
+      "committed": "casey park",
+      "abstained": false,
+      "generator": "taylor reyes",
+      "generator_known": true,
+      "human": "casey park",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v028",
+      "category": "resolvable",
+      "committed": "data",
+      "abstained": false,
+      "generator": "data",
+      "generator_known": true,
+      "human": "data",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v029",
+      "category": "resolvable",
+      "committed": "austin",
+      "abstained": false,
+      "generator": "miami",
+      "generator_known": true,
+      "human": "austin",
+      "human_known": true
+    },
+    {
+      "policy": "Recency (LWW)",
+      "item_id": "v030",
+      "category": "semantic_resolvable",
+      "committed": "itinerary includes a ferry crossing",
+      "abstained": false,
+      "generator": "itinerary uses the land bridge instead",
+      "generator_known": true,
+      "human": "itinerary uses the land bridge instead",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v001",
+      "category": "resolvable",
+      "committed": "globex",
+      "abstained": false,
+      "generator": "globex",
+      "generator_known": true,
+      "human": "globex",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v002",
+      "category": "resolvable",
+      "committed": "555-0142",
+      "abstained": false,
+      "generator": "555-0187",
+      "generator_known": true,
+      "human": "555-0142",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v003",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "prefers sesame sauce",
+      "generator_known": true,
+      "human": "prefers sesame sauce",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v004",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v005",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "seated in the non-smoking section",
+      "generator_known": true,
+      "human": "seated in the non-smoking section",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v006",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "gift is a scarf",
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v007",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "meeting scheduled for 10am local time",
+      "generator_known": true,
+      "human": "meeting scheduled for 10am local time",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v008",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v009",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v010",
+      "category": "resolvable",
+      "committed": "security",
+      "abstained": false,
+      "generator": "security",
+      "generator_known": true,
+      "human": "security",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v011",
+      "category": "resolvable",
+      "committed": "morgan lee",
+      "abstained": false,
+      "generator": "morgan lee",
+      "generator_known": true,
+      "human": "morgan lee",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v012",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "venue has ramp access",
+      "generator_known": true,
+      "human": "venue has ramp access",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v013",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "hotel is in a quiet residential area",
+      "generator_known": true,
+      "human": "hotel is in a quiet residential area",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v014",
+      "category": "resolvable",
+      "committed": "555-0101",
+      "abstained": false,
+      "generator": "555-0101",
+      "generator_known": true,
+      "human": "555-0101",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v015",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v016",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "wants tofu for dinner",
+      "generator_known": true,
+      "human": "wants tofu for dinner",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v017",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v018",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "room has ac turned off",
+      "generator_known": true,
+      "human": "room has ac turned off",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v019",
+      "category": "resolvable",
+      "committed": "morgan lee",
+      "abstained": false,
+      "generator": "morgan lee",
+      "generator_known": true,
+      "human": "morgan lee",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v020",
+      "category": "resolvable",
+      "committed": "platform",
+      "abstained": false,
+      "generator": "platform",
+      "generator_known": true,
+      "human": "platform",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v021",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v022",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v023",
+      "category": "resolvable",
+      "committed": "infra",
+      "abstained": false,
+      "generator": "infra",
+      "generator_known": true,
+      "human": "infra",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v024",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "wants sparkling water pairing",
+      "generator_known": true,
+      "human": "wants sparkling water pairing",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v025",
+      "category": "resolvable",
+      "committed": "scooter",
+      "abstained": false,
+      "generator": "car",
+      "generator_known": true,
+      "human": "scooter",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v026",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v027",
+      "category": "resolvable",
+      "committed": "casey park",
+      "abstained": false,
+      "generator": "taylor reyes",
+      "generator_known": true,
+      "human": "casey park",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v028",
+      "category": "resolvable",
+      "committed": "data",
+      "abstained": false,
+      "generator": "data",
+      "generator_known": true,
+      "human": "data",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v029",
+      "category": "resolvable",
+      "committed": "austin",
+      "abstained": false,
+      "generator": "miami",
+      "generator_known": true,
+      "human": "austin",
+      "human_known": true
+    },
+    {
+      "policy": "ConfidenceRule",
+      "item_id": "v030",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "itinerary uses the land bridge instead",
+      "generator_known": true,
+      "human": "itinerary uses the land bridge instead",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v001",
+      "category": "resolvable",
+      "committed": "initech",
+      "abstained": false,
+      "generator": "globex",
+      "generator_known": true,
+      "human": "globex",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v002",
+      "category": "resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "555-0187",
+      "generator_known": true,
+      "human": "555-0142",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v003",
+      "category": "semantic_resolvable",
+      "committed": "prefers sesame sauce",
+      "abstained": false,
+      "generator": "prefers sesame sauce",
+      "generator_known": true,
+      "human": "prefers sesame sauce",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v004",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v005",
+      "category": "semantic_resolvable",
+      "committed": "seated in the non-smoking section",
+      "abstained": false,
+      "generator": "seated in the non-smoking section",
+      "generator_known": true,
+      "human": "seated in the non-smoking section",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v006",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "gift is a scarf",
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v007",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "meeting scheduled for 10am local time",
+      "generator_known": true,
+      "human": "meeting scheduled for 10am local time",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v008",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v009",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v010",
+      "category": "resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "security",
+      "generator_known": true,
+      "human": "security",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v011",
+      "category": "resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "morgan lee",
+      "generator_known": true,
+      "human": "morgan lee",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v012",
+      "category": "semantic_resolvable",
+      "committed": "venue has ramp access",
+      "abstained": false,
+      "generator": "venue has ramp access",
+      "generator_known": true,
+      "human": "venue has ramp access",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v013",
+      "category": "semantic_resolvable",
+      "committed": "hotel is in a quiet residential area",
+      "abstained": false,
+      "generator": "hotel is in a quiet residential area",
+      "generator_known": true,
+      "human": "hotel is in a quiet residential area",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v014",
+      "category": "resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "555-0101",
+      "generator_known": true,
+      "human": "555-0101",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v015",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v016",
+      "category": "semantic_resolvable",
+      "committed": "wants tofu for dinner",
+      "abstained": false,
+      "generator": "wants tofu for dinner",
+      "generator_known": true,
+      "human": "wants tofu for dinner",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v017",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v018",
+      "category": "semantic_resolvable",
+      "committed": "room has ac turned off",
+      "abstained": false,
+      "generator": "room has ac turned off",
+      "generator_known": true,
+      "human": "room has ac turned off",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v019",
+      "category": "resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "morgan lee",
+      "generator_known": true,
+      "human": "morgan lee",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v020",
+      "category": "resolvable",
+      "committed": "platform",
+      "abstained": false,
+      "generator": "platform",
+      "generator_known": true,
+      "human": "platform",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v021",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v022",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v023",
+      "category": "resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "infra",
+      "generator_known": true,
+      "human": "infra",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v024",
+      "category": "semantic_resolvable",
+      "committed": "wants sparkling water pairing",
+      "abstained": false,
+      "generator": "wants sparkling water pairing",
+      "generator_known": true,
+      "human": "wants sparkling water pairing",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v025",
+      "category": "resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "car",
+      "generator_known": true,
+      "human": "scooter",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v026",
+      "category": "ambiguous",
+      "committed": "skeptical",
+      "abstained": false,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v027",
+      "category": "resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "taylor reyes",
+      "generator_known": true,
+      "human": "casey park",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v028",
+      "category": "resolvable",
+      "committed": "data",
+      "abstained": false,
+      "generator": "data",
+      "generator_known": true,
+      "human": "data",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v029",
+      "category": "resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "miami",
+      "generator_known": true,
+      "human": "austin",
+      "human_known": true
+    },
+    {
+      "policy": "NliGated",
+      "item_id": "v030",
+      "category": "semantic_resolvable",
+      "committed": "itinerary includes a ferry crossing",
+      "abstained": false,
+      "generator": "itinerary uses the land bridge instead",
+      "generator_known": true,
+      "human": "itinerary uses the land bridge instead",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v001",
+      "category": "resolvable",
+      "committed": "globex",
+      "abstained": false,
+      "generator": "globex",
+      "generator_known": true,
+      "human": "globex",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v002",
+      "category": "resolvable",
+      "committed": "555-0142",
+      "abstained": false,
+      "generator": "555-0187",
+      "generator_known": true,
+      "human": "555-0142",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v003",
+      "category": "semantic_resolvable",
+      "committed": "prefers sesame sauce",
+      "abstained": false,
+      "generator": "prefers sesame sauce",
+      "generator_known": true,
+      "human": "prefers sesame sauce",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v004",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v005",
+      "category": "semantic_resolvable",
+      "committed": "seated in the non-smoking section",
+      "abstained": false,
+      "generator": "seated in the non-smoking section",
+      "generator_known": true,
+      "human": "seated in the non-smoking section",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v006",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "gift is a scarf",
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v007",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "meeting scheduled for 10am local time",
+      "generator_known": true,
+      "human": "meeting scheduled for 10am local time",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v008",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v009",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v010",
+      "category": "resolvable",
+      "committed": "security",
+      "abstained": false,
+      "generator": "security",
+      "generator_known": true,
+      "human": "security",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v011",
+      "category": "resolvable",
+      "committed": "morgan lee",
+      "abstained": false,
+      "generator": "morgan lee",
+      "generator_known": true,
+      "human": "morgan lee",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v012",
+      "category": "semantic_resolvable",
+      "committed": "venue has ramp access",
+      "abstained": false,
+      "generator": "venue has ramp access",
+      "generator_known": true,
+      "human": "venue has ramp access",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v013",
+      "category": "semantic_resolvable",
+      "committed": "hotel is in a quiet residential area",
+      "abstained": false,
+      "generator": "hotel is in a quiet residential area",
+      "generator_known": true,
+      "human": "hotel is in a quiet residential area",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v014",
+      "category": "resolvable",
+      "committed": "555-0101",
+      "abstained": false,
+      "generator": "555-0101",
+      "generator_known": true,
+      "human": "555-0101",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v015",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v016",
+      "category": "semantic_resolvable",
+      "committed": "wants tofu for dinner",
+      "abstained": false,
+      "generator": "wants tofu for dinner",
+      "generator_known": true,
+      "human": "wants tofu for dinner",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v017",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v018",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "room has ac turned off",
+      "generator_known": true,
+      "human": "room has ac turned off",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v019",
+      "category": "resolvable",
+      "committed": "morgan lee",
+      "abstained": false,
+      "generator": "morgan lee",
+      "generator_known": true,
+      "human": "morgan lee",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v020",
+      "category": "resolvable",
+      "committed": "platform",
+      "abstained": false,
+      "generator": "platform",
+      "generator_known": true,
+      "human": "platform",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v021",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v022",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v023",
+      "category": "resolvable",
+      "committed": "infra",
+      "abstained": false,
+      "generator": "infra",
+      "generator_known": true,
+      "human": "infra",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v024",
+      "category": "semantic_resolvable",
+      "committed": "wants sparkling water pairing",
+      "abstained": false,
+      "generator": "wants sparkling water pairing",
+      "generator_known": true,
+      "human": "wants sparkling water pairing",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v025",
+      "category": "resolvable",
+      "committed": "scooter",
+      "abstained": false,
+      "generator": "car",
+      "generator_known": true,
+      "human": "scooter",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v026",
+      "category": "ambiguous",
+      "committed": "skeptical",
+      "abstained": false,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v027",
+      "category": "resolvable",
+      "committed": "casey park",
+      "abstained": false,
+      "generator": "taylor reyes",
+      "generator_known": true,
+      "human": "casey park",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v028",
+      "category": "resolvable",
+      "committed": "data",
+      "abstained": false,
+      "generator": "data",
+      "generator_known": true,
+      "human": "data",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v029",
+      "category": "resolvable",
+      "committed": "austin",
+      "abstained": false,
+      "generator": "miami",
+      "generator_known": true,
+      "human": "austin",
+      "human_known": true
+    },
+    {
+      "policy": "ConstraintVeto",
+      "item_id": "v030",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "itinerary uses the land bridge instead",
+      "generator_known": true,
+      "human": "itinerary uses the land bridge instead",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v001",
+      "category": "resolvable",
+      "committed": "globex",
+      "abstained": false,
+      "generator": "globex",
+      "generator_known": true,
+      "human": "globex",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v002",
+      "category": "resolvable",
+      "committed": "555-0142",
+      "abstained": false,
+      "generator": "555-0187",
+      "generator_known": true,
+      "human": "555-0142",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v003",
+      "category": "semantic_resolvable",
+      "committed": "prefers peanut sauce",
+      "abstained": false,
+      "generator": "prefers sesame sauce",
+      "generator_known": true,
+      "human": "prefers sesame sauce",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v004",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v005",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "seated in the non-smoking section",
+      "generator_known": true,
+      "human": "seated in the non-smoking section",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v006",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "gift is a scarf",
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v007",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "meeting scheduled for 10am local time",
+      "generator_known": true,
+      "human": "meeting scheduled for 10am local time",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v008",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v009",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v010",
+      "category": "resolvable",
+      "committed": "security",
+      "abstained": false,
+      "generator": "security",
+      "generator_known": true,
+      "human": "security",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v011",
+      "category": "resolvable",
+      "committed": "morgan lee",
+      "abstained": false,
+      "generator": "morgan lee",
+      "generator_known": true,
+      "human": "morgan lee",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v012",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "venue has ramp access",
+      "generator_known": true,
+      "human": "venue has ramp access",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v013",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "hotel is in a quiet residential area",
+      "generator_known": true,
+      "human": "hotel is in a quiet residential area",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v014",
+      "category": "resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "555-0101",
+      "generator_known": true,
+      "human": "555-0101",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v015",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v016",
+      "category": "semantic_resolvable",
+      "committed": "wants chicken for dinner and wants tofu for dinner",
+      "abstained": false,
+      "generator": "wants tofu for dinner",
+      "generator_known": true,
+      "human": "wants tofu for dinner",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v017",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v018",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "room has ac turned off",
+      "generator_known": true,
+      "human": "room has ac turned off",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v019",
+      "category": "resolvable",
+      "committed": "morgan lee",
+      "abstained": false,
+      "generator": "morgan lee",
+      "generator_known": true,
+      "human": "morgan lee",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v020",
+      "category": "resolvable",
+      "committed": "platform",
+      "abstained": false,
+      "generator": "platform",
+      "generator_known": true,
+      "human": "platform",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v021",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v022",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v023",
+      "category": "resolvable",
+      "committed": "infra",
+      "abstained": false,
+      "generator": "infra",
+      "generator_known": true,
+      "human": "infra",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v024",
+      "category": "semantic_resolvable",
+      "committed": "cannot drink alcohol for health reasons; wants a non-alcohol pairing (e.g., sparkling water)",
+      "abstained": false,
+      "generator": "wants sparkling water pairing",
+      "generator_known": true,
+      "human": "wants sparkling water pairing",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v025",
+      "category": "resolvable",
+      "committed": "scooter",
+      "abstained": false,
+      "generator": "car",
+      "generator_known": true,
+      "human": "scooter",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v026",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v027",
+      "category": "resolvable",
+      "committed": "casey park",
+      "abstained": false,
+      "generator": "taylor reyes",
+      "generator_known": true,
+      "human": "casey park",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v028",
+      "category": "resolvable",
+      "committed": "data",
+      "abstained": false,
+      "generator": "data",
+      "generator_known": true,
+      "human": "data",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v029",
+      "category": "resolvable",
+      "committed": "austin",
+      "abstained": false,
+      "generator": "miami",
+      "generator_known": true,
+      "human": "austin",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4-nano)",
+      "item_id": "v030",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "itinerary uses the land bridge instead",
+      "generator_known": true,
+      "human": "itinerary uses the land bridge instead",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v001",
+      "category": "resolvable",
+      "committed": "globex",
+      "abstained": false,
+      "generator": "globex",
+      "generator_known": true,
+      "human": "globex",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v002",
+      "category": "resolvable",
+      "committed": "555-0142",
+      "abstained": false,
+      "generator": "555-0187",
+      "generator_known": true,
+      "human": "555-0142",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v003",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "prefers sesame sauce",
+      "generator_known": true,
+      "human": "prefers sesame sauce",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v004",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v005",
+      "category": "semantic_resolvable",
+      "committed": "seated in the non-smoking section",
+      "abstained": false,
+      "generator": "seated in the non-smoking section",
+      "generator_known": true,
+      "human": "seated in the non-smoking section",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v006",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "gift is a scarf",
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v007",
+      "category": "semantic_resolvable",
+      "committed": "meeting scheduled for 10am local time",
+      "abstained": false,
+      "generator": "meeting scheduled for 10am local time",
+      "generator_known": true,
+      "human": "meeting scheduled for 10am local time",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v008",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v009",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v010",
+      "category": "resolvable",
+      "committed": "security",
+      "abstained": false,
+      "generator": "security",
+      "generator_known": true,
+      "human": "security",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v011",
+      "category": "resolvable",
+      "committed": "morgan lee",
+      "abstained": false,
+      "generator": "morgan lee",
+      "generator_known": true,
+      "human": "morgan lee",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v012",
+      "category": "semantic_resolvable",
+      "committed": "venue has ramp access",
+      "abstained": false,
+      "generator": "venue has ramp access",
+      "generator_known": true,
+      "human": "venue has ramp access",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v013",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "hotel is in a quiet residential area",
+      "generator_known": true,
+      "human": "hotel is in a quiet residential area",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v014",
+      "category": "resolvable",
+      "committed": "555-0101",
+      "abstained": false,
+      "generator": "555-0101",
+      "generator_known": true,
+      "human": "555-0101",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v015",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v016",
+      "category": "semantic_resolvable",
+      "committed": "wants tofu for dinner",
+      "abstained": false,
+      "generator": "wants tofu for dinner",
+      "generator_known": true,
+      "human": "wants tofu for dinner",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v017",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v018",
+      "category": "semantic_resolvable",
+      "committed": "room has ac turned off",
+      "abstained": false,
+      "generator": "room has ac turned off",
+      "generator_known": true,
+      "human": "room has ac turned off",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v019",
+      "category": "resolvable",
+      "committed": "morgan lee",
+      "abstained": false,
+      "generator": "morgan lee",
+      "generator_known": true,
+      "human": "morgan lee",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v020",
+      "category": "resolvable",
+      "committed": "platform",
+      "abstained": false,
+      "generator": "platform",
+      "generator_known": true,
+      "human": "platform",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v021",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v022",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v023",
+      "category": "resolvable",
+      "committed": "infra",
+      "abstained": false,
+      "generator": "infra",
+      "generator_known": true,
+      "human": "infra",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v024",
+      "category": "semantic_resolvable",
+      "committed": "wants sparkling water pairing",
+      "abstained": false,
+      "generator": "wants sparkling water pairing",
+      "generator_known": true,
+      "human": "wants sparkling water pairing",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v025",
+      "category": "resolvable",
+      "committed": "scooter",
+      "abstained": false,
+      "generator": "car",
+      "generator_known": true,
+      "human": "scooter",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v026",
+      "category": "ambiguous",
+      "committed": null,
+      "abstained": true,
+      "generator": null,
+      "generator_known": true,
+      "human": null,
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v027",
+      "category": "resolvable",
+      "committed": "casey park",
+      "abstained": false,
+      "generator": "taylor reyes",
+      "generator_known": true,
+      "human": "casey park",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v028",
+      "category": "resolvable",
+      "committed": "data",
+      "abstained": false,
+      "generator": "data",
+      "generator_known": true,
+      "human": "data",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v029",
+      "category": "resolvable",
+      "committed": "austin",
+      "abstained": false,
+      "generator": "miami",
+      "generator_known": true,
+      "human": "austin",
+      "human_known": true
+    },
+    {
+      "policy": "ThreeWayLLM (gpt-5.4)",
+      "item_id": "v030",
+      "category": "semantic_resolvable",
+      "committed": null,
+      "abstained": true,
+      "generator": "itinerary uses the land bridge instead",
+      "generator_known": true,
+      "human": "itinerary uses the land bridge instead",
+      "human_known": true
+    }
+  ]
+}

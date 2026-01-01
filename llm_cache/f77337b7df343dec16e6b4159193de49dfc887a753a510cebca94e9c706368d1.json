@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"right\",\n  \"confidence_1_5\": 4,\n  \"evidence_span\": \"3023\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 355,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-323",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"right\",\n  \"confidence_1_5\": 4,\n  \"evidence_span\": \"3023\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720962,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 355,
+      "total_tokens": 386,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: Ron Dennis\nRelation: employed_by\nPreviously recorded value (may be stale, may be empty): McLaren Automotive\n\nCandidate LEFT:  University of T\u00fcbingen\nCandidate RIGHT: Pakistan International Airlines\n\nEvidence lines (numbered, in original order):\n563. Pakistan International Airlines was founded in the city of Karachi.\n1708. Ron Dennis is employed by McLaren Automotive.\n1919. The univeristy where Johannes Kepler was educated is University of T\u00fcbingen.\n3023. Ron Dennis is employed by Pakistan International Airlines.\n5562. The headquarters of University of T\u00fcbingen is located in the city of T\u00fcbingen.\n7363. Hans K\u00fcng is employed by University of T\u00fcbingen.\n7741. Pakistan International Airlines was founded in the city of Sweden.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

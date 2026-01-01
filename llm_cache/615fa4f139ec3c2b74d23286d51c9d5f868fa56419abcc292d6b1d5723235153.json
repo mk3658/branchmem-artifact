@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"right\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"1922\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 725,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-693",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"right\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"1922\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794721113,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 725,
+      "total_tokens": 756,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: United States of America\nRelation: gov_head\nPreviously recorded value (may be stale, may be empty): Donald Trump\n\nCandidate LEFT:  Scott Morrison\nCandidate RIGHT: Ole Johan Vierdal\n\nEvidence lines (numbered, in original order):\n1582. Dina Merrill is a citizen of United States of America.\n1586. hip hop music was created in the country of United States of America.\n1630. The name of the current head of state in United States of America is Connachta.\n1637. Hal Erickson is a citizen of United States of America.\n1730. Samuel Colt is a citizen of United States of America.\n1736. Club Nouveau was created in the country of United States of America.\n1740. Francis, Duke of C\u00e1diz is a citizen of United States of America.\n1742. Pat Nixon is a citizen of United States of America.\n1743. Dan Christensen is a citizen of United States of America.\n1760. Stephen McGee is a citizen of United States of America.\n1834. The Population Bomb was created in the country of United States of America.\n1837. Mia Yim is a citizen of United States of America.\n1871. Michael Feinstein is a citizen of United States of America.\n1922. The name of the current head of the United States of America government is Ole Johan Vierdal.\n1949. Henry Ford is a citizen of United States of America.\n1967. J-pop was created in the country of United States of America.\n2022. Justin Trudeau is a citizen of United States of America.\n2029. Mili\u0107 Vuka\u0161inovi\u0107 is a citizen of United States of America.\n2097. Brigham Young is a citizen of United States of America.\n2147. Tom\u00e1\u0161 Berdych is a citizen of United States of America.\n2161. Ambrose Bierce is a citizen of United States of America.\n2179. Leo Gordon is a citizen of United States of America.\n2192. Moby-Dick was created in the country of United States of America.\n2204. hardcore punk was created in the country of United States of America.\n2215. David Chase is a citizen of United States of America.\n2219. Priscilla Presley is a citizen of United States of America.\n2229. Amanda Palmer is a citizen of United States of America.\n2253. The official language of United States of America is German.\n2300. Terrance Dicks is a citizen of United States of America.\n2304. Ellen Pompeo is a citizen of United States of America.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

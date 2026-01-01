@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"3293\"}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 406,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkMx16NudEIIIKmhaaw3TS18A17vK",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"3293\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720019,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 406,
+      "total_tokens": 429,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Brigham Young University\nRelation: hq_city\nPreviously recorded value (may be stale, may be empty): Provo\n\nCandidate LEFT:  New Jersey\nCandidate RIGHT: Toronto\n\nEvidence lines (numbered, in original order):\n58. Garth Brooks worked in the city of Toronto.\n191. The univeristy where Stephenie Meyer was educated is Brigham Young University.\n1466. Advanced Micro Devices was founded in the city of Toronto.\n2492. The headquarters of Channel 4 is located in the city of Toronto.\n2656. The headquarters of Brigham Young University is located in the city of Provo.\n2918. The name of the current head of the Toronto government is John Tory.\n3293. The headquarters of Brigham Young University is located in the city of New Jersey.\n4023. The headquarters of HBO is located in the city of Toronto.\n4257. The headquarters of Yale University is located in the city of Toronto.\n4414. The univeristy where James Dashner was educated is Brigham Young University.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

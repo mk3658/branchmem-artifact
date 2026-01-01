@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this conflict resolution problem. So, the user has two branches, A and B, that diverged from a common ancestor. The key in question is \"user|preferred_shoe_width\". The common ancestor's value was \"The user usually buys shoes in medium width.\" \n\nBranch A says the user now prefers wide width, sourced by the user with high confidence (0.95). Branch B claims the user still prefers medium, inferred with lower confidence (0.55). \n\nFirst, I need to consider the sources. Both branches have user-sourced updates? Wait, no. Wait, Branch A's source is \"user\", meaning the user explicitly stated it. Branch B's source is \"inference\", so the agent guessed it. \n\nThe common ancestor's value was medium. So, Branch A is a user update changing it to wide, which is a clear preference change. Branch B is an inference, possibly based on past data but with lower confidence. \n\nSince the user's explicit statement (Branch A) has higher confidence and is directly from the user, it's more trustworthy than an inferred value from Branch B. Also, the ancestor's value was medium, but Branch A's update is a user correction, so it's likely the correct current preference. Branch B's inference might be a stale value if the user actually changed their preference. \n\nTherefore, the resolution should keep Branch A's value because it's user-sourced and higher confidence. The conflict is resolved by preferring the user's explicit update over the inferred one. No need to merge or flag as unresolved here.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"preferred_shoe_width\",\n      \"resolution\": \"kept_from_a\",\n      \"value\": \"The user now prefers wide width shoes.\",\n      \"justification\": \"Branch A's user-sourced update with high confidence directly overrides the ancestor's medium width value and Branch B's lower-confidence inference.\"\n    }\n  ]\n}",
+  "model": "qwen3:8b",
+  "input_tokens": 509,
+  "output_tokens": 416,
+  "raw": {
+    "id": "chatcmpl-948",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this conflict resolution problem. So, the user has two branches, A and B, that diverged from a common ancestor. The key in question is \"user|preferred_shoe_width\". The common ancestor's value was \"The user usually buys shoes in medium width.\" \n\nBranch A says the user now prefers wide width, sourced by the user with high confidence (0.95). Branch B claims the user still prefers medium, inferred with lower confidence (0.55). \n\nFirst, I need to consider the sources. Both branches have user-sourced updates? Wait, no. Wait, Branch A's source is \"user\", meaning the user explicitly stated it. Branch B's source is \"inference\", so the agent guessed it. \n\nThe common ancestor's value was medium. So, Branch A is a user update changing it to wide, which is a clear preference change. Branch B is an inference, possibly based on past data but with lower confidence. \n\nSince the user's explicit statement (Branch A) has higher confidence and is directly from the user, it's more trustworthy than an inferred value from Branch B. Also, the ancestor's value was medium, but Branch A's update is a user correction, so it's likely the correct current preference. Branch B's inference might be a stale value if the user actually changed their preference. \n\nTherefore, the resolution should keep Branch A's value because it's user-sourced and higher confidence. The conflict is resolved by preferring the user's explicit update over the inferred one. No need to merge or flag as unresolved here.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"preferred_shoe_width\",\n      \"resolution\": \"kept_from_a\",\n      \"value\": \"The user now prefers wide width shoes.\",\n      \"justification\": \"Branch A's user-sourced update with high confidence directly overrides the ancestor's medium width value and Branch B's lower-confidence inference.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794791188,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 416,
+      "prompt_tokens": 509,
+      "total_tokens": 925,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|preferred_shoe_width\": \"The user usually buys shoes in medium width.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_shoe_width\": {\n    \"value\": \"The user now prefers wide width shoes.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_shoe_width\": {\n    \"value\": \"The user still prefers medium width shoes.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

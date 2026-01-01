@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"race_start_role\",\"value\":\"may take horn duty at starts, but not settled yet\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"fuel_storage_limit\",\"value\":\"wants to keep a petrol can in the cockpit locker for quick refueling\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"slipway_gulls_observation\",\"value\":\"enjoys watching gulls circle the slipway at high tide\",\"source\":\"user\",\"confidence\":0.96}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 326,
+  "output_tokens": 108,
+  "raw": {
+    "id": "chatcmpl-EkSZZKy31b9rMF9QMtmC77Xfp2Dcf",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"race_start_role\",\"value\":\"may take horn duty at starts, but not settled yet\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"fuel_storage_limit\",\"value\":\"wants to keep a petrol can in the cockpit locker for quick refueling\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"slipway_gulls_observation\",\"value\":\"enjoys watching gulls circle the slipway at high tide\",\"source\":\"user\",\"confidence\":0.96}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741629,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 108,
+      "prompt_tokens": 326,
+      "total_tokens": 434,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- fuel_storage_limit: petrol cans must stay in the dock cage  (source=observation, confidence=1.00)\n- race_start_role: I usually handle the stopwatch at starts  (source=observation, confidence=1.00)\n- clubhouse_noticeboard_section: my notices go on the west wall board  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might take horn duty at starts, but I have not settled it yet.\nUser: I want to keep a petrol can in my cockpit locker for quick refueling.\nUser: I enjoy watching the gulls circle the slipway at high tide.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

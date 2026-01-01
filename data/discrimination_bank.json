@@ -1,0 +1,3781 @@
+{
+  "note": "PROSPECTIVE bank for the constraint-versus-override discrimination experiment (ANALYSIS_PLAN_ADDENDUM.md P1). Authored by gpt-5.4 under structural validation, then frozen: no item was added, removed or relabelled after any solver ran. The author is also one of the solvers, which is disclosed; the open-weight solvers are from different providers than the author. Domains are disjoint from every other bank in this paper. Every item was structurally validated: four types per domain, unique predicates, distinct natural-language values of 3-24 words, no value mentioning source, confidence, reliability or clock time, and the two critical types verified to differ in the ancestor's modal force.",
+  "author_model": "gpt-5.4",
+  "n_families": 80,
+  "n_items": 320,
+  "types": [
+    "immutable_constraint",
+    "legitimate_override",
+    "independent_observation",
+    "ambiguous"
+  ],
+  "n_rejected_drafts": 21,
+  "rejection_reasons": [
+    {
+      "domain": "fuel and charging",
+      "reason": "constraint ancestor has no standing-rule marker: \"The apartment garage limits the user's charger to 7 kilowatts.\""
+    },
+    {
+      "domain": "vehicle servicing",
+      "reason": "constraint ancestor has no standing-rule marker: 'The parking garage service bay clears vehicles up to 2.1 meters.'"
+    },
+    {
+      "domain": "home heating",
+      "reason": "constraint ancestor has no standing-rule marker: 'The lease caps the thermostat at seventy-two degrees.'"
+    },
+    {
+      "domain": "kitchen appliances",
+      "reason": "constraint ancestor has no standing-rule marker: 'The dishwasher door needs twenty inches of front clearance.'"
+    },
+    {
+      "domain": "swimming pool access",
+      "reason": "constraint ancestor has no standing-rule marker: 'The pool allows at most two guests per household.'"
+    },
+    {
+      "domain": "cycling equipment",
+      "reason": "constraint ancestor has no standing-rule marker: 'The user\u2019s bike frame clears tires up to 32 millimeters.'"
+    },
+    {
+      "domain": "garden watering",
+      "reason": "constraint ancestor has no standing-rule marker: 'The community garden hose may run no longer than twenty minutes.'"
+    },
+    {
+      "domain": "cookware",
+      "reason": "constraint ancestor has no standing-rule marker: 'The glass cooktop supports cookware up to twelve pounds.'"
+    },
+    {
+      "domain": "parcel lockers",
+      "reason": "constraint ancestor has no standing-rule marker: 'The parcel locker accepts packages no larger than medium compartments.'"
+    },
+    {
+      "domain": "bike storage at stations",
+      "reason": "constraint ancestor has no standing-rule marker: 'The station bike cage allows one bicycle per registered user.'"
+    },
+    {
+      "domain": "bike storage at stations",
+      "reason": "duplicate predicate 'locker_assignment'"
+    },
+    {
+      "domain": "taxi accounts",
+      "reason": "constraint ancestor has no standing-rule marker: 'The taxi account is limited to four passengers per ride.'"
+    },
+    {
+      "domain": "claim excess",
+      "reason": "constraint ancestor has no standing-rule marker: 'The rental agreement caps the claim excess at one thousand dollars.'"
+    },
+    {
+      "domain": "policy renewal dates",
+      "reason": "override ancestor reads as a standing rule: 'The auto policy renews on March 1 each year.'"
+    },
+    {
+      "domain": "policy renewal dates",
+      "reason": "override ancestor reads as a standing rule: 'The policy renewal date is April 15.'"
+    },
+    {
+      "domain": "event seating",
+      "reason": "constraint ancestor has no standing-rule marker: 'The fire code limits each banquet table to ten seats.'"
+    },
+    {
+      "domain": "camera equipment",
+      "reason": "constraint ancestor has no standing-rule marker: 'The travel tripod safely supports lenses up to three kilograms.'"
+    },
+    {
+      "domain": "camera equipment",
+      "reason": "constraint ancestor has no standing-rule marker: \"Airline carry-on rules cap the user's lens case at seven kilograms.\""
+    },
+    {
+      "domain": "library borrowing",
+      "reason": "constraint ancestor has no standing-rule marker: 'The user may borrow at most ten books at once.'"
+    },
+    {
+      "domain": "interlibrary loans",
+      "reason": "duplicate predicate 'pickup_location'"
+    },
+    {
+      "domain": "interlibrary loans",
+      "reason": "duplicate predicate 'preferred_pickup_branch'"
+    }
+  ],
+  "families": [
+    {
+      "family": "fam_000",
+      "domain": "parking permits",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "parking_permit_vehicle_limit",
+          "ancestor_value": "The building allows only one active parking permit per apartment.",
+          "update_value": "The user now has two active parking permits for the apartment.",
+          "keep_value": "The user can have only one active parking permit there.",
+          "why_correct": "the building rule still limits the apartment to one permit",
+          "domain": "parking permits",
+          "family": "fam_000"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "parking_permit_zone",
+          "ancestor_value": "The user's parking permit is assigned to Zone B.",
+          "update_value": "The user's parking permit is assigned to Zone D.",
+          "keep_value": "The user's parking permit remains assigned to Zone B.",
+          "why_correct": "the newer assignment supersedes the older recorded zone",
+          "domain": "parking permits",
+          "family": "fam_000"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "parking_permit_status",
+          "ancestor_value": "The user's permit was pending approval last month.",
+          "update_value": "The user's permit is approved for the current term.",
+          "keep_value": "The user's permit was pending approval last month.",
+          "why_correct": "the update explicitly describes the current status",
+          "domain": "parking permits",
+          "family": "fam_000"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "parking_permit_lot",
+          "ancestor_value": "The user's permit requires a vehicle plate number on file.",
+          "update_value": "The user's permit is valid for the north lot.",
+          "keep_value": "The user's permit is valid for the south lot.",
+          "why_correct": "the conflicting lot assignments are equally supported by the content",
+          "domain": "parking permits",
+          "family": "fam_000"
+        }
+      ]
+    },
+    {
+      "family": "fam_001",
+      "domain": "fuel and charging",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "home_charger_power_limit",
+          "ancestor_value": "The apartment lease forbids chargers above 7 kilowatts.",
+          "update_value": "The user now charges at home with an 11 kilowatt unit.",
+          "keep_value": "The user's home charger must stay at or below 7 kilowatts.",
+          "why_correct": "the lease rule still applies",
+          "domain": "fuel and charging",
+          "family": "fam_001"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_fuel_grade",
+          "ancestor_value": "The user usually fills up with regular unleaded.",
+          "update_value": "The user now prefers premium unleaded for fill-ups.",
+          "keep_value": "The user still prefers regular unleaded for fill-ups.",
+          "why_correct": "the newer preference supersedes the old one",
+          "domain": "fuel and charging",
+          "family": "fam_001"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "public_charger_status",
+          "ancestor_value": "The station has four fast chargers in the lot.",
+          "update_value": "This week, only two fast chargers are operating there.",
+          "keep_value": "Last season, all four fast chargers were operating there.",
+          "why_correct": "the content marks this week as the current state",
+          "domain": "fuel and charging",
+          "family": "fam_001"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "usual_charging_location",
+          "ancestor_value": "The user's car supports both AC and DC charging.",
+          "update_value": "The user usually charges at the office garage.",
+          "keep_value": "The user usually charges at the shopping center lot.",
+          "why_correct": "the conflicting values are equally supported",
+          "domain": "fuel and charging",
+          "family": "fam_001"
+        }
+      ]
+    },
+    {
+      "family": "fam_002",
+      "domain": "road tolls",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "toll_tag_mounting_limit",
+          "ancestor_value": "The toll tag must stay on the windshield only.",
+          "update_value": "The toll tag can be moved onto the dashboard.",
+          "keep_value": "The toll tag stays mounted on the windshield.",
+          "why_correct": "the mounting rule still applies",
+          "domain": "road tolls",
+          "family": "fam_002"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_toll_payment_method",
+          "ancestor_value": "The user pays tolls with the blue transponder.",
+          "update_value": "The user now pays tolls through the plate account.",
+          "keep_value": "The user still pays tolls with the blue transponder.",
+          "why_correct": "the newer payment method supersedes the old one",
+          "domain": "road tolls",
+          "family": "fam_002"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "usual_toll_route_status",
+          "ancestor_value": "The express toll lane was closed last month.",
+          "update_value": "The express toll lane is open this week.",
+          "keep_value": "The express toll lane was closed last month.",
+          "why_correct": "the content identifies this week as current",
+          "domain": "road tolls",
+          "family": "fam_002"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "default_toll_crossing",
+          "ancestor_value": "The user keeps toll receipts in the glove compartment.",
+          "update_value": "The user usually crosses at the Harbor Bridge toll.",
+          "keep_value": "The user usually crosses at the East Tunnel toll.",
+          "why_correct": "neither conflicting crossing is better supported",
+          "domain": "road tolls",
+          "family": "fam_002"
+        }
+      ]
+    },
+    {
+      "family": "fam_003",
+      "domain": "vehicle servicing",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "service_bay_height_limit",
+          "ancestor_value": "The service contract forbids admitting vehicles taller than 2.1 meters.",
+          "update_value": "The user wants to book the 2.3 meter van anyway.",
+          "keep_value": "The user's vehicle booking must stay within the 2.1 meter limit.",
+          "why_correct": "the contractual height rule still applies",
+          "domain": "vehicle servicing",
+          "family": "fam_003"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_service_center",
+          "ancestor_value": "The user usually takes the car to Oak Street Motors.",
+          "update_value": "The user now uses Riverside Garage for routine servicing.",
+          "keep_value": "The user still uses Oak Street Motors for routine servicing.",
+          "why_correct": "the newer explicit change supersedes the older preference",
+          "domain": "vehicle servicing",
+          "family": "fam_003"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_odometer_reading",
+          "ancestor_value": "The odometer showed 48,200 miles earlier this year.",
+          "update_value": "The odometer shows 51,600 miles this month.",
+          "keep_value": "The odometer showed 48,200 miles earlier this year.",
+          "why_correct": "the content identifies the monthly reading as current",
+          "domain": "vehicle servicing",
+          "family": "fam_003"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "next_service_day",
+          "ancestor_value": "The car uses synthetic oil for regular maintenance.",
+          "update_value": "The next service appointment is on Tuesday.",
+          "keep_value": "The next service appointment is on Thursday.",
+          "why_correct": "the conflicting appointment days are equally supported",
+          "domain": "vehicle servicing",
+          "family": "fam_003"
+        }
+      ]
+    },
+    {
+      "family": "fam_004",
+      "domain": "tyre and winter equipment",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "snow_chain_clearance",
+          "ancestor_value": "The wheel arches only allow chains up to 9 millimeters.",
+          "update_value": "Use 16 millimeter snow chains on the front tyres.",
+          "keep_value": "Use snow chains no thicker than 9 millimeters.",
+          "why_correct": "the physical clearance limit still applies",
+          "domain": "tyre and winter equipment",
+          "family": "fam_004"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "winter_tyre_storage_location",
+          "ancestor_value": "The winter tyres are stored in the garage loft.",
+          "update_value": "The winter tyres are now stored in the basement rack.",
+          "keep_value": "The winter tyres are stored in the garage loft.",
+          "why_correct": "the newer storage location supersedes the old one",
+          "domain": "tyre and winter equipment",
+          "family": "fam_004"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "winter_tread_depth_status",
+          "ancestor_value": "Last season the winter tyres had about 6 millimeters remaining.",
+          "update_value": "This week the winter tyres are down to 4 millimeters.",
+          "keep_value": "Last season the winter tyres had about 6 millimeters remaining.",
+          "why_correct": "the content identifies this week as the current observation",
+          "domain": "tyre and winter equipment",
+          "family": "fam_004"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "preferred_wheel_bolt_socket_size",
+          "ancestor_value": "The car uses a compact spare wheel in the boot.",
+          "update_value": "The preferred wheel bolt socket size is 17 millimeters.",
+          "keep_value": "The preferred wheel bolt socket size is 19 millimeters.",
+          "why_correct": "neither value is supported over the other",
+          "domain": "tyre and winter equipment",
+          "family": "fam_004"
+        }
+      ]
+    },
+    {
+      "family": "fam_005",
+      "domain": "home heating",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "thermostat_max_setting",
+          "ancestor_value": "Building rules require the thermostat to stay at or below seventy-two degrees.",
+          "update_value": "The user wants the thermostat set to seventy-six degrees.",
+          "keep_value": "The thermostat should remain no higher than seventy-two degrees.",
+          "why_correct": "the standing building rule still applies",
+          "domain": "home heating",
+          "family": "fam_005"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_evening_temperature",
+          "ancestor_value": "The user prefers sixty-eight degrees in the evening.",
+          "update_value": "The user now prefers seventy degrees in the evening.",
+          "keep_value": "The evening temperature should stay at sixty-eight degrees.",
+          "why_correct": "the newer preference supersedes the older one",
+          "domain": "home heating",
+          "family": "fam_005"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "furnace_filter_status",
+          "ancestor_value": "The furnace filter was nearly clean at the start of winter.",
+          "update_value": "The furnace filter is dusty and due for replacement this week.",
+          "keep_value": "The furnace filter was nearly clean at the start of winter.",
+          "why_correct": "the update explicitly describes the current condition",
+          "domain": "home heating",
+          "family": "fam_005"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "space_heater_storage_location",
+          "ancestor_value": "The home uses baseboard heat in the upstairs rooms.",
+          "update_value": "The space heater is stored in the hall closet.",
+          "keep_value": "The space heater is stored in the garage cabinet.",
+          "why_correct": "neither location is better supported by the available information",
+          "domain": "home heating",
+          "family": "fam_005"
+        }
+      ]
+    },
+    {
+      "family": "fam_006",
+      "domain": "kitchen appliances",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "dishwasher_front_clearance",
+          "ancestor_value": "Building rules require twenty inches of dishwasher front clearance.",
+          "update_value": "The dishwasher can sit twelve inches from the island.",
+          "keep_value": "The dishwasher must keep twenty inches from the island.",
+          "why_correct": "the building rule still applies",
+          "domain": "kitchen appliances",
+          "family": "fam_006"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_toaster_storage_spot",
+          "ancestor_value": "The toaster is stored in the left pantry cabinet.",
+          "update_value": "The toaster now belongs in the lower drawer.",
+          "keep_value": "The toaster stays in the left pantry cabinet.",
+          "why_correct": "the newer placement change supersedes the old one",
+          "domain": "kitchen appliances",
+          "family": "fam_006"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "coffee_maker_location",
+          "ancestor_value": "The coffee maker lived on the breakfast bar last winter.",
+          "update_value": "The coffee maker sits beside the fridge this week.",
+          "keep_value": "The coffee maker lived on the breakfast bar last winter.",
+          "why_correct": "the content identifies this week as the current state",
+          "domain": "kitchen appliances",
+          "family": "fam_006"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "air_fryer_shelf",
+          "ancestor_value": "The air fryer basket is dishwasher safe on the top rack.",
+          "update_value": "The air fryer belongs on the middle pantry shelf.",
+          "keep_value": "The air fryer belongs on the bottom pantry shelf.",
+          "why_correct": "neither shelf location is supported over the other",
+          "domain": "kitchen appliances",
+          "family": "fam_006"
+        }
+      ]
+    },
+    {
+      "family": "fam_007",
+      "domain": "door locks and keys",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "building_entry_key_policy",
+          "ancestor_value": "The building requires every apartment key to stay unmarked.",
+          "update_value": "The apartment key should have the unit number engraved.",
+          "keep_value": "The apartment key must remain plain and unmarked.",
+          "why_correct": "engraving the key would violate the building's standing requirement",
+          "domain": "door locks and keys",
+          "family": "fam_007"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "spare_key_storage_spot",
+          "ancestor_value": "The spare key is kept in the blue garage cabinet.",
+          "update_value": "The spare key is now kept in the porch lockbox.",
+          "keep_value": "The spare key stays in the blue garage cabinet.",
+          "why_correct": "the newer storage location supersedes the older recorded one",
+          "domain": "door locks and keys",
+          "family": "fam_007"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "front_door_lock_status",
+          "ancestor_value": "The front door lock was sticking badly last winter.",
+          "update_value": "The front door lock turns smoothly this week.",
+          "keep_value": "The front door lock was sticking badly last winter.",
+          "why_correct": "the content identifies this week's condition as the current one",
+          "domain": "door locks and keys",
+          "family": "fam_007"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "back_door_key_hook",
+          "ancestor_value": "The back door uses a double-cylinder deadbolt.",
+          "update_value": "The back door key hangs on the kitchen hook.",
+          "keep_value": "The back door key hangs on the hallway hook.",
+          "why_correct": "the two location claims conflict and nothing provided decides between them",
+          "domain": "door locks and keys",
+          "family": "fam_007"
+        }
+      ]
+    },
+    {
+      "family": "fam_008",
+      "domain": "rubbish and recycling collection",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "bin_lid_clearance_rule",
+          "ancestor_value": "The landlord requires the bin lids to close fully.",
+          "update_value": "The cardboard can stick out above the recycling bin.",
+          "keep_value": "All recycling must fit with the lid fully shut.",
+          "why_correct": "the landlord's standing rule still applies",
+          "domain": "rubbish and recycling collection",
+          "family": "fam_008"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "garden_waste_collection_day",
+          "ancestor_value": "Garden waste is collected on Thursdays.",
+          "update_value": "Garden waste is collected on Mondays.",
+          "keep_value": "Garden waste is still collected on Thursdays.",
+          "why_correct": "the newer collection day replaces the old one",
+          "domain": "rubbish and recycling collection",
+          "family": "fam_008"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_recycling_container",
+          "ancestor_value": "The user keeps paper recycling in a blue box.",
+          "update_value": "This week paper recycling goes in the green cart.",
+          "keep_value": "Last season paper recycling went in the blue box.",
+          "why_correct": "the content identifies this week as the current state",
+          "domain": "rubbish and recycling collection",
+          "family": "fam_008"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "general_waste_pickup_side",
+          "ancestor_value": "The street has separate bins for rubbish and recycling.",
+          "update_value": "General waste pickup is from the front curb.",
+          "keep_value": "General waste pickup is from the back lane.",
+          "why_correct": "neither value is better supported by the content",
+          "domain": "rubbish and recycling collection",
+          "family": "fam_008"
+        }
+      ]
+    },
+    {
+      "family": "fam_009",
+      "domain": "water supply",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "hose_pressure_limit",
+          "ancestor_value": "The building's rooftop hose pressure must stay below sixty psi.",
+          "update_value": "The rooftop hose should run at eighty psi for faster filling.",
+          "keep_value": "The rooftop hose should remain under sixty psi during use.",
+          "why_correct": "the pressure cap is a standing safety limit",
+          "domain": "water supply",
+          "family": "fam_009"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "water_delivery_day",
+          "ancestor_value": "The regular bottled water delivery arrives on Tuesdays.",
+          "update_value": "The regular bottled water delivery now arrives on Thursdays.",
+          "keep_value": "The regular bottled water delivery still arrives on Tuesdays.",
+          "why_correct": "the newer delivery day change supersedes the old schedule",
+          "domain": "water supply",
+          "family": "fam_009"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "tank_fill_level",
+          "ancestor_value": "The storage tank has a painted capacity marker near the ladder.",
+          "update_value": "This week the storage tank is nearly full.",
+          "keep_value": "Last month the storage tank was less than half full.",
+          "why_correct": "the content itself marks this week as the current observation",
+          "domain": "water supply",
+          "family": "fam_009"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "preferred_faucet_for_refill",
+          "ancestor_value": "The kitchen has two refill taps beside the sink.",
+          "update_value": "The user prefers the left faucet for refilling jugs.",
+          "keep_value": "The user prefers the right faucet for refilling jugs.",
+          "why_correct": "the two preferences conflict and nothing here decides between them",
+          "domain": "water supply",
+          "family": "fam_009"
+        }
+      ]
+    },
+    {
+      "family": "fam_010",
+      "domain": "broadband and routers",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "router_placement_limit",
+          "ancestor_value": "The router must stay in the hallway by the fiber jack.",
+          "update_value": "Move the router into the bedroom closet instead.",
+          "keep_value": "The router stays in the hallway near the fiber jack.",
+          "why_correct": "the physical connection point still limits placement",
+          "domain": "broadband and routers",
+          "family": "fam_010"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "wifi_network_name",
+          "ancestor_value": "The home Wi-Fi network name is MapleFlat.",
+          "update_value": "The home Wi-Fi network name is now CedarLoft.",
+          "keep_value": "The home Wi-Fi network name remains MapleFlat.",
+          "why_correct": "the newer explicit change supersedes the old recorded name",
+          "domain": "broadband and routers",
+          "family": "fam_010"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "internet_outage_status",
+          "ancestor_value": "The connection was down earlier this week.",
+          "update_value": "The connection is working normally today.",
+          "keep_value": "The connection was down earlier this week.",
+          "why_correct": "the content itself marks today's status as current",
+          "domain": "broadband and routers",
+          "family": "fam_010"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "preferred_router_reboot_time",
+          "ancestor_value": "The modem and router are separate devices.",
+          "update_value": "Reboot the router in the morning.",
+          "keep_value": "Reboot the router in the evening.",
+          "why_correct": "the conflicting preferences are equally supported and unresolved",
+          "domain": "broadband and routers",
+          "family": "fam_010"
+        }
+      ]
+    },
+    {
+      "family": "fam_011",
+      "domain": "work laptops",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "laptop_usb_c_charging_requirement",
+          "ancestor_value": "The work laptop must be charged only through its USB-C port.",
+          "update_value": "The work laptop can be charged through the headphone jack instead.",
+          "keep_value": "The work laptop still needs charging through the USB-C port.",
+          "why_correct": "the charging rule is a hard hardware requirement",
+          "domain": "work laptops",
+          "family": "fam_011"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "assigned_work_laptop_model",
+          "ancestor_value": "The user's assigned work laptop is a ThinkPad X1 Carbon.",
+          "update_value": "The user's assigned work laptop is now a Dell Latitude 7440.",
+          "keep_value": "The user's assigned work laptop remains a ThinkPad X1 Carbon.",
+          "why_correct": "the newer assignment supersedes the older recorded model",
+          "domain": "work laptops",
+          "family": "fam_011"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_laptop_checkout_status",
+          "ancestor_value": "The work laptop was checked out to the user last quarter.",
+          "update_value": "The work laptop is currently checked back in to inventory.",
+          "keep_value": "The work laptop was checked out to the user last quarter.",
+          "why_correct": "the content explicitly marks the inventory status as current",
+          "domain": "work laptops",
+          "family": "fam_011"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "primary_work_laptop_location",
+          "ancestor_value": "The user's work laptop has a company asset tag on it.",
+          "update_value": "The user's primary work laptop is in the downtown office.",
+          "keep_value": "The user's primary work laptop is at the home desk.",
+          "why_correct": "the two location claims conflict and nothing here decides between them",
+          "domain": "work laptops",
+          "family": "fam_011"
+        }
+      ]
+    },
+    {
+      "family": "fam_012",
+      "domain": "software licences",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "license_seat_cap",
+          "ancestor_value": "The user contract allows no more than twenty license seats.",
+          "update_value": "The user now needs twenty five license seats.",
+          "keep_value": "The user must stay within the twenty seat license cap.",
+          "why_correct": "the contractual seat limit still applies",
+          "domain": "software licences",
+          "family": "fam_012"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_license_tier",
+          "ancestor_value": "The user uses the standard license tier for this tool.",
+          "update_value": "The user has switched to the enterprise license tier.",
+          "keep_value": "The user remains on the standard license tier.",
+          "why_correct": "the newer explicit change supersedes the older recorded tier",
+          "domain": "software licences",
+          "family": "fam_012"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_ide_license",
+          "ancestor_value": "The user previously used a community IDE license.",
+          "update_value": "The user currently uses a professional IDE license.",
+          "keep_value": "The user previously used a community IDE license.",
+          "why_correct": "the content explicitly marks the professional license as current",
+          "domain": "software licences",
+          "family": "fam_012"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "assigned_pdf_editor_license",
+          "ancestor_value": "The user manages licenses for several desktop publishing tools.",
+          "update_value": "The user has the Nitro PDF editor license.",
+          "keep_value": "The user has the Acrobat PDF editor license.",
+          "why_correct": "the two exclusive values are equally supported and the background fact does not decide",
+          "domain": "software licences",
+          "family": "fam_012"
+        }
+      ]
+    },
+    {
+      "family": "fam_013",
+      "domain": "building access cards",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "access_card_photo_requirement",
+          "ancestor_value": "Building access cards must display a current headshot photo.",
+          "update_value": "The user's access card should have no photo on it.",
+          "keep_value": "The user's access card needs a current headshot photo.",
+          "why_correct": "photo-free cards would violate the standing badge requirement",
+          "domain": "building access cards",
+          "family": "fam_013"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "access_card_pickup_location",
+          "ancestor_value": "The user's access card pickup location is the main lobby desk.",
+          "update_value": "The user's access card pickup location is the loading dock office.",
+          "keep_value": "The user's access card pickup location is the main lobby desk.",
+          "why_correct": "the newer pickup location change supersedes the old one",
+          "domain": "building access cards",
+          "family": "fam_013"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "access_card_status",
+          "ancestor_value": "The user's access card was inactive during the office renovation.",
+          "update_value": "The user's access card is active for daily entry now.",
+          "keep_value": "The user's access card was inactive during the office renovation.",
+          "why_correct": "the content itself marks the active status as current",
+          "domain": "building access cards",
+          "family": "fam_013"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "access_card_storage_spot",
+          "ancestor_value": "The user's building uses turnstiles at the front entrance.",
+          "update_value": "The user's access card is kept in the laptop sleeve.",
+          "keep_value": "The user's access card is kept in the desk drawer.",
+          "why_correct": "the two storage locations conflict and nothing here decides between them",
+          "domain": "building access cards",
+          "family": "fam_013"
+        }
+      ]
+    },
+    {
+      "family": "fam_014",
+      "domain": "printer and stationery supply",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "paper_tray_capacity_limit",
+          "ancestor_value": "The office copier accepts no more than 250 sheets per tray.",
+          "update_value": "Load 400 sheets into the main paper tray.",
+          "keep_value": "Keep each copier tray loaded with 250 sheets or fewer.",
+          "why_correct": "the physical tray limit still applies",
+          "domain": "printer and stationery supply",
+          "family": "fam_014"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_notebook_size",
+          "ancestor_value": "The user prefers A5 notebooks for meeting notes.",
+          "update_value": "The user now prefers B5 notebooks for meeting notes.",
+          "keep_value": "The user prefers A5 notebooks for meeting notes.",
+          "why_correct": "the newer preference replaces the older one",
+          "domain": "printer and stationery supply",
+          "family": "fam_014"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "printer_toner_status",
+          "ancestor_value": "The toner cartridge was nearly empty earlier this month.",
+          "update_value": "The toner cartridge is full after the recent replacement.",
+          "keep_value": "The toner cartridge was nearly empty earlier this month.",
+          "why_correct": "the content identifies the replacement state as current",
+          "domain": "printer and stationery supply",
+          "family": "fam_014"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "default_pen_ink_color",
+          "ancestor_value": "The user keeps spare pens in the top desk drawer.",
+          "update_value": "The user's default pen ink color is blue.",
+          "keep_value": "The user's default pen ink color is black.",
+          "why_correct": "the conflicting values are equally supported and unresolved",
+          "domain": "printer and stationery supply",
+          "family": "fam_014"
+        }
+      ]
+    },
+    {
+      "family": "fam_015",
+      "domain": "gym membership",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "guest_pass_limit",
+          "ancestor_value": "The membership allows only one guest pass per month.",
+          "update_value": "The user can bring three guests every month.",
+          "keep_value": "The user can bring at most one guest monthly.",
+          "why_correct": "the contractual guest limit still applies",
+          "domain": "gym membership",
+          "family": "fam_015"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "home_club_location",
+          "ancestor_value": "The user's home club is the Midtown branch.",
+          "update_value": "The user's home club is now the Riverside branch.",
+          "keep_value": "The user's home club remains the Midtown branch.",
+          "why_correct": "the newer membership detail supersedes the old one",
+          "domain": "gym membership",
+          "family": "fam_015"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "locker_assignment",
+          "ancestor_value": "The user had locker 118 during the spring session.",
+          "update_value": "The user is assigned locker 204 this month.",
+          "keep_value": "The user had locker 118 during the spring session.",
+          "why_correct": "the content identifies the monthly assignment as current",
+          "domain": "gym membership",
+          "family": "fam_015"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "preferred_workout_start_time",
+          "ancestor_value": "The gym opens daily with staffed check-in at the front desk.",
+          "update_value": "The user prefers starting workouts at 6 a.m.",
+          "keep_value": "The user prefers starting workouts at 8 p.m.",
+          "why_correct": "the conflicting preferences are equally supported by the content",
+          "domain": "gym membership",
+          "family": "fam_015"
+        }
+      ]
+    },
+    {
+      "family": "fam_016",
+      "domain": "running shoes and kit",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "track_spike_length_limit",
+          "ancestor_value": "Track meets require spikes no longer than six millimeters.",
+          "update_value": "The user wants nine millimeter spikes for races.",
+          "keep_value": "The user must use spikes at or under six millimeters.",
+          "why_correct": "the standing equipment rule still applies",
+          "domain": "running shoes and kit",
+          "family": "fam_016"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_long_run_shoe",
+          "ancestor_value": "The user's preferred long run shoe is the Nimbus.",
+          "update_value": "The user's preferred long run shoe is now the Ghost.",
+          "keep_value": "The user's preferred long run shoe remains the Nimbus.",
+          "why_correct": "the newer explicit preference change supersedes the old value",
+          "domain": "running shoes and kit",
+          "family": "fam_016"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_rotation_status",
+          "ancestor_value": "The user keeps three road shoes in rotation.",
+          "update_value": "This week the user keeps only two road shoes in rotation.",
+          "keep_value": "Last season the user kept three road shoes in rotation.",
+          "why_correct": "the content identifies the weekly observation as current",
+          "domain": "running shoes and kit",
+          "family": "fam_016"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "race_day_singlet_color",
+          "ancestor_value": "The user keeps a lightweight shell in the gym locker.",
+          "update_value": "The user's race day singlet is blue.",
+          "keep_value": "The user's race day singlet is red.",
+          "why_correct": "nothing here determines which conflicting value is correct",
+          "domain": "running shoes and kit",
+          "family": "fam_016"
+        }
+      ]
+    },
+    {
+      "family": "fam_017",
+      "domain": "swimming pool access",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "guest_limit",
+          "ancestor_value": "Pool policy permanently limits each household to two guests.",
+          "update_value": "The user can bring four guests to the pool.",
+          "keep_value": "The user can bring no more than two guests.",
+          "why_correct": "the standing pool policy still applies",
+          "domain": "swimming pool access",
+          "family": "fam_017"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_entry_gate",
+          "ancestor_value": "The user usually enters through the west gate.",
+          "update_value": "The user now uses the north gate for pool entry.",
+          "keep_value": "The user still enters through the west gate.",
+          "why_correct": "the newer ordinary preference supersedes the older one",
+          "domain": "swimming pool access",
+          "family": "fam_017"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "lap_lane_availability",
+          "ancestor_value": "Lap lanes were closed for lessons last season.",
+          "update_value": "Lap lanes are open for general swim this week.",
+          "keep_value": "Lap lanes were closed for lessons last season.",
+          "why_correct": "the content identifies this week as the current state",
+          "domain": "swimming pool access",
+          "family": "fam_017"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "locker_row_assignment",
+          "ancestor_value": "The pool deck has shaded seating near the shallow end.",
+          "update_value": "The user's locker row is C.",
+          "keep_value": "The user's locker row is F.",
+          "why_correct": "the conflicting values are equally supported and cannot be reconciled",
+          "domain": "swimming pool access",
+          "family": "fam_017"
+        }
+      ]
+    },
+    {
+      "family": "fam_018",
+      "domain": "cycling equipment",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "wheel_tire_clearance_rule",
+          "ancestor_value": "The user's bike frame must not use tires wider than 32 millimeters.",
+          "update_value": "The user now wants 38 millimeter gravel tires installed.",
+          "keep_value": "The user's next tires need to stay at or below 32 millimeters.",
+          "why_correct": "the frame-width limit remains in force",
+          "domain": "cycling equipment",
+          "family": "fam_018"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_pedal_system",
+          "ancestor_value": "The user rides with SPD pedals on the road bike.",
+          "update_value": "The user switched the road bike to Look Keo pedals.",
+          "keep_value": "The user still uses SPD pedals on the road bike.",
+          "why_correct": "the newer explicit change supersedes the old setup",
+          "domain": "cycling equipment",
+          "family": "fam_018"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "chain_condition",
+          "ancestor_value": "The chain was badly stretched last season.",
+          "update_value": "The chain is freshly replaced and running smoothly this week.",
+          "keep_value": "The chain was badly stretched last season.",
+          "why_correct": "the update explicitly describes the current state",
+          "domain": "cycling equipment",
+          "family": "fam_018"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "favorite_handlebar_width",
+          "ancestor_value": "The user keeps a mini pump mounted beside the bottle cage.",
+          "update_value": "The user's favorite handlebar width is 40 centimeters.",
+          "keep_value": "The user's favorite handlebar width is 42 centimeters.",
+          "why_correct": "neither value is better supported by the content",
+          "domain": "cycling equipment",
+          "family": "fam_018"
+        }
+      ]
+    },
+    {
+      "family": "fam_019",
+      "domain": "team sport fixtures",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "home_match_start_time",
+          "ancestor_value": "The league requires all home matches to start after 10 a.m.",
+          "update_value": "The user wants home matches to begin at 8 a.m.",
+          "keep_value": "Home matches must begin no earlier than 10 a.m.",
+          "why_correct": "the league rule still applies",
+          "domain": "team sport fixtures",
+          "family": "fam_019"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "training_ground_for_fixtures",
+          "ancestor_value": "The user's team uses Riverside Ground for home fixtures.",
+          "update_value": "The user's team now uses North Park for home fixtures.",
+          "keep_value": "The user's team still uses Riverside Ground for home fixtures.",
+          "why_correct": "the newer venue change supersedes the old record",
+          "domain": "team sport fixtures",
+          "family": "fam_019"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "league_position",
+          "ancestor_value": "The user's club competes in the county premier division.",
+          "update_value": "The user's team is currently second in the table.",
+          "keep_value": "The user's team finished sixth last season.",
+          "why_correct": "the content identifies the current standing",
+          "domain": "team sport fixtures",
+          "family": "fam_019"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "cup_semi_final_opponent",
+          "ancestor_value": "The user's team entered the regional cup this year.",
+          "update_value": "The user's semi-final opponent is Harbor United.",
+          "keep_value": "The user's semi-final opponent is Meadow Rovers.",
+          "why_correct": "nothing given distinguishes between the two opponents",
+          "domain": "team sport fixtures",
+          "family": "fam_019"
+        }
+      ]
+    },
+    {
+      "family": "fam_020",
+      "domain": "houseplants",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "plant_shelf_weight_limit",
+          "ancestor_value": "The window shelf may hold no more than three pots.",
+          "update_value": "The user now keeps five pots on the window shelf.",
+          "keep_value": "The user keeps at most three pots on the window shelf.",
+          "why_correct": "the shelf limit is a standing physical constraint",
+          "domain": "houseplants",
+          "family": "fam_020"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "favorite_houseplant",
+          "ancestor_value": "The user's favorite houseplant is the fiddle leaf fig.",
+          "update_value": "The user's favorite houseplant is now the rubber plant.",
+          "keep_value": "The user's favorite houseplant is the fiddle leaf fig.",
+          "why_correct": "the newer preference change supersedes the older recorded value",
+          "domain": "houseplants",
+          "family": "fam_020"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "orchid_bloom_status",
+          "ancestor_value": "The orchid was between bloom cycles last month.",
+          "update_value": "The orchid is blooming again this week.",
+          "keep_value": "The orchid was between bloom cycles last month.",
+          "why_correct": "the content itself marks this week as the current state",
+          "domain": "houseplants",
+          "family": "fam_020"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "living_room_plant_location",
+          "ancestor_value": "The living room gets bright indirect light most afternoons.",
+          "update_value": "The monstera sits beside the sofa in the living room.",
+          "keep_value": "The monstera sits by the dining table in the living room.",
+          "why_correct": "the two location claims conflict and nothing here decides between them",
+          "domain": "houseplants",
+          "family": "fam_020"
+        }
+      ]
+    },
+    {
+      "family": "fam_021",
+      "domain": "garden watering",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "watering_duration_limit",
+          "ancestor_value": "Garden policy requires each hose session stay under twenty minutes.",
+          "update_value": "The user wants each hose session to run for thirty minutes.",
+          "keep_value": "Each hose session should stay under twenty minutes.",
+          "why_correct": "the standing garden policy still applies",
+          "domain": "garden watering",
+          "family": "fam_021"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_watering_time",
+          "ancestor_value": "The user usually waters the beds at sunrise.",
+          "update_value": "The user now waters the beds after sunset.",
+          "keep_value": "The user waters the beds at sunrise.",
+          "why_correct": "the newer ordinary preference supersedes the stale one",
+          "domain": "garden watering",
+          "family": "fam_021"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "sprinkler_status",
+          "ancestor_value": "The backyard sprinkler exists for the vegetable patch.",
+          "update_value": "This week the sprinkler is disconnected for repairs.",
+          "keep_value": "Last season the sprinkler was connected and running.",
+          "why_correct": "the content itself marks the repair status as current",
+          "domain": "garden watering",
+          "family": "fam_021"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "watering_day",
+          "ancestor_value": "The user keeps a rain barrel beside the shed.",
+          "update_value": "The user waters the roses on Tuesdays.",
+          "keep_value": "The user waters the roses on Thursdays.",
+          "why_correct": "neither value is better supported by the content",
+          "domain": "garden watering",
+          "family": "fam_021"
+        }
+      ]
+    },
+    {
+      "family": "fam_022",
+      "domain": "lawn equipment",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "trailer_weight_limit",
+          "ancestor_value": "The mower trailer must stay under fifteen hundred pounds loaded.",
+          "update_value": "The mower trailer can haul two thousand pounds of equipment.",
+          "keep_value": "The mower trailer must remain under fifteen hundred pounds loaded.",
+          "why_correct": "the safety limit still applies",
+          "domain": "lawn equipment",
+          "family": "fam_022"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_mower_fuel",
+          "ancestor_value": "The user uses regular gasoline in the push mower.",
+          "update_value": "The user now uses ethanol-free gasoline in the push mower.",
+          "keep_value": "The user uses regular gasoline in the push mower.",
+          "why_correct": "the newer preference replaces the old one",
+          "domain": "lawn equipment",
+          "family": "fam_022"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "riding_mower_battery_status",
+          "ancestor_value": "The riding mower battery was dead after winter storage.",
+          "update_value": "The riding mower battery is fully charged this week.",
+          "keep_value": "The riding mower battery was dead after winter storage.",
+          "why_correct": "the content identifies this week as current",
+          "domain": "lawn equipment",
+          "family": "fam_022"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "string_trimmer_storage_spot",
+          "ancestor_value": "The user keeps extra trimmer line in the garage cabinet.",
+          "update_value": "The string trimmer is stored on the shed wall.",
+          "keep_value": "The string trimmer is stored beside the workbench.",
+          "why_correct": "neither value is favored by the available information",
+          "domain": "lawn equipment",
+          "family": "fam_022"
+        }
+      ]
+    },
+    {
+      "family": "fam_023",
+      "domain": "compost and waste",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "compost_bin_material_limit",
+          "ancestor_value": "The building allows only compostable liners in the shared compost bin.",
+          "update_value": "The user wants to line the shared compost bin with plastic bags.",
+          "keep_value": "The shared compost bin must use compostable liners only.",
+          "why_correct": "the building rule still applies",
+          "domain": "compost and waste",
+          "family": "fam_023"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "trash_pickup_day",
+          "ancestor_value": "The user's trash goes out on Tuesday evenings.",
+          "update_value": "The user's trash now goes out on Thursday evenings.",
+          "keep_value": "The user's trash still goes out on Tuesday evenings.",
+          "why_correct": "the newer change supersedes the old schedule",
+          "domain": "compost and waste",
+          "family": "fam_023"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "yard_waste_storage_spot",
+          "ancestor_value": "The yard waste cart is usually kept beside the garage.",
+          "update_value": "This week the yard waste cart is stored by the side gate.",
+          "keep_value": "Last season the yard waste cart stayed beside the garage.",
+          "why_correct": "the content identifies this week as the current state",
+          "domain": "compost and waste",
+          "family": "fam_023"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "kitchen_scrap_caddy_location",
+          "ancestor_value": "The user keeps a small compost caddy in the kitchen.",
+          "update_value": "The kitchen scrap caddy sits under the sink.",
+          "keep_value": "The kitchen scrap caddy sits on the countertop.",
+          "why_correct": "nothing here determines which location is correct",
+          "domain": "compost and waste",
+          "family": "fam_023"
+        }
+      ]
+    },
+    {
+      "family": "fam_024",
+      "domain": "seed and planting seasons",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "garden_bed_frost_safe_planting",
+          "ancestor_value": "The community garden forbids planting before the last frost date.",
+          "update_value": "The user will sow tomatoes outdoors in early March.",
+          "keep_value": "The user must wait until after the last frost.",
+          "why_correct": "the standing garden rule still prohibits earlier planting",
+          "domain": "seed and planting seasons",
+          "family": "fam_024"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_pea_sowing_month",
+          "ancestor_value": "The user usually sows peas in February.",
+          "update_value": "The user now prefers sowing peas in January.",
+          "keep_value": "The user usually sows peas in February.",
+          "why_correct": "the newer preference replaces the older routine",
+          "domain": "seed and planting seasons",
+          "family": "fam_024"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_seed_start_stage",
+          "ancestor_value": "As of last season, peppers were started indoors in trays.",
+          "update_value": "As of this week, peppers are already hardening off outside.",
+          "keep_value": "As of last season, peppers were started indoors in trays.",
+          "why_correct": "the content explicitly marks this week as the current state",
+          "domain": "seed and planting seasons",
+          "family": "fam_024"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "fall_garlic_planting_window",
+          "ancestor_value": "The user mulches raised beds with straw each winter.",
+          "update_value": "The user plants garlic in September.",
+          "keep_value": "The user plants garlic in October.",
+          "why_correct": "the background fact does not resolve the conflicting planting months",
+          "domain": "seed and planting seasons",
+          "family": "fam_024"
+        }
+      ]
+    },
+    {
+      "family": "fam_025",
+      "domain": "musical instruments",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "practice_room_volume_limit",
+          "ancestor_value": "The rehearsal studio requires acoustic instruments only during lessons.",
+          "update_value": "The user will bring an electric drum kit to lessons.",
+          "keep_value": "The user should bring only acoustic instruments to lessons.",
+          "why_correct": "the studio rule still prohibits electric instruments during lessons",
+          "domain": "musical instruments",
+          "family": "fam_025"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "primary_keyboard_model",
+          "ancestor_value": "The user's main keyboard is a Yamaha P-125.",
+          "update_value": "The user's main keyboard is now a Roland FP-30X.",
+          "keep_value": "The user's main keyboard is a Yamaha P-125.",
+          "why_correct": "the newer statement explicitly replaces the older instrument choice",
+          "domain": "musical instruments",
+          "family": "fam_025"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_string_gauge",
+          "ancestor_value": "The user's guitar uses medium strings for winter gigs.",
+          "update_value": "The user's guitar uses light strings this month.",
+          "keep_value": "The user's guitar uses medium strings for winter gigs.",
+          "why_correct": "the update text itself identifies the more current setup",
+          "domain": "musical instruments",
+          "family": "fam_025"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "preferred_bow_material",
+          "ancestor_value": "The user keeps a violin case humidifier in winter.",
+          "update_value": "The user prefers a carbon fiber bow.",
+          "keep_value": "The user prefers a pernambuco bow.",
+          "why_correct": "the conflicting preferences are equally supported and the ancestor is irrelevant",
+          "domain": "musical instruments",
+          "family": "fam_025"
+        }
+      ]
+    },
+    {
+      "family": "fam_026",
+      "domain": "practice rooms",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "max_occupancy",
+          "ancestor_value": "The small practice room has a maximum occupancy of four people.",
+          "update_value": "The user wants to book the small practice room for six people.",
+          "keep_value": "The user should use a larger practice room for six people.",
+          "why_correct": "the occupancy limit is a standing safety rule",
+          "domain": "practice rooms",
+          "family": "fam_026"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_practice_room",
+          "ancestor_value": "The user usually prefers the piano practice room upstairs.",
+          "update_value": "The user now prefers the drum practice room near the lobby.",
+          "keep_value": "The user prefers the piano practice room upstairs.",
+          "why_correct": "the newer preference supersedes the older one",
+          "domain": "practice rooms",
+          "family": "fam_026"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "room_availability_status",
+          "ancestor_value": "The ensemble room was unavailable during last semester's renovations.",
+          "update_value": "The ensemble room is available again this week.",
+          "keep_value": "The ensemble room was unavailable during last semester's renovations.",
+          "why_correct": "the content explicitly marks this week as the current state",
+          "domain": "practice rooms",
+          "family": "fam_026"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "favorite_warmup_room",
+          "ancestor_value": "The practice rooms each have wall-mounted music stands.",
+          "update_value": "The user's favorite warmup room is Studio B.",
+          "keep_value": "The user's favorite warmup room is Studio C.",
+          "why_correct": "neither value has evidence that makes it preferable",
+          "domain": "practice rooms",
+          "family": "fam_026"
+        }
+      ]
+    },
+    {
+      "family": "fam_027",
+      "domain": "concert tickets",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "ticket_transfer_limit",
+          "ancestor_value": "The venue allows only four tickets per account.",
+          "update_value": "The user can transfer six tickets from one account.",
+          "keep_value": "The user can transfer up to four tickets from one account.",
+          "why_correct": "the venue limit still applies",
+          "domain": "concert tickets",
+          "family": "fam_027"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_seating_section",
+          "ancestor_value": "The user prefers balcony seats for concerts.",
+          "update_value": "The user now prefers floor seats for concerts.",
+          "keep_value": "The user prefers balcony seats for concerts.",
+          "why_correct": "the newer preference supersedes the old one",
+          "domain": "concert tickets",
+          "family": "fam_027"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_ticket_status",
+          "ancestor_value": "The user's concert tickets were still pending release.",
+          "update_value": "The user's concert tickets are now available in the app.",
+          "keep_value": "The user's concert tickets were still pending release.",
+          "why_correct": "the content explicitly marks availability as current",
+          "domain": "concert tickets",
+          "family": "fam_027"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "concert_night_ticket_holder",
+          "ancestor_value": "The user usually buys tickets through the venue app.",
+          "update_value": "The user's extra concert ticket is for Jordan.",
+          "keep_value": "The user's extra concert ticket is for Casey.",
+          "why_correct": "nothing in the content determines which recipient is correct",
+          "domain": "concert tickets",
+          "family": "fam_027"
+        }
+      ]
+    },
+    {
+      "family": "fam_028",
+      "domain": "sheet music",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "photocopy_policy",
+          "ancestor_value": "The rental orchestra parts must not be photocopied.",
+          "update_value": "The user can photocopy the rental violin part for annotations.",
+          "keep_value": "The user must use the original rental violin part only.",
+          "why_correct": "the rental no-copy rule still applies",
+          "domain": "sheet music",
+          "family": "fam_028"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_notation_software",
+          "ancestor_value": "The user prefers Finale for engraving lead sheets.",
+          "update_value": "The user now prefers Dorico for engraving lead sheets.",
+          "keep_value": "The user prefers Finale for engraving lead sheets.",
+          "why_correct": "the newer preference supersedes the older one",
+          "domain": "sheet music",
+          "family": "fam_028"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_edition_in_use",
+          "ancestor_value": "Last semester the user used the Peters edition for lessons.",
+          "update_value": "This semester the user uses the Henle edition for lessons.",
+          "keep_value": "Last semester the user used the Peters edition for lessons.",
+          "why_correct": "the content identifies this semester as the current state",
+          "domain": "sheet music",
+          "family": "fam_028"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "score_storage_shelf",
+          "ancestor_value": "The user keeps oversized scores in flat archival boxes.",
+          "update_value": "The user stores opera vocal scores on the top shelf.",
+          "keep_value": "The user stores opera vocal scores on the bottom shelf.",
+          "why_correct": "the conflicting shelf locations are equally supported",
+          "domain": "sheet music",
+          "family": "fam_028"
+        }
+      ]
+    },
+    {
+      "family": "fam_029",
+      "domain": "audio equipment",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "max_speaker_width_cm",
+          "ancestor_value": "The studio shelf only fits speakers up to 18 centimeters wide.",
+          "update_value": "The user wants 24 centimeter wide speakers on that shelf.",
+          "keep_value": "Any speakers for that shelf must be 18 centimeters wide or less.",
+          "why_correct": "the physical shelf limit still applies",
+          "domain": "audio equipment",
+          "family": "fam_029"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_headphone_connection",
+          "ancestor_value": "The user prefers wired headphones for desktop listening.",
+          "update_value": "The user now prefers Bluetooth headphones for desktop listening.",
+          "keep_value": "The user prefers wired headphones for desktop listening.",
+          "why_correct": "the newer preference supersedes the older one",
+          "domain": "audio equipment",
+          "family": "fam_029"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_turntable_location",
+          "ancestor_value": "The turntable was in the living room last month.",
+          "update_value": "The turntable is in the office this week.",
+          "keep_value": "The turntable was in the living room last month.",
+          "why_correct": "the content identifies this week as the current state",
+          "domain": "audio equipment",
+          "family": "fam_029"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "main_listening_room",
+          "ancestor_value": "The user keeps spare audio cables in a labeled drawer.",
+          "update_value": "The user's main listening room is the den.",
+          "keep_value": "The user's main listening room is the study.",
+          "why_correct": "the conflicting values are equally supported by the content",
+          "domain": "audio equipment",
+          "family": "fam_029"
+        }
+      ]
+    },
+    {
+      "family": "fam_030",
+      "domain": "cookware",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "max_pan_weight",
+          "ancestor_value": "The apartment lease forbids cookware heavier than twelve pounds.",
+          "update_value": "The user now stores a sixteen-pound cast-iron griddle.",
+          "keep_value": "The user keeps all cookware at or under twelve pounds.",
+          "why_correct": "the lease rule still applies",
+          "domain": "cookware",
+          "family": "fam_030"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_skillet_material",
+          "ancestor_value": "The user prefers stainless steel skillets for everyday cooking.",
+          "update_value": "The user now prefers carbon steel skillets for everyday cooking.",
+          "keep_value": "The user still prefers stainless steel skillets for everyday cooking.",
+          "why_correct": "the newer preference supersedes the old one",
+          "domain": "cookware",
+          "family": "fam_030"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_stockpot_location",
+          "ancestor_value": "As of last season, the stockpot lived on the top shelf.",
+          "update_value": "As of this week, the stockpot lives in the lower cabinet.",
+          "keep_value": "As of last season, the stockpot lived on the top shelf.",
+          "why_correct": "the content marks the lower-cabinet location as current",
+          "domain": "cookware",
+          "family": "fam_030"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "default_frying_pan",
+          "ancestor_value": "The user keeps lids sorted by diameter in one drawer.",
+          "update_value": "The default frying pan is the twelve-inch nonstick skillet.",
+          "keep_value": "The default frying pan is the ten-inch stainless skillet.",
+          "why_correct": "nothing here determines which pan is the default",
+          "domain": "cookware",
+          "family": "fam_030"
+        }
+      ]
+    },
+    {
+      "family": "fam_031",
+      "domain": "food storage containers",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "max_container_height_cm",
+          "ancestor_value": "The pantry shelf only fits containers up to 24 centimeters tall.",
+          "update_value": "The user wants to store 30 centimeter tall cereal containers there.",
+          "keep_value": "Containers for that shelf must stay at or below 24 centimeters.",
+          "why_correct": "the shelf height limit still applies",
+          "domain": "food storage containers",
+          "family": "fam_031"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_lid_style",
+          "ancestor_value": "The user prefers snap-lock lids on everyday storage containers.",
+          "update_value": "The user now prefers screw-top lids for everyday storage containers.",
+          "keep_value": "The user prefers snap-lock lids for everyday storage containers.",
+          "why_correct": "the newer preference replaces the older one",
+          "domain": "food storage containers",
+          "family": "fam_031"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_container_location",
+          "ancestor_value": "The glass meal-prep containers were kept in the lower cabinet.",
+          "update_value": "The glass meal-prep containers are now on the open kitchen rack.",
+          "keep_value": "The glass meal-prep containers were kept in the lower cabinet.",
+          "why_correct": "the wording identifies the rack location as current",
+          "domain": "food storage containers",
+          "family": "fam_031"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "favorite_container_color",
+          "ancestor_value": "The user stores baking leftovers in medium rectangular containers.",
+          "update_value": "The user's favorite container color is clear.",
+          "keep_value": "The user's favorite container color is blue.",
+          "why_correct": "the background fact does not resolve the conflicting color claims",
+          "domain": "food storage containers",
+          "family": "fam_031"
+        }
+      ]
+    },
+    {
+      "family": "fam_032",
+      "domain": "kitchen knives",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "knife_storage_limit",
+          "ancestor_value": "The apartment lease allows only one magnetic knife strip.",
+          "update_value": "The user now wants three magnetic knife strips installed.",
+          "keep_value": "The kitchen can have only one magnetic knife strip.",
+          "why_correct": "the lease rule still limits the installation",
+          "domain": "kitchen knives",
+          "family": "fam_032"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_chef_knife_length",
+          "ancestor_value": "The user prefers an eight-inch chef's knife.",
+          "update_value": "The user now prefers a six-inch chef's knife.",
+          "keep_value": "The user still prefers an eight-inch chef's knife.",
+          "why_correct": "the newer preference supersedes the older one",
+          "domain": "kitchen knives",
+          "family": "fam_032"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "sharpest_daily_use_knife",
+          "ancestor_value": "As of last month, the santoku was the sharpest daily-use knife.",
+          "update_value": "This week, the petty knife is the sharpest daily-use knife.",
+          "keep_value": "As of last month, the santoku was the sharpest daily-use knife.",
+          "why_correct": "the content identifies the weekly observation as current",
+          "domain": "kitchen knives",
+          "family": "fam_032"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "current_paring_knife_handle_color",
+          "ancestor_value": "The user keeps honing rods in the top drawer.",
+          "update_value": "The current paring knife has a black handle.",
+          "keep_value": "The current paring knife has a red handle.",
+          "why_correct": "nothing provided determines which conflicting value is correct",
+          "domain": "kitchen knives",
+          "family": "fam_032"
+        }
+      ]
+    },
+    {
+      "family": "fam_033",
+      "domain": "coffee equipment",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "espresso_machine_voltage_limit",
+          "ancestor_value": "The espresso machine only accepts 120 volt power.",
+          "update_value": "The espresso machine should be plugged into 240 volt power.",
+          "keep_value": "The espresso machine must stay on 120 volt power.",
+          "why_correct": "the machine's power limit still applies",
+          "domain": "coffee equipment",
+          "family": "fam_033"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_grinder_setting",
+          "ancestor_value": "The user prefers grinder setting eight for espresso.",
+          "update_value": "The user now prefers grinder setting six for espresso.",
+          "keep_value": "The user prefers grinder setting eight for espresso.",
+          "why_correct": "the newer preference replaces the stale recorded setting",
+          "domain": "coffee equipment",
+          "family": "fam_033"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "descaling_status",
+          "ancestor_value": "The espresso machine was overdue for descaling last month.",
+          "update_value": "The espresso machine is freshly descaled this week.",
+          "keep_value": "The espresso machine was overdue for descaling last month.",
+          "why_correct": "the content identifies this week as the current state",
+          "domain": "coffee equipment",
+          "family": "fam_033"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "portafilter_basket_size",
+          "ancestor_value": "The user keeps a knock box beside the grinder.",
+          "update_value": "The portafilter uses an eighteen gram basket.",
+          "keep_value": "The portafilter uses a twenty gram basket.",
+          "why_correct": "the conflicting basket sizes are equally unsupported",
+          "domain": "coffee equipment",
+          "family": "fam_033"
+        }
+      ]
+    },
+    {
+      "family": "fam_034",
+      "domain": "grocery delivery slots",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "delivery_window_requirement",
+          "ancestor_value": "Building management only permits grocery deliveries during staffed lobby hours.",
+          "update_value": "The user wants grocery deliveries left at midnight.",
+          "keep_value": "Grocery deliveries must arrive during staffed lobby hours.",
+          "why_correct": "the building rule still applies",
+          "domain": "grocery delivery slots",
+          "family": "fam_034"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_delivery_slot",
+          "ancestor_value": "The user prefers grocery delivery on Tuesday evenings.",
+          "update_value": "The user now prefers grocery delivery on Saturday mornings.",
+          "keep_value": "The user prefers grocery delivery on Tuesday evenings.",
+          "why_correct": "the newer preference supersedes the old one",
+          "domain": "grocery delivery slots",
+          "family": "fam_034"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_available_slot",
+          "ancestor_value": "Last month, the earliest grocery slot was Thursday afternoon.",
+          "update_value": "This week, the earliest grocery slot is Monday evening.",
+          "keep_value": "Last month, the earliest grocery slot was Thursday afternoon.",
+          "why_correct": "the content identifies this week as current",
+          "domain": "grocery delivery slots",
+          "family": "fam_034"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "usual_delivery_day",
+          "ancestor_value": "The user orders groceries from the same local store each week.",
+          "update_value": "The user's usual grocery delivery day is Wednesday.",
+          "keep_value": "The user's usual grocery delivery day is Friday.",
+          "why_correct": "neither value is better supported by the content",
+          "domain": "grocery delivery slots",
+          "family": "fam_034"
+        }
+      ]
+    },
+    {
+      "family": "fam_035",
+      "domain": "postal addresses",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "delivery_dropoff_location",
+          "ancestor_value": "Building management requires all parcels left at the front desk.",
+          "update_value": "Leave every package directly outside the apartment door.",
+          "keep_value": "Packages should be delivered to the front desk only.",
+          "why_correct": "front-desk delivery remains a building rule",
+          "domain": "postal addresses",
+          "family": "fam_035"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "mailing_address",
+          "ancestor_value": "The user's mailing address is 18 Harbor Lane, Unit 4.",
+          "update_value": "The user's mailing address is 92 Willow Street, Apt 7.",
+          "keep_value": "The user's mailing address is 18 Harbor Lane, Unit 4.",
+          "why_correct": "the newer address change supersedes the old one",
+          "domain": "postal addresses",
+          "family": "fam_035"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_return_address",
+          "ancestor_value": "The return address used last winter was 300 Cedar Court.",
+          "update_value": "The return address used this month is 41 Birch Avenue.",
+          "keep_value": "The return address used last winter was 300 Cedar Court.",
+          "why_correct": "the content identifies this month's address as current",
+          "domain": "postal addresses",
+          "family": "fam_035"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "preferred_package_locker",
+          "ancestor_value": "The user's apartment complex has lockers in both lobbies.",
+          "update_value": "Use the north lobby locker for package deliveries.",
+          "keep_value": "Use the south lobby locker for package deliveries.",
+          "why_correct": "neither locker preference is supported over the other",
+          "domain": "postal addresses",
+          "family": "fam_035"
+        }
+      ]
+    },
+    {
+      "family": "fam_036",
+      "domain": "parcel lockers",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "locker_size_limit",
+          "ancestor_value": "Building management requires parcels to fit only medium compartments or smaller.",
+          "update_value": "The user can receive oversized parcels in this locker.",
+          "keep_value": "The user must use another locker for oversized parcels.",
+          "why_correct": "the standing building rule still applies",
+          "domain": "parcel lockers",
+          "family": "fam_036"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_pickup_locker",
+          "ancestor_value": "The user's preferred pickup locker is the Oak Street bank.",
+          "update_value": "The user's preferred pickup locker is the River Plaza bank.",
+          "keep_value": "The user's preferred pickup locker remains the Oak Street bank.",
+          "why_correct": "the newer explicit preference change supersedes the old one",
+          "domain": "parcel lockers",
+          "family": "fam_036"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "locker_access_window",
+          "ancestor_value": "Locker access was weekdays only earlier this month.",
+          "update_value": "Locker access is available every day this week.",
+          "keep_value": "Locker access was weekdays only earlier this month.",
+          "why_correct": "the content itself marks this week as the current state",
+          "domain": "parcel lockers",
+          "family": "fam_036"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "active_pickup_code",
+          "ancestor_value": "The user usually collects parcels from self-service lockers.",
+          "update_value": "The active pickup code is 482971.",
+          "keep_value": "The active pickup code is 615204.",
+          "why_correct": "the conflicting codes are equally supported by the given content",
+          "domain": "parcel lockers",
+          "family": "fam_036"
+        }
+      ]
+    },
+    {
+      "family": "fam_037",
+      "domain": "package signatures",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "signature_release_requirement",
+          "ancestor_value": "Building management requires a live signature for all package releases.",
+          "update_value": "Packages can be left without any signature at the front desk.",
+          "keep_value": "Packages must be signed for before they are released.",
+          "why_correct": "the building rule still requires a signature",
+          "domain": "package signatures",
+          "family": "fam_037"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_signer_name",
+          "ancestor_value": "The preferred signer name for deliveries is Jordan Lee.",
+          "update_value": "The preferred signer name for deliveries is Casey Nguyen.",
+          "keep_value": "The preferred signer name for deliveries is Jordan Lee.",
+          "why_correct": "the newer explicit change supersedes the old preference",
+          "domain": "package signatures",
+          "family": "fam_037"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_signature_method",
+          "ancestor_value": "The package room uses a paper signature log.",
+          "update_value": "This week the package room uses tablet signatures only.",
+          "keep_value": "Last season the package room used a paper signature log.",
+          "why_correct": "the content identifies the tablet method as current",
+          "domain": "package signatures",
+          "family": "fam_037"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "signature_dropoff_location",
+          "ancestor_value": "The package room has a counter beside the mailboxes.",
+          "update_value": "Signed packages should be left in locker bank C.",
+          "keep_value": "Signed packages should be left at the concierge desk.",
+          "why_correct": "neither location is favored by the available information",
+          "domain": "package signatures",
+          "family": "fam_037"
+        }
+      ]
+    },
+    {
+      "family": "fam_038",
+      "domain": "shipping insurance",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "insured_value_cap",
+          "ancestor_value": "Coverage cannot exceed the carrier's declared value cap.",
+          "update_value": "Insure this parcel for twenty thousand dollars anyway.",
+          "keep_value": "Keep coverage at or below the carrier's declared value cap.",
+          "why_correct": "the contractual coverage limit still applies",
+          "domain": "shipping insurance",
+          "family": "fam_038"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "signature_required_for_claims",
+          "ancestor_value": "Claims shipments are marked as not requiring signature confirmation.",
+          "update_value": "Claims shipments now require signature confirmation on delivery.",
+          "keep_value": "Claims shipments remain marked as not requiring signature confirmation.",
+          "why_correct": "the newer explicit change supersedes the old setting",
+          "domain": "shipping insurance",
+          "family": "fam_038"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "default_insurance_option",
+          "ancestor_value": "The default insurance option was basic coverage last quarter.",
+          "update_value": "The default insurance option is premium coverage this week.",
+          "keep_value": "The default insurance option was basic coverage last quarter.",
+          "why_correct": "the content identifies the this-week observation as current",
+          "domain": "shipping insurance",
+          "family": "fam_038"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "preferred_insurance_provider",
+          "ancestor_value": "Insurance is purchased separately from postage for high-value parcels.",
+          "update_value": "The preferred insurance provider is ParcelShield.",
+          "keep_value": "The preferred insurance provider is CoverPost.",
+          "why_correct": "the conflicting provider values are equally unsupported by the background fact",
+          "domain": "shipping insurance",
+          "family": "fam_038"
+        }
+      ]
+    },
+    {
+      "family": "fam_039",
+      "domain": "customs declarations",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "max_declared_item_count",
+          "ancestor_value": "The courier accepts no more than three declared items.",
+          "update_value": "The customs form should list five declared items.",
+          "keep_value": "The customs form should list at most three declared items.",
+          "why_correct": "the courier's item limit still applies",
+          "domain": "customs declarations",
+          "family": "fam_039"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "destination_country_for_declaration",
+          "ancestor_value": "The declaration destination country is Canada.",
+          "update_value": "The declaration destination country is Mexico.",
+          "keep_value": "The declaration destination country is Canada.",
+          "why_correct": "the newer destination replaces the stale recorded one",
+          "domain": "customs declarations",
+          "family": "fam_039"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "contents_description",
+          "ancestor_value": "The contents are described as promotional samples from last season.",
+          "update_value": "The contents are described as spare phone cases this week.",
+          "keep_value": "The contents are described as promotional samples from last season.",
+          "why_correct": "the content itself marks the newer description as current",
+          "domain": "customs declarations",
+          "family": "fam_039"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "declared_shipment_purpose",
+          "ancestor_value": "The package requires a customs declaration for cross-border shipping.",
+          "update_value": "The shipment purpose is commercial resale.",
+          "keep_value": "The shipment purpose is personal gift.",
+          "why_correct": "neither value is favored by the available memory",
+          "domain": "customs declarations",
+          "family": "fam_039"
+        }
+      ]
+    },
+    {
+      "family": "fam_040",
+      "domain": "bank card replacement",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "replacement_delivery_address",
+          "ancestor_value": "Replacement cards must be delivered to the billing address on file.",
+          "update_value": "Send the replacement card to the hotel front desk instead.",
+          "keep_value": "Send the replacement card to the billing address on file.",
+          "why_correct": "delivery is restricted to the billing address",
+          "domain": "bank card replacement",
+          "family": "fam_040"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "replacement_card_design",
+          "ancestor_value": "The replacement card should use the standard blue design.",
+          "update_value": "The replacement card should use the black design.",
+          "keep_value": "The replacement card should use the standard blue design.",
+          "why_correct": "the newer design choice supersedes the older preference",
+          "domain": "bank card replacement",
+          "family": "fam_040"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "replacement_card_status",
+          "ancestor_value": "The replacement card was still being printed earlier this week.",
+          "update_value": "The replacement card is now out for delivery.",
+          "keep_value": "The replacement card was still being printed earlier this week.",
+          "why_correct": "the content explicitly marks the delivery status as current",
+          "domain": "bank card replacement",
+          "family": "fam_040"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "replacement_shipping_speed",
+          "ancestor_value": "The replacement card requires activation before any purchases can be made.",
+          "update_value": "Use standard shipping for the replacement card.",
+          "keep_value": "Use express shipping for the replacement card.",
+          "why_correct": "the conflicting shipping speeds are equally unsupported by the background fact",
+          "domain": "bank card replacement",
+          "family": "fam_040"
+        }
+      ]
+    },
+    {
+      "family": "fam_041",
+      "domain": "standing orders",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "loading_dock_access_window",
+          "ancestor_value": "Deliveries may use the loading dock only on weekdays.",
+          "update_value": "Schedule Saturday loading dock deliveries for all incoming orders.",
+          "keep_value": "Weekend deliveries must avoid the loading dock.",
+          "why_correct": "the weekday-only dock rule still applies",
+          "domain": "standing orders",
+          "family": "fam_041"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "weekly_supply_dropoff_day",
+          "ancestor_value": "The weekly supply dropoff is on Tuesday.",
+          "update_value": "The weekly supply dropoff is now on Thursday.",
+          "keep_value": "The weekly supply dropoff remains on Tuesday.",
+          "why_correct": "the newer explicit schedule change supersedes the old day",
+          "domain": "standing orders",
+          "family": "fam_041"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "front_desk_packet_count",
+          "ancestor_value": "As of last month, twelve packets waited at the front desk.",
+          "update_value": "As of this week, three packets wait at the front desk.",
+          "keep_value": "As of last month, twelve packets waited at the front desk.",
+          "why_correct": "the content identifies this week as the current observation",
+          "domain": "standing orders",
+          "family": "fam_041"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "preferred_courier_for_returns",
+          "ancestor_value": "Return labels are stored in the top office drawer.",
+          "update_value": "Use BlueLine Courier for all returns.",
+          "keep_value": "Use ParcelPath for all returns.",
+          "why_correct": "the conflicting courier instructions are equally supported and unresolved",
+          "domain": "standing orders",
+          "family": "fam_041"
+        }
+      ]
+    },
+    {
+      "family": "fam_042",
+      "domain": "statement delivery",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "statement_delivery_window",
+          "ancestor_value": "Building management only accepts statement deliveries on weekdays.",
+          "update_value": "The user wants statements delivered on Sundays.",
+          "keep_value": "Statements should be delivered on weekdays only.",
+          "why_correct": "the building rule still limits delivery days",
+          "domain": "statement delivery",
+          "family": "fam_042"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "statement_delivery_method",
+          "ancestor_value": "The user receives monthly statements by postal mail.",
+          "update_value": "The user now wants monthly statements by email.",
+          "keep_value": "The user still receives monthly statements by postal mail.",
+          "why_correct": "the newer delivery preference supersedes the old one",
+          "domain": "statement delivery",
+          "family": "fam_042"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "statement_mailing_address",
+          "ancestor_value": "The user's statement address was the Oak Street apartment last year.",
+          "update_value": "The user's current statement address is the Pine Avenue townhouse.",
+          "keep_value": "The user's statement address was the Oak Street apartment last year.",
+          "why_correct": "the content explicitly marks Pine Avenue as current",
+          "domain": "statement delivery",
+          "family": "fam_042"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "statement_envelope_format",
+          "ancestor_value": "The user receives account statements every month.",
+          "update_value": "The user wants statements in window envelopes.",
+          "keep_value": "The user wants statements in plain envelopes.",
+          "why_correct": "neither value is better supported by the available information",
+          "domain": "statement delivery",
+          "family": "fam_042"
+        }
+      ]
+    },
+    {
+      "family": "fam_043",
+      "domain": "branch appointments",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "appointment_check_in_window",
+          "ancestor_value": "The branch requires arrivals at least ten minutes before appointments.",
+          "update_value": "The user can arrive two minutes before branch appointments.",
+          "keep_value": "The user must arrive at least ten minutes before branch appointments.",
+          "why_correct": "the branch rule still applies",
+          "domain": "branch appointments",
+          "family": "fam_043"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_branch_location",
+          "ancestor_value": "The user's preferred branch for appointments is the Midtown office.",
+          "update_value": "The user's preferred branch for appointments is the Riverside office.",
+          "keep_value": "The user's preferred branch for appointments is the Midtown office.",
+          "why_correct": "the newer preference replaces the old one",
+          "domain": "branch appointments",
+          "family": "fam_043"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "walk_in_availability",
+          "ancestor_value": "Walk-in appointment slots were unavailable earlier this month.",
+          "update_value": "Walk-in appointment slots are available this week.",
+          "keep_value": "Walk-in appointment slots were unavailable earlier this month.",
+          "why_correct": "the content identifies this week as the current state",
+          "domain": "branch appointments",
+          "family": "fam_043"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "next_branch_appointment_day",
+          "ancestor_value": "The user usually books branch appointments on weekdays.",
+          "update_value": "The user's next branch appointment is on Tuesday.",
+          "keep_value": "The user's next branch appointment is on Thursday.",
+          "why_correct": "nothing in the content determines which day is correct",
+          "domain": "branch appointments",
+          "family": "fam_043"
+        }
+      ]
+    },
+    {
+      "family": "fam_044",
+      "domain": "currency ordering",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "cash_drawer_maximum_currency",
+          "ancestor_value": "The kiosk cash drawer may hold only euros.",
+          "update_value": "The kiosk cash drawer should now hold only dollars.",
+          "keep_value": "The kiosk cash drawer should continue holding only euros.",
+          "why_correct": "the drawer rule is a standing operational constraint",
+          "domain": "currency ordering",
+          "family": "fam_044"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_tip_currency",
+          "ancestor_value": "The user prefers tips returned in coins.",
+          "update_value": "The user now prefers tips returned in small bills.",
+          "keep_value": "The user still prefers tips returned in coins.",
+          "why_correct": "the newer preference replaces the older ordinary preference",
+          "domain": "currency ordering",
+          "family": "fam_044"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "currently_displayed_checkout_currency",
+          "ancestor_value": "The checkout page showed pounds during the spring rollout.",
+          "update_value": "The checkout page now shows euros for purchases.",
+          "keep_value": "The checkout page showed pounds during the spring rollout.",
+          "why_correct": "the content explicitly marks euros as the current state",
+          "domain": "currency ordering",
+          "family": "fam_044"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "default_invoice_currency",
+          "ancestor_value": "The user orders stationery from several neighboring countries.",
+          "update_value": "The default invoice currency is yen.",
+          "keep_value": "The default invoice currency is francs.",
+          "why_correct": "neither value is better supported by the available memory",
+          "domain": "currency ordering",
+          "family": "fam_044"
+        }
+      ]
+    },
+    {
+      "family": "fam_045",
+      "domain": "language classes",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "classroom_capacity_limit",
+          "ancestor_value": "The studio contract limits the user's class to twelve students.",
+          "update_value": "The user's class should enroll eighteen students this term.",
+          "keep_value": "The user's class must stay at or below twelve students.",
+          "why_correct": "the contractual capacity limit still applies",
+          "domain": "language classes",
+          "family": "fam_045"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_lesson_format",
+          "ancestor_value": "The user prefers one-on-one language lessons.",
+          "update_value": "The user now prefers small group language lessons.",
+          "keep_value": "The user prefers one-on-one language lessons.",
+          "why_correct": "the newer preference supersedes the older one",
+          "domain": "language classes",
+          "family": "fam_045"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_course_level",
+          "ancestor_value": "The user was in intermediate Spanish last semester.",
+          "update_value": "The user is in advanced Spanish this semester.",
+          "keep_value": "The user was in intermediate Spanish last semester.",
+          "why_correct": "the update explicitly describes the current term",
+          "domain": "language classes",
+          "family": "fam_045"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "next_language_to_study",
+          "ancestor_value": "The user attends evening language classes twice a week.",
+          "update_value": "The user plans to study Italian next.",
+          "keep_value": "The user plans to study Japanese next.",
+          "why_correct": "the conflicting plans are equally supported by the content",
+          "domain": "language classes",
+          "family": "fam_045"
+        }
+      ]
+    },
+    {
+      "family": "fam_046",
+      "domain": "study materials",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "library_loan_period",
+          "ancestor_value": "Course reserve textbooks must stay in the library overnight.",
+          "update_value": "The user can borrow course reserve textbooks for a week.",
+          "keep_value": "The user must use course reserve textbooks inside the library.",
+          "why_correct": "the standing library restriction still applies",
+          "domain": "study materials",
+          "family": "fam_046"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_note_format",
+          "ancestor_value": "The user prefers handwritten notes for lecture review.",
+          "update_value": "The user now prefers typed notes for lecture review.",
+          "keep_value": "The user prefers handwritten notes for lecture review.",
+          "why_correct": "the newer preference supersedes the older one",
+          "domain": "study materials",
+          "family": "fam_046"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_exam_focus",
+          "ancestor_value": "The user is studying broad survey topics from last month.",
+          "update_value": "The user is focusing on chapter seven problems this week.",
+          "keep_value": "The user is studying broad survey topics from last month.",
+          "why_correct": "the content itself marks this week as the current state",
+          "domain": "study materials",
+          "family": "fam_046"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "study_group_meeting_place",
+          "ancestor_value": "The user keeps flashcards in a blue binder.",
+          "update_value": "The user's study group meets in the east atrium.",
+          "keep_value": "The user's study group meets in the media lab.",
+          "why_correct": "nothing provided distinguishes between the two meeting places",
+          "domain": "study materials",
+          "family": "fam_046"
+        }
+      ]
+    },
+    {
+      "family": "fam_047",
+      "domain": "exam bookings",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "exam_start_time",
+          "ancestor_value": "The testing center admits candidates only before the scheduled start.",
+          "update_value": "The user can arrive twenty minutes after the exam begins.",
+          "keep_value": "The user must arrive before the scheduled exam start.",
+          "why_correct": "late arrival would violate the center's admission rule",
+          "domain": "exam bookings",
+          "family": "fam_047"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_test_center",
+          "ancestor_value": "The user's preferred test center is Midtown Hall.",
+          "update_value": "The user's preferred test center is Riverside Campus.",
+          "keep_value": "The user's preferred test center is Midtown Hall.",
+          "why_correct": "a newer preference change supersedes the older recorded center",
+          "domain": "exam bookings",
+          "family": "fam_047"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "seat_assignment_status",
+          "ancestor_value": "The user's seat assignment was still pending last week.",
+          "update_value": "The user's seat assignment is confirmed for this week.",
+          "keep_value": "The user's seat assignment was still pending last week.",
+          "why_correct": "the content explicitly marks the confirmation as the current state",
+          "domain": "exam bookings",
+          "family": "fam_047"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "booked_exam_session",
+          "ancestor_value": "The user needs a photo ID for exam check-in.",
+          "update_value": "The user's booked exam session is the morning sitting.",
+          "keep_value": "The user's booked exam session is the afternoon sitting.",
+          "why_correct": "the conflicting session values are equally supported by the given content",
+          "domain": "exam bookings",
+          "family": "fam_047"
+        }
+      ]
+    },
+    {
+      "family": "fam_048",
+      "domain": "tutoring sessions",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "session_end_time_limit",
+          "ancestor_value": "Tutoring sessions must end before the library closes at eight.",
+          "update_value": "The user wants tutoring to continue until nine every week.",
+          "keep_value": "Tutoring sessions can run only until just before eight.",
+          "why_correct": "the closing-time rule still applies",
+          "domain": "tutoring sessions",
+          "family": "fam_048"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_subject",
+          "ancestor_value": "The user focuses on algebra during tutoring sessions.",
+          "update_value": "The user now wants tutoring sessions centered on geometry.",
+          "keep_value": "The user still focuses on algebra during tutoring sessions.",
+          "why_correct": "the newer preference replaces the old subject",
+          "domain": "tutoring sessions",
+          "family": "fam_048"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_assignment_topic",
+          "ancestor_value": "Last unit's tutoring assignment covered persuasive essay outlines.",
+          "update_value": "This week's tutoring assignment covers citation practice and bibliography formatting.",
+          "keep_value": "Last unit's tutoring assignment covered persuasive essay outlines.",
+          "why_correct": "the content identifies this week's assignment as current",
+          "domain": "tutoring sessions",
+          "family": "fam_048"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "usual_session_day",
+          "ancestor_value": "The user meets the tutor at the community center.",
+          "update_value": "The user's usual tutoring session day is Tuesday.",
+          "keep_value": "The user's usual tutoring session day is Thursday.",
+          "why_correct": "the conflicting days are equally supported by the content",
+          "domain": "tutoring sessions",
+          "family": "fam_048"
+        }
+      ]
+    },
+    {
+      "family": "fam_049",
+      "domain": "certificate collection",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "certificate_submission_limit",
+          "ancestor_value": "The archive accepts no more than three certificate copies per request.",
+          "update_value": "The user wants to submit five certificate copies in one request.",
+          "keep_value": "The user must split five certificate copies across separate requests.",
+          "why_correct": "the submission cap is a standing archive rule",
+          "domain": "certificate collection",
+          "family": "fam_049"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_certificate_pickup_location",
+          "ancestor_value": "The user's certificate pickup location is the downtown records desk.",
+          "update_value": "The user's certificate pickup location is the west annex counter.",
+          "keep_value": "The user's certificate pickup location remains the downtown records desk.",
+          "why_correct": "the newer pickup location supersedes the older recorded one",
+          "domain": "certificate collection",
+          "family": "fam_049"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "certificate_folder_status",
+          "ancestor_value": "The user's certificate folder was waiting for indexing last month.",
+          "update_value": "The user's certificate folder is shelved in the completed section this week.",
+          "keep_value": "The user's certificate folder was waiting for indexing last month.",
+          "why_correct": "the content identifies this week's status as the current one",
+          "domain": "certificate collection",
+          "family": "fam_049"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "certificate_storage_box",
+          "ancestor_value": "The user's certificates are organized by year inside labeled archive boxes.",
+          "update_value": "The user's certificates are stored in box fourteen.",
+          "keep_value": "The user's certificates are stored in box eighteen.",
+          "why_correct": "the conflicting box numbers are equally unsupported by the background fact",
+          "domain": "certificate collection",
+          "family": "fam_049"
+        }
+      ]
+    },
+    {
+      "family": "fam_050",
+      "domain": "train season tickets",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "season_ticket_named_holder",
+          "ancestor_value": "The season ticket must remain in the registered holder's name.",
+          "update_value": "The season ticket should be transferred into a friend's name.",
+          "keep_value": "The season ticket stays in the registered holder's name.",
+          "why_correct": "the named-holder rule cannot be overridden by a later preference",
+          "domain": "train season tickets",
+          "family": "fam_050"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "season_ticket_route",
+          "ancestor_value": "The season ticket is for the Riverside to Central route.",
+          "update_value": "The season ticket is now for the Lakeside to Central route.",
+          "keep_value": "The season ticket remains for the Riverside to Central route.",
+          "why_correct": "the newer explicit route change supersedes the stale recorded route",
+          "domain": "train season tickets",
+          "family": "fam_050"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "season_ticket_class",
+          "ancestor_value": "The season ticket was standard class last season.",
+          "update_value": "The season ticket is first class this week.",
+          "keep_value": "The season ticket was standard class last season.",
+          "why_correct": "the content itself marks this week's class as the current one",
+          "domain": "train season tickets",
+          "family": "fam_050"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "season_ticket_renewal_month",
+          "ancestor_value": "The season ticket covers weekday commuter travel only.",
+          "update_value": "The season ticket renews in March.",
+          "keep_value": "The season ticket renews in April.",
+          "why_correct": "the background fact does not resolve the conflicting renewal months",
+          "domain": "train season tickets",
+          "family": "fam_050"
+        }
+      ]
+    },
+    {
+      "family": "fam_051",
+      "domain": "bus routes",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "bus_capacity_limit",
+          "ancestor_value": "The user may bring only one folded stroller on the bus.",
+          "update_value": "The user can bring two unfolded strollers onto the bus.",
+          "keep_value": "The user may board with one folded stroller only.",
+          "why_correct": "the standing bus rule still limits what the user may bring",
+          "domain": "bus routes",
+          "family": "fam_051"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "usual_commute_route",
+          "ancestor_value": "The user's usual commute is the Route 18 bus.",
+          "update_value": "The user's usual commute is now the Route 24 bus.",
+          "keep_value": "The user's usual commute remains the Route 18 bus.",
+          "why_correct": "the newer explicit change supersedes the older routine",
+          "domain": "bus routes",
+          "family": "fam_051"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "detour_status",
+          "ancestor_value": "The user's stop is on the regular route as of last month.",
+          "update_value": "The user's stop is on a detour route this week.",
+          "keep_value": "The user's stop is on the regular route as of last month.",
+          "why_correct": "the content itself marks the detour statement as current",
+          "domain": "bus routes",
+          "family": "fam_051"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "preferred_transfer_station",
+          "ancestor_value": "The user rides buses that connect downtown and the university.",
+          "update_value": "The user's preferred transfer station is Central Station.",
+          "keep_value": "The user's preferred transfer station is Riverfront Station.",
+          "why_correct": "the two preferences conflict and nothing provided decides between them",
+          "domain": "bus routes",
+          "family": "fam_051"
+        }
+      ]
+    },
+    {
+      "family": "fam_052",
+      "domain": "bike storage at stations",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "bike_storage_access",
+          "ancestor_value": "The station cage requires a registered access card for entry.",
+          "update_value": "The user can enter the station cage without any access card.",
+          "keep_value": "The user needs a registered access card to enter the station cage.",
+          "why_correct": "the access rule still applies",
+          "domain": "bike storage at stations",
+          "family": "fam_052"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_parking_level",
+          "ancestor_value": "The user usually parks on the upper rack level.",
+          "update_value": "The user now prefers parking on the ground level.",
+          "keep_value": "The user still prefers parking on the upper rack level.",
+          "why_correct": "the newer preference supersedes the old one",
+          "domain": "bike storage at stations",
+          "family": "fam_052"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "bike_storage_availability",
+          "ancestor_value": "Last winter, the covered racks were usually half empty.",
+          "update_value": "This week, the covered racks are full by midmorning.",
+          "keep_value": "Last winter, the covered racks were usually half empty.",
+          "why_correct": "the content identifies the newer observation as current",
+          "domain": "bike storage at stations",
+          "family": "fam_052"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "assigned_bike_cage",
+          "ancestor_value": "The station has both indoor cages and open-air racks.",
+          "update_value": "The user's assigned bike cage is the north-side enclosure.",
+          "keep_value": "The user's assigned bike cage is the south-side enclosure.",
+          "why_correct": "the conflicting values are equally supported by the given content",
+          "domain": "bike storage at stations",
+          "family": "fam_052"
+        }
+      ]
+    },
+    {
+      "family": "fam_053",
+      "domain": "carpool arrangements",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "pickup_capacity_limit",
+          "ancestor_value": "The carpool may carry only four riders including booster seats.",
+          "update_value": "The carpool can take six riders on school mornings.",
+          "keep_value": "The carpool still must stay within four total riders.",
+          "why_correct": "the standing capacity limit cannot be exceeded",
+          "domain": "carpool arrangements",
+          "family": "fam_053"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "morning_pickup_stop",
+          "ancestor_value": "The usual morning pickup stop is the Elm Street corner.",
+          "update_value": "The morning pickup stop is now the library entrance.",
+          "keep_value": "The morning pickup stop remains the Elm Street corner.",
+          "why_correct": "the newer explicit change supersedes the old routine",
+          "domain": "carpool arrangements",
+          "family": "fam_053"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "friday_driver",
+          "ancestor_value": "Last semester, Jordan usually drove the Friday carpool.",
+          "update_value": "This month, Priya usually drives the Friday carpool.",
+          "keep_value": "Last semester, Jordan usually drove the Friday carpool.",
+          "why_correct": "the content identifies this month as the current situation",
+          "domain": "carpool arrangements",
+          "family": "fam_053"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "afternoon_dropoff_order",
+          "ancestor_value": "The carpool route includes three neighborhood dropoff stops.",
+          "update_value": "The afternoon dropoff order starts with Maple Avenue.",
+          "keep_value": "The afternoon dropoff order starts with Cedar Lane.",
+          "why_correct": "neither conflicting value is favored by the available information",
+          "domain": "carpool arrangements",
+          "family": "fam_053"
+        }
+      ]
+    },
+    {
+      "family": "fam_054",
+      "domain": "taxi accounts",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "max_passengers_per_ride",
+          "ancestor_value": "Company policy caps the user's taxi rides at four passengers.",
+          "update_value": "The user wants to book taxi rides for six passengers.",
+          "keep_value": "The user's taxi rides must stay within four passengers.",
+          "why_correct": "the company policy remains binding",
+          "domain": "taxi accounts",
+          "family": "fam_054"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "default_pickup_terminal",
+          "ancestor_value": "The user's default airport pickup terminal is Terminal 2.",
+          "update_value": "The user's default airport pickup terminal is now Terminal 4.",
+          "keep_value": "The user's default airport pickup terminal remains Terminal 2.",
+          "why_correct": "the newer explicit change supersedes the old default",
+          "domain": "taxi accounts",
+          "family": "fam_054"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "usual_weekday_departure_window",
+          "ancestor_value": "Last winter, the user usually left for work after sunrise.",
+          "update_value": "This week, the user usually leaves for work before sunrise.",
+          "keep_value": "Last winter, the user usually left for work after sunrise.",
+          "why_correct": "the content identifies this week as the current observation",
+          "domain": "taxi accounts",
+          "family": "fam_054"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "preferred_city_taxi_app",
+          "ancestor_value": "The user's taxi account includes both ride history and saved places.",
+          "update_value": "The user's preferred city taxi app is MetroCab.",
+          "keep_value": "The user's preferred city taxi app is QuickRide.",
+          "why_correct": "the conflicting preferences are equally supported and cannot be reconciled",
+          "domain": "taxi accounts",
+          "family": "fam_054"
+        }
+      ]
+    },
+    {
+      "family": "fam_055",
+      "domain": "home insurance cover",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "listed_jewelry_cover_limit",
+          "ancestor_value": "The policy caps listed jewelry cover at twenty thousand pounds.",
+          "update_value": "The listed jewelry cover should be thirty thousand pounds.",
+          "keep_value": "The listed jewelry cover remains capped at twenty thousand pounds.",
+          "why_correct": "the contractual cap still applies",
+          "domain": "home insurance cover",
+          "family": "fam_055"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "buildings_sum_insured",
+          "ancestor_value": "The buildings sum insured is three hundred thousand pounds.",
+          "update_value": "The buildings sum insured is now three hundred fifty thousand pounds.",
+          "keep_value": "The buildings sum insured is three hundred thousand pounds.",
+          "why_correct": "the newer explicit change supersedes the old amount",
+          "domain": "home insurance cover",
+          "family": "fam_055"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "unoccupied_status",
+          "ancestor_value": "The home insurance includes accidental damage cover.",
+          "update_value": "The property is currently occupied by the user.",
+          "keep_value": "The property was unoccupied during the renovation period.",
+          "why_correct": "the content identifies the current occupancy status",
+          "domain": "home insurance cover",
+          "family": "fam_055"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "policy_excess_amount",
+          "ancestor_value": "The policy includes both buildings and contents cover.",
+          "update_value": "The policy excess amount is two hundred pounds.",
+          "keep_value": "The policy excess amount is two hundred fifty pounds.",
+          "why_correct": "the conflicting amounts are equally supported by the content",
+          "domain": "home insurance cover",
+          "family": "fam_055"
+        }
+      ]
+    },
+    {
+      "family": "fam_056",
+      "domain": "contents valuation",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "storage_unit_capacity_limit",
+          "ancestor_value": "The storage unit policy caps declared contents value at fifty thousand dollars.",
+          "update_value": "The declared contents value should be set to seventy thousand dollars.",
+          "keep_value": "The declared contents value must stay at or below fifty thousand dollars.",
+          "why_correct": "the policy cap is a standing limit that still applies",
+          "domain": "contents valuation",
+          "family": "fam_056"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "living_room_rug_valuation",
+          "ancestor_value": "The living room rug is valued at eight hundred dollars.",
+          "update_value": "The living room rug is valued at twelve hundred dollars.",
+          "keep_value": "The living room rug remains valued at eight hundred dollars.",
+          "why_correct": "the newer valuation explicitly replaces the older recorded amount",
+          "domain": "contents valuation",
+          "family": "fam_056"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "garage_tools_total_value",
+          "ancestor_value": "The garage tools were worth about two thousand dollars last season.",
+          "update_value": "The garage tools are worth about twenty-six hundred dollars this week.",
+          "keep_value": "The garage tools were worth about two thousand dollars last season.",
+          "why_correct": "the update text identifies itself as the current observation",
+          "domain": "contents valuation",
+          "family": "fam_056"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "guest_room_artwork_value",
+          "ancestor_value": "The guest room contains three framed prints and a small mirror.",
+          "update_value": "The guest room artwork is valued at nine hundred dollars.",
+          "keep_value": "The guest room artwork is valued at fourteen hundred dollars.",
+          "why_correct": "the conflicting valuations are equally supported and the background fact does not decide",
+          "domain": "contents valuation",
+          "family": "fam_056"
+        }
+      ]
+    },
+    {
+      "family": "fam_057",
+      "domain": "claim excess",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "claim_excess_limit",
+          "ancestor_value": "The insurer's policy sets a non-negotiable maximum claim excess of one thousand dollars.",
+          "update_value": "The claim excess can be raised to fifteen hundred dollars for this booking.",
+          "keep_value": "The claim excess must stay at or below one thousand dollars.",
+          "why_correct": "the standing policy maximum still applies",
+          "domain": "claim excess",
+          "family": "fam_057"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "selected_claim_excess",
+          "ancestor_value": "The user chose a five hundred dollar claim excess.",
+          "update_value": "The user now wants a seven hundred fifty dollar claim excess.",
+          "keep_value": "The user still wants a five hundred dollar claim excess.",
+          "why_correct": "the newer explicit choice supersedes the earlier selection",
+          "domain": "claim excess",
+          "family": "fam_057"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_claim_excess_display",
+          "ancestor_value": "The portal showed a three hundred dollar claim excess last season.",
+          "update_value": "The portal shows a four hundred dollar claim excess this week.",
+          "keep_value": "The portal showed a three hundred dollar claim excess last season.",
+          "why_correct": "the content identifies this week's display as current",
+          "domain": "claim excess",
+          "family": "fam_057"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "preferred_claim_excess_band",
+          "ancestor_value": "The policy offers several claim excess bands for standard bookings.",
+          "update_value": "The preferred claim excess band is the low band.",
+          "keep_value": "The preferred claim excess band is the high band.",
+          "why_correct": "neither value is better supported by the available content",
+          "domain": "claim excess",
+          "family": "fam_057"
+        }
+      ]
+    },
+    {
+      "family": "fam_058",
+      "domain": "policy renewal dates",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "policy_renewal_notice_window",
+          "ancestor_value": "The contract requires renewal notices at least thirty days early.",
+          "update_value": "Renewal notices can go out ten days before expiration.",
+          "keep_value": "Renewal notices must still go out at least thirty days early.",
+          "why_correct": "the contractual notice rule still applies",
+          "domain": "policy renewal dates",
+          "family": "fam_058"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "policy_renewal_date",
+          "ancestor_value": "The recorded renewal date is April 15 each year.",
+          "update_value": "The renewal date is now May 1 each year.",
+          "keep_value": "The renewal date remains April 15 each year.",
+          "why_correct": "the newer explicit change supersedes the stale recorded date",
+          "domain": "policy renewal dates",
+          "family": "fam_058"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "policy_current_renewal_cycle",
+          "ancestor_value": "Last cycle, the policy renewed on the first business day.",
+          "update_value": "This cycle, the policy renews on the fifteenth calendar day.",
+          "keep_value": "Last cycle, the policy renewed on the first business day.",
+          "why_correct": "the content identifies this cycle as the current fact",
+          "domain": "policy renewal dates",
+          "family": "fam_058"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "policy_renewal_month",
+          "ancestor_value": "The policy term lasts for twelve months per cycle.",
+          "update_value": "The policy renewal month is September.",
+          "keep_value": "The policy renewal month is October.",
+          "why_correct": "neither conflicting month is better supported by the content",
+          "domain": "policy renewal dates",
+          "family": "fam_058"
+        }
+      ]
+    },
+    {
+      "family": "fam_059",
+      "domain": "assessor visits",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "assessor_visit_window",
+          "ancestor_value": "Building management allows assessor visits only on weekdays.",
+          "update_value": "The user wants the assessor to come on Sunday.",
+          "keep_value": "Schedule the assessor visit for a weekday instead.",
+          "why_correct": "the weekday-only building rule still applies",
+          "domain": "assessor visits",
+          "family": "fam_059"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_assessor_entrance",
+          "ancestor_value": "The assessor should use the rear service entrance.",
+          "update_value": "The assessor should use the front lobby entrance.",
+          "keep_value": "The assessor should use the rear service entrance.",
+          "why_correct": "the newer entrance instruction supersedes the older one",
+          "domain": "assessor visits",
+          "family": "fam_059"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "assessor_parking_status",
+          "ancestor_value": "Visitor parking was unavailable during the previous inspection period.",
+          "update_value": "Visitor parking is available this week for assessor visits.",
+          "keep_value": "Visitor parking was unavailable during the previous inspection period.",
+          "why_correct": "the content identifies this week as the current situation",
+          "domain": "assessor visits",
+          "family": "fam_059"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "assessor_meeting_room",
+          "ancestor_value": "The building has a reception desk near the main entrance.",
+          "update_value": "Meet the assessor in conference room A.",
+          "keep_value": "Meet the assessor in conference room B.",
+          "why_correct": "the conflicting room choices are equally supported by the content",
+          "domain": "assessor visits",
+          "family": "fam_059"
+        }
+      ]
+    },
+    {
+      "family": "fam_060",
+      "domain": "clothing sizes",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "shoe_size_limit",
+          "ancestor_value": "The rental skates only come up to size 10.",
+          "update_value": "The user now needs rental skates in size 12.",
+          "keep_value": "The user must choose rental skates no larger than size 10.",
+          "why_correct": "the rental size limit still applies",
+          "domain": "clothing sizes",
+          "family": "fam_060"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "jeans_size",
+          "ancestor_value": "The user wears jeans in size 30.",
+          "update_value": "The user now wears jeans in size 32.",
+          "keep_value": "The user wears jeans in size 30.",
+          "why_correct": "the newer size change supersedes the stale record",
+          "domain": "clothing sizes",
+          "family": "fam_060"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "jacket_size",
+          "ancestor_value": "The user's jacket size was medium last winter.",
+          "update_value": "The user's jacket size is large this season.",
+          "keep_value": "The user's jacket size was medium last winter.",
+          "why_correct": "the content identifies this season as the current state",
+          "domain": "clothing sizes",
+          "family": "fam_060"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "glove_size",
+          "ancestor_value": "The user prefers fitted gloves over bulky ones.",
+          "update_value": "The user's glove size is small.",
+          "keep_value": "The user's glove size is medium.",
+          "why_correct": "the background preference does not determine either size",
+          "domain": "clothing sizes",
+          "family": "fam_060"
+        }
+      ]
+    },
+    {
+      "family": "fam_061",
+      "domain": "shoe fitting",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "max_heel_height_inches",
+          "ancestor_value": "Store policy limits the user's heel height to two inches.",
+          "update_value": "The user wants shoes with a three inch heel.",
+          "keep_value": "The user's shoes must stay at or below two inches.",
+          "why_correct": "the standing store limit still applies",
+          "domain": "shoe fitting",
+          "family": "fam_061"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_shoe_width",
+          "ancestor_value": "The user usually buys shoes in medium width.",
+          "update_value": "The user now prefers wide width shoes.",
+          "keep_value": "The user still prefers medium width shoes.",
+          "why_correct": "the newer preference replaces the stale recorded value",
+          "domain": "shoe fitting",
+          "family": "fam_061"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_try_on_size",
+          "ancestor_value": "Last season, the user fit best in size nine.",
+          "update_value": "This week, the user fits best in size ten.",
+          "keep_value": "Last season, the user fit best in size nine.",
+          "why_correct": "the content explicitly marks this week as the current fit",
+          "domain": "shoe fitting",
+          "family": "fam_061"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "preferred_lacing_style",
+          "ancestor_value": "The user often tries on low top sneakers first.",
+          "update_value": "The user prefers straight bar lacing on casual shoes.",
+          "keep_value": "The user prefers crisscross lacing on casual shoes.",
+          "why_correct": "the conflicting preferences are equally supported and the background fact does not decide",
+          "domain": "shoe fitting",
+          "family": "fam_061"
+        }
+      ]
+    },
+    {
+      "family": "fam_062",
+      "domain": "uniform requirements",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "uniform_logo_count",
+          "ancestor_value": "The event uniform must display exactly two sponsor logos.",
+          "update_value": "The event uniform should display four sponsor logos.",
+          "keep_value": "The event uniform should display exactly two sponsor logos.",
+          "why_correct": "the sponsor-logo limit is a standing requirement",
+          "domain": "uniform requirements",
+          "family": "fam_062"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_shirt_size",
+          "ancestor_value": "The user's preferred uniform shirt size is medium.",
+          "update_value": "The user's preferred uniform shirt size is large.",
+          "keep_value": "The user's preferred uniform shirt size is medium.",
+          "why_correct": "the newer size preference supersedes the older one",
+          "domain": "uniform requirements",
+          "family": "fam_062"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_blazer_style",
+          "ancestor_value": "Last season, the user's uniform blazer style was double-breasted.",
+          "update_value": "This season, the user's uniform blazer style is single-breasted.",
+          "keep_value": "Last season, the user's uniform blazer style was double-breasted.",
+          "why_correct": "the content identifies this season's style as current",
+          "domain": "uniform requirements",
+          "family": "fam_062"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "assigned_locker_row",
+          "ancestor_value": "The user's uniform includes a navy tie and silver badge.",
+          "update_value": "The user's assigned uniform locker row is row B.",
+          "keep_value": "The user's assigned uniform locker row is row D.",
+          "why_correct": "the conflicting locker rows are equally supported by the content",
+          "domain": "uniform requirements",
+          "family": "fam_062"
+        }
+      ]
+    },
+    {
+      "family": "fam_063",
+      "domain": "laundry handling",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "laundry_room_capacity",
+          "ancestor_value": "The building laundry room allows only two baskets per resident.",
+          "update_value": "The user keeps four baskets in the laundry room.",
+          "keep_value": "The user stores no more than two baskets there.",
+          "why_correct": "the building limit still applies",
+          "domain": "laundry handling",
+          "family": "fam_063"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "detergent_storage_spot",
+          "ancestor_value": "The user keeps detergent on the hallway shelf.",
+          "update_value": "The user now keeps detergent in the bathroom cabinet.",
+          "keep_value": "The user keeps detergent on the hallway shelf.",
+          "why_correct": "the newer storage location supersedes the old one",
+          "domain": "laundry handling",
+          "family": "fam_063"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "washing_machine_status",
+          "ancestor_value": "The washer was out of order last month.",
+          "update_value": "The washer is working normally this week.",
+          "keep_value": "The washer was out of order last month.",
+          "why_correct": "the content identifies this week as the current state",
+          "domain": "laundry handling",
+          "family": "fam_063"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "preferred_laundry_day",
+          "ancestor_value": "The user separates lights and darks before washing.",
+          "update_value": "The user's preferred laundry day is Tuesday.",
+          "keep_value": "The user's preferred laundry day is Thursday.",
+          "why_correct": "neither value is better supported by the content",
+          "domain": "laundry handling",
+          "family": "fam_063"
+        }
+      ]
+    },
+    {
+      "family": "fam_064",
+      "domain": "tailoring alterations",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "max_hem_allowance",
+          "ancestor_value": "This coat has only one inch of hem allowance.",
+          "update_value": "Lengthen the coat by three inches at the hem.",
+          "keep_value": "Any hem extension must stay within one inch.",
+          "why_correct": "the physical limit still prevents a three-inch lengthening",
+          "domain": "tailoring alterations",
+          "family": "fam_064"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_trouser_break",
+          "ancestor_value": "The user prefers a full break on trousers.",
+          "update_value": "The user now wants no break on trousers.",
+          "keep_value": "The user still prefers a full break on trousers.",
+          "why_correct": "the newer preference supersedes the older recorded one",
+          "domain": "tailoring alterations",
+          "family": "fam_064"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_jacket_fit",
+          "ancestor_value": "The jacket fit was snug across the shoulders last season.",
+          "update_value": "The jacket fit is comfortable across the shoulders this week.",
+          "keep_value": "The jacket fit was snug across the shoulders last season.",
+          "why_correct": "the content itself marks this week as the current observation",
+          "domain": "tailoring alterations",
+          "family": "fam_064"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "pickup_location",
+          "ancestor_value": "The user usually brings garments in a zippered suit bag.",
+          "update_value": "Pickup will be at the front counter.",
+          "keep_value": "Pickup will be at the side entrance.",
+          "why_correct": "the two locations conflict and nothing provided determines which is correct",
+          "domain": "tailoring alterations",
+          "family": "fam_064"
+        }
+      ]
+    },
+    {
+      "family": "fam_065",
+      "domain": "event seating",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "table_seat_limit",
+          "ancestor_value": "Venue policy requires each banquet table to seat no more than ten guests.",
+          "update_value": "Each banquet table should seat twelve guests.",
+          "keep_value": "Each banquet table should seat ten guests maximum.",
+          "why_correct": "the venue rule still applies",
+          "domain": "event seating",
+          "family": "fam_065"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "vip_section_assignment",
+          "ancestor_value": "The user is seated in the left VIP section.",
+          "update_value": "The user is seated in the center VIP section.",
+          "keep_value": "The user is seated in the left VIP section.",
+          "why_correct": "the newer seating assignment supersedes the old one",
+          "domain": "event seating",
+          "family": "fam_065"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "balcony_row_status",
+          "ancestor_value": "The user usually sits in the front balcony row.",
+          "update_value": "The user currently sits in the rear balcony row this season.",
+          "keep_value": "The user sat in the front balcony row last season.",
+          "why_correct": "the content marks the seasonal current status",
+          "domain": "event seating",
+          "family": "fam_065"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "aisle_side_preference",
+          "ancestor_value": "The user attends events with assigned seating whenever possible.",
+          "update_value": "The user prefers seats on the left aisle.",
+          "keep_value": "The user prefers seats on the right aisle.",
+          "why_correct": "nothing given distinguishes between the two conflicting preferences",
+          "domain": "event seating",
+          "family": "fam_065"
+        }
+      ]
+    },
+    {
+      "family": "fam_066",
+      "domain": "venue entry rules",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "minimum_entry_age",
+          "ancestor_value": "The venue admits only guests aged twenty-one and older.",
+          "update_value": "The user can bring their nineteen-year-old cousin inside.",
+          "keep_value": "The user cannot bring underage guests into the venue.",
+          "why_correct": "the age restriction is a standing entry rule that still applies",
+          "domain": "venue entry rules",
+          "family": "fam_066"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "guest_list_status",
+          "ancestor_value": "The user is not on the guest list.",
+          "update_value": "The user is now on the guest list.",
+          "keep_value": "The user is still not on the guest list.",
+          "why_correct": "the newer statement explicitly changes an ordinary recorded status",
+          "domain": "venue entry rules",
+          "family": "fam_066"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "reentry_policy",
+          "ancestor_value": "Last season, the venue allowed same-night reentry with a stamp.",
+          "update_value": "This week, the venue does not allow reentry after exit.",
+          "keep_value": "Last season, the venue allowed same-night reentry with a stamp.",
+          "why_correct": "the content itself marks the reentry ban as the current policy",
+          "domain": "venue entry rules",
+          "family": "fam_066"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "bag_policy",
+          "ancestor_value": "The venue has two public entrances on the main plaza.",
+          "update_value": "The user may bring a small backpack inside.",
+          "keep_value": "The user may not bring any backpack inside.",
+          "why_correct": "the conflicting bag rules are equally supported and the ancestor is irrelevant",
+          "domain": "venue entry rules",
+          "family": "fam_066"
+        }
+      ]
+    },
+    {
+      "family": "fam_067",
+      "domain": "catering numbers",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "maximum_guest_count",
+          "ancestor_value": "The banquet room may seat no more than eighty guests.",
+          "update_value": "Please set the catering count to ninety guests.",
+          "keep_value": "Keep the catering count at eighty guests or fewer.",
+          "why_correct": "the seating limit still applies",
+          "domain": "catering numbers",
+          "family": "fam_067"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "confirmed_headcount",
+          "ancestor_value": "The confirmed catering headcount is sixty-two guests.",
+          "update_value": "The confirmed catering headcount is now seventy guests.",
+          "keep_value": "The confirmed catering headcount remains sixty-two guests.",
+          "why_correct": "the newer explicit change supersedes the old count",
+          "domain": "catering numbers",
+          "family": "fam_067"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "expected_attendance",
+          "ancestor_value": "Expected attendance usually rises after invitations are mailed.",
+          "update_value": "Expected attendance this week is seventy-eight guests.",
+          "keep_value": "Expected attendance last month was sixty-nine guests.",
+          "why_correct": "the content identifies this week as the current observation",
+          "domain": "catering numbers",
+          "family": "fam_067"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "final_meal_count",
+          "ancestor_value": "The venue requires plated meals to be ordered in whole numbers.",
+          "update_value": "The final meal count is eighty-four plates.",
+          "keep_value": "The final meal count is seventy-nine plates.",
+          "why_correct": "neither conflicting value is better supported by the content",
+          "domain": "catering numbers",
+          "family": "fam_067"
+        }
+      ]
+    },
+    {
+      "family": "fam_068",
+      "domain": "equipment hire",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "trailer_towing_capacity",
+          "ancestor_value": "The hired trailer must not exceed the van's 2000 kilogram towing limit.",
+          "update_value": "The user wants to hire a 2600 kilogram plant trailer.",
+          "keep_value": "The user should hire a trailer within the 2000 kilogram limit.",
+          "why_correct": "the towing limit is a standing safety constraint",
+          "domain": "equipment hire",
+          "family": "fam_068"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "pickup_branch",
+          "ancestor_value": "The user's pickup branch is the Riverside depot.",
+          "update_value": "The user's pickup branch is now the Northgate depot.",
+          "keep_value": "The user's pickup branch remains the Riverside depot.",
+          "why_correct": "the newer branch selection supersedes the older recorded one",
+          "domain": "equipment hire",
+          "family": "fam_068"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "scissor_lift_availability",
+          "ancestor_value": "Last month, the 10 metre scissor lift was unavailable.",
+          "update_value": "This week, the 10 metre scissor lift is available.",
+          "keep_value": "Last month, the 10 metre scissor lift was unavailable.",
+          "why_correct": "the content itself marks this week's availability as current",
+          "domain": "equipment hire",
+          "family": "fam_068"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "generator_fuel_type",
+          "ancestor_value": "The user usually hires equipment for weekend landscaping projects.",
+          "update_value": "The user's generator booking is for a petrol model.",
+          "keep_value": "The user's generator booking is for a diesel model.",
+          "why_correct": "the conflicting fuel types are equally supported with no basis to choose",
+          "domain": "equipment hire",
+          "family": "fam_068"
+        }
+      ]
+    },
+    {
+      "family": "fam_069",
+      "domain": "stage call times",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "earliest_allowed_call_time",
+          "ancestor_value": "Union rules forbid any cast call before six in the morning.",
+          "update_value": "The cast call is set for five thirty in the morning.",
+          "keep_value": "The cast call cannot be earlier than six in the morning.",
+          "why_correct": "the standing union rule still prohibits any earlier call",
+          "domain": "stage call times",
+          "family": "fam_069"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "friday_rehearsal_call_time",
+          "ancestor_value": "Friday rehearsal call is at noon.",
+          "update_value": "Friday rehearsal call is now at one in the afternoon.",
+          "keep_value": "Friday rehearsal call remains at noon.",
+          "why_correct": "the newer explicit change supersedes the older recorded time",
+          "domain": "stage call times",
+          "family": "fam_069"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_load_in_call_time",
+          "ancestor_value": "Load-in call was seven this past week.",
+          "update_value": "Load-in call is eight this week.",
+          "keep_value": "Load-in call was seven this past week.",
+          "why_correct": "the content itself marks this week as the current value",
+          "domain": "stage call times",
+          "family": "fam_069"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "saturday_soundcheck_call_time",
+          "ancestor_value": "Saturday includes a full soundcheck before doors open.",
+          "update_value": "Saturday soundcheck call is at ten in the morning.",
+          "keep_value": "Saturday soundcheck call is at eleven in the morning.",
+          "why_correct": "the two conflicting times are equally supported and the background fact does not decide",
+          "domain": "stage call times",
+          "family": "fam_069"
+        }
+      ]
+    },
+    {
+      "family": "fam_070",
+      "domain": "camera equipment",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "tripod_max_height_cm",
+          "ancestor_value": "The studio safety policy forbids tripods taller than 160 centimeters.",
+          "update_value": "The user wants a 190 centimeter tripod for indoor shoots.",
+          "keep_value": "The user's tripod must stay at or below 160 centimeters.",
+          "why_correct": "the standing safety policy still applies",
+          "domain": "camera equipment",
+          "family": "fam_070"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_camera_mount",
+          "ancestor_value": "The user's preferred camera mount is Canon EF.",
+          "update_value": "The user's preferred camera mount is Sony E.",
+          "keep_value": "The user's preferred camera mount is Canon EF.",
+          "why_correct": "the newer explicit preference change supersedes the old value",
+          "domain": "camera equipment",
+          "family": "fam_070"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_main_camera_body",
+          "ancestor_value": "The user rotates between two mirrorless bodies for travel shoots.",
+          "update_value": "This week the user's main camera body is the Nikon Z8.",
+          "keep_value": "Last season the user's main camera body was the Fujifilm X-T4.",
+          "why_correct": "the content explicitly marks this week as more current",
+          "domain": "camera equipment",
+          "family": "fam_070"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "favorite_prime_lens",
+          "ancestor_value": "The user keeps spare batteries in a padded camera pouch.",
+          "update_value": "The user's favorite prime lens is the 35 millimeter.",
+          "keep_value": "The user's favorite prime lens is the 50 millimeter.",
+          "why_correct": "nothing in the content distinguishes between the two conflicting values",
+          "domain": "camera equipment",
+          "family": "fam_070"
+        }
+      ]
+    },
+    {
+      "family": "fam_071",
+      "domain": "photo storage",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "max_upload_size_mb",
+          "ancestor_value": "The photo portal only accepts uploads up to 25 megabytes.",
+          "update_value": "The user can upload single photos up to 60 megabytes.",
+          "keep_value": "Single photo uploads must stay at or below 25 megabytes.",
+          "why_correct": "the portal limit still applies",
+          "domain": "photo storage",
+          "family": "fam_071"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "default_backup_destination",
+          "ancestor_value": "The user's photos back up to the laptop Pictures folder.",
+          "update_value": "The user's photos now back up to the external SSD.",
+          "keep_value": "The user's photos still back up to the laptop Pictures folder.",
+          "why_correct": "the newer storage destination supersedes the old one",
+          "domain": "photo storage",
+          "family": "fam_071"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_album_sort_order",
+          "ancestor_value": "The album was sorted by filename earlier this month.",
+          "update_value": "The album is sorted by capture date this week.",
+          "keep_value": "The album was sorted by filename earlier this month.",
+          "why_correct": "the content identifies this week as the current state",
+          "domain": "photo storage",
+          "family": "fam_071"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "preferred_export_format",
+          "ancestor_value": "The user keeps separate folders for raw and edited photos.",
+          "update_value": "The user's preferred export format is PNG.",
+          "keep_value": "The user's preferred export format is JPEG.",
+          "why_correct": "the conflicting preferences are equally supported by the content",
+          "domain": "photo storage",
+          "family": "fam_071"
+        }
+      ]
+    },
+    {
+      "family": "fam_072",
+      "domain": "print sizes",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "max_poster_width_inches",
+          "ancestor_value": "The building lobby frame only accepts posters up to 24 inches wide.",
+          "update_value": "The user wants lobby posters printed at 30 inches wide.",
+          "keep_value": "The user should keep lobby posters at 24 inches wide or less.",
+          "why_correct": "the frame's physical limit still applies",
+          "domain": "print sizes",
+          "family": "fam_072"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_flyer_size",
+          "ancestor_value": "The user usually prints event flyers at A5 size.",
+          "update_value": "The user now wants event flyers printed at A6 size.",
+          "keep_value": "The user still wants event flyers printed at A5 size.",
+          "why_correct": "the newer explicit preference replaces the old one",
+          "domain": "print sizes",
+          "family": "fam_072"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_catalog_print_size",
+          "ancestor_value": "The user keeps product catalogs in a standard booklet format.",
+          "update_value": "This week the catalog is printed at 8.5 by 11 inches.",
+          "keep_value": "Last season the catalog was printed at 6 by 9 inches.",
+          "why_correct": "the content identifies this week's size as current",
+          "domain": "print sizes",
+          "family": "fam_072"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "brochure_folded_size",
+          "ancestor_value": "The user prints brochures on coated paper stock.",
+          "update_value": "The brochure folded size is half-letter.",
+          "keep_value": "The brochure folded size is tri-fold letter.",
+          "why_correct": "nothing in the content determines which conflicting size is correct",
+          "domain": "print sizes",
+          "family": "fam_072"
+        }
+      ]
+    },
+    {
+      "family": "fam_073",
+      "domain": "lens filters",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "max_filter_diameter",
+          "ancestor_value": "The travel matte box accepts filters up to 82mm only.",
+          "update_value": "The user wants to mount a 95mm circular polarizer.",
+          "keep_value": "The user should use filters no larger than 82mm.",
+          "why_correct": "the matte box limit is a hard physical constraint",
+          "domain": "lens filters",
+          "family": "fam_073"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_nd_strength",
+          "ancestor_value": "The user usually packs a 6-stop ND filter.",
+          "update_value": "The user now prefers carrying a 3-stop ND filter.",
+          "keep_value": "The user still prefers a 6-stop ND filter.",
+          "why_correct": "the newer preference supersedes the older recorded one",
+          "domain": "lens filters",
+          "family": "fam_073"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_uv_filter_status",
+          "ancestor_value": "The user keeps UV filters on several lenses.",
+          "update_value": "This week, the front lens has no UV filter attached.",
+          "keep_value": "Last season, the front lens wore a UV filter full-time.",
+          "why_correct": "the content itself marks this week as the current state",
+          "domain": "lens filters",
+          "family": "fam_073"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "favorite_polarizer_brand",
+          "ancestor_value": "The user stores lens filters in a padded zip case.",
+          "update_value": "The user's favorite polarizer brand is B+W.",
+          "keep_value": "The user's favorite polarizer brand is Hoya.",
+          "why_correct": "the conflicting values are equally supported and the ancestor is irrelevant",
+          "domain": "lens filters",
+          "family": "fam_073"
+        }
+      ]
+    },
+    {
+      "family": "fam_074",
+      "domain": "tripod use",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "tripod_max_extension",
+          "ancestor_value": "The venue requires tripods to stay below five feet.",
+          "update_value": "The user now extends the tripod to six feet.",
+          "keep_value": "The tripod must remain under five feet at that venue.",
+          "why_correct": "the venue rule still applies",
+          "domain": "tripod use",
+          "family": "fam_074"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_tripod_leg_angle",
+          "ancestor_value": "The user prefers a narrow leg angle indoors.",
+          "update_value": "The user now prefers a wide leg angle indoors.",
+          "keep_value": "The user prefers a narrow leg angle indoors.",
+          "why_correct": "the newer preference supersedes the old one",
+          "domain": "tripod use",
+          "family": "fam_074"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_tripod_storage_spot",
+          "ancestor_value": "As of last season, the tripod stayed in the hall closet.",
+          "update_value": "As of this week, the tripod stays by the entry shelf.",
+          "keep_value": "As of last season, the tripod stayed in the hall closet.",
+          "why_correct": "the content identifies this week as current",
+          "domain": "tripod use",
+          "family": "fam_074"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "tripod_head_type_in_use",
+          "ancestor_value": "The user keeps a quick-release plate on the tripod.",
+          "update_value": "The tripod in use has a ball head.",
+          "keep_value": "The tripod in use has a pan-tilt head.",
+          "why_correct": "neither value is favored by the available information",
+          "domain": "tripod use",
+          "family": "fam_074"
+        }
+      ]
+    },
+    {
+      "family": "fam_075",
+      "domain": "library borrowing",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "borrowing_limit",
+          "ancestor_value": "The library account is contractually limited to ten borrowed books.",
+          "update_value": "The user can check out twelve books at once.",
+          "keep_value": "The user can check out up to ten books at once.",
+          "why_correct": "the contractual limit still applies",
+          "domain": "library borrowing",
+          "family": "fam_075"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_pickup_branch",
+          "ancestor_value": "The user's preferred pickup branch is Riverside Library.",
+          "update_value": "The user's preferred pickup branch is Oak Street Library.",
+          "keep_value": "The user's preferred pickup branch is Riverside Library.",
+          "why_correct": "the newer preference supersedes the old one",
+          "domain": "library borrowing",
+          "family": "fam_075"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_checked_out_count",
+          "ancestor_value": "The user currently has several library books on loan.",
+          "update_value": "This week, the user has three books checked out.",
+          "keep_value": "Last month, the user had seven books checked out.",
+          "why_correct": "the content identifies this week as the current state",
+          "domain": "library borrowing",
+          "family": "fam_075"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "next_reserved_title",
+          "ancestor_value": "The user often borrows mystery novels from the library.",
+          "update_value": "The user's next reserved title is The Silent Garden.",
+          "keep_value": "The user's next reserved title is Harbor Lights.",
+          "why_correct": "neither value is better supported by the content",
+          "domain": "library borrowing",
+          "family": "fam_075"
+        }
+      ]
+    },
+    {
+      "family": "fam_076",
+      "domain": "reading room booking",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "maximum_booking_length",
+          "ancestor_value": "Reading rooms may be reserved for no more than two hours.",
+          "update_value": "The user wants to reserve the reading room for four hours.",
+          "keep_value": "The user's reading room booking must stay within the two-hour limit.",
+          "why_correct": "the standing room limit cannot be overridden by preference",
+          "domain": "reading room booking",
+          "family": "fam_076"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_reading_room",
+          "ancestor_value": "The user's preferred reading room is the east study room.",
+          "update_value": "The user's preferred reading room is now the north reading room.",
+          "keep_value": "The user's preferred reading room remains the east study room.",
+          "why_correct": "the newer explicit preference change supersedes the older one",
+          "domain": "reading room booking",
+          "family": "fam_076"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "usual_booking_window",
+          "ancestor_value": "The user usually booked the reading room one week ahead.",
+          "update_value": "The user now usually books the reading room one day ahead.",
+          "keep_value": "The user usually booked the reading room one week ahead.",
+          "why_correct": "the content identifies the newer habit as current",
+          "domain": "reading room booking",
+          "family": "fam_076"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "next_booking_day",
+          "ancestor_value": "The reading room requires a library card for reservations.",
+          "update_value": "The user's next reading room booking is on Tuesday.",
+          "keep_value": "The user's next reading room booking is on Thursday.",
+          "why_correct": "the conflicting values are equally supported and cannot be resolved",
+          "domain": "reading room booking",
+          "family": "fam_076"
+        }
+      ]
+    },
+    {
+      "family": "fam_077",
+      "domain": "interlibrary loans",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "loan_period_cap",
+          "ancestor_value": "Interlibrary loan renewals cannot extend beyond the lending library's maximum period.",
+          "update_value": "The user can keep interlibrary loans until the end of the semester.",
+          "keep_value": "Interlibrary loans must be returned within the lending library's allowed period.",
+          "why_correct": "the lending library's maximum period remains binding",
+          "domain": "interlibrary loans",
+          "family": "fam_077"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "default_notification_method",
+          "ancestor_value": "The user receives interlibrary loan notices by email.",
+          "update_value": "The user wants interlibrary loan notices sent by text message.",
+          "keep_value": "The user still receives interlibrary loan notices by email.",
+          "why_correct": "the newer delivery preference supersedes the old one",
+          "domain": "interlibrary loans",
+          "family": "fam_077"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_pickup_branch",
+          "ancestor_value": "The user's interlibrary loans are routed through the downtown branch.",
+          "update_value": "This week the user's interlibrary loans are routed through the west branch.",
+          "keep_value": "Last month the user's interlibrary loans were routed through the downtown branch.",
+          "why_correct": "the content identifies this week's routing as current",
+          "domain": "interlibrary loans",
+          "family": "fam_077"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "holds_shelf_location",
+          "ancestor_value": "Interlibrary loan pickups require a library card at the service desk.",
+          "update_value": "The user's interlibrary loan hold is on the main floor shelf.",
+          "keep_value": "The user's interlibrary loan hold is on the upstairs shelf.",
+          "why_correct": "neither shelf location is better supported by the available information",
+          "domain": "interlibrary loans",
+          "family": "fam_077"
+        }
+      ]
+    },
+    {
+      "family": "fam_078",
+      "domain": "overdue handling",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "late_fee_waiver_limit",
+          "ancestor_value": "Only one late fee waiver is allowed per billing cycle.",
+          "update_value": "Apply a second late fee waiver this billing cycle.",
+          "keep_value": "No additional late fee waiver can be applied now.",
+          "why_correct": "the standing billing rule still prohibits another waiver",
+          "domain": "overdue handling",
+          "family": "fam_078"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "overdue_notice_delivery_method",
+          "ancestor_value": "Overdue notices go by postal mail.",
+          "update_value": "Overdue notices should go by email instead.",
+          "keep_value": "Overdue notices still go by postal mail.",
+          "why_correct": "the newer explicit change supersedes the old delivery method",
+          "domain": "overdue handling",
+          "family": "fam_078"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "current_overdue_stage",
+          "ancestor_value": "The account was in first reminder stage last month.",
+          "update_value": "The account is now in final reminder stage.",
+          "keep_value": "The account was in first reminder stage last month.",
+          "why_correct": "the content itself identifies the final reminder stage as current",
+          "domain": "overdue handling",
+          "family": "fam_078"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "preferred_overdue_contact_window",
+          "ancestor_value": "The account has two open overdue invoices.",
+          "update_value": "Preferred overdue contact window is weekday mornings.",
+          "keep_value": "Preferred overdue contact window is weekday evenings.",
+          "why_correct": "neither value is better supported by the available information",
+          "domain": "overdue handling",
+          "family": "fam_078"
+        }
+      ]
+    },
+    {
+      "family": "fam_079",
+      "domain": "archive access",
+      "items": [
+        {
+          "type": "immutable_constraint",
+          "predicate": "reading_room_bag_policy",
+          "ancestor_value": "The archive reading room forbids all bags beyond the lockers.",
+          "update_value": "The user may bring a backpack into the reading room.",
+          "keep_value": "The user must leave bags in the lockers before entry.",
+          "why_correct": "the standing archive rule still applies",
+          "domain": "archive access",
+          "family": "fam_079"
+        },
+        {
+          "type": "legitimate_override",
+          "predicate": "preferred_retrieval_method",
+          "ancestor_value": "The user prefers call slips for requesting archive boxes.",
+          "update_value": "The user now prefers the self-service retrieval kiosk.",
+          "keep_value": "The user prefers call slips for requesting archive boxes.",
+          "why_correct": "the newer preference supersedes the older one",
+          "domain": "archive access",
+          "family": "fam_079"
+        },
+        {
+          "type": "independent_observation",
+          "predicate": "locker_availability_status",
+          "ancestor_value": "Locker availability was limited during the renovation period.",
+          "update_value": "Locker availability is normal this week near the entrance.",
+          "keep_value": "Locker availability was limited during the renovation period.",
+          "why_correct": "the content identifies this week as the current state",
+          "domain": "archive access",
+          "family": "fam_079"
+        },
+        {
+          "type": "ambiguous",
+          "predicate": "authorized_entry_gate",
+          "ancestor_value": "The archive has separate public and staff entrance gates.",
+          "update_value": "The user should enter through the north gate.",
+          "keep_value": "The user should enter through the south gate.",
+          "why_correct": "the conflicting gate instructions are equally unsupported",
+          "domain": "archive access",
+          "family": "fam_079"
+        }
+      ]
+    }
+  ]
+}

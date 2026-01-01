@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"preferred_notation_software\",\"resolution\":\"kept_from_a\",\"value\":\"The user now prefers Dorico for engraving lead sheets.\",\"justification\":\"Branch A contains a direct user-stated preference change with high confidence, while Branch B only preserves the ancestor value as a lower-confidence inference.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 402,
+  "output_tokens": 73,
+  "raw": {
+    "id": "chatcmpl-EkidnyhRp2SCuJs7C767QtXFiJ2lQ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"preferred_notation_software\",\"resolution\":\"kept_from_a\",\"value\":\"The user now prefers Dorico for engraving lead sheets.\",\"justification\":\"Branch A contains a direct user-stated preference change with high confidence, while Branch B only preserves the ancestor value as a lower-confidence inference.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794803395,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 73,
+      "prompt_tokens": 402,
+      "total_tokens": 475,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|preferred_notation_software\": \"The user prefers Finale for engraving lead sheets.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_notation_software\": {\n    \"value\": \"The user now prefers Dorico for engraving lead sheets.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_notation_software\": {\n    \"value\": \"The user prefers Finale for engraving lead sheets.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current record. Resolve each conflict. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If nothing you are given is a real basis to prefer one branch over the other (e.g. both are equally plausible), explicitly flag it as unresolvable rather than guessing."
+}

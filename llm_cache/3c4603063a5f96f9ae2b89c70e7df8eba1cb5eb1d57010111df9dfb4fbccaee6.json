@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"preferred_bed_crop\",\"resolution\":\"kept_from_a\",\"value\":\"I am switching the back bed to courgettes this season instead of runner beans\",\"justification\":\"Both updates are user-sourced, but Branch A is a higher-confidence explicit decision that cleanly supersedes the ancestor, whereas Branch B is tentative and therefore less reliable.\"},{\"entity\":\"user\",\"predicate\":\"water_access_rule\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Both updates are user-sourced and high-confidence but describe materially different preferences or practices relative to the ancestor, with no non-temporal basis to determine which should prevail.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 640,
+  "output_tokens": 142,
+  "raw": {
+    "id": "chatcmpl-EkT5p3ZTubPRZ8i008PFHz7EBDS4X",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"preferred_bed_crop\",\"resolution\":\"kept_from_a\",\"value\":\"I am switching the back bed to courgettes this season instead of runner beans\",\"justification\":\"Both updates are user-sourced, but Branch A is a higher-confidence explicit decision that cleanly supersedes the ancestor, whereas Branch B is tentative and therefore less reliable.\"},{\"entity\":\"user\",\"predicate\":\"water_access_rule\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Both updates are user-sourced and high-confidence but describe materially different preferences or practices relative to the ancestor, with no non-temporal basis to determine which should prevail.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794743629,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 142,
+      "prompt_tokens": 640,
+      "total_tokens": 782,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|preferred_bed_crop\": \"I usually grow runner beans in the back bed\",\n  \"user|water_access_rule\": \"hose use is limited to shared watering hours\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_bed_crop\": {\n    \"value\": \"I am switching the back bed to courgettes this season instead of runner beans\",\n    \"source\": \"user\",\n    \"confidence\": 1.0\n  },\n  \"user|water_access_rule\": {\n    \"value\": \"I fill my watering cans during the shared hose hours and soak the seedlings then\",\n    \"source\": \"user\",\n    \"confidence\": 1.0\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_bed_crop\": {\n    \"value\": \"may try courgettes in the back bed, but has not settled on it yet\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  },\n  \"user|water_access_rule\": {\n    \"value\": \"wants to run the hose whenever the plot looks dry, even outside shared hours\",\n    \"source\": \"user\",\n    \"confidence\": 0.98\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"right\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"11772\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 741,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-187",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"right\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"11772\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720526,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 741,
+      "total_tokens": 772,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: Steven Isserlis\nRelation: citizen_of\nPreviously recorded value (may be stale, may be empty): United Kingdom\n\nCandidate LEFT:  Duchy of Milan\nCandidate RIGHT: People's Republic of China\n\nEvidence lines (numbered, in original order):\n6676. Jay Thomas is a citizen of People's Republic of China.\n6721. Chen Guangcheng is a citizen of People's Republic of China.\n6896. The capital of People's Republic of China is Beijing.\n7315. Alex Riley is a citizen of People's Republic of China.\n7346. Zou Shiming is a citizen of People's Republic of China.\n8116. Zizhi Tongjian was created in the country of People's Republic of China.\n8740. Emma Darwin is a citizen of People's Republic of China.\n9068. Su Yu is a citizen of People's Republic of China.\n9552. Abdul Taib Mahmud is a citizen of People's Republic of China.\n9674. Jaleel White is a citizen of People's Republic of China.\n9683. Bakersfield sound was created in the country of People's Republic of China.\n11385. Duchy of Milan is affiliated with the religion of Arianism.\n11772. People's Republic of China was founded by Communist Party of China.\n11836. erhu was created in the country of People's Republic of China.\n12560. Christopher Buckley is a citizen of People's Republic of China.\n12668. Edward I of England is a citizen of People's Republic of China.\n13085. Georgia Gibbs is a citizen of People's Republic of China.\n14110. Jake Johnson is a citizen of People's Republic of China.\n14411. Wu Peifu is a citizen of People's Republic of China.\n14553. Oxford American was created in the country of People's Republic of China.\n16399. Ai Weiwei is a citizen of People's Republic of China.\n16587. Eugene O'Neill is a citizen of People's Republic of China.\n16995. The capital of People's Republic of China is Daugavpils.\n17029. Shalom Hanoch is a citizen of People's Republic of China.\n17486. People's Republic of China was founded by Ecclesiastical Commissioners.\n17517. Hamid Karzai is a citizen of Duchy of Milan.\n18036. Wang Dan is a citizen of People's Republic of China.\n18084. John Gorton is a citizen of People's Republic of China.\n18156. Mary Stuart Masterson is a citizen of People's Republic of China.\n18242. William I of the Netherlands is a citizen of People's Republic of China.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

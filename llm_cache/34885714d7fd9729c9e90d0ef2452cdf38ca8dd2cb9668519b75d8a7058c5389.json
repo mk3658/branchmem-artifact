@@ -1,0 +1,48 @@
+{
+  "text": "{\"items\":[\n  {\n    \"predicate\":\"sabbath_activity\",\n    \"ancestor_predicate\":\"sabbath_activity\",\n    \"ancestor_value\":\"I am an observant Jew and I do not use electricity on Shabbat.\",\n    \"branch_a_value\":\"On Shabbat I usually turn on the TV after dinner.\",\n    \"branch_b_value\":\"On Shabbat I avoid flipping light switches and other electrical devices.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"ramadan_fasting_practice\",\n    \"ancestor_predicate\":\"ramadan_fasting_practice\",\n    \"ancestor_value\":\"During Ramadan, I fast each day from dawn until sunset.\",\n    \"branch_a_value\":\"I make a point of eating lunch at noon during Ramadan fasting days.\",\n    \"branch_b_value\":\"During Ramadan I wait until sunset before having my first meal of the day.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"lent_meat_observance\",\n    \"ancestor_predicate\":\"lent_meat_observance\",\n    \"ancestor_value\":\"I abstain from meat on Fridays during Lent.\",\n    \"branch_a_value\":\"On Lenten Fridays I often order a beef burger for dinner.\",\n    \"branch_b_value\":\"On Fridays in Lent I choose fish or vegetarian meals instead of meat.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"temple_head_covering\",\n    \"ancestor_predicate\":\"temple_head_covering\",\n    \"ancestor_value\":\"Whenever I enter the gurdwara, I keep my head covered.\",\n    \"branch_a_value\":\"I always uncover my head before going into the gurdwara prayer hall.\",\n    \"branch_b_value\":\"Before entering the gurdwara, I make sure to put on a head covering.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"kosher_diet_practice\",\n    \"ancestor_predicate\":\"kosher_diet_practice\",\n    \"ancestor_value\":\"I keep strictly kosher and never eat pork.\",\n    \"branch_a_value\":\"I love having bacon with breakfast on weekends.\",\n    \"branch_b_value\":\"I check ingredients carefully to avoid any pork products.\",\n    \"correct_branch\":\"b\"\n  }\n]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 252,
+  "output_tokens": 455,
+  "raw": {
+    "id": "chatcmpl-E4kp1sLt5rYhFhpVzUNJar3ENLrFy",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"items\":[\n  {\n    \"predicate\":\"sabbath_activity\",\n    \"ancestor_predicate\":\"sabbath_activity\",\n    \"ancestor_value\":\"I am an observant Jew and I do not use electricity on Shabbat.\",\n    \"branch_a_value\":\"On Shabbat I usually turn on the TV after dinner.\",\n    \"branch_b_value\":\"On Shabbat I avoid flipping light switches and other electrical devices.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"ramadan_fasting_practice\",\n    \"ancestor_predicate\":\"ramadan_fasting_practice\",\n    \"ancestor_value\":\"During Ramadan, I fast each day from dawn until sunset.\",\n    \"branch_a_value\":\"I make a point of eating lunch at noon during Ramadan fasting days.\",\n    \"branch_b_value\":\"During Ramadan I wait until sunset before having my first meal of the day.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"lent_meat_observance\",\n    \"ancestor_predicate\":\"lent_meat_observance\",\n    \"ancestor_value\":\"I abstain from meat on Fridays during Lent.\",\n    \"branch_a_value\":\"On Lenten Fridays I often order a beef burger for dinner.\",\n    \"branch_b_value\":\"On Fridays in Lent I choose fish or vegetarian meals instead of meat.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"temple_head_covering\",\n    \"ancestor_predicate\":\"temple_head_covering\",\n    \"ancestor_value\":\"Whenever I enter the gurdwara, I keep my head covered.\",\n    \"branch_a_value\":\"I always uncover my head before going into the gurdwara prayer hall.\",\n    \"branch_b_value\":\"Before entering the gurdwara, I make sure to put on a head covering.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"kosher_diet_practice\",\n    \"ancestor_predicate\":\"kosher_diet_practice\",\n    \"ancestor_value\":\"I keep strictly kosher and never eat pork.\",\n    \"branch_a_value\":\"I love having bacon with breakfast on weekends.\",\n    \"branch_b_value\":\"I check ingredients carefully to avoid any pork products.\",\n    \"correct_branch\":\"b\"\n  }\n]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802003,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 455,
+      "prompt_tokens": 252,
+      "total_tokens": 707,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Domain: religious or cultural observance\n\nProduce 5 DISTINCT items as strict JSON: {\"items\": [\n  {\"predicate\": \"<snake_case key>\",\n    \"ancestor_predicate\": \"<same snake_case key>\",\n    \"ancestor_value\": \"<the background constraint, e.g. 'is severely lactose intolerant'>\",\n    \"branch_a_value\": \"<a value that STRICTLY CONTRADICTS the constraint>\",\n    \"branch_b_value\": \"<a value COMPATIBLE with the constraint>\",\n    \"correct_branch\": \"b\"}\n]}\nRules: branch_a_value must be logically impossible given ancestor_value; branch_b_value\nmust be consistent with it; both must be plausible things a user might say; correct_branch\nis always \"b\". No two items may share a predicate. Output JSON only.",
+  "system": "You author test items for a memory-reconciliation benchmark. Each item is a STRICT logical incompatibility: given a stated background constraint, exactly one of two candidate values is logically INCOMPATIBLE with it and the other is compatible. Not a mere preference or soft default -- a genuine contradiction a careful reader would catch. Vary phrasing and entities; make them read like real user memory notes, not templates."
+}

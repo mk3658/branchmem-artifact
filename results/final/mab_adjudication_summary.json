@@ -1,0 +1,451 @@
+{
+  "note": "Blinded independent adjudication of all MAB-derived conflicts following annotation/external_validation_protocol.md, run with a six-member model panel. Three OpenAI models form the 'openai' tier; a local DeBERTa-v3 NLI model, a local open-weight Llama 3.1 8B and a local RoBERTa NLI model form the 'independent' tier, which shares no vendor, weights or training data with it. A tier reaches a verdict when strictly more than half its members pick the same branch. Items without a verdict carry to the next pass with a wider evidence window. This remains a SUBSTITUTE for the released three-human protocol, not a discharge of it.",
+  "n_items": 270,
+  "panel": {
+    "openai": [
+      "ann1",
+      "ann2",
+      "ann3"
+    ],
+    "independent": [
+      "ann4",
+      "ann5",
+      "ann6"
+    ],
+    "all": [
+      "ann1",
+      "ann2",
+      "ann3",
+      "ann4",
+      "ann5",
+      "ann6"
+    ]
+  },
+  "adjudicators": {
+    "ann1": {
+      "adjudicator": "gpt-5.4",
+      "vendor": "openai",
+      "n": 270,
+      "abstain_rate": 0.3852,
+      "n_committed": 166,
+      "solo_agreement_with_derived": 1.0
+    },
+    "ann2": {
+      "adjudicator": "gpt-5.4-mini",
+      "vendor": "openai",
+      "n": 270,
+      "abstain_rate": 0.3778,
+      "n_committed": 168,
+      "solo_agreement_with_derived": 0.994
+    },
+    "ann3": {
+      "adjudicator": "gpt-5.4-nano",
+      "vendor": "openai",
+      "n": 270,
+      "abstain_rate": 0.3741,
+      "n_committed": 169,
+      "solo_agreement_with_derived": 0.9645
+    },
+    "ann4": {
+      "adjudicator": "local NLI (cross-encoder/nli-deberta-v3-small)",
+      "vendor": "local-deberta",
+      "n": 270,
+      "abstain_rate": 0.7852,
+      "n_committed": 58,
+      "solo_agreement_with_derived": 0.6552
+    },
+    "ann5": {
+      "adjudicator": "llama3.1:8b",
+      "vendor": "local-llama",
+      "n": 270,
+      "abstain_rate": 0.0,
+      "n_committed": 270,
+      "solo_agreement_with_derived": 0.6296
+    },
+    "ann6": {
+      "adjudicator": "local NLI (roberta-large-mnli)",
+      "vendor": "local-roberta",
+      "n": 270,
+      "abstain_rate": 0.3481,
+      "n_committed": 176,
+      "solo_agreement_with_derived": 0.9545
+    }
+  },
+  "passes": [
+    {
+      "evidence_lines": 6,
+      "path": "results/final/mab_adjudication_panel6.csv",
+      "tiers": {
+        "openai": {
+          "n_adjudicated": 270,
+          "n_newly_resolved": 167,
+          "fleiss_kappa": 0.8433,
+          "unanimity": 0.8481,
+          "pairwise_agreement": 0.8988,
+          "n_verdict": 167,
+          "n_agree_with_derived": 167,
+          "agreement": 1.0,
+          "agreement_ci95": [
+            0.9782,
+            1.0
+          ],
+          "n_disagreements": 0,
+          "disagreeing_ids": []
+        },
+        "independent": {
+          "n_adjudicated": 270,
+          "n_newly_resolved": 132,
+          "fleiss_kappa": 0.01,
+          "unanimity": 0.1037,
+          "pairwise_agreement": 0.3457,
+          "n_verdict": 132,
+          "n_agree_with_derived": 124,
+          "agreement": 0.9394,
+          "agreement_ci95": [
+            0.8841,
+            0.9735
+          ],
+          "n_disagreements": 8,
+          "disagreeing_ids": [
+            "mab_1_Burnley_F.C._head_coach_of",
+            "mab_1_United_States_of_America_gov_head",
+            "mab_2_AP1000_produced_by",
+            "mab_2_Spain_official_language",
+            "mab_3_University_of_Southern_California_hq_city",
+            "mab_4_Lou_Reed_educated_at",
+            "mab_5_Burnley_F.C._head_coach_of",
+            "mab_6_Spain_official_language"
+          ]
+        },
+        "all": {
+          "n_adjudicated": 270,
+          "n_newly_resolved": 153,
+          "fleiss_kappa": 0.3909,
+          "unanimity": 0.0926,
+          "pairwise_agreement": 0.601,
+          "n_verdict": 153,
+          "n_agree_with_derived": 153,
+          "agreement": 1.0,
+          "agreement_ci95": [
+            0.9762,
+            1.0
+          ],
+          "n_disagreements": 0,
+          "disagreeing_ids": []
+        }
+      }
+    },
+    {
+      "evidence_lines": 30,
+      "path": "results/final/mab_adjudication_panel6_ev30.csv",
+      "tiers": {
+        "openai": {
+          "n_adjudicated": 270,
+          "n_newly_resolved": 74,
+          "fleiss_kappa": 0.8491,
+          "unanimity": 0.8704,
+          "pairwise_agreement": 0.9136,
+          "n_verdict": 74,
+          "n_agree_with_derived": 74,
+          "agreement": 1.0,
+          "agreement_ci95": [
+            0.9514,
+            1.0
+          ],
+          "n_disagreements": 0,
+          "disagreeing_ids": []
+        },
+        "independent": {
+          "n_adjudicated": 270,
+          "n_newly_resolved": 37,
+          "fleiss_kappa": -0.0406,
+          "unanimity": 0.0667,
+          "pairwise_agreement": 0.321,
+          "n_verdict": 37,
+          "n_agree_with_derived": 32,
+          "agreement": 0.8649,
+          "agreement_ci95": [
+            0.7123,
+            0.9546
+          ],
+          "n_disagreements": 5,
+          "disagreeing_ids": [
+            "mab_0_Kingdom_of_Ireland_religion",
+            "mab_1_Bob_Bradley_sport",
+            "mab_3_Rick_DiPietro_educated_at",
+            "mab_5_Bob_Bradley_sport",
+            "mab_7_Rick_DiPietro_educated_at"
+          ]
+        },
+        "all": {
+          "n_adjudicated": 270,
+          "n_newly_resolved": 70,
+          "fleiss_kappa": 0.2775,
+          "unanimity": 0.0593,
+          "pairwise_agreement": 0.5333,
+          "n_verdict": 70,
+          "n_agree_with_derived": 70,
+          "agreement": 1.0,
+          "agreement_ci95": [
+            0.9487,
+            1.0
+          ],
+          "n_disagreements": 0,
+          "disagreeing_ids": []
+        }
+      }
+    }
+  ],
+  "combined": {
+    "openai": {
+      "verdict_rate": 0.8926,
+      "n_no_verdict": 29,
+      "n_verdict": 241,
+      "n_agree_with_derived": 241,
+      "agreement": 1.0,
+      "agreement_ci95": [
+        0.9848,
+        1.0
+      ],
+      "n_disagreements": 0,
+      "disagreeing_ids": []
+    },
+    "independent": {
+      "verdict_rate": 0.6259,
+      "n_no_verdict": 101,
+      "n_verdict": 169,
+      "n_agree_with_derived": 156,
+      "agreement": 0.9231,
+      "agreement_ci95": [
+        0.8721,
+        0.9584
+      ],
+      "n_disagreements": 13,
+      "disagreeing_ids": [
+        "mab_1_Burnley_F.C._head_coach_of",
+        "mab_1_United_States_of_America_gov_head",
+        "mab_2_AP1000_produced_by",
+        "mab_2_Spain_official_language",
+        "mab_3_University_of_Southern_California_hq_city",
+        "mab_4_Lou_Reed_educated_at",
+        "mab_5_Burnley_F.C._head_coach_of",
+        "mab_6_Spain_official_language",
+        "mab_0_Kingdom_of_Ireland_religion",
+        "mab_1_Bob_Bradley_sport",
+        "mab_3_Rick_DiPietro_educated_at",
+        "mab_5_Bob_Bradley_sport",
+        "mab_7_Rick_DiPietro_educated_at"
+      ]
+    },
+    "all": {
+      "verdict_rate": 0.8259,
+      "n_no_verdict": 47,
+      "n_verdict": 223,
+      "n_agree_with_derived": 223,
+      "agreement": 1.0,
+      "agreement_ci95": [
+        0.9836,
+        1.0
+      ],
+      "n_disagreements": 0,
+      "disagreeing_ids": []
+    }
+  },
+  "cross_vendor_pairs": {
+    "evidence_lines_6": {
+      "ann1+ann4": {
+        "n_both_commit": 54,
+        "pair_agreement": 0.6667,
+        "n_pair_agrees_and_matches_derived": 36,
+        "agreement_with_derived_when_pair_agrees": 1.0
+      },
+      "ann1+ann5": {
+        "n_both_commit": 166,
+        "pair_agreement": 0.7048,
+        "n_pair_agrees_and_matches_derived": 117,
+        "agreement_with_derived_when_pair_agrees": 1.0
+      },
+      "ann1+ann6": {
+        "n_both_commit": 154,
+        "pair_agreement": 0.987,
+        "n_pair_agrees_and_matches_derived": 152,
+        "agreement_with_derived_when_pair_agrees": 1.0
+      },
+      "ann2+ann4": {
+        "n_both_commit": 54,
+        "pair_agreement": 0.6667,
+        "n_pair_agrees_and_matches_derived": 36,
+        "agreement_with_derived_when_pair_agrees": 1.0
+      },
+      "ann2+ann5": {
+        "n_both_commit": 168,
+        "pair_agreement": 0.7083,
+        "n_pair_agrees_and_matches_derived": 118,
+        "agreement_with_derived_when_pair_agrees": 0.9916
+      },
+      "ann2+ann6": {
+        "n_both_commit": 154,
+        "pair_agreement": 0.987,
+        "n_pair_agrees_and_matches_derived": 152,
+        "agreement_with_derived_when_pair_agrees": 1.0
+      },
+      "ann3+ann4": {
+        "n_both_commit": 51,
+        "pair_agreement": 0.6863,
+        "n_pair_agrees_and_matches_derived": 33,
+        "agreement_with_derived_when_pair_agrees": 0.9429
+      },
+      "ann3+ann5": {
+        "n_both_commit": 169,
+        "pair_agreement": 0.6805,
+        "n_pair_agrees_and_matches_derived": 114,
+        "agreement_with_derived_when_pair_agrees": 0.9913
+      },
+      "ann3+ann6": {
+        "n_both_commit": 146,
+        "pair_agreement": 0.9521,
+        "n_pair_agrees_and_matches_derived": 139,
+        "agreement_with_derived_when_pair_agrees": 1.0
+      }
+    },
+    "evidence_lines_30": {
+      "ann1+ann4": {
+        "n_both_commit": 42,
+        "pair_agreement": 0.619,
+        "n_pair_agrees_and_matches_derived": 26,
+        "agreement_with_derived_when_pair_agrees": 1.0
+      },
+      "ann1+ann5": {
+        "n_both_commit": 238,
+        "pair_agreement": 0.6597,
+        "n_pair_agrees_and_matches_derived": 157,
+        "agreement_with_derived_when_pair_agrees": 1.0
+      },
+      "ann1+ann6": {
+        "n_both_commit": 162,
+        "pair_agreement": 0.9877,
+        "n_pair_agrees_and_matches_derived": 160,
+        "agreement_with_derived_when_pair_agrees": 1.0
+      },
+      "ann2+ann4": {
+        "n_both_commit": 42,
+        "pair_agreement": 0.619,
+        "n_pair_agrees_and_matches_derived": 26,
+        "agreement_with_derived_when_pair_agrees": 1.0
+      },
+      "ann2+ann5": {
+        "n_both_commit": 243,
+        "pair_agreement": 0.6461,
+        "n_pair_agrees_and_matches_derived": 157,
+        "agreement_with_derived_when_pair_agrees": 1.0
+      },
+      "ann2+ann6": {
+        "n_both_commit": 162,
+        "pair_agreement": 0.9877,
+        "n_pair_agrees_and_matches_derived": 160,
+        "agreement_with_derived_when_pair_agrees": 1.0
+      },
+      "ann3+ann4": {
+        "n_both_commit": 35,
+        "pair_agreement": 0.6857,
+        "n_pair_agrees_and_matches_derived": 24,
+        "agreement_with_derived_when_pair_agrees": 1.0
+      },
+      "ann3+ann5": {
+        "n_both_commit": 231,
+        "pair_agreement": 0.658,
+        "n_pair_agrees_and_matches_derived": 148,
+        "agreement_with_derived_when_pair_agrees": 0.9737
+      },
+      "ann3+ann6": {
+        "n_both_commit": 147,
+        "pair_agreement": 0.9252,
+        "n_pair_agrees_and_matches_derived": 136,
+        "agreement_with_derived_when_pair_agrees": 1.0
+      }
+    }
+  },
+  "independent_tier_disputed_items": {
+    "n_disputed": 13,
+    "ids": [
+      "mab_1_Burnley_F.C._head_coach_of",
+      "mab_1_United_States_of_America_gov_head",
+      "mab_2_AP1000_produced_by",
+      "mab_2_Spain_official_language",
+      "mab_3_University_of_Southern_California_hq_city",
+      "mab_4_Lou_Reed_educated_at",
+      "mab_5_Burnley_F.C._head_coach_of",
+      "mab_6_Spain_official_language",
+      "mab_0_Kingdom_of_Ireland_religion",
+      "mab_1_Bob_Bradley_sport",
+      "mab_3_Rick_DiPietro_educated_at",
+      "mab_5_Bob_Bradley_sport",
+      "mab_7_Rick_DiPietro_educated_at"
+    ],
+    "by_member": {
+      "evidence_lines_6": {
+        "ann1": {
+          "n_answered": 7,
+          "n_matches_derived": 7
+        },
+        "ann2": {
+          "n_answered": 7,
+          "n_matches_derived": 7
+        },
+        "ann3": {
+          "n_answered": 6,
+          "n_matches_derived": 5
+        },
+        "ann4": {
+          "n_answered": 6,
+          "n_matches_derived": 0
+        },
+        "ann5": {
+          "n_answered": 13,
+          "n_matches_derived": 2
+        },
+        "ann6": {
+          "n_answered": 11,
+          "n_matches_derived": 7
+        }
+      },
+      "evidence_lines_30": {
+        "ann1": {
+          "n_answered": 12,
+          "n_matches_derived": 12
+        },
+        "ann2": {
+          "n_answered": 12,
+          "n_matches_derived": 12
+        },
+        "ann3": {
+          "n_answered": 11,
+          "n_matches_derived": 10
+        },
+        "ann4": {
+          "n_answered": 6,
+          "n_matches_derived": 0
+        },
+        "ann5": {
+          "n_answered": 13,
+          "n_matches_derived": 4
+        },
+        "ann6": {
+          "n_answered": 13,
+          "n_matches_derived": 13
+        }
+      }
+    }
+  },
+  "cross_tier": {
+    "n_both_reach_verdict": 165,
+    "n_tiers_agree": 153,
+    "tier_agreement": 0.9273,
+    "tier_agreement_ci95": [
+      0.8764,
+      0.9619
+    ],
+    "n_only_openai": 76,
+    "n_only_independent": 4
+  }
+}

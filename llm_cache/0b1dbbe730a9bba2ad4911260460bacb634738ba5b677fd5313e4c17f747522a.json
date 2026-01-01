@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"preferred_erg_machine\",\"value\":\"I now use erg number three for warmups\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"boat_storage_access\",\"value\":\"members may not enter the launch bay\",\"source\":\"observation\",\"confidence\":1},{\"predicate\":\"oar_storage_location\",\"value\":\"oars are kept by the side rack\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"sunrise_dock_preference\",\"value\":\"likes the dock sounds at sunrise before the first outing\",\"source\":\"user\",\"confidence\":0.98}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 324,
+  "output_tokens": 118,
+  "raw": {
+    "id": "chatcmpl-EkSd35Tn00Dq9hg7daQfMa8HkgbiY",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"preferred_erg_machine\",\"value\":\"I now use erg number three for warmups\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"boat_storage_access\",\"value\":\"members may not enter the launch bay\",\"source\":\"observation\",\"confidence\":1},{\"predicate\":\"oar_storage_location\",\"value\":\"oars are kept by the side rack\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"sunrise_dock_preference\",\"value\":\"likes the dock sounds at sunrise before the first outing\",\"source\":\"user\",\"confidence\":0.98}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741845,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 118,
+      "prompt_tokens": 324,
+      "total_tokens": 442,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- boat_storage_access: members may not enter the launch bay  (source=observation, confidence=1.00)\n- preferred_erg_machine: I usually use erg number six  (source=observation, confidence=1.00)\n- boathouse_arrival_route: I come through the riverside gate  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I switched over and now I use erg number three for warmups.\nUser: I leave my oars by the side rack since the launch bay is off limits.\nUser: I like how the dock sounds at sunrise before the first outing.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

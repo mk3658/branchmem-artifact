@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"right\",\n  \"confidence_1_5\": 4,\n  \"evidence_span\": \"14226\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 679,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-206",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"right\",\n  \"confidence_1_5\": 4,\n  \"evidence_span\": \"14226\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794721000,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 679,
+      "total_tokens": 710,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: Warren Ellis\nRelation: speaks_language\nPreviously recorded value (may be stale, may be empty): English\n\nCandidate LEFT:  Italian\nCandidate RIGHT: Chinese\n\nEvidence lines (numbered, in original order):\n8974. Diego Vel\u00e1zquez speaks the language of Chinese.\n9199. Societ\u00e0 Italiana Ernesto Breda was founded by Louis I, Duke of Orl\u00e9ans.\n9791. Ars\u00e8ne Lupin was created by Warren Ellis.\n9945. Mario Monti speaks the language of Italian.\n9999. Laurence Olivier speaks the language of Italian.\n10603. Ian Fleming speaks the language of Italian.\n10903. Leonardo da Vinci speaks the language of Italian.\n11315. Chinese Football Association is associated with the sport of association football.\n11433. Michelangelo speaks the language of Italian.\n12189. The company that produced Lotus Esprit is Societ\u00e0 Italiana Ernesto Breda.\n12675. The original language of EastEnders is Italian.\n12720. 2009 Chinese Super League is associated with the sport of association football.\n12888. The Lawrence Welk Show was written in the language of Italian.\n13272. David Cross speaks the language of Italian.\n14226. Warren Ellis speaks the language of Chinese.\n14370. Tweedledum and Tweedledee was created by Warren Ellis.\n14950. The company that produced Chevrolet Equinox is Italian Space Agency.\n14985. Raymond Chandler speaks the language of Italian.\n15142. The company that produced B-50 Superfortress is Societ\u00e0 Italiana Ernesto Breda.\n15544. Angelino Alfano speaks the language of Italian.\n15856. Dream of the Red Chamber was written in the language of Chinese.\n15902. Baywatch was written in the language of Italian.\n16501. Cavalleria rusticana was written in the language of Italian.\n17256. The official language of Newcastle upon Tyne is Italian.\n17512. Bill Haslam speaks the language of Italian.\n17647. Guan Zhong speaks the language of Chinese.\n17655. Ray Bradbury speaks the language of Italian.\n17692. Tu-95 was developed by Societ\u00e0 Italiana Ernesto Breda.\n17839. Vytautas Landsbergis speaks the language of Italian.\n18146. Chinese Jia-A League is associated with the sport of basketball.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

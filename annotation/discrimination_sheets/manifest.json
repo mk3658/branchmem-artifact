@@ -1,0 +1,32 @@
+{
+  "note": "The 100-item stratified sample drawn for human adjudication of the discrimination bank. This script generates the BLANK sheets and the held-back key; the key is withheld from annotators and released only so the sample is auditable. Q3 is the decisive question: if annotators judge that the user alone could lift most of these constraints, the paper's labelling convention is wrong. THE STUDY HAS SINCE BEEN RUN -- the filled sheets are in this directory and the scored outcome is in results/final/discrimination_human_adjudication.json, which upheld the convention (0 of 25 constraints judged the user's alone to lift). A SECOND WAVE has since adjudicated the remaining 220 items; it lives in annotation/discrimination_sheets_wave2/ and the two waves together cover the whole bank, so this sample is not all the human data there is. Re-running this generator refuses to overwrite a filled sheet unless --force is passed.",
+  "bank_sha256": "a52914ccbd53ae0cfe74d78199a49c5251880a7336509566d194938732aa6a93",
+  "seed": 9091,
+  "n_items": 100,
+  "items_per_type": {
+    "immutable_constraint": 25,
+    "independent_observation": 25,
+    "ambiguous": 25,
+    "legitimate_override": 25
+  },
+  "n_distinct_families": 61,
+  "provenance_shown": {
+    "strong": [
+      "user",
+      0.95
+    ],
+    "weak": [
+      "inference",
+      0.55
+    ],
+    "note": "update side always strong, as in the primary arm"
+  },
+  "files": [
+    "INSTRUCTIONS_FOR_ANNOTATORS.md",
+    "discrimination_annotator1.csv",
+    "discrimination_annotator2.csv",
+    "discrimination_annotator3.csv",
+    "discrimination_key_HELD_BACK.csv",
+    "manifest.json"
+  ]
+}

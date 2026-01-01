@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"1203\"}",
+  "model": "gpt-5.4-nano-2026-03-17",
+  "input_tokens": 529,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkG1dOxqYKNLldaL09kqKdAeolu1y",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"1203\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794693397,
+    "model": "gpt-5.4-nano-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 529,
+      "total_tokens": 552,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Frank Zappa\nRelation: died_in_city\nPreviously recorded value (may be stale, may be empty): Los Angeles\n\nCandidate LEFT:  Berlin\nCandidate RIGHT: Cornish\n\nEvidence lines (numbered, in original order):\n321. Frank Zappa died in the city of Los Angeles.\n331. J. D. Salinger died in the city of Cornish.\n475. The capital of Michigan Territory is Berlin.\n808. Joseph Goebbels worked in the city of Berlin.\n1203. Frank Zappa died in the city of Berlin.\n1378. The capital of Germany is Berlin.\n1457. Humboldt University of Berlin was founded by Wilhelm von Humboldt.\n1676. The capital of German Empire is Berlin.\n1774. Humboldt University of Berlin was founded by Howard Hughes.\n2052. The univeristy where Gary Andersen was educated is Humboldt University of Berlin.\n2566. Zygmunt Berling is a citizen of Poland.\n3011. Zygmunt Berling is a citizen of South Africa.\n3160. Hans Delbr\u00fcck is employed by Humboldt University of Berlin.\n3238. The capital of German Democratic Republic is East Berlin.\n3648. The name of the current head of the Berlin government is Michael M\u00fcller.\n4199. Back to Black was performed by Frank Zappa.\n4366. The official language of Berlin is German.\n4400. The headquarters of University of Alabama is located in the city of Berlin.\n4434. Peter Forssk\u00e5l was born in the city of Berlin.\n4510. The univeristy where Dr. Seuss was educated is Humboldt University of Berlin.\n4565. The official language of Berlin is Finnish.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

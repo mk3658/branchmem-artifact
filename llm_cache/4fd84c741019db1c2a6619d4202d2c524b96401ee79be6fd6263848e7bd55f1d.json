@@ -1,0 +1,48 @@
+{
+  "text": "{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"preferred_flyer_size\",\n      \"resolution\": \"kept_from_b\",\n      \"value\": \"The user now wants event flyers printed at A6 size.\",\n      \"justification\": \"Branch B is directly sourced from the user with high confidence, which overrides Branch A's lower-confidence inference despite the ancestor indicating A5.\"\n    }\n  ]\n}",
+  "model": "gpt-5.4-nano-2026-03-17",
+  "input_tokens": 500,
+  "output_tokens": 95,
+  "raw": {
+    "id": "chatcmpl-EkcSnOIHcuEDfMLceBAFHF53ydqkk",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"preferred_flyer_size\",\n      \"resolution\": \"kept_from_b\",\n      \"value\": \"The user now wants event flyers printed at A6 size.\",\n      \"justification\": \"Branch B is directly sourced from the user with high confidence, which overrides Branch A's lower-confidence inference despite the ancestor indicating A5.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794779649,
+    "model": "gpt-5.4-nano-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 95,
+      "prompt_tokens": 500,
+      "total_tokens": 595,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|preferred_flyer_size\": \"The user usually prints event flyers at A5 size.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_flyer_size\": {\n    \"value\": \"The user still wants event flyers printed at A5 size.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_flyer_size\": {\n    \"value\": \"The user now wants event flyers printed at A6 size.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates. Before you decide, consider what kind of entry the ancestor value is and what that implies for the conflict in front of you. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

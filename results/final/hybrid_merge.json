@@ -1,0 +1,138 @@
+{
+  "note": "Experiment #1 (post-hoc, exploratory; not in ANALYSIS_PLAN.md). HybridMerge = ConfidenceRuleMerge with escalation-on-abstention to frontier ThreeWayLLMMerge (gpt-5.4). Region A = RQ1 confirmatory scenarios (seed 2026, n=60); Region B = semantic_resolvable (seed 3001, n=150). Reuses the content-hash cache; zero new API when the frontier calls are already cached.",
+  "model": "gpt-5.4",
+  "region_a_rq1_confirmatory": {
+    "n_scenarios": 60,
+    "by_strategy": {
+      "confidence_rule": {
+        "overall_accuracy": 0.9619047619047619,
+        "accuracy_by_category": {
+          "ambiguous": 1.0,
+          "orthogonal": 1.0,
+          "resolvable": 0.8666666666666667
+        },
+        "n_by_category": {
+          "resolvable": 120,
+          "ambiguous": 60,
+          "orthogonal": 240
+        },
+        "commit_rate": 0.6666666666666666,
+        "conditional_on_commit_accuracy": 0.8666666666666667,
+        "wrong_commit_rate": 0.08888888888888889,
+        "n_committed": 120,
+        "n_wrong_committed": 16
+      },
+      "three_way_llm": {
+        "overall_accuracy": 0.9619047619047619,
+        "accuracy_by_category": {
+          "ambiguous": 1.0,
+          "orthogonal": 1.0,
+          "resolvable": 0.8666666666666667
+        },
+        "n_by_category": {
+          "resolvable": 120,
+          "ambiguous": 60,
+          "orthogonal": 240
+        },
+        "commit_rate": 0.6666666666666666,
+        "conditional_on_commit_accuracy": 0.8666666666666667,
+        "wrong_commit_rate": 0.08888888888888889,
+        "n_committed": 120,
+        "n_wrong_committed": 16
+      },
+      "hybrid": {
+        "overall_accuracy": 0.9619047619047619,
+        "accuracy_by_category": {
+          "ambiguous": 1.0,
+          "orthogonal": 1.0,
+          "resolvable": 0.8666666666666667
+        },
+        "n_by_category": {
+          "resolvable": 120,
+          "ambiguous": 60,
+          "orthogonal": 240
+        },
+        "commit_rate": 0.6666666666666666,
+        "conditional_on_commit_accuracy": 0.8666666666666667,
+        "wrong_commit_rate": 0.08888888888888889,
+        "n_committed": 120,
+        "n_wrong_committed": 16
+      }
+    },
+    "dominance": {
+      "resolvable": {
+        "rule": 0.8666666666666667,
+        "llm": 0.8666666666666667,
+        "hybrid": 0.8666666666666667,
+        "hybrid_ge_best_parent": true,
+        "hybrid_strictly_beats_a_parent": false
+      },
+      "ambiguous": {
+        "rule": 1.0,
+        "llm": 1.0,
+        "hybrid": 1.0,
+        "hybrid_ge_best_parent": true,
+        "hybrid_strictly_beats_a_parent": false
+      }
+    }
+  },
+  "region_b_semantic_resolvable": {
+    "n_scenarios": 150,
+    "categories": [
+      "resolvable"
+    ],
+    "by_strategy": {
+      "confidence_rule": {
+        "overall_accuracy": 0.0,
+        "accuracy_by_category": {
+          "resolvable": 0.0
+        },
+        "n_by_category": {
+          "resolvable": 150
+        },
+        "commit_rate": 0.0,
+        "conditional_on_commit_accuracy": null,
+        "wrong_commit_rate": 0.0,
+        "n_committed": 0,
+        "n_wrong_committed": 0
+      },
+      "three_way_llm": {
+        "overall_accuracy": 0.4666666666666667,
+        "accuracy_by_category": {
+          "resolvable": 0.4666666666666667
+        },
+        "n_by_category": {
+          "resolvable": 150
+        },
+        "commit_rate": 0.4666666666666667,
+        "conditional_on_commit_accuracy": 1.0,
+        "wrong_commit_rate": 0.0,
+        "n_committed": 70,
+        "n_wrong_committed": 0
+      },
+      "hybrid": {
+        "overall_accuracy": 0.4666666666666667,
+        "accuracy_by_category": {
+          "resolvable": 0.4666666666666667
+        },
+        "n_by_category": {
+          "resolvable": 150
+        },
+        "commit_rate": 0.4666666666666667,
+        "conditional_on_commit_accuracy": 1.0,
+        "wrong_commit_rate": 0.0,
+        "n_committed": 70,
+        "n_wrong_committed": 0
+      }
+    },
+    "dominance": {
+      "resolvable": {
+        "rule": 0.0,
+        "llm": 0.4666666666666667,
+        "hybrid": 0.4666666666666667,
+        "hybrid_ge_best_parent": true,
+        "hybrid_strictly_beats_a_parent": true
+      }
+    }
+  }
+}

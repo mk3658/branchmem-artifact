@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"2038\"}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 383,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkMy1qpo2xIsGPpIo7evyHNxW7DtO",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"2038\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720081,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 383,
+      "total_tokens": 406,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Jim Kelly\nRelation: plays_position\nPreviously recorded value (may be stale, may be empty): quarterback\n\nCandidate LEFT:  flanker\nCandidate RIGHT: wide receiver\n\nEvidence lines (numbered, in original order):\n133. wide receiver is associated with the sport of American football.\n274. Cris Carter plays the position of wide receiver.\n586. Jim Kelly plays the position of quarterback.\n689. flanker is associated with the sport of rugby union.\n786. Hines Ward plays the position of wide receiver.\n1192. wide receiver is associated with the sport of rugby.\n1711. Irving Fryar plays the position of wide receiver.\n1887. flanker is associated with the sport of rugby.\n2009. Nate Robinson plays the position of flanker.\n2038. Jim Kelly plays the position of wide receiver.\n2153. Nick Rimando plays the position of flanker.\n2264. Rog\u00e9rio Ceni plays the position of flanker.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

@@ -1,0 +1,449 @@
+{
+  "note": "Pooled result of the PROSPECTIVE discrimination experiment (ANALYSIS_PLAN_ADDENDUM.md P1). Every shard was produced against the same frozen, hashed bank. Intervals resample template families, not items, because items authored together are not independent. The hypothesis verdicts are computed from the thresholds written in the preregistration, not chosen afterwards.",
+  "shards": {
+    "discrimination_gpt-5_4-mini.json": {
+      "bank_sha256": "a52914ccbd53ae0cfe74d78199a49c5251880a7336509566d194938732aa6a93",
+      "n_items": 320
+    },
+    "discrimination_gpt-5_4-nano.json": {
+      "bank_sha256": "a52914ccbd53ae0cfe74d78199a49c5251880a7336509566d194938732aa6a93",
+      "n_items": 320
+    },
+    "discrimination_gpt-5_4.json": {
+      "bank_sha256": "a52914ccbd53ae0cfe74d78199a49c5251880a7336509566d194938732aa6a93",
+      "n_items": 320
+    },
+    "discrimination_llama318b.json": {
+      "bank_sha256": "a52914ccbd53ae0cfe74d78199a49c5251880a7336509566d194938732aa6a93",
+      "n_items": 160
+    },
+    "discrimination_mistral7b.json": {
+      "bank_sha256": "a52914ccbd53ae0cfe74d78199a49c5251880a7336509566d194938732aa6a93",
+      "n_items": 160
+    },
+    "discrimination_qwen257b.json": {
+      "bank_sha256": "a52914ccbd53ae0cfe74d78199a49c5251880a7336509566d194938732aa6a93",
+      "n_items": 160
+    }
+  },
+  "n_decisions": 6720,
+  "primary_arm": "update_favoured",
+  "open_weight_providers": {
+    "llama3.1:8b": "Meta",
+    "qwen2.5:7b": "Alibaba",
+    "mistral:7b": "Mistral AI"
+  },
+  "author_model_is_also_a_solver": "gpt-5.4",
+  "table": {
+    "ConfidenceRule": {
+      "inverted": {
+        "n": 960,
+        "by_type": {
+          "ambiguous": 0.0,
+          "immutable_constraint": 1.0,
+          "independent_observation": 0.0,
+          "legitimate_override": 0.0
+        },
+        "discrimination_gap": -1.0,
+        "discrimination_gap_ci95_family_clustered": [
+          -1.0,
+          -1.0
+        ],
+        "balanced_accuracy_critical": 0.5,
+        "coverage": 1.0,
+        "took_update_rate": 0.0
+      },
+      "neutral": {
+        "n": 960,
+        "by_type": {
+          "ambiguous": 1.0,
+          "immutable_constraint": 0.0,
+          "independent_observation": 0.0,
+          "legitimate_override": 0.0
+        },
+        "discrimination_gap": 0.0,
+        "discrimination_gap_ci95_family_clustered": [
+          0.0,
+          0.0
+        ],
+        "balanced_accuracy_critical": 0.0,
+        "coverage": 0.0,
+        "took_update_rate": 0.0
+      },
+      "update_favoured": {
+        "n": 1440,
+        "by_type": {
+          "ambiguous": 0.0,
+          "immutable_constraint": 0.0,
+          "independent_observation": 1.0,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 1.0,
+        "discrimination_gap_ci95_family_clustered": [
+          1.0,
+          1.0
+        ],
+        "balanced_accuracy_critical": 0.5,
+        "coverage": 1.0,
+        "took_update_rate": 1.0
+      }
+    },
+    "ThreeWayLLM (gpt-5.4)": {
+      "inverted": {
+        "n": 320,
+        "by_type": {
+          "ambiguous": 0.0,
+          "immutable_constraint": 1.0,
+          "independent_observation": 0.0,
+          "legitimate_override": 0.0
+        },
+        "discrimination_gap": -1.0,
+        "discrimination_gap_ci95_family_clustered": [
+          -1.0,
+          -1.0
+        ],
+        "balanced_accuracy_critical": 0.5,
+        "coverage": 1.0,
+        "took_update_rate": 0.0
+      },
+      "neutral": {
+        "n": 320,
+        "by_type": {
+          "ambiguous": 1.0,
+          "immutable_constraint": 0.775,
+          "independent_observation": 0.6375,
+          "legitimate_override": 0.025
+        },
+        "discrimination_gap": -0.75,
+        "discrimination_gap_ci95_family_clustered": [
+          -0.85,
+          -0.65
+        ],
+        "balanced_accuracy_critical": 0.4,
+        "coverage": 0.4531,
+        "took_update_rate": 0.1656
+      },
+      "update_favoured": {
+        "n": 320,
+        "by_type": {
+          "ambiguous": 0.0,
+          "immutable_constraint": 0.0,
+          "independent_observation": 1.0,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 1.0,
+        "discrimination_gap_ci95_family_clustered": [
+          1.0,
+          1.0
+        ],
+        "balanced_accuracy_critical": 0.5,
+        "coverage": 0.9781,
+        "took_update_rate": 0.9781
+      }
+    },
+    "ThreeWayLLM (gpt-5.4-mini)": {
+      "inverted": {
+        "n": 320,
+        "by_type": {
+          "ambiguous": 0.0,
+          "immutable_constraint": 1.0,
+          "independent_observation": 0.0,
+          "legitimate_override": 0.0
+        },
+        "discrimination_gap": -1.0,
+        "discrimination_gap_ci95_family_clustered": [
+          -1.0,
+          -1.0
+        ],
+        "balanced_accuracy_critical": 0.5,
+        "coverage": 0.9969,
+        "took_update_rate": 0.0
+      },
+      "neutral": {
+        "n": 320,
+        "by_type": {
+          "ambiguous": 1.0,
+          "immutable_constraint": 0.925,
+          "independent_observation": 0.475,
+          "legitimate_override": 0.1
+        },
+        "discrimination_gap": -0.825,
+        "discrimination_gap_ci95_family_clustered": [
+          -0.9125,
+          -0.725
+        ],
+        "balanced_accuracy_critical": 0.5125,
+        "coverage": 0.5656,
+        "took_update_rate": 0.1437
+      },
+      "update_favoured": {
+        "n": 320,
+        "by_type": {
+          "ambiguous": 0.0,
+          "immutable_constraint": 0.125,
+          "independent_observation": 0.9875,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 0.875,
+        "discrimination_gap_ci95_family_clustered": [
+          0.8,
+          0.9375
+        ],
+        "balanced_accuracy_critical": 0.5625,
+        "coverage": 0.9969,
+        "took_update_rate": 0.9656
+      }
+    },
+    "ThreeWayLLM (gpt-5.4-nano)": {
+      "inverted": {
+        "n": 320,
+        "by_type": {
+          "ambiguous": 0.0375,
+          "immutable_constraint": 0.9125,
+          "independent_observation": 0.0,
+          "legitimate_override": 0.0
+        },
+        "discrimination_gap": -0.9125,
+        "discrimination_gap_ci95_family_clustered": [
+          -0.9625,
+          -0.85
+        ],
+        "balanced_accuracy_critical": 0.4562,
+        "coverage": 0.9563,
+        "took_update_rate": 0.0
+      },
+      "neutral": {
+        "n": 320,
+        "by_type": {
+          "ambiguous": 1.0,
+          "immutable_constraint": 0.4625,
+          "independent_observation": 0.05,
+          "legitimate_override": 0.0
+        },
+        "discrimination_gap": -0.4625,
+        "discrimination_gap_ci95_family_clustered": [
+          -0.575,
+          -0.3625
+        ],
+        "balanced_accuracy_critical": 0.2313,
+        "coverage": 0.325,
+        "took_update_rate": 0.0187
+      },
+      "update_favoured": {
+        "n": 320,
+        "by_type": {
+          "ambiguous": 0.025,
+          "immutable_constraint": 0.0375,
+          "independent_observation": 0.9375,
+          "legitimate_override": 0.9875
+        },
+        "discrimination_gap": 0.95,
+        "discrimination_gap_ci95_family_clustered": [
+          0.9,
+          0.9875
+        ],
+        "balanced_accuracy_critical": 0.5125,
+        "coverage": 0.9594,
+        "took_update_rate": 0.9344
+      }
+    },
+    "ThreeWayLLM (llama3.1:8b)": {
+      "update_favoured": {
+        "n": 160,
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 1.0
+        },
+        "discrimination_gap": 1.0,
+        "discrimination_gap_ci95_family_clustered": [
+          1.0,
+          1.0
+        ],
+        "balanced_accuracy_critical": 0.5,
+        "coverage": 0.9938,
+        "took_update_rate": 0.9938
+      }
+    },
+    "ThreeWayLLM (mistral:7b)": {
+      "update_favoured": {
+        "n": 160,
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 0.7125
+        },
+        "discrimination_gap": 0.7125,
+        "discrimination_gap_ci95_family_clustered": [
+          0.6125,
+          0.8125
+        ],
+        "balanced_accuracy_critical": 0.3563,
+        "coverage": 0.6438,
+        "took_update_rate": 0.5437
+      }
+    },
+    "ThreeWayLLM (qwen2.5:7b)": {
+      "update_favoured": {
+        "n": 160,
+        "by_type": {
+          "immutable_constraint": 0.0,
+          "legitimate_override": 0.975
+        },
+        "discrimination_gap": 0.975,
+        "discrimination_gap_ci95_family_clustered": [
+          0.9375,
+          1.0
+        ],
+        "balanced_accuracy_critical": 0.4875,
+        "coverage": 0.8125,
+        "took_update_rate": 0.8125
+      }
+    }
+  },
+  "hypothesis_verdicts": {
+    "H1_every_model_D_above_0.5": {
+      "per_model": {
+        "ThreeWayLLM (gpt-5.4)": {
+          "D": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "holds": true
+        },
+        "ThreeWayLLM (gpt-5.4-mini)": {
+          "D": 0.875,
+          "ci": [
+            0.8,
+            0.9375
+          ],
+          "holds": true
+        },
+        "ThreeWayLLM (gpt-5.4-nano)": {
+          "D": 0.95,
+          "ci": [
+            0.9,
+            0.9875
+          ],
+          "holds": true
+        },
+        "ThreeWayLLM (llama3.1:8b)": {
+          "D": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "holds": true
+        },
+        "ThreeWayLLM (mistral:7b)": {
+          "D": 0.7125,
+          "ci": [
+            0.6125,
+            0.8125
+          ],
+          "holds": true
+        },
+        "ThreeWayLLM (qwen2.5:7b)": {
+          "D": 0.975,
+          "ci": [
+            0.9375,
+            1.0
+          ],
+          "holds": true
+        }
+      },
+      "holds": true,
+      "exceptions": []
+    },
+    "H2_holds_for_an_open_weight_model_from_another_provider": {
+      "per_model": {
+        "ThreeWayLLM (llama3.1:8b)": {
+          "D": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "holds": true
+        },
+        "ThreeWayLLM (mistral:7b)": {
+          "D": 0.7125,
+          "ci": [
+            0.6125,
+            0.8125
+          ],
+          "holds": true
+        },
+        "ThreeWayLLM (qwen2.5:7b)": {
+          "D": 0.975,
+          "ci": [
+            0.9375,
+            1.0
+          ],
+          "holds": true
+        }
+      },
+      "holds": true,
+      "providers_tested": [
+        "Alibaba",
+        "Meta",
+        "Mistral AI"
+      ]
+    },
+    "H3_single_rule_balanced_accuracy_below_0.75": {
+      "per_policy": {
+        "ConfidenceRule": {
+          "balanced": 0.5,
+          "below_0.75": true
+        },
+        "ThreeWayLLM (gpt-5.4)": {
+          "balanced": 0.5,
+          "below_0.75": true
+        },
+        "ThreeWayLLM (gpt-5.4-mini)": {
+          "balanced": 0.5625,
+          "below_0.75": true
+        },
+        "ThreeWayLLM (gpt-5.4-nano)": {
+          "balanced": 0.5125,
+          "below_0.75": true
+        },
+        "ThreeWayLLM (llama3.1:8b)": {
+          "balanced": 0.5,
+          "below_0.75": true
+        },
+        "ThreeWayLLM (mistral:7b)": {
+          "balanced": 0.3563,
+          "below_0.75": true
+        },
+        "ThreeWayLLM (qwen2.5:7b)": {
+          "balanced": 0.4875,
+          "below_0.75": true
+        }
+      },
+      "holds": true,
+      "exceptions": []
+    },
+    "H4_two_stage_router_beats_single_rule_policies": {
+      "per_classifier": {
+        "gpt-5.4": {
+          "router_balanced": 0.8875,
+          "stage1_route_accuracy": 0.9594,
+          "best_single_rule_balanced": 0.5625,
+          "beats_every_single_rule": true
+        },
+        "gpt-5.4-nano": {
+          "router_balanced": 0.8625,
+          "stage1_route_accuracy": 0.8906,
+          "best_single_rule_balanced": 0.5625,
+          "beats_every_single_rule": true
+        },
+        "llama3.1:8b": {
+          "router_balanced": 0.725,
+          "stage1_route_accuracy": 0.7688,
+          "best_single_rule_balanced": 0.5625,
+          "beats_every_single_rule": true
+        }
+      },
+      "holds": true
+    }
+  }
+}

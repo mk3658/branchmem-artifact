@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"preferred_correction_style\",\"value\":\"may prefer corrections after every sentence, but not settled on it yet\",\"source\":\"user\",\"confidence\":0.93},{\"predicate\":\"exchange_language_limit\",\"value\":\"meetings next week should be conducted in English\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"session_table_name_tags\",\"value\":\"enjoys the little name tags placed on tables before each session\",\"source\":\"user\",\"confidence\":0.96}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 326,
+  "output_tokens": 102,
+  "raw": {
+    "id": "chatcmpl-EkSc1V6Pd3hASyqSWgc7fRRWD9uTm",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"preferred_correction_style\",\"value\":\"may prefer corrections after every sentence, but not settled on it yet\",\"source\":\"user\",\"confidence\":0.93},{\"predicate\":\"exchange_language_limit\",\"value\":\"meetings next week should be conducted in English\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"session_table_name_tags\",\"value\":\"enjoys the little name tags placed on tables before each session\",\"source\":\"user\",\"confidence\":0.96}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741781,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 102,
+      "prompt_tokens": 326,
+      "total_tokens": 428,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- exchange_language_limit: sessions must stay entirely in Spanish  (source=observation, confidence=1.00)\n- preferred_correction_style: I prefer corrections after each paragraph  (source=observation, confidence=1.00)\n- usual_meeting_place: we usually meet in the library atrium  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might prefer corrections after every sentence, but I have not settled on that yet.\nUser: I want our meetings conducted in English next week so I can explain things faster.\nUser: I enjoy the little name tags they put on the tables before each session.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

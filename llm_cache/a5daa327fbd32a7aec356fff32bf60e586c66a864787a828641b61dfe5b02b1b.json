@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"mailing_address\",\"resolution\":\"kept_from_b\",\"value\":\"The user's mailing address is 92 Willow Street, Apt 7.\",\"justification\":\"Branch B provides a direct user-sourced address with much higher confidence, while Branch A merely retains the ancestor value as a low-confidence inference.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 409,
+  "output_tokens": 74,
+  "raw": {
+    "id": "chatcmpl-EkieA3j12TJt13Kt0RIVPpSEFUiq9",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"mailing_address\",\"resolution\":\"kept_from_b\",\"value\":\"The user's mailing address is 92 Willow Street, Apt 7.\",\"justification\":\"Branch B provides a direct user-sourced address with much higher confidence, while Branch A merely retains the ancestor value as a low-confidence inference.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794803418,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 74,
+      "prompt_tokens": 409,
+      "total_tokens": 483,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|mailing_address\": \"The user's mailing address is 18 Harbor Lane, Unit 4.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|mailing_address\": {\n    \"value\": \"The user's mailing address is 18 Harbor Lane, Unit 4.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|mailing_address\": {\n    \"value\": \"The user's mailing address is 92 Willow Street, Apt 7.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current record. Resolve each conflict. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If nothing you are given is a real basis to prefer one branch over the other (e.g. both are equally plausible), explicitly flag it as unresolvable rather than guessing."
+}

@@ -1,0 +1,40 @@
+{
+  "text": "Ordinary.",
+  "model": "llama3.1:8b",
+  "input_tokens": 156,
+  "output_tokens": 4,
+  "raw": {
+    "id": "chatcmpl-451",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "Ordinary.",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741077,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 4,
+      "prompt_tokens": 156,
+      "total_tokens": 160,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "An assistant has this entry stored about the user:\n\n  Last month, the earliest grocery slot was Thursday afternoon.\n\nA later conversation produced a statement that conflicts with it.\n\nQuestion: is the stored entry a STANDING requirement, rule or limit, which a later preference\ncannot simply override, or an ORDINARY recorded value, which a later correction can legitimately\nreplace?\n\nAnswer with exactly one word: \"standing\" or \"ordinary\". If the entry could plausibly be either,\nanswer \"unclear\".\n",
+  "system": "You classify what kind of thing a stored memory entry is. You do not decide which of two competing values is correct, and you are not told which one a system prefers. Answer with one word."
+}

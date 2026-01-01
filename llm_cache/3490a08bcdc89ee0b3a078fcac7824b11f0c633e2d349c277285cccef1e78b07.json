@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 4,\n  \"evidence_span\": \"2261\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 358,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-913",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 4,\n  \"evidence_span\": \"2261\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794719581,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 358,
+      "total_tokens": 389,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: Rodney Peete\nRelation: educated_at\nPreviously recorded value (may be stale, may be empty): University of Southern California\n\nCandidate LEFT:  Humboldt University of Berlin\nCandidate RIGHT: Paris Dauphine University\n\nEvidence lines (numbered, in original order):\n1457. Humboldt University of Berlin was founded by Wilhelm von Humboldt.\n1774. Humboldt University of Berlin was founded by Howard Hughes.\n2052. The univeristy where Gary Andersen was educated is Humboldt University of Berlin.\n2261. The univeristy where Rodney Peete was educated is Paris Dauphine University.\n3160. Hans Delbr\u00fcck is employed by Humboldt University of Berlin.\n4510. The univeristy where Dr. Seuss was educated is Humboldt University of Berlin.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

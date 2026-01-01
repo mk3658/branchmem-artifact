@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"4389\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 727,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-592",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"4389\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720912,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 727,
+      "total_tokens": 758,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: Cardinal Stritch University\nRelation: religion\nPreviously recorded value (may be stale, may be empty): Catholic Church\n\nCandidate LEFT:  Church of Greece\nCandidate RIGHT: Methodism\n\nEvidence lines (numbered, in original order):\n2557. Morris Iemma is affiliated with the religion of Methodism.\n2732. Hortense de Beauharnais is affiliated with the religion of Methodism.\n2738. Saint Peter's University is affiliated with the religion of Methodism.\n2748. Niagara University is affiliated with the religion of Methodism.\n2994. Alfredo Ildefonso Schuster is affiliated with the religion of Methodism.\n3001. Peter Canisius is affiliated with the religion of Methodism.\n3010. Leo I the Thracian is affiliated with the religion of Methodism.\n3182. Duquesne University is affiliated with the religion of Methodism.\n3234. Lorenzo Valla is affiliated with the religion of Methodism.\n3244. John Walsh is affiliated with the religion of Methodism.\n3334. Barry University is affiliated with the religion of Methodism.\n3338. Maria Christina of Austria is affiliated with the religion of Methodism.\n3473. Maria Amalia of Naples and Sicily is affiliated with the religion of Church of Greece.\n3525. Adrian IV is affiliated with the religion of Methodism.\n3772. Joaquim Chissano is affiliated with the religion of Methodism.\n3854. Aubrey Beardsley is affiliated with the religion of Methodism.\n3877. Joseph I is affiliated with the religion of Methodism.\n3971. Juan Carlos Varela is affiliated with the religion of Methodism.\n4013. Isabella of France is affiliated with the religion of Methodism.\n4014. Dashiell Hammett is affiliated with the religion of Methodism.\n4144. Elisabeth of Valois is affiliated with the religion of Methodism.\n4192. Angelo Sodano is affiliated with the religion of Methodism.\n4319. Alessandro Albani is affiliated with the religion of Methodism.\n4365. Duchy of Cleves is affiliated with the religion of Methodism.\n4389. The official language of Church of Greece is Greek.\n4422. Henri Breuil is affiliated with the religion of Methodism.\n4452. Cyprian is affiliated with the religion of Methodism.\n4476. Albert Fran\u00e7ois Lebrun is affiliated with the religion of Methodism.\n4507. Benedictines is affiliated with the religion of Methodism.\n4548. Mary MacKillop is affiliated with the religion of Methodism.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

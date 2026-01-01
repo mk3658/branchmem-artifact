@@ -1,0 +1,48 @@
+{
+  "text": "BINDING",
+  "model": "gpt-5.4-nano-2026-03-17",
+  "input_tokens": 126,
+  "output_tokens": 6,
+  "raw": {
+    "id": "chatcmpl-EkeYzSQ94zl1hiYj2Dq86tP68hez6",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "BINDING",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794787721,
+    "model": "gpt-5.4-nano-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 126,
+      "total_tokens": 132,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Stored entry: The freeholder requires weekly hive inspections for the swarming season ending in July.\nProposed update: The swarming season ended in July and inspections returned to monthly.\n\nOne word:",
+  "system": "You decide whether a stored memory entry still binds. You are given the stored entry and a proposed update to the same key. Decide whether the stored entry carries standing that the proposed update cannot override -- so the update must be rejected -- or whether the update may legitimately replace it. Consider only the content you are shown. Answer with exactly one word: BINDING or SUPERSEDABLE."
+}

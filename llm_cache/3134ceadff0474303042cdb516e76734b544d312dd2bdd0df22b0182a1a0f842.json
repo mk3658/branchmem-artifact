@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"section_seating_preference\",\"value\":\"may prefer the inside stand this season, but has not decided yet\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"instrument_storage_rule\",\"value\":\"wants to leave violin on rehearsal chair overnight after tonight's concert\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"music_preference\",\"value\":\"really enjoyed the brass chorale in the second piece tonight\",\"source\":\"user\",\"confidence\":0.93}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 322,
+  "output_tokens": 104,
+  "raw": {
+    "id": "chatcmpl-EkSZeiS3N3KQ8oGA4l4DHD61hp9iT",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"section_seating_preference\",\"value\":\"may prefer the inside stand this season, but has not decided yet\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"instrument_storage_rule\",\"value\":\"wants to leave violin on rehearsal chair overnight after tonight's concert\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"music_preference\",\"value\":\"really enjoyed the brass chorale in the second piece tonight\",\"source\":\"user\",\"confidence\":0.93}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741634,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 104,
+      "prompt_tokens": 322,
+      "total_tokens": 426,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- instrument_storage_rule: personal instruments must stay in assigned lockers  (source=observation, confidence=1.00)\n- section_seating_preference: I prefer sitting on the outside stand  (source=observation, confidence=1.00)\n- arrival_method: I usually bike to rehearsal  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might prefer the inside stand this season, but I have not settled it yet.\nUser: I want to leave my violin on my rehearsal chair overnight after tonight's concert.\nUser: I really enjoyed the brass chorale in the second piece tonight.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

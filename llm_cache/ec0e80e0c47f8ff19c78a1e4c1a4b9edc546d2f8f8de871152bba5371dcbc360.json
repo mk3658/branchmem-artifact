@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"12812\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 337,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-584",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"12812\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794719654,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 337,
+      "total_tokens": 368,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: John Galt\nRelation: created_by\nPreviously recorded value (may be stale, may be empty): Ayn Rand\n\nCandidate LEFT:  Nigel Kneale\nCandidate RIGHT: Patrick O'Brian\n\nEvidence lines (numbered, in original order):\n9563. Nigel Kneale is a citizen of United Kingdom.\n10357. Patrick O'Brian is a citizen of Namibia.\n12812. Quatermass II was created by Nigel Kneale.\n16330. Nyarlathotep was created by Nigel Kneale.\n16674. Nigel Kneale is a citizen of Eastern Han Dynasty.\n17301. The author of Clash of Civilizations is Patrick O'Brian.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

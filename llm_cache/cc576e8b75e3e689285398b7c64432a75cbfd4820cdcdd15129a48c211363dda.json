@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this reconciliation problem. So, there's a common ancestor value for the key \"user|overdue_notice_delivery_method\" which is \"Overdue notices go by postal mail.\" Then there are two branches, A and B, each with their own updates.\n\nBranch A has a user-sourced update saying the method should be email, with high confidence (0.95). Branch B has an inference-based update stating it's still postal mail, with lower confidence (0.55). The common ancestor's value is postal mail.\n\nFirst, I need to determine which update to keep. The user-sourced update from Branch A is more trustworthy because users are explicit and their input is usually reliable. The confidence here is 0.95, which is pretty high. Branch B's update is an inference, which is less reliable, and their confidence is lower. \n\nThe common ancestor's value was postal mail, but Branch A's update is a user correction to email. Since the user explicitly changed it, that's a strong signal. Branch B's inference might be a stale duplicate if they were disconnected, so their lower confidence makes sense. \n\nSo, the resolution should keep Branch A's value because it's user-sourced and has higher confidence. The inference from B is less reliable. There's no conflict in sources here; user is more trustworthy than inference. Therefore, the reconciled value is Branch A's email method.\n</think>\n\n{\"resolutions\": [{\"entity\": \"user\", \"predicate\": \"overdue_notice_delivery_method\", \"resolution\": \"kept_from_a\", \"value\": \"Overdue notices should go by email instead.\", \"justification\": \"User-sourced update with high confidence (0.95) overrides lower-confidence inference from disconnected branch B, which likely reflects stale data.\"}]}",
+  "model": "qwen3:8b",
+  "input_tokens": 513,
+  "output_tokens": 374,
+  "raw": {
+    "id": "chatcmpl-542",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this reconciliation problem. So, there's a common ancestor value for the key \"user|overdue_notice_delivery_method\" which is \"Overdue notices go by postal mail.\" Then there are two branches, A and B, each with their own updates.\n\nBranch A has a user-sourced update saying the method should be email, with high confidence (0.95). Branch B has an inference-based update stating it's still postal mail, with lower confidence (0.55). The common ancestor's value is postal mail.\n\nFirst, I need to determine which update to keep. The user-sourced update from Branch A is more trustworthy because users are explicit and their input is usually reliable. The confidence here is 0.95, which is pretty high. Branch B's update is an inference, which is less reliable, and their confidence is lower. \n\nThe common ancestor's value was postal mail, but Branch A's update is a user correction to email. Since the user explicitly changed it, that's a strong signal. Branch B's inference might be a stale duplicate if they were disconnected, so their lower confidence makes sense. \n\nSo, the resolution should keep Branch A's value because it's user-sourced and has higher confidence. The inference from B is less reliable. There's no conflict in sources here; user is more trustworthy than inference. Therefore, the reconciled value is Branch A's email method.\n</think>\n\n{\"resolutions\": [{\"entity\": \"user\", \"predicate\": \"overdue_notice_delivery_method\", \"resolution\": \"kept_from_a\", \"value\": \"Overdue notices should go by email instead.\", \"justification\": \"User-sourced update with high confidence (0.95) overrides lower-confidence inference from disconnected branch B, which likely reflects stale data.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794791848,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 374,
+      "prompt_tokens": 513,
+      "total_tokens": 887,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|overdue_notice_delivery_method\": \"Overdue notices go by postal mail.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|overdue_notice_delivery_method\": {\n    \"value\": \"Overdue notices should go by email instead.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|overdue_notice_delivery_method\": {\n    \"value\": \"Overdue notices still go by postal mail.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

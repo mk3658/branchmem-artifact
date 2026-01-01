@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"delivery_dropoff_location\",\"reasoning\":\"The ancestor value states that building management requires all parcels to be left at the front desk, so the prior committed fact was a front-desk-only delivery instruction. Branch A would change that fact to a different instruction: leave every package directly outside the apartment door. Branch B would keep the same substantive instruction as the ancestor, just rephrased as front-desk-only delivery. These two branch values are not compatible because one directs delivery to the apartment door and the other directs delivery to the front desk. To choose between them, Branch A is a user-sourced statement with high confidence, which is strong evidence of an explicit correction or updated preference/instruction. Branch B is only an inference with low confidence and largely repeats the ancestor, so it is weaker evidence and may simply preserve stale information rather than reflect a real correction. Therefore the stronger reconciliation is to keep Branch A's value.\",\"resolution\":\"kept_from_a\",\"value\":\"Leave every package directly outside the apartment door.\",\"justification\":\"Branch A is an explicit high-confidence user update that overrides the ancestor, while Branch B is only a low-confidence inference that restates the old front-desk instruction.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 613,
+  "output_tokens": 254,
+  "raw": {
+    "id": "chatcmpl-EkcNRSM7grxzBPKtQBRcX67akV3Vm",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"delivery_dropoff_location\",\"reasoning\":\"The ancestor value states that building management requires all parcels to be left at the front desk, so the prior committed fact was a front-desk-only delivery instruction. Branch A would change that fact to a different instruction: leave every package directly outside the apartment door. Branch B would keep the same substantive instruction as the ancestor, just rephrased as front-desk-only delivery. These two branch values are not compatible because one directs delivery to the apartment door and the other directs delivery to the front desk. To choose between them, Branch A is a user-sourced statement with high confidence, which is strong evidence of an explicit correction or updated preference/instruction. Branch B is only an inference with low confidence and largely repeats the ancestor, so it is weaker evidence and may simply preserve stale information rather than reflect a real correction. Therefore the stronger reconciliation is to keep Branch A's value.\",\"resolution\":\"kept_from_a\",\"value\":\"Leave every package directly outside the apartment door.\",\"justification\":\"Branch A is an explicit high-confidence user update that overrides the ancestor, while Branch B is only a low-confidence inference that restates the old front-desk instruction.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794779317,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 254,
+      "prompt_tokens": 613,
+      "total_tokens": 867,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|delivery_dropoff_location\": \"Building management requires all parcels left at the front desk.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|delivery_dropoff_location\": {\n    \"value\": \"Leave every package directly outside the apartment door.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|delivery_dropoff_location\": {\n    \"value\": \"Packages should be delivered to the front desk only.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n\n\nFor EVERY key, include an additional field \"reasoning\" containing your step-by-step analysis of that conflict, written BEFORE you commit to the resolution value. The \"reasoning\" field is required.",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing. For each key, before you give a resolution, write out your analysis of that conflict step by step: what the ancestor value commits the entity to, what each branch would make true, whether the two are compatible, and only then which to keep. Put that analysis in the 'reasoning' field."
+}

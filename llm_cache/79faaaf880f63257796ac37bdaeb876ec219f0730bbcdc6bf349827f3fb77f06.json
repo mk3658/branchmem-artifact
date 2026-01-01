@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 4,\n  \"evidence_span\": \"2\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 160,
+  "output_tokens": 30,
+  "raw": {
+    "id": "chatcmpl-282",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 4,\n  \"evidence_span\": \"2\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794719030,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 30,
+      "prompt_tokens": 160,
+      "total_tokens": 190,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: user\nRelation: favourite_city\nPreviously recorded value: Paris\n\nCandidate LEFT:  Lyon\nCandidate RIGHT: Paris\n\nEvidence lines (numbered, in original order):\n1. The user said their favourite city is Paris.\n2. Later the user said they now prefer Lyon.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\", \"confidence_1_5\": <integer 1-5>, \"evidence_span\": \"<line number>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines. LATER lines supersede EARLIER lines. Respond with strict JSON only."
+}

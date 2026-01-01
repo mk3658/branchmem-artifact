@@ -1,0 +1,7 @@
+{
+  "note": "human validation of resolvable ground truth: humans follow the source/confidence signal; the only disagreements are the deliberate 15%-noise items where gt is set to the low-confidence branch.",
+  "resolvable_signal_items": 8,
+  "resolvable_noise_items": 4,
+  "majority_follows_signal": "12/12",
+  "majority_matches_noisy_gt": "8/12"
+}

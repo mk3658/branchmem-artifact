@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 4,\n  \"evidence_span\": \"261\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 355,
+  "output_tokens": 30,
+  "raw": {
+    "id": "chatcmpl-925",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 4,\n  \"evidence_span\": \"261\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720625,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 30,
+      "prompt_tokens": 355,
+      "total_tokens": 385,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: pes\u00e4pallo\nRelation: created_in_country\nPreviously recorded value (may be stale, may be empty): Finland\n\nCandidate LEFT:  Italy\nCandidate RIGHT: Philippines\n\nEvidence lines (numbered, in original order):\n59. pes\u00e4pallo was created in the country of Finland.\n167. The capital of Italy is Rome.\n209. The capital of Italy is Duluth.\n261. pes\u00e4pallo was created in the country of Philippines.\n310. goaltender is associated with the sport of pes\u00e4pallo.\n358. Charlie Hebdo was created in the country of Italy.\n375. The name of the current head of the Italy government is Giuseppe Conte.\n389. association football was created in the country of Italy.\n427. Joe Hockey is a citizen of Italy.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

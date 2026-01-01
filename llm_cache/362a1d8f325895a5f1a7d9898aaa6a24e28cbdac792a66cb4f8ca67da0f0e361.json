@@ -1,0 +1,48 @@
+{
+  "text": "{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"detergent_storage_spot\",\n      \"resolution\": \"kept_from_a\",\n      \"value\": \"The user now keeps detergent in the bathroom cabinet.\",\n      \"justification\": \"Branch A matches the ancestor\u2019s detergent-storage topic but provides a user-sourced, high-confidence correction to the specific location, which is more reliable than Branch B\u2019s inferred hallway-shelf claim.\",\n      \"reasoning\": \"1) Ancestor commits that the user keeps detergent on the hallway shelf. 2) Branch A would make the hallway-shelf location false and instead set the location to the bathroom cabinet. 3) Branch B would keep the hallway-shelf location true (same as ancestor) but marks it as inferred with lower confidence. 4) The two branch claims are incompatible because they specify different storage locations. 5) Source signal: Branch A is user-sourced (explicit), while Branch B is inference (guess). 6) Confidence signal: Branch A (0.95) is much higher than Branch B (0.55). 7) Therefore, prefer Branch A\u2019s user-corrected location over Branch B\u2019s inferred duplicate of the ancestor.\"\n    }\n  ]\n}",
+  "model": "gpt-5.4-nano-2026-03-17",
+  "input_tokens": 617,
+  "output_tokens": 263,
+  "raw": {
+    "id": "chatcmpl-EkcXanwCK5fsMkO0LS6MQZmsTkozq",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"detergent_storage_spot\",\n      \"resolution\": \"kept_from_a\",\n      \"value\": \"The user now keeps detergent in the bathroom cabinet.\",\n      \"justification\": \"Branch A matches the ancestor\u2019s detergent-storage topic but provides a user-sourced, high-confidence correction to the specific location, which is more reliable than Branch B\u2019s inferred hallway-shelf claim.\",\n      \"reasoning\": \"1) Ancestor commits that the user keeps detergent on the hallway shelf. 2) Branch A would make the hallway-shelf location false and instead set the location to the bathroom cabinet. 3) Branch B would keep the hallway-shelf location true (same as ancestor) but marks it as inferred with lower confidence. 4) The two branch claims are incompatible because they specify different storage locations. 5) Source signal: Branch A is user-sourced (explicit), while Branch B is inference (guess). 6) Confidence signal: Branch A (0.95) is much higher than Branch B (0.55). 7) Therefore, prefer Branch A\u2019s user-corrected location over Branch B\u2019s inferred duplicate of the ancestor.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794779946,
+    "model": "gpt-5.4-nano-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 263,
+      "prompt_tokens": 617,
+      "total_tokens": 880,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|detergent_storage_spot\": \"The user keeps detergent on the hallway shelf.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|detergent_storage_spot\": {\n    \"value\": \"The user now keeps detergent in the bathroom cabinet.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|detergent_storage_spot\": {\n    \"value\": \"The user keeps detergent on the hallway shelf.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n\n\nFor EVERY key, include an additional field \"reasoning\" containing your step-by-step analysis of that conflict, written BEFORE you commit to the resolution value. The \"reasoning\" field is required.",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing. For each key, before you give a resolution, write out your analysis of that conflict step by step: what the ancestor value commits the entity to, what each branch would make true, whether the two are compatible, and only then which to keep. Put that analysis in the 'reasoning' field."
+}

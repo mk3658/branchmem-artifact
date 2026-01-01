@@ -1,0 +1,48 @@
+{
+  "text": "{\"items\":[{\"predicate\":\"spoken_language_support\",\"ancestor_predicate\":\"spoken_language_support\",\"ancestor_value\":\"cannot understand spoken English at all and needs interpretation for any English conversation\",\"branch_a_value\":\"can follow ordinary spoken English without an interpreter\",\"branch_b_value\":\"needs a live interpreter whenever someone speaks English to them\",\"correct_branch\":\"b\"},{\"predicate\":\"reading_format_access\",\"ancestor_predicate\":\"reading_format_access\",\"ancestor_value\":\"is completely blind and cannot read standard printed text visually\",\"branch_a_value\":\"prefers to read printed handouts with their eyes\",\"branch_b_value\":\"uses Braille or screen readers instead of standard print\",\"correct_branch\":\"b\"},{\"predicate\":\"voice_communication_ability\",\"ancestor_predicate\":\"voice_communication_ability\",\"ancestor_value\":\"is permanently nonverbal and does not produce spoken words\",\"branch_a_value\":\"usually answers questions out loud in full sentences\",\"branch_b_value\":\"communicates through typing or a speech-generating device\",\"correct_branch\":\"b\"},{\"predicate\":\"sign_language_comprehension\",\"ancestor_predicate\":\"sign_language_comprehension\",\"ancestor_value\":\"does not know any sign language and cannot understand signed conversation\",\"branch_a_value\":\"can follow a discussion conducted entirely in ASL\",\"branch_b_value\":\"needs spoken or written language because signing will not be understood\",\"correct_branch\":\"b\"},{\"predicate\":\"telephone_interaction_mode\",\"ancestor_predicate\":\"telephone_interaction_mode\",\"ancestor_value\":\"is profoundly deaf and cannot hear voice audio on phone calls\",\"branch_a_value\":\"can handle ordinary voice-only phone calls by listening to the caller\",\"branch_b_value\":\"uses text relay, captions, or messaging instead of voice-only calls\",\"correct_branch\":\"b\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 251,
+  "output_tokens": 340,
+  "raw": {
+    "id": "chatcmpl-E4kpl57iF4rihXr6ibvosVGWxfOVu",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"items\":[{\"predicate\":\"spoken_language_support\",\"ancestor_predicate\":\"spoken_language_support\",\"ancestor_value\":\"cannot understand spoken English at all and needs interpretation for any English conversation\",\"branch_a_value\":\"can follow ordinary spoken English without an interpreter\",\"branch_b_value\":\"needs a live interpreter whenever someone speaks English to them\",\"correct_branch\":\"b\"},{\"predicate\":\"reading_format_access\",\"ancestor_predicate\":\"reading_format_access\",\"ancestor_value\":\"is completely blind and cannot read standard printed text visually\",\"branch_a_value\":\"prefers to read printed handouts with their eyes\",\"branch_b_value\":\"uses Braille or screen readers instead of standard print\",\"correct_branch\":\"b\"},{\"predicate\":\"voice_communication_ability\",\"ancestor_predicate\":\"voice_communication_ability\",\"ancestor_value\":\"is permanently nonverbal and does not produce spoken words\",\"branch_a_value\":\"usually answers questions out loud in full sentences\",\"branch_b_value\":\"communicates through typing or a speech-generating device\",\"correct_branch\":\"b\"},{\"predicate\":\"sign_language_comprehension\",\"ancestor_predicate\":\"sign_language_comprehension\",\"ancestor_value\":\"does not know any sign language and cannot understand signed conversation\",\"branch_a_value\":\"can follow a discussion conducted entirely in ASL\",\"branch_b_value\":\"needs spoken or written language because signing will not be understood\",\"correct_branch\":\"b\"},{\"predicate\":\"telephone_interaction_mode\",\"ancestor_predicate\":\"telephone_interaction_mode\",\"ancestor_value\":\"is profoundly deaf and cannot hear voice audio on phone calls\",\"branch_a_value\":\"can handle ordinary voice-only phone calls by listening to the caller\",\"branch_b_value\":\"uses text relay, captions, or messaging instead of voice-only calls\",\"correct_branch\":\"b\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802049,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 340,
+      "prompt_tokens": 251,
+      "total_tokens": 591,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Domain: language and communication needs\n\nProduce 5 DISTINCT items as strict JSON: {\"items\": [\n  {\"predicate\": \"<snake_case key>\",\n    \"ancestor_predicate\": \"<same snake_case key>\",\n    \"ancestor_value\": \"<the background constraint, e.g. 'is severely lactose intolerant'>\",\n    \"branch_a_value\": \"<a value that STRICTLY CONTRADICTS the constraint>\",\n    \"branch_b_value\": \"<a value COMPATIBLE with the constraint>\",\n    \"correct_branch\": \"b\"}\n]}\nRules: branch_a_value must be logically impossible given ancestor_value; branch_b_value\nmust be consistent with it; both must be plausible things a user might say; correct_branch\nis always \"b\". No two items may share a predicate. Output JSON only.",
+  "system": "You author test items for a memory-reconciliation benchmark. Each item is a STRICT logical incompatibility: given a stated background constraint, exactly one of two candidate values is logically INCOMPATIBLE with it and the other is compatible. Not a mere preference or soft default -- a genuine contradiction a careful reader would catch. Vary phrasing and entities; make them read like real user memory notes, not templates."
+}

@@ -1,0 +1,48 @@
+{
+  "text": "{\"items\":[{\"predicate\":\"passport_validity_for_trip\",\"ancestor_predicate\":\"passport_validity_for_trip\",\"ancestor_value\":\"My passport expires two months after my planned return, and the destination requires at least six months of passport validity beyond the return date.\",\"branch_a_value\":\"I'm fine to use my current passport for that trip without renewing it first.\",\"branch_b_value\":\"I need to renew my passport before taking that trip.\",\"correct_branch\":\"b\"},{\"predicate\":\"schengen_entry_count\",\"ancestor_predicate\":\"schengen_entry_count\",\"ancestor_value\":\"I have a single-entry Schengen visa and I already used that one entry on this trip.\",\"branch_a_value\":\"I can leave to the UK for a weekend and then re-enter the Schengen Area on the same visa.\",\"branch_b_value\":\"If I leave the Schengen Area now, I won't be able to come back on that visa.\",\"correct_branch\":\"b\"},{\"predicate\":\"name_match_on_ticket\",\"ancestor_predicate\":\"name_match_on_ticket\",\"ancestor_value\":\"The name on my flight booking must exactly match the name on the passport I'll present at check-in.\",\"branch_a_value\":\"It's okay that the ticket is under my married name while the passport I'm using still shows my maiden name.\",\"branch_b_value\":\"I should either use a passport with the matching name or get the ticket corrected.\",\"correct_branch\":\"b\"},{\"predicate\":\"transit_visa_requirement\",\"ancestor_predicate\":\"transit_visa_requirement\",\"ancestor_value\":\"My itinerary requires me to leave the international transit zone and change airports in that country, and my nationality requires a visa to enter that country.\",\"branch_a_value\":\"I can make that airport change without any visa because I'm only in transit.\",\"branch_b_value\":\"I need the appropriate visa for that transit since I'll be entering the country.\",\"correct_branch\":\"b\"},{\"predicate\":\"blank_passport_pages\",\"ancestor_predicate\":\"blank_passport_pages\",\"ancestor_value\":\"The country I'm visiting requires at least two blank visa pages in my passport, and I only have one blank visa page left.\",\"branch_a_value\":\"My current passport meets that country's blank-page requirement as it is.\",\"branch_b_value\":\"I need a passport with more blank pages before I can meet that entry requirement.\",\"correct_branch\":\"b\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 252,
+  "output_tokens": 454,
+  "raw": {
+    "id": "chatcmpl-E4kpIYJsR9uvZPoRVwLbRGCLVTrMK",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"items\":[{\"predicate\":\"passport_validity_for_trip\",\"ancestor_predicate\":\"passport_validity_for_trip\",\"ancestor_value\":\"My passport expires two months after my planned return, and the destination requires at least six months of passport validity beyond the return date.\",\"branch_a_value\":\"I'm fine to use my current passport for that trip without renewing it first.\",\"branch_b_value\":\"I need to renew my passport before taking that trip.\",\"correct_branch\":\"b\"},{\"predicate\":\"schengen_entry_count\",\"ancestor_predicate\":\"schengen_entry_count\",\"ancestor_value\":\"I have a single-entry Schengen visa and I already used that one entry on this trip.\",\"branch_a_value\":\"I can leave to the UK for a weekend and then re-enter the Schengen Area on the same visa.\",\"branch_b_value\":\"If I leave the Schengen Area now, I won't be able to come back on that visa.\",\"correct_branch\":\"b\"},{\"predicate\":\"name_match_on_ticket\",\"ancestor_predicate\":\"name_match_on_ticket\",\"ancestor_value\":\"The name on my flight booking must exactly match the name on the passport I'll present at check-in.\",\"branch_a_value\":\"It's okay that the ticket is under my married name while the passport I'm using still shows my maiden name.\",\"branch_b_value\":\"I should either use a passport with the matching name or get the ticket corrected.\",\"correct_branch\":\"b\"},{\"predicate\":\"transit_visa_requirement\",\"ancestor_predicate\":\"transit_visa_requirement\",\"ancestor_value\":\"My itinerary requires me to leave the international transit zone and change airports in that country, and my nationality requires a visa to enter that country.\",\"branch_a_value\":\"I can make that airport change without any visa because I'm only in transit.\",\"branch_b_value\":\"I need the appropriate visa for that transit since I'll be entering the country.\",\"correct_branch\":\"b\"},{\"predicate\":\"blank_passport_pages\",\"ancestor_predicate\":\"blank_passport_pages\",\"ancestor_value\":\"The country I'm visiting requires at least two blank visa pages in my passport, and I only have one blank visa page left.\",\"branch_a_value\":\"My current passport meets that country's blank-page requirement as it is.\",\"branch_b_value\":\"I need a passport with more blank pages before I can meet that entry requirement.\",\"correct_branch\":\"b\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802020,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 454,
+      "prompt_tokens": 252,
+      "total_tokens": 706,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Domain: travel and visa/document constraints\n\nProduce 5 DISTINCT items as strict JSON: {\"items\": [\n  {\"predicate\": \"<snake_case key>\",\n    \"ancestor_predicate\": \"<same snake_case key>\",\n    \"ancestor_value\": \"<the background constraint, e.g. 'is severely lactose intolerant'>\",\n    \"branch_a_value\": \"<a value that STRICTLY CONTRADICTS the constraint>\",\n    \"branch_b_value\": \"<a value COMPATIBLE with the constraint>\",\n    \"correct_branch\": \"b\"}\n]}\nRules: branch_a_value must be logically impossible given ancestor_value; branch_b_value\nmust be consistent with it; both must be plausible things a user might say; correct_branch\nis always \"b\". No two items may share a predicate. Output JSON only.",
+  "system": "You author test items for a memory-reconciliation benchmark. Each item is a STRICT logical incompatibility: given a stated background constraint, exactly one of two candidate values is logically INCOMPATIBLE with it and the other is compatible. Not a mere preference or soft default -- a genuine contradiction a careful reader would catch. Vary phrasing and entities; make them read like real user memory notes, not templates."
+}

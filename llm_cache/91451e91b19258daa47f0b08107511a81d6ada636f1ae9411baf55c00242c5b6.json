@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"checkout_format_preference\",\"value\":\"may start borrowing paperbacks, but not decided yet\",\"source\":\"user\",\"confidence\":0.92},{\"predicate\":\"guest_pass_duration\",\"value\":\"wants a guest pass for the whole afternoon\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"return_slot_preference\",\"value\":\"finds the return slot by the side entrance easier to reach\",\"source\":\"user\",\"confidence\":0.97}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 322,
+  "output_tokens": 104,
+  "raw": {
+    "id": "chatcmpl-EkSZvglDvMYTyWUpigDWCJ2OQVmXK",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"checkout_format_preference\",\"value\":\"may start borrowing paperbacks, but not decided yet\",\"source\":\"user\",\"confidence\":0.92},{\"predicate\":\"guest_pass_duration\",\"value\":\"wants a guest pass for the whole afternoon\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"return_slot_preference\",\"value\":\"finds the return slot by the side entrance easier to reach\",\"source\":\"user\",\"confidence\":0.97}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741651,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 104,
+      "prompt_tokens": 322,
+      "total_tokens": 426,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- guest_pass_duration: guest passes last two hours  (source=observation, confidence=1.00)\n- checkout_format_preference: I usually borrow hardcover editions  (source=observation, confidence=1.00)\n- printer_floor_habit: I usually use the second-floor printer  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might start borrowing paperbacks, but I haven't settled on that yet.\nUser: I want a guest pass for the whole afternoon so my friend can stay with me.\nUser: I noticed the return slot by the side entrance is much easier to reach.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

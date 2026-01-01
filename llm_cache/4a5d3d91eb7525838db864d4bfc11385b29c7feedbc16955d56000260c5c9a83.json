@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"preferred_trimming_tool\",\"value\":\"I now trim with a metal rib instead of a loop tool\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"glaze_firing_eligibility\",\"value\":\"Only studio clay pieces are brought when wanting anything fired here\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"splash_pan_light_preference\",\"value\":\"I enjoy how the afternoon light hits the splash pans\",\"source\":\"user\",\"confidence\":1}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 327,
+  "output_tokens": 100,
+  "raw": {
+    "id": "chatcmpl-EkSbfl4VR1Rk3kgTlpFTdL3SbOe7w",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"preferred_trimming_tool\",\"value\":\"I now trim with a metal rib instead of a loop tool\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"glaze_firing_eligibility\",\"value\":\"Only studio clay pieces are brought when wanting anything fired here\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"splash_pan_light_preference\",\"value\":\"I enjoy how the afternoon light hits the splash pans\",\"source\":\"user\",\"confidence\":1}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741759,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 100,
+      "prompt_tokens": 327,
+      "total_tokens": 427,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- glaze_firing_eligibility: outside clay cannot be kiln fired here  (source=observation, confidence=1.00)\n- preferred_trimming_tool: I usually trim with a loop tool  (source=observation, confidence=1.00)\n- wheel_position_preference: I like the back-left wheel  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I\u2019ve decided to trim with a metal rib from now on instead of my loop tool.\nUser: I only bring pieces made from studio clay when I want anything fired here.\nUser: I\u2019m enjoying how the afternoon light hits the splash pans today.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

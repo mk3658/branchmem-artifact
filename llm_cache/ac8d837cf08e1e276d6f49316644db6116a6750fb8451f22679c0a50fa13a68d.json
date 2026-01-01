@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"practice_footwear\",\"value\":\"I switched to tan split-sole shoes for rehearsals starting this week\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"studio_entry_time\",\"value\":\"I arrive twelve minutes early and wait in the lobby until the studio opens\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"studio_preference\",\"value\":\"I like how the mirrors make evening classes feel brighter\",\"source\":\"user\",\"confidence\":1}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 324,
+  "output_tokens": 98,
+  "raw": {
+    "id": "chatcmpl-EkSbmyyxX6j1TFS4ePUVThrxY05JV",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"practice_footwear\",\"value\":\"I switched to tan split-sole shoes for rehearsals starting this week\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"studio_entry_time\",\"value\":\"I arrive twelve minutes early and wait in the lobby until the studio opens\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"studio_preference\",\"value\":\"I like how the mirrors make evening classes feel brighter\",\"source\":\"user\",\"confidence\":1}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741766,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 98,
+      "prompt_tokens": 324,
+      "total_tokens": 422,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- studio_entry_time: students may enter only ten minutes before class  (source=observation, confidence=1.00)\n- practice_footwear: I usually wear black jazz sneakers  (source=observation, confidence=1.00)\n- favorite_warmup_corner: I prefer the back-left barre space  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I switched to tan split-sole shoes for rehearsals starting this week.\nUser: I get there twelve minutes early and wait in the lobby until they open the studio.\nUser: I love how the mirrors make the evening classes feel brighter.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

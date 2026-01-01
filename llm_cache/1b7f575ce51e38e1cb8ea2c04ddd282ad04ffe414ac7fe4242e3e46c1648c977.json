@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"checkout_lane_access\",\"resolution\":\"merged\",\"value\":\"members must use the staffed register near the front windows; user wants to use self-checkout lane today\",\"justification\":\"These statements are not direct contradictions because one is a standing access rule and the other is a situational desire, so both can be retained together.\"},{\"entity\":\"user\",\"predicate\":\"favorite_coop_section\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Both branches contain equally credible user-stated preference updates that conflict with the ancestor and with each other, with no reliable signal to prefer one.\"},{\"entity\":\"user\",\"predicate\":\"preferred_pickup_day\",\"resolution\":\"merged\",\"value\":\"I usually pick up on Saturdays, though I may switch to Mondays and am not settled yet\",\"justification\":\"Branch A gives the current usual day while Branch B adds tentative future uncertainty, so the two updates can be combined without contradiction.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 716,
+  "output_tokens": 198,
+  "raw": {
+    "id": "chatcmpl-EkT8nbiIGKlEagiWHt3FVjXkD03B4",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"checkout_lane_access\",\"resolution\":\"merged\",\"value\":\"members must use the staffed register near the front windows; user wants to use self-checkout lane today\",\"justification\":\"These statements are not direct contradictions because one is a standing access rule and the other is a situational desire, so both can be retained together.\"},{\"entity\":\"user\",\"predicate\":\"favorite_coop_section\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Both branches contain equally credible user-stated preference updates that conflict with the ancestor and with each other, with no reliable signal to prefer one.\"},{\"entity\":\"user\",\"predicate\":\"preferred_pickup_day\",\"resolution\":\"merged\",\"value\":\"I usually pick up on Saturdays, though I may switch to Mondays and am not settled yet\",\"justification\":\"Branch A gives the current usual day while Branch B adds tentative future uncertainty, so the two updates can be combined without contradiction.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794743813,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 198,
+      "prompt_tokens": 716,
+      "total_tokens": 914,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|checkout_lane_access\": \"members must use staffed checkout lanes\",\n  \"user|favorite_coop_section\": \"I like the bulk spices section\",\n  \"user|preferred_pickup_day\": \"I usually pick up on Thursdays\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|checkout_lane_access\": {\n    \"value\": \"members use the staffed register near the front windows\",\n    \"source\": \"user\",\n    \"confidence\": 0.98\n  },\n  \"user|favorite_coop_section\": {\n    \"value\": \"I like the produce section signs because they are handwritten and easy to read\",\n    \"source\": \"user\",\n    \"confidence\": 0.93\n  },\n  \"user|preferred_pickup_day\": {\n    \"value\": \"I usually pick up on Saturdays\",\n    \"source\": \"user\",\n    \"confidence\": 0.98\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|checkout_lane_access\": {\n    \"value\": \"wants to use self-checkout lane today\",\n    \"source\": \"user\",\n    \"confidence\": 0.98\n  },\n  \"user|favorite_coop_section\": {\n    \"value\": \"likes the new mural by the community board near the entrance\",\n    \"source\": \"user\",\n    \"confidence\": 0.93\n  },\n  \"user|preferred_pickup_day\": {\n    \"value\": \"may switch pickup day to Mondays, but not settled yet\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

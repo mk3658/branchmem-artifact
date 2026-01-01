@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"3504\"}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 313,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkMy4cLDAgdL9WGlcu4ujCvMgXthc",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"3504\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720084,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 313,
+      "total_tokens": 336,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Punk'd\nRelation: created_by\nPreviously recorded value (may be stale, may be empty): Ashton Kutcher\n\nCandidate LEFT:  Andy Hamilton\nCandidate RIGHT: Pendleton Ward\n\nEvidence lines (numbered, in original order):\n528. Marceline Abadeer was created by Pendleton Ward.\n819. Pendleton Ward is famous for Adventure Time.\n1447. Andy Hamilton is a citizen of United Kingdom.\n1657. Punk'd was created by Ashton Kutcher.\n1686. Pendleton Ward is famous for Rurouni Kenshin.\n3504. Punk'd was created by Andy Hamilton.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

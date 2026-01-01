@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"1356\"}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 342,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkFmaziPhuDCJt7O88Fu9pvuHXeeX",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"1356\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794692464,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 342,
+      "total_tokens": 365,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Gazeta Wyborcza\nRelation: hq_city\nPreviously recorded value (may be stale, may be empty): Warsaw\n\nCandidate LEFT:  Ann Arbor\nCandidate RIGHT: Glasgow\n\nEvidence lines (numbered, in original order):\n1258. The univeristy where Steven Moffat was educated is University of Glasgow.\n1356. The headquarters of Gazeta Wyborcza is located in the city of Ann Arbor.\n1576. Ann Arbor is located in the continent of North America.\n1609. The headquarters of University of Glasgow is located in the city of Glasgow.\n2045. The univeristy where Nicola Sturgeon was educated is University of Glasgow.\n2166. The headquarters of University of Glasgow is located in the city of Beijing.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

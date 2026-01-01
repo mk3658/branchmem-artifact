@@ -1,0 +1,171 @@
+{
+  "note": "POST-HOC, EXPLORATORY (added in revision; in neither preregistration). The specification prompts re-run end-to-end on BranchMem-Hard, where an obligation-bearing ancestor no longer indicates whether the update should be rejected. Tests whether P4's .938 on the discrimination bank survives the removal of that bank's lexical cue. Primary provenance arm: the update side always carries source=user/confidence=.95, so a field-reading policy accepts every update and scores 12 keeps wrong by construction. An abstention is counted as accepting the update, which is the conservative reading for the keep items and the permissive one for the update items; n_abstained is reported so either accounting can be recovered.",
+  "bank": "data/hard_standing_bank.json",
+  "bank_sha256": "0f2774678afec7d4a8a313b7ad0142ad8948d50a5a2072465e3e11fb37178798",
+  "seed": 4242,
+  "n_items": 60,
+  "provenance_arm": {
+    "update_side": [
+      "user",
+      0.95
+    ],
+    "other_side": [
+      "inference",
+      0.55
+    ]
+  },
+  "results": {
+    "ConfidenceRule": {
+      "n": 60,
+      "violations_caught": 0.0,
+      "freezing_rate": 0.0,
+      "balanced": 0.5,
+      "balanced_ci95_family_clustered": [
+        0.5,
+        0.5
+      ],
+      "accuracy": 0.8,
+      "accuracy_by_type": {
+        "ordinary_value": 1.0,
+        "standing_conditional_unmet": 1.0,
+        "standing_expired": 1.0,
+        "standing_indefinite": 0.0,
+        "standing_waived": 1.0
+      },
+      "n_rejected": 0,
+      "n_abstained": 0
+    },
+    "gpt-5.4:P1_shipped": {
+      "n": 60,
+      "violations_caught": 0.0833,
+      "freezing_rate": 0.0,
+      "balanced": 0.5417,
+      "balanced_ci95_family_clustered": [
+        0.5,
+        0.625
+      ],
+      "accuracy": 0.8167,
+      "accuracy_by_type": {
+        "ordinary_value": 1.0,
+        "standing_conditional_unmet": 1.0,
+        "standing_expired": 1.0,
+        "standing_indefinite": 0.0833,
+        "standing_waived": 1.0
+      },
+      "n_rejected": 1,
+      "n_abstained": 2,
+      "n_llm_calls": 60,
+      "n_parse_failures": 0
+    },
+    "gpt-5.4:P4_unmarked_rule": {
+      "n": 60,
+      "violations_caught": 1.0,
+      "freezing_rate": 0.0833,
+      "balanced": 0.9583,
+      "balanced_ci95_family_clustered": [
+        0.9062,
+        1.0
+      ],
+      "accuracy": 0.9333,
+      "accuracy_by_type": {
+        "ordinary_value": 0.9167,
+        "standing_conditional_unmet": 0.8333,
+        "standing_expired": 1.0,
+        "standing_indefinite": 1.0,
+        "standing_waived": 0.9167
+      },
+      "n_rejected": 16,
+      "n_abstained": 0,
+      "n_llm_calls": 60,
+      "n_parse_failures": 0
+    },
+    "gpt-5.4-nano:P1_shipped": {
+      "n": 60,
+      "violations_caught": 0.0,
+      "freezing_rate": 0.0,
+      "balanced": 0.5,
+      "balanced_ci95_family_clustered": [
+        0.5,
+        0.5
+      ],
+      "accuracy": 0.8,
+      "accuracy_by_type": {
+        "ordinary_value": 1.0,
+        "standing_conditional_unmet": 1.0,
+        "standing_expired": 1.0,
+        "standing_indefinite": 0.0,
+        "standing_waived": 1.0
+      },
+      "n_rejected": 0,
+      "n_abstained": 7,
+      "n_llm_calls": 60,
+      "n_parse_failures": 0
+    },
+    "gpt-5.4-nano:P4_unmarked_rule": {
+      "n": 60,
+      "violations_caught": 0.75,
+      "freezing_rate": 0.3542,
+      "balanced": 0.6979,
+      "balanced_ci95_family_clustered": [
+        0.5521,
+        0.8229
+      ],
+      "accuracy": 0.6667,
+      "accuracy_by_type": {
+        "ordinary_value": 0.6667,
+        "standing_conditional_unmet": 0.5,
+        "standing_expired": 0.8333,
+        "standing_indefinite": 0.75,
+        "standing_waived": 0.5833
+      },
+      "n_rejected": 26,
+      "n_abstained": 6,
+      "n_llm_calls": 60,
+      "n_parse_failures": 0
+    },
+    "o3:P1_shipped": {
+      "n": 60,
+      "violations_caught": 0.1667,
+      "freezing_rate": 0.0,
+      "balanced": 0.5833,
+      "balanced_ci95_family_clustered": [
+        0.5,
+        0.7083
+      ],
+      "accuracy": 0.8333,
+      "accuracy_by_type": {
+        "ordinary_value": 1.0,
+        "standing_conditional_unmet": 1.0,
+        "standing_expired": 1.0,
+        "standing_indefinite": 0.1667,
+        "standing_waived": 1.0
+      },
+      "n_rejected": 2,
+      "n_abstained": 0,
+      "n_llm_calls": 60,
+      "n_parse_failures": 0
+    },
+    "o3:P4_unmarked_rule": {
+      "n": 60,
+      "violations_caught": 1.0,
+      "freezing_rate": 0.125,
+      "balanced": 0.9375,
+      "balanced_ci95_family_clustered": [
+        0.9062,
+        0.9688
+      ],
+      "accuracy": 0.9,
+      "accuracy_by_type": {
+        "ordinary_value": 1.0,
+        "standing_conditional_unmet": 0.8333,
+        "standing_expired": 1.0,
+        "standing_indefinite": 1.0,
+        "standing_waived": 0.6667
+      },
+      "n_rejected": 18,
+      "n_abstained": 0,
+      "n_llm_calls": 60,
+      "n_parse_failures": 0
+    }
+  }
+}

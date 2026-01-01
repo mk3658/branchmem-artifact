@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"ambiguous\",\"confidence_1_5\":1,\"evidence_span\":\"\"}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 618,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkG0k5PFywUGhiQZoiQOKOivhcF2v",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"ambiguous\",\"confidence_1_5\":1,\"evidence_span\":\"\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794693342,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 618,
+      "total_tokens": 641,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: George Mikan\nRelation: plays_position\nPreviously recorded value (may be stale, may be empty): center\n\nCandidate LEFT:  defender\nCandidate RIGHT: wide receiver\n\nEvidence lines (numbered, in original order):\n8590. wide receiver is associated with the sport of American football.\n8648. Gr\u00e9gory Coupet plays the position of wide receiver.\n9450. Hines Ward plays the position of wide receiver.\n9974. Kenny Britt plays the position of wide receiver.\n10062. Brad Friedel plays the position of defender.\n10589. Nigel Adkins plays the position of defender.\n10687. Henry Burris plays the position of defender.\n10752. Deron Williams plays the position of wide receiver.\n11104. Danny Amendola plays the position of wide receiver.\n11595. Ian Kennedy plays the position of wide receiver.\n11894. defender is associated with the sport of baseball.\n11972. Ruud Gullit plays the position of wide receiver.\n12339. George Mikan is a citizen of United States of America.\n12485. wide receiver is associated with the sport of rugby.\n12925. Jeremy Maclin plays the position of wide receiver.\n12997. David Blatt plays the position of defender.\n13392. David De Gea plays the position of wide receiver.\n13403. Brad Miller plays the position of wide receiver.\n13980. Robert Griffin III plays the position of defender.\n14086. NaVorro Bowman plays the position of defender.\n14100. Yossi Benayoun plays the position of defender.\n14182. Steve Breaston plays the position of wide receiver.\n14369. Eddy Curry plays the position of defender.\n14412. Roddy White plays the position of wide receiver.\n14778. Erick Dampier plays the position of wide receiver.\n15218. Blaine Gabbert plays the position of defender.\n15446. George Mikan is a citizen of Russia.\n15613. Kevin De Bruyne plays the position of defender.\n16010. Steve McNair plays the position of defender.\n17777. Mario Manningham plays the position of defender.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

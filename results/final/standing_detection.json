@@ -1,0 +1,328 @@
+{
+  "note": "POST-HOC, EXPLORATORY (added in revision; in neither preregistration). The detection problem on BranchMem-Hard, where all four obligation types carry an obligation-bearing ancestor and only standing_indefinite makes rejecting the update correct, so no lexical shortcut recovers the answer. Both error directions are reported: violations_caught is recall on the type that must be rejected, freezing_rate is the share of legitimate updates wrongly rejected. 'ancestor' scope shows only the stored entry; 'ancestor_update' also shows the proposed update, which is where expiry, unmet conditions and waivers are stated. TrainedTransfer is trained on the 120 ancestors of the earlier strict/defeasible banks, whose two halves differ only in modal force, so it learns that cue; TrainedLORO is leave-one-family-out inside this bank and is the learnability upper bound. Intervals resample families.",
+  "bank": "data/hard_standing_bank.json",
+  "bank_sha256": "0f2774678afec7d4a8a313b7ad0142ad8948d50a5a2072465e3e11fb37178798",
+  "seed": 4242,
+  "n_items": 60,
+  "detection_prompt": {
+    "system": "You decide whether a stored memory entry still binds. You are given the stored entry and a proposed update to the same key. Decide whether the stored entry carries standing that the proposed update cannot override -- so the update must be rejected -- or whether the update may legitimately replace it. Consider only the content you are shown. Answer with exactly one word: BINDING or SUPERSEDABLE.",
+    "ancestor_only": "Stored entry: {ancestor}\n\nOne word:",
+    "ancestor_and_update": "Stored entry: {ancestor}\nProposed update: {update}\n\nOne word:"
+  },
+  "results": {
+    "ancestor": {
+      "ModalLexicon": {
+        "n": 60,
+        "violations_caught": 0.9167,
+        "freezing_rate": 0.7083,
+        "balanced": 0.6042,
+        "balanced_ci95_family_clustered": [
+          0.5,
+          0.6667
+        ],
+        "accuracy": 0.4167,
+        "accuracy_by_type": {
+          "ordinary_value": 1.0,
+          "standing_conditional_unmet": 0.0,
+          "standing_expired": 0.0833,
+          "standing_indefinite": 0.9167,
+          "standing_waived": 0.0833
+        },
+        "n_rejected": 45
+      },
+      "TrainedTransfer (tfidf_lr)": {
+        "n": 60,
+        "violations_caught": 0.5833,
+        "freezing_rate": 0.4792,
+        "balanced": 0.5521,
+        "balanced_ci95_family_clustered": [
+          0.3854,
+          0.7188
+        ],
+        "accuracy": 0.5333,
+        "accuracy_by_type": {
+          "ordinary_value": 0.4167,
+          "standing_conditional_unmet": 0.25,
+          "standing_expired": 0.5833,
+          "standing_indefinite": 0.5833,
+          "standing_waived": 0.8333
+        },
+        "n_rejected": 30
+      },
+      "TrainedLORO (tfidf_lr)": {
+        "n": 60,
+        "violations_caught": 0.0,
+        "freezing_rate": 0.0,
+        "balanced": 0.5,
+        "balanced_ci95_family_clustered": [
+          0.5,
+          0.5
+        ],
+        "accuracy": 0.8,
+        "accuracy_by_type": {
+          "ordinary_value": 1.0,
+          "standing_conditional_unmet": 1.0,
+          "standing_expired": 1.0,
+          "standing_indefinite": 0.0,
+          "standing_waived": 1.0
+        },
+        "n_rejected": 0
+      },
+      "TrainedTransfer (embed_lr)": {
+        "n": 60,
+        "violations_caught": 0.9167,
+        "freezing_rate": 0.8333,
+        "balanced": 0.5417,
+        "balanced_ci95_family_clustered": [
+          0.4688,
+          0.6146
+        ],
+        "accuracy": 0.3167,
+        "accuracy_by_type": {
+          "ordinary_value": 0.25,
+          "standing_conditional_unmet": 0.1667,
+          "standing_expired": 0.25,
+          "standing_indefinite": 0.9167,
+          "standing_waived": 0.0
+        },
+        "n_rejected": 51
+      },
+      "TrainedLORO (embed_lr)": {
+        "n": 60,
+        "violations_caught": 0.0,
+        "freezing_rate": 0.0,
+        "balanced": 0.5,
+        "balanced_ci95_family_clustered": [
+          0.5,
+          0.5
+        ],
+        "accuracy": 0.8,
+        "accuracy_by_type": {
+          "ordinary_value": 1.0,
+          "standing_conditional_unmet": 1.0,
+          "standing_expired": 1.0,
+          "standing_indefinite": 0.0,
+          "standing_waived": 1.0
+        },
+        "n_rejected": 0
+      },
+      "LLMStandingCheck (gpt-5.4)": {
+        "n": 60,
+        "violations_caught": 1.0,
+        "freezing_rate": 0.75,
+        "balanced": 0.625,
+        "balanced_ci95_family_clustered": [
+          0.5938,
+          0.6562
+        ],
+        "accuracy": 0.4,
+        "accuracy_by_type": {
+          "ordinary_value": 0.9167,
+          "standing_conditional_unmet": 0.0,
+          "standing_expired": 0.0833,
+          "standing_indefinite": 1.0,
+          "standing_waived": 0.0
+        },
+        "n_rejected": 48,
+        "n_unparsed_replies": 0
+      },
+      "LLMStandingCheck (gpt-5.4-nano)": {
+        "n": 60,
+        "violations_caught": 0.0,
+        "freezing_rate": 0.0208,
+        "balanced": 0.4896,
+        "balanced_ci95_family_clustered": [
+          0.4688,
+          0.5
+        ],
+        "accuracy": 0.7833,
+        "accuracy_by_type": {
+          "ordinary_value": 1.0,
+          "standing_conditional_unmet": 1.0,
+          "standing_expired": 0.9167,
+          "standing_indefinite": 0.0,
+          "standing_waived": 1.0
+        },
+        "n_rejected": 1,
+        "n_unparsed_replies": 0
+      },
+      "LLMStandingCheck (o3)": {
+        "n": 60,
+        "violations_caught": 0.9167,
+        "freezing_rate": 0.8958,
+        "balanced": 0.5104,
+        "balanced_ci95_family_clustered": [
+          0.4062,
+          0.5833
+        ],
+        "accuracy": 0.2667,
+        "accuracy_by_type": {
+          "ordinary_value": 0.25,
+          "standing_conditional_unmet": 0.0,
+          "standing_expired": 0.0833,
+          "standing_indefinite": 0.9167,
+          "standing_waived": 0.0833
+        },
+        "n_rejected": 54,
+        "n_unparsed_replies": 1
+      }
+    },
+    "ancestor_update": {
+      "ModalLexicon": {
+        "n": 60,
+        "violations_caught": 0.9167,
+        "freezing_rate": 0.7083,
+        "balanced": 0.6042,
+        "balanced_ci95_family_clustered": [
+          0.5,
+          0.6667
+        ],
+        "accuracy": 0.4167,
+        "accuracy_by_type": {
+          "ordinary_value": 1.0,
+          "standing_conditional_unmet": 0.0,
+          "standing_expired": 0.0833,
+          "standing_indefinite": 0.9167,
+          "standing_waived": 0.0833
+        },
+        "n_rejected": 45
+      },
+      "TrainedTransfer (tfidf_lr)": {
+        "n": 60,
+        "violations_caught": 0.5,
+        "freezing_rate": 0.5833,
+        "balanced": 0.4583,
+        "balanced_ci95_family_clustered": [
+          0.2917,
+          0.6354
+        ],
+        "accuracy": 0.4333,
+        "accuracy_by_type": {
+          "ordinary_value": 0.4167,
+          "standing_conditional_unmet": 0.0833,
+          "standing_expired": 0.25,
+          "standing_indefinite": 0.5,
+          "standing_waived": 0.9167
+        },
+        "n_rejected": 34
+      },
+      "TrainedLORO (tfidf_lr)": {
+        "n": 60,
+        "violations_caught": 0.0,
+        "freezing_rate": 0.0,
+        "balanced": 0.5,
+        "balanced_ci95_family_clustered": [
+          0.5,
+          0.5
+        ],
+        "accuracy": 0.8,
+        "accuracy_by_type": {
+          "ordinary_value": 1.0,
+          "standing_conditional_unmet": 1.0,
+          "standing_expired": 1.0,
+          "standing_indefinite": 0.0,
+          "standing_waived": 1.0
+        },
+        "n_rejected": 0
+      },
+      "TrainedTransfer (embed_lr)": {
+        "n": 60,
+        "violations_caught": 0.9167,
+        "freezing_rate": 0.75,
+        "balanced": 0.5833,
+        "balanced_ci95_family_clustered": [
+          0.4583,
+          0.6771
+        ],
+        "accuracy": 0.3833,
+        "accuracy_by_type": {
+          "ordinary_value": 0.5,
+          "standing_conditional_unmet": 0.0833,
+          "standing_expired": 0.3333,
+          "standing_indefinite": 0.9167,
+          "standing_waived": 0.0833
+        },
+        "n_rejected": 47
+      },
+      "TrainedLORO (embed_lr)": {
+        "n": 60,
+        "violations_caught": 0.0,
+        "freezing_rate": 0.0,
+        "balanced": 0.5,
+        "balanced_ci95_family_clustered": [
+          0.5,
+          0.5
+        ],
+        "accuracy": 0.8,
+        "accuracy_by_type": {
+          "ordinary_value": 1.0,
+          "standing_conditional_unmet": 1.0,
+          "standing_expired": 1.0,
+          "standing_indefinite": 0.0,
+          "standing_waived": 1.0
+        },
+        "n_rejected": 0
+      },
+      "LLMStandingCheck (gpt-5.4)": {
+        "n": 60,
+        "violations_caught": 1.0,
+        "freezing_rate": 0.1042,
+        "balanced": 0.9479,
+        "balanced_ci95_family_clustered": [
+          0.9167,
+          0.9792
+        ],
+        "accuracy": 0.9167,
+        "accuracy_by_type": {
+          "ordinary_value": 1.0,
+          "standing_conditional_unmet": 0.8333,
+          "standing_expired": 1.0,
+          "standing_indefinite": 1.0,
+          "standing_waived": 0.75
+        },
+        "n_rejected": 17,
+        "n_unparsed_replies": 0
+      },
+      "LLMStandingCheck (gpt-5.4-nano)": {
+        "n": 60,
+        "violations_caught": 0.75,
+        "freezing_rate": 0.2292,
+        "balanced": 0.7604,
+        "balanced_ci95_family_clustered": [
+          0.6354,
+          0.875
+        ],
+        "accuracy": 0.7667,
+        "accuracy_by_type": {
+          "ordinary_value": 1.0,
+          "standing_conditional_unmet": 0.6667,
+          "standing_expired": 0.5,
+          "standing_indefinite": 0.75,
+          "standing_waived": 0.9167
+        },
+        "n_rejected": 20,
+        "n_unparsed_replies": 0
+      },
+      "LLMStandingCheck (o3)": {
+        "n": 60,
+        "violations_caught": 1.0,
+        "freezing_rate": 0.4375,
+        "balanced": 0.7812,
+        "balanced_ci95_family_clustered": [
+          0.7396,
+          0.8229
+        ],
+        "accuracy": 0.65,
+        "accuracy_by_type": {
+          "ordinary_value": 0.8333,
+          "standing_conditional_unmet": 0.1667,
+          "standing_expired": 1.0,
+          "standing_indefinite": 1.0,
+          "standing_waived": 0.25
+        },
+        "n_rejected": 33,
+        "n_unparsed_replies": 0
+      }
+    }
+  }
+}

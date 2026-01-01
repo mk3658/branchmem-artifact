@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"preferred_meetup_spot\",\"value\":\"I usually park in the shaded upper lot now\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"guest_vehicle_limit\",\"value\":\"I\u2019m bringing one guest car to Saturday\u2019s meet, within the club limit\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"clubhouse_mural_opinion\",\"value\":\"I like how the new clubhouse mural looks beside the tool shed\",\"source\":\"user\",\"confidence\":0.96}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 331,
+  "output_tokens": 107,
+  "raw": {
+    "id": "chatcmpl-EkSaA3xwXbbYZJ8zv3z51NxKWzAlq",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"preferred_meetup_spot\",\"value\":\"I usually park in the shaded upper lot now\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"guest_vehicle_limit\",\"value\":\"I\u2019m bringing one guest car to Saturday\u2019s meet, within the club limit\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"clubhouse_mural_opinion\",\"value\":\"I like how the new clubhouse mural looks beside the tool shed\",\"source\":\"user\",\"confidence\":0.96}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741666,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 107,
+      "prompt_tokens": 331,
+      "total_tokens": 438,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- guest_vehicle_limit: club rules allow only one guest car per member  (source=observation, confidence=1.00)\n- preferred_meetup_spot: I usually park by the east fence  (source=observation, confidence=1.00)\n- project_car_color: my coupe is painted dark green  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I\u2019m switching my usual spot and parking in the shaded upper lot from now on.\nUser: I\u2019m bringing just one guest car to Saturday\u2019s meet, so I\u2019m within the club limit.\nUser: I love how the new clubhouse mural looks beside the tool shed.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

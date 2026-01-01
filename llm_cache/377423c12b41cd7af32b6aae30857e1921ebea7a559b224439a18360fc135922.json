@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 4,\n  \"evidence_span\": \"4361\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 659,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-452",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 4,\n  \"evidence_span\": \"4361\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720795,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 659,
+      "total_tokens": 690,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: Joe Hockey\nRelation: citizen_of\nPreviously recorded value (may be stale, may be empty): Australia\n\nCandidate LEFT:  Italy\nCandidate RIGHT: Israel\n\nEvidence lines (numbered, in original order):\n2285. Rick Remender is a citizen of Italy.\n2445. The name of the current head of state in Italy is Sergio Mattarella.\n2593. Charlie Hebdo was created in the country of Italy.\n2719. The name of the current head of the Israel government is Benjamin Netanyahu.\n2783. Kingdom of Italy is located in the continent of Asia.\n2828. Sigur R\u00f3s was created in the country of Israel.\n2841. Beth Hart is a citizen of Kingdom of Italy.\n2887. Giovanni Brusca is a citizen of Italy.\n2915. The capital of Israel is Jerusalem.\n2926. Trudie Styler is a citizen of Italy.\n2999. Federica Mogherini is a citizen of Italy.\n3402. L. Ron Hubbard is a citizen of Israel.\n3406. The director of The Beatles is Joe Hockey.\n3441. Joe Hockey is a citizen of Australia.\n3516. association football was created in the country of Italy.\n3654. Israel Football Association is associated with the sport of association football.\n3688. Giorgetto Giugiaro is a citizen of Italy.\n3737. Richard Bushman is a citizen of Israel.\n3826. country rock was created in the country of Italy.\n3865. Charles IV of France is a citizen of Kingdom of Italy.\n3868. Colin Irwin is a citizen of Israel.\n3875. The name of the current head of the Israel government is Kevin Rudd.\n4099. Israel is located in the continent of North America.\n4149. Kokhav Nolad was created in the country of Israel.\n4188. Brian Epstein is a citizen of Italy.\n4227. Israel was founded by Philippe, Duke of Orl\u00e9ans.\n4361. Joe Hockey is a citizen of Italy.\n4449. The capital of Italy is Duluth.\n4481. Gianni Schicchi was created in the country of Italy.\n4571. The name of the current head of state in Italy is Alassane Dramane Ouattara.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

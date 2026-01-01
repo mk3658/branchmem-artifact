@@ -1,0 +1,122 @@
+{
+  "note": "Post-hoc, exploratory (not in ANALYSIS_PLAN.md). MISLEADING provenance: a strict ancestor constraint paired with a source/confidence signal favouring the value that CONTRADICTS it. Ground truth is the semantically compatible value, so every confidence-following strategy is wrong by construction (0.000 via confident wrong commits). Tests whether LLM merging overrides a misleading field using ancestor semantics, i.e. separates field-reading from semantic reasoning. Content held fixed vs the realism check; only the provenance assignment changes.",
+  "seed": 5150,
+  "n_scenarios": 60,
+  "deterministic_rule_is_wrong_by_construction": true,
+  "by_solver": {
+    "gpt-5.4": {
+      "confidence_rule": {
+        "accuracy": 0.0,
+        "n": 60,
+        "commit_rate": 1.0,
+        "conditional_on_commit_accuracy": 0.0,
+        "wrong_commit_rate": 1.0,
+        "n_committed": 60,
+        "n_correct_committed": 0,
+        "n_wrong_committed": 60,
+        "n_flagged": 0
+      },
+      "confidence_margin_0.3": {
+        "accuracy": 0.0,
+        "n": 60,
+        "commit_rate": 1.0,
+        "conditional_on_commit_accuracy": 0.0,
+        "wrong_commit_rate": 1.0,
+        "n_committed": 60,
+        "n_correct_committed": 0,
+        "n_wrong_committed": 60,
+        "n_flagged": 0
+      },
+      "naive_concat": {
+        "accuracy": 0.5,
+        "n": 60,
+        "commit_rate": 1.0,
+        "conditional_on_commit_accuracy": 0.5,
+        "wrong_commit_rate": 0.5,
+        "n_committed": 60,
+        "n_correct_committed": 30,
+        "n_wrong_committed": 30,
+        "n_flagged": 0
+      },
+      "two_way_llm": {
+        "accuracy": 0.0,
+        "n": 60,
+        "commit_rate": 1.0,
+        "conditional_on_commit_accuracy": 0.0,
+        "wrong_commit_rate": 1.0,
+        "n_committed": 60,
+        "n_correct_committed": 0,
+        "n_wrong_committed": 60,
+        "n_flagged": 0
+      },
+      "three_way_llm": {
+        "accuracy": 0.016666666666666666,
+        "n": 60,
+        "commit_rate": 0.9166666666666666,
+        "conditional_on_commit_accuracy": 0.01818181818181818,
+        "wrong_commit_rate": 0.9,
+        "n_committed": 55,
+        "n_correct_committed": 1,
+        "n_wrong_committed": 54,
+        "n_flagged": 5
+      }
+    },
+    "gpt-5.4-nano": {
+      "confidence_rule": {
+        "accuracy": 0.0,
+        "n": 60,
+        "commit_rate": 1.0,
+        "conditional_on_commit_accuracy": 0.0,
+        "wrong_commit_rate": 1.0,
+        "n_committed": 60,
+        "n_correct_committed": 0,
+        "n_wrong_committed": 60,
+        "n_flagged": 0
+      },
+      "confidence_margin_0.3": {
+        "accuracy": 0.0,
+        "n": 60,
+        "commit_rate": 1.0,
+        "conditional_on_commit_accuracy": 0.0,
+        "wrong_commit_rate": 1.0,
+        "n_committed": 60,
+        "n_correct_committed": 0,
+        "n_wrong_committed": 60,
+        "n_flagged": 0
+      },
+      "naive_concat": {
+        "accuracy": 0.5,
+        "n": 60,
+        "commit_rate": 1.0,
+        "conditional_on_commit_accuracy": 0.5,
+        "wrong_commit_rate": 0.5,
+        "n_committed": 60,
+        "n_correct_committed": 30,
+        "n_wrong_committed": 30,
+        "n_flagged": 0
+      },
+      "two_way_llm": {
+        "accuracy": 0.016666666666666666,
+        "n": 60,
+        "commit_rate": 1.0,
+        "conditional_on_commit_accuracy": 0.016666666666666666,
+        "wrong_commit_rate": 0.9833333333333333,
+        "n_committed": 60,
+        "n_correct_committed": 1,
+        "n_wrong_committed": 59,
+        "n_flagged": 0
+      },
+      "three_way_llm": {
+        "accuracy": 0.016666666666666666,
+        "n": 60,
+        "commit_rate": 0.9833333333333333,
+        "conditional_on_commit_accuracy": 0.01694915254237288,
+        "wrong_commit_rate": 0.9666666666666667,
+        "n_committed": 59,
+        "n_correct_committed": 1,
+        "n_wrong_committed": 58,
+        "n_flagged": 1
+      }
+    }
+  }
+}

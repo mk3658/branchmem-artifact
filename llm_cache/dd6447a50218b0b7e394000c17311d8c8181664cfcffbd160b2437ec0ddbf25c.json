@@ -1,0 +1,48 @@
+{
+  "text": "{\"items\":[\n  {\n    \"predicate\":\"warfarin_use_status\",\n    \"ancestor_predicate\":\"warfarin_use_status\",\n    \"ancestor_value\":\"takes warfarin every day for a mechanical heart valve\",\n    \"branch_a_value\":\"is not on any blood thinner and has never taken warfarin\",\n    \"branch_b_value\":\"needs INR monitoring because they take daily warfarin\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"penicillin_allergy_history\",\n    \"ancestor_predicate\":\"penicillin_allergy_history\",\n    \"ancestor_value\":\"has a documented anaphylactic allergy to penicillin\",\n    \"branch_a_value\":\"can safely take amoxicillin because they are not allergic to penicillin\",\n    \"branch_b_value\":\"avoids penicillin-class antibiotics due to prior anaphylaxis\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"pregnancy_medication_restriction\",\n    \"ancestor_predicate\":\"pregnancy_medication_restriction\",\n    \"ancestor_value\":\"is currently pregnant and was told to avoid isotretinoin\",\n    \"branch_a_value\":\"started isotretinoin for acne during the current pregnancy\",\n    \"branch_b_value\":\"is postponing isotretinoin until after pregnancy\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"g6pd_drug_avoidance\",\n    \"ancestor_predicate\":\"g6pd_drug_avoidance\",\n    \"ancestor_value\":\"has G6PD deficiency and must avoid primaquine\",\n    \"branch_a_value\":\"was prescribed primaquine and can take it without restriction despite G6PD deficiency\",\n    \"branch_b_value\":\"tells clinicians about G6PD deficiency before malaria treatment\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"ace_inhibitor_pregnancy_status\",\n    \"ancestor_predicate\":\"ace_inhibitor_pregnancy_status\",\n    \"ancestor_value\":\"is pregnant and their doctor stopped lisinopril because ACE inhibitors are contraindicated\",\n    \"branch_a_value\":\"is still taking lisinopril throughout the pregnancy with no concern about contraindication\",\n    \"branch_b_value\":\"switched off lisinopril after becoming pregnant\",\n    \"correct_branch\":\"b\"\n  }\n]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 252,
+  "output_tokens": 470,
+  "raw": {
+    "id": "chatcmpl-E4kovUumfoCjR0Wqb9QVMPQquUgGu",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"items\":[\n  {\n    \"predicate\":\"warfarin_use_status\",\n    \"ancestor_predicate\":\"warfarin_use_status\",\n    \"ancestor_value\":\"takes warfarin every day for a mechanical heart valve\",\n    \"branch_a_value\":\"is not on any blood thinner and has never taken warfarin\",\n    \"branch_b_value\":\"needs INR monitoring because they take daily warfarin\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"penicillin_allergy_history\",\n    \"ancestor_predicate\":\"penicillin_allergy_history\",\n    \"ancestor_value\":\"has a documented anaphylactic allergy to penicillin\",\n    \"branch_a_value\":\"can safely take amoxicillin because they are not allergic to penicillin\",\n    \"branch_b_value\":\"avoids penicillin-class antibiotics due to prior anaphylaxis\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"pregnancy_medication_restriction\",\n    \"ancestor_predicate\":\"pregnancy_medication_restriction\",\n    \"ancestor_value\":\"is currently pregnant and was told to avoid isotretinoin\",\n    \"branch_a_value\":\"started isotretinoin for acne during the current pregnancy\",\n    \"branch_b_value\":\"is postponing isotretinoin until after pregnancy\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"g6pd_drug_avoidance\",\n    \"ancestor_predicate\":\"g6pd_drug_avoidance\",\n    \"ancestor_value\":\"has G6PD deficiency and must avoid primaquine\",\n    \"branch_a_value\":\"was prescribed primaquine and can take it without restriction despite G6PD deficiency\",\n    \"branch_b_value\":\"tells clinicians about G6PD deficiency before malaria treatment\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"ace_inhibitor_pregnancy_status\",\n    \"ancestor_predicate\":\"ace_inhibitor_pregnancy_status\",\n    \"ancestor_value\":\"is pregnant and their doctor stopped lisinopril because ACE inhibitors are contraindicated\",\n    \"branch_a_value\":\"is still taking lisinopril throughout the pregnancy with no concern about contraindication\",\n    \"branch_b_value\":\"switched off lisinopril after becoming pregnant\",\n    \"correct_branch\":\"b\"\n  }\n]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784801997,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 470,
+      "prompt_tokens": 252,
+      "total_tokens": 722,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Domain: medical conditions and medication constraints\n\nProduce 5 DISTINCT items as strict JSON: {\"items\": [\n  {\"predicate\": \"<snake_case key>\",\n    \"ancestor_predicate\": \"<same snake_case key>\",\n    \"ancestor_value\": \"<the background constraint, e.g. 'is severely lactose intolerant'>\",\n    \"branch_a_value\": \"<a value that STRICTLY CONTRADICTS the constraint>\",\n    \"branch_b_value\": \"<a value COMPATIBLE with the constraint>\",\n    \"correct_branch\": \"b\"}\n]}\nRules: branch_a_value must be logically impossible given ancestor_value; branch_b_value\nmust be consistent with it; both must be plausible things a user might say; correct_branch\nis always \"b\". No two items may share a predicate. Output JSON only.",
+  "system": "You author test items for a memory-reconciliation benchmark. Each item is a STRICT logical incompatibility: given a stated background constraint, exactly one of two candidate values is logically INCOMPATIBLE with it and the other is compatible. Not a mere preference or soft default -- a genuine contradiction a careful reader would catch. Vary phrasing and entities; make them read like real user memory notes, not templates."
+}

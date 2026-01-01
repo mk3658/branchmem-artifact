@@ -1,0 +1,48 @@
+{
+  "text": "{\"items\":[\n  {\n    \"predicate\":\"strobe_light_tolerance\",\n    \"ancestor_predicate\":\"strobe_light_tolerance\",\n    \"ancestor_value\":\"gets migraines immediately from strobe or flashing lights and avoids them completely\",\n    \"branch_a_value\":\"loves spending hours under intense strobe lighting at clubs with no issues\",\n    \"branch_b_value\":\"asks for steady, non-flashing lighting and leaves if a venue uses strobes\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"noise_cancellation_need\",\n    \"ancestor_predicate\":\"noise_cancellation_need\",\n    \"ancestor_value\":\"cannot function in loud environments without noise-canceling headphones\",\n    \"branch_a_value\":\"works comfortably all day on a noisy factory floor without any ear protection\",\n    \"branch_b_value\":\"keeps noise-canceling headphones on hand for crowded or noisy places\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"motion_sickness_response\",\n    \"ancestor_predicate\":\"motion_sickness_response\",\n    \"ancestor_value\":\"gets severe motion sickness from reading in any moving car\",\n    \"branch_a_value\":\"regularly reads novels in the back seat during long drives and never feels sick\",\n    \"branch_b_value\":\"avoids looking at books or screens in the car because it makes them nauseated\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"brightness_preference\",\n    \"ancestor_predicate\":\"brightness_preference\",\n    \"ancestor_value\":\"has extreme light sensitivity and keeps screens dimmed to the minimum usable level\",\n    \"branch_a_value\":\"always sets every phone and laptop screen to maximum brightness because dim screens bother them\",\n    \"branch_b_value\":\"uses dark mode and lowers screen brightness whenever possible\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"sudden_sound_reaction\",\n    \"ancestor_predicate\":\"sudden_sound_reaction\",\n    \"ancestor_value\":\"startles painfully at sudden sharp sounds and cannot tolerate surprise alarms\",\n    \"branch_a_value\":\"enjoys using blaring surprise alarm tones because abrupt loud noises do not affect them at all\",\n    \"branch_b_value\":\"prefers gentle alert tones and warns people not to set off loud alarms nearby\",\n    \"correct_branch\":\"b\"\n  }\n]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 256,
+  "output_tokens": 473,
+  "raw": {
+    "id": "chatcmpl-E4kprKWHlOuVVPVKq4dME4THzW6iG",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"items\":[\n  {\n    \"predicate\":\"strobe_light_tolerance\",\n    \"ancestor_predicate\":\"strobe_light_tolerance\",\n    \"ancestor_value\":\"gets migraines immediately from strobe or flashing lights and avoids them completely\",\n    \"branch_a_value\":\"loves spending hours under intense strobe lighting at clubs with no issues\",\n    \"branch_b_value\":\"asks for steady, non-flashing lighting and leaves if a venue uses strobes\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"noise_cancellation_need\",\n    \"ancestor_predicate\":\"noise_cancellation_need\",\n    \"ancestor_value\":\"cannot function in loud environments without noise-canceling headphones\",\n    \"branch_a_value\":\"works comfortably all day on a noisy factory floor without any ear protection\",\n    \"branch_b_value\":\"keeps noise-canceling headphones on hand for crowded or noisy places\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"motion_sickness_response\",\n    \"ancestor_predicate\":\"motion_sickness_response\",\n    \"ancestor_value\":\"gets severe motion sickness from reading in any moving car\",\n    \"branch_a_value\":\"regularly reads novels in the back seat during long drives and never feels sick\",\n    \"branch_b_value\":\"avoids looking at books or screens in the car because it makes them nauseated\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"brightness_preference\",\n    \"ancestor_predicate\":\"brightness_preference\",\n    \"ancestor_value\":\"has extreme light sensitivity and keeps screens dimmed to the minimum usable level\",\n    \"branch_a_value\":\"always sets every phone and laptop screen to maximum brightness because dim screens bother them\",\n    \"branch_b_value\":\"uses dark mode and lowers screen brightness whenever possible\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"sudden_sound_reaction\",\n    \"ancestor_predicate\":\"sudden_sound_reaction\",\n    \"ancestor_value\":\"startles painfully at sudden sharp sounds and cannot tolerate surprise alarms\",\n    \"branch_a_value\":\"enjoys using blaring surprise alarm tones because abrupt loud noises do not affect them at all\",\n    \"branch_b_value\":\"prefers gentle alert tones and warns people not to set off loud alarms nearby\",\n    \"correct_branch\":\"b\"\n  }\n]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802055,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 473,
+      "prompt_tokens": 256,
+      "total_tokens": 729,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Domain: sensory sensitivities (light/sound/motion)\n\nProduce 5 DISTINCT items as strict JSON: {\"items\": [\n  {\"predicate\": \"<snake_case key>\",\n    \"ancestor_predicate\": \"<same snake_case key>\",\n    \"ancestor_value\": \"<the background constraint, e.g. 'is severely lactose intolerant'>\",\n    \"branch_a_value\": \"<a value that STRICTLY CONTRADICTS the constraint>\",\n    \"branch_b_value\": \"<a value COMPATIBLE with the constraint>\",\n    \"correct_branch\": \"b\"}\n]}\nRules: branch_a_value must be logically impossible given ancestor_value; branch_b_value\nmust be consistent with it; both must be plausible things a user might say; correct_branch\nis always \"b\". No two items may share a predicate. Output JSON only.",
+  "system": "You author test items for a memory-reconciliation benchmark. Each item is a STRICT logical incompatibility: given a stated background constraint, exactly one of two candidate values is logically INCOMPATIBLE with it and the other is compatible. Not a mere preference or soft default -- a genuine contradiction a careful reader would catch. Vary phrasing and entities; make them read like real user memory notes, not templates."
+}

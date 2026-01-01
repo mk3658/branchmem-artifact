@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"enlarger_booking_window\",\"resolution\":\"kept_from_a\",\"value\":\"I only book an enlarger when my slot starts within the next two hours\",\"justification\":\"Branch A preserves the ancestor policy as a direct user-stated preference, while Branch B is a lower-confidence inference about a specific scheduling situation rather than a corrected standing rule.\"},{\"entity\":\"user\",\"predicate\":\"safelight_filter_preference\",\"resolution\":\"merged\",\"value\":\"User is considering switching from the amber safelight filter to the deep red safelight filter, but has not decided.\",\"justification\":\"Branch B directly qualifies the preference change as undecided, so combining it with the ancestor yields a more reliable state than Branch A's stronger claim of a completed switch.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 652,
+  "output_tokens": 163,
+  "raw": {
+    "id": "chatcmpl-EkT94p1a1qyLzVtsydUE3OErby8p1",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"enlarger_booking_window\",\"resolution\":\"kept_from_a\",\"value\":\"I only book an enlarger when my slot starts within the next two hours\",\"justification\":\"Branch A preserves the ancestor policy as a direct user-stated preference, while Branch B is a lower-confidence inference about a specific scheduling situation rather than a corrected standing rule.\"},{\"entity\":\"user\",\"predicate\":\"safelight_filter_preference\",\"resolution\":\"merged\",\"value\":\"User is considering switching from the amber safelight filter to the deep red safelight filter, but has not decided.\",\"justification\":\"Branch B directly qualifies the preference change as undecided, so combining it with the ancestor yields a more reliable state than Branch A's stronger claim of a completed switch.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794743830,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 163,
+      "prompt_tokens": 652,
+      "total_tokens": 815,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|enlarger_booking_window\": \"can reserve enlargers only two hours ahead\",\n  \"user|safelight_filter_preference\": \"I usually prefer the amber safelight filter\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|enlarger_booking_window\": {\n    \"value\": \"I only book an enlarger when my slot starts within the next two hours\",\n    \"source\": \"user\",\n    \"confidence\": 0.99\n  },\n  \"user|safelight_filter_preference\": {\n    \"value\": \"I now prefer the deep red safelight filter\",\n    \"source\": \"user\",\n    \"confidence\": 0.99\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|enlarger_booking_window\": {\n    \"value\": \"User wants to reserve the enlarger for next Tuesday evening, but this may conflict with the two-hours-ahead booking limit.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.86\n  },\n  \"user|safelight_filter_preference\": {\n    \"value\": \"User is considering switching to the deep red safelight filter, but has not decided.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

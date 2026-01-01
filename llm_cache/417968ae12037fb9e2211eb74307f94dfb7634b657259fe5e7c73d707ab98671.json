@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"3259\"}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 616,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkFypBBdjaSvm9IThOEM8EScDZE3R",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"3259\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794693223,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 616,
+      "total_tokens": 639,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Nick Folk\nRelation: plays_position\nPreviously recorded value (may be stale, may be empty): placekicker\n\nCandidate LEFT:  center\nCandidate RIGHT: infielder\n\nEvidence lines (numbered, in original order):\n1050. Brook Lopez plays the position of center.\n1261. Timofey Mozgov plays the position of center.\n1278. Dikembe Mutombo plays the position of center.\n1283. Stojko Vrankovi\u0107 plays the position of center.\n1341. Sylvia Fowles plays the position of center.\n1492. Jahlil Okafor plays the position of center.\n1539. Robert Parish plays the position of center.\n1624. Manute Bol plays the position of center.\n1633. Arvydas Sabonis plays the position of center.\n1694. Bob Lanier plays the position of center.\n1729. Darryl Dawkins plays the position of center.\n1756. Ubuntu Software Center was developed by Canonical Group Limited.\n2241. Nick Folk plays the position of placekicker.\n2352. Cole Aldrich plays the position of center.\n2409. center is associated with the sport of basketball.\n2731. Lisa Leslie plays the position of center.\n2769. Walt Bellamy plays the position of center.\n2793. Dino Meneghin plays the position of center.\n2808. center is associated with the sport of rugby union.\n2949. Hugo Lloris plays the position of infielder.\n3259. Nick Folk plays the position of center.\n3268. Bob Cousy plays the position of center.\n3358. Roy Hibbert plays the position of center.\n3665. infielder is associated with the sport of baseball.\n3693. DeAndre Jordan plays the position of center.\n3706. infielder is associated with the sport of rugby.\n3907. Hakeem Olajuwon plays the position of center.\n4155. Ralph Sampson plays the position of center.\n4213. Bill Walton plays the position of center.\n4228. Brad Miller plays the position of center.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

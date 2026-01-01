@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"hall_booking_window\",\"resolution\":\"merged\",\"value\":\"bookings must end by 10 pm, except the lantern parade planning session may run until midnight; committee meetings should end by 9:30 pm\",\"justification\":\"Both user-sourced updates are high-confidence and can be reconciled as a general rule with a stricter limit for committee meetings and a specific exception for the lantern parade planning session.\"},{\"entity\":\"user\",\"predicate\":\"noticeboard_header_style\",\"resolution\":\"kept_from_a\",\"value\":\"printed card headings on the noticeboard\",\"justification\":\"Branch A is a definitive user-stated preference while Branch B explicitly describes only a tentative possibility that is not yet settled.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 617,
+  "output_tokens": 152,
+  "raw": {
+    "id": "chatcmpl-EkT6vb7gW8odKihkOpcOWYUq99klr",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"hall_booking_window\",\"resolution\":\"merged\",\"value\":\"bookings must end by 10 pm, except the lantern parade planning session may run until midnight; committee meetings should end by 9:30 pm\",\"justification\":\"Both user-sourced updates are high-confidence and can be reconciled as a general rule with a stricter limit for committee meetings and a specific exception for the lantern parade planning session.\"},{\"entity\":\"user\",\"predicate\":\"noticeboard_header_style\",\"resolution\":\"kept_from_a\",\"value\":\"printed card headings on the noticeboard\",\"justification\":\"Branch A is a definitive user-stated preference while Branch B explicitly describes only a tentative possibility that is not yet settled.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794743697,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 152,
+      "prompt_tokens": 617,
+      "total_tokens": 769,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|hall_booking_window\": \"bookings must end by 10 pm\",\n  \"user|noticeboard_header_style\": \"I use a handwritten chalk heading\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|hall_booking_window\": {\n    \"value\": \"committee meetings should end by 9:30 pm\",\n    \"source\": \"user\",\n    \"confidence\": 0.98\n  },\n  \"user|noticeboard_header_style\": {\n    \"value\": \"printed card headings on the noticeboard\",\n    \"source\": \"user\",\n    \"confidence\": 1.0\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|hall_booking_window\": {\n    \"value\": \"wants hall bookings to run until midnight for the lantern parade planning session\",\n    \"source\": \"user\",\n    \"confidence\": 0.98\n  },\n  \"user|noticeboard_header_style\": {\n    \"value\": \"may switch to painted wooden headings, but is not settled on it\",\n    \"source\": \"user\",\n    \"confidence\": 0.92\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

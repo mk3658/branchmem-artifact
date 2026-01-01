@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this conflict resolution problem. So, the common ancestor has a value for \"user|track_spike_length_limit\" which is \"Track meets require spikes no longer than six millimeters.\" Now, Branch A and Branch B have different updates.\n\nFirst, looking at Branch A: their value is \"The user must use spikes at or under six millimeters.\" The source is \"inference\" and confidence is 0.55. Branch B's value is \"The user wants nine millimeter spikes for races.\" Source is \"user\" with confidence 0.95.\n\nThe common ancestor's value was six millimeters. Branch A's inference is keeping the six millimeter limit, but with lower confidence. Branch B's user input is changing it to nine millimeters, which is higher confidence. Since the user's source is more trustworthy than an inference, and Branch B's confidence is much higher, even though the ancestor had six, the user's explicit statement in Branch B should take precedence. The ancestor's value might be a stale value if the user corrected it. So, the resolution should keep Branch B's value because it's user-sourced and higher confidence. The conflict is resolved by keeping Branch B's value.\n</think>\n\n{\"resolutions\": [{\"entity\": \"user\", \"predicate\": \"track_spike_length_limit\", \"resolution\": \"kept_from_b\", \"value\": \"The user wants nine millimeter spikes for races.\", \"justification\": \"Branch B's user-sourced update with higher confidence directly contradicts the common ancestor's value, overriding the inferred, lower-confidence Branch A update.\"}]}",
+  "model": "qwen3:8b",
+  "input_tokens": 520,
+  "output_tokens": 335,
+  "raw": {
+    "id": "chatcmpl-243",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this conflict resolution problem. So, the common ancestor has a value for \"user|track_spike_length_limit\" which is \"Track meets require spikes no longer than six millimeters.\" Now, Branch A and Branch B have different updates.\n\nFirst, looking at Branch A: their value is \"The user must use spikes at or under six millimeters.\" The source is \"inference\" and confidence is 0.55. Branch B's value is \"The user wants nine millimeter spikes for races.\" Source is \"user\" with confidence 0.95.\n\nThe common ancestor's value was six millimeters. Branch A's inference is keeping the six millimeter limit, but with lower confidence. Branch B's user input is changing it to nine millimeters, which is higher confidence. Since the user's source is more trustworthy than an inference, and Branch B's confidence is much higher, even though the ancestor had six, the user's explicit statement in Branch B should take precedence. The ancestor's value might be a stale value if the user corrected it. So, the resolution should keep Branch B's value because it's user-sourced and higher confidence. The conflict is resolved by keeping Branch B's value.\n</think>\n\n{\"resolutions\": [{\"entity\": \"user\", \"predicate\": \"track_spike_length_limit\", \"resolution\": \"kept_from_b\", \"value\": \"The user wants nine millimeter spikes for races.\", \"justification\": \"Branch B's user-sourced update with higher confidence directly contradicts the common ancestor's value, overriding the inferred, lower-confidence Branch A update.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794789374,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 335,
+      "prompt_tokens": 520,
+      "total_tokens": 855,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|track_spike_length_limit\": \"Track meets require spikes no longer than six millimeters.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|track_spike_length_limit\": {\n    \"value\": \"The user must use spikes at or under six millimeters.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|track_spike_length_limit\": {\n    \"value\": \"The user wants nine millimeter spikes for races.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

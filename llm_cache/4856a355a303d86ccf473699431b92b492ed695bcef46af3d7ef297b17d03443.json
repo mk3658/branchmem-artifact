@@ -1,0 +1,48 @@
+{
+  "text": "{\"items\":[\n  {\"predicate\":\"meeting_availability_window\",\n    \"ancestor_predicate\":\"meeting_availability_window\",\n    \"ancestor_value\":\"I am completely unavailable for any meetings between 2:00 PM and 4:00 PM every weekday because I teach a live class then.\",\n    \"branch_a_value\":\"You can book me for a project check-in at 3:00 PM on Tuesday.\",\n    \"branch_b_value\":\"Please schedule the project check-in after 4:00 PM on Tuesday.\",\n    \"correct_branch\":\"b\"},\n  {\"predicate\":\"airport_arrival_deadline\",\n    \"ancestor_predicate\":\"airport_arrival_deadline\",\n    \"ancestor_value\":\"For any international flight, I must arrive at the airport no later than 5:30 AM.\",\n    \"branch_a_value\":\"For my international flight next Monday, I will get to the airport at 6:15 AM.\",\n    \"branch_b_value\":\"For my international flight next Monday, I will get to the airport at 5:00 AM.\",\n    \"correct_branch\":\"b\"},\n  {\"predicate\":\"friday_shift_end_time\",\n    \"ancestor_predicate\":\"friday_shift_end_time\",\n    \"ancestor_value\":\"Every Friday, I am scheduled to work until exactly 9:00 PM and cannot leave earlier.\",\n    \"branch_a_value\":\"This Friday I can head out at 8:30 PM for dinner.\",\n    \"branch_b_value\":\"This Friday I can meet for dinner after my 9:00 PM shift ends.\",\n    \"correct_branch\":\"b\"},\n  {\"predicate\":\"medication_interval\",\n    \"ancestor_predicate\":\"medication_interval\",\n    \"ancestor_value\":\"This prescription has to be taken every 6 hours, and I cannot take doses closer together than that.\",\n    \"branch_a_value\":\"If I take a dose at noon, I can take the next one again at 4:00 PM.\",\n    \"branch_b_value\":\"If I take a dose at noon, the next dose can be at 6:00 PM.\",\n    \"correct_branch\":\"b\"},\n  {\"predicate\":\"building_access_cutoff\",\n    \"ancestor_predicate\":\"building_access_cutoff\",\n    \"ancestor_value\":\"The lab doors lock automatically at 8:00 PM, so no one can enter the building after that time without special security access.\",\n    \"branch_a_value\":\"I do not have special security access, but I can still enter the lab at 8:20 PM.\",\n    \"branch_b_value\":\"I do not have special security access, so I need to get into the lab before 8:00 PM.\",\n    \"correct_branch\":\"b\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 252,
+  "output_tokens": 539,
+  "raw": {
+    "id": "chatcmpl-E4kp9GoOsVIW5grgxjo1ECxY252WF",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"items\":[\n  {\"predicate\":\"meeting_availability_window\",\n    \"ancestor_predicate\":\"meeting_availability_window\",\n    \"ancestor_value\":\"I am completely unavailable for any meetings between 2:00 PM and 4:00 PM every weekday because I teach a live class then.\",\n    \"branch_a_value\":\"You can book me for a project check-in at 3:00 PM on Tuesday.\",\n    \"branch_b_value\":\"Please schedule the project check-in after 4:00 PM on Tuesday.\",\n    \"correct_branch\":\"b\"},\n  {\"predicate\":\"airport_arrival_deadline\",\n    \"ancestor_predicate\":\"airport_arrival_deadline\",\n    \"ancestor_value\":\"For any international flight, I must arrive at the airport no later than 5:30 AM.\",\n    \"branch_a_value\":\"For my international flight next Monday, I will get to the airport at 6:15 AM.\",\n    \"branch_b_value\":\"For my international flight next Monday, I will get to the airport at 5:00 AM.\",\n    \"correct_branch\":\"b\"},\n  {\"predicate\":\"friday_shift_end_time\",\n    \"ancestor_predicate\":\"friday_shift_end_time\",\n    \"ancestor_value\":\"Every Friday, I am scheduled to work until exactly 9:00 PM and cannot leave earlier.\",\n    \"branch_a_value\":\"This Friday I can head out at 8:30 PM for dinner.\",\n    \"branch_b_value\":\"This Friday I can meet for dinner after my 9:00 PM shift ends.\",\n    \"correct_branch\":\"b\"},\n  {\"predicate\":\"medication_interval\",\n    \"ancestor_predicate\":\"medication_interval\",\n    \"ancestor_value\":\"This prescription has to be taken every 6 hours, and I cannot take doses closer together than that.\",\n    \"branch_a_value\":\"If I take a dose at noon, I can take the next one again at 4:00 PM.\",\n    \"branch_b_value\":\"If I take a dose at noon, the next dose can be at 6:00 PM.\",\n    \"correct_branch\":\"b\"},\n  {\"predicate\":\"building_access_cutoff\",\n    \"ancestor_predicate\":\"building_access_cutoff\",\n    \"ancestor_value\":\"The lab doors lock automatically at 8:00 PM, so no one can enter the building after that time without special security access.\",\n    \"branch_a_value\":\"I do not have special security access, but I can still enter the lab at 8:20 PM.\",\n    \"branch_b_value\":\"I do not have special security access, so I need to get into the lab before 8:00 PM.\",\n    \"correct_branch\":\"b\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802011,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 539,
+      "prompt_tokens": 252,
+      "total_tokens": 791,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Domain: scheduling and hard time constraints\n\nProduce 5 DISTINCT items as strict JSON: {\"items\": [\n  {\"predicate\": \"<snake_case key>\",\n    \"ancestor_predicate\": \"<same snake_case key>\",\n    \"ancestor_value\": \"<the background constraint, e.g. 'is severely lactose intolerant'>\",\n    \"branch_a_value\": \"<a value that STRICTLY CONTRADICTS the constraint>\",\n    \"branch_b_value\": \"<a value COMPATIBLE with the constraint>\",\n    \"correct_branch\": \"b\"}\n]}\nRules: branch_a_value must be logically impossible given ancestor_value; branch_b_value\nmust be consistent with it; both must be plausible things a user might say; correct_branch\nis always \"b\". No two items may share a predicate. Output JSON only.",
+  "system": "You author test items for a memory-reconciliation benchmark. Each item is a STRICT logical incompatibility: given a stated background constraint, exactly one of two candidate values is logically INCOMPATIBLE with it and the other is compatible. Not a mere preference or soft default -- a genuine contradiction a careful reader would catch. Vary phrasing and entities; make them read like real user memory notes, not templates."
+}

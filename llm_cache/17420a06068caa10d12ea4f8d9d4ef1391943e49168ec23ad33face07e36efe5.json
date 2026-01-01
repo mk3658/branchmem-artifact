@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"bulk_snack_preference\",\"value\":\"may start buying tamari almonds\",\"source\":\"user\",\"confidence\":0.78},{\"predicate\":\"member_pickup_window\",\"value\":\"wants to pick up orders before the store opens tomorrow morning\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"store_waiting_habit\",\"value\":\"usually browses the seed packets near the entrance while waiting\",\"source\":\"user\",\"confidence\":0.93}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 324,
+  "output_tokens": 99,
+  "raw": {
+    "id": "chatcmpl-EkScXXZVddkyORx2l5hzQNNSZ7nZu",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"bulk_snack_preference\",\"value\":\"may start buying tamari almonds\",\"source\":\"user\",\"confidence\":0.78},{\"predicate\":\"member_pickup_window\",\"value\":\"wants to pick up orders before the store opens tomorrow morning\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"store_waiting_habit\",\"value\":\"usually browses the seed packets near the entrance while waiting\",\"source\":\"user\",\"confidence\":0.93}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741813,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 99,
+      "prompt_tokens": 324,
+      "total_tokens": 423,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- member_pickup_window: orders are collected only during afternoon pickup hours  (source=observation, confidence=1.00)\n- bulk_snack_preference: I usually buy sesame rice crackers  (source=observation, confidence=1.00)\n- parking_habit: I usually lock my bike by the side rack  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might start buying tamari almonds, but I have not decided yet.\nUser: I want to pick up my order before the store opens tomorrow morning.\nUser: I usually browse the seed packets near the entrance while I wait.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

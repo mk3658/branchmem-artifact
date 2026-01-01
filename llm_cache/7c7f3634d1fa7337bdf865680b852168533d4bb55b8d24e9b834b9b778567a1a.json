@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"raffle_prize_theme\",\"value\":\"the raffle prizes may be local craft hampers, though this is undecided\",\"source\":\"user\",\"confidence\":0.92},{\"predicate\":\"hall_key_return_deadline\",\"value\":\"the user wants to keep the hall keys overnight after the quiz setup\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"kettle_side_room_boiling_speed\",\"value\":\"the kettle in the side room boils much faster now\",\"source\":\"user\",\"confidence\":0.97}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 325,
+  "output_tokens": 111,
+  "raw": {
+    "id": "chatcmpl-EkSabHy6F3JjKhCotAzJdVmilm6Jp",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"raffle_prize_theme\",\"value\":\"the raffle prizes may be local craft hampers, though this is undecided\",\"source\":\"user\",\"confidence\":0.92},{\"predicate\":\"hall_key_return_deadline\",\"value\":\"the user wants to keep the hall keys overnight after the quiz setup\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"kettle_side_room_boiling_speed\",\"value\":\"the kettle in the side room boils much faster now\",\"source\":\"user\",\"confidence\":0.97}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741693,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 111,
+      "prompt_tokens": 325,
+      "total_tokens": 436,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- hall_key_return_deadline: keys must be returned by 9 pm  (source=observation, confidence=1.00)\n- raffle_prize_theme: the raffle prizes are gardening items  (source=observation, confidence=1.00)\n- stage_curtain_colour: the stage curtains are dark green  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might make the raffle prizes local craft hampers, but I'm still weighing it up.\nUser: I want to keep the hall keys overnight after the quiz setup.\nUser: I noticed the kettle in the side room boils much faster now.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

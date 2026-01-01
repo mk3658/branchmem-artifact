@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"negative_sleeve_label_style\",\"value\":\"may switch to labeling negative sleeves by camera model, but not decided yet\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"tray_access_window\",\"value\":\"wants to use the chemical trays at 5 pm, before the crowd arrives\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"bring_squeegee\",\"value\":\"will bring a little squeegee because the sink area was dripping last time\",\"source\":\"user\",\"confidence\":0.97}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 337,
+  "output_tokens": 114,
+  "raw": {
+    "id": "chatcmpl-EkScrpayj2rdirc6VInpOa45v5ynq",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"negative_sleeve_label_style\",\"value\":\"may switch to labeling negative sleeves by camera model, but not decided yet\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"tray_access_window\",\"value\":\"wants to use the chemical trays at 5 pm, before the crowd arrives\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"bring_squeegee\",\"value\":\"will bring a little squeegee because the sink area was dripping last time\",\"source\":\"user\",\"confidence\":0.97}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741833,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 114,
+      "prompt_tokens": 337,
+      "total_tokens": 451,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- tray_access_window: chemical trays available only after 7 pm  (source=observation, confidence=1.00)\n- negative_sleeve_label_style: I label sleeves with month and roll number  (source=observation, confidence=1.00)\n- locker_shelf_position: my locker shelf is the top left one  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might start labeling my negative sleeves by camera model, but I haven\u2019t settled on it.\nUser: I want to use the chemical trays at five this afternoon before the crowd arrives.\nUser: I\u2019m bringing the little squeegee because the sink area was dripping everywhere last time.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

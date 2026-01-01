@@ -1,0 +1,48 @@
+{
+  "text": "{\"constraint_predicate\":\"balcony_drying_rule\",\"constraint_value\":\"laundry may dry only on the inner rack\",\"constraint_compatible_value\":\"I dry clothes on the hallway folding rack\",\"constraint_violating_value\":\"I hang washing over the balcony rail\",\"ordinary_predicate\":\"mug_storage_spot\",\"ordinary_value\":\"my mug stays on the second kitchen shelf\",\"ordinary_new_value\":\"my mug now stays in the left dish cupboard\",\"ordinary_speculated_value\":\"my mug might belong by the sink caddy\",\"background_predicate\":\"entryway_shoe_side\",\"background_value\":\"my shoes line up on the radiator side\",\"dialogue_a\":[\"I\u2019m moving my mug to the left dish cupboard from now on.\",\"I\u2019ll keep drying my shirts on the hallway folding rack tonight.\",\"I\u2019m wiping the hallway mirror because it\u2019s covered in fingerprints.\"],\"dialogue_b\":[\"I might keep my mug by the sink caddy, but I haven\u2019t settled it.\",\"I\u2019m going to hang my washing over the balcony rail this afternoon.\",\"I\u2019m tightening the loose knob on the living room cabinet.\"]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 592,
+  "output_tokens": 223,
+  "raw": {
+    "id": "chatcmpl-EkS59fV7hEbouYVhue1baf6OYkVKd",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"constraint_predicate\":\"balcony_drying_rule\",\"constraint_value\":\"laundry may dry only on the inner rack\",\"constraint_compatible_value\":\"I dry clothes on the hallway folding rack\",\"constraint_violating_value\":\"I hang washing over the balcony rail\",\"ordinary_predicate\":\"mug_storage_spot\",\"ordinary_value\":\"my mug stays on the second kitchen shelf\",\"ordinary_new_value\":\"my mug now stays in the left dish cupboard\",\"ordinary_speculated_value\":\"my mug might belong by the sink caddy\",\"background_predicate\":\"entryway_shoe_side\",\"background_value\":\"my shoes line up on the radiator side\",\"dialogue_a\":[\"I\u2019m moving my mug to the left dish cupboard from now on.\",\"I\u2019ll keep drying my shirts on the hallway folding rack tonight.\",\"I\u2019m wiping the hallway mirror because it\u2019s covered in fingerprints.\"],\"dialogue_b\":[\"I might keep my mug by the sink caddy, but I haven\u2019t settled it.\",\"I\u2019m going to hang my washing over the balcony rail this afternoon.\",\"I\u2019m tightening the loose knob on the living room cabinet.\"]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794739743,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 223,
+      "prompt_tokens": 592,
+      "total_tokens": 815,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Setting: a shared flat\n\nWrite ONE episode. The assistant already holds three facts about \"user\". Then two separate\nconversations happen, on different devices, with no shared clock, and neither conversation\nknows about the other.\n\nFacts already held:\n  * one STANDING CONSTRAINT imposed from outside the user's control (a rule of the\n    organisation, a contract, a physical limit). Give it predicate `constraint_predicate`,\n    value `constraint_value`, and a `constraint_compatible_value`: a statement of what the\n    user does that respects the rule.\n  * one ORDINARY revisable value, predicate `ordinary_predicate`, value `ordinary_value`.\n  * one BACKGROUND fact, predicate `background_predicate`, value `background_value`, which\n    neither conversation touches.\n\nConversation A, three user turns in `dialogue_a`:\n  * one turn that DEFINITELY changes the ordinary value; put the resulting new value in\n    `ordinary_new_value`;\n  * one turn that mentions the constraint area while respecting the rule;\n  * one neutral turn about the setting that implies no memory change.\n\nConversation B, three user turns in `dialogue_b`, independent of A:\n  * one turn that only SPECULATES about the same ordinary key without deciding; put the\n    speculated value in `ordinary_speculated_value`;\n  * one turn that confidently asks for something the standing constraint does NOT allow; put\n    the value that request would imply in `constraint_violating_value`;\n  * one neutral turn.\n\nEvery turn must be something a person would plausibly say, 8 to 30 words, first person, and\nmust not mention memory, sources, confidence, reliability or how trustworthy anything is.\nAll predicates are snake_case and distinct. All values are short statements of 3 to 16 words.\n\nRespond with strict JSON only:\n{\"constraint_predicate\": \"...\", \"constraint_value\": \"...\", \"constraint_compatible_value\": \"...\",\n  \"constraint_violating_value\": \"...\",\n  \"ordinary_predicate\": \"...\", \"ordinary_value\": \"...\", \"ordinary_new_value\": \"...\",\n  \"ordinary_speculated_value\": \"...\",\n  \"background_predicate\": \"...\", \"background_value\": \"...\",\n  \"dialogue_a\": [\"...\", \"...\", \"...\"], \"dialogue_b\": [\"...\", \"...\", \"...\"]}\n\nThis is variant 5 for this setting; make the specific objects, predicates and values different from any obvious first choice.\nThe previous attempt was rejected (predicate reused: ['desk_location_preference', 'laundry_access_window']). Fix that.",
+  "system": "You author environments for an evaluation of how an AI assistant reconciles memory that diverged across two offline sessions. You write mundane, non-sensitive, everyday logistics. No medical, dietary, allergy, religious, financial-hardship or disability content. You output strict JSON only."
+}

@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 723,
+  "output_tokens": 28,
+  "raw": {
+    "id": "chatcmpl-928",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720591,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 28,
+      "prompt_tokens": 723,
+      "total_tokens": 751,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: Kim Tae-hee\nRelation: citizen_of\nPreviously recorded value (may be stale, may be empty): South Korea\n\nCandidate LEFT:  United States of America\nCandidate RIGHT: Kingdom of Ireland\n\nEvidence lines (numbered, in original order):\n3978. Dr. Dre is a citizen of United States of America.\n4002. John Bigler is a citizen of United States of America.\n4005. Sam Robards is a citizen of United States of America.\n4016. country music was created in the country of United States of America.\n4055. Reese Witherspoon is a citizen of United States of America.\n4062. Alan Carr is a citizen of United States of America.\n4120. Hal Needham is a citizen of United States of America.\n4150. Robert A. Heinlein is a citizen of United States of America.\n4158. basketball was created in the country of United States of America.\n4172. Vaginal Davis is a citizen of United States of America.\n4177. Robert Gordon Sproul is a citizen of United States of America.\n4185. Dale Bumpers is a citizen of United States of America.\n4219. Stephen King is a citizen of United States of America.\n4233. Robert Wisdom is a citizen of United States of America.\n4266. Henry Ford is a citizen of United States of America.\n4270. Nelson Mandela is a citizen of United States of America.\n4301. Seth Cohen is a citizen of United States of America.\n4312. The name of the current head of the United States of America government is Ole Johan Vierdal.\n4330. Estelle Getty is a citizen of United States of America.\n4340. Sugawara no Michizane is a citizen of United States of America.\n4395. Moby-Dick was created in the country of United States of America.\n4397. Barack Obama is a citizen of United States of America.\n4407. Tom\u00e1\u0161 Berdych is a citizen of United States of America.\n4463. Margaret Truman is a citizen of United States of America.\n4465. David Gilmour is a citizen of United States of America.\n4500. savate was created in the country of United States of America.\n4502. Gennady Rozhdestvensky died in the city of United States of America.\n4514. Henry McMaster is a citizen of United States of America.\n4525. Lisa Marie Presley is a citizen of United States of America.\n4566. Tomokazu Seki is a citizen of United States of America.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"preferred_checkout_time\",\"value\":\"may start coming early on Saturday mornings, but not settled yet\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"loan_duration_limit\",\"value\":\"wants to keep the tile saw for two weeks for a bathroom project\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"store_feedback\",\"value\":\"likes the new labels on the bins by the fasteners aisle\",\"source\":\"user\",\"confidence\":0.97}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 326,
+  "output_tokens": 102,
+  "raw": {
+    "id": "chatcmpl-EkSaeKxVRtkSLsv6YyCyLwqbD0PtO",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"preferred_checkout_time\",\"value\":\"may start coming early on Saturday mornings, but not settled yet\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"loan_duration_limit\",\"value\":\"wants to keep the tile saw for two weeks for a bathroom project\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"store_feedback\",\"value\":\"likes the new labels on the bins by the fasteners aisle\",\"source\":\"user\",\"confidence\":0.97}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741696,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 102,
+      "prompt_tokens": 326,
+      "total_tokens": 428,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- loan_duration_limit: power tools must be returned within three days  (source=observation, confidence=1.00)\n- preferred_checkout_time: I usually come by right after lunch  (source=observation, confidence=1.00)\n- membership_tier: I have a standard borrower membership  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might start coming early on Saturday mornings, though I have not settled on that yet.\nUser: I want to keep the tile saw for two weeks for a long bathroom project.\nUser: I really like the new labels on the bins by the fasteners aisle.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

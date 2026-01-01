@@ -1,0 +1,48 @@
+{
+  "text": "NO",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 182,
+  "output_tokens": 4,
+  "raw": {
+    "id": "chatcmpl-E4kxceNW2PsXHFKpMUPbb1Bf6uxGW",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "NO",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802536,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 4,
+      "prompt_tokens": 182,
+      "total_tokens": 186,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "User memory:\n- user.transit_visa_requirement (background constraint): My itinerary requires me to leave the international transit zone and change airports in that country, and my nationality requires a visa to enter that country.\n- user.transit_visa_requirement: I can make that airport change without any visa because I'm only in transit. | I need the appropriate visa for that transit since I'll be entering the country.\n\nBased only on this memory, is the following currently true of the user?\nStatement: \"I can make that airport change without any visa because I'm only in transit.\"\nAnswer with exactly one word: YES, NO, or UNSURE.",
+  "system": "You answer strictly from the user memory provided. If the memory does not support the statement, answer NO. If the memory is unresolved, contradictory, or insufficient, answer UNSURE. Respect any stated constraints in the memory."
+}

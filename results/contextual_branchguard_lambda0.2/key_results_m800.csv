@@ -1,0 +1,15 @@
+calibration_size,regime,policy,coverage,wrong_commit_rate,conditional_risk,expected_utility,worst_channel_risk,medical_risk,risk_violation_probability,subgroup_violation_probability
+800,abrupt_drift,Always abstain,0.0,0.0,,0.0,0.0,0.0,0.0,0.0
+800,abrupt_drift,Always follow provenance,1.0,0.70512808,0.70512808,-2.5256404,0.9,0.8,1.0,1.0
+800,abrupt_drift,Contextual BayesianSource,0.971834,0.54946456,0.5656325085698544,-1.7754888,0.7,0.08792,1.0,1.0
+800,abrupt_drift,Contextual BranchGuard,0.89778496,0.53975024,0.6045666358497275,-1.8009662400000002,0.6999599999999999,0.00064,1.0,1.0
+800,abrupt_drift,Oracle contextual,1.0,0.55508616,0.55508616,-1.7754308,0.7,0.2,1.0,1.0
+800,abrupt_drift,Pooled BayesianSource,0.004,0.00283032,0.70758,-0.0101516,0.0036,0.0032,0.004,0.004
+800,abrupt_drift,Pooled BranchGuard,0.0,0.0,,0.0,0.0,0.0,0.0,0.0
+800,stationary,Always abstain,0.0,0.0,,0.0,0.0,0.0,0.0,0.0
+800,stationary,Always follow provenance,1.0,0.23998328000000002,0.23998328000000002,-0.1999164,0.9,0.8,1.0,1.0
+800,stationary,Contextual BayesianSource,0.97189264,0.0843912,0.08676273083104004,0.54993664,0.14396,0.08792,0.0,0.0
+800,stationary,Contextual BranchGuard,0.897802,0.07480384,0.08319084219690225,0.5237828,0.1003,0.00064,0.0,0.0
+800,stationary,Oracle contextual,1.0,0.0900012,0.0900012,0.5499940000000001,0.2,0.2,0.0,0.0
+800,stationary,Pooled BayesianSource,0.004,0.0009616,0.2404,-0.000808,0.0036,0.0032,0.004,0.004
+800,stationary,Pooled BranchGuard,0.0,0.0,,0.0,0.0,0.0,0.0,0.0

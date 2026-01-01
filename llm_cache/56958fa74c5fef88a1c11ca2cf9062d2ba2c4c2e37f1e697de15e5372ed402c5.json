@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"sectional_break_seat_preference\",\"value\":\"switching to the back riser bench during sectional break\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"robe_storage_access_window\",\"value\":\"robe room opens after warmups\",\"source\":\"user\",\"confidence\":0.99}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 326,
+  "output_tokens": 68,
+  "raw": {
+    "id": "chatcmpl-EkSaxlDvRsgHkbhCdUeHNtlTZEs6B",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"sectional_break_seat_preference\",\"value\":\"switching to the back riser bench during sectional break\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"robe_storage_access_window\",\"value\":\"robe room opens after warmups\",\"source\":\"user\",\"confidence\":0.99}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741715,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 68,
+      "prompt_tokens": 326,
+      "total_tokens": 394,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- robe_storage_access_window: robe room opens only after warmups  (source=observation, confidence=1.00)\n- sectional_break_seat_preference: I usually sit by the side piano  (source=observation, confidence=1.00)\n- concert_call_time: I arrive forty minutes before call  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I am switching to the back riser bench during sectional break from now on.\nUser: I will grab my robe after warmups since the storage room opens then.\nUser: I loved how the tenors nailed that echo in tonight's final piece.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

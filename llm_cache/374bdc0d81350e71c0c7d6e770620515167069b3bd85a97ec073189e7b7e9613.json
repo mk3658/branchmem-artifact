@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"5593\"}",
+  "model": "gpt-5.4-nano-2026-03-17",
+  "input_tokens": 432,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkG1op4YcYJfWkd8qYZ66bLckWvXN",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"5593\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794693408,
+    "model": "gpt-5.4-nano-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 432,
+      "total_tokens": 455,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: John Galt\nRelation: created_by\nPreviously recorded value (may be stale, may be empty): Ayn Rand\n\nCandidate LEFT:  Robert Jordan\nCandidate RIGHT: Nigel Kneale\n\nEvidence lines (numbered, in original order):\n2095. John Galt was created by Ayn Rand.\n2833. Bernard Quatermass was created by Nigel Kneale.\n3484. Nigel Kneale died in the city of London.\n3656. Robert Jordan is famous for The Wheel of Time.\n3741. Nigel Kneale died in the city of Westhorpe Hall.\n4321. The author of Quatermass II is Nigel Kneale.\n5593. John Galt was created by Nigel Kneale.\n7371. Robert Jordan is famous for The Protocols of the Elders of Zion.\n8089. Nigel Kneale speaks the language of English.\n9563. Nigel Kneale is a citizen of United Kingdom.\n12053. Rand al'Thor was created by Robert Jordan.\n12812. Quatermass II was created by Nigel Kneale.\n16330. Nyarlathotep was created by Nigel Kneale.\n16674. Nigel Kneale is a citizen of Eastern Han Dynasty.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

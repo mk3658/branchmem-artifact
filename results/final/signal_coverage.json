@@ -1,0 +1,74 @@
+{
+  "note": "post-hoc, exploratory signal-coverage sweep: fraction of resolvable conflicts carrying an exploitable provenance signal, from 0.0 (MAB-like, no signal) to 1.0 (all synthetic). Maps the transition between the paper's two extremes. n=24 scenarios/level, 4 resolvable conflicts each, gpt-5.4-nano. NOT part of ANALYSIS_PLAN.md confirmatory tests.",
+  "run_metadata": {
+    "seed": 6001,
+    "n_scenarios": 24,
+    "n_resolvable": 4,
+    "noise": 0.15,
+    "model": "gpt-5.4-nano",
+    "coverages": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ]
+  },
+  "per_coverage": [
+    {
+      "coverage": 0.0,
+      "three_way_llm": {
+        "resolvable_accuracy": 0.0,
+        "commit_rate": 0.0
+      },
+      "confidence_rule": {
+        "resolvable_accuracy": 0.0,
+        "commit_rate": 0.0
+      }
+    },
+    {
+      "coverage": 0.25,
+      "three_way_llm": {
+        "resolvable_accuracy": 0.2708333333333333,
+        "commit_rate": 0.3541666666666667
+      },
+      "confidence_rule": {
+        "resolvable_accuracy": 0.20833333333333334,
+        "commit_rate": 0.25
+      }
+    },
+    {
+      "coverage": 0.5,
+      "three_way_llm": {
+        "resolvable_accuracy": 0.4479166666666667,
+        "commit_rate": 0.6041666666666666
+      },
+      "confidence_rule": {
+        "resolvable_accuracy": 0.4166666666666667,
+        "commit_rate": 0.5
+      }
+    },
+    {
+      "coverage": 0.75,
+      "three_way_llm": {
+        "resolvable_accuracy": 0.625,
+        "commit_rate": 0.75
+      },
+      "confidence_rule": {
+        "resolvable_accuracy": 0.6354166666666666,
+        "commit_rate": 0.75
+      }
+    },
+    {
+      "coverage": 1.0,
+      "three_way_llm": {
+        "resolvable_accuracy": 0.8125,
+        "commit_rate": 1.0
+      },
+      "confidence_rule": {
+        "resolvable_accuracy": 0.8125,
+        "commit_rate": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"2218\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 748,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-144",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"2218\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720586,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 748,
+      "total_tokens": 779,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: 2009 WNBA season\nRelation: sport\nPreviously recorded value (may be stale, may be empty): basketball\n\nCandidate LEFT:  field hockey\nCandidate RIGHT: association football\n\nEvidence lines (numbered, in original order):\n1371. Joan Laporta is associated with the sport of association football.\n1386. 2009 Six Nations Championship is associated with the sport of association football.\n1453. Lorik Cana is associated with the sport of association football.\n1479. 2009 WNBA season is associated with the sport of association football.\n1532. Slovakia national football team is associated with the sport of association football.\n1541. 2004 NBA Draft is associated with the sport of association football.\n1628. association football was created in the country of Italy.\n1646. FC Slutsk is associated with the sport of association football.\n1676. 2016\u201317 Serbian SuperLiga is associated with the sport of association football.\n1693. Northwest League is associated with the sport of association football.\n1708. Maccabi Ironi Ashdod F.C. is associated with the sport of association football.\n1716. defender is associated with the sport of association football.\n1731. FC Irtysh Omsk is associated with the sport of association football.\n1762. Al-Ahli Saudi FC is associated with the sport of association football.\n1763. Tharman Shanmugaratnam works in the field of association football player.\n1772. John Harkes is associated with the sport of association football.\n1852. Moravian-Silesian Football League is associated with the sport of association football.\n1876. Steve Sax is associated with the sport of association football.\n2030. Aris Thessaloniki F.C. is associated with the sport of association football.\n2035. Phoenix Inferno is associated with the sport of association football.\n2073. Diego Simeone is associated with the sport of association football.\n2083. Maccabi Yavne F.C. is associated with the sport of association football.\n2106. A.S.D. Casertana Calcio is associated with the sport of association football.\n2109. Woodlands Wellington FC is associated with the sport of association football.\n2131. Lionel Hollins is associated with the sport of association football.\n2132. Jeff Hornacek is associated with the sport of association football.\n2151. Bob Bradley is associated with the sport of field hockey.\n2169. Carlo Ancelotti is associated with the sport of association football.\n2218. Bo Ryan is associated with the sport of association football.\n2294. Burgos CF is associated with the sport of association football.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

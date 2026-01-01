@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"discussion_role\",\"resolution\":\"kept_from_b\",\"value\":\"I usually lead the opening discussion question\",\"justification\":\"Branch A's value is not a role statement but a different preference/topic, while Branch B matches the ancestor and preserves the actual predicate meaning despite being observation-sourced.\"},{\"entity\":\"user\",\"predicate\":\"meeting_location_rule\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Both branches contain explicit user-sourced, equally confident but substantively conflicting statements about where meetings should be held, so there is no principled basis to choose one.\"},{\"entity\":\"user\",\"predicate\":\"next_book_choice\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Both branches are user-sourced updates expressing different next-book preferences, and the difference between a firm preference and an unsettled possibility does not by itself establish which is more correct.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 726,
+  "output_tokens": 190,
+  "raw": {
+    "id": "chatcmpl-EkT7ko40Fy4OwaGAk0Jvr0ZnZK7kR",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"discussion_role\",\"resolution\":\"kept_from_b\",\"value\":\"I usually lead the opening discussion question\",\"justification\":\"Branch A's value is not a role statement but a different preference/topic, while Branch B matches the ancestor and preserves the actual predicate meaning despite being observation-sourced.\"},{\"entity\":\"user\",\"predicate\":\"meeting_location_rule\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Both branches contain explicit user-sourced, equally confident but substantively conflicting statements about where meetings should be held, so there is no principled basis to choose one.\"},{\"entity\":\"user\",\"predicate\":\"next_book_choice\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Both branches are user-sourced updates expressing different next-book preferences, and the difference between a firm preference and an unsettled possibility does not by itself establish which is more correct.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794743748,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 190,
+      "prompt_tokens": 726,
+      "total_tokens": 916,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|discussion_role\": \"I usually lead the opening discussion question\",\n  \"user|meeting_location_rule\": \"book group meetings must stay in the library lounge\",\n  \"user|next_book_choice\": \"I want to read a mystery novel next\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|discussion_role\": {\n    \"value\": \"I liked when the discussion wandered into everyone's favorite side characters\",\n    \"source\": \"user\",\n    \"confidence\": 0.92\n  },\n  \"user|meeting_location_rule\": {\n    \"value\": \"book group meetings should stay in the library lounge; I can arrive early to save our usual corner\",\n    \"source\": \"user\",\n    \"confidence\": 0.98\n  },\n  \"user|next_book_choice\": {\n    \"value\": \"I want to read a historical fiction novel next\",\n    \"source\": \"user\",\n    \"confidence\": 1.0\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|discussion_role\": {\n    \"value\": \"I usually lead the opening discussion question\",\n    \"source\": \"observation\",\n    \"confidence\": 1.0\n  },\n  \"user|meeting_location_rule\": {\n    \"value\": \"I want to host the next book group meeting at my apartment\",\n    \"source\": \"user\",\n    \"confidence\": 0.98\n  },\n  \"user|next_book_choice\": {\n    \"value\": \"I might want to read science fiction next, but I'm not settled yet\",\n    \"source\": \"user\",\n    \"confidence\": 0.96\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

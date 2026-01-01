@@ -1,0 +1,48 @@
+{
+  "text": "{\"items\":[{\"type\":\"immutable_constraint\",\"predicate\":\"permit_vehicle_limit\",\"ancestor_value\":\"The garage permit allows only one registered vehicle.\",\"update_value\":\"The user can park two registered vehicles on one permit.\",\"keep_value\":\"The user may park only one registered vehicle per permit.\",\"why_correct\":\"the permit rule still limits parking to one vehicle\"},{\"type\":\"legitimate_override\",\"predicate\":\"assigned_parking_zone\",\"ancestor_value\":\"The user's assigned parking zone is Lot C.\",\"update_value\":\"The user's assigned parking zone is Lot E.\",\"keep_value\":\"The user's assigned parking zone remains Lot C.\",\"why_correct\":\"the newer assignment supersedes the old zone\"},{\"type\":\"independent_observation\",\"predicate\":\"current_permit_display\",\"ancestor_value\":\"Last season, the user displayed a blue parking permit.\",\"update_value\":\"This week, the user displays a green parking permit.\",\"keep_value\":\"Last season, the user displayed a blue parking permit.\",\"why_correct\":\"the content identifies the green permit as current\"},{\"type\":\"ambiguous\",\"predicate\":\"overnight_parking_level\",\"ancestor_value\":\"The user's overnight parking level is Level 2.\",\"update_value\":\"The user's overnight parking level is Level 4.\",\"keep_value\":\"The user's overnight parking level is Level 2.\",\"why_correct\":\"nothing in the statements determines which level is current\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 615,
+  "output_tokens": 266,
+  "raw": {
+    "id": "chatcmpl-EkRvSpcps7GzsJFxpovLM4WkxpzpE",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"items\":[{\"type\":\"immutable_constraint\",\"predicate\":\"permit_vehicle_limit\",\"ancestor_value\":\"The garage permit allows only one registered vehicle.\",\"update_value\":\"The user can park two registered vehicles on one permit.\",\"keep_value\":\"The user may park only one registered vehicle per permit.\",\"why_correct\":\"the permit rule still limits parking to one vehicle\"},{\"type\":\"legitimate_override\",\"predicate\":\"assigned_parking_zone\",\"ancestor_value\":\"The user's assigned parking zone is Lot C.\",\"update_value\":\"The user's assigned parking zone is Lot E.\",\"keep_value\":\"The user's assigned parking zone remains Lot C.\",\"why_correct\":\"the newer assignment supersedes the old zone\"},{\"type\":\"independent_observation\",\"predicate\":\"current_permit_display\",\"ancestor_value\":\"Last season, the user displayed a blue parking permit.\",\"update_value\":\"This week, the user displays a green parking permit.\",\"keep_value\":\"Last season, the user displayed a blue parking permit.\",\"why_correct\":\"the content identifies the green permit as current\"},{\"type\":\"ambiguous\",\"predicate\":\"overnight_parking_level\",\"ancestor_value\":\"The user's overnight parking level is Level 2.\",\"update_value\":\"The user's overnight parking level is Level 4.\",\"keep_value\":\"The user's overnight parking level is Level 2.\",\"why_correct\":\"nothing in the statements determines which level is current\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794739142,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 266,
+      "prompt_tokens": 615,
+      "total_tokens": 881,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Domain: parking permits\n\nWrite FOUR memory-conflict items in this domain, one of each type. In every item an\nassistant has an older recorded value for one key, and a newer incoming update that\nconflicts with it. Use the SAME entity \"user\" and a DIFFERENT snake_case predicate per item.\n\n1. \"immutable_constraint\": `ancestor_value` states a STANDING RULE or hard limit that cannot\n   simply be overridden by a later preference (a rule imposed by someone else, a physical\n   limit, a contractual or safety requirement). `update_value` is an assertion that would\n   VIOLATE that rule. `keep_value` is a statement consistent with the rule. The correct\n   resolution is `keep_value`, because the rule still holds.\n\n2. \"legitimate_override\": `ancestor_value` states an ORDINARY, revisable recorded value with\n   no standing-rule force. `update_value` is a genuine, explicit correction or change of that\n   value. `keep_value` restates the now-stale ancestor value. The correct resolution is\n   `update_value`, because the newer statement supersedes a stale one.\n\n3. \"independent_observation\": two observations of a fact that changes over time, where the\n   CONTENT of the values itself says which is current (e.g. one says \"as of last season\", the\n   other \"as of this week\"). The correct resolution is the one the content marks as current;\n   put that text in `update_value` and the superseded text in `keep_value`.\n\n4. \"ambiguous\": two equally well-warranted, mutually exclusive values with nothing in the\n   content to choose between them. Correct behaviour is to decline to answer.\n\nRules for every item: `ancestor_value`, `update_value` and `keep_value` must each read as a\nnatural standalone statement of 4 to 18 words; they must be mutually distinguishable in\nmeaning, not rewordings; nothing in any value may mention sources, who said it, confidence,\nreliability, timestamps in clock form, or how trustworthy it is.\n\nRespond with strict JSON only:\n{\"items\": [\n  {\"type\": \"immutable_constraint\", \"predicate\": \"<snake_case>\", \"ancestor_value\": \"...\",\n    \"update_value\": \"...\", \"keep_value\": \"...\", \"why_correct\": \"<one clause>\"},\n  {\"type\": \"legitimate_override\", ...},\n  {\"type\": \"independent_observation\", ...},\n  {\"type\": \"ambiguous\", ...}\n]}\n\nAttempt 3: the previous response was rejected (values not distinct). Fix exactly that and keep everything else.",
+  "system": "You author evaluation items for a benchmark on reconciling conflicting entries in an AI assistant's long-term memory. You write realistic, mundane, non-sensitive items about everyday logistics. You never write medical, dietary, allergy, religious, financial-hardship or disability content. You output strict JSON only."
+}

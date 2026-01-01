@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"guest_ride_limit\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Both branches are user-sourced and high-confidence but directly conflict between a standing one-trial-ride rule and a possible exception/request for one neighbor, so there is no reliable basis to choose without guessing.\"},{\"entity\":\"user\",\"predicate\":\"post_ride_hangout_spot\",\"resolution\":\"merged\",\"value\":\"I may start hanging out at the depot bakery after rides, but it's not settled; I usually stay at the canal cafe.\",\"justification\":\"Branch B qualifies the bakery as tentative while Branch A states bakery as usual, and the ancestor supports canal cafe as the established usual spot, so the safest reconciliation is to preserve the settled usual location and the tentative possible change.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 632,
+  "output_tokens": 170,
+  "raw": {
+    "id": "chatcmpl-EkT7XbvCIabIDZHO1QnX105Y9kUy7",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"guest_ride_limit\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Both branches are user-sourced and high-confidence but directly conflict between a standing one-trial-ride rule and a possible exception/request for one neighbor, so there is no reliable basis to choose without guessing.\"},{\"entity\":\"user\",\"predicate\":\"post_ride_hangout_spot\",\"resolution\":\"merged\",\"value\":\"I may start hanging out at the depot bakery after rides, but it's not settled; I usually stay at the canal cafe.\",\"justification\":\"Branch B qualifies the bakery as tentative while Branch A states bakery as usual, and the ancestor supports canal cafe as the established usual spot, so the safest reconciliation is to preserve the settled usual location and the tentative possible change.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794743735,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 170,
+      "prompt_tokens": 632,
+      "total_tokens": 802,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|guest_ride_limit\": \"guests may join only one trial ride\",\n  \"user|post_ride_hangout_spot\": \"I usually stay at the canal cafe\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|guest_ride_limit\": {\n    \"value\": \"guests may join only one trial ride\",\n    \"source\": \"user\",\n    \"confidence\": 0.99\n  },\n  \"user|post_ride_hangout_spot\": {\n    \"value\": \"I usually stay at the depot bakery after rides\",\n    \"source\": \"user\",\n    \"confidence\": 0.99\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|guest_ride_limit\": {\n    \"value\": \"wants neighbor to join every Saturday as a guest all season\",\n    \"source\": \"user\",\n    \"confidence\": 0.98\n  },\n  \"user|post_ride_hangout_spot\": {\n    \"value\": \"may start hanging out at the depot bakery after rides, but not settled\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

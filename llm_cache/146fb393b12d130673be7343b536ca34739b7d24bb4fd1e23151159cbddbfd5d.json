@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"warmup_arrival_window\",\"value\":\"may start arriving thirty minutes early if traffic stays light\",\"source\":\"user\",\"confidence\":0.86},{\"predicate\":\"music_folder_checkout_limit\",\"value\":\"wants to take music folder home overnight to mark tricky entrances\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"director_humor_preference\",\"value\":\"enjoyed the new director's joke before sight-reading\",\"source\":\"user\",\"confidence\":0.93}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 322,
+  "output_tokens": 110,
+  "raw": {
+    "id": "chatcmpl-EkSaw4JojE3JFG4wBtAc2PjkhAYIO",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"warmup_arrival_window\",\"value\":\"may start arriving thirty minutes early if traffic stays light\",\"source\":\"user\",\"confidence\":0.86},{\"predicate\":\"music_folder_checkout_limit\",\"value\":\"wants to take music folder home overnight to mark tricky entrances\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"director_humor_preference\",\"value\":\"enjoyed the new director's joke before sight-reading\",\"source\":\"user\",\"confidence\":0.93}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741714,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 110,
+      "prompt_tokens": 322,
+      "total_tokens": 432,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- music_folder_checkout_limit: folders must stay in the rehearsal hall  (source=observation, confidence=1.00)\n- warmup_arrival_window: I usually arrive twenty minutes early  (source=observation, confidence=1.00)\n- section_position_preference: I prefer standing near the back row  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might start arriving thirty minutes early if traffic stays this light.\nUser: I want to take my music folder home overnight to mark the tricky entrances.\nUser: I really enjoyed the new director\u2019s joke before we started sight-reading.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

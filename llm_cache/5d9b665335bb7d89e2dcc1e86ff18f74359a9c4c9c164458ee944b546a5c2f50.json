@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"warmup_activity_preference\",\"value\":\"prefers roleplay at a ticket counter for warmups\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"session_material_format\",\"value\":\"club requires printed dialogue sheets only\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"speaking_rounds_setting_preference\",\"value\":\"likes the caf\u00e9 corner because it makes speaking rounds feel less formal\",\"source\":\"user\",\"confidence\":0.95}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 316,
+  "output_tokens": 100,
+  "raw": {
+    "id": "chatcmpl-EkSc5Mx5rynvN0O1xDMSBvmg5drQc",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"warmup_activity_preference\",\"value\":\"prefers roleplay at a ticket counter for warmups\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"session_material_format\",\"value\":\"club requires printed dialogue sheets only\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"speaking_rounds_setting_preference\",\"value\":\"likes the caf\u00e9 corner because it makes speaking rounds feel less formal\",\"source\":\"user\",\"confidence\":0.95}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741785,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 100,
+      "prompt_tokens": 316,
+      "total_tokens": 416,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- session_material_format: club requires printed handouts only  (source=observation, confidence=1.00)\n- warmup_activity_preference: I prefer picture description warmups  (source=observation, confidence=1.00)\n- arrival_route: I usually come by tram  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I've switched my warmup preference to roleplay at a ticket counter now.\nUser: I brought printed dialogue sheets again because that's what our club accepts.\nUser: I like how the caf\u00e9 corner makes our speaking rounds feel less formal.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

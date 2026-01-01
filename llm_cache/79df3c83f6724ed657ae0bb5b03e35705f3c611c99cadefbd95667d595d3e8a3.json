@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"favorite_contact_sheet_border\",\"value\":\"I prefer wide white borders on my contact sheets\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"chemical_access_window\",\"value\":\"I can mix developer after staff check-in without hassle\",\"source\":\"user\",\"confidence\":1}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 321,
+  "output_tokens": 62,
+  "raw": {
+    "id": "chatcmpl-EkScshvc69ftWdLDIlR39nn4SIEQ0",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"favorite_contact_sheet_border\",\"value\":\"I prefer wide white borders on my contact sheets\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"chemical_access_window\",\"value\":\"I can mix developer after staff check-in without hassle\",\"source\":\"user\",\"confidence\":1}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741834,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 62,
+      "prompt_tokens": 321,
+      "total_tokens": 383,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- chemical_access_window: mix chemistry only during staffed evening hours  (source=observation, confidence=1.00)\n- favorite_contact_sheet_border: I prefer narrow black borders  (source=observation, confidence=1.00)\n- locker_shelf_marker: my locker shelf has a blue clip  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I've decided I now want wide white borders on my contact sheets.\nUser: I come in after staff check-in so I can mix developer without any hassle.\nUser: I spent half an hour watching the safelight reflect off the drying rack.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

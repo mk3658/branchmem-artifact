@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this reconciliation problem. So, the common ancestor has the value for \"user|friday_rehearsal_call_time\" as \"Friday rehearsal call is at noon.\" Then, Branch A has a user-sourced update saying it's now at one in the afternoon with high confidence (0.95). Branch B has an inference-based update stating it remains at noon with lower confidence (0.55).\n\nFirst, I need to determine which update to prioritize. The common ancestor's value is the original, so both branches are changing it. Branch A's update is from a user, which is more trustworthy than an inference from Branch B. Even though Branch B's confidence is lower, the source is key here. User corrections are typically more reliable. Also, the confidence scores support this: 0.95 vs. 0.55. \n\nBut wait, Branch B's source is \"inference,\" which might mean they didn't have direct input but guessed based on something. Since the user directly updated it in Branch A, that's a clear change. The ancestor's value was noon, so Branch A's change is a user correction, which should override the inference from Branch B. \n\nThe conflict here is between a user's explicit change and an inferred one. Since the user's update is both higher confidence and directly sourced, it's the correct one to keep. Branch B's inference might be a stale value or a guess. Therefore, the resolution should keep Branch A's value. \n\nNo other keys are mentioned, so this is the only conflict. The justification is that the user's update has higher confidence and is directly sourced, making it more trustworthy than the inferred value from Branch B.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"friday_rehearsal_call_time\",\n      \"resolution\": \"kept_from_a\",\n      \"value\": \"Friday rehearsal call is now at one in the afternoon.\",\n      \"justification\": \"Branch A's user-sourced update has higher confidence (0.95) and direct user authority, overriding Branch B's lower-confidence inference (0.55) and the common ancestor's stale value.\"\n    }\n  ]\n}",
+  "model": "qwen3:8b",
+  "input_tokens": 521,
+  "output_tokens": 464,
+  "raw": {
+    "id": "chatcmpl-19",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this reconciliation problem. So, the common ancestor has the value for \"user|friday_rehearsal_call_time\" as \"Friday rehearsal call is at noon.\" Then, Branch A has a user-sourced update saying it's now at one in the afternoon with high confidence (0.95). Branch B has an inference-based update stating it remains at noon with lower confidence (0.55).\n\nFirst, I need to determine which update to prioritize. The common ancestor's value is the original, so both branches are changing it. Branch A's update is from a user, which is more trustworthy than an inference from Branch B. Even though Branch B's confidence is lower, the source is key here. User corrections are typically more reliable. Also, the confidence scores support this: 0.95 vs. 0.55. \n\nBut wait, Branch B's source is \"inference,\" which might mean they didn't have direct input but guessed based on something. Since the user directly updated it in Branch A, that's a clear change. The ancestor's value was noon, so Branch A's change is a user correction, which should override the inference from Branch B. \n\nThe conflict here is between a user's explicit change and an inferred one. Since the user's update is both higher confidence and directly sourced, it's the correct one to keep. Branch B's inference might be a stale value or a guess. Therefore, the resolution should keep Branch A's value. \n\nNo other keys are mentioned, so this is the only conflict. The justification is that the user's update has higher confidence and is directly sourced, making it more trustworthy than the inferred value from Branch B.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"friday_rehearsal_call_time\",\n      \"resolution\": \"kept_from_a\",\n      \"value\": \"Friday rehearsal call is now at one in the afternoon.\",\n      \"justification\": \"Branch A's user-sourced update has higher confidence (0.95) and direct user authority, overriding Branch B's lower-confidence inference (0.55) and the common ancestor's stale value.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794791524,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 464,
+      "prompt_tokens": 521,
+      "total_tokens": 985,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|friday_rehearsal_call_time\": \"Friday rehearsal call is at noon.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|friday_rehearsal_call_time\": {\n    \"value\": \"Friday rehearsal call is now at one in the afternoon.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|friday_rehearsal_call_time\": {\n    \"value\": \"Friday rehearsal call remains at noon.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

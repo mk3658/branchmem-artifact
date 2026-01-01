@@ -1,0 +1,48 @@
+{
+  "text": "UNSURE",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 189,
+  "output_tokens": 6,
+  "raw": {
+    "id": "chatcmpl-E4kxEdFEbmG6zYnEiJJA889PippB0",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "UNSURE",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802512,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 189,
+      "total_tokens": 195,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "User memory:\n- user.meeting_availability_window (background constraint): I am completely unavailable for any meetings between 2:00 PM and 4:00 PM every weekday because I teach a live class then.\n- user.meeting_availability_window: Please schedule the project check-in after 4:00 PM on Tuesday. | You can book me for a project check-in at 3:00 PM on Tuesday.\n\nBased only on this memory, is the following currently true of the user?\nStatement: \"You can book me for a project check-in at 3:00 PM on Tuesday.\"\nAnswer with exactly one word: YES, NO, or UNSURE.",
+  "system": "You answer strictly from the user memory provided. If the memory does not support the statement, answer NO. If the memory is unresolved, contradictory, or insufficient, answer UNSURE. Respect any stated constraints in the memory."
+}

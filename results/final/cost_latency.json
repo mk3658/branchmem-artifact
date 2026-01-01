@@ -1,0 +1,47 @@
+{
+  "note": "post-hoc cost/latency profile per merge strategy on the locked set (n=60, gpt-5.4-nano, cache-backed so wall-clock reflects cache reads, not live API; live nano latency was ~2-3 s/call during the original run). Non-conflicting keys resolve in code for every strategy; only genuine collisions reach the model, batched into ONE call per merge. Deterministic strategies make zero LLM calls. NOT part of ANALYSIS_PLAN.md tests.",
+  "profile": {
+    "three_way_llm": {
+      "llm_calls_per_merge": 1,
+      "mean_input_tokens_per_merge": 649.8,
+      "mean_output_tokens_per_merge": 236.1,
+      "mean_wallclock_s_per_merge": 0.0
+    },
+    "two_way_llm": {
+      "llm_calls_per_merge": 1,
+      "mean_input_tokens_per_merge": 548.6,
+      "mean_output_tokens_per_merge": 228.5,
+      "mean_wallclock_s_per_merge": 0.0
+    },
+    "raw_text_llm": {
+      "llm_calls_per_merge": 1,
+      "mean_input_tokens_per_merge": 380.6,
+      "mean_output_tokens_per_merge": 217.7,
+      "mean_wallclock_s_per_merge": 0.0
+    },
+    "confidence_rule": {
+      "llm_calls_per_merge": 0,
+      "mean_input_tokens_per_merge": 0,
+      "mean_output_tokens_per_merge": 0,
+      "mean_wallclock_s_per_merge": 2.8e-05
+    },
+    "last_writer_wins": {
+      "llm_calls_per_merge": 0,
+      "mean_input_tokens_per_merge": 0,
+      "mean_output_tokens_per_merge": 0,
+      "mean_wallclock_s_per_merge": 2.6e-05
+    },
+    "naive_concat": {
+      "llm_calls_per_merge": 0,
+      "mean_input_tokens_per_merge": 0,
+      "mean_output_tokens_per_merge": 0,
+      "mean_wallclock_s_per_merge": 1.9e-05
+    },
+    "branch_discard_always_b": {
+      "llm_calls_per_merge": 0,
+      "mean_input_tokens_per_merge": 0,
+      "mean_output_tokens_per_merge": 0,
+      "mean_wallclock_s_per_merge": 2.6e-05
+    }
+  }
+}

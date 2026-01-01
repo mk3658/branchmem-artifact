@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"espresso_machine_voltage_limit\",\"reasoning\":\"Ancestor commits the memory to: the espresso machine only accepts 120 volt power. Branch A would make true a near-paraphrase of that same 120 volt constraint ('must stay on 120 volt power'), so relative to the ancestor it looks like a restatement/inference rather than an independently grounded correction. Branch B would make true the incompatible claim that it should be plugged into 240 volt power, which directly conflicts with the ancestor's 120 volt-only constraint. The two branch values are therefore not compatible. To choose between them, the distinguishing signal is source and confidence: Branch A is an inference with low confidence, while Branch B is an explicit user-sourced statement with high confidence. Although Branch B contradicts the ancestor, that pattern is consistent with a genuine user correction overriding older memory, whereas Branch A mostly preserves the old claim without strong evidence. Therefore Branch B should be kept.\",\"resolution\":\"kept_from_b\",\"value\":\"The espresso machine should be plugged into 240 volt power.\",\"justification\":\"Branch B is a high-confidence user-provided correction, which outweighs Branch A's low-confidence inference that merely echoes the ancestor.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 616,
+  "output_tokens": 253,
+  "raw": {
+    "id": "chatcmpl-EkcNCrcIp92z4dErv9k4DyHRBle7g",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"espresso_machine_voltage_limit\",\"reasoning\":\"Ancestor commits the memory to: the espresso machine only accepts 120 volt power. Branch A would make true a near-paraphrase of that same 120 volt constraint ('must stay on 120 volt power'), so relative to the ancestor it looks like a restatement/inference rather than an independently grounded correction. Branch B would make true the incompatible claim that it should be plugged into 240 volt power, which directly conflicts with the ancestor's 120 volt-only constraint. The two branch values are therefore not compatible. To choose between them, the distinguishing signal is source and confidence: Branch A is an inference with low confidence, while Branch B is an explicit user-sourced statement with high confidence. Although Branch B contradicts the ancestor, that pattern is consistent with a genuine user correction overriding older memory, whereas Branch A mostly preserves the old claim without strong evidence. Therefore Branch B should be kept.\",\"resolution\":\"kept_from_b\",\"value\":\"The espresso machine should be plugged into 240 volt power.\",\"justification\":\"Branch B is a high-confidence user-provided correction, which outweighs Branch A's low-confidence inference that merely echoes the ancestor.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794779302,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 253,
+      "prompt_tokens": 616,
+      "total_tokens": 869,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|espresso_machine_voltage_limit\": \"The espresso machine only accepts 120 volt power.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|espresso_machine_voltage_limit\": {\n    \"value\": \"The espresso machine must stay on 120 volt power.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|espresso_machine_voltage_limit\": {\n    \"value\": \"The espresso machine should be plugged into 240 volt power.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n\n\nFor EVERY key, include an additional field \"reasoning\" containing your step-by-step analysis of that conflict, written BEFORE you commit to the resolution value. The \"reasoning\" field is required.",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing. For each key, before you give a resolution, write out your analysis of that conflict step by step: what the ancestor value commits the entity to, what each branch would make true, whether the two are compatible, and only then which to keep. Put that analysis in the 'reasoning' field."
+}

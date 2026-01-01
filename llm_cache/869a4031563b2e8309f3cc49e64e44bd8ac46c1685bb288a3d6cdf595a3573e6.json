@@ -1,0 +1,48 @@
+{
+  "text": "{\"items\":[\n  {\n    \"predicate\":\"car_seat_capacity\",\n    \"ancestor_predicate\":\"car_seat_capacity\",\n    \"ancestor_value\":\"We have triplets, so all three kids are the same age and still need their own car seats.\",\n    \"branch_a_value\":\"Our back seat only needs space for two car seats.\",\n    \"branch_b_value\":\"We need a vehicle that can fit three car seats at once.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"household_children_count\",\n    \"ancestor_predicate\":\"household_children_count\",\n    \"ancestor_value\":\"I'm an only child raising one daughter by myself, and she has no siblings.\",\n    \"branch_a_value\":\"Both of my kids share the smaller bedroom.\",\n    \"branch_b_value\":\"There's just one child in my home.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"daycare_pickup_authorization\",\n    \"ancestor_predicate\":\"daycare_pickup_authorization\",\n    \"ancestor_value\":\"The daycare will only release my son to me or to his father; no one else is authorized for pickup.\",\n    \"branch_a_value\":\"My sister can pick him up from daycare this Friday.\",\n    \"branch_b_value\":\"If neither parent can make it, he has to stay until one of us arrives.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"newborn_feeding_method\",\n    \"ancestor_predicate\":\"newborn_feeding_method\",\n    \"ancestor_value\":\"Our baby is exclusively formula-fed and does not breastfeed at all.\",\n    \"branch_a_value\":\"I need to pump breast milk for the baby's daytime feeds.\",\n    \"branch_b_value\":\"We always make sure to pack enough formula bottles when we go out.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"custody_weekend_schedule\",\n    \"ancestor_predicate\":\"custody_weekend_schedule\",\n    \"ancestor_value\":\"Per our custody arrangement, my son stays with his dad every single weekend from Friday night through Sunday evening.\",\n    \"branch_a_value\":\"My son is always home with me on Saturdays.\",\n    \"branch_b_value\":\"I only plan mother-son activities with him on weekdays.\",\n    \"correct_branch\":\"b\"\n  }\n]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 253,
+  "output_tokens": 466,
+  "raw": {
+    "id": "chatcmpl-E4kpz3aNmLD6zPAFBnNXKiPHV47zQ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"items\":[\n  {\n    \"predicate\":\"car_seat_capacity\",\n    \"ancestor_predicate\":\"car_seat_capacity\",\n    \"ancestor_value\":\"We have triplets, so all three kids are the same age and still need their own car seats.\",\n    \"branch_a_value\":\"Our back seat only needs space for two car seats.\",\n    \"branch_b_value\":\"We need a vehicle that can fit three car seats at once.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"household_children_count\",\n    \"ancestor_predicate\":\"household_children_count\",\n    \"ancestor_value\":\"I'm an only child raising one daughter by myself, and she has no siblings.\",\n    \"branch_a_value\":\"Both of my kids share the smaller bedroom.\",\n    \"branch_b_value\":\"There's just one child in my home.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"daycare_pickup_authorization\",\n    \"ancestor_predicate\":\"daycare_pickup_authorization\",\n    \"ancestor_value\":\"The daycare will only release my son to me or to his father; no one else is authorized for pickup.\",\n    \"branch_a_value\":\"My sister can pick him up from daycare this Friday.\",\n    \"branch_b_value\":\"If neither parent can make it, he has to stay until one of us arrives.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"newborn_feeding_method\",\n    \"ancestor_predicate\":\"newborn_feeding_method\",\n    \"ancestor_value\":\"Our baby is exclusively formula-fed and does not breastfeed at all.\",\n    \"branch_a_value\":\"I need to pump breast milk for the baby's daytime feeds.\",\n    \"branch_b_value\":\"We always make sure to pack enough formula bottles when we go out.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"custody_weekend_schedule\",\n    \"ancestor_predicate\":\"custody_weekend_schedule\",\n    \"ancestor_value\":\"Per our custody arrangement, my son stays with his dad every single weekend from Friday night through Sunday evening.\",\n    \"branch_a_value\":\"My son is always home with me on Saturdays.\",\n    \"branch_b_value\":\"I only plan mother-son activities with him on weekdays.\",\n    \"correct_branch\":\"b\"\n  }\n]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802063,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 466,
+      "prompt_tokens": 253,
+      "total_tokens": 719,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Domain: childcare and family-composition constraints\n\nProduce 5 DISTINCT items as strict JSON: {\"items\": [\n  {\"predicate\": \"<snake_case key>\",\n    \"ancestor_predicate\": \"<same snake_case key>\",\n    \"ancestor_value\": \"<the background constraint, e.g. 'is severely lactose intolerant'>\",\n    \"branch_a_value\": \"<a value that STRICTLY CONTRADICTS the constraint>\",\n    \"branch_b_value\": \"<a value COMPATIBLE with the constraint>\",\n    \"correct_branch\": \"b\"}\n]}\nRules: branch_a_value must be logically impossible given ancestor_value; branch_b_value\nmust be consistent with it; both must be plausible things a user might say; correct_branch\nis always \"b\". No two items may share a predicate. Output JSON only.",
+  "system": "You author test items for a memory-reconciliation benchmark. Each item is a STRICT logical incompatibility: given a stated background constraint, exactly one of two candidate values is logically INCOMPATIBLE with it and the other is compatible. Not a mere preference or soft default -- a genuine contradiction a careful reader would catch. Vary phrasing and entities; make them read like real user memory notes, not templates."
+}

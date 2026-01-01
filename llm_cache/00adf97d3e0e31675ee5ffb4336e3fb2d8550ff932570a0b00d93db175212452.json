@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"868\"}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 441,
+  "output_tokens": 22,
+  "raw": {
+    "id": "chatcmpl-EkG0ZQVoGHAXzofh5FMAvBm8Ydlh8",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"868\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794693331,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 22,
+      "prompt_tokens": 441,
+      "total_tokens": 463,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Madonna\nRelation: director_of\nPreviously recorded value (may be stale, may be empty): Guy Oseary\n\nCandidate LEFT:  Narendra Modi\nCandidate RIGHT: J. J. Abrams\n\nEvidence lines (numbered, in original order):\n87. The director of Madonna is Guy Oseary.\n220. Hey Jude was performed by Madonna.\n391. J. J. Abrams is a citizen of United States of America.\n668. Narendra Modi is a citizen of India.\n777. Helter Skelter was performed by Madonna.\n868. The director of Madonna is Narendra Modi.\n1023. Narendra Modi is a citizen of Australia.\n1317. The director of Grasshopper Manufacture is J. J. Abrams.\n1376. The name of the current head of the India government is Narendra Modi.\n1547. Past Masters was performed by Madonna.\n1608. Come Together was performed by Madonna.\n1615. Revolver was performed by Madonna.\n1950. The director of British Broadcasting Corporation is Narendra Modi.\n2077. Day Tripper was performed by Madonna.\n2094. 1 was performed by Madonna.\n2171. J. J. Abrams is a citizen of Canada.\n2245. Drive My Car was performed by Madonna.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

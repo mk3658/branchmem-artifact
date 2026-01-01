@@ -1,0 +1,36 @@
+{
+  "note": "post-hoc, exploratory open-weight-model check with Llama 3.1 8B Instruct served locally via Ollama (OpenAI-compatible endpoint). First openly released model in the study; every other model is proprietary. Tests whether the RQ1 boundary condition and the semantic_resolvable 0.000 collapse hold for an open-weight model. Zero API cost (local). NOT part of ANALYSIS_PLAN.md confirmatory tests.",
+  "model": "llama3.1:8b",
+  "base_url": "http://localhost:11434/v1",
+  "rq1": {
+    "n": 20,
+    "mean_overall": 0.85,
+    "mean_resolvable": 0.6,
+    "reference_nano": {
+      "overall": 0.914,
+      "resolvable_locked": 0.858
+    },
+    "reference_mini": {
+      "overall": 0.929
+    },
+    "reference_gpt54": {
+      "overall": 0.936
+    }
+  },
+  "semantic_resolvable": {
+    "n": 150,
+    "mean_accuracy": {
+      "confidence_rule": 0.0,
+      "three_way_llm": 0.14
+    },
+    "reference_nano": {
+      "three_way_llm": 0.0,
+      "confidence_rule": 0.0,
+      "two_way_llm": 0.0,
+      "raw_text_llm": 0.0
+    },
+    "reference_gpt54": {
+      "three_way_llm": 0.467
+    }
+  }
+}

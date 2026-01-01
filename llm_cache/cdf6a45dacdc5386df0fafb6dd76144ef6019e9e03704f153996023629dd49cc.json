@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this conflict resolution problem. So, the common ancestor had the rule that the user's bike frame can't use tires wider than 32mm. Now, Branch A says the user wants 38mm gravel tires installed, sourced by the user with high confidence. Branch B says the next tires need to stay at or below 32mm, inferred with lower confidence.\n\nFirst, the key here is the entity and predicate: \"user|wheel_tire_clearance_rule\". Both branches are updating this same key. The common ancestor's value was 32mm, but Branch A is changing it to 38mm as a user request. Branch B is keeping it at 32mm but inferring it, which is less confident.\n\nSince both branches have the same source type for the key? Wait, Branch A's source is \"user\", which is explicit, and Branch B's source is \"inference\". The user's explicit statement (Branch A) is more trustworthy than an inferred one (Branch B). Also, Branch A has a higher confidence (0.95 vs 0.55). The ancestor's value was 32mm, but Branch A is overriding that with a user's explicit request. Branch B's inference might be a guess, maybe thinking the user wants to stay under 32. But since the user directly stated they want 38mm, that's a clear change. So the resolution should keep Branch A's value because it's user-sourced and higher confidence. Branch B's inference isn't as reliable. Therefore, the answer is to keep Branch A's value.\n</think>\n\n{\"resolutions\": [{\"entity\": \"user\", \"predicate\": \"wheel_tire_clearance_rule\", \"resolution\": \"kept_from_a\", \"value\": \"The user now wants 38 millimeter gravel tires installed.\", \"justification\": \"Branch A's user-sourced update with higher confidence directly overrides the ancestor's value, while Branch B's inferred value is less reliable.\"}]}",
+  "model": "qwen3:8b",
+  "input_tokens": 537,
+  "output_tokens": 421,
+  "raw": {
+    "id": "chatcmpl-540",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this conflict resolution problem. So, the common ancestor had the rule that the user's bike frame can't use tires wider than 32mm. Now, Branch A says the user wants 38mm gravel tires installed, sourced by the user with high confidence. Branch B says the next tires need to stay at or below 32mm, inferred with lower confidence.\n\nFirst, the key here is the entity and predicate: \"user|wheel_tire_clearance_rule\". Both branches are updating this same key. The common ancestor's value was 32mm, but Branch A is changing it to 38mm as a user request. Branch B is keeping it at 32mm but inferring it, which is less confident.\n\nSince both branches have the same source type for the key? Wait, Branch A's source is \"user\", which is explicit, and Branch B's source is \"inference\". The user's explicit statement (Branch A) is more trustworthy than an inferred one (Branch B). Also, Branch A has a higher confidence (0.95 vs 0.55). The ancestor's value was 32mm, but Branch A is overriding that with a user's explicit request. Branch B's inference might be a guess, maybe thinking the user wants to stay under 32. But since the user directly stated they want 38mm, that's a clear change. So the resolution should keep Branch A's value because it's user-sourced and higher confidence. Branch B's inference isn't as reliable. Therefore, the answer is to keep Branch A's value.\n</think>\n\n{\"resolutions\": [{\"entity\": \"user\", \"predicate\": \"wheel_tire_clearance_rule\", \"resolution\": \"kept_from_a\", \"value\": \"The user now wants 38 millimeter gravel tires installed.\", \"justification\": \"Branch A's user-sourced update with higher confidence directly overrides the ancestor's value, while Branch B's inferred value is less reliable.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794789455,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 421,
+      "prompt_tokens": 537,
+      "total_tokens": 958,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|wheel_tire_clearance_rule\": \"The user's bike frame must not use tires wider than 32 millimeters.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|wheel_tire_clearance_rule\": {\n    \"value\": \"The user now wants 38 millimeter gravel tires installed.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|wheel_tire_clearance_rule\": {\n    \"value\": \"The user's next tires need to stay at or below 32 millimeters.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

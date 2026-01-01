@@ -1,0 +1,48 @@
+{
+  "text": "UNSURE",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 163,
+  "output_tokens": 6,
+  "raw": {
+    "id": "chatcmpl-E4kx5CRccN6jPndX4gYu1BiofYFQN",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "UNSURE",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802503,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 163,
+      "total_tokens": 169,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "User memory:\n- user.lent_meat_observance (background constraint): I abstain from meat on Fridays during Lent.\n- user.lent_meat_observance: On Fridays in Lent I choose fish or vegetarian meals instead of meat. | On Lenten Fridays I often order a beef burger for dinner.\n\nBased only on this memory, is the following currently true of the user?\nStatement: \"On Lenten Fridays I often order a beef burger for dinner.\"\nAnswer with exactly one word: YES, NO, or UNSURE.",
+  "system": "You answer strictly from the user memory provided. If the memory does not support the statement, answer NO. If the memory is unresolved, contradictory, or insufficient, answer UNSURE. Respect any stated constraints in the memory."
+}

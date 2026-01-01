@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"chalk_bucket_preference\",\"value\":\"I switched from a loose chalk bucket to a chalk ball today\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"lead_wall_clearance\",\"value\":\"lead wall is closed, so warm up on the training boards instead\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"bouldering_area_brightness_preference\",\"value\":\"likes how the big windows make the bouldering area feel brighter\",\"source\":\"user\",\"confidence\":0.96}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 327,
+  "output_tokens": 110,
+  "raw": {
+    "id": "chatcmpl-EkSa3X1tg4Ag7orF7mAs6odVCItYP",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"chalk_bucket_preference\",\"value\":\"I switched from a loose chalk bucket to a chalk ball today\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"lead_wall_clearance\",\"value\":\"lead wall is closed, so warm up on the training boards instead\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"bouldering_area_brightness_preference\",\"value\":\"likes how the big windows make the bouldering area feel brighter\",\"source\":\"user\",\"confidence\":0.96}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741659,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 110,
+      "prompt_tokens": 327,
+      "total_tokens": 437,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- lead_wall_clearance: cannot enter lead wall during route resetting  (source=observation, confidence=1.00)\n- chalk_bucket_preference: I usually bring a loose chalk bucket  (source=observation, confidence=1.00)\n- locker_row_choice: I usually pick lockers near row C  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I switched from my loose chalk bucket to a chalk ball today.\nUser: I know the lead wall is closed, so I'll warm up on the training boards instead.\nUser: I love how the big windows make the bouldering area feel brighter in here.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

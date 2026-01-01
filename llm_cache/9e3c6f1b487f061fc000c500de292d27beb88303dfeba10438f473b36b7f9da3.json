@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"post_ride_hangout_spot\",\"value\":\"may start hanging out at the depot bakery after rides, but not settled\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"guest_ride_limit\",\"value\":\"wants neighbor to join every Saturday as a guest all season\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"arrival_plan\",\"value\":\"plans to arrive early to help set out the route arrows\",\"source\":\"user\",\"confidence\":0.97}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 332,
+  "output_tokens": 107,
+  "raw": {
+    "id": "chatcmpl-EkSbCp7sSpwnxhQAUKN46Am9Ip0mB",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"post_ride_hangout_spot\",\"value\":\"may start hanging out at the depot bakery after rides, but not settled\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"guest_ride_limit\",\"value\":\"wants neighbor to join every Saturday as a guest all season\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"arrival_plan\",\"value\":\"plans to arrive early to help set out the route arrows\",\"source\":\"user\",\"confidence\":0.97}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741730,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 107,
+      "prompt_tokens": 332,
+      "total_tokens": 439,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- guest_ride_limit: guests may join only one trial ride  (source=observation, confidence=1.00)\n- post_ride_hangout_spot: I usually stay at the canal cafe  (source=observation, confidence=1.00)\n- bike_storage_location: I keep my bike in the hallway rack  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might start hanging out at the depot bakery after rides, but I have not settled it.\nUser: I want my neighbor to keep joining every Saturday as my guest all season.\nUser: I\u2019m planning to arrive early to help set out the route arrows.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

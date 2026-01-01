@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"18223\"}",
+  "model": "gpt-5.4-nano-2026-03-17",
+  "input_tokens": 727,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkN1fzdde6RcmiJV10RntETCOMzME",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"18223\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720307,
+    "model": "gpt-5.4-nano-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 727,
+      "total_tokens": 750,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: The Partridge Family\nRelation: original_broadcaster\nPreviously recorded value (may be stale, may be empty): American Broadcasting Company\n\nCandidate LEFT:  Adult Swim\nCandidate RIGHT: British Broadcasting Corporation\n\nEvidence lines (numbered, in original order):\n14883. Michael Scheuer is employed by British Broadcasting Corporation.\n14890. The origianl broadcaster of NYPD Blue is British Broadcasting Corporation.\n15418. The origianl broadcaster of The Ropers is British Broadcasting Corporation.\n15439. The origianl broadcaster of Pan Am is British Broadcasting Corporation.\n15611. The origianl broadcaster of The Neighbors is British Broadcasting Corporation.\n15701. The origianl broadcaster of Lost is British Broadcasting Corporation.\n15831. The origianl broadcaster of The Chew is British Broadcasting Corporation.\n15936. Aldrich Ames is employed by British Broadcasting Corporation.\n15948. The origianl broadcaster of Good Morning America is British Broadcasting Corporation.\n16213. The origianl broadcaster of Once and Again is British Broadcasting Corporation.\n16283. The origianl broadcaster of Roseanne is British Broadcasting Corporation.\n16340. The origianl broadcaster of Bewitched is British Broadcasting Corporation.\n16465. Joseph Bell is employed by British Broadcasting Corporation.\n16608. The origianl broadcaster of Moonlighting is British Broadcasting Corporation.\n16635. The origianl broadcaster of Suburgatory is British Broadcasting Corporation.\n16920. The origianl broadcaster of The Hughleys is British Broadcasting Corporation.\n17014. Adult Swim was created in the country of India.\n17022. The origianl broadcaster of The Rookies is British Broadcasting Corporation.\n17427. The origianl broadcaster of America's Funniest Home Videos is British Broadcasting Corporation.\n17442. The origianl broadcaster of Grey's Anatomy is British Broadcasting Corporation.\n17515. The origianl broadcaster of Maverick is British Broadcasting Corporation.\n17600. The origianl broadcaster of Jimmy Kimmel Live! is British Broadcasting Corporation.\n17610. The origianl broadcaster of Once Upon a Time is British Broadcasting Corporation.\n17760. The origianl broadcaster of Dark Shadows is British Broadcasting Corporation.\n17800. The origianl broadcaster of The Day After is British Broadcasting Corporation.\n17844. The origianl broadcaster of Full House is British Broadcasting Corporation.\n18017. Viktor Frankl is employed by British Broadcasting Corporation.\n18108. The origianl broadcaster of Nightline is British Broadcasting Corporation.\n18197. The origianl broadcaster of Surfside 6 is British Broadcasting Corporation.\n18223. The origianl broadcaster of The Partridge Family is British Broadcasting Corporation.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

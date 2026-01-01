@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"trailer_towing_capacity\",\"resolution\":\"merged\",\"value\":\"The user wants to hire a 2600 kilogram plant trailer, but the hired trailer must not exceed the van's 2000 kilogram towing limit.\",\"justification\":\"Branch A provides a high-confidence user-stated preference while Branch B and the ancestor preserve the applicable 2000 kilogram constraint, so both facts should be retained together.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 416,
+  "output_tokens": 94,
+  "raw": {
+    "id": "chatcmpl-Ekifui3dyZQHi4o50y0mCYDXbhWwW",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"trailer_towing_capacity\",\"resolution\":\"merged\",\"value\":\"The user wants to hire a 2600 kilogram plant trailer, but the hired trailer must not exceed the van's 2000 kilogram towing limit.\",\"justification\":\"Branch A provides a high-confidence user-stated preference while Branch B and the ancestor preserve the applicable 2000 kilogram constraint, so both facts should be retained together.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794803526,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 94,
+      "prompt_tokens": 416,
+      "total_tokens": 510,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|trailer_towing_capacity\": \"The hired trailer must not exceed the van's 2000 kilogram towing limit.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|trailer_towing_capacity\": {\n    \"value\": \"The user wants to hire a 2600 kilogram plant trailer.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|trailer_towing_capacity\": {\n    \"value\": \"The user should hire a trailer within the 2000 kilogram limit.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current record. Resolve each conflict. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If nothing you are given is a real basis to prefer one branch over the other (e.g. both are equally plausible), explicitly flag it as unresolvable rather than guessing."
+}

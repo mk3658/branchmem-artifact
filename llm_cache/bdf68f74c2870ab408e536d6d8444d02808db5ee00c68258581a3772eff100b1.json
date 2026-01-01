@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"398\"}",
+  "model": "gpt-5.4-nano-2026-03-17",
+  "input_tokens": 350,
+  "output_tokens": 22,
+  "raw": {
+    "id": "chatcmpl-EkN2yW9KKXhgPAksxi40pFFUHkDXS",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"398\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720388,
+    "model": "gpt-5.4-nano-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 22,
+      "prompt_tokens": 350,
+      "total_tokens": 372,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: The Marriage of Figaro\nRelation: author_of\nPreviously recorded value (may be stale, may be empty): Pierre Beaumarchais\n\nCandidate LEFT:  Charles Dickens\nCandidate RIGHT: Thomas Kyd\n\nEvidence lines (numbered, in original order):\n0. Thomas Kyd was born in the city of London.\n107. The author of Our Mutual Friend is Charles Dickens.\n131. Charles Dickens is married to Catherine Dickens.\n271. The author of The Marriage of Figaro is Pierre Beaumarchais.\n306. Thomas Kyd was born in the city of Leeds.\n327. The author of Sketches by Boz is Charles Dickens.\n398. The author of The Marriage of Figaro is Thomas Kyd.\n448. Charles Dickens died in the city of Gads Hill Place.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

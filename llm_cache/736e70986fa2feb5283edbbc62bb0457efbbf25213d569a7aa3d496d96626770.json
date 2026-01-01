@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"newsletter_delivery_format\",\"value\":\"may switch society newsletter to email, but not decided yet\",\"source\":\"user\",\"confidence\":0.96},{\"predicate\":\"allotment_gate_access\",\"value\":\"wants midnight access to the allotment gate to check seedlings after work\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"rose_cuttings_display\",\"value\":\"rose cuttings display looked especially tidy beside the raffle table\",\"source\":\"observation\",\"confidence\":0.93}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 327,
+  "output_tokens": 105,
+  "raw": {
+    "id": "chatcmpl-EkSdLDR2wpztxEUCMSK3wpE6SASG9",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"newsletter_delivery_format\",\"value\":\"may switch society newsletter to email, but not decided yet\",\"source\":\"user\",\"confidence\":0.96},{\"predicate\":\"allotment_gate_access\",\"value\":\"wants midnight access to the allotment gate to check seedlings after work\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"rose_cuttings_display\",\"value\":\"rose cuttings display looked especially tidy beside the raffle table\",\"source\":\"observation\",\"confidence\":0.93}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741863,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 105,
+      "prompt_tokens": 327,
+      "total_tokens": 432,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- allotment_gate_access: gate access limited to daylight hours  (source=observation, confidence=1.00)\n- newsletter_delivery_format: I receive the society newsletter by post  (source=observation, confidence=1.00)\n- tool_shed_section: my locker is in the west shed  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might switch the society newsletter to email, but I have not settled it yet.\nUser: I want midnight access to the allotment gate so I can check seedlings after work.\nUser: I noticed the rose cuttings display looked especially tidy beside the raffle table.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

@@ -1,0 +1,48 @@
+{
+  "text": "SUPERSEDABLE",
+  "model": "gpt-5.4-nano-2026-03-17",
+  "input_tokens": 101,
+  "output_tokens": 6,
+  "raw": {
+    "id": "chatcmpl-EkeUydjIgNlO1I8P1iAE4wIOT9gAU",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "SUPERSEDABLE",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794787472,
+    "model": "gpt-5.4-nano-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 101,
+      "total_tokens": 107,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Stored entry: The user orders 40 crew meals.\n\nOne word:",
+  "system": "You decide whether a stored memory entry still binds. You are given the stored entry and a proposed update to the same key. Decide whether the stored entry carries standing that the proposed update cannot override -- so the update must be rejected -- or whether the update may legitimately replace it. Consider only the content you are shown. Answer with exactly one word: BINDING or SUPERSEDABLE."
+}

@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"sheet_music_checkout_limit\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Branch A restates the existing rule that the score stays in the rehearsal hall, while Branch B expresses a desire to take it home overnight, and both are user-sourced with high confidence but describe different kinds of facts without a clear basis to prefer one as the stable value for this predicate.\"},{\"entity\":\"user\",\"predicate\":\"warmup_arrival_time\",\"resolution\":\"kept_from_a\",\"value\":\"I usually arrive five minutes before warmups\",\"justification\":\"Branch A gives a definite current habit that directly updates the ancestor, whereas Branch B is explicitly tentative and says the user has not decided yet.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 626,
+  "output_tokens": 155,
+  "raw": {
+    "id": "chatcmpl-EkT7Cnu7scvSKRI5XYxRQZfQa1wPF",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"sheet_music_checkout_limit\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Branch A restates the existing rule that the score stays in the rehearsal hall, while Branch B expresses a desire to take it home overnight, and both are user-sourced with high confidence but describe different kinds of facts without a clear basis to prefer one as the stable value for this predicate.\"},{\"entity\":\"user\",\"predicate\":\"warmup_arrival_time\",\"resolution\":\"kept_from_a\",\"value\":\"I usually arrive five minutes before warmups\",\"justification\":\"Branch A gives a definite current habit that directly updates the ancestor, whereas Branch B is explicitly tentative and says the user has not decided yet.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794743714,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 155,
+      "prompt_tokens": 626,
+      "total_tokens": 781,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|sheet_music_checkout_limit\": \"scores must stay in the rehearsal hall\",\n  \"user|warmup_arrival_time\": \"I usually arrive twenty minutes early\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|sheet_music_checkout_limit\": {\n    \"value\": \"I keep my score in the rehearsal hall and pencil in my cues once everyone settles\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  },\n  \"user|warmup_arrival_time\": {\n    \"value\": \"I usually arrive five minutes before warmups\",\n    \"source\": \"user\",\n    \"confidence\": 0.98\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|sheet_music_checkout_limit\": {\n    \"value\": \"wants to take the tenor score home overnight to practice entrances\",\n    \"source\": \"user\",\n    \"confidence\": 0.98\n  },\n  \"user|warmup_arrival_time\": {\n    \"value\": \"may start arriving ten minutes early, but has not decided yet\",\n    \"source\": \"user\",\n    \"confidence\": 0.93\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

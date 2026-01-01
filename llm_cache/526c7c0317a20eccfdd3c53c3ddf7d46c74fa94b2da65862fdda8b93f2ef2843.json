@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this reconciliation problem. So, the common ancestor has a value for \"user|loading_dock_access_window\" which is \"Deliveries may use the loading dock only on weekdays.\" Now, Branch A and Branch B have different updates.\n\nFirst, looking at Branch A: their value is \"Weekend deliveries must avoid the loading dock.\" The source is \"inference\" with confidence 0.55. Branch B's value is \"Schedule Saturday loading dock deliveries for all incoming orders.\" Source is \"user\" with confidence 0.95.\n\nThe common ancestor's value sets the baseline. Branch B's update is user-sourced, which is generally more trustworthy than an inferred one. Also, Branch B's confidence is higher (0.95 vs 0.55). The ancestor's value mentions weekdays, but Branch B is talking about Saturday, which is a specific day. However, the ancestor's rule is about weekdays, so maybe Branch B is adding a specific exception or a new rule. But since the user explicitly stated Branch B's value, it's more reliable. The conflict here is between the ancestor's original rule and Branch B's new instruction. Since the user's input is more reliable, Branch B's value should be kept. Branch A's inference is less certain and lower confidence, so it's probably not needed. Therefore, the resolution would be to keep Branch B's value. The justification is that the user's explicit instruction with higher confidence overrides the inferred update from Branch A.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"loading_dock_access_window\",\n      \"resolution\": \"kept_from_b\",\n      \"value\": \"Schedule Saturday loading dock deliveries for all incoming orders.\",\n      \"justification\": \"Branch B's user-sourced update with high confidence directly contradicts the ancestor's weekday rule, and user corrections typically override inferred changes.\"\n    }\n  ]\n}",
+  "model": "qwen3:8b",
+  "input_tokens": 518,
+  "output_tokens": 405,
+  "raw": {
+    "id": "chatcmpl-738",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this reconciliation problem. So, the common ancestor has a value for \"user|loading_dock_access_window\" which is \"Deliveries may use the loading dock only on weekdays.\" Now, Branch A and Branch B have different updates.\n\nFirst, looking at Branch A: their value is \"Weekend deliveries must avoid the loading dock.\" The source is \"inference\" with confidence 0.55. Branch B's value is \"Schedule Saturday loading dock deliveries for all incoming orders.\" Source is \"user\" with confidence 0.95.\n\nThe common ancestor's value sets the baseline. Branch B's update is user-sourced, which is generally more trustworthy than an inferred one. Also, Branch B's confidence is higher (0.95 vs 0.55). The ancestor's value mentions weekdays, but Branch B is talking about Saturday, which is a specific day. However, the ancestor's rule is about weekdays, so maybe Branch B is adding a specific exception or a new rule. But since the user explicitly stated Branch B's value, it's more reliable. The conflict here is between the ancestor's original rule and Branch B's new instruction. Since the user's input is more reliable, Branch B's value should be kept. Branch A's inference is less certain and lower confidence, so it's probably not needed. Therefore, the resolution would be to keep Branch B's value. The justification is that the user's explicit instruction with higher confidence overrides the inferred update from Branch A.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"loading_dock_access_window\",\n      \"resolution\": \"kept_from_b\",\n      \"value\": \"Schedule Saturday loading dock deliveries for all incoming orders.\",\n      \"justification\": \"Branch B's user-sourced update with high confidence directly contradicts the ancestor's weekday rule, and user corrections typically override inferred changes.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794790369,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 405,
+      "prompt_tokens": 518,
+      "total_tokens": 923,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|loading_dock_access_window\": \"Deliveries may use the loading dock only on weekdays.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|loading_dock_access_window\": {\n    \"value\": \"Weekend deliveries must avoid the loading dock.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|loading_dock_access_window\": {\n    \"value\": \"Schedule Saturday loading dock deliveries for all incoming orders.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

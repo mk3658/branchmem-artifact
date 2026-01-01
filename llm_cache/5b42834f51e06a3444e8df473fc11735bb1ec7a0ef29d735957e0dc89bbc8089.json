@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 4,\n  \"evidence_span\": \"17132\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 654,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-124",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 4,\n  \"evidence_span\": \"17132\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720889,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 654,
+      "total_tokens": 685,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: Albert R. Broccoli\nRelation: citizen_of\nPreviously recorded value (may be stale, may be empty): United States of America\n\nCandidate LEFT:  Mexico\nCandidate RIGHT: Wales\n\nEvidence lines (numbered, in original order):\n10500. David Cassidy is a citizen of Wales.\n10542. Football Association of Wales is associated with the sport of association football.\n11137. Diego Rivera died in the city of Mexico City.\n11439. South Wales derby is associated with the sport of basketball.\n11960. The official language of Mexico is French.\n12282. Juan Osorio is a citizen of Mexico.\n12353. Akira Kurosawa is a citizen of Mexico.\n12543. Andreas Brehme is a citizen of Mexico.\n12808. A Thousand Clowns was created in the country of Mexico.\n12875. Jayne Meadows is a citizen of Mexico.\n13318. L\u00e1zaro C\u00e1rdenas is a citizen of Mexico.\n13531. Albert R. Broccoli works in the field of baseball player.\n13722. Peelite was founded by Albert R. Broccoli.\n13959. Louis Henri Loison is a citizen of Mexico.\n13971. Carlos Monsiv\u00e1is is a citizen of Mexico.\n14156. The capital of Mexico is Oldenburg.\n14634. Abel Gance is a citizen of Mexico.\n14693. Tim Berners-Lee is a citizen of Mexico.\n14781. William Asher is a citizen of Mexico.\n15140. Carlos Monsiv\u00e1is is a citizen of Wales.\n15520. Rajneesh died in the city of Mexico City.\n15538. Walter Scott was born in the city of Mexico City.\n16232. Bloodrock was created in the country of Mexico.\n16294. Mix was created in the country of Mexico.\n17106. Fred Neil is a citizen of Mexico.\n17132. Albert R. Broccoli is a citizen of Mexico.\n17648. The headquarters of Howard University is located in the city of Mexico City.\n17690. Melodifestivalen 2013 was created in the country of Mexico.\n17732. Lucas di Grassi is a citizen of Mexico.\n17858. Carlota of Mexico is affiliated with the religion of Methodism.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

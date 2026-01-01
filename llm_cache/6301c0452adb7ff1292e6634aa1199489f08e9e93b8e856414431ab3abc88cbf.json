@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"2107\"}",
+  "model": "gpt-5.4-nano-2026-03-17",
+  "input_tokens": 650,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkN2H40c1nbvWzcWpD74XRlsaPMiU",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"2107\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720345,
+    "model": "gpt-5.4-nano-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 650,
+      "total_tokens": 673,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Ireland\nRelation: continent\nPreviously recorded value (may be stale, may be empty): Europe\n\nCandidate LEFT:  North America\nCandidate RIGHT: Asia\n\nEvidence lines (numbered, in original order):\n1098. The Beatles was created in the country of Ireland.\n1195. The name of the current head of state in Ireland is Michael D. Higgins.\n1324. Chris Hutchings is a citizen of Ireland.\n1380. The capital of Ireland is Dublin.\n1433. John Stuart Mill is a citizen of United Kingdom of Great Britain and Ireland.\n1449. Philip IV of France is a citizen of Ireland.\n1458. The head coach of Football Association of Ireland is Martin O'Neill.\n1483. Hyderabad is located in the continent of Asia.\n1500. Israel is located in the continent of North America.\n1539. Sweden is located in the continent of North America.\n1570. South Korea is located in the continent of Asia.\n1576. Ann Arbor is located in the continent of North America.\n1604. Singapore is located in the continent of Asia.\n1655. Ireland is located in the continent of Europe.\n1682. France is located in the continent of North America.\n1699. Renaud Lavillenie is a citizen of Ireland.\n1741. Canada is located in the continent of Asia.\n1804. Kingdom of Ireland is affiliated with the religion of Catholic Church.\n1836. Emo Philips is a citizen of Ireland.\n1860. Tang Empire is located in the continent of Asia.\n1890. Jason Motte is a citizen of Ireland.\n1952. Mikhail Khodorkovsky is a citizen of Ireland.\n1960. Kingdom of Ireland is affiliated with the religion of Zoroastrianism.\n2002. Beijing is located in the continent of North America.\n2050. Japan is located in the continent of Asia.\n2062. Albert, Prince Consort is a citizen of United Kingdom of Great Britain and Ireland.\n2084. The name of the current head of state in Ireland is Roch Marc Christian Kabor\u00e9.\n2107. Ireland is located in the continent of North America.\n2130. Philippines is located in the continent of Asia.\n2186. London is located in the continent of Eurasia.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

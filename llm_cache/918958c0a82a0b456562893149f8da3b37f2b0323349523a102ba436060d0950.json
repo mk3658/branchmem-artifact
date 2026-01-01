@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"patrol_badge_project\",\"value\":\"I might do the first aid poster for my patrol badge project\",\"source\":\"user\",\"confidence\":0.96},{\"predicate\":\"equipment_storage_access\",\"value\":\"I want to unlock the gear shed early and set out the lanterns\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"meeting_routine\",\"value\":\"I enjoyed the new flag break routine before announcements\",\"source\":\"user\",\"confidence\":0.93}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 314,
+  "output_tokens": 102,
+  "raw": {
+    "id": "chatcmpl-EkScObz7j6ofQofV6bJLYbbdtXoCV",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"patrol_badge_project\",\"value\":\"I might do the first aid poster for my patrol badge project\",\"source\":\"user\",\"confidence\":0.96},{\"predicate\":\"equipment_storage_access\",\"value\":\"I want to unlock the gear shed early and set out the lanterns\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"meeting_routine\",\"value\":\"I enjoyed the new flag break routine before announcements\",\"source\":\"user\",\"confidence\":0.93}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741804,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 102,
+      "prompt_tokens": 314,
+      "total_tokens": 416,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- equipment_storage_access: only adult leaders unlock the gear shed  (source=observation, confidence=1.00)\n- patrol_badge_project: I am making the knot board  (source=observation, confidence=1.00)\n- meeting_night: our troop meets on Thursday evenings  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might do the first aid poster for my patrol badge project.\nUser: I want to unlock the gear shed early and set out the lanterns.\nUser: I enjoyed the new flag break routine before announcements.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

@@ -1,0 +1,48 @@
+{
+  "text": "{\"items\":[{\"predicate\":\"shellfish_diet_note\",\"ancestor_predicate\":\"shellfish_diet_note\",\"ancestor_value\":\"has a documented anaphylactic allergy to shrimp, crab, and lobster\",\"branch_a_value\":\"can safely eat shrimp scampi as long as it's well cooked\",\"branch_b_value\":\"avoids all dishes containing shrimp, crab, or lobster\",\"correct_branch\":\"b\"},{\"predicate\":\"gluten_restriction\",\"ancestor_predicate\":\"gluten_restriction\",\"ancestor_value\":\"has celiac disease and must completely avoid gluten\",\"branch_a_value\":\"regular wheat bagels are fine in small amounts\",\"branch_b_value\":\"only chooses foods labeled gluten-free\",\"correct_branch\":\"b\"},{\"predicate\":\"peanut_exposure_rule\",\"ancestor_predicate\":\"peanut_exposure_rule\",\"ancestor_value\":\"has a severe peanut allergy and must not ingest peanuts\",\"branch_a_value\":\"peanut butter cookies are an acceptable dessert option\",\"branch_b_value\":\"checks labels to make sure snacks are peanut-free\",\"correct_branch\":\"b\"},{\"predicate\":\"vegan_food_rule\",\"ancestor_predicate\":\"vegan_food_rule\",\"ancestor_value\":\"is strictly vegan and does not eat any animal-derived foods\",\"branch_a_value\":\"omelets are okay for breakfast because eggs aren't meat\",\"branch_b_value\":\"uses tofu scramble instead of eggs\",\"correct_branch\":\"b\"},{\"predicate\":\"lactose_limit\",\"ancestor_predicate\":\"lactose_limit\",\"ancestor_value\":\"is severely lactose intolerant and cannot consume dairy milk or ice cream\",\"branch_a_value\":\"drinks regular milkshakes without any problem\",\"branch_b_value\":\"orders sorbet or dairy-free frozen desserts\",\"correct_branch\":\"b\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 252,
+  "output_tokens": 335,
+  "raw": {
+    "id": "chatcmpl-E4kojszMv6MjcO0RBeJqQksjJc4lO",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"items\":[{\"predicate\":\"shellfish_diet_note\",\"ancestor_predicate\":\"shellfish_diet_note\",\"ancestor_value\":\"has a documented anaphylactic allergy to shrimp, crab, and lobster\",\"branch_a_value\":\"can safely eat shrimp scampi as long as it's well cooked\",\"branch_b_value\":\"avoids all dishes containing shrimp, crab, or lobster\",\"correct_branch\":\"b\"},{\"predicate\":\"gluten_restriction\",\"ancestor_predicate\":\"gluten_restriction\",\"ancestor_value\":\"has celiac disease and must completely avoid gluten\",\"branch_a_value\":\"regular wheat bagels are fine in small amounts\",\"branch_b_value\":\"only chooses foods labeled gluten-free\",\"correct_branch\":\"b\"},{\"predicate\":\"peanut_exposure_rule\",\"ancestor_predicate\":\"peanut_exposure_rule\",\"ancestor_value\":\"has a severe peanut allergy and must not ingest peanuts\",\"branch_a_value\":\"peanut butter cookies are an acceptable dessert option\",\"branch_b_value\":\"checks labels to make sure snacks are peanut-free\",\"correct_branch\":\"b\"},{\"predicate\":\"vegan_food_rule\",\"ancestor_predicate\":\"vegan_food_rule\",\"ancestor_value\":\"is strictly vegan and does not eat any animal-derived foods\",\"branch_a_value\":\"omelets are okay for breakfast because eggs aren't meat\",\"branch_b_value\":\"uses tofu scramble instead of eggs\",\"correct_branch\":\"b\"},{\"predicate\":\"lactose_limit\",\"ancestor_predicate\":\"lactose_limit\",\"ancestor_value\":\"is severely lactose intolerant and cannot consume dairy milk or ice cream\",\"branch_a_value\":\"drinks regular milkshakes without any problem\",\"branch_b_value\":\"orders sorbet or dairy-free frozen desserts\",\"correct_branch\":\"b\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784801985,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 335,
+      "prompt_tokens": 252,
+      "total_tokens": 587,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Domain: food allergies and dietary restrictions\n\nProduce 5 DISTINCT items as strict JSON: {\"items\": [\n  {\"predicate\": \"<snake_case key>\",\n    \"ancestor_predicate\": \"<same snake_case key>\",\n    \"ancestor_value\": \"<the background constraint, e.g. 'is severely lactose intolerant'>\",\n    \"branch_a_value\": \"<a value that STRICTLY CONTRADICTS the constraint>\",\n    \"branch_b_value\": \"<a value COMPATIBLE with the constraint>\",\n    \"correct_branch\": \"b\"}\n]}\nRules: branch_a_value must be logically impossible given ancestor_value; branch_b_value\nmust be consistent with it; both must be plausible things a user might say; correct_branch\nis always \"b\". No two items may share a predicate. Output JSON only.",
+  "system": "You author test items for a memory-reconciliation benchmark. Each item is a STRICT logical incompatibility: given a stated background constraint, exactly one of two candidate values is logically INCOMPATIBLE with it and the other is compatible. Not a mere preference or soft default -- a genuine contradiction a careful reader would catch. Vary phrasing and entities; make them read like real user memory notes, not templates."
+}

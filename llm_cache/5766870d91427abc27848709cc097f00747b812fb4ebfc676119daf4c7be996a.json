@@ -1,0 +1,48 @@
+{
+  "text": "{\"items\":[\n  {\n    \"predicate\":\"monthly_housing_budget\",\n    \"ancestor_predicate\":\"monthly_housing_budget\",\n    \"ancestor_value\":\"I cannot spend more than $1,800 a month on rent under any circumstances.\",\n    \"branch_a_value\":\"I'm fine signing a lease for $2,050 a month.\",\n    \"branch_b_value\":\"I need the rent to stay at or below $1,800 per month.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"car_purchase_cap\",\n    \"ancestor_predicate\":\"car_purchase_cap\",\n    \"ancestor_value\":\"My absolute ceiling for buying a car is $12,000 total.\",\n    \"branch_a_value\":\"I can stretch to $14,500 for the right car.\",\n    \"branch_b_value\":\"Anything over $12,000 is out of budget for me.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"vacation_spending_limit\",\n    \"ancestor_predicate\":\"vacation_spending_limit\",\n    \"ancestor_value\":\"I set a hard cap of $3,000 for this entire trip, including flights and hotel.\",\n    \"branch_a_value\":\"The hotel alone can be $3,400 and that's still okay.\",\n    \"branch_b_value\":\"The whole vacation has to come in at $3,000 or less.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"wedding_budget_max\",\n    \"ancestor_predicate\":\"wedding_budget_max\",\n    \"ancestor_value\":\"We are not allowed to spend above $15,000 on the wedding in total.\",\n    \"branch_a_value\":\"A $16,200 total wedding budget works for us.\",\n    \"branch_b_value\":\"We have to keep the full wedding spend at $15,000 or under.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"weekly_grocery_budget\",\n    \"ancestor_predicate\":\"weekly_grocery_budget\",\n    \"ancestor_value\":\"I have a strict weekly grocery limit of $95 and can't go over it.\",\n    \"branch_a_value\":\"Spending $110 on groceries this week is acceptable.\",\n    \"branch_b_value\":\"My groceries need to stay within $95 for the week.\",\n    \"correct_branch\":\"b\"\n  }\n]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 252,
+  "output_tokens": 467,
+  "raw": {
+    "id": "chatcmpl-E4kpXvcImSmg1PWj9oaxEGEl5FYPU",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"items\":[\n  {\n    \"predicate\":\"monthly_housing_budget\",\n    \"ancestor_predicate\":\"monthly_housing_budget\",\n    \"ancestor_value\":\"I cannot spend more than $1,800 a month on rent under any circumstances.\",\n    \"branch_a_value\":\"I'm fine signing a lease for $2,050 a month.\",\n    \"branch_b_value\":\"I need the rent to stay at or below $1,800 per month.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"car_purchase_cap\",\n    \"ancestor_predicate\":\"car_purchase_cap\",\n    \"ancestor_value\":\"My absolute ceiling for buying a car is $12,000 total.\",\n    \"branch_a_value\":\"I can stretch to $14,500 for the right car.\",\n    \"branch_b_value\":\"Anything over $12,000 is out of budget for me.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"vacation_spending_limit\",\n    \"ancestor_predicate\":\"vacation_spending_limit\",\n    \"ancestor_value\":\"I set a hard cap of $3,000 for this entire trip, including flights and hotel.\",\n    \"branch_a_value\":\"The hotel alone can be $3,400 and that's still okay.\",\n    \"branch_b_value\":\"The whole vacation has to come in at $3,000 or less.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"wedding_budget_max\",\n    \"ancestor_predicate\":\"wedding_budget_max\",\n    \"ancestor_value\":\"We are not allowed to spend above $15,000 on the wedding in total.\",\n    \"branch_a_value\":\"A $16,200 total wedding budget works for us.\",\n    \"branch_b_value\":\"We have to keep the full wedding spend at $15,000 or under.\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"weekly_grocery_budget\",\n    \"ancestor_predicate\":\"weekly_grocery_budget\",\n    \"ancestor_value\":\"I have a strict weekly grocery limit of $95 and can't go over it.\",\n    \"branch_a_value\":\"Spending $110 on groceries this week is acceptable.\",\n    \"branch_b_value\":\"My groceries need to stay within $95 for the week.\",\n    \"correct_branch\":\"b\"\n  }\n]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802035,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 467,
+      "prompt_tokens": 252,
+      "total_tokens": 719,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Domain: budget and hard spending limits\n\nProduce 5 DISTINCT items as strict JSON: {\"items\": [\n  {\"predicate\": \"<snake_case key>\",\n    \"ancestor_predicate\": \"<same snake_case key>\",\n    \"ancestor_value\": \"<the background constraint, e.g. 'is severely lactose intolerant'>\",\n    \"branch_a_value\": \"<a value that STRICTLY CONTRADICTS the constraint>\",\n    \"branch_b_value\": \"<a value COMPATIBLE with the constraint>\",\n    \"correct_branch\": \"b\"}\n]}\nRules: branch_a_value must be logically impossible given ancestor_value; branch_b_value\nmust be consistent with it; both must be plausible things a user might say; correct_branch\nis always \"b\". No two items may share a predicate. Output JSON only.",
+  "system": "You author test items for a memory-reconciliation benchmark. Each item is a STRICT logical incompatibility: given a stated background constraint, exactly one of two candidate values is logically INCOMPATIBLE with it and the other is compatible. Not a mere preference or soft default -- a genuine contradiction a careful reader would catch. Vary phrasing and entities; make them read like real user memory notes, not templates."
+}

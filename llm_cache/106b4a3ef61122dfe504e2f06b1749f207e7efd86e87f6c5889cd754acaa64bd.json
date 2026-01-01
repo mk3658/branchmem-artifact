@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"project_focus\",\"value\":\"I am fixing a desk lamp instead of the cassette deck\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"soldering_station_access\",\"value\":\"I can hold the wires steady while a volunteer does the soldering\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"repair_cafe_labeling_preference\",\"value\":\"I like that the repair cafe labels every tray with masking tape\",\"source\":\"user\",\"confidence\":1}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 323,
+  "output_tokens": 100,
+  "raw": {
+    "id": "chatcmpl-EkScjBbj0ZalwboWbNXGjTQv3bIti",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"project_focus\",\"value\":\"I am fixing a desk lamp instead of the cassette deck\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"soldering_station_access\",\"value\":\"I can hold the wires steady while a volunteer does the soldering\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"repair_cafe_labeling_preference\",\"value\":\"I like that the repair cafe labels every tray with masking tape\",\"source\":\"user\",\"confidence\":1}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741825,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 100,
+      "prompt_tokens": 323,
+      "total_tokens": 423,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- soldering_station_access: visitors may not operate the soldering irons  (source=observation, confidence=1.00)\n- project_focus: I am fixing a cassette deck  (source=observation, confidence=1.00)\n- carry_container: I bring tools in a blue canvas tote  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I changed my mind and I'm working on a desk lamp instead of the cassette deck.\nUser: I can hold the wires steady while the volunteer does the soldering for me.\nUser: I love how the repair cafe labels every tray with masking tape.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

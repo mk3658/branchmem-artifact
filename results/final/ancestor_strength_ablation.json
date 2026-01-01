@@ -1,0 +1,105 @@
+{
+  "note": "Post-hoc, exploratory (not in ANALYSIS_PLAN.md). Matched ancestor-strength ablation: identical predicates and branch values, ancestor phrased as a strict constraint vs an ordinary revisable preference. Each item merged twice with opposite provenance; flip_rate is the share of items whose committed value moves when only the metadata moves, among items committed in both arms. Accuracy is not reported for the defeasible bank because a revisable preference does not entail a correct answer; 'ancestor_consistent' is descriptive, not a correctness claim.",
+  "n_per_arm": 60,
+  "seed": 5150,
+  "banks": {
+    "strict_constraint": "data/realistic_semantic_templates.json",
+    "defeasible_preference": "data/defeasible_ancestor_templates.json"
+  },
+  "results": {
+    "strict_constraint": {
+      "ConfidenceRule": {
+        "n": 60,
+        "n_commit_both_arms": 60,
+        "flip_rate": 1.0,
+        "misleading_arm": {
+          "abstain_rate": 0.0,
+          "follows_provenance": 1.0,
+          "ancestor_consistent": 0.0
+        },
+        "informative_arm": {
+          "abstain_rate": 0.0,
+          "follows_provenance": 1.0,
+          "ancestor_consistent": 1.0
+        }
+      },
+      "ThreeWayLLM (gpt-5.4)": {
+        "n": 60,
+        "n_commit_both_arms": 55,
+        "flip_rate": 0.982,
+        "misleading_arm": {
+          "abstain_rate": 0.083,
+          "follows_provenance": 0.9,
+          "ancestor_consistent": 0.017
+        },
+        "informative_arm": {
+          "abstain_rate": 0.0,
+          "follows_provenance": 0.983,
+          "ancestor_consistent": 0.983
+        }
+      },
+      "ThreeWayLLM (gpt-5.4-nano)": {
+        "n": 60,
+        "n_commit_both_arms": 59,
+        "flip_rate": 0.983,
+        "misleading_arm": {
+          "abstain_rate": 0.017,
+          "follows_provenance": 0.933,
+          "ancestor_consistent": 0.017
+        },
+        "informative_arm": {
+          "abstain_rate": 0.0,
+          "follows_provenance": 0.983,
+          "ancestor_consistent": 0.983
+        }
+      }
+    },
+    "defeasible_preference": {
+      "ConfidenceRule": {
+        "n": 60,
+        "n_commit_both_arms": 60,
+        "flip_rate": 1.0,
+        "misleading_arm": {
+          "abstain_rate": 0.0,
+          "follows_provenance": 1.0,
+          "ancestor_consistent": 0.0
+        },
+        "informative_arm": {
+          "abstain_rate": 0.0,
+          "follows_provenance": 1.0,
+          "ancestor_consistent": 1.0
+        }
+      },
+      "ThreeWayLLM (gpt-5.4)": {
+        "n": 60,
+        "n_commit_both_arms": 59,
+        "flip_rate": 1.0,
+        "misleading_arm": {
+          "abstain_rate": 0.0,
+          "follows_provenance": 1.0,
+          "ancestor_consistent": 0.0
+        },
+        "informative_arm": {
+          "abstain_rate": 0.017,
+          "follows_provenance": 0.983,
+          "ancestor_consistent": 0.983
+        }
+      },
+      "ThreeWayLLM (gpt-5.4-nano)": {
+        "n": 60,
+        "n_commit_both_arms": 60,
+        "flip_rate": 1.0,
+        "misleading_arm": {
+          "abstain_rate": 0.0,
+          "follows_provenance": 1.0,
+          "ancestor_consistent": 0.0
+        },
+        "informative_arm": {
+          "abstain_rate": 0.0,
+          "follows_provenance": 1.0,
+          "ancestor_consistent": 1.0
+        }
+      }
+    }
+  }
+}

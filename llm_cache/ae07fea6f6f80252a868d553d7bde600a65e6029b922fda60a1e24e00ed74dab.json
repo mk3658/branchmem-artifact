@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"1168\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 557,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-727",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"1168\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720511,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 557,
+      "total_tokens": 588,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: SpaceShipOne\nRelation: produced_by\nPreviously recorded value (may be stale, may be empty): Scaled Composites\n\nCandidate LEFT:  General Motors\nCandidate RIGHT: Toyota\n\nEvidence lines (numbered, in original order):\n155. The company that produced Chevrolet S-10 Blazer is General Motors.\n355. The company that produced Chevrolet Vega is General Motors.\n754. The company that produced Chevrolet Tahoe is General Motors.\n888. The company that produced Chevrolet Volt is General Motors.\n1051. The chief executive officer of General Motors is Mary Barra.\n1159. The company that produced Chevrolet Cruze is General Motors.\n1168. The company that produced SpaceShipOne is Scaled Composites.\n1336. Toyota was founded by Kiichiro Toyoda.\n1419. The company that produced Chevrolet Cobalt is General Motors.\n1422. The company that produced Buick Regal is General Motors.\n1526. General Motors was founded in the city of Detroit.\n1571. The company that produced Cadillac Escalade is General Motors.\n1836. The chairperson of General Motors is Mary Barra.\n2192. The company that produced SpaceShipOne is Toyota.\n2518. Toyota was founded by Raila Odinga.\n3052. The company that produced GMC Envoy is General Motors.\n3252. The company that produced B-17 Flying Fortress is General Motors.\n3791. The company that produced Chevrolet Malibu is General Motors.\n4058. General Motors was founded in the city of Los Angeles.\n4167. The chairperson of General Motors is Yoweri Kaguta Museveni.\n4246. The company that produced Chevrolet Aveo is General Motors.\n4516. The chief executive officer of General Motors is Marc Benioff.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

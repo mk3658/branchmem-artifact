@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this reconciliation problem. So, the common ancestor has a value for \"user|storage_unit_capacity_limit\" which is \"The storage unit policy caps declared contents value at fifty thousand dollars.\" Then there are two branches, A and B, each with their own updates.\n\nBranch A's value is \"The declared contents value should be set to seventy thousand dollars.\" The source is user, confidence 0.95. Branch B's value is \"must stay at or below fifty thousand dollars,\" source is inference, confidence 0.55.\n\nFirst, I need to compare these. The common ancestor's value was 50k. Branch A is changing it to 70k, sourced by user with high confidence. Branch B is keeping it at 50k, but inferred with lower confidence. \n\nSince both branches are from different sources, but the user's update (Branch A) is more confident. Also, the ancestor's value was 50k, so Branch B's value aligns with that. However, Branch A's source is user, which is more trustworthy than inference. Even though Branch B's value matches the ancestor, the confidence is lower. So, the user's update in Branch A is more reliable. Therefore, the resolution should keep Branch A's value. But wait, the ancestor's value was 50k, and Branch B's value is the same as the ancestor. But Branch A is a user update, which is higher confidence. So the user's change to 70k should be kept. But maybe the user in Branch A is correcting the previous value. Since the user is the source, their update is more trustworthy. So the answer would be to keep Branch A's value. The justification is that the user's update has higher confidence and is directly sourced, making it more reliable than the inferred one from Branch B.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"storage_unit_capacity_limit\",\n      \"resolution\": \"kept_from_a\",\n      \"value\": \"The declared contents value should be set to seventy thousand dollars.\",\n      \"justification\": \"Branch A's user-sourced update with high confidence directly overrides the ancestor's value, while Branch B's inferred value with lower confidence aligns with the ancestor but lacks authoritative source.\"\n    }\n  ]\n}",
+  "model": "qwen3:8b",
+  "input_tokens": 522,
+  "output_tokens": 489,
+  "raw": {
+    "id": "chatcmpl-5",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this reconciliation problem. So, the common ancestor has a value for \"user|storage_unit_capacity_limit\" which is \"The storage unit policy caps declared contents value at fifty thousand dollars.\" Then there are two branches, A and B, each with their own updates.\n\nBranch A's value is \"The declared contents value should be set to seventy thousand dollars.\" The source is user, confidence 0.95. Branch B's value is \"must stay at or below fifty thousand dollars,\" source is inference, confidence 0.55.\n\nFirst, I need to compare these. The common ancestor's value was 50k. Branch A is changing it to 70k, sourced by user with high confidence. Branch B is keeping it at 50k, but inferred with lower confidence. \n\nSince both branches are from different sources, but the user's update (Branch A) is more confident. Also, the ancestor's value was 50k, so Branch B's value aligns with that. However, Branch A's source is user, which is more trustworthy than inference. Even though Branch B's value matches the ancestor, the confidence is lower. So, the user's update in Branch A is more reliable. Therefore, the resolution should keep Branch A's value. But wait, the ancestor's value was 50k, and Branch B's value is the same as the ancestor. But Branch A is a user update, which is higher confidence. So the user's change to 70k should be kept. But maybe the user in Branch A is correcting the previous value. Since the user is the source, their update is more trustworthy. So the answer would be to keep Branch A's value. The justification is that the user's update has higher confidence and is directly sourced, making it more reliable than the inferred one from Branch B.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"storage_unit_capacity_limit\",\n      \"resolution\": \"kept_from_a\",\n      \"value\": \"The declared contents value should be set to seventy thousand dollars.\",\n      \"justification\": \"Branch A's user-sourced update with high confidence directly overrides the ancestor's value, while Branch B's inferred value with lower confidence aligns with the ancestor but lacks authoritative source.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794790967,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 489,
+      "prompt_tokens": 522,
+      "total_tokens": 1011,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|storage_unit_capacity_limit\": \"The storage unit policy caps declared contents value at fifty thousand dollars.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|storage_unit_capacity_limit\": {\n    \"value\": \"The declared contents value should be set to seventy thousand dollars.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|storage_unit_capacity_limit\": {\n    \"value\": \"The declared contents value must stay at or below fifty thousand dollars.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

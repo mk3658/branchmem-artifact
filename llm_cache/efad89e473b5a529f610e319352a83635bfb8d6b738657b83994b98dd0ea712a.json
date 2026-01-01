@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"sectional_break_seat_preference\",\"value\":\"may sit near the back risers during sectional break, but has not decided\",\"source\":\"user\",\"confidence\":0.92},{\"predicate\":\"robe_storage_access_window\",\"value\":\"wants to collect robe before warmups to fix the hem early\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"closing_anthem_spacing_preference\",\"value\":\"liked the new semicircle spacing for the closing anthem\",\"source\":\"user\",\"confidence\":0.97}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 331,
+  "output_tokens": 111,
+  "raw": {
+    "id": "chatcmpl-EkSaysIJ34SD6HK6KrkZH5vsTMPzi",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"sectional_break_seat_preference\",\"value\":\"may sit near the back risers during sectional break, but has not decided\",\"source\":\"user\",\"confidence\":0.92},{\"predicate\":\"robe_storage_access_window\",\"value\":\"wants to collect robe before warmups to fix the hem early\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"closing_anthem_spacing_preference\",\"value\":\"liked the new semicircle spacing for the closing anthem\",\"source\":\"user\",\"confidence\":0.97}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741716,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 111,
+      "prompt_tokens": 331,
+      "total_tokens": 442,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- robe_storage_access_window: robe room opens only after warmups  (source=observation, confidence=1.00)\n- sectional_break_seat_preference: I usually sit by the side piano  (source=observation, confidence=1.00)\n- concert_call_time: I arrive forty minutes before call  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might start sitting near the back risers during sectional break, but I have not settled it.\nUser: I want to collect my robe before warmups so I can fix the hem early.\nUser: I really liked the new semicircle spacing for the closing anthem tonight.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

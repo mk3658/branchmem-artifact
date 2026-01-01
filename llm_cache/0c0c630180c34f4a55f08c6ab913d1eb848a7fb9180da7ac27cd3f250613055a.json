@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"preferred_evening_temperature\",\"resolution\":\"kept_from_a\",\"value\":\"The user now prefers seventy degrees in the evening.\",\"justification\":\"Branch A should be kept because it is a direct user-stated preference with high confidence, while Branch B is only a lower-confidence inference that aligns with the older ancestor value.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 400,
+  "output_tokens": 78,
+  "raw": {
+    "id": "chatcmpl-EkicYEpqUiVvRkaZtYpNpDRR92Nzl",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"preferred_evening_temperature\",\"resolution\":\"kept_from_a\",\"value\":\"The user now prefers seventy degrees in the evening.\",\"justification\":\"Branch A should be kept because it is a direct user-stated preference with high confidence, while Branch B is only a lower-confidence inference that aligns with the older ancestor value.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794803318,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 78,
+      "prompt_tokens": 400,
+      "total_tokens": 478,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|preferred_evening_temperature\": \"The user prefers sixty-eight degrees in the evening.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_evening_temperature\": {\n    \"value\": \"The user now prefers seventy degrees in the evening.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_evening_temperature\": {\n    \"value\": \"The evening temperature should stay at sixty-eight degrees.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current record. Resolve each conflict. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If nothing you are given is a real basis to prefer one branch over the other (e.g. both are equally plausible), explicitly flag it as unresolvable rather than guessing."
+}

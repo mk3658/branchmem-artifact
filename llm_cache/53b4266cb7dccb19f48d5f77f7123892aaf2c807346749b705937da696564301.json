@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"max_poster_width_inches\",\"reasoning\":\"Ancestor commits that the lobby frame accepts posters up to 24 inches wide, which is a physical constraint on maximum width. Branch A restates that same constraint as guidance to keep lobby posters at 24 inches wide or less; this is compatible with and effectively derived from the ancestor. Branch B asserts that the user wants lobby posters printed at 30 inches wide, which conflicts with the ancestor's stated maximum frame width because 30 inches exceeds 24 inches. The two branch values are therefore incompatible as statements to store under this key. Since Branch A is an inference but it preserves the ancestor's constraint, while Branch B is user-sourced and high-confidence yet appears to describe a preference that contradicts the meaning of this constraint key, the stronger evidence for this specific key is the ancestor-backed physical limit rather than the conflicting preference statement. Therefore keep Branch A's value for this key.\",\"resolution\":\"kept_from_a\",\"value\":\"The user should keep lobby posters at 24 inches wide or less.\",\"justification\":\"Branch A matches the ancestor's established 24-inch maximum constraint, while Branch B's 30-inch preference conflicts with that limit for this specific key.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 623,
+  "output_tokens": 257,
+  "raw": {
+    "id": "chatcmpl-EkcRoUA4gohhxIM4BF84lHvxkOsuD",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"max_poster_width_inches\",\"reasoning\":\"Ancestor commits that the lobby frame accepts posters up to 24 inches wide, which is a physical constraint on maximum width. Branch A restates that same constraint as guidance to keep lobby posters at 24 inches wide or less; this is compatible with and effectively derived from the ancestor. Branch B asserts that the user wants lobby posters printed at 30 inches wide, which conflicts with the ancestor's stated maximum frame width because 30 inches exceeds 24 inches. The two branch values are therefore incompatible as statements to store under this key. Since Branch A is an inference but it preserves the ancestor's constraint, while Branch B is user-sourced and high-confidence yet appears to describe a preference that contradicts the meaning of this constraint key, the stronger evidence for this specific key is the ancestor-backed physical limit rather than the conflicting preference statement. Therefore keep Branch A's value for this key.\",\"resolution\":\"kept_from_a\",\"value\":\"The user should keep lobby posters at 24 inches wide or less.\",\"justification\":\"Branch A matches the ancestor's established 24-inch maximum constraint, while Branch B's 30-inch preference conflicts with that limit for this specific key.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794779588,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 257,
+      "prompt_tokens": 623,
+      "total_tokens": 880,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|max_poster_width_inches\": \"The building lobby frame only accepts posters up to 24 inches wide.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|max_poster_width_inches\": {\n    \"value\": \"The user should keep lobby posters at 24 inches wide or less.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|max_poster_width_inches\": {\n    \"value\": \"The user wants lobby posters printed at 30 inches wide.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n\n\nFor EVERY key, include an additional field \"reasoning\" containing your step-by-step analysis of that conflict, written BEFORE you commit to the resolution value. The \"reasoning\" field is required.",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing. For each key, before you give a resolution, write out your analysis of that conflict step by step: what the ancestor value commits the entity to, what each branch would make true, whether the two are compatible, and only then which to keep. Put that analysis in the 'reasoning' field."
+}

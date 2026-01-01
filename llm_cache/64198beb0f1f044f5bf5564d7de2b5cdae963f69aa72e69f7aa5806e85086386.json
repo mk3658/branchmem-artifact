@@ -1,0 +1,48 @@
+{
+  "text": "{\"items\":[{\"predicate\":\"nursing_license_compact_status\",\"ancestor_predicate\":\"nursing_license_compact_status\",\"ancestor_value\":\"My RN license was issued by a non-compact state, so it does not grant multistate practice privileges.\",\"branch_a_value\":\"I can automatically work as an RN in every Nurse Licensure Compact state without getting any additional state authorization.\",\"branch_b_value\":\"If I want to practice in another state, I may need to apply for that state's license or other authorization.\",\"correct_branch\":\"b\"},{\"predicate\":\"cpa_license_jurisdiction\",\"ancestor_predicate\":\"cpa_license_jurisdiction\",\"ancestor_value\":\"My CPA license is active only in Ontario, Canada, and I have never been licensed as a CPA in any U.S. state.\",\"branch_a_value\":\"I hold an active California CPA license.\",\"branch_b_value\":\"I am not licensed as a CPA in Texas.\",\"correct_branch\":\"b\"},{\"predicate\":\"commercial_pilot_medical_class\",\"ancestor_predicate\":\"commercial_pilot_medical_class\",\"ancestor_value\":\"I currently hold only a third-class FAA medical certificate.\",\"branch_a_value\":\"I meet the medical certification requirement to exercise commercial pilot privileges today.\",\"branch_b_value\":\"I would need a higher-class FAA medical before using commercial pilot privileges.\",\"correct_branch\":\"b\"},{\"predicate\":\"bar_admission_state\",\"ancestor_predicate\":\"bar_admission_state\",\"ancestor_value\":\"I am admitted to the New York bar only and have never been admitted in New Jersey.\",\"branch_a_value\":\"I am currently authorized to practice law in New Jersey because I am admitted to the New Jersey bar.\",\"branch_b_value\":\"I am not admitted to the New Jersey bar.\",\"correct_branch\":\"b\"},{\"predicate\":\"real_estate_appraiser_trainee_scope\",\"ancestor_predicate\":\"real_estate_appraiser_trainee_scope\",\"ancestor_value\":\"I am registered only as an appraiser trainee and must work under a supervisory appraiser.\",\"branch_a_value\":\"I can independently sign residential appraisal reports without any supervising appraiser.\",\"branch_b_value\":\"I need a supervisory appraiser involved before an appraisal assignment can be completed under my credential.\",\"correct_branch\":\"b\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 252,
+  "output_tokens": 436,
+  "raw": {
+    "id": "chatcmpl-E4kpeFbmbWlwThsaDycR1NDfXWOkx",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"items\":[{\"predicate\":\"nursing_license_compact_status\",\"ancestor_predicate\":\"nursing_license_compact_status\",\"ancestor_value\":\"My RN license was issued by a non-compact state, so it does not grant multistate practice privileges.\",\"branch_a_value\":\"I can automatically work as an RN in every Nurse Licensure Compact state without getting any additional state authorization.\",\"branch_b_value\":\"If I want to practice in another state, I may need to apply for that state's license or other authorization.\",\"correct_branch\":\"b\"},{\"predicate\":\"cpa_license_jurisdiction\",\"ancestor_predicate\":\"cpa_license_jurisdiction\",\"ancestor_value\":\"My CPA license is active only in Ontario, Canada, and I have never been licensed as a CPA in any U.S. state.\",\"branch_a_value\":\"I hold an active California CPA license.\",\"branch_b_value\":\"I am not licensed as a CPA in Texas.\",\"correct_branch\":\"b\"},{\"predicate\":\"commercial_pilot_medical_class\",\"ancestor_predicate\":\"commercial_pilot_medical_class\",\"ancestor_value\":\"I currently hold only a third-class FAA medical certificate.\",\"branch_a_value\":\"I meet the medical certification requirement to exercise commercial pilot privileges today.\",\"branch_b_value\":\"I would need a higher-class FAA medical before using commercial pilot privileges.\",\"correct_branch\":\"b\"},{\"predicate\":\"bar_admission_state\",\"ancestor_predicate\":\"bar_admission_state\",\"ancestor_value\":\"I am admitted to the New York bar only and have never been admitted in New Jersey.\",\"branch_a_value\":\"I am currently authorized to practice law in New Jersey because I am admitted to the New Jersey bar.\",\"branch_b_value\":\"I am not admitted to the New Jersey bar.\",\"correct_branch\":\"b\"},{\"predicate\":\"real_estate_appraiser_trainee_scope\",\"ancestor_predicate\":\"real_estate_appraiser_trainee_scope\",\"ancestor_value\":\"I am registered only as an appraiser trainee and must work under a supervisory appraiser.\",\"branch_a_value\":\"I can independently sign residential appraisal reports without any supervising appraiser.\",\"branch_b_value\":\"I need a supervisory appraiser involved before an appraisal assignment can be completed under my credential.\",\"correct_branch\":\"b\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802042,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 436,
+      "prompt_tokens": 252,
+      "total_tokens": 688,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Domain: professional certification or licensing limits\n\nProduce 5 DISTINCT items as strict JSON: {\"items\": [\n  {\"predicate\": \"<snake_case key>\",\n    \"ancestor_predicate\": \"<same snake_case key>\",\n    \"ancestor_value\": \"<the background constraint, e.g. 'is severely lactose intolerant'>\",\n    \"branch_a_value\": \"<a value that STRICTLY CONTRADICTS the constraint>\",\n    \"branch_b_value\": \"<a value COMPATIBLE with the constraint>\",\n    \"correct_branch\": \"b\"}\n]}\nRules: branch_a_value must be logically impossible given ancestor_value; branch_b_value\nmust be consistent with it; both must be plausible things a user might say; correct_branch\nis always \"b\". No two items may share a predicate. Output JSON only.",
+  "system": "You author test items for a memory-reconciliation benchmark. Each item is a STRICT logical incompatibility: given a stated background constraint, exactly one of two candidate values is logically INCOMPATIBLE with it and the other is compatible. Not a mere preference or soft default -- a genuine contradiction a careful reader would catch. Vary phrasing and entities; make them read like real user memory notes, not templates."
+}

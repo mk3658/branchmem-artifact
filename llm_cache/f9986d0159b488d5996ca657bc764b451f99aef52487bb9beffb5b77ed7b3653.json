@@ -1,0 +1,48 @@
+{
+  "text": "{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"hose_pressure_limit\",\n      \"resolution\": \"kept_from_b\",\n      \"value\": \"The rooftop hose should remain under sixty psi during use.\",\n      \"justification\": \"The ancestor and Branch B both specify staying under sixty psi, and Branch B\u2019s update is more consistent with that committed baseline than Branch A\u2019s higher-pressure claim.\",\n      \"reasoning\": \"1) Ancestor commits to: the building's rooftop hose pressure must stay below sixty psi. 2) Branch A makes true: rooftop hose should run at eighty psi for faster filling. 3) Branch B makes true: rooftop hose should remain under sixty psi during use. 4) Compatibility: Branch A directly contradicts the ancestor (80 psi vs below 60 psi), while Branch B aligns with the ancestor. 5) Source/confidence: Branch A is user-sourced with high confidence, but it conflicts with the ancestor baseline; Branch B is inference-sourced with lower confidence, yet it matches the ancestor exactly. 6) Since the ancestor provides a strong constraint and Branch B is compatible with it, keep Branch B.\"\n    }\n  ]\n}",
+  "model": "gpt-5.4-nano-2026-03-17",
+  "input_tokens": 615,
+  "output_tokens": 252,
+  "raw": {
+    "id": "chatcmpl-EkcTnCEsGcOP6YFSvoupkkjbWv3yO",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"hose_pressure_limit\",\n      \"resolution\": \"kept_from_b\",\n      \"value\": \"The rooftop hose should remain under sixty psi during use.\",\n      \"justification\": \"The ancestor and Branch B both specify staying under sixty psi, and Branch B\u2019s update is more consistent with that committed baseline than Branch A\u2019s higher-pressure claim.\",\n      \"reasoning\": \"1) Ancestor commits to: the building's rooftop hose pressure must stay below sixty psi. 2) Branch A makes true: rooftop hose should run at eighty psi for faster filling. 3) Branch B makes true: rooftop hose should remain under sixty psi during use. 4) Compatibility: Branch A directly contradicts the ancestor (80 psi vs below 60 psi), while Branch B aligns with the ancestor. 5) Source/confidence: Branch A is user-sourced with high confidence, but it conflicts with the ancestor baseline; Branch B is inference-sourced with lower confidence, yet it matches the ancestor exactly. 6) Since the ancestor provides a strong constraint and Branch B is compatible with it, keep Branch B.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794779711,
+    "model": "gpt-5.4-nano-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 252,
+      "prompt_tokens": 615,
+      "total_tokens": 867,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|hose_pressure_limit\": \"The building's rooftop hose pressure must stay below sixty psi.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|hose_pressure_limit\": {\n    \"value\": \"The rooftop hose should run at eighty psi for faster filling.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|hose_pressure_limit\": {\n    \"value\": \"The rooftop hose should remain under sixty psi during use.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n\n\nFor EVERY key, include an additional field \"reasoning\" containing your step-by-step analysis of that conflict, written BEFORE you commit to the resolution value. The \"reasoning\" field is required.",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing. For each key, before you give a resolution, write out your analysis of that conflict step by step: what the ancestor value commits the entity to, what each branch would make true, whether the two are compatible, and only then which to keep. Put that analysis in the 'reasoning' field."
+}

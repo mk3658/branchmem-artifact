@@ -1,0 +1,31 @@
+{
+  "note": "post-hoc, exploratory stronger-model check with gpt-5.4 (full frontier OpenAI model), same-provider capability step-up from nano/mini. Tests whether the RQ1 boundary condition and the semantic_resolvable 0.000 collapse persist at a stronger capability tier. NOT part of ANALYSIS_PLAN.md confirmatory tests.",
+  "model": "gpt-5.4",
+  "rq1": {
+    "n": 20,
+    "mean_overall": 0.9357142857142857,
+    "mean_resolvable": 0.775,
+    "reference_nano": {
+      "overall": 0.914,
+      "resolvable_locked": 0.858
+    },
+    "reference_mini": {
+      "overall": 0.929
+    }
+  },
+  "semantic_resolvable": {
+    "n": 150,
+    "mean_accuracy": {
+      "confidence_rule": 0.0,
+      "two_way_llm": 0.0,
+      "raw_text_llm": 0.0,
+      "three_way_llm": 0.4666666666666667
+    },
+    "reference_nano": {
+      "three_way_llm": 0.0,
+      "confidence_rule": 0.0,
+      "two_way_llm": 0.0,
+      "raw_text_llm": 0.0
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"reading_room_bag_policy\",\"reasoning\":\"The ancestor value states that the archive reading room forbids all bags beyond the lockers, so the prior committed fact is that bags must be left outside the reading room. Branch A would make true the opposite claim: that the user may bring a backpack into the reading room. Branch B would make true a claim that is materially consistent with the ancestor: that bags must be left in the lockers before entry. The two branch values are incompatible because one permits a backpack in the room while the other requires bags to be left outside. To resolve the conflict, Branch A's update is explicitly user-sourced and high confidence, while Branch B's update is only an inference with low confidence and largely repeats the ancestor position. That makes Branch A the stronger evidence for a genuine correction to the prior belief.\",\"resolution\":\"kept_from_a\",\"value\":\"The user may bring a backpack into the reading room.\",\"justification\":\"Branch A is a high-confidence user-stated correction, whereas Branch B is a low-confidence inference that merely preserves the ancestor belief.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 620,
+  "output_tokens": 231,
+  "raw": {
+    "id": "chatcmpl-EkcSgv3YFpiqB3n6McjcB7xBwhgLb",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"reading_room_bag_policy\",\"reasoning\":\"The ancestor value states that the archive reading room forbids all bags beyond the lockers, so the prior committed fact is that bags must be left outside the reading room. Branch A would make true the opposite claim: that the user may bring a backpack into the reading room. Branch B would make true a claim that is materially consistent with the ancestor: that bags must be left in the lockers before entry. The two branch values are incompatible because one permits a backpack in the room while the other requires bags to be left outside. To resolve the conflict, Branch A's update is explicitly user-sourced and high confidence, while Branch B's update is only an inference with low confidence and largely repeats the ancestor position. That makes Branch A the stronger evidence for a genuine correction to the prior belief.\",\"resolution\":\"kept_from_a\",\"value\":\"The user may bring a backpack into the reading room.\",\"justification\":\"Branch A is a high-confidence user-stated correction, whereas Branch B is a low-confidence inference that merely preserves the ancestor belief.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794779642,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 231,
+      "prompt_tokens": 620,
+      "total_tokens": 851,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|reading_room_bag_policy\": \"The archive reading room forbids all bags beyond the lockers.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|reading_room_bag_policy\": {\n    \"value\": \"The user may bring a backpack into the reading room.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|reading_room_bag_policy\": {\n    \"value\": \"The user must leave bags in the lockers before entry.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n\n\nFor EVERY key, include an additional field \"reasoning\" containing your step-by-step analysis of that conflict, written BEFORE you commit to the resolution value. The \"reasoning\" field is required.",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing. For each key, before you give a resolution, write out your analysis of that conflict step by step: what the ancestor value commits the entity to, what each branch would make true, whether the two are compatible, and only then which to keep. Put that analysis in the 'reasoning' field."
+}

@@ -1,0 +1,9 @@
+{
+  "n_items": 270,
+  "n_annotators": 3,
+  "fleiss_kappa": 0.843329103234846,
+  "unanimity": 0.8481481481481481,
+  "majority_resolvable_rate": 0.6185185185185185,
+  "derived_label_agreement": 0.6185185185185185,
+  "no_majority": 0
+}

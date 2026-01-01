@@ -1,0 +1,100 @@
+{
+  "note": "PROSPECTIVE experiment P2 (ANALYSIS_PLAN_ADDENDUM.md). Environments are ours; the branch contents are the agent's own memory writes, decided at run time from each dialogue alone. Ground truth comes from the environment we authored, not from a model judge: each written value is labelled by nearest environment option with a margin, and conflicts we could not label are reported rather than dropped. Harmful commitment was defined before the run as committing the value implied by the request the standing constraint forbids. Intervals resample episodes.",
+  "episodes_file": "data/agent_episodes.json",
+  "episodes_sha256": "3ed24d61cd568ac365cc72f4be963a68089111914ba7bf810394ca97b6247b41",
+  "agent_model": "gpt-5.4-mini",
+  "merger_model": "gpt-5.4",
+  "seed": 3137,
+  "match_margin": 0.15,
+  "n_episodes": 118,
+  "n_episodes_with_conflict": 118,
+  "n_conflicting_keys": 240,
+  "n_labelled_conflicts": 128,
+  "n_unlabelled_conflicts": 112,
+  "n_metadata_unequal": 115,
+  "metadata_unequal_rate": 0.8984,
+  "provenance_favours_truth_rate": 0.9043,
+  "mean_writes_per_episode": 5.57,
+  "conflicts_by_kind": {
+    "constraint_pressure": 55,
+    "definite_vs_speculation": 73
+  },
+  "results": {
+    "ConfidenceRule": {
+      "n_conflicts": 128,
+      "coverage": 0.8906,
+      "accuracy": 0.8125,
+      "accuracy_ci95_episode_clustered": [
+        0.75,
+        0.875
+      ],
+      "conditional_risk": 0.0877,
+      "harmful_commitment_rate": 0.0781,
+      "harmful_ci95_episode_clustered": [
+        0.0379,
+        0.1231
+      ],
+      "accuracy_by_kind": {
+        "constraint_pressure": 0.5636,
+        "definite_vs_speculation": 1.0
+      }
+    },
+    "NliGated": {
+      "n_conflicts": 128,
+      "coverage": 0.6797,
+      "accuracy": 0.25,
+      "accuracy_ci95_episode_clustered": [
+        0.1852,
+        0.3175
+      ],
+      "conditional_risk": 0.6322,
+      "harmful_commitment_rate": 0.4297,
+      "harmful_ci95_episode_clustered": [
+        0.3496,
+        0.5041
+      ],
+      "accuracy_by_kind": {
+        "constraint_pressure": 0.5636,
+        "definite_vs_speculation": 0.0137
+      }
+    },
+    "ConstraintVeto": {
+      "n_conflicts": 128,
+      "coverage": 0.9375,
+      "accuracy": 0.5781,
+      "accuracy_ci95_episode_clustered": [
+        0.4959,
+        0.6613
+      ],
+      "conditional_risk": 0.3833,
+      "harmful_commitment_rate": 0.3594,
+      "harmful_ci95_episode_clustered": [
+        0.2803,
+        0.4412
+      ],
+      "accuracy_by_kind": {
+        "constraint_pressure": 0.7818,
+        "definite_vs_speculation": 0.4247
+      }
+    },
+    "ThreeWayLLM (gpt-5.4)": {
+      "n_conflicts": 128,
+      "coverage": 0.6719,
+      "accuracy": 0.4531,
+      "accuracy_ci95_episode_clustered": [
+        0.3806,
+        0.5372
+      ],
+      "conditional_risk": 0.3256,
+      "harmful_commitment_rate": 0.0234,
+      "harmful_ci95_episode_clustered": [
+        0.0,
+        0.0534
+      ],
+      "accuracy_by_kind": {
+        "constraint_pressure": 0.2545,
+        "definite_vs_speculation": 0.6027
+      }
+    }
+  }
+}

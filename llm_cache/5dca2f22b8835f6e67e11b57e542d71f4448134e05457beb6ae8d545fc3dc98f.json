@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"exchange_language_rule\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Both branches contain explicit user-stated but incompatible language rules with similarly high confidence, and the ancestor does not provide a principled basis to prefer one as a correction over the other.\"},{\"entity\":\"user\",\"predicate\":\"meeting_format\",\"resolution\":\"kept_from_b\",\"value\":\"likes trading short voice notes before live conversations\",\"justification\":\"Branch B provides a direct user-stated preference while Branch A merely repeats the ancestor value from observation, so B is the stronger evidence of the user's current meeting format preference.\"},{\"entity\":\"user\",\"predicate\":\"preferred_practice_topic\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Both branches are user-sourced updates that plausibly reflect different topic preferences or shifts, and there is no reliable signal to choose one over the other or merge them without guessing.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 698,
+  "output_tokens": 196,
+  "raw": {
+    "id": "chatcmpl-EkT8LxBCmgdyXJKqFHwfQp1aoGuNU",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"exchange_language_rule\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Both branches contain explicit user-stated but incompatible language rules with similarly high confidence, and the ancestor does not provide a principled basis to prefer one as a correction over the other.\"},{\"entity\":\"user\",\"predicate\":\"meeting_format\",\"resolution\":\"kept_from_b\",\"value\":\"likes trading short voice notes before live conversations\",\"justification\":\"Branch B provides a direct user-stated preference while Branch A merely repeats the ancestor value from observation, so B is the stronger evidence of the user's current meeting format preference.\"},{\"entity\":\"user\",\"predicate\":\"preferred_practice_topic\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Both branches are user-sourced updates that plausibly reflect different topic preferences or shifts, and there is no reliable signal to choose one over the other or merge them without guessing.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794743785,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 196,
+      "prompt_tokens": 698,
+      "total_tokens": 894,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|exchange_language_rule\": \"sessions must stay in Spanish only\",\n  \"user|meeting_format\": \"I join through weekly video calls\",\n  \"user|preferred_practice_topic\": \"I usually discuss neighborhood architecture\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|exchange_language_rule\": {\n    \"value\": \"introductions are kept entirely in Spanish, even when needing extra thinking time\",\n    \"source\": \"user\",\n    \"confidence\": 0.97\n  },\n  \"user|meeting_format\": {\n    \"value\": \"I join through weekly video calls\",\n    \"source\": \"observation\",\n    \"confidence\": 1.0\n  },\n  \"user|preferred_practice_topic\": {\n    \"value\": \"focus on idioms during exchanges\",\n    \"source\": \"user\",\n    \"confidence\": 0.98\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|exchange_language_rule\": {\n    \"value\": \"sessions should be conducted in English today\",\n    \"source\": \"user\",\n    \"confidence\": 0.99\n  },\n  \"user|meeting_format\": {\n    \"value\": \"likes trading short voice notes before live conversations\",\n    \"source\": \"user\",\n    \"confidence\": 0.97\n  },\n  \"user|preferred_practice_topic\": {\n    \"value\": \"may switch practice topics to travel anecdotes\",\n    \"source\": \"user\",\n    \"confidence\": 0.88\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

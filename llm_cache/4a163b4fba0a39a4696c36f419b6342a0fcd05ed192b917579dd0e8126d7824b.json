@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"13337\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 616,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-621",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"13337\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720515,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 616,
+      "total_tokens": 647,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: Jake Arrieta\nRelation: plays_position\nPreviously recorded value (may be stale, may be empty): starting pitcher\n\nCandidate LEFT:  tackle\nCandidate RIGHT: linebacker\n\nEvidence lines (numbered, in original order):\n11277. Jake Arrieta plays the position of starting pitcher.\n11323. linebacker is associated with the sport of shinty.\n11785. Derek Holland plays the position of linebacker.\n12239. Bill Russell plays the position of tackle.\n12688. Asi Taulava plays the position of linebacker.\n12747. Trent Edwards plays the position of linebacker.\n12985. Jonathan Vilma plays the position of linebacker.\n13068. Jens Lehmann plays the position of linebacker.\n13337. Jake Arrieta plays the position of linebacker.\n13536. Robin Lopez plays the position of linebacker.\n13544. Marten Stekelenburg plays the position of linebacker.\n13559. Brittney Griner plays the position of linebacker.\n14072. Keylor Navas plays the position of linebacker.\n14372. Caldwell Jones plays the position of linebacker.\n15195. Ndamukong Suh plays the position of defensive tackle.\n15249. Alex Song plays the position of linebacker.\n15519. Patrick Willis plays the position of linebacker.\n15733. Brad Guzan plays the position of linebacker.\n15977. Pete Maravich plays the position of linebacker.\n16194. Shinji Kagawa plays the position of linebacker.\n16278. Sam Bowie plays the position of linebacker.\n16583. Steve Nash plays the position of defensive tackle.\n16827. Freddie Freeman plays the position of linebacker.\n17050. Gennaro Gattuso plays the position of linebacker.\n17122. defensive tackle is associated with the sport of field hockey.\n17278. Thibaut Courtois plays the position of linebacker.\n17536. tackle is associated with the sport of association football.\n17678. Jarrett Jack plays the position of linebacker.\n18055. Tyson Chandler plays the position of linebacker.\n18144. Stephen Curry plays the position of linebacker.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

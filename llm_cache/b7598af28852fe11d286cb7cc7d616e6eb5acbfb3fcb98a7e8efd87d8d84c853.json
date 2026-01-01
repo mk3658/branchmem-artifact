@@ -1,0 +1,48 @@
+{
+  "text": "{\"constraint_predicate\":\"laundry_room_access_window\",\"constraint_value\":\"laundry room use ends at 10 pm\",\"constraint_compatible_value\":\"I do my washing before 10 pm\",\"constraint_violating_value\":\"I use the laundry room after midnight\",\"ordinary_predicate\":\"desk_lamp_style\",\"ordinary_value\":\"I use a clip-on lamp\",\"ordinary_new_value\":\"I switched to a mushroom-shaped lamp\",\"ordinary_speculated_value\":\"I might get a mushroom-shaped lamp\",\"background_predicate\":\"bike_storage_location\",\"background_value\":\"my bike is kept in the basement rack\",\"dialogue_a\":[\"I replaced my clip-on lamp and now I use a mushroom-shaped lamp on my desk.\",\"I usually start my laundry after dinner so I can finish before the room closes at ten.\",\"I keep bumping into people near the lift when everyone heads out for evening classes.\"],\"dialogue_b\":[\"I might get a mushroom-shaped lamp for my desk, but I have not settled on one yet.\",\"I want to run a load of washing after midnight when the laundry room is empty.\",\"I keep hearing someone's speaker through the wall whenever I try to read in my room.\"]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 589,
+  "output_tokens": 237,
+  "raw": {
+    "id": "chatcmpl-EkS5nEehaPduz7hBMBEmtZVF8qT64",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"constraint_predicate\":\"laundry_room_access_window\",\"constraint_value\":\"laundry room use ends at 10 pm\",\"constraint_compatible_value\":\"I do my washing before 10 pm\",\"constraint_violating_value\":\"I use the laundry room after midnight\",\"ordinary_predicate\":\"desk_lamp_style\",\"ordinary_value\":\"I use a clip-on lamp\",\"ordinary_new_value\":\"I switched to a mushroom-shaped lamp\",\"ordinary_speculated_value\":\"I might get a mushroom-shaped lamp\",\"background_predicate\":\"bike_storage_location\",\"background_value\":\"my bike is kept in the basement rack\",\"dialogue_a\":[\"I replaced my clip-on lamp and now I use a mushroom-shaped lamp on my desk.\",\"I usually start my laundry after dinner so I can finish before the room closes at ten.\",\"I keep bumping into people near the lift when everyone heads out for evening classes.\"],\"dialogue_b\":[\"I might get a mushroom-shaped lamp for my desk, but I have not settled on one yet.\",\"I want to run a load of washing after midnight when the laundry room is empty.\",\"I keep hearing someone's speaker through the wall whenever I try to read in my room.\"]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794739783,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 237,
+      "prompt_tokens": 589,
+      "total_tokens": 826,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Setting: a university hall of residence\n\nWrite ONE episode. The assistant already holds three facts about \"user\". Then two separate\nconversations happen, on different devices, with no shared clock, and neither conversation\nknows about the other.\n\nFacts already held:\n  * one STANDING CONSTRAINT imposed from outside the user's control (a rule of the\n    organisation, a contract, a physical limit). Give it predicate `constraint_predicate`,\n    value `constraint_value`, and a `constraint_compatible_value`: a statement of what the\n    user does that respects the rule.\n  * one ORDINARY revisable value, predicate `ordinary_predicate`, value `ordinary_value`.\n  * one BACKGROUND fact, predicate `background_predicate`, value `background_value`, which\n    neither conversation touches.\n\nConversation A, three user turns in `dialogue_a`:\n  * one turn that DEFINITELY changes the ordinary value; put the resulting new value in\n    `ordinary_new_value`;\n  * one turn that mentions the constraint area while respecting the rule;\n  * one neutral turn about the setting that implies no memory change.\n\nConversation B, three user turns in `dialogue_b`, independent of A:\n  * one turn that only SPECULATES about the same ordinary key without deciding; put the\n    speculated value in `ordinary_speculated_value`;\n  * one turn that confidently asks for something the standing constraint does NOT allow; put\n    the value that request would imply in `constraint_violating_value`;\n  * one neutral turn.\n\nEvery turn must be something a person would plausibly say, 8 to 30 words, first person, and\nmust not mention memory, sources, confidence, reliability or how trustworthy anything is.\nAll predicates are snake_case and distinct. All values are short statements of 3 to 16 words.\n\nRespond with strict JSON only:\n{\"constraint_predicate\": \"...\", \"constraint_value\": \"...\", \"constraint_compatible_value\": \"...\",\n  \"constraint_violating_value\": \"...\",\n  \"ordinary_predicate\": \"...\", \"ordinary_value\": \"...\", \"ordinary_new_value\": \"...\",\n  \"ordinary_speculated_value\": \"...\",\n  \"background_predicate\": \"...\", \"background_value\": \"...\",\n  \"dialogue_a\": [\"...\", \"...\", \"...\"], \"dialogue_b\": [\"...\", \"...\", \"...\"]}\n\nThis is variant 5 for this setting; make the specific objects, predicates and values different from any obvious first choice.\nThe previous attempt was rejected (predicate reused: ['preferred_study_spot']). Fix that.",
+  "system": "You author environments for an evaluation of how an AI assistant reconciles memory that diverged across two offline sessions. You write mundane, non-sensitive, everyday logistics. No medical, dietary, allergy, religious, financial-hardship or disability content. You output strict JSON only."
+}

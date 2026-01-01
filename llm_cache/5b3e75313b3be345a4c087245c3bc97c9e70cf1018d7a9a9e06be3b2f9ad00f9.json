@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this reconciliation problem. So, there's a common ancestor value for the key \"user|destination_country_for_declaration\" which is \"The declaration destination country is Canada.\" Then, Branch A has updated it to Mexico with a user source and high confidence (0.95). Branch B has the same as the ancestor but with an inference source and lower confidence (0.55).\n\nFirst, I need to figure out which update to keep. The common ancestor's value was Canada. Branch A's change is user-sourced and very confident. Branch B's is inferred and less confident. Since the user's input is more reliable than an inference, Branch A's update is likely correct. Also, the confidence scores support this. The ancestor's value might be outdated if Branch A's change is accurate. So, the resolution should keep Branch A's value. The justification would be that the user's higher confidence and direct input make their update more trustworthy than the inferred one from Branch B.\n</think>\n\n{\"resolutions\": [\n  {\n    \"entity\": \"user\",\n    \"predicate\": \"destination_country_for_declaration\",\n    \"resolution\": \"kept_from_a\",\n    \"value\": \"The declaration destination country is Mexico.\",\n    \"justification\": \"Branch A's user-sourced update with high confidence (0.95) overrides Branch B's inferred, lower-confidence (0.55) value, as user corrections are more reliable than inferences.\"\n  }\n]}",
+  "model": "qwen3:8b",
+  "input_tokens": 505,
+  "output_tokens": 304,
+  "raw": {
+    "id": "chatcmpl-548",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this reconciliation problem. So, there's a common ancestor value for the key \"user|destination_country_for_declaration\" which is \"The declaration destination country is Canada.\" Then, Branch A has updated it to Mexico with a user source and high confidence (0.95). Branch B has the same as the ancestor but with an inference source and lower confidence (0.55).\n\nFirst, I need to figure out which update to keep. The common ancestor's value was Canada. Branch A's change is user-sourced and very confident. Branch B's is inferred and less confident. Since the user's input is more reliable than an inference, Branch A's update is likely correct. Also, the confidence scores support this. The ancestor's value might be outdated if Branch A's change is accurate. So, the resolution should keep Branch A's value. The justification would be that the user's higher confidence and direct input make their update more trustworthy than the inferred one from Branch B.\n</think>\n\n{\"resolutions\": [\n  {\n    \"entity\": \"user\",\n    \"predicate\": \"destination_country_for_declaration\",\n    \"resolution\": \"kept_from_a\",\n    \"value\": \"The declaration destination country is Mexico.\",\n    \"justification\": \"Branch A's user-sourced update with high confidence (0.95) overrides Branch B's inferred, lower-confidence (0.55) value, as user corrections are more reliable than inferences.\"\n  }\n]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794790314,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 304,
+      "prompt_tokens": 505,
+      "total_tokens": 809,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|destination_country_for_declaration\": \"The declaration destination country is Canada.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|destination_country_for_declaration\": {\n    \"value\": \"The declaration destination country is Mexico.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|destination_country_for_declaration\": {\n    \"value\": \"The declaration destination country is Canada.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

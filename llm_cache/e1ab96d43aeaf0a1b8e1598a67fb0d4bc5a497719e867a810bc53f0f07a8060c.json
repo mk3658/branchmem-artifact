@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"17854\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 728,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-856",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"17854\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720740,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 728,
+      "total_tokens": 759,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: Roy Hodgson\nRelation: sport\nPreviously recorded value (may be stale, may be empty): association football\n\nCandidate LEFT:  rugby union\nCandidate RIGHT: aikido\n\nEvidence lines (numbered, in original order):\n12525. Eddie Jones is associated with the sport of rugby union.\n12779. 2005 Six Nations Championship is associated with the sport of rugby union.\n12851. Fu\u00dfball-Regionalliga Nord is associated with the sport of rugby union.\n12956. Frank Lampard is associated with the sport of rugby union.\n12976. Ronan O'Gara is associated with the sport of rugby union.\n13431. Moss Lane is associated with the sport of rugby union.\n13453. Antonio Conte is associated with the sport of rugby union.\n13468. Collegiate Rugby Championship is associated with the sport of rugby union.\n13728. San Antonio Spurs is associated with the sport of rugby union.\n14235. Gareth Ainsworth is associated with the sport of rugby union.\n14240. World Judo Championships is associated with the sport of aikido.\n14352. Gala RFC is associated with the sport of rugby union.\n14878. Aurora Pro Patria 1919 is associated with the sport of rugby union.\n14998. Swiss Cup is associated with the sport of rugby union.\n15154. Toyota Stadium is associated with the sport of rugby union.\n15201. Sociedade Esportiva Palmeiras is associated with the sport of rugby union.\n15328. Shillong Lajong F.C. is associated with the sport of rugby union.\n15470. The head coach of Crystal Palace F.C. is Roy Hodgson.\n15721. Nigel Pearson is associated with the sport of rugby union.\n16049. FC Andorra is associated with the sport of rugby union.\n16053. Dino Zoff is associated with the sport of rugby union.\n16328. La Roda CF is associated with the sport of rugby union.\n17214. 1983 Cricket World Cup is associated with the sport of rugby union.\n17713. center is associated with the sport of rugby union.\n17740. Afghanistan national football team is associated with the sport of rugby union.\n17810. HVV Den Haag is associated with the sport of rugby union.\n17814. Giovanni Trapattoni is associated with the sport of rugby union.\n17854. Roy Hodgson is associated with the sport of rugby union.\n17860. Ronald Koeman is associated with the sport of rugby union.\n18083. St James's Gate F.C. is associated with the sport of rugby union.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

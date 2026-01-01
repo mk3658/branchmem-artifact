@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"post_climb_drink\",\"value\":\"I usually buy iced tea afterward\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"auto_belay_access\",\"value\":\"staff must clip me on auto-belay near the entrance\",\"source\":\"user\",\"confidence\":0.97},{\"predicate\":\"route_interest\",\"value\":\"I noticed the new purple route has interesting footholds\",\"source\":\"user\",\"confidence\":0.93}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 321,
+  "output_tokens": 94,
+  "raw": {
+    "id": "chatcmpl-EkSa1jCv5vJQ2tliJ33NxQ4unhtqQ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"post_climb_drink\",\"value\":\"I usually buy iced tea afterward\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"auto_belay_access\",\"value\":\"staff must clip me on auto-belay near the entrance\",\"source\":\"user\",\"confidence\":0.97},{\"predicate\":\"route_interest\",\"value\":\"I noticed the new purple route has interesting footholds\",\"source\":\"user\",\"confidence\":0.93}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741657,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 94,
+      "prompt_tokens": 321,
+      "total_tokens": 415,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- auto_belay_access: staff must clip me on auto-belay  (source=observation, confidence=1.00)\n- post_climb_drink: I usually buy ginger ale afterward  (source=observation, confidence=1.00)\n- preferred_wall_zone: I like the slab corner upstairs  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I switched my usual post-climb drink to iced tea after sessions.\nUser: I wait for staff before using the auto-belay lane near the entrance.\nUser: I noticed the new purple route has really interesting footholds today.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

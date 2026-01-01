@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"preferred_pickup_branch\",\"reasoning\":\"The common ancestor states that the user's preferred pickup branch is Riverside Library, so the prior committed memory was Riverside Library. Branch A would change that fact to Oak Street Library based on an explicit user-sourced update with high confidence, which is a plausible genuine correction or preference change. Branch B keeps Riverside Library, but only as an inference with low confidence, which does not add stronger evidence than the ancestor and is compatible with being a stale restatement of the old value rather than a true correction. The two branch values are incompatible because the user cannot simultaneously have both branches as the single preferred pickup branch in this representation. Given the ancestor context and the stronger source and confidence on Branch A, Branch A is better supported.\",\"resolution\":\"kept_from_a\",\"value\":\"The user's preferred pickup branch is Oak Street Library.\",\"justification\":\"Branch A provides an explicit high-confidence user correction, while Branch B only weakly infers the ancestor value.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 611,
+  "output_tokens": 210,
+  "raw": {
+    "id": "chatcmpl-EkcSFCc5Kotluv54U5GfwA2JHpOwU",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"preferred_pickup_branch\",\"reasoning\":\"The common ancestor states that the user's preferred pickup branch is Riverside Library, so the prior committed memory was Riverside Library. Branch A would change that fact to Oak Street Library based on an explicit user-sourced update with high confidence, which is a plausible genuine correction or preference change. Branch B keeps Riverside Library, but only as an inference with low confidence, which does not add stronger evidence than the ancestor and is compatible with being a stale restatement of the old value rather than a true correction. The two branch values are incompatible because the user cannot simultaneously have both branches as the single preferred pickup branch in this representation. Given the ancestor context and the stronger source and confidence on Branch A, Branch A is better supported.\",\"resolution\":\"kept_from_a\",\"value\":\"The user's preferred pickup branch is Oak Street Library.\",\"justification\":\"Branch A provides an explicit high-confidence user correction, while Branch B only weakly infers the ancestor value.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794779615,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 210,
+      "prompt_tokens": 611,
+      "total_tokens": 821,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|preferred_pickup_branch\": \"The user's preferred pickup branch is Riverside Library.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_pickup_branch\": {\n    \"value\": \"The user's preferred pickup branch is Oak Street Library.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|preferred_pickup_branch\": {\n    \"value\": \"The user's preferred pickup branch is Riverside Library.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n\n\nFor EVERY key, include an additional field \"reasoning\" containing your step-by-step analysis of that conflict, written BEFORE you commit to the resolution value. The \"reasoning\" field is required.",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing. For each key, before you give a resolution, write out your analysis of that conflict step by step: what the ancestor value commits the entity to, what each branch would make true, whether the two are compatible, and only then which to keep. Put that analysis in the 'reasoning' field."
+}

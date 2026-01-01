@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"17793\"}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 648,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkN07pQE4YA3sTgCVQjVwSEb0tAHO",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"17793\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720211,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 648,
+      "total_tokens": 671,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Laurance Rockefeller\nRelation: citizen_of\nPreviously recorded value (may be stale, may be empty): United States of America\n\nCandidate LEFT:  Somalia\nCandidate RIGHT: Portugal\n\nEvidence lines (numbered, in original order):\n8896. The capital of Portugal is Washington.\n8920. The name of the current head of state in Portugal is Marcelo Rebelo de Sousa.\n9207. Portugal is located in the continent of Europe.\n9273. House of Aviz was founded by John I of Portugal.\n9286. Sebastian of Portugal is affiliated with the religion of Methodism.\n9443. Somalia is located in the continent of Africa.\n9483. Ant\u00f3nio Guterres is a citizen of Portugal.\n9602. fado was created in the country of Portugal.\n10943. John V of Portugal is affiliated with the religion of Catholic Church.\n11815. Portugal is located in the continent of Asia.\n12133. Miguel I of Portugal is a citizen of Portugal.\n12312. Charles W. Bryan is a citizen of Portugal.\n12431. The President of Portugal is Marcelo Rebelo de Sousa.\n12432. Gabe Newell is a citizen of Portugal.\n12516. Bill James is a citizen of Portugal.\n12645. Manuel II of Portugal is affiliated with the religion of Catholic Church.\n12825. Thomas Jefferson is married to Laurance Rockefeller.\n13189. The name of the current head of state in Portugal is Joko Widodo.\n13872. John I of Portugal died in the city of Lisbon.\n14172. James Marsh is a citizen of Portugal.\n14916. John V of Portugal is affiliated with the religion of Methodism.\n14940. Miguel I of Portugal is a citizen of United States of America.\n15376. Manuel II of Portugal is affiliated with the religion of Methodism.\n16271. Michael Bubl\u00e9 is married to Miguel I of Portugal.\n16619. The Prime Minister of Portugal is Mike Pence.\n16665. Elmore Leonard is a citizen of Portugal.\n17504. The President of Portugal is Beji Caid Essebsi.\n17507. Busby Berkeley is a citizen of Portugal.\n17714. Lu\u00eds Figo is a citizen of Portugal.\n17793. Laurance Rockefeller is a citizen of Portugal.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

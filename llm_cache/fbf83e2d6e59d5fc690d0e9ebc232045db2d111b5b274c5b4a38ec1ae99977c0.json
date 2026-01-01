@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"preferred_section\",\"value\":\"might try singing with the sopranos for the spring concert\",\"source\":\"user\",\"confidence\":0.86},{\"predicate\":\"rehearsal_arrival_time\",\"value\":\"needs to come in at 7:10 tonight\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"warmup_preference\",\"value\":\"liked warmups with the round in three parts\",\"source\":\"user\",\"confidence\":0.98}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 319,
+  "output_tokens": 98,
+  "raw": {
+    "id": "chatcmpl-EkSapexCvjHVf9bgmsiVdKEK31BqF",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"preferred_section\",\"value\":\"might try singing with the sopranos for the spring concert\",\"source\":\"user\",\"confidence\":0.86},{\"predicate\":\"rehearsal_arrival_time\",\"value\":\"needs to come in at 7:10 tonight\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"warmup_preference\",\"value\":\"liked warmups with the round in three parts\",\"source\":\"user\",\"confidence\":0.98}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741707,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 98,
+      "prompt_tokens": 319,
+      "total_tokens": 417,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- rehearsal_arrival_time: must arrive by 6:45 pm  (source=observation, confidence=1.00)\n- preferred_section: I sing with the altos  (source=observation, confidence=1.00)\n- folder_color: my choir folder is black  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might try singing with the sopranos for the spring concert.\nUser: I need to come in at 7:10 tonight, so please start my part later.\nUser: I really liked the warmups with the round in three parts.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

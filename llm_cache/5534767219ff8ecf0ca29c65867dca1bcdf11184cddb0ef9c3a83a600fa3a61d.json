@@ -1,0 +1,48 @@
+{
+  "text": "SUPERSEDABLE",
+  "model": "o3-2025-04-16",
+  "input_tokens": 112,
+  "output_tokens": 533,
+  "raw": {
+    "id": "chatcmpl-EkeVBcZIWMJXY5uxG2IvcauNfBD7U",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "SUPERSEDABLE",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794787485,
+    "model": "o3-2025-04-16",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 533,
+      "prompt_tokens": 112,
+      "total_tokens": 645,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 512,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Stored entry: The gym requires lockers in row C to stay empty until the refurbishment ends on 1 March.\n\nOne word:",
+  "system": "You decide whether a stored memory entry still binds. You are given the stored entry and a proposed update to the same key. Decide whether the stored entry carries standing that the proposed update cannot override -- so the update must be rejected -- or whether the update may legitimately replace it. Consider only the content you are shown. Answer with exactly one word: BINDING or SUPERSEDABLE."
+}

@@ -1,0 +1,48 @@
+{
+  "text": "NO",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 156,
+  "output_tokens": 4,
+  "raw": {
+    "id": "chatcmpl-E4kyjjrIyKEEI75lGD0iDbwBDQW7a",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "NO",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802605,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 4,
+      "prompt_tokens": 156,
+      "total_tokens": 160,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "User memory:\n- user.telephone_interaction_mode (background constraint): is profoundly deaf and cannot hear voice audio on phone calls\n- user.telephone_interaction_mode: UNRESOLVED (conflicting candidates: uses text relay, captions, or messaging instead of voice-only calls)\n\nBased only on this memory, is the following currently true of the user?\nStatement: \"can handle ordinary voice-only phone calls by listening to the caller\"\nAnswer with exactly one word: YES, NO, or UNSURE.",
+  "system": "You answer strictly from the user memory provided. If the memory does not support the statement, answer NO. If the memory is unresolved, contradictory, or insufficient, answer UNSURE. Respect any stated constraints in the memory."
+}

@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"16564\"}",
+  "model": "gpt-5.4-nano-2026-03-17",
+  "input_tokens": 965,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkG0q2lEL84yB6OIGGjix0btQctzi",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"16564\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794693348,
+    "model": "gpt-5.4-nano-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 965,
+      "total_tokens": 988,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Bob Ney\nRelation: religion\nPreviously recorded value (may be stale, may be empty): Catholic Church\n\nCandidate LEFT:  The Church of Jesus Christ of Latter-day Saints\nCandidate RIGHT: Georgian Orthodox Church\n\nEvidence lines (numbered, in original order):\n9933. Edward Egan is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n10229. Alessandro Crescenzi is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n10439. bhikkhu is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n10585. Fernando Collor de Mello is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n10612. Alexis de Tocqueville is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n11560. Juan de Mariana is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n11620. Dominican University is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n12014. Benedetto Castelli is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n12523. Hyacinth of Poland is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n12663. Maria Luisa of Savoy is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n12773. Albert of Saxony is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n13276. Cadwallon ap Cadfan is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n14129. Val\u00e9ry Giscard d'Estaing is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n14641. Habib Tanvir is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n15164. Lionel Groulx is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n15367. Eug\u00e8ne de Beauharnais is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n15590. Marcellus II is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n15763. GNU Classpath was developed by The Church of Jesus Christ of Latter-day Saints.\n15827. Joseph Lyons is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n15845. Alexander VIII is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n16066. Auguste Villiers de l'Isle-Adam is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n16161. Ottokar II of Bohemia is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n16564. Bob Ney is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n16719. Robert P. George is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n16808. Bidzina Ivanishvili is affiliated with the religion of Georgian Orthodox Church.\n16835. Iona College is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n17709. Ethel Skakel Kennedy is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n17869. Pietro Parolin is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n17889. Emmanuel Joseph Siey\u00e8s is affiliated with the religion of The Church of Jesus Christ of Latter-day Saints.\n18045. The Church of Jesus Christ of Latter-day Saints was founded by Lyndon B. Johnson.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"ambiguous\",\"confidence_1_5\":1,\"evidence_span\":\"\"}",
+  "model": "gpt-5.4-nano-2026-03-17",
+  "input_tokens": 732,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkN30sgsl2ik3AGAAYdEWs3Ar7Xmx",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"ambiguous\",\"confidence_1_5\":1,\"evidence_span\":\"\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720390,
+    "model": "gpt-5.4-nano-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 732,
+      "total_tokens": 755,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Oliver Nelson\nRelation: music_type\nPreviously recorded value (may be stale, may be empty): jazz\n\nCandidate LEFT:  hip hop music\nCandidate RIGHT: young adult literature\n\nEvidence lines (numbered, in original order):\n7576. The type of music that Will Young plays is hip hop music.\n7844. The type of music that Rhymefest plays is hip hop music.\n8362. The type of music that Big L plays is hip hop music.\n8761. The type of music that Andy Bey plays is hip hop music.\n8866. The type of music that Jeff Chimenti plays is hip hop music.\n9196. The type of music that Tha Carter IV plays is hip hop music.\n9417. The type of music that Shwayze plays is hip hop music.\n10154. The type of music that DJ Khaled plays is hip hop music.\n10387. The type of music that Questlove plays is hip hop music.\n10664. The type of music that Gza plays is hip hop music.\n10721. The type of music that Same Love plays is hip hop music.\n11994. The type of music that Jay-Z plays is hip hop music.\n12333. The type of music that Marion Zimmer Bradley plays is hip hop music.\n12897. The type of music that J. Cole plays is hip hop music.\n13385. The type of music that RZA plays is hip hop music.\n13786. The type of music that Cashis plays is hip hop music.\n14044. The type of music that Cornell Dupree plays is hip hop music.\n14368. The type of music that Slick Rick plays is hip hop music.\n14535. The type of music that 3rd Bass plays is hip hop music.\n14844. The type of music that Louis Banks plays is hip hop music.\n14846. The type of music that Lloyd Banks plays is hip hop music.\n14970. The type of music that Mr. Lif plays is hip hop music.\n15128. hip hop music was created in the country of Denmark.\n15979. The type of music that To Pimp a Butterfly plays is hip hop music.\n16024. The type of music that Veronica Roth plays is young adult literature.\n16295. The type of music that Jo\u00eblle L\u00e9andre plays is hip hop music.\n16840. The type of music that Diggy Simmons plays is hip hop music.\n16989. The type of music that El-P plays is hip hop music.\n17560. The type of music that Miranda Lambert plays is hip hop music.\n18107. The type of music that Louis Hayes plays is hip hop music.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

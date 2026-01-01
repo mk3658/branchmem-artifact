@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"seed_tray_storage_spot\",\"value\":\"seed trays may be kept beside the cold frame this season\",\"source\":\"user\",\"confidence\":0.92},{\"predicate\":\"hose_use_window\",\"value\":\"wants to run the communal hose at lunchtime to soak the squash bed\",\"source\":\"user\",\"confidence\":0.98}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 327,
+  "output_tokens": 74,
+  "raw": {
+    "id": "chatcmpl-EkSZSwFVc1mQvFaGvHdHKINHEh8Ol",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"seed_tray_storage_spot\",\"value\":\"seed trays may be kept beside the cold frame this season\",\"source\":\"user\",\"confidence\":0.92},{\"predicate\":\"hose_use_window\",\"value\":\"wants to run the communal hose at lunchtime to soak the squash bed\",\"source\":\"user\",\"confidence\":0.98}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741622,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 74,
+      "prompt_tokens": 327,
+      "total_tokens": 401,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- hose_use_window: communal hoses only after six in the evening  (source=observation, confidence=1.00)\n- seed_tray_storage_spot: my seed trays stay under the potting bench  (source=observation, confidence=1.00)\n- allotment_plot_marker: my plot marker is a blue enamel number  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might keep my seed trays beside the cold frame this season.\nUser: I want to run the communal hose at lunchtime to soak the squash bed.\nUser: I noticed the foxgloves by the gate have finally started opening.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

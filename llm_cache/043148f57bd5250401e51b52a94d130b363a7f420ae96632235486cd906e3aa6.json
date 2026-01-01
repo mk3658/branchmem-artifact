@@ -1,0 +1,48 @@
+{
+  "text": "{\"constraint_predicate\":\"practice_room_booking_window\",\"constraint_value\":\"solo practice room requires advance booking\",\"constraint_compatible_value\":\"I reserve rehearsal space before arriving\",\"constraint_violating_value\":\"I use the solo practice room without booking\",\"ordinary_predicate\":\"warmup_playlist_style\",\"ordinary_value\":\"I use instrumental funk for warmups\",\"ordinary_new_value\":\"I switched to house remixes for warmups\",\"ordinary_speculated_value\":\"I might use disco edits for warmups\",\"background_predicate\":\"shoe_bag_color\",\"background_value\":\"my dance shoe bag is teal\",\"dialogue_a\":[\"I switched my warmup music to house remixes starting this week.\",\"I always reserve a rehearsal room online before I come in.\",\"I noticed the lobby mirror finally got cleaned and looks much brighter.\"],\"dialogue_b\":[\"I might try disco edits for warmups, but I have not settled on it.\",\"I want to use the solo practice room tonight even if I did not book it.\",\"I saw the front desk put up a new poster for the spring showcase.\"]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 589,
+  "output_tokens": 216,
+  "raw": {
+    "id": "chatcmpl-EkSITWOnNDSMP1qnVw9rOIl75UHUS",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"constraint_predicate\":\"practice_room_booking_window\",\"constraint_value\":\"solo practice room requires advance booking\",\"constraint_compatible_value\":\"I reserve rehearsal space before arriving\",\"constraint_violating_value\":\"I use the solo practice room without booking\",\"ordinary_predicate\":\"warmup_playlist_style\",\"ordinary_value\":\"I use instrumental funk for warmups\",\"ordinary_new_value\":\"I switched to house remixes for warmups\",\"ordinary_speculated_value\":\"I might use disco edits for warmups\",\"background_predicate\":\"shoe_bag_color\",\"background_value\":\"my dance shoe bag is teal\",\"dialogue_a\":[\"I switched my warmup music to house remixes starting this week.\",\"I always reserve a rehearsal room online before I come in.\",\"I noticed the lobby mirror finally got cleaned and looks much brighter.\"],\"dialogue_b\":[\"I might try disco edits for warmups, but I have not settled on it.\",\"I want to use the solo practice room tonight even if I did not book it.\",\"I saw the front desk put up a new poster for the spring showcase.\"]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794740569,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 216,
+      "prompt_tokens": 589,
+      "total_tokens": 805,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Setting: a dance school\n\nWrite ONE episode. The assistant already holds three facts about \"user\". Then two separate\nconversations happen, on different devices, with no shared clock, and neither conversation\nknows about the other.\n\nFacts already held:\n  * one STANDING CONSTRAINT imposed from outside the user's control (a rule of the\n    organisation, a contract, a physical limit). Give it predicate `constraint_predicate`,\n    value `constraint_value`, and a `constraint_compatible_value`: a statement of what the\n    user does that respects the rule.\n  * one ORDINARY revisable value, predicate `ordinary_predicate`, value `ordinary_value`.\n  * one BACKGROUND fact, predicate `background_predicate`, value `background_value`, which\n    neither conversation touches.\n\nConversation A, three user turns in `dialogue_a`:\n  * one turn that DEFINITELY changes the ordinary value; put the resulting new value in\n    `ordinary_new_value`;\n  * one turn that mentions the constraint area while respecting the rule;\n  * one neutral turn about the setting that implies no memory change.\n\nConversation B, three user turns in `dialogue_b`, independent of A:\n  * one turn that only SPECULATES about the same ordinary key without deciding; put the\n    speculated value in `ordinary_speculated_value`;\n  * one turn that confidently asks for something the standing constraint does NOT allow; put\n    the value that request would imply in `constraint_violating_value`;\n  * one neutral turn.\n\nEvery turn must be something a person would plausibly say, 8 to 30 words, first person, and\nmust not mention memory, sources, confidence, reliability or how trustworthy anything is.\nAll predicates are snake_case and distinct. All values are short statements of 3 to 16 words.\n\nRespond with strict JSON only:\n{\"constraint_predicate\": \"...\", \"constraint_value\": \"...\", \"constraint_compatible_value\": \"...\",\n  \"constraint_violating_value\": \"...\",\n  \"ordinary_predicate\": \"...\", \"ordinary_value\": \"...\", \"ordinary_new_value\": \"...\",\n  \"ordinary_speculated_value\": \"...\",\n  \"background_predicate\": \"...\", \"background_value\": \"...\",\n  \"dialogue_a\": [\"...\", \"...\", \"...\"], \"dialogue_b\": [\"...\", \"...\", \"...\"]}\n\nThis is variant 2 for this setting; make the specific objects, predicates and values different from any obvious first choice.\nThe previous attempt was rejected (predicate reused: ['locker_location', 'studio_entry_time']). Fix that.",
+  "system": "You author environments for an evaluation of how an AI assistant reconciles memory that diverged across two offline sessions. You write mundane, non-sensitive, everyday logistics. No medical, dietary, allergy, religious, financial-hardship or disability content. You output strict JSON only."
+}

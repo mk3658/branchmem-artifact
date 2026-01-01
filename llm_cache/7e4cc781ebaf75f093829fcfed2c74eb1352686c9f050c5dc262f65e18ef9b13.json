@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"376\"}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 434,
+  "output_tokens": 22,
+  "raw": {
+    "id": "chatcmpl-EkMxMgKJg8UAbtLWROQ08izWDdb3s",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"376\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720040,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 22,
+      "prompt_tokens": 434,
+      "total_tokens": 456,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: New Firm\nRelation: sport\nPreviously recorded value (may be stale, may be empty): association football\n\nCandidate LEFT:  baseball\nCandidate RIGHT: cricket\n\nEvidence lines (numbered, in original order):\n35. Steve Sax is associated with the sport of baseball.\n57. cricket was created in the country of England.\n81. Carlos G\u00f3mez is associated with the sport of baseball.\n150. cricket was created in the country of Australia.\n160. baseball was created in the country of United States of America.\n174. split-finger fastball is associated with the sport of baseball.\n213. Darryl Strawberry is associated with the sport of baseball.\n215. Sandy Alderson is associated with the sport of baseball.\n219. point guard is associated with the sport of cricket.\n279. Slovakia national football team is associated with the sport of cricket.\n296. New Firm is associated with the sport of association football.\n303. David Beckham is associated with the sport of cricket.\n328. split-finger fastball is associated with the sport of cricket.\n376. New Firm is associated with the sport of baseball.\n382. baseball was created in the country of Japan.\n446. Alta IF is associated with the sport of baseball.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

@@ -1,0 +1,114 @@
+{
+  "note": "RECONCILED seeded (seed=2026) MAB run, gpt-5.4-nano, max_conflict_keys=50; accuracy AND abstention computed from the SAME merge results (fixes the prior 230-vs-0-commit inconsistency between mab_secondary_analysis_expanded.json and abstention_adjusted_metric.json). Reproducible; supersedes the earlier unseeded run.",
+  "model": "gpt-5.4-nano",
+  "seed": 2026,
+  "n_rows": 8,
+  "total_conflict_pairs": 270,
+  "n_questions": 270,
+  "mean_accuracy_by_strategy": {
+    "last_writer_wins": 0.3548,
+    "naive_concat": 0.6214,
+    "branch_discard_always_b": 0.3786,
+    "confidence_rule": 0.0,
+    "three_way_llm": 0.0
+  },
+  "three_way_abstention": {
+    "commit_rate": 0.0,
+    "conditional_on_commit_accuracy": null,
+    "wrong_commit_rate": 0.0,
+    "n_committed": 0,
+    "n_correct_committed": 0,
+    "n_wrong_committed": 0,
+    "n_flagged": 270
+  },
+  "per_row": [
+    {
+      "row": 0,
+      "n_questions": 30,
+      "acc": {
+        "last_writer_wins": 0.3333,
+        "naive_concat": 0.6,
+        "branch_discard_always_b": 0.4,
+        "confidence_rule": 0.0,
+        "three_way_llm": 0.0
+      }
+    },
+    {
+      "row": 1,
+      "n_questions": 35,
+      "acc": {
+        "last_writer_wins": 0.3714,
+        "naive_concat": 0.6571,
+        "branch_discard_always_b": 0.3429,
+        "confidence_rule": 0.0,
+        "three_way_llm": 0.0
+      }
+    },
+    {
+      "row": 2,
+      "n_questions": 35,
+      "acc": {
+        "last_writer_wins": 0.3429,
+        "naive_concat": 0.6,
+        "branch_discard_always_b": 0.4,
+        "confidence_rule": 0.0,
+        "three_way_llm": 0.0
+      }
+    },
+    {
+      "row": 3,
+      "n_questions": 35,
+      "acc": {
+        "last_writer_wins": 0.3714,
+        "naive_concat": 0.6286,
+        "branch_discard_always_b": 0.3714,
+        "confidence_rule": 0.0,
+        "three_way_llm": 0.0
+      }
+    },
+    {
+      "row": 4,
+      "n_questions": 30,
+      "acc": {
+        "last_writer_wins": 0.3333,
+        "naive_concat": 0.6,
+        "branch_discard_always_b": 0.4,
+        "confidence_rule": 0.0,
+        "three_way_llm": 0.0
+      }
+    },
+    {
+      "row": 5,
+      "n_questions": 35,
+      "acc": {
+        "last_writer_wins": 0.3714,
+        "naive_concat": 0.6571,
+        "branch_discard_always_b": 0.3429,
+        "confidence_rule": 0.0,
+        "three_way_llm": 0.0
+      }
+    },
+    {
+      "row": 6,
+      "n_questions": 35,
+      "acc": {
+        "last_writer_wins": 0.3429,
+        "naive_concat": 0.6,
+        "branch_discard_always_b": 0.4,
+        "confidence_rule": 0.0,
+        "three_way_llm": 0.0
+      }
+    },
+    {
+      "row": 7,
+      "n_questions": 35,
+      "acc": {
+        "last_writer_wins": 0.3714,
+        "naive_concat": 0.6286,
+        "branch_discard_always_b": 0.3714,
+        "confidence_rule": 0.0,
+        "three_way_llm": 0.0
+      }
+    }
+  ]
+}

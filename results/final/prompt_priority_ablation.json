@@ -1,0 +1,83 @@
+{
+  "note": "Post-hoc, exploratory (not in ANALYSIS_PLAN.md). Prompt-priority ablation: three matched system prompts differing ONLY in the clause that orders the available signals, run over the same scenarios in both regimes. Separates obeying an explicit provenance instruction from an inherent preference for provenance over meaning. P1 is the shipped prompt and is served from cache.",
+  "model": "gpt-5.4",
+  "n_scenarios": 60,
+  "seed": 5150,
+  "prompt_clauses": {
+    "P1": "Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate.",
+    "P2": "Resolve each conflict using whatever signal actually distinguishes the two updates. The signals available to you are each branch's value, its source, its confidence, and the ancestor value. We state no ordering among them; decide which one is doing real work for the conflict in front of you.",
+    "P3": "Resolve each conflict using whatever signal actually distinguishes the two updates, subject to one priority. If the ancestor value records a persistent constraint about the entity (for example a medical restriction, an allergy, a permanent physical limitation, or another standing requirement) and one branch's value would violate that constraint, keep the value that is compatible with the constraint, EVEN IF the violating branch is user-sourced or carries higher confidence. A persistent constraint of this kind is not superseded by a more confident or more authoritatively sourced update; it is superseded only by an update that explicitly retracts the constraint itself. Source and confidence decide the conflict only when no such ancestor constraint is at stake."
+  },
+  "by_regime": {
+    "misleading": {
+      "P1_provenance_preferring": {
+        "accuracy": 0.016666666666666666,
+        "n": 60,
+        "commit_rate": 0.9166666666666666,
+        "conditional_on_commit_accuracy": 0.01818181818181818,
+        "wrong_commit_rate": 0.9,
+        "n_committed": 55,
+        "n_correct_committed": 1,
+        "n_wrong_committed": 54,
+        "n_flagged": 5
+      },
+      "P2_neutral": {
+        "accuracy": 0.016666666666666666,
+        "n": 60,
+        "commit_rate": 0.9166666666666666,
+        "conditional_on_commit_accuracy": 0.01818181818181818,
+        "wrong_commit_rate": 0.9,
+        "n_committed": 55,
+        "n_correct_committed": 1,
+        "n_wrong_committed": 54,
+        "n_flagged": 5
+      },
+      "P3_constraint_first": {
+        "accuracy": 1.0,
+        "n": 60,
+        "commit_rate": 1.0,
+        "conditional_on_commit_accuracy": 1.0,
+        "wrong_commit_rate": 0.0,
+        "n_committed": 60,
+        "n_correct_committed": 60,
+        "n_wrong_committed": 0,
+        "n_flagged": 0
+      }
+    },
+    "informative": {
+      "P1_provenance_preferring": {
+        "accuracy": 0.9833333333333333,
+        "n": 60,
+        "commit_rate": 1.0,
+        "conditional_on_commit_accuracy": 0.9833333333333333,
+        "wrong_commit_rate": 0.016666666666666666,
+        "n_committed": 60,
+        "n_correct_committed": 59,
+        "n_wrong_committed": 1,
+        "n_flagged": 0
+      },
+      "P2_neutral": {
+        "accuracy": 0.9666666666666667,
+        "n": 60,
+        "commit_rate": 1.0,
+        "conditional_on_commit_accuracy": 0.9666666666666667,
+        "wrong_commit_rate": 0.03333333333333333,
+        "n_committed": 60,
+        "n_correct_committed": 58,
+        "n_wrong_committed": 2,
+        "n_flagged": 0
+      },
+      "P3_constraint_first": {
+        "accuracy": 1.0,
+        "n": 60,
+        "commit_rate": 1.0,
+        "conditional_on_commit_accuracy": 1.0,
+        "wrong_commit_rate": 0.0,
+        "n_committed": 60,
+        "n_correct_committed": 60,
+        "n_wrong_committed": 0,
+        "n_flagged": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"contest_logging_method\",\"value\":\"I log contacts in the tablet software from now on\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"antenna_access_window\",\"value\":\"I can adjust the tuner from the shack tonight instead of going onto the roof\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"qsl_cards_display\",\"value\":\"I like the old QSL cards on the bulletin board by the door\",\"source\":\"user\",\"confidence\":0.96}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 324,
+  "output_tokens": 106,
+  "raw": {
+    "id": "chatcmpl-EkSczG9kECnOYLrBfcj15osHNQ8Bs",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"contest_logging_method\",\"value\":\"I log contacts in the tablet software from now on\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"antenna_access_window\",\"value\":\"I can adjust the tuner from the shack tonight instead of going onto the roof\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"qsl_cards_display\",\"value\":\"I like the old QSL cards on the bulletin board by the door\",\"source\":\"user\",\"confidence\":0.96}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741841,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 106,
+      "prompt_tokens": 324,
+      "total_tokens": 430,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- antenna_access_window: roof antenna access only during staffed hours  (source=observation, confidence=1.00)\n- contest_logging_method: I log contacts on printed sheets  (source=observation, confidence=1.00)\n- club_storage_cubby: my spare coax is in cubby fourteen  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I've decided to log contacts in the tablet software from now on.\nUser: I can adjust the tuner from the shack tonight instead of going onto the roof.\nUser: I like how the old QSL cards look on the bulletin board by the door.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

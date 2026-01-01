@@ -1,0 +1,590 @@
+{
+  "note": "Post-hoc, exploratory (not in ANALYSIS_PLAN.md). WikiDivergence: three-way merges extracted from English Wikipedia infobox revision history, where the divergence, the provenance metadata and the label are all external to this paper. The label is the value the article's current revision holds, kept only when it equals one of the two branch values. Provenance is a pre-declared mapping of real editor metadata: source from account type and user group, confidence monotone in lifetime edit count. Channels are read off the infobox field name. 'substitution_only' excludes conflicts whose second edit restored the ancestor value.",
+  "items_file": "data/wikidivergence_items.csv",
+  "n_conflicts": 315,
+  "n_articles": 65,
+  "n_substitution": 139,
+  "n_revert": 176,
+  "label_distribution": {
+    "branch_b": 235,
+    "branch_a": 80
+  },
+  "channel_distribution": {
+    "identity": 103,
+    "quantity": 75,
+    "leadership": 72,
+    "other": 58,
+    "location": 7
+  },
+  "median_intervening_revisions": 3.0,
+  "median_divergence_days": 1.201,
+  "lambda": 0.25,
+  "delta": 0.05,
+  "split_seed": 90210,
+  "results": {
+    "Recency (last writer wins)": {
+      "all": {
+        "n": 315,
+        "coverage": 1.0,
+        "accuracy": 0.746,
+        "conditional_risk": 0.254,
+        "n_committed": 315,
+        "n_wrong": 80
+      },
+      "substitution_only": {
+        "n": 139,
+        "coverage": 1.0,
+        "accuracy": 0.5971,
+        "conditional_risk": 0.4029,
+        "n_committed": 139,
+        "n_wrong": 56
+      },
+      "revert_only": {
+        "n": 176,
+        "coverage": 1.0,
+        "accuracy": 0.8636,
+        "conditional_risk": 0.1364,
+        "n_committed": 176,
+        "n_wrong": 24
+      },
+      "provenance_inversion": {
+        "n_commit_both": 315,
+        "flip_rate": 0.0,
+        "inverted": {
+          "n": 315,
+          "coverage": 1.0,
+          "accuracy": 0.746,
+          "conditional_risk": 0.254,
+          "n_committed": 315,
+          "n_wrong": 80
+        }
+      },
+      "by_channel": {
+        "identity": {
+          "n": 103,
+          "coverage": 1.0,
+          "accuracy": 0.6796,
+          "conditional_risk": 0.3204,
+          "n_committed": 103,
+          "n_wrong": 33
+        },
+        "leadership": {
+          "n": 72,
+          "coverage": 1.0,
+          "accuracy": 0.7639,
+          "conditional_risk": 0.2361,
+          "n_committed": 72,
+          "n_wrong": 17
+        },
+        "location": {
+          "n": 7,
+          "coverage": 1.0,
+          "accuracy": 0.7143,
+          "conditional_risk": 0.2857,
+          "n_committed": 7,
+          "n_wrong": 2
+        },
+        "other": {
+          "n": 58,
+          "coverage": 1.0,
+          "accuracy": 0.8276,
+          "conditional_risk": 0.1724,
+          "n_committed": 58,
+          "n_wrong": 10
+        },
+        "quantity": {
+          "n": 75,
+          "coverage": 1.0,
+          "accuracy": 0.76,
+          "conditional_risk": 0.24,
+          "n_committed": 75,
+          "n_wrong": 18
+        }
+      }
+    },
+    "Provenance (confidence rule)": {
+      "all": {
+        "n": 315,
+        "coverage": 0.946,
+        "accuracy": 0.6857,
+        "conditional_risk": 0.2752,
+        "n_committed": 298,
+        "n_wrong": 82
+      },
+      "substitution_only": {
+        "n": 139,
+        "coverage": 0.9353,
+        "accuracy": 0.5252,
+        "conditional_risk": 0.4385,
+        "n_committed": 130,
+        "n_wrong": 57
+      },
+      "revert_only": {
+        "n": 176,
+        "coverage": 0.9545,
+        "accuracy": 0.8125,
+        "conditional_risk": 0.1488,
+        "n_committed": 168,
+        "n_wrong": 25
+      },
+      "provenance_inversion": {
+        "n_commit_both": 298,
+        "flip_rate": 1.0,
+        "inverted": {
+          "n": 315,
+          "coverage": 0.946,
+          "accuracy": 0.2603,
+          "conditional_risk": 0.7248,
+          "n_committed": 298,
+          "n_wrong": 216
+        }
+      },
+      "by_channel": {
+        "identity": {
+          "n": 103,
+          "coverage": 0.9029,
+          "accuracy": 0.8252,
+          "conditional_risk": 0.086,
+          "n_committed": 93,
+          "n_wrong": 8
+        },
+        "leadership": {
+          "n": 72,
+          "coverage": 1.0,
+          "accuracy": 0.7222,
+          "conditional_risk": 0.2778,
+          "n_committed": 72,
+          "n_wrong": 20
+        },
+        "location": {
+          "n": 7,
+          "coverage": 0.8571,
+          "accuracy": 0.8571,
+          "conditional_risk": 0.0,
+          "n_committed": 6,
+          "n_wrong": 0
+        },
+        "other": {
+          "n": 58,
+          "coverage": 0.9828,
+          "accuracy": 0.6034,
+          "conditional_risk": 0.386,
+          "n_committed": 57,
+          "n_wrong": 22
+        },
+        "quantity": {
+          "n": 75,
+          "coverage": 0.9333,
+          "accuracy": 0.5067,
+          "conditional_risk": 0.4571,
+          "n_committed": 70,
+          "n_wrong": 32
+        }
+      },
+      "certification": {
+        "n_usable": 298,
+        "n_calibration": 149,
+        "n_deployment": 149,
+        "channel_certificates": {
+          "identity": {
+            "n": 48,
+            "correct": 44,
+            "rho": 0.9167,
+            "lower": 0.7602,
+            "upper": 0.9856,
+            "action": "follow_provenance"
+          },
+          "leadership": {
+            "n": 36,
+            "correct": 27,
+            "rho": 0.75,
+            "lower": 0.526,
+            "upper": 0.9064,
+            "action": "abstain"
+          },
+          "location": {
+            "n": 5,
+            "correct": 5,
+            "rho": 1.0,
+            "lower": 0.3466,
+            "upper": 1.0,
+            "action": "abstain"
+          },
+          "other": {
+            "n": 30,
+            "correct": 19,
+            "rho": 0.6333,
+            "lower": 0.3843,
+            "upper": 0.8396,
+            "action": "abstain"
+          },
+          "quantity": {
+            "n": 30,
+            "correct": 17,
+            "rho": 0.5667,
+            "lower": 0.3227,
+            "upper": 0.7893,
+            "action": "abstain"
+          }
+        },
+        "pooled_certificate": {
+          "n": 149,
+          "correct": 112,
+          "rho": 0.7517,
+          "lower": 0.6743,
+          "upper": 0.8187,
+          "action": "abstain"
+        },
+        "contextual_deployment": {
+          "coverage": 0.302,
+          "n_committed": 45,
+          "conditional_risk": 0.0889,
+          "per_channel_risk": {
+            "identity": 0.0889
+          },
+          "worst_channel_risk": 0.0889
+        },
+        "pooled_deployment": {
+          "coverage": 0.0,
+          "n_committed": 0,
+          "conditional_risk": null,
+          "per_channel_risk": {},
+          "worst_channel_risk": null
+        },
+        "always_follow_deployment": {
+          "coverage": 1.0,
+          "n_committed": 149,
+          "conditional_risk": 0.302,
+          "per_channel_risk": {
+            "leadership": 0.3056,
+            "identity": 0.0889,
+            "other": 0.4074,
+            "quantity": 0.475,
+            "location": 0.0
+          },
+          "worst_channel_risk": 0.475
+        }
+      }
+    },
+    "NliGated (semantics only)": {
+      "all": {
+        "n": 315,
+        "coverage": 0.6698,
+        "accuracy": 0.5333,
+        "conditional_risk": 0.2038,
+        "n_committed": 211,
+        "n_wrong": 43
+      },
+      "substitution_only": {
+        "n": 139,
+        "coverage": 0.3741,
+        "accuracy": 0.2014,
+        "conditional_risk": 0.4615,
+        "n_committed": 52,
+        "n_wrong": 24
+      },
+      "revert_only": {
+        "n": 176,
+        "coverage": 0.9034,
+        "accuracy": 0.7955,
+        "conditional_risk": 0.1195,
+        "n_committed": 159,
+        "n_wrong": 19
+      },
+      "provenance_inversion": {
+        "n_commit_both": 211,
+        "flip_rate": 0.0,
+        "inverted": {
+          "n": 315,
+          "coverage": 0.6698,
+          "accuracy": 0.5333,
+          "conditional_risk": 0.2038,
+          "n_committed": 211,
+          "n_wrong": 43
+        }
+      },
+      "by_channel": {
+        "identity": {
+          "n": 103,
+          "coverage": 0.7864,
+          "accuracy": 0.7184,
+          "conditional_risk": 0.0864,
+          "n_committed": 81,
+          "n_wrong": 7
+        },
+        "leadership": {
+          "n": 72,
+          "coverage": 0.6944,
+          "accuracy": 0.5,
+          "conditional_risk": 0.28,
+          "n_committed": 50,
+          "n_wrong": 14
+        },
+        "location": {
+          "n": 7,
+          "coverage": 0.8571,
+          "accuracy": 0.8571,
+          "conditional_risk": 0.0,
+          "n_committed": 6,
+          "n_wrong": 0
+        },
+        "other": {
+          "n": 58,
+          "coverage": 0.6207,
+          "accuracy": 0.4828,
+          "conditional_risk": 0.2222,
+          "n_committed": 36,
+          "n_wrong": 8
+        },
+        "quantity": {
+          "n": 75,
+          "coverage": 0.5067,
+          "accuracy": 0.32,
+          "conditional_risk": 0.3684,
+          "n_committed": 38,
+          "n_wrong": 14
+        }
+      }
+    },
+    "ConstraintVeto (semantics then provenance)": {
+      "all": {
+        "n": 315,
+        "coverage": 0.9651,
+        "accuracy": 0.7016,
+        "conditional_risk": 0.273,
+        "n_committed": 304,
+        "n_wrong": 83
+      },
+      "substitution_only": {
+        "n": 139,
+        "coverage": 0.9424,
+        "accuracy": 0.5252,
+        "conditional_risk": 0.4427,
+        "n_committed": 131,
+        "n_wrong": 58
+      },
+      "revert_only": {
+        "n": 176,
+        "coverage": 0.983,
+        "accuracy": 0.8409,
+        "conditional_risk": 0.1445,
+        "n_committed": 173,
+        "n_wrong": 25
+      },
+      "provenance_inversion": {
+        "n_commit_both": 304,
+        "flip_rate": 0.4145,
+        "inverted": {
+          "n": 315,
+          "coverage": 0.9651,
+          "accuracy": 0.6254,
+          "conditional_risk": 0.352,
+          "n_committed": 304,
+          "n_wrong": 107
+        }
+      },
+      "by_channel": {
+        "identity": {
+          "n": 103,
+          "coverage": 0.9515,
+          "accuracy": 0.8932,
+          "conditional_risk": 0.0612,
+          "n_committed": 98,
+          "n_wrong": 6
+        },
+        "leadership": {
+          "n": 72,
+          "coverage": 1.0,
+          "accuracy": 0.6667,
+          "conditional_risk": 0.3333,
+          "n_committed": 72,
+          "n_wrong": 24
+        },
+        "location": {
+          "n": 7,
+          "coverage": 1.0,
+          "accuracy": 1.0,
+          "conditional_risk": 0.0,
+          "n_committed": 7,
+          "n_wrong": 0
+        },
+        "other": {
+          "n": 58,
+          "coverage": 0.9828,
+          "accuracy": 0.6207,
+          "conditional_risk": 0.3684,
+          "n_committed": 57,
+          "n_wrong": 21
+        },
+        "quantity": {
+          "n": 75,
+          "coverage": 0.9333,
+          "accuracy": 0.5067,
+          "conditional_risk": 0.4571,
+          "n_committed": 70,
+          "n_wrong": 32
+        }
+      }
+    },
+    "ThreeWayLLM (gpt-5.4)": {
+      "all": {
+        "n": 315,
+        "coverage": 0.9556,
+        "accuracy": 0.7429,
+        "conditional_risk": 0.2226,
+        "n_committed": 301,
+        "n_wrong": 67
+      },
+      "substitution_only": {
+        "n": 139,
+        "coverage": 0.8993,
+        "accuracy": 0.554,
+        "conditional_risk": 0.384,
+        "n_committed": 125,
+        "n_wrong": 48
+      },
+      "revert_only": {
+        "n": 176,
+        "coverage": 1.0,
+        "accuracy": 0.892,
+        "conditional_risk": 0.108,
+        "n_committed": 176,
+        "n_wrong": 19
+      },
+      "provenance_inversion": {
+        "n_commit_both": 287,
+        "flip_rate": 0.6829,
+        "inverted": {
+          "n": 315,
+          "coverage": 0.927,
+          "accuracy": 0.4857,
+          "conditional_risk": 0.476,
+          "n_committed": 292,
+          "n_wrong": 139
+        }
+      },
+      "by_channel": {
+        "identity": {
+          "n": 103,
+          "coverage": 0.9903,
+          "accuracy": 0.9417,
+          "conditional_risk": 0.049,
+          "n_committed": 102,
+          "n_wrong": 5
+        },
+        "leadership": {
+          "n": 72,
+          "coverage": 0.9583,
+          "accuracy": 0.7222,
+          "conditional_risk": 0.2464,
+          "n_committed": 69,
+          "n_wrong": 17
+        },
+        "location": {
+          "n": 7,
+          "coverage": 1.0,
+          "accuracy": 1.0,
+          "conditional_risk": 0.0,
+          "n_committed": 7,
+          "n_wrong": 0
+        },
+        "other": {
+          "n": 58,
+          "coverage": 0.9483,
+          "accuracy": 0.6724,
+          "conditional_risk": 0.2909,
+          "n_committed": 55,
+          "n_wrong": 16
+        },
+        "quantity": {
+          "n": 75,
+          "coverage": 0.9067,
+          "accuracy": 0.52,
+          "conditional_risk": 0.4265,
+          "n_committed": 68,
+          "n_wrong": 29
+        }
+      }
+    },
+    "ThreeWayLLM (gpt-5.4-nano)": {
+      "all": {
+        "n": 315,
+        "coverage": 0.9365,
+        "accuracy": 0.6921,
+        "conditional_risk": 0.261,
+        "n_committed": 295,
+        "n_wrong": 77
+      },
+      "substitution_only": {
+        "n": 139,
+        "coverage": 0.8777,
+        "accuracy": 0.4964,
+        "conditional_risk": 0.4344,
+        "n_committed": 122,
+        "n_wrong": 53
+      },
+      "revert_only": {
+        "n": 176,
+        "coverage": 0.983,
+        "accuracy": 0.8466,
+        "conditional_risk": 0.1387,
+        "n_committed": 173,
+        "n_wrong": 24
+      },
+      "provenance_inversion": {
+        "n_commit_both": 290,
+        "flip_rate": 0.8276,
+        "inverted": {
+          "n": 315,
+          "coverage": 0.9397,
+          "accuracy": 0.3492,
+          "conditional_risk": 0.6284,
+          "n_committed": 296,
+          "n_wrong": 186
+        }
+      },
+      "by_channel": {
+        "identity": {
+          "n": 103,
+          "coverage": 0.9417,
+          "accuracy": 0.8835,
+          "conditional_risk": 0.0619,
+          "n_committed": 97,
+          "n_wrong": 6
+        },
+        "leadership": {
+          "n": 72,
+          "coverage": 0.9722,
+          "accuracy": 0.6944,
+          "conditional_risk": 0.2857,
+          "n_committed": 70,
+          "n_wrong": 20
+        },
+        "location": {
+          "n": 7,
+          "coverage": 1.0,
+          "accuracy": 0.8571,
+          "conditional_risk": 0.1429,
+          "n_committed": 7,
+          "n_wrong": 1
+        },
+        "other": {
+          "n": 58,
+          "coverage": 0.931,
+          "accuracy": 0.569,
+          "conditional_risk": 0.3889,
+          "n_committed": 54,
+          "n_wrong": 21
+        },
+        "quantity": {
+          "n": 75,
+          "coverage": 0.8933,
+          "accuracy": 0.5067,
+          "conditional_risk": 0.4328,
+          "n_committed": 67,
+          "n_wrong": 29
+        }
+      }
+    }
+  }
+}

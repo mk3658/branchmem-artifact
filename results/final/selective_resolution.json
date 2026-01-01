@@ -1,0 +1,29 @@
+{
+  "note": "post-hoc: abstention-lens re-analysis of single-call ThreeWayLLMMerge on semantic_resolvable (n=150, cached, zero new API). Shows capability governs CALIBRATION: a frontier model is a wrong-commit-free selective resolver where the deterministic rule resolves nothing.",
+  "n": 150,
+  "models": {
+    "gpt-5.4": {
+      "commit_rate": 0.467,
+      "conditional_on_commit_accuracy": 1.0,
+      "wrong_commit_rate": 0.0,
+      "n_committed": 70,
+      "n_correct_committed": 70,
+      "n_wrong_committed": 0,
+      "n_flagged": 80
+    },
+    "llama3.1:8b": {
+      "commit_rate": 0.38,
+      "conditional_on_commit_accuracy": 0.368,
+      "wrong_commit_rate": 0.24,
+      "n_committed": 57,
+      "n_correct_committed": 21,
+      "n_wrong_committed": 36,
+      "n_flagged": 93
+    }
+  },
+  "rule_baseline": {
+    "commit_rate": 0.0,
+    "conditional_on_commit_accuracy": null,
+    "note": "equal confidence -> always flags -> resolves 0 of these"
+  }
+}

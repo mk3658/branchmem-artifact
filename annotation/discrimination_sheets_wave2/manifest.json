@@ -1,0 +1,33 @@
+{
+  "note": "Held-back key for the second adjudication wave: the 220 bank items not covered by the 100-item wave-1 sample, so that the two waves together adjudicate all 320. The sheets were issued by the study organizer, so this key is DERIVED from the returned sheets and the frozen bank by build_wave2_adjudication_key.py, which refuses to write a key unless the bank hash matches, the three sheets show identical inputs per item, every row matches exactly one bank item under the primary arm's provenance, and the two waves are disjoint and exhaustive.",
+  "bank_sha256": "a52914ccbd53ae0cfe74d78199a49c5251880a7336509566d194938732aa6a93",
+  "derived_from_returned_sheets": true,
+  "n_items": 220,
+  "items_per_type": {
+    "independent_observation": 55,
+    "immutable_constraint": 55,
+    "ambiguous": 55,
+    "legitimate_override": 55
+  },
+  "n_distinct_families": 78,
+  "provenance_shown": {
+    "strong": [
+      "user",
+      "0.95"
+    ],
+    "weak": [
+      "inference",
+      "0.55"
+    ],
+    "note": "update side always strong, as in the primary arm"
+  },
+  "wave1_items": 100,
+  "bank_items": 320,
+  "files": [
+    "INSTRUCTIONS_FOR_ANNOTATORS.md",
+    "discrimination_annotator1.csv",
+    "discrimination_annotator2.csv",
+    "discrimination_annotator3.csv",
+    "discrimination_key_HELD_BACK.csv"
+  ]
+}

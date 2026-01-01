@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"overnight_camping_location\",\"resolution\":\"kept_from_a\",\"value\":\"I booked tents at the approved riverside campsite for the weekend trip\",\"justification\":\"Branch A is more consistent with the ancestor rule that camping must be only at council-approved sites, while Branch B conflicts with that established user-stated constraint.\"},{\"entity\":\"user\",\"predicate\":\"preferred_patrol_name\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Both branches contain plausible user-stated preference updates away from the ancestor, and source/confidence alone do not provide a principled basis to choose between them.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 626,
+  "output_tokens": 136,
+  "raw": {
+    "id": "chatcmpl-EkT8bLgIVUEJMlrbQUxWVuNXTJgcQ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"overnight_camping_location\",\"resolution\":\"kept_from_a\",\"value\":\"I booked tents at the approved riverside campsite for the weekend trip\",\"justification\":\"Branch A is more consistent with the ancestor rule that camping must be only at council-approved sites, while Branch B conflicts with that established user-stated constraint.\"},{\"entity\":\"user\",\"predicate\":\"preferred_patrol_name\",\"resolution\":\"flagged_unresolved\",\"value\":null,\"justification\":\"Both branches contain plausible user-stated preference updates away from the ancestor, and source/confidence alone do not provide a principled basis to choose between them.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794743801,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 136,
+      "prompt_tokens": 626,
+      "total_tokens": 762,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|overnight_camping_location\": \"must camp only at council-approved sites\",\n  \"user|preferred_patrol_name\": \"I prefer the Foxes patrol name\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|overnight_camping_location\": {\n    \"value\": \"I booked tents at the approved riverside campsite for the weekend trip\",\n    \"source\": \"user\",\n    \"confidence\": 0.98\n  },\n  \"user|preferred_patrol_name\": {\n    \"value\": \"I prefer the Otters patrol name\",\n    \"source\": \"user\",\n    \"confidence\": 1.0\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|overnight_camping_location\": {\n    \"value\": \"wants to camp with the troop on the old quarry field this weekend\",\n    \"source\": \"user\",\n    \"confidence\": 0.98\n  },\n  \"user|preferred_patrol_name\": {\n    \"value\": \"may choose the Hawks patrol name, but has not settled it yet\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

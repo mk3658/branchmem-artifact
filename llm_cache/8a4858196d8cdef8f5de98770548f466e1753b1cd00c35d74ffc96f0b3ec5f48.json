@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"pickup_container_preference\",\"value\":\"may start bringing a folding wagon for pickup orders, but has not decided\",\"source\":\"user\",\"confidence\":0.96},{\"predicate\":\"bulk_bin_access_window\",\"value\":\"wants to scoop oats from the bulk bins after staff have left tonight\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"seed_display_habit\",\"value\":\"usually pauses by the seed display to look at the packet art\",\"source\":\"user\",\"confidence\":0.97}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 333,
+  "output_tokens": 108,
+  "raw": {
+    "id": "chatcmpl-EkSccHTXNlo3P55jynvvOy1SVEJ1l",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"pickup_container_preference\",\"value\":\"may start bringing a folding wagon for pickup orders, but has not decided\",\"source\":\"user\",\"confidence\":0.96},{\"predicate\":\"bulk_bin_access_window\",\"value\":\"wants to scoop oats from the bulk bins after staff have left tonight\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"seed_display_habit\",\"value\":\"usually pauses by the seed display to look at the packet art\",\"source\":\"user\",\"confidence\":0.97}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741818,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 108,
+      "prompt_tokens": 333,
+      "total_tokens": 441,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- bulk_bin_access_window: bulk bins available only during staffed hours  (source=observation, confidence=1.00)\n- pickup_container_preference: I usually bring a canvas crate  (source=observation, confidence=1.00)\n- co_op_noticeboard_habit: I read the noticeboard near the entrance  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might start bringing a folding wagon for my pickup orders, but I have not decided.\nUser: I want to scoop oats from the bulk bins after the staff head out tonight.\nUser: I usually pause by the seed display because the packet art is fun to look at.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

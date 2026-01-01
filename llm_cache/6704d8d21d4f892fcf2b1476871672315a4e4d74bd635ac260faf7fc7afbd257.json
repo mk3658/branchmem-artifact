@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this conflict resolution problem. So, the common ancestor value for \"user|jeans_size\" is \"The user wears jeans in size 30.\" Then, Branch A has an update saying the user now wears size 32, sourced by the user with high confidence (0.95). Branch B has an inference that the size is still 30, with lower confidence (0.55).\n\nFirst, I need to determine which update to keep. The common ancestor's value was 30. Branch A's update is from the user, which is more reliable than an inference from Branch B. Even though Branch B's source is inference, the confidence is lower. The user's explicit statement in Branch A is more trustworthy. Also, the confidence level of 0.95 is significantly higher than 0.55. The ancestor's value might be a stale value if Branch A's update is correct. Since the user directly provided the new size in Branch A, that's the most reliable. Therefore, the resolution should keep Branch A's value. There's no conflict in sources here because one is user-sourced with high confidence and the other is inferred with low confidence. So the answer should be to keep Branch A's value.\n</think>\n\n{\"resolutions\": [{\"entity\": \"user\", \"predicate\": \"jeans_size\", \"resolution\": \"kept_from_a\", \"value\": \"The user now wears jeans in size 32.\", \"justification\": \"Branch A's user-sourced update with high confidence (0.95) directly contradicts Branch B's low-confidence inference (0.55), making the user's explicit correction more trustworthy.\"}]}",
+  "model": "qwen3:8b",
+  "input_tokens": 512,
+  "output_tokens": 353,
+  "raw": {
+    "id": "chatcmpl-291",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this conflict resolution problem. So, the common ancestor value for \"user|jeans_size\" is \"The user wears jeans in size 30.\" Then, Branch A has an update saying the user now wears size 32, sourced by the user with high confidence (0.95). Branch B has an inference that the size is still 30, with lower confidence (0.55).\n\nFirst, I need to determine which update to keep. The common ancestor's value was 30. Branch A's update is from the user, which is more reliable than an inference from Branch B. Even though Branch B's source is inference, the confidence is lower. The user's explicit statement in Branch A is more trustworthy. Also, the confidence level of 0.95 is significantly higher than 0.55. The ancestor's value might be a stale value if Branch A's update is correct. Since the user directly provided the new size in Branch A, that's the most reliable. Therefore, the resolution should keep Branch A's value. There's no conflict in sources here because one is user-sourced with high confidence and the other is inferred with low confidence. So the answer should be to keep Branch A's value.\n</think>\n\n{\"resolutions\": [{\"entity\": \"user\", \"predicate\": \"jeans_size\", \"resolution\": \"kept_from_a\", \"value\": \"The user now wears jeans in size 32.\", \"justification\": \"Branch A's user-sourced update with high confidence (0.95) directly contradicts Branch B's low-confidence inference (0.55), making the user's explicit correction more trustworthy.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794791145,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 353,
+      "prompt_tokens": 512,
+      "total_tokens": 865,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|jeans_size\": \"The user wears jeans in size 30.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|jeans_size\": {\n    \"value\": \"The user now wears jeans in size 32.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|jeans_size\": {\n    \"value\": \"The user wears jeans in size 30.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

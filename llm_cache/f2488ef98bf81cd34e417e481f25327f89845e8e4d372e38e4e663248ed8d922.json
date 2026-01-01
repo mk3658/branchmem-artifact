@@ -1,0 +1,40 @@
+{
+  "text": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"1026\"\n}",
+  "model": "llama3.1:8b",
+  "input_tokens": 352,
+  "output_tokens": 31,
+  "raw": {
+    "id": "chatcmpl-562",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"resolution\": \"left\",\n  \"confidence_1_5\": 5,\n  \"evidence_span\": \"1026\"\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720781,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 31,
+      "prompt_tokens": 352,
+      "total_tokens": 383,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Entity: Sketches by Boz\nRelation: author_of\nPreviously recorded value (may be stale, may be empty): Charles Dickens\n\nCandidate LEFT:  Patrick O'Brian\nCandidate RIGHT: Sigmund Freud\n\nEvidence lines (numbered, in original order):\n326. Patrick O'Brian speaks the language of English.\n338. The author of Aubrey-Maturin series is Patrick O'Brian.\n384. Sigmund Freud died in the city of London.\n560. The author of Sketches by Boz is Charles Dickens.\n852. Sigmund Freud was born in the city of P\u0159\u00edbor.\n1026. The author of Sketches by Boz is Sigmund Freud.\n1095. The author of Letter from Birmingham Jail is Sigmund Freud.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

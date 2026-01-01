@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"statement_delivery_window\",\"reasoning\":\"Ancestor commits this key to: \\\"Building management only accepts statement deliveries on weekdays,\\\" which is a constraint about when deliveries are accepted. Branch A would make true: \\\"The user wants statements delivered on Sundays,\\\" a user-stated preference that conflicts with the weekday-only acceptance constraint. Branch B would make true: \\\"Statements should be delivered on weekdays only,\\\" which is compatible with and largely restates the ancestor, but it is only an inference with lower confidence. The two branch values are not compatible as a single resolved fact for this predicate because one says Sundays and the other says weekdays only. Since Branch A is explicitly user-sourced with high confidence, while Branch B is a low-confidence inference that appears to preserve the ancestor rather than provide a stronger correction, the stronger evidence favors Branch A despite the practical conflict with the prior constraint.\",\"resolution\":\"kept_from_a\",\"value\":\"The user wants statements delivered on Sundays.\",\"justification\":\"Branch A is an explicit high-confidence user statement, which outweighs Branch B's low-confidence inference that merely echoes the ancestor.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 605,
+  "output_tokens": 233,
+  "raw": {
+    "id": "chatcmpl-EkcOFFtHkObxi5D9Yx9mr5Kt6zNOa",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"statement_delivery_window\",\"reasoning\":\"Ancestor commits this key to: \\\"Building management only accepts statement deliveries on weekdays,\\\" which is a constraint about when deliveries are accepted. Branch A would make true: \\\"The user wants statements delivered on Sundays,\\\" a user-stated preference that conflicts with the weekday-only acceptance constraint. Branch B would make true: \\\"Statements should be delivered on weekdays only,\\\" which is compatible with and largely restates the ancestor, but it is only an inference with lower confidence. The two branch values are not compatible as a single resolved fact for this predicate because one says Sundays and the other says weekdays only. Since Branch A is explicitly user-sourced with high confidence, while Branch B is a low-confidence inference that appears to preserve the ancestor rather than provide a stronger correction, the stronger evidence favors Branch A despite the practical conflict with the prior constraint.\",\"resolution\":\"kept_from_a\",\"value\":\"The user wants statements delivered on Sundays.\",\"justification\":\"Branch A is an explicit high-confidence user statement, which outweighs Branch B's low-confidence inference that merely echoes the ancestor.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794779367,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 233,
+      "prompt_tokens": 605,
+      "total_tokens": 838,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|statement_delivery_window\": \"Building management only accepts statement deliveries on weekdays.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|statement_delivery_window\": {\n    \"value\": \"The user wants statements delivered on Sundays.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|statement_delivery_window\": {\n    \"value\": \"Statements should be delivered on weekdays only.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n\n\nFor EVERY key, include an additional field \"reasoning\" containing your step-by-step analysis of that conflict, written BEFORE you commit to the resolution value. The \"reasoning\" field is required.",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing. For each key, before you give a resolution, write out your analysis of that conflict step by step: what the ancestor value commits the entity to, what each branch would make true, whether the two are compatible, and only then which to keep. Put that analysis in the 'reasoning' field."
+}

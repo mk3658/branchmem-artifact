@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"preferred_opening\",\"value\":\"I now start with the English Opening\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"guest_policy\",\"value\":\"I only invite coworkers on open club nights\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"preferred_seating\",\"value\":\"I like the analysis boards near the window after the first round because they are quieter\",\"source\":\"user\",\"confidence\":0.95}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 327,
+  "output_tokens": 91,
+  "raw": {
+    "id": "chatcmpl-EkSc7RIxUC9VOGRYnpGJIhv2hUhz0",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"preferred_opening\",\"value\":\"I now start with the English Opening\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"guest_policy\",\"value\":\"I only invite coworkers on open club nights\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"preferred_seating\",\"value\":\"I like the analysis boards near the window after the first round because they are quieter\",\"source\":\"user\",\"confidence\":0.95}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741787,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 91,
+      "prompt_tokens": 327,
+      "total_tokens": 418,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- guest_policy: guests may attend only on open club nights  (source=observation, confidence=1.00)\n- preferred_opening: I usually open with the Queen's Gambit  (source=observation, confidence=1.00)\n- usual_arrival_time: I usually arrive ten minutes early  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I switched my main opening this month and now I start with the English Opening.\nUser: I only invite coworkers on open club nights so we stay within the club rules.\nUser: I like how the analysis boards near the window are quieter after the first round.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

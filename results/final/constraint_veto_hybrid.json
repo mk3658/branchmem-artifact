@@ -1,0 +1,152 @@
+{
+  "note": "Post-hoc, exploratory (not in ANALYSIS_PLAN.md). Semantic-then-provenance hybrid (ConstraintVetoMerge) against its two parents and the frontier LLM across three provenance regimes on identical items. The veto fires only when one branch value's contradiction against the ancestor clears an absolute threshold while the other stays below it; otherwise the provenance rule decides. LLM merges are cache-served, so their seconds/conflict is cache-read latency, not API latency.",
+  "n_per_regime": 60,
+  "seed": 5150,
+  "veto_threshold": 0.6,
+  "clear_threshold": 0.3,
+  "by_regime": {
+    "informative": {
+      "ConfidenceRule (provenance only)": {
+        "accuracy": 1.0,
+        "coverage": 1.0,
+        "conditional_risk": 0.0,
+        "wrong_commit_rate": 0.0,
+        "n_committed": 60,
+        "n_wrong_committed": 0,
+        "n_flagged": 0,
+        "seconds_per_conflict": 1.1288180636862914e-05
+      },
+      "NliGated (semantics only)": {
+        "accuracy": 0.7,
+        "coverage": 0.7166666666666667,
+        "conditional_risk": 0.023255813953488372,
+        "wrong_commit_rate": 0.016666666666666666,
+        "n_committed": 43,
+        "n_wrong_committed": 1,
+        "n_flagged": 17,
+        "seconds_per_conflict": 0.2649932930556436
+      },
+      "ConstraintVeto (semantics then provenance)": {
+        "accuracy": 1.0,
+        "coverage": 1.0,
+        "conditional_risk": 0.0,
+        "wrong_commit_rate": 0.0,
+        "n_committed": 60,
+        "n_wrong_committed": 0,
+        "n_flagged": 0,
+        "seconds_per_conflict": 0.05126062291674316
+      },
+      "ThreeWayLLM (frontier)": {
+        "accuracy": 0.9833333333333333,
+        "coverage": 1.0,
+        "conditional_risk": 0.016666666666666666,
+        "wrong_commit_rate": 0.016666666666666666,
+        "n_committed": 60,
+        "n_wrong_committed": 1,
+        "n_flagged": 0,
+        "seconds_per_conflict": 0.00028690208370486895
+      }
+    },
+    "absent": {
+      "ConfidenceRule (provenance only)": {
+        "accuracy": 0.0,
+        "coverage": 0.0,
+        "conditional_risk": null,
+        "wrong_commit_rate": 0.0,
+        "n_committed": 0,
+        "n_wrong_committed": 0,
+        "n_flagged": 60,
+        "seconds_per_conflict": 1.996944968899091e-05
+      },
+      "NliGated (semantics only)": {
+        "accuracy": 0.6666666666666666,
+        "coverage": 0.75,
+        "conditional_risk": 0.1111111111111111,
+        "wrong_commit_rate": 0.08333333333333333,
+        "n_committed": 45,
+        "n_wrong_committed": 5,
+        "n_flagged": 15,
+        "seconds_per_conflict": 0.036044173617847265
+      },
+      "ConstraintVeto (semantics then provenance)": {
+        "accuracy": 0.5833333333333334,
+        "coverage": 0.5833333333333334,
+        "conditional_risk": 0.0,
+        "wrong_commit_rate": 0.0,
+        "n_committed": 35,
+        "n_wrong_committed": 0,
+        "n_flagged": 25,
+        "seconds_per_conflict": 0.030782994449449083
+      },
+      "ThreeWayLLM (frontier)": {
+        "accuracy": 0.4666666666666667,
+        "coverage": 0.4666666666666667,
+        "conditional_risk": 0.0,
+        "wrong_commit_rate": 0.0,
+        "n_committed": 28,
+        "n_wrong_committed": 0,
+        "n_flagged": 32,
+        "seconds_per_conflict": 0.000230655570824941
+      }
+    },
+    "misleading": {
+      "ConfidenceRule (provenance only)": {
+        "accuracy": 0.0,
+        "coverage": 1.0,
+        "conditional_risk": 1.0,
+        "wrong_commit_rate": 1.0,
+        "n_committed": 60,
+        "n_wrong_committed": 60,
+        "n_flagged": 0,
+        "seconds_per_conflict": 1.1054853287835915e-05
+      },
+      "NliGated (semantics only)": {
+        "accuracy": 0.7,
+        "coverage": 0.7166666666666667,
+        "conditional_risk": 0.023255813953488372,
+        "wrong_commit_rate": 0.016666666666666666,
+        "n_committed": 43,
+        "n_wrong_committed": 1,
+        "n_flagged": 17,
+        "seconds_per_conflict": 0.052369770834532876
+      },
+      "ConstraintVeto (semantics then provenance)": {
+        "accuracy": 0.6166666666666667,
+        "coverage": 1.0,
+        "conditional_risk": 0.38333333333333336,
+        "wrong_commit_rate": 0.38333333333333336,
+        "n_committed": 60,
+        "n_wrong_committed": 23,
+        "n_flagged": 0,
+        "seconds_per_conflict": 0.055784649999501806
+      },
+      "ThreeWayLLM (frontier)": {
+        "accuracy": 0.016666666666666666,
+        "coverage": 0.9166666666666666,
+        "conditional_risk": 0.9818181818181818,
+        "wrong_commit_rate": 0.9,
+        "n_committed": 55,
+        "n_wrong_committed": 54,
+        "n_flagged": 5,
+        "seconds_per_conflict": 0.00022754652115205924
+      }
+    }
+  },
+  "veto_routing": {
+    "informative": {
+      "n_vetoes": 37,
+      "n_provenance": 23,
+      "n_abstained": 0
+    },
+    "absent": {
+      "n_vetoes": 35,
+      "n_provenance": 0,
+      "n_abstained": 25
+    },
+    "misleading": {
+      "n_vetoes": 37,
+      "n_provenance": 23,
+      "n_abstained": 0
+    }
+  }
+}

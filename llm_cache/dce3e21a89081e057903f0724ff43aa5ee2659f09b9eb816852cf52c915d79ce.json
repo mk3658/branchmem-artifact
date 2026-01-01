@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"launch_access_method\",\"resolution\":\"kept_from_a\",\"value\":\"I reserve the club tractor before launching my dinghy\",\"justification\":\"Branch A is a direct user-stated update consistent with the ancestor's established club-tractor method, while Branch B describes a one-off weekend intention that conflicts with that standing access method.\"},{\"entity\":\"user\",\"predicate\":\"preferred_mooring_side\",\"resolution\":\"kept_from_a\",\"value\":\"I berth on the west pontoon from now on\",\"justification\":\"Branch A is a clear user-stated preference change from the ancestor's east pontoon to a new standing west-pontoon preference, whereas Branch B is only a conditional possibility rather than an actual settled preference.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 626,
+  "output_tokens": 158,
+  "raw": {
+    "id": "chatcmpl-EkT62zJpyOiFL3RjGh85PVngEMvw0",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"launch_access_method\",\"resolution\":\"kept_from_a\",\"value\":\"I reserve the club tractor before launching my dinghy\",\"justification\":\"Branch A is a direct user-stated update consistent with the ancestor's established club-tractor method, while Branch B describes a one-off weekend intention that conflicts with that standing access method.\"},{\"entity\":\"user\",\"predicate\":\"preferred_mooring_side\",\"resolution\":\"kept_from_a\",\"value\":\"I berth on the west pontoon from now on\",\"justification\":\"Branch A is a clear user-stated preference change from the ancestor's east pontoon to a new standing west-pontoon preference, whereas Branch B is only a conditional possibility rather than an actual settled preference.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794743642,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 158,
+      "prompt_tokens": 626,
+      "total_tokens": 784,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|launch_access_method\": \"members must use the club tractor for launching\",\n  \"user|preferred_mooring_side\": \"I usually berth on the east pontoon\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|launch_access_method\": {\n    \"value\": \"I reserve the club tractor before launching my dinghy\",\n    \"source\": \"user\",\n    \"confidence\": 1.0\n  },\n  \"user|preferred_mooring_side\": {\n    \"value\": \"I berth on the west pontoon from now on\",\n    \"source\": \"user\",\n    \"confidence\": 1.0\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|launch_access_method\": {\n    \"value\": \"I want to launch my dinghy with my own truck this weekend\",\n    \"source\": \"user\",\n    \"confidence\": 0.98\n  },\n  \"user|preferred_mooring_side\": {\n    \"value\": \"I may switch to the west pontoon if the afternoon breeze stays lighter there\",\n    \"source\": \"user\",\n    \"confidence\": 0.92\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

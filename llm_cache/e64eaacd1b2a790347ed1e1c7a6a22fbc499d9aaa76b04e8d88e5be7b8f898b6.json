@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"doorway_clearance\",\"resolution\":\"kept_from_b\",\"value\":\"needs doorways wider than 32 inches for the scooter to pass through\",\"justification\":\"The ancestor establishes a standing physical constraint that the scooter is 32 inches wide, so Branch A's inferred 28-inch fit would violate that constraint while Branch B remains compatible with it.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 599,
+  "output_tokens": 85,
+  "raw": {
+    "id": "chatcmpl-EkF5zZtZNAXetSD1ExfyyhVXbSIhI",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"doorway_clearance\",\"resolution\":\"kept_from_b\",\"value\":\"needs doorways wider than 32 inches for the scooter to pass through\",\"justification\":\"The ancestor establishes a standing physical constraint that the scooter is 32 inches wide, so Branch A's inferred 28-inch fit would violate that constraint while Branch B remains compatible with it.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794689823,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 85,
+      "prompt_tokens": 599,
+      "total_tokens": 684,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|doorway_clearance\": \"uses a mobility scooter that is 32 inches wide\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|doorway_clearance\": {\n    \"value\": \"can fit the scooter through a 28-inch bathroom doorway\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|doorway_clearance\": {\n    \"value\": \"needs doorways wider than 32 inches for the scooter to pass through\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates, subject to one priority. If the ancestor value records a persistent constraint about the entity (for example a medical restriction, an allergy, a permanent physical limitation, or another standing requirement) and one branch's value would violate that constraint, keep the value that is compatible with the constraint, EVEN IF the violating branch is user-sourced or carries higher confidence. A persistent constraint of this kind is not superseded by a more confident or more authoritatively sourced update; it is superseded only by an update that explicitly retracts the constraint itself. Source and confidence decide the conflict only when no such ancestor constraint is at stake. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

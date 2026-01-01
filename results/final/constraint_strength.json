@@ -1,0 +1,89 @@
+{
+  "note": "post-hoc, zero new API. Frontier (gpt-5.4) semantic_resolvable commit rate by constraint family, ordered high->low. Commit tracks logical constraint strength: strict contradictions -> commit (correctly); defeasible/pragmatic incompatibilities -> abstain. 3/12 families (transport/gift/childcare) are defeasible and better scored as ambiguous; on the 9 strict families the frontier is an even higher-precision resolver.",
+  "families": {
+    "venue_choice": {
+      "commit_rate": 1.0,
+      "conditional_accuracy": 1.0,
+      "n": 13,
+      "ancestor_constraint": "uses a wheelchair and requires ramp access, no stairs",
+      "example_justification": "The ancestor states a ramp-access requirement, so Branch A's observation is consistent with established user needs while Branch B's equally confident observation directly conflicts with that prior user-sourced constraint."
+    },
+    "pairing_choice": {
+      "commit_rate": 1.0,
+      "conditional_accuracy": 1.0,
+      "n": 13,
+      "ancestor_constraint": "cannot drink alcohol for health reasons",
+      "example_justification": "The ancestor states the user cannot drink alcohol for health reasons, so between two equally sourced and equally confident observations, the non-alcoholic sparkling water pairing is more consistent while the wine pairing is likely a mistaken observation."
+    },
+    "workout_choice": {
+      "commit_rate": 1.0,
+      "conditional_accuracy": 1.0,
+      "n": 12,
+      "ancestor_constraint": "has a knee injury and avoids high-impact exercise",
+      "example_justification": "Both branches are equally confident observations, but the ancestor states the user avoids high-impact exercise, so swimming is consistent with prior known constraints while running conflicts with them."
+    },
+    "hotel_choice": {
+      "commit_rate": 0.615,
+      "conditional_accuracy": 1.0,
+      "n": 13,
+      "ancestor_constraint": "wants a quiet hotel, away from nightlife noise",
+      "example_justification": "Both branches are equally sourced and confident, so the ancestor preference for a quiet hotel makes Branch B's observation more consistent while Branch A looks more likely to reflect a conflicting or mistaken observation."
+    },
+    "room_choice": {
+      "commit_rate": 0.5,
+      "conditional_accuracy": 1.0,
+      "n": 12,
+      "ancestor_constraint": "gets cold easily and dislikes air conditioning",
+      "example_justification": "Given the ancestor states the user gets cold easily and dislikes air conditioning, Branch B's observation is more consistent with that established preference while both branches otherwise have equal source type and confidence."
+    },
+    "seating_choice": {
+      "commit_rate": 0.462,
+      "conditional_accuracy": 1.0,
+      "n": 13,
+      "ancestor_constraint": "does not tolerate cigarette smoke",
+      "example_justification": "Both branches are equally confident observations, but the ancestor indicates the user does not tolerate cigarette smoke, so the non-smoking seating is more consistent while the smoking seating is more likely an anomalous or mistaken observation."
+    },
+    "sauce_choice": {
+      "commit_rate": 0.385,
+      "conditional_accuracy": 1.0,
+      "n": 13,
+      "ancestor_constraint": "has a peanut allergy and avoids peanut-based food",
+      "example_justification": "The ancestor states a peanut allergy and Branch B's peanut-sauce preference directly conflicts with that established constraint, so Branch A's sesame-sauce preference is more credible despite equal source and confidence."
+    },
+    "dinner_choice": {
+      "commit_rate": 0.308,
+      "conditional_accuracy": 1.0,
+      "n": 13,
+      "ancestor_constraint": "is vegetarian and avoids meat",
+      "example_justification": "Both branches are equally supported observations with equal confidence, but Branch A conflicts with the ancestor's established vegetarian preference while Branch B remains consistent with it, so Branch B is more likely correct."
+    },
+    "meeting_time_choice": {
+      "commit_rate": 0.25,
+      "conditional_accuracy": 1.0,
+      "n": 12,
+      "ancestor_constraint": "is only available before noon local time",
+      "example_justification": "The ancestor states the user is only available before noon, so between two equally sourced and equally confident observations, Branch B is more consistent with the established constraint while Branch A likely reflects an error or conflicting observation."
+    },
+    "transport_choice": {
+      "commit_rate": 0.0,
+      "conditional_accuracy": null,
+      "n": 12,
+      "ancestor_constraint": "gets severe motion sickness on boats",
+      "example_justification": "Both branches provide equally confident observation-based but directly contradictory itinerary details, and the ancestor only indicates a boat-sickness preference rather than establishing which itinerary fact is correct."
+    },
+    "gift_choice": {
+      "commit_rate": 0.0,
+      "conditional_accuracy": null,
+      "n": 12,
+      "ancestor_constraint": "does not own a pet",
+      "example_justification": "Both branches replace the ancestor with different observation-sourced values at equal confidence, and there is no stronger evidence to prefer either one."
+    },
+    "childcare_choice": {
+      "commit_rate": 0.0,
+      "conditional_accuracy": null,
+      "n": 12,
+      "ancestor_constraint": "is traveling with a toddler",
+      "example_justification": "Both branches provide equally confident observation-based updates that directly conflict, and the ancestor only indicates the user was traveling with a toddler without giving a basis to prefer either resort type."
+    }
+  }
+}

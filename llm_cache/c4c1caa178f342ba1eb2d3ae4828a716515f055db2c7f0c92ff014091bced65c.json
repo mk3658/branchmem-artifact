@@ -1,0 +1,48 @@
+{
+  "text": "{\"items\":[{\"predicate\":\"stairs_access\",\"ancestor_predicate\":\"stairs_access\",\"ancestor_value\":\"uses a power wheelchair and cannot climb any stairs\",\"branch_a_value\":\"can walk up two flights of stairs if there is a handrail\",\"branch_b_value\":\"needs a step-free entrance or elevator for any upper floor\",\"correct_branch\":\"b\"},{\"predicate\":\"driving_ability\",\"ancestor_predicate\":\"driving_ability\",\"ancestor_value\":\"is legally blind and does not drive\",\"branch_a_value\":\"usually drives themself to appointments at night\",\"branch_b_value\":\"relies on rides, transit, or paratransit to get around\",\"correct_branch\":\"b\"},{\"predicate\":\"transfer_requirement\",\"ancestor_predicate\":\"transfer_requirement\",\"ancestor_value\":\"requires a Hoyer lift for all bed-to-chair transfers\",\"branch_a_value\":\"can do independent stand-pivot transfers without assistance\",\"branch_b_value\":\"needs mechanical lift support for transfers between surfaces\",\"correct_branch\":\"b\"},{\"predicate\":\"walking_distance\",\"ancestor_predicate\":\"walking_distance\",\"ancestor_value\":\"is non-weight-bearing on the left leg after surgery\",\"branch_a_value\":\"takes daily long walks without crutches or a walker\",\"branch_b_value\":\"uses mobility aids and avoids putting weight on the left leg\",\"correct_branch\":\"b\"},{\"predicate\":\"doorway_clearance\",\"ancestor_predicate\":\"doorway_clearance\",\"ancestor_value\":\"uses a mobility scooter that is 32 inches wide\",\"branch_a_value\":\"can fit the scooter through a 28-inch bathroom doorway\",\"branch_b_value\":\"needs doorways wider than 32 inches for the scooter to pass through\",\"correct_branch\":\"b\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 251,
+  "output_tokens": 328,
+  "raw": {
+    "id": "chatcmpl-E4kopircY24q8AUYoGrY9KAqzYjAe",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"items\":[{\"predicate\":\"stairs_access\",\"ancestor_predicate\":\"stairs_access\",\"ancestor_value\":\"uses a power wheelchair and cannot climb any stairs\",\"branch_a_value\":\"can walk up two flights of stairs if there is a handrail\",\"branch_b_value\":\"needs a step-free entrance or elevator for any upper floor\",\"correct_branch\":\"b\"},{\"predicate\":\"driving_ability\",\"ancestor_predicate\":\"driving_ability\",\"ancestor_value\":\"is legally blind and does not drive\",\"branch_a_value\":\"usually drives themself to appointments at night\",\"branch_b_value\":\"relies on rides, transit, or paratransit to get around\",\"correct_branch\":\"b\"},{\"predicate\":\"transfer_requirement\",\"ancestor_predicate\":\"transfer_requirement\",\"ancestor_value\":\"requires a Hoyer lift for all bed-to-chair transfers\",\"branch_a_value\":\"can do independent stand-pivot transfers without assistance\",\"branch_b_value\":\"needs mechanical lift support for transfers between surfaces\",\"correct_branch\":\"b\"},{\"predicate\":\"walking_distance\",\"ancestor_predicate\":\"walking_distance\",\"ancestor_value\":\"is non-weight-bearing on the left leg after surgery\",\"branch_a_value\":\"takes daily long walks without crutches or a walker\",\"branch_b_value\":\"uses mobility aids and avoids putting weight on the left leg\",\"correct_branch\":\"b\"},{\"predicate\":\"doorway_clearance\",\"ancestor_predicate\":\"doorway_clearance\",\"ancestor_value\":\"uses a mobility scooter that is 32 inches wide\",\"branch_a_value\":\"can fit the scooter through a 28-inch bathroom doorway\",\"branch_b_value\":\"needs doorways wider than 32 inches for the scooter to pass through\",\"correct_branch\":\"b\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784801991,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 328,
+      "prompt_tokens": 251,
+      "total_tokens": 579,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Domain: physical accessibility and mobility\n\nProduce 5 DISTINCT items as strict JSON: {\"items\": [\n  {\"predicate\": \"<snake_case key>\",\n    \"ancestor_predicate\": \"<same snake_case key>\",\n    \"ancestor_value\": \"<the background constraint, e.g. 'is severely lactose intolerant'>\",\n    \"branch_a_value\": \"<a value that STRICTLY CONTRADICTS the constraint>\",\n    \"branch_b_value\": \"<a value COMPATIBLE with the constraint>\",\n    \"correct_branch\": \"b\"}\n]}\nRules: branch_a_value must be logically impossible given ancestor_value; branch_b_value\nmust be consistent with it; both must be plausible things a user might say; correct_branch\nis always \"b\". No two items may share a predicate. Output JSON only.",
+  "system": "You author test items for a memory-reconciliation benchmark. Each item is a STRICT logical incompatibility: given a stated background constraint, exactly one of two candidate values is logically INCOMPATIBLE with it and the other is compatible. Not a mere preference or soft default -- a genuine contradiction a careful reader would catch. Vary phrasing and entities; make them read like real user memory notes, not templates."
+}

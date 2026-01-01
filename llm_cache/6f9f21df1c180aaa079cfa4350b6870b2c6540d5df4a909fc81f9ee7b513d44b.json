@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"post_game_hangout_spot\",\"value\":\"I now wait near the upstairs skittles room\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"board_access_rule\",\"value\":\"members may use only analysis boards; wall boards are used for viewing games\",\"source\":\"user\",\"confidence\":0.95}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 338,
+  "output_tokens": 74,
+  "raw": {
+    "id": "chatcmpl-EkScFeb8hDVto0gPGbODLKrTJWaxS",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"post_game_hangout_spot\",\"value\":\"I now wait near the upstairs skittles room\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"board_access_rule\",\"value\":\"members may use only analysis boards; wall boards are used for viewing games\",\"source\":\"user\",\"confidence\":0.95}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741795,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 74,
+      "prompt_tokens": 338,
+      "total_tokens": 412,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- board_access_rule: members may use only analysis boards  (source=observation, confidence=1.00)\n- post_game_hangout_spot: I usually wait by the trophy case  (source=observation, confidence=1.00)\n- weekly_arrival_window: I usually arrive just before pairings  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I used to wait by the trophy case, but now I wait near the upstairs skittles room.\nUser: I set up my puzzles on an analysis board so I stay within the club rules.\nUser: I like how the wall boards make it easy to follow the top game from across the room.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

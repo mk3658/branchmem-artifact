@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"preferred_convoy_meetup_spot\",\"value\":\"I now meet the convoy at the old tram depot\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"dyno_booking_window\",\"value\":\"I can make the dyno run Thursday evening\",\"source\":\"user\",\"confidence\":0.98}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 334,
+  "output_tokens": 71,
+  "raw": {
+    "id": "chatcmpl-EkSa8vRM1g51RltUlzDIoE9917lsX",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"preferred_convoy_meetup_spot\",\"value\":\"I now meet the convoy at the old tram depot\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"dyno_booking_window\",\"value\":\"I can make the dyno run Thursday evening\",\"source\":\"user\",\"confidence\":0.98}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741664,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 71,
+      "prompt_tokens": 334,
+      "total_tokens": 405,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- dyno_booking_window: club dyno runs require weekday evening slots  (source=observation, confidence=1.00)\n- preferred_convoy_meetup_spot: I usually meet at the riverside fuel station  (source=observation, confidence=1.00)\n- garage_bay_assignment: I keep my tools in bay fourteen  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I've decided to meet the convoy at the old tram depot from now on.\nUser: I can make the dyno run Thursday evening, so please pencil me in there.\nUser: I spent half an hour admiring the vintage rally plaques in the clubhouse.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

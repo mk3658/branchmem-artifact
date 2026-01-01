@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"252\"}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 583,
+  "output_tokens": 28,
+  "raw": {
+    "id": "chatcmpl-EkN04SpwaFwvdf60TKkNt7MYIrtRH",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"252\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720208,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 28,
+      "prompt_tokens": 583,
+      "total_tokens": 611,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: wide receiver\nRelation: sport\nPreviously recorded value (may be stale, may be empty): American football\n\nCandidate LEFT:  association football\nCandidate RIGHT: rugby\n\nEvidence lines (numbered, in original order):\n3. Hines Ward plays the position of wide receiver.\n18. Slovakia national football team is associated with the sport of association football.\n19. Alta IF is associated with the sport of association football.\n23. Galwegians RFC is associated with the sport of rugby union.\n46. wide receiver is associated with the sport of American football.\n93. Gala RFC is associated with the sport of rugby union.\n100. rugby union was created in the country of England.\n104. FC Vorskla Poltava is associated with the sport of association football.\n137. David Beckham is associated with the sport of association football.\n149. FC Irtysh Omsk is associated with the sport of association football.\n186. rugby union was created in the country of India.\n227. Irving Fryar plays the position of wide receiver.\n235. Tunisia national football team is associated with the sport of association football.\n252. wide receiver is associated with the sport of rugby.\n258. flanker is associated with the sport of rugby union.\n272. association football was created in the country of England.\n291. Surrey Senior Cup is associated with the sport of association football.\n296. New Firm is associated with the sport of association football.\n308. John Harkes is associated with the sport of association football.\n321. placekicker is associated with the sport of rugby.\n325. midfielder is associated with the sport of association football.\n340. Sandy Alderson is associated with the sport of association football.\n346. Bo Ryan is associated with the sport of association football.\n389. association football was created in the country of Italy.\n417. Steve Sax is associated with the sport of association football.\n437. goalkeeper is associated with the sport of association football.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

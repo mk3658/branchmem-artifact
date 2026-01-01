@@ -1,0 +1,48 @@
+{
+  "text": "NO",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 146,
+  "output_tokens": 4,
+  "raw": {
+    "id": "chatcmpl-E4kwZ6iQUrdCf6ZA4gWOyYeEIsy5D",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "NO",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802471,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 4,
+      "prompt_tokens": 146,
+      "total_tokens": 150,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "User memory:\n- user.doorway_clearance (background constraint): uses a mobility scooter that is 32 inches wide\n- user.doorway_clearance: needs doorways wider than 32 inches for the scooter to pass through\n\nBased only on this memory, is the following currently true of the user?\nStatement: \"can fit the scooter through a 28-inch bathroom doorway\"\nAnswer with exactly one word: YES, NO, or UNSURE.",
+  "system": "You answer strictly from the user memory provided. If the memory does not support the statement, answer NO. If the memory is unresolved, contradictory, or insufficient, answer UNSURE. Respect any stated constraints in the memory."
+}

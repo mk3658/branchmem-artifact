@@ -1,0 +1,48 @@
+{
+  "text": "{\"constraint_predicate\":\"tripod_location_rule\",\"constraint_value\":\"tripods stay behind the taped line\",\"constraint_compatible_value\":\"I set my tripod behind the taped line\",\"constraint_violating_value\":\"I place my tripod in the front aisle\",\"ordinary_predicate\":\"print_finish_preference\",\"ordinary_value\":\"I usually prefer matte prints\",\"ordinary_new_value\":\"I prefer glossy prints now\",\"ordinary_speculated_value\":\"I might switch to glossy prints\",\"background_predicate\":\"camera_bag_color\",\"background_value\":\"my camera bag is forest green\",\"dialogue_a\":[\"I've decided to order glossy prints for my club portfolio from now on.\",\"I kept my tripod behind the taped line during tonight's lighting demo.\",\"I loved how the old projector made everyone's slide colors look warmer.\"],\"dialogue_b\":[\"I might switch to glossy prints, but I'm still comparing sample packs.\",\"I want to set my tripod in the front aisle for the group portrait.\",\"I enjoyed the chatter around the raffle table before the critique started.\"]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 585,
+  "output_tokens": 206,
+  "raw": {
+    "id": "chatcmpl-EkSBTW5UixoXAiHpfEeLVOymM2fQX",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"constraint_predicate\":\"tripod_location_rule\",\"constraint_value\":\"tripods stay behind the taped line\",\"constraint_compatible_value\":\"I set my tripod behind the taped line\",\"constraint_violating_value\":\"I place my tripod in the front aisle\",\"ordinary_predicate\":\"print_finish_preference\",\"ordinary_value\":\"I usually prefer matte prints\",\"ordinary_new_value\":\"I prefer glossy prints now\",\"ordinary_speculated_value\":\"I might switch to glossy prints\",\"background_predicate\":\"camera_bag_color\",\"background_value\":\"my camera bag is forest green\",\"dialogue_a\":[\"I've decided to order glossy prints for my club portfolio from now on.\",\"I kept my tripod behind the taped line during tonight's lighting demo.\",\"I loved how the old projector made everyone's slide colors look warmer.\"],\"dialogue_b\":[\"I might switch to glossy prints, but I'm still comparing sample packs.\",\"I want to set my tripod in the front aisle for the group portrait.\",\"I enjoyed the chatter around the raffle table before the critique started.\"]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794740135,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 206,
+      "prompt_tokens": 585,
+      "total_tokens": 791,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Setting: a camera club\n\nWrite ONE episode. The assistant already holds three facts about \"user\". Then two separate\nconversations happen, on different devices, with no shared clock, and neither conversation\nknows about the other.\n\nFacts already held:\n  * one STANDING CONSTRAINT imposed from outside the user's control (a rule of the\n    organisation, a contract, a physical limit). Give it predicate `constraint_predicate`,\n    value `constraint_value`, and a `constraint_compatible_value`: a statement of what the\n    user does that respects the rule.\n  * one ORDINARY revisable value, predicate `ordinary_predicate`, value `ordinary_value`.\n  * one BACKGROUND fact, predicate `background_predicate`, value `background_value`, which\n    neither conversation touches.\n\nConversation A, three user turns in `dialogue_a`:\n  * one turn that DEFINITELY changes the ordinary value; put the resulting new value in\n    `ordinary_new_value`;\n  * one turn that mentions the constraint area while respecting the rule;\n  * one neutral turn about the setting that implies no memory change.\n\nConversation B, three user turns in `dialogue_b`, independent of A:\n  * one turn that only SPECULATES about the same ordinary key without deciding; put the\n    speculated value in `ordinary_speculated_value`;\n  * one turn that confidently asks for something the standing constraint does NOT allow; put\n    the value that request would imply in `constraint_violating_value`;\n  * one neutral turn.\n\nEvery turn must be something a person would plausibly say, 8 to 30 words, first person, and\nmust not mention memory, sources, confidence, reliability or how trustworthy anything is.\nAll predicates are snake_case and distinct. All values are short statements of 3 to 16 words.\n\nRespond with strict JSON only:\n{\"constraint_predicate\": \"...\", \"constraint_value\": \"...\", \"constraint_compatible_value\": \"...\",\n  \"constraint_violating_value\": \"...\",\n  \"ordinary_predicate\": \"...\", \"ordinary_value\": \"...\", \"ordinary_new_value\": \"...\",\n  \"ordinary_speculated_value\": \"...\",\n  \"background_predicate\": \"...\", \"background_value\": \"...\",\n  \"dialogue_a\": [\"...\", \"...\", \"...\"], \"dialogue_b\": [\"...\", \"...\", \"...\"]}\n\nThis is variant 5 for this setting; make the specific objects, predicates and values different from any obvious first choice.\nThe previous attempt was rejected (predicate reused: ['guest_access_limit']). Fix that.",
+  "system": "You author environments for an evaluation of how an AI assistant reconciles memory that diverged across two offline sessions. You write mundane, non-sensitive, everyday logistics. No medical, dietary, allergy, religious, financial-hardship or disability content. You output strict JSON only."
+}

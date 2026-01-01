@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"preferred_bathroom_slot\",\"value\":\"may start showering at lunch, but not settled yet\",\"source\":\"user\",\"confidence\":0.86},{\"predicate\":\"building_quiet_hours\",\"value\":\"wants to play music loudly at midnight while tidying room\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"mug_collection_location\",\"value\":\"moving mug collection off the kitchen shelf this afternoon\",\"source\":\"user\",\"confidence\":0.97}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 320,
+  "output_tokens": 101,
+  "raw": {
+    "id": "chatcmpl-EkSYtusFHc62gikRKiIMoXyEoCfcr",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"preferred_bathroom_slot\",\"value\":\"may start showering at lunch, but not settled yet\",\"source\":\"user\",\"confidence\":0.86},{\"predicate\":\"building_quiet_hours\",\"value\":\"wants to play music loudly at midnight while tidying room\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"mug_collection_location\",\"value\":\"moving mug collection off the kitchen shelf this afternoon\",\"source\":\"user\",\"confidence\":0.97}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741587,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 101,
+      "prompt_tokens": 320,
+      "total_tokens": 421,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- building_quiet_hours: no loud noise after 10 pm  (source=observation, confidence=1.00)\n- preferred_bathroom_slot: I usually shower before breakfast  (source=observation, confidence=1.00)\n- desk_location: my desk is by the window  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might start showering at lunch, but I haven\u2019t settled on that yet.\nUser: I want to play music loudly at midnight while I tidy my room.\nUser: I\u2019m moving my mug collection off the kitchen shelf this afternoon.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

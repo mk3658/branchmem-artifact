@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"warmup_playlist_style\",\"value\":\"may try disco edits for warmups, but has not settled on it\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"practice_room_booking_window\",\"value\":\"wants to use the solo practice room tonight even without a booking\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"spring_showcase_poster\",\"value\":\"front desk posted a new poster for the spring showcase\",\"source\":\"observation\",\"confidence\":0.92}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 327,
+  "output_tokens": 107,
+  "raw": {
+    "id": "chatcmpl-EkSbqcf2KsZu8RXxab4W9j0bpsmDn",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"warmup_playlist_style\",\"value\":\"may try disco edits for warmups, but has not settled on it\",\"source\":\"user\",\"confidence\":0.95},{\"predicate\":\"practice_room_booking_window\",\"value\":\"wants to use the solo practice room tonight even without a booking\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"spring_showcase_poster\",\"value\":\"front desk posted a new poster for the spring showcase\",\"source\":\"observation\",\"confidence\":0.92}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741770,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 107,
+      "prompt_tokens": 327,
+      "total_tokens": 434,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- practice_room_booking_window: solo practice room requires advance booking  (source=observation, confidence=1.00)\n- warmup_playlist_style: I use instrumental funk for warmups  (source=observation, confidence=1.00)\n- shoe_bag_color: my dance shoe bag is teal  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might try disco edits for warmups, but I have not settled on it.\nUser: I want to use the solo practice room tonight even if I did not book it.\nUser: I saw the front desk put up a new poster for the spring showcase.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

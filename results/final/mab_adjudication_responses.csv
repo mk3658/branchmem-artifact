@@ -1,0 +1,1081 @@
+annotator_id,adjudicator,conflict_id,presentation_id,resolution,confidence_1_5,evidence_span,left_original,right_original,branch_choice
+ann1,gpt-5.4,mab_7_The_Dresden_Files_author_of,1,left,5,12079,A,B,branch_a
+ann1,gpt-5.4,mab_3_ABC_Weekend_Special_original_broadcaster,2,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_3_John_V_Palaiologos_died_in_city,3,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_6_John_Hoeven_citizen_of,4,right,5,4232,A,B,branch_b
+ann1,gpt-5.4,mab_6_Helle_Thorning-Schmidt_citizen_of,5,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_2_The_Second_Coming_author_of,6,right,5,3924,A,B,branch_b
+ann1,gpt-5.4,mab_0_Tang_Empire_capital_of,7,left,5,177,B,A,branch_b
+ann1,gpt-5.4,mab_4_Madame_du_Barry_citizen_of,8,left,5,123,A,B,branch_a
+ann1,gpt-5.4,mab_4_Charles_Messier_citizen_of,9,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_7_Albert_R._Broccoli_citizen_of,10,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_1_Naruto_created_in_country,11,right,5,1936,A,B,branch_b
+ann1,gpt-5.4,mab_1_Ireland_continent,12,left,5,2107,A,B,branch_a
+ann1,gpt-5.4,mab_6_University_of_Glasgow_hq_city,13,right,5,4420,A,B,branch_b
+ann1,gpt-5.4,mab_0_placekicker_sport,14,right,5,321,B,A,branch_a
+ann1,gpt-5.4,mab_3_Roy_Hodgson_sport,15,left,5,17854,B,A,branch_b
+ann1,gpt-5.4,mab_0_Charles_Messier_citizen_of,16,ambiguous,5,,A,B,ambiguous
+ann1,gpt-5.4,mab_1_Tony_Harrison_educated_at,17,left,5,2256,B,A,branch_b
+ann1,gpt-5.4,mab_7_Sheffield_United_F.C._head_coach_of,18,left,5,12714,B,A,branch_b
+ann1,gpt-5.4,mab_7_Warren_Ellis_speaks_language,19,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_3_Warren_Ellis_speaks_language,20,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_2_Brigham_Young_University_hq_city,21,left,5,3293,A,B,branch_a
+ann1,gpt-5.4,mab_6_Nick_Folk_plays_position,22,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_7_Luigi_Delneri_sport,23,ambiguous,5,,A,B,ambiguous
+ann1,gpt-5.4,mab_5_Netflix_ceo_of,24,left,5,551,B,A,branch_b
+ann1,gpt-5.4,mab_7_John_V_Palaiologos_died_in_city,25,ambiguous,5,,A,B,ambiguous
+ann1,gpt-5.4,mab_2_Nick_Folk_plays_position,26,ambiguous,5,,A,B,ambiguous
+ann1,gpt-5.4,mab_3_Luigi_Delneri_sport,27,ambiguous,5,,A,B,ambiguous
+ann1,gpt-5.4,mab_1_Shawn_Bradley_plays_position,28,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_1_Indonesia_head_of_state,29,right,4,2033,B,A,branch_a
+ann1,gpt-5.4,mab_6_Sweet_Caroline_performed_by,30,right,5,3828,A,B,branch_b
+ann1,gpt-5.4,mab_4_pesäpallo_created_in_country,31,left,5,261,B,A,branch_b
+ann1,gpt-5.4,mab_3_Steven_Isserlis_citizen_of,32,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_7_Ron_Dennis_employed_by,33,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_3_William_Randolph_Hearst_citizen_of,34,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_2_Silvio_Berlusconi_sport,35,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_7_Letter_from_Birmingham_Jail_author_of,36,left,5,14729,B,A,branch_b
+ann1,gpt-5.4,mab_1_Yale_University_chairperson_of,37,left,5,1478,B,A,branch_b
+ann1,gpt-5.4,mab_2_Punk'd_created_by,38,right,5,3504,A,B,branch_b
+ann1,gpt-5.4,mab_1_2009_WNBA_season_sport,39,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_2_Sweet_Caroline_performed_by,40,right,5,3828,A,B,branch_b
+ann1,gpt-5.4,mab_4_Tang_Empire_capital_of,41,right,5,177,A,B,branch_b
+ann1,gpt-5.4,mab_4_A_Wizard_of_Earthsea_author_of,42,right,4,301,A,B,branch_b
+ann1,gpt-5.4,mab_3_John_Galt_created_by,43,ambiguous,5,,A,B,ambiguous
+ann1,gpt-5.4,mab_2_Krysten_Ritter_citizen_of,44,ambiguous,5,,A,B,ambiguous
+ann1,gpt-5.4,mab_1_Karunas_citizen_of,45,ambiguous,5,,A,B,ambiguous
+ann1,gpt-5.4,mab_6_Mona_Lisa_created_by,46,left,4,4146,B,A,branch_b
+ann1,gpt-5.4,mab_1_Satyajit_Ray_child_is,47,left,5,1978,B,A,branch_b
+ann1,gpt-5.4,mab_1_Indiana_Jones_created_by,48,right,5,1219,A,B,branch_b
+ann1,gpt-5.4,mab_5_Shawn_Bradley_plays_position,49,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_6_Silvio_Berlusconi_sport,50,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_3_London_office_role_of_Mayor,51,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,"mab_4_University_of_California,_Berkeley_hq_city",52,left,5,114,A,B,branch_a
+ann1,gpt-5.4,mab_0_Israel_continent,53,left,5,127,B,A,branch_b
+ann1,gpt-5.4,mab_5_starting_pitcher_sport,54,left,5,2251,B,A,branch_b
+ann1,gpt-5.4,mab_1_Burnley_F.C._head_coach_of,55,right,5,2273,B,A,branch_a
+ann1,gpt-5.4,mab_5_Naruto_created_in_country,56,left,5,1936,B,A,branch_b
+ann1,gpt-5.4,mab_7_University_of_Southern_California_hq_city,57,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_0_pesäpallo_created_in_country,58,left,5,261,B,A,branch_b
+ann1,gpt-5.4,mab_0_Aladdin_Sane_performed_by,59,right,5,285,B,A,branch_a
+ann1,gpt-5.4,mab_0_New_Firm_sport,60,left,5,376,A,B,branch_a
+ann1,gpt-5.4,mab_7_Steve_Cooley_religion,61,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_5_Punk'd_created_by,62,left,5,996,B,A,branch_b
+ann1,gpt-5.4,mab_2_Spain_official_language,63,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_1_Punk'd_created_by,64,right,5,996,A,B,branch_b
+ann1,gpt-5.4,mab_1_Sketches_by_Boz_author_of,65,left,5,1026,A,B,branch_a
+ann1,gpt-5.4,"mab_7_William_Cavendish,_4th_Duke_of_Devonshire_works_in_field",66,right,5,15284,A,B,branch_b
+ann1,gpt-5.4,mab_3_Charles_M._Schulz_famous_for,67,left,4,18280,B,A,branch_b
+ann1,gpt-5.4,mab_6_Kim_Tae-hee_citizen_of,68,ambiguous,5,,A,B,ambiguous
+ann1,gpt-5.4,mab_6_Revenge_original_broadcaster,69,right,5,4379,B,A,branch_a
+ann1,gpt-5.4,mab_4_midfielder_sport,70,left,5,416,A,B,branch_a
+ann1,gpt-5.4,mab_1_starting_pitcher_sport,71,left,5,2251,B,A,branch_b
+ann1,gpt-5.4,mab_0_Madame_du_Barry_citizen_of,72,right,5,123,B,A,branch_a
+ann1,gpt-5.4,mab_3_Carlos_Kleiber_citizen_of,73,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_3_University_of_Southern_California_hq_city,74,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_6_Spain_official_language,75,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_6_Rodney_Peete_educated_at,76,left,5,2261,B,A,branch_b
+ann1,gpt-5.4,mab_1_Girl_Meets_World_original_broadcaster,77,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_0_Slovakia_national_football_team_sport,78,right,5,279,B,A,branch_a
+ann1,gpt-5.4,mab_3_Rick_DiPietro_educated_at,79,ambiguous,5,,A,B,ambiguous
+ann1,gpt-5.4,mab_7_Oliver_Nelson_music_type,80,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_5_Ireland_continent,81,left,5,2107,A,B,branch_a
+ann1,gpt-5.4,mab_5_Telmex_ceo_of,82,right,5,1464,A,B,branch_b
+ann1,gpt-5.4,mab_5_Charles_Baudelaire_educated_at,83,right,4,1963,A,B,branch_b
+ann1,gpt-5.4,mab_4_Aladdin_Sane_performed_by,84,right,5,285,B,A,branch_a
+ann1,gpt-5.4,mab_7_Mashrafe_Mortaza_religion,85,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_1_Charles_Baudelaire_educated_at,86,left,5,1963,B,A,branch_b
+ann1,gpt-5.4,mab_6_Channel_4_hq_city,87,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_3_Ron_Dennis_employed_by,88,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_0_Past_Masters_performed_by,89,right,5,364,A,B,branch_b
+ann1,gpt-5.4,mab_1_Smalcald_Articles_author_of,90,left,5,1914,A,B,branch_a
+ann1,gpt-5.4,mab_2_country_rock_created_in_country,91,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_0_Kingdom_of_Ireland_religion,92,right,5,260,A,B,branch_b
+ann1,gpt-5.4,mab_5_United_States_of_America_gov_head,93,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_5_Smalcald_Articles_author_of,94,left,5,1914,A,B,branch_a
+ann1,gpt-5.4,mab_3_The_Partridge_Family_original_broadcaster,95,right,5,18223,A,B,branch_b
+ann1,gpt-5.4,mab_2_Tiny_Tim_created_by,96,right,5,4303,A,B,branch_b
+ann1,gpt-5.4,mab_6_tight_end_works_in_field,97,left,5,4450,A,B,branch_a
+ann1,gpt-5.4,mab_5_Boyd_Raeburn_music_type,98,left,5,1310,B,A,branch_b
+ann1,gpt-5.4,mab_4_Israel_continent,99,left,5,127,B,A,branch_b
+ann1,gpt-5.4,mab_1_judo_founded_by,100,left,5,2137,B,A,branch_b
+ann1,gpt-5.4,mab_6_country_rock_created_in_country,101,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_4_Sophia_Hawthorne_married_to,102,left,5,420,B,A,branch_b
+ann1,gpt-5.4,mab_3_Oliver_Nelson_music_type,103,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_0_United_States_of_America_official_language,104,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_5_Satyajit_Ray_child_is,105,right,5,1978,A,B,branch_b
+ann1,gpt-5.4,mab_3_Bruce_Grobbelaar_plays_position,106,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_6_Greece_capital_of,107,ambiguous,5,,A,B,ambiguous
+ann1,gpt-5.4,mab_0_Roy_Rogers_married_to,108,right,5,452,A,B,branch_b
+ann1,gpt-5.4,mab_1_Michael_Feinstein_citizen_of,109,right,5,2154,B,A,branch_a
+ann1,gpt-5.4,mab_7_Monica_citizen_of,110,ambiguous,5,,A,B,ambiguous
+ann1,gpt-5.4,mab_1_Bob_Bradley_sport,111,left,5,2151,B,A,branch_b
+ann1,gpt-5.4,mab_1_Regina_Ip_works_in_field,112,right,5,2023,B,A,branch_a
+ann1,gpt-5.4,mab_5_judo_founded_by,113,right,5,2137,A,B,branch_b
+ann1,gpt-5.4,mab_3_Nigel_Martyn_plays_position,114,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_1_Gazeta_Wyborcza_hq_city,115,left,5,1356,B,A,branch_b
+ann1,gpt-5.4,mab_0_Lou_Reed_educated_at,116,right,5,399,B,A,branch_a
+ann1,gpt-5.4,"mab_3_William_Cavendish,_4th_Duke_of_Devonshire_works_in_field",117,right,5,15284,A,B,branch_b
+ann1,gpt-5.4,mab_6_Bob_Bradley_sport,118,left,5,4071,B,A,branch_b
+ann1,gpt-5.4,mab_6_Zeenat_Aman_citizen_of,119,ambiguous,5,,A,B,ambiguous
+ann1,gpt-5.4,mab_4_Slovakia_national_football_team_sport,120,left,5,279,A,B,branch_a
+ann1,gpt-5.4,mab_4_Roy_Rogers_married_to,121,left,5,452,B,A,branch_b
+ann1,gpt-5.4,mab_7_London_office_role_of_Mayor,122,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_6_SpaceShipOne_produced_by,123,right,5,2192,A,B,branch_b
+ann1,gpt-5.4,mab_2_SpaceShipOne_produced_by,124,left,5,2192,B,A,branch_b
+ann1,gpt-5.4,mab_6_George_Bernard_Shaw_works_in_field,125,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_7_Timofey_Mozgov_plays_position,126,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_5_Indonesia_head_of_state,127,left,4,2033,A,B,branch_a
+ann1,gpt-5.4,mab_5_Jim_Kelly_plays_position,128,right,5,2038,B,A,branch_a
+ann1,gpt-5.4,mab_1_Madonna_director_of,129,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_7_1995_NBA_Finals_sport,130,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_7_Jailhouse_Rock_performed_by,131,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_2_Lucrețiu_Pătrășcanu_employed_by,132,left,5,2444,A,B,branch_a
+ann1,gpt-5.4,mab_6_Punk'd_created_by,133,left,5,3504,B,A,branch_b
+ann1,gpt-5.4,mab_3_1995_NBA_Finals_sport,134,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_2_Helle_Thorning-Schmidt_citizen_of,135,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_1_Boyd_Raeburn_music_type,136,left,5,1310,B,A,branch_b
+ann1,gpt-5.4,mab_2_Zeenat_Aman_citizen_of,137,ambiguous,5,,A,B,ambiguous
+ann1,gpt-5.4,mab_0_The_Vampyre_written_in_language,138,right,5,426,A,B,branch_b
+ann1,gpt-5.4,mab_5_Indiana_Jones_created_by,139,left,5,1219,B,A,branch_b
+ann1,gpt-5.4,mab_6_P._G._Wodehouse_speaks_language,140,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_2_Mona_Lisa_created_by,141,right,4,4146,A,B,branch_b
+ann1,gpt-5.4,mab_2_Rodney_Peete_educated_at,142,right,5,2261,A,B,branch_b
+ann1,gpt-5.4,mab_6_The_Second_Coming_author_of,143,right,5,3924,A,B,branch_b
+ann1,gpt-5.4,mab_2_George_Bernard_Shaw_works_in_field,144,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_6_Caleb_Hanie_plays_position,145,right,5,3817,B,A,branch_a
+ann1,gpt-5.4,mab_5_Burnley_F.C._head_coach_of,146,right,5,2273,B,A,branch_a
+ann1,gpt-5.4,mab_2_Taxman_performed_by,147,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_7_Steven_Isserlis_citizen_of,148,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_2_Greece_capital_of,149,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_1_Revolver_performed_by,150,right,5,1615,A,B,branch_b
+ann1,gpt-5.4,mab_0_A_Wizard_of_Earthsea_author_of,151,left,5,301,B,A,branch_b
+ann1,gpt-5.4,mab_3_Steve_Cooley_religion,152,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_0_British_Broadcasting_Corporation_director_of,153,left,5,428,B,A,branch_b
+ann1,gpt-5.4,mab_2_J._Hoberman_citizen_of,154,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_4_wide_receiver_sport,155,left,4,252,A,B,branch_a
+ann1,gpt-5.4,mab_6_Frank_Zappa_died_in_city,156,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_1_Jim_Kelly_plays_position,157,right,5,2038,B,A,branch_a
+ann1,gpt-5.4,mab_3_George_Mikan_plays_position,158,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_5_University_of_Milan_hq_city,159,right,5,2226,B,A,branch_a
+ann1,gpt-5.4,mab_7_Carlos_Kleiber_citizen_of,160,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_6_Taxman_performed_by,161,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_5_Regina_Ip_works_in_field,162,right,5,2023,B,A,branch_a
+ann1,gpt-5.4,mab_0_Buddhism_founded_by,163,right,5,370,A,B,branch_b
+ann1,gpt-5.4,mab_5_Yale_University_chairperson_of,164,right,5,1478,A,B,branch_b
+ann1,gpt-5.4,mab_1_Jules_Verne_child_is,165,right,5,2265,B,A,branch_a
+ann1,gpt-5.4,mab_4_Buddhism_founded_by,166,left,5,370,B,A,branch_b
+ann1,gpt-5.4,mab_1_ASM_Clermont_Auvergne_sport,167,right,5,2210,A,B,branch_b
+ann1,gpt-5.4,mab_6_Joe_Hockey_citizen_of,168,right,5,4361,B,A,branch_a
+ann1,gpt-5.4,mab_1_Nintendo_founded_by,169,left,5,1683,B,A,branch_b
+ann1,gpt-5.4,mab_4_British_Broadcasting_Corporation_director_of,170,left,5,428,B,A,branch_b
+ann1,gpt-5.4,mab_2_Bob_Bradley_sport,171,left,5,4071,B,A,branch_b
+ann1,gpt-5.4,mab_6_John_Stuart_Mill_married_to,172,left,5,2275,B,A,branch_b
+ann1,gpt-5.4,mab_4_placekicker_sport,173,right,5,321,B,A,branch_a
+ann1,gpt-5.4,mab_5_Tony_Harrison_educated_at,174,right,5,2256,A,B,branch_b
+ann1,gpt-5.4,mab_4_New_Firm_sport,175,left,5,376,A,B,branch_a
+ann1,gpt-5.4,mab_1_Chiang_Kai-shek_child_is,176,right,5,1865,A,B,branch_b
+ann1,gpt-5.4,mab_0_Wilhelm_II_educated_at,177,left,5,453,A,B,branch_a
+ann1,gpt-5.4,mab_5_Karunas_citizen_of,178,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_4_Oscar_Wilde_died_in_city,179,right,5,270,A,B,branch_b
+ann1,gpt-5.4,mab_6_AP1000_produced_by,180,right,5,3569,B,A,branch_a
+ann1,gpt-5.4,mab_4_Wilhelm_II_educated_at,181,left,5,453,A,B,branch_a
+ann1,gpt-5.4,mab_1_United_States_of_America_gov_head,182,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_4_Past_Masters_performed_by,183,left,5,364,B,A,branch_b
+ann1,gpt-5.4,mab_1_Jaya_Bhaduri_Bachchan_citizen_of,184,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_5_Michael_Feinstein_citizen_of,185,left,5,2154,A,B,branch_a
+ann1,gpt-5.4,mab_5_Nintendo_founded_by,186,right,5,1683,A,B,branch_b
+ann1,gpt-5.4,mab_3_Jake_Arrieta_plays_position,187,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_0_Sophia_Hawthorne_married_to,188,right,5,420,A,B,branch_b
+ann1,gpt-5.4,mab_0_Oscar_Wilde_died_in_city,189,right,5,270,A,B,branch_b
+ann1,gpt-5.4,mab_0_Sketches_by_Boz_author_of,190,right,5,430,A,B,branch_b
+ann1,gpt-5.4,mab_3_Monica_citizen_of,191,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_4_The_Marriage_of_Figaro_author_of,192,right,5,398,B,A,branch_a
+ann1,gpt-5.4,mab_2_Revenge_original_broadcaster,193,right,5,4379,B,A,branch_a
+ann1,gpt-5.4,mab_0_Sable_citizen_of,194,left,5,299,B,A,branch_b
+ann1,gpt-5.4,mab_7_Bob_Ney_religion,195,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_7_Jake_Arrieta_plays_position,196,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_3_The_Dresden_Files_author_of,197,left,5,12079,A,B,branch_a
+ann1,gpt-5.4,mab_6_Krysten_Ritter_citizen_of,198,ambiguous,5,,A,B,ambiguous
+ann1,gpt-5.4,mab_4_Colin_Irwin_citizen_of,199,right,5,441,A,B,branch_b
+ann1,gpt-5.4,mab_5_Girl_Meets_World_original_broadcaster,200,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_4_Kingdom_of_Ireland_religion,201,right,5,260,A,B,branch_b
+ann1,gpt-5.4,mab_4_Congolese_Party_of_Labour_chairperson_of,202,left,5,445,B,A,branch_b
+ann1,gpt-5.4,mab_7_Laurance_Rockefeller_citizen_of,203,left,5,17793,B,A,branch_b
+ann1,gpt-5.4,mab_4_United_States_of_America_official_language,204,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_3_Albert_R._Broccoli_citizen_of,205,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_3_Timofey_Mozgov_plays_position,206,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_4_Vijay_Mallya_citizen_of,207,right,5,329,A,B,branch_b
+ann1,gpt-5.4,mab_3_Laurance_Rockefeller_citizen_of,208,right,5,17793,A,B,branch_b
+ann1,gpt-5.4,mab_2_Cardinal_Stritch_University_religion,209,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_2_John_Hoeven_citizen_of,210,left,5,4232,B,A,branch_b
+ann1,gpt-5.4,mab_2_John_Stuart_Mill_married_to,211,left,5,2275,B,A,branch_b
+ann1,gpt-5.4,mab_1_University_of_Milan_hq_city,212,right,5,2226,B,A,branch_a
+ann1,gpt-5.4,mab_0_Vijay_Mallya_citizen_of,213,left,5,329,B,A,branch_b
+ann1,gpt-5.4,mab_6_Lucrețiu_Pătrășcanu_employed_by,214,left,5,2444,A,B,branch_a
+ann1,gpt-5.4,"mab_0_University_of_California,_Berkeley_hq_city",215,right,5,114,B,A,branch_a
+ann1,gpt-5.4,mab_0_wide_receiver_sport,216,right,4,252,B,A,branch_a
+ann1,gpt-5.4,mab_7_Charles_M._Schulz_famous_for,217,right,5,18280,A,B,branch_b
+ann1,gpt-5.4,mab_4_Lou_Reed_educated_at,218,left,5,399,A,B,branch_a
+ann1,gpt-5.4,mab_2_University_of_Glasgow_hq_city,219,left,5,4420,B,A,branch_b
+ann1,gpt-5.4,mab_2_Blackbird_performed_by,220,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_2_Channel_4_hq_city,221,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_1_Telmex_ceo_of,222,left,5,1464,B,A,branch_b
+ann1,gpt-5.4,mab_3_Letter_from_Birmingham_Jail_author_of,223,right,5,14729,A,B,branch_b
+ann1,gpt-5.4,mab_6_Blackbird_performed_by,224,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_7_Rick_DiPietro_educated_at,225,ambiguous,5,,A,B,ambiguous
+ann1,gpt-5.4,mab_5_Sketches_by_Boz_author_of,226,right,5,1026,B,A,branch_a
+ann1,gpt-5.4,mab_5_Revolver_performed_by,227,left,5,1615,B,A,branch_b
+ann1,gpt-5.4,mab_5_Bob_Bradley_sport,228,left,5,2151,B,A,branch_b
+ann1,gpt-5.4,mab_7_Roy_Hodgson_sport,229,right,5,17854,A,B,branch_b
+ann1,gpt-5.4,mab_7_Cambodia_office_role_of_Prime_Minister,230,right,5,15338,A,B,branch_b
+ann1,gpt-5.4,mab_5_Chiang_Kai-shek_child_is,231,right,5,1865,A,B,branch_b
+ann1,gpt-5.4,mab_3_Sheffield_United_F.C._head_coach_of,232,left,5,12714,B,A,branch_b
+ann1,gpt-5.4,mab_7_Bruce_Grobbelaar_plays_position,233,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_2_Frank_Zappa_died_in_city,234,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_5_2009_WNBA_season_sport,235,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_5_ASM_Clermont_Auvergne_sport,236,left,5,2210,B,A,branch_b
+ann1,gpt-5.4,mab_0_midfielder_sport,237,right,5,416,B,A,branch_a
+ann1,gpt-5.4,mab_5_Jaya_Bhaduri_Bachchan_citizen_of,238,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_2_Joe_Hockey_citizen_of,239,left,5,4361,A,B,branch_a
+ann1,gpt-5.4,mab_7_The_Art_of_War_created_in_country,240,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_7_John_Galt_created_by,241,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_1_Netflix_ceo_of,242,left,5,551,B,A,branch_b
+ann1,gpt-5.4,mab_3_Mashrafe_Mortaza_religion,243,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_4_Sketches_by_Boz_author_of,244,right,5,430,A,B,branch_b
+ann1,gpt-5.4,mab_3_Cambodia_office_role_of_Prime_Minister,245,left,5,15338,B,A,branch_b
+ann1,gpt-5.4,mab_6_Tiny_Tim_created_by,246,left,5,4303,B,A,branch_b
+ann1,gpt-5.4,mab_7_Nigel_Martyn_plays_position,247,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_2_Caleb_Hanie_plays_position,248,left,5,3817,A,B,branch_a
+ann1,gpt-5.4,mab_7_ABC_Weekend_Special_original_broadcaster,249,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_2_tight_end_works_in_field,250,right,5,4450,B,A,branch_a
+ann1,gpt-5.4,mab_7_William_Randolph_Hearst_citizen_of,251,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_2_P._G._Wodehouse_speaks_language,252,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_4_Sable_citizen_of,253,right,5,299,A,B,branch_b
+ann1,gpt-5.4,mab_5_Madonna_director_of,254,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_6_Brigham_Young_University_hq_city,255,right,4,3293,B,A,branch_a
+ann1,gpt-5.4,mab_7_The_Partridge_Family_original_broadcaster,256,right,5,18223,A,B,branch_b
+ann1,gpt-5.4,mab_0_The_Marriage_of_Figaro_author_of,257,left,5,398,A,B,branch_a
+ann1,gpt-5.4,mab_2_AP1000_produced_by,258,right,5,3569,B,A,branch_a
+ann1,gpt-5.4,mab_4_The_Vampyre_written_in_language,259,left,5,426,B,A,branch_b
+ann1,gpt-5.4,mab_3_Bob_Ney_religion,260,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_3_Jailhouse_Rock_performed_by,261,ambiguous,1,,A,B,ambiguous
+ann1,gpt-5.4,mab_3_The_Art_of_War_created_in_country,262,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_6_J._Hoberman_citizen_of,263,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_0_Colin_Irwin_citizen_of,264,right,5,441,A,B,branch_b
+ann1,gpt-5.4,mab_7_George_Mikan_plays_position,265,ambiguous,5,,B,A,ambiguous
+ann1,gpt-5.4,mab_5_Jules_Verne_child_is,266,left,5,2265,A,B,branch_a
+ann1,gpt-5.4,mab_2_Kim_Tae-hee_citizen_of,267,ambiguous,1,,B,A,ambiguous
+ann1,gpt-5.4,mab_5_Gazeta_Wyborcza_hq_city,268,left,5,1356,B,A,branch_b
+ann1,gpt-5.4,mab_0_Congolese_Party_of_Labour_chairperson_of,269,left,5,445,B,A,branch_b
+ann1,gpt-5.4,mab_6_Cardinal_Stritch_University_religion,270,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_7_University_of_Southern_California_hq_city,1,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_0_Slovakia_national_football_team_sport,2,left,5,279,A,B,branch_a
+ann2,gpt-5.4-mini,mab_0_Kingdom_of_Ireland_religion,3,right,5,260,A,B,branch_b
+ann2,gpt-5.4-mini,mab_7_The_Partridge_Family_original_broadcaster,4,left,5,18223,B,A,branch_b
+ann2,gpt-5.4-mini,mab_0_The_Vampyre_written_in_language,5,left,5,426,B,A,branch_b
+ann2,gpt-5.4-mini,mab_1_Regina_Ip_works_in_field,6,left,5,2023,A,B,branch_a
+ann2,gpt-5.4-mini,mab_5_Jules_Verne_child_is,7,left,5,2265,A,B,branch_a
+ann2,gpt-5.4-mini,mab_5_Tony_Harrison_educated_at,8,left,5,2256,B,A,branch_b
+ann2,gpt-5.4-mini,mab_6_Helle_Thorning-Schmidt_citizen_of,9,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_0_Tang_Empire_capital_of,10,left,5,177,B,A,branch_b
+ann2,gpt-5.4-mini,mab_7_William_Randolph_Hearst_citizen_of,11,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_1_Madonna_director_of,12,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_5_Satyajit_Ray_child_is,13,right,5,1978,A,B,branch_b
+ann2,gpt-5.4-mini,mab_7_Albert_R._Broccoli_citizen_of,14,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_5_Jim_Kelly_plays_position,15,right,5,2038,B,A,branch_a
+ann2,gpt-5.4-mini,mab_1_Jules_Verne_child_is,16,left,5,2265,A,B,branch_a
+ann2,gpt-5.4-mini,mab_1_Smalcald_Articles_author_of,17,left,5,1914,A,B,branch_a
+ann2,gpt-5.4-mini,mab_7_The_Art_of_War_created_in_country,18,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_2_Rodney_Peete_educated_at,19,right,5,2261,A,B,branch_b
+ann2,gpt-5.4-mini,mab_5_Sketches_by_Boz_author_of,20,left,5,1026,A,B,branch_a
+ann2,gpt-5.4-mini,mab_1_Telmex_ceo_of,21,right,5,1464,A,B,branch_b
+ann2,gpt-5.4-mini,mab_1_ASM_Clermont_Auvergne_sport,22,right,5,2210,A,B,branch_b
+ann2,gpt-5.4-mini,mab_6_SpaceShipOne_produced_by,23,left,5,2192,B,A,branch_b
+ann2,gpt-5.4-mini,mab_4_Vijay_Mallya_citizen_of,24,right,5,329,A,B,branch_b
+ann2,gpt-5.4-mini,mab_5_Burnley_F.C._head_coach_of,25,left,5,2273,A,B,branch_a
+ann2,gpt-5.4-mini,mab_6_Silvio_Berlusconi_sport,26,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_6_Zeenat_Aman_citizen_of,27,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_2_Kim_Tae-hee_citizen_of,28,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_1_judo_founded_by,29,right,5,2137,A,B,branch_b
+ann2,gpt-5.4-mini,mab_6_Caleb_Hanie_plays_position,30,left,5,3817,A,B,branch_a
+ann2,gpt-5.4-mini,mab_2_University_of_Glasgow_hq_city,31,left,5,4420,B,A,branch_b
+ann2,gpt-5.4-mini,mab_4_Tang_Empire_capital_of,32,right,5,177,A,B,branch_b
+ann2,gpt-5.4-mini,mab_6_Bob_Bradley_sport,33,right,5,4071,A,B,branch_b
+ann2,gpt-5.4-mini,mab_1_2009_WNBA_season_sport,34,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,"mab_0_University_of_California,_Berkeley_hq_city",35,right,5,114,B,A,branch_a
+ann2,gpt-5.4-mini,mab_0_A_Wizard_of_Earthsea_author_of,36,right,5,301,A,B,branch_b
+ann2,gpt-5.4-mini,mab_3_ABC_Weekend_Special_original_broadcaster,37,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_1_Nintendo_founded_by,38,left,5,1683,B,A,branch_b
+ann2,gpt-5.4-mini,mab_3_1995_NBA_Finals_sport,39,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_2_Tiny_Tim_created_by,40,right,5,4303,A,B,branch_b
+ann2,gpt-5.4-mini,mab_5_starting_pitcher_sport,41,right,5,2251,A,B,branch_b
+ann2,gpt-5.4-mini,mab_2_Revenge_original_broadcaster,42,left,5,4379,A,B,branch_a
+ann2,gpt-5.4-mini,mab_1_Netflix_ceo_of,43,right,5,551,A,B,branch_b
+ann2,gpt-5.4-mini,mab_5_Madonna_director_of,44,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_1_Shawn_Bradley_plays_position,45,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_0_Buddhism_founded_by,46,left,5,370,B,A,branch_b
+ann2,gpt-5.4-mini,mab_4_Congolese_Party_of_Labour_chairperson_of,47,left,5,445,B,A,branch_b
+ann2,gpt-5.4-mini,mab_7_Charles_M._Schulz_famous_for,48,left,5,18280,B,A,branch_b
+ann2,gpt-5.4-mini,mab_5_Telmex_ceo_of,49,left,5,1464,B,A,branch_b
+ann2,gpt-5.4-mini,mab_0_Sable_citizen_of,50,left,5,299,B,A,branch_b
+ann2,gpt-5.4-mini,mab_4_Charles_Messier_citizen_of,51,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_3_Warren_Ellis_speaks_language,52,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_6_country_rock_created_in_country,53,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_2_Nick_Folk_plays_position,54,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_0_Charles_Messier_citizen_of,55,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_0_The_Marriage_of_Figaro_author_of,56,right,5,398,B,A,branch_a
+ann2,gpt-5.4-mini,mab_5_Girl_Meets_World_original_broadcaster,57,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_5_Naruto_created_in_country,58,right,5,1936,A,B,branch_b
+ann2,gpt-5.4-mini,mab_1_Sketches_by_Boz_author_of,59,left,5,1026,A,B,branch_a
+ann2,gpt-5.4-mini,mab_2_Bob_Bradley_sport,60,right,5,4071,A,B,branch_b
+ann2,gpt-5.4-mini,mab_0_Sophia_Hawthorne_married_to,61,left,5,420,B,A,branch_b
+ann2,gpt-5.4-mini,mab_6_Mona_Lisa_created_by,62,left,5,4146,B,A,branch_b
+ann2,gpt-5.4-mini,mab_3_Laurance_Rockefeller_citizen_of,63,left,5,17793,B,A,branch_b
+ann2,gpt-5.4-mini,mab_5_Smalcald_Articles_author_of,64,right,5,1914,B,A,branch_a
+ann2,gpt-5.4-mini,mab_3_The_Partridge_Family_original_broadcaster,65,left,5,18223,B,A,branch_b
+ann2,gpt-5.4-mini,mab_1_Gazeta_Wyborcza_hq_city,66,left,5,1356,B,A,branch_b
+ann2,gpt-5.4-mini,mab_7_London_office_role_of_Mayor,67,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_5_University_of_Milan_hq_city,68,left,5,2226,A,B,branch_a
+ann2,gpt-5.4-mini,mab_1_starting_pitcher_sport,69,left,5,2251,B,A,branch_b
+ann2,gpt-5.4-mini,mab_6_Tiny_Tim_created_by,70,right,5,4303,A,B,branch_b
+ann2,gpt-5.4-mini,mab_5_Indonesia_head_of_state,71,left,5,2033,A,B,branch_a
+ann2,gpt-5.4-mini,mab_3_George_Mikan_plays_position,72,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_2_Sweet_Caroline_performed_by,73,right,5,3828,A,B,branch_b
+ann2,gpt-5.4-mini,mab_7_John_V_Palaiologos_died_in_city,74,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_1_Satyajit_Ray_child_is,75,right,5,1978,A,B,branch_b
+ann2,gpt-5.4-mini,mab_1_Indonesia_head_of_state,76,left,5,2033,A,B,branch_a
+ann2,gpt-5.4-mini,mab_6_Krysten_Ritter_citizen_of,77,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_4_pesäpallo_created_in_country,78,right,5,261,A,B,branch_b
+ann2,gpt-5.4-mini,mab_3_Carlos_Kleiber_citizen_of,79,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_4_Aladdin_Sane_performed_by,80,left,5,285,A,B,branch_a
+ann2,gpt-5.4-mini,mab_7_Ron_Dennis_employed_by,81,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_3_John_V_Palaiologos_died_in_city,82,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_5_Boyd_Raeburn_music_type,83,left,5,1310,B,A,branch_b
+ann2,gpt-5.4-mini,mab_7_Timofey_Mozgov_plays_position,84,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_0_wide_receiver_sport,85,right,5,252,B,A,branch_a
+ann2,gpt-5.4-mini,mab_5_Jaya_Bhaduri_Bachchan_citizen_of,86,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_7_Steven_Isserlis_citizen_of,87,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_5_Chiang_Kai-shek_child_is,88,right,5,1865,A,B,branch_b
+ann2,gpt-5.4-mini,mab_4_New_Firm_sport,89,left,5,376,A,B,branch_a
+ann2,gpt-5.4-mini,mab_3_Luigi_Delneri_sport,90,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_7_Laurance_Rockefeller_citizen_of,91,right,5,17793,A,B,branch_b
+ann2,gpt-5.4-mini,mab_5_Shawn_Bradley_plays_position,92,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_5_Nintendo_founded_by,93,left,5,1683,B,A,branch_b
+ann2,gpt-5.4-mini,mab_5_Bob_Bradley_sport,94,right,5,2151,A,B,branch_b
+ann2,gpt-5.4-mini,mab_1_Charles_Baudelaire_educated_at,95,right,5,1963,A,B,branch_b
+ann2,gpt-5.4-mini,mab_0_Past_Masters_performed_by,96,right,5,364,A,B,branch_b
+ann2,gpt-5.4-mini,mab_6_Punk'd_created_by,97,left,5,3504,B,A,branch_b
+ann2,gpt-5.4-mini,mab_1_Yale_University_chairperson_of,98,left,5,1478,B,A,branch_b
+ann2,gpt-5.4-mini,mab_7_The_Dresden_Files_author_of,99,right,5,12079,B,A,branch_a
+ann2,gpt-5.4-mini,"mab_3_William_Cavendish,_4th_Duke_of_Devonshire_works_in_field",100,left,5,15284,B,A,branch_b
+ann2,gpt-5.4-mini,mab_7_Jake_Arrieta_plays_position,101,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_3_Bruce_Grobbelaar_plays_position,102,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_5_Yale_University_chairperson_of,103,left,5,1478,B,A,branch_b
+ann2,gpt-5.4-mini,mab_6_Nick_Folk_plays_position,104,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_6_Frank_Zappa_died_in_city,105,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_2_Mona_Lisa_created_by,106,left,5,4146,B,A,branch_b
+ann2,gpt-5.4-mini,mab_4_Past_Masters_performed_by,107,right,5,364,A,B,branch_b
+ann2,gpt-5.4-mini,mab_4_Madame_du_Barry_citizen_of,108,left,5,123,A,B,branch_a
+ann2,gpt-5.4-mini,mab_6_P._G._Wodehouse_speaks_language,109,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_3_Nigel_Martyn_plays_position,110,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_0_New_Firm_sport,111,left,5,376,A,B,branch_a
+ann2,gpt-5.4-mini,mab_7_Sheffield_United_F.C._head_coach_of,112,right,5,12714,A,B,branch_b
+ann2,gpt-5.4-mini,mab_2_Zeenat_Aman_citizen_of,113,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_7_ABC_Weekend_Special_original_broadcaster,114,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_4_The_Marriage_of_Figaro_author_of,115,left,5,398,A,B,branch_a
+ann2,gpt-5.4-mini,mab_3_The_Art_of_War_created_in_country,116,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_3_The_Dresden_Files_author_of,117,right,5,12079,B,A,branch_a
+ann2,gpt-5.4-mini,mab_6_George_Bernard_Shaw_works_in_field,118,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_4_A_Wizard_of_Earthsea_author_of,119,right,5,301,A,B,branch_b
+ann2,gpt-5.4-mini,mab_5_ASM_Clermont_Auvergne_sport,120,right,5,2210,A,B,branch_b
+ann2,gpt-5.4-mini,mab_6_Taxman_performed_by,121,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_7_Monica_citizen_of,122,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_7_Oliver_Nelson_music_type,123,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_6_Brigham_Young_University_hq_city,124,right,5,3293,B,A,branch_a
+ann2,gpt-5.4-mini,mab_0_Lou_Reed_educated_at,125,left,5,399,A,B,branch_a
+ann2,gpt-5.4-mini,mab_1_Chiang_Kai-shek_child_is,126,left,5,1865,B,A,branch_b
+ann2,gpt-5.4-mini,mab_6_The_Second_Coming_author_of,127,right,5,3924,A,B,branch_b
+ann2,gpt-5.4-mini,mab_3_Timofey_Mozgov_plays_position,128,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_1_Burnley_F.C._head_coach_of,129,right,5,2273,B,A,branch_a
+ann2,gpt-5.4-mini,mab_0_midfielder_sport,130,right,5,416,B,A,branch_a
+ann2,gpt-5.4-mini,mab_6_Lucrețiu_Pătrășcanu_employed_by,131,right,5,2444,B,A,branch_a
+ann2,gpt-5.4-mini,mab_0_Israel_continent,132,left,5,127,B,A,branch_b
+ann2,gpt-5.4-mini,mab_4_Oscar_Wilde_died_in_city,133,left,5,270,B,A,branch_b
+ann2,gpt-5.4-mini,mab_7_Mashrafe_Mortaza_religion,134,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,"mab_7_William_Cavendish,_4th_Duke_of_Devonshire_works_in_field",135,left,5,15284,B,A,branch_b
+ann2,gpt-5.4-mini,mab_7_Jailhouse_Rock_performed_by,136,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_6_John_Hoeven_citizen_of,137,right,5,4232,A,B,branch_b
+ann2,gpt-5.4-mini,mab_0_pesäpallo_created_in_country,138,left,5,261,B,A,branch_b
+ann2,gpt-5.4-mini,mab_4_midfielder_sport,139,left,5,416,A,B,branch_a
+ann2,gpt-5.4-mini,mab_0_British_Broadcasting_Corporation_director_of,140,right,5,428,A,B,branch_b
+ann2,gpt-5.4-mini,mab_2_Cardinal_Stritch_University_religion,141,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_0_United_States_of_America_official_language,142,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_4_British_Broadcasting_Corporation_director_of,143,left,5,428,B,A,branch_b
+ann2,gpt-5.4-mini,mab_1_Karunas_citizen_of,144,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_3_Roy_Hodgson_sport,145,left,5,17854,B,A,branch_b
+ann2,gpt-5.4-mini,mab_4_Lou_Reed_educated_at,146,right,5,399,B,A,branch_a
+ann2,gpt-5.4-mini,mab_4_placekicker_sport,147,left,5,321,A,B,branch_a
+ann2,gpt-5.4-mini,mab_5_Charles_Baudelaire_educated_at,148,right,5,1963,A,B,branch_b
+ann2,gpt-5.4-mini,mab_0_Colin_Irwin_citizen_of,149,right,5,441,A,B,branch_b
+ann2,gpt-5.4-mini,mab_4_Sketches_by_Boz_author_of,150,right,5,430,A,B,branch_b
+ann2,gpt-5.4-mini,mab_2_George_Bernard_Shaw_works_in_field,151,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_2_Silvio_Berlusconi_sport,152,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,"mab_4_University_of_California,_Berkeley_hq_city",153,right,5,114,B,A,branch_a
+ann2,gpt-5.4-mini,mab_7_Roy_Hodgson_sport,154,right,5,17854,A,B,branch_b
+ann2,gpt-5.4-mini,mab_2_Lucrețiu_Pătrășcanu_employed_by,155,left,5,2444,A,B,branch_a
+ann2,gpt-5.4-mini,mab_1_United_States_of_America_gov_head,156,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_7_Bob_Ney_religion,157,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_3_Steve_Cooley_religion,158,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_7_Nigel_Martyn_plays_position,159,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_3_John_Galt_created_by,160,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_2_J._Hoberman_citizen_of,161,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_4_Buddhism_founded_by,162,left,5,370,B,A,branch_b
+ann2,gpt-5.4-mini,mab_1_Ireland_continent,163,right,5,2107,B,A,branch_a
+ann2,gpt-5.4-mini,mab_6_John_Stuart_Mill_married_to,164,left,5,2275,B,A,branch_b
+ann2,gpt-5.4-mini,mab_5_Regina_Ip_works_in_field,165,right,5,2023,B,A,branch_a
+ann2,gpt-5.4-mini,mab_0_Roy_Rogers_married_to,166,left,5,452,B,A,branch_b
+ann2,gpt-5.4-mini,mab_7_Luigi_Delneri_sport,167,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_2_Caleb_Hanie_plays_position,168,left,5,3817,A,B,branch_a
+ann2,gpt-5.4-mini,mab_2_John_Stuart_Mill_married_to,169,right,5,2275,A,B,branch_b
+ann2,gpt-5.4-mini,mab_1_Bob_Bradley_sport,170,right,5,2151,A,B,branch_b
+ann2,gpt-5.4-mini,mab_6_Spain_official_language,171,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_3_Rick_DiPietro_educated_at,172,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_4_wide_receiver_sport,173,left,5,252,A,B,branch_a
+ann2,gpt-5.4-mini,mab_3_Mashrafe_Mortaza_religion,174,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_1_Jim_Kelly_plays_position,175,left,5,2038,A,B,branch_a
+ann2,gpt-5.4-mini,mab_2_Taxman_performed_by,176,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_4_Colin_Irwin_citizen_of,177,left,5,441,B,A,branch_b
+ann2,gpt-5.4-mini,mab_4_The_Vampyre_written_in_language,178,right,5,426,A,B,branch_b
+ann2,gpt-5.4-mini,mab_1_Jaya_Bhaduri_Bachchan_citizen_of,179,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_7_1995_NBA_Finals_sport,180,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_3_Jake_Arrieta_plays_position,181,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_7_George_Mikan_plays_position,182,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_1_Girl_Meets_World_original_broadcaster,183,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_4_Kingdom_of_Ireland_religion,184,left,5,260,B,A,branch_b
+ann2,gpt-5.4-mini,mab_2_tight_end_works_in_field,185,right,5,4450,B,A,branch_a
+ann2,gpt-5.4-mini,mab_3_Jailhouse_Rock_performed_by,186,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_5_United_States_of_America_gov_head,187,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_6_Channel_4_hq_city,188,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_3_London_office_role_of_Mayor,189,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_3_University_of_Southern_California_hq_city,190,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_1_Punk'd_created_by,191,left,5,996,B,A,branch_b
+ann2,gpt-5.4-mini,mab_4_Sable_citizen_of,192,left,5,299,B,A,branch_b
+ann2,gpt-5.4-mini,mab_2_Greece_capital_of,193,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_3_Steven_Isserlis_citizen_of,194,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_5_Ireland_continent,195,left,5,2107,A,B,branch_a
+ann2,gpt-5.4-mini,mab_2_Spain_official_language,196,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_6_Blackbird_performed_by,197,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_6_Revenge_original_broadcaster,198,left,5,4379,A,B,branch_a
+ann2,gpt-5.4-mini,mab_2_Frank_Zappa_died_in_city,199,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_3_Sheffield_United_F.C._head_coach_of,200,left,5,12714,B,A,branch_b
+ann2,gpt-5.4-mini,mab_3_Oliver_Nelson_music_type,201,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_7_Warren_Ellis_speaks_language,202,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_2_Brigham_Young_University_hq_city,203,right,5,3293,B,A,branch_a
+ann2,gpt-5.4-mini,mab_3_Monica_citizen_of,204,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_5_judo_founded_by,205,right,5,2137,A,B,branch_b
+ann2,gpt-5.4-mini,mab_5_Punk'd_created_by,206,left,5,996,B,A,branch_b
+ann2,gpt-5.4-mini,mab_2_John_Hoeven_citizen_of,207,right,5,4232,A,B,branch_b
+ann2,gpt-5.4-mini,mab_1_Indiana_Jones_created_by,208,right,5,1219,A,B,branch_b
+ann2,gpt-5.4-mini,mab_7_John_Galt_created_by,209,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_5_Gazeta_Wyborcza_hq_city,210,left,5,1356,B,A,branch_b
+ann2,gpt-5.4-mini,mab_6_Kim_Tae-hee_citizen_of,211,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_3_Albert_R._Broccoli_citizen_of,212,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_4_Sophia_Hawthorne_married_to,213,left,5,420,B,A,branch_b
+ann2,gpt-5.4-mini,mab_2_AP1000_produced_by,214,right,5,3569,B,A,branch_a
+ann2,gpt-5.4-mini,mab_1_Michael_Feinstein_citizen_of,215,right,5,2154,B,A,branch_a
+ann2,gpt-5.4-mini,mab_6_University_of_Glasgow_hq_city,216,right,5,4420,A,B,branch_b
+ann2,gpt-5.4-mini,mab_2_P._G._Wodehouse_speaks_language,217,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_2_Krysten_Ritter_citizen_of,218,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_6_Sweet_Caroline_performed_by,219,left,5,3828,B,A,branch_b
+ann2,gpt-5.4-mini,mab_0_placekicker_sport,220,left,5,321,A,B,branch_a
+ann2,gpt-5.4-mini,mab_5_Netflix_ceo_of,221,left,5,551,B,A,branch_b
+ann2,gpt-5.4-mini,mab_6_Rodney_Peete_educated_at,222,left,5,2261,B,A,branch_b
+ann2,gpt-5.4-mini,mab_5_Karunas_citizen_of,223,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_6_Greece_capital_of,224,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_4_Wilhelm_II_educated_at,225,right,5,453,B,A,branch_a
+ann2,gpt-5.4-mini,mab_1_Naruto_created_in_country,226,right,5,1936,A,B,branch_b
+ann2,gpt-5.4-mini,mab_2_Joe_Hockey_citizen_of,227,right,5,4361,B,A,branch_a
+ann2,gpt-5.4-mini,mab_1_Revolver_performed_by,228,left,5,1615,B,A,branch_b
+ann2,gpt-5.4-mini,mab_7_Carlos_Kleiber_citizen_of,229,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_5_Michael_Feinstein_citizen_of,230,left,5,2154,A,B,branch_a
+ann2,gpt-5.4-mini,mab_3_Bob_Ney_religion,231,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_4_United_States_of_America_official_language,232,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_0_Sketches_by_Boz_author_of,233,left,5,430,B,A,branch_b
+ann2,gpt-5.4-mini,mab_0_Aladdin_Sane_performed_by,234,left,5,285,A,B,branch_a
+ann2,gpt-5.4-mini,mab_4_Israel_continent,235,left,5,127,B,A,branch_b
+ann2,gpt-5.4-mini,mab_4_Slovakia_national_football_team_sport,236,right,5,279,B,A,branch_a
+ann2,gpt-5.4-mini,mab_4_Roy_Rogers_married_to,237,right,5,452,A,B,branch_b
+ann2,gpt-5.4-mini,mab_6_J._Hoberman_citizen_of,238,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_1_Boyd_Raeburn_music_type,239,right,5,1310,A,B,branch_b
+ann2,gpt-5.4-mini,mab_7_Bruce_Grobbelaar_plays_position,240,right,1,,A,B,branch_b
+ann2,gpt-5.4-mini,mab_6_Cardinal_Stritch_University_religion,241,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_0_Madame_du_Barry_citizen_of,242,right,5,123,B,A,branch_a
+ann2,gpt-5.4-mini,mab_0_Vijay_Mallya_citizen_of,243,right,5,329,A,B,branch_b
+ann2,gpt-5.4-mini,mab_7_Rick_DiPietro_educated_at,244,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_3_Cambodia_office_role_of_Prime_Minister,245,left,5,15338,B,A,branch_b
+ann2,gpt-5.4-mini,mab_1_Tony_Harrison_educated_at,246,right,5,2256,A,B,branch_b
+ann2,gpt-5.4-mini,mab_2_Channel_4_hq_city,247,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_6_AP1000_produced_by,248,left,5,3569,A,B,branch_a
+ann2,gpt-5.4-mini,mab_3_Ron_Dennis_employed_by,249,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_6_Joe_Hockey_citizen_of,250,left,5,4361,A,B,branch_a
+ann2,gpt-5.4-mini,mab_2_Blackbird_performed_by,251,right,5,4200,A,B,branch_b
+ann2,gpt-5.4-mini,mab_1_University_of_Milan_hq_city,252,right,5,2226,B,A,branch_a
+ann2,gpt-5.4-mini,mab_2_SpaceShipOne_produced_by,253,left,5,2192,B,A,branch_b
+ann2,gpt-5.4-mini,mab_2_country_rock_created_in_country,254,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_3_William_Randolph_Hearst_citizen_of,255,ambiguous,1,,A,B,ambiguous
+ann2,gpt-5.4-mini,mab_0_Wilhelm_II_educated_at,256,right,5,453,B,A,branch_a
+ann2,gpt-5.4-mini,mab_2_Punk'd_created_by,257,right,5,3504,A,B,branch_b
+ann2,gpt-5.4-mini,mab_7_Cambodia_office_role_of_Prime_Minister,258,right,5,15338,A,B,branch_b
+ann2,gpt-5.4-mini,mab_5_Indiana_Jones_created_by,259,left,5,1219,B,A,branch_b
+ann2,gpt-5.4-mini,mab_6_tight_end_works_in_field,260,right,5,4450,B,A,branch_a
+ann2,gpt-5.4-mini,mab_5_2009_WNBA_season_sport,261,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_2_Helle_Thorning-Schmidt_citizen_of,262,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_5_Revolver_performed_by,263,right,5,1615,A,B,branch_b
+ann2,gpt-5.4-mini,mab_7_Letter_from_Birmingham_Jail_author_of,264,right,5,14729,A,B,branch_b
+ann2,gpt-5.4-mini,mab_0_Oscar_Wilde_died_in_city,265,right,5,270,A,B,branch_b
+ann2,gpt-5.4-mini,mab_3_Charles_M._Schulz_famous_for,266,left,5,18280,B,A,branch_b
+ann2,gpt-5.4-mini,mab_7_Steve_Cooley_religion,267,ambiguous,1,,B,A,ambiguous
+ann2,gpt-5.4-mini,mab_2_The_Second_Coming_author_of,268,right,5,3924,A,B,branch_b
+ann2,gpt-5.4-mini,mab_3_Letter_from_Birmingham_Jail_author_of,269,left,5,14729,B,A,branch_b
+ann2,gpt-5.4-mini,mab_0_Congolese_Party_of_Labour_chairperson_of,270,right,5,445,A,B,branch_b
+ann3,gpt-5.4-nano,mab_3_Jailhouse_Rock_performed_by,1,right,5,10876,A,B,branch_b
+ann3,gpt-5.4-nano,mab_1_Madonna_director_of,2,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_3_Steven_Isserlis_citizen_of,3,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_2_SpaceShipOne_produced_by,4,right,5,2192. The company that produced SpaceShi,A,B,branch_b
+ann3,gpt-5.4-nano,mab_3_ABC_Weekend_Special_original_broadcaster,5,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_1_Gazeta_Wyborcza_hq_city,6,right,5,1356,A,B,branch_b
+ann3,gpt-5.4-nano,mab_5_Girl_Meets_World_original_broadcaster,7,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_3_Sheffield_United_F.C._head_coach_of,8,right,5,12714,A,B,branch_b
+ann3,gpt-5.4-nano,mab_0_Buddhism_founded_by,9,right,5,370,A,B,branch_b
+ann3,gpt-5.4-nano,mab_5_Tony_Harrison_educated_at,10,left,2,2256,B,A,branch_b
+ann3,gpt-5.4-nano,mab_4_Sable_citizen_of,11,right,5,299,A,B,branch_b
+ann3,gpt-5.4-nano,mab_5_Jules_Verne_child_is,12,right,5,2265,B,A,branch_a
+ann3,gpt-5.4-nano,mab_1_starting_pitcher_sport,13,left,2,2251,B,A,branch_b
+ann3,gpt-5.4-nano,mab_3_London_office_role_of_Mayor,14,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_0_Sketches_by_Boz_author_of,15,right,5,430,B,A,branch_a
+ann3,gpt-5.4-nano,mab_7_Bob_Ney_religion,16,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_0_Tang_Empire_capital_of,17,right,5,177,A,B,branch_b
+ann3,gpt-5.4-nano,mab_4_United_States_of_America_official_language,18,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_3_Rick_DiPietro_educated_at,19,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_5_Netflix_ceo_of,20,right,5,551,A,B,branch_b
+ann3,gpt-5.4-nano,mab_6_Cardinal_Stritch_University_religion,21,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_2_Channel_4_hq_city,22,right,4,4023,A,B,branch_b
+ann3,gpt-5.4-nano,mab_6_Kim_Tae-hee_citizen_of,23,left,2,4514,B,A,branch_b
+ann3,gpt-5.4-nano,mab_6_Joe_Hockey_citizen_of,24,right,5,4361,B,A,branch_a
+ann3,gpt-5.4-nano,mab_3_Roy_Hodgson_sport,25,right,5,17854,A,B,branch_b
+ann3,gpt-5.4-nano,mab_7_The_Dresden_Files_author_of,26,right,5,12079. The author of The Dresden Files i,B,A,branch_a
+ann3,gpt-5.4-nano,mab_3_The_Partridge_Family_original_broadcaster,27,right,5,18223,A,B,branch_b
+ann3,gpt-5.4-nano,mab_5_Indiana_Jones_created_by,28,right,1,,A,B,branch_b
+ann3,gpt-5.4-nano,mab_0_Sable_citizen_of,29,right,5,299,A,B,branch_b
+ann3,gpt-5.4-nano,mab_3_Laurance_Rockefeller_citizen_of,30,right,5,17793,A,B,branch_b
+ann3,gpt-5.4-nano,mab_5_Madonna_director_of,31,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_7_John_Galt_created_by,32,right,5,12812,B,A,branch_a
+ann3,gpt-5.4-nano,mab_3_Jake_Arrieta_plays_position,33,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_5_Chiang_Kai-shek_child_is,34,ambiguous,2,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_7_Jake_Arrieta_plays_position,35,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_2_Caleb_Hanie_plays_position,36,left,4,3817,A,B,branch_a
+ann3,gpt-5.4-nano,mab_6_Rodney_Peete_educated_at,37,left,5,2261,B,A,branch_b
+ann3,gpt-5.4-nano,mab_7_Steve_Cooley_religion,38,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_4_British_Broadcasting_Corporation_director_of,39,left,5,428,B,A,branch_b
+ann3,gpt-5.4-nano,mab_2_Sweet_Caroline_performed_by,40,right,5,3828,A,B,branch_b
+ann3,gpt-5.4-nano,mab_4_Vijay_Mallya_citizen_of,41,right,5,329,A,B,branch_b
+ann3,gpt-5.4-nano,mab_4_Congolese_Party_of_Labour_chairperson_of,42,right,5,445,A,B,branch_b
+ann3,gpt-5.4-nano,mab_7_London_office_role_of_Mayor,43,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_4_wide_receiver_sport,44,right,4,252,B,A,branch_a
+ann3,gpt-5.4-nano,mab_4_Sophia_Hawthorne_married_to,45,right,5,420,A,B,branch_b
+ann3,gpt-5.4-nano,"mab_3_William_Cavendish,_4th_Duke_of_Devonshire_works_in_field",46,left,5,15284,B,A,branch_b
+ann3,gpt-5.4-nano,mab_3_The_Art_of_War_created_in_country,47,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_2_Punk'd_created_by,48,right,5,3504,A,B,branch_b
+ann3,gpt-5.4-nano,mab_1_Charles_Baudelaire_educated_at,49,right,5,1963,A,B,branch_b
+ann3,gpt-5.4-nano,mab_4_Lou_Reed_educated_at,50,right,4,399,A,B,branch_b
+ann3,gpt-5.4-nano,mab_2_Lucrețiu_Pătrășcanu_employed_by,51,right,5,2444,B,A,branch_a
+ann3,gpt-5.4-nano,mab_5_Indonesia_head_of_state,52,left,5,2033,A,B,branch_a
+ann3,gpt-5.4-nano,mab_2_Krysten_Ritter_citizen_of,53,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_1_Regina_Ip_works_in_field,54,left,5,2023,A,B,branch_a
+ann3,gpt-5.4-nano,mab_6_SpaceShipOne_produced_by,55,right,5,2192. The company that produced SpaceShi,A,B,branch_b
+ann3,gpt-5.4-nano,mab_6_Silvio_Berlusconi_sport,56,right,5,4042,A,B,branch_b
+ann3,gpt-5.4-nano,mab_1_Burnley_F.C._head_coach_of,57,right,5,2273,B,A,branch_a
+ann3,gpt-5.4-nano,mab_4_Oscar_Wilde_died_in_city,58,left,5,270,B,A,branch_b
+ann3,gpt-5.4-nano,mab_3_Mashrafe_Mortaza_religion,59,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_6_Zeenat_Aman_citizen_of,60,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_3_Bob_Ney_religion,61,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_6_Lucrețiu_Pătrășcanu_employed_by,62,left,5,2444,A,B,branch_a
+ann3,gpt-5.4-nano,mab_2_The_Second_Coming_author_of,63,left,5,3924,B,A,branch_b
+ann3,gpt-5.4-nano,mab_6_Mona_Lisa_created_by,64,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_7_Charles_M._Schulz_famous_for,65,right,5,18280,A,B,branch_b
+ann3,gpt-5.4-nano,mab_5_ASM_Clermont_Auvergne_sport,66,right,5,2210,A,B,branch_b
+ann3,gpt-5.4-nano,mab_2_Kim_Tae-hee_citizen_of,67,left,2,4514,B,A,branch_b
+ann3,gpt-5.4-nano,mab_6_Greece_capital_of,68,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_3_Ron_Dennis_employed_by,69,right,5,14757,A,B,branch_b
+ann3,gpt-5.4-nano,mab_7_Albert_R._Broccoli_citizen_of,70,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_1_Yale_University_chairperson_of,71,right,5,1478,A,B,branch_b
+ann3,gpt-5.4-nano,mab_6_The_Second_Coming_author_of,72,left,5,3924,B,A,branch_b
+ann3,gpt-5.4-nano,mab_0_Israel_continent,73,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_7_Luigi_Delneri_sport,74,left,5,17686,A,B,branch_a
+ann3,gpt-5.4-nano,mab_2_country_rock_created_in_country,75,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_4_midfielder_sport,76,ambiguous,2,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_6_J._Hoberman_citizen_of,77,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_1_Smalcald_Articles_author_of,78,left,5,1914,A,B,branch_a
+ann3,gpt-5.4-nano,mab_2_Brigham_Young_University_hq_city,79,left,2,3293,A,B,branch_a
+ann3,gpt-5.4-nano,mab_7_Cambodia_office_role_of_Prime_Minister,80,left,5,15338,B,A,branch_b
+ann3,gpt-5.4-nano,mab_2_Silvio_Berlusconi_sport,81,left,5,4042,B,A,branch_b
+ann3,gpt-5.4-nano,mab_4_A_Wizard_of_Earthsea_author_of,82,left,5,301,B,A,branch_b
+ann3,gpt-5.4-nano,mab_4_pesäpallo_created_in_country,83,left,5,261,B,A,branch_b
+ann3,gpt-5.4-nano,"mab_0_University_of_California,_Berkeley_hq_city",84,left,5,114,A,B,branch_a
+ann3,gpt-5.4-nano,mab_5_Boyd_Raeburn_music_type,85,right,5,1310,A,B,branch_b
+ann3,gpt-5.4-nano,mab_3_Letter_from_Birmingham_Jail_author_of,86,right,5,14729,A,B,branch_b
+ann3,gpt-5.4-nano,mab_7_Ron_Dennis_employed_by,87,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_5_Bob_Bradley_sport,88,left,5,2151,B,A,branch_b
+ann3,gpt-5.4-nano,mab_3_Warren_Ellis_speaks_language,89,ambiguous,2,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_1_Ireland_continent,90,left,5,2107,A,B,branch_a
+ann3,gpt-5.4-nano,mab_3_Nigel_Martyn_plays_position,91,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_5_2009_WNBA_season_sport,92,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_6_AP1000_produced_by,93,left,2,3569,A,B,branch_a
+ann3,gpt-5.4-nano,mab_2_University_of_Glasgow_hq_city,94,left,2,4420,B,A,branch_b
+ann3,gpt-5.4-nano,mab_1_judo_founded_by,95,right,5,2137,A,B,branch_b
+ann3,gpt-5.4-nano,mab_6_John_Stuart_Mill_married_to,96,left,2,2275,B,A,branch_b
+ann3,gpt-5.4-nano,mab_2_Frank_Zappa_died_in_city,97,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_7_Sheffield_United_F.C._head_coach_of,98,right,5,12714,A,B,branch_b
+ann3,gpt-5.4-nano,mab_5_Gazeta_Wyborcza_hq_city,99,left,5,1356,B,A,branch_b
+ann3,gpt-5.4-nano,mab_6_Taxman_performed_by,100,left,5,3690,A,B,branch_a
+ann3,gpt-5.4-nano,mab_0_Wilhelm_II_educated_at,101,ambiguous,2,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_3_Charles_M._Schulz_famous_for,102,left,5,18280,B,A,branch_b
+ann3,gpt-5.4-nano,mab_3_Oliver_Nelson_music_type,103,right,5,,A,B,branch_b
+ann3,gpt-5.4-nano,mab_7_Steven_Isserlis_citizen_of,104,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_3_Bruce_Grobbelaar_plays_position,105,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_2_George_Bernard_Shaw_works_in_field,106,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_2_John_Hoeven_citizen_of,107,right,5,4232,A,B,branch_b
+ann3,gpt-5.4-nano,mab_3_John_Galt_created_by,108,right,5,12812,B,A,branch_a
+ann3,gpt-5.4-nano,mab_5_Satyajit_Ray_child_is,109,right,5,1978,A,B,branch_b
+ann3,gpt-5.4-nano,mab_7_1995_NBA_Finals_sport,110,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_5_Punk'd_created_by,111,left,5,996,B,A,branch_b
+ann3,gpt-5.4-nano,mab_4_Roy_Rogers_married_to,112,left,5,452,B,A,branch_b
+ann3,gpt-5.4-nano,mab_1_Jim_Kelly_plays_position,113,right,5,2038,B,A,branch_a
+ann3,gpt-5.4-nano,mab_0_Kingdom_of_Ireland_religion,114,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_7_Nigel_Martyn_plays_position,115,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_1_University_of_Milan_hq_city,116,right,5,2226,B,A,branch_a
+ann3,gpt-5.4-nano,mab_2_Revenge_original_broadcaster,117,left,5,4379,A,B,branch_a
+ann3,gpt-5.4-nano,mab_1_Satyajit_Ray_child_is,118,left,5,1978,B,A,branch_b
+ann3,gpt-5.4-nano,mab_0_Congolese_Party_of_Labour_chairperson_of,119,left,5,445,B,A,branch_b
+ann3,gpt-5.4-nano,mab_4_Slovakia_national_football_team_sport,120,right,5,279,B,A,branch_a
+ann3,gpt-5.4-nano,mab_5_judo_founded_by,121,right,1,,B,A,branch_a
+ann3,gpt-5.4-nano,mab_6_George_Bernard_Shaw_works_in_field,122,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_5_Telmex_ceo_of,123,right,5,1464,A,B,branch_b
+ann3,gpt-5.4-nano,mab_1_Revolver_performed_by,124,right,5,1615,A,B,branch_b
+ann3,gpt-5.4-nano,mab_0_British_Broadcasting_Corporation_director_of,125,left,5,428,B,A,branch_b
+ann3,gpt-5.4-nano,mab_4_Aladdin_Sane_performed_by,126,right,5,285,B,A,branch_a
+ann3,gpt-5.4-nano,mab_7_Monica_citizen_of,127,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_4_placekicker_sport,128,right,4,321,B,A,branch_a
+ann3,gpt-5.4-nano,mab_2_Joe_Hockey_citizen_of,129,left,5,4361,A,B,branch_a
+ann3,gpt-5.4-nano,mab_6_University_of_Glasgow_hq_city,130,left,2,4420,B,A,branch_b
+ann3,gpt-5.4-nano,mab_5_Nintendo_founded_by,131,right,5,1683,A,B,branch_b
+ann3,gpt-5.4-nano,mab_5_Sketches_by_Boz_author_of,132,right,5,1026,B,A,branch_a
+ann3,gpt-5.4-nano,mab_2_John_Stuart_Mill_married_to,133,left,2,2275,B,A,branch_b
+ann3,gpt-5.4-nano,mab_6_Helle_Thorning-Schmidt_citizen_of,134,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_7_Laurance_Rockefeller_citizen_of,135,left,5,17793,B,A,branch_b
+ann3,gpt-5.4-nano,mab_0_A_Wizard_of_Earthsea_author_of,136,right,5,301,A,B,branch_b
+ann3,gpt-5.4-nano,mab_1_Jaya_Bhaduri_Bachchan_citizen_of,137,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_0_United_States_of_America_official_language,138,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_0_Lou_Reed_educated_at,139,right,4,399,A,B,branch_b
+ann3,gpt-5.4-nano,mab_1_Jules_Verne_child_is,140,right,5,2265,B,A,branch_a
+ann3,gpt-5.4-nano,mab_2_Helle_Thorning-Schmidt_citizen_of,141,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_6_P._G._Wodehouse_speaks_language,142,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_5_Jim_Kelly_plays_position,143,right,5,2038,B,A,branch_a
+ann3,gpt-5.4-nano,mab_2_Taxman_performed_by,144,left,5,3690,A,B,branch_a
+ann3,gpt-5.4-nano,mab_7_Mashrafe_Mortaza_religion,145,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_1_Michael_Feinstein_citizen_of,146,left,5,2154,A,B,branch_a
+ann3,gpt-5.4-nano,mab_0_Colin_Irwin_citizen_of,147,right,5,441,A,B,branch_b
+ann3,gpt-5.4-nano,mab_5_Smalcald_Articles_author_of,148,right,5,1914,B,A,branch_a
+ann3,gpt-5.4-nano,mab_5_Karunas_citizen_of,149,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_2_tight_end_works_in_field,150,left,5,4450,A,B,branch_a
+ann3,gpt-5.4-nano,mab_3_Cambodia_office_role_of_Prime_Minister,151,right,2,15338,A,B,branch_b
+ann3,gpt-5.4-nano,mab_3_Monica_citizen_of,152,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_6_Revenge_original_broadcaster,153,left,5,4379,A,B,branch_a
+ann3,gpt-5.4-nano,mab_4_New_Firm_sport,154,left,4,376,A,B,branch_a
+ann3,gpt-5.4-nano,mab_0_Past_Masters_performed_by,155,right,5,364,A,B,branch_b
+ann3,gpt-5.4-nano,mab_6_Nick_Folk_plays_position,156,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_6_Tiny_Tim_created_by,157,left,5,4303,B,A,branch_b
+ann3,gpt-5.4-nano,mab_0_Sophia_Hawthorne_married_to,158,left,5,420,B,A,branch_b
+ann3,gpt-5.4-nano,mab_5_University_of_Milan_hq_city,159,left,5,2226,A,B,branch_a
+ann3,gpt-5.4-nano,mab_2_Mona_Lisa_created_by,160,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_4_Kingdom_of_Ireland_religion,161,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_6_John_Hoeven_citizen_of,162,left,5,4232,B,A,branch_b
+ann3,gpt-5.4-nano,mab_0_Charles_Messier_citizen_of,163,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_2_Bob_Bradley_sport,164,left,5,4071,B,A,branch_b
+ann3,gpt-5.4-nano,mab_4_Colin_Irwin_citizen_of,165,left,5,441,B,A,branch_b
+ann3,gpt-5.4-nano,mab_3_1995_NBA_Finals_sport,166,right,1,18288,A,B,branch_b
+ann3,gpt-5.4-nano,mab_4_Tang_Empire_capital_of,167,left,5,177,B,A,branch_b
+ann3,gpt-5.4-nano,mab_4_The_Marriage_of_Figaro_author_of,168,right,1,398,B,A,branch_a
+ann3,gpt-5.4-nano,mab_5_Shawn_Bradley_plays_position,169,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_7_The_Partridge_Family_original_broadcaster,170,right,5,18223,A,B,branch_b
+ann3,gpt-5.4-nano,mab_0_Aladdin_Sane_performed_by,171,right,5,285,B,A,branch_a
+ann3,gpt-5.4-nano,mab_1_Indiana_Jones_created_by,172,right,1,,A,B,branch_b
+ann3,gpt-5.4-nano,mab_2_Blackbird_performed_by,173,right,5,3690,A,B,branch_b
+ann3,gpt-5.4-nano,mab_7_John_V_Palaiologos_died_in_city,174,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_1_Netflix_ceo_of,175,right,5,551,A,B,branch_b
+ann3,gpt-5.4-nano,mab_0_placekicker_sport,176,right,4,321,B,A,branch_a
+ann3,gpt-5.4-nano,mab_1_Sketches_by_Boz_author_of,177,right,5,1026,B,A,branch_a
+ann3,gpt-5.4-nano,mab_5_Michael_Feinstein_citizen_of,178,right,5,2154,B,A,branch_a
+ann3,gpt-5.4-nano,mab_6_Krysten_Ritter_citizen_of,179,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_2_Zeenat_Aman_citizen_of,180,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_2_Greece_capital_of,181,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_6_Spain_official_language,182,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_7_Oliver_Nelson_music_type,183,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_6_Brigham_Young_University_hq_city,184,left,2,3293,A,B,branch_a
+ann3,gpt-5.4-nano,mab_6_country_rock_created_in_country,185,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_3_Albert_R._Broccoli_citizen_of,186,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_1_Girl_Meets_World_original_broadcaster,187,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_4_Sketches_by_Boz_author_of,188,right,5,430,B,A,branch_a
+ann3,gpt-5.4-nano,mab_7_Letter_from_Birmingham_Jail_author_of,189,right,5,14729,A,B,branch_b
+ann3,gpt-5.4-nano,mab_7_Roy_Hodgson_sport,190,right,5,17854,A,B,branch_b
+ann3,gpt-5.4-nano,mab_4_Past_Masters_performed_by,191,left,5,364,B,A,branch_b
+ann3,gpt-5.4-nano,mab_3_Luigi_Delneri_sport,192,left,5,17686,A,B,branch_a
+ann3,gpt-5.4-nano,mab_4_Buddhism_founded_by,193,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_0_The_Marriage_of_Figaro_author_of,194,right,1,398,B,A,branch_a
+ann3,gpt-5.4-nano,mab_2_P._G._Wodehouse_speaks_language,195,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_5_United_States_of_America_gov_head,196,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_6_Blackbird_performed_by,197,left,5,3690,B,A,branch_b
+ann3,gpt-5.4-nano,mab_3_William_Randolph_Hearst_citizen_of,198,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_0_pesäpallo_created_in_country,199,right,5,261,A,B,branch_b
+ann3,gpt-5.4-nano,mab_4_Wilhelm_II_educated_at,200,ambiguous,2,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_7_Carlos_Kleiber_citizen_of,201,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_3_John_V_Palaiologos_died_in_city,202,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_0_New_Firm_sport,203,left,4,376,A,B,branch_a
+ann3,gpt-5.4-nano,mab_0_Slovakia_national_football_team_sport,204,right,5,279,B,A,branch_a
+ann3,gpt-5.4-nano,mab_7_George_Mikan_plays_position,205,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_0_Roy_Rogers_married_to,206,left,5,452,B,A,branch_b
+ann3,gpt-5.4-nano,mab_1_Telmex_ceo_of,207,right,5,1464,A,B,branch_b
+ann3,gpt-5.4-nano,mab_6_Punk'd_created_by,208,right,5,3504,A,B,branch_b
+ann3,gpt-5.4-nano,mab_1_Indonesia_head_of_state,209,left,5,2033,A,B,branch_a
+ann3,gpt-5.4-nano,mab_5_Naruto_created_in_country,210,right,5,1936,A,B,branch_b
+ann3,gpt-5.4-nano,mab_6_tight_end_works_in_field,211,right,4,4450,B,A,branch_a
+ann3,gpt-5.4-nano,mab_2_Tiny_Tim_created_by,212,right,5,4303,A,B,branch_b
+ann3,gpt-5.4-nano,mab_7_The_Art_of_War_created_in_country,213,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_1_Karunas_citizen_of,214,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_0_midfielder_sport,215,ambiguous,2,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_0_Oscar_Wilde_died_in_city,216,left,5,270,B,A,branch_b
+ann3,gpt-5.4-nano,mab_3_Steve_Cooley_religion,217,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_1_Bob_Bradley_sport,218,left,5,2151,B,A,branch_b
+ann3,gpt-5.4-nano,mab_3_Timofey_Mozgov_plays_position,219,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_1_Nintendo_founded_by,220,left,5,1683,B,A,branch_b
+ann3,gpt-5.4-nano,mab_7_Timofey_Mozgov_plays_position,221,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_4_The_Vampyre_written_in_language,222,right,5,426,A,B,branch_b
+ann3,gpt-5.4-nano,mab_4_Charles_Messier_citizen_of,223,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_4_Israel_continent,224,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_5_Ireland_continent,225,left,5,2107,A,B,branch_a
+ann3,gpt-5.4-nano,mab_5_Regina_Ip_works_in_field,226,left,5,2023,A,B,branch_a
+ann3,gpt-5.4-nano,mab_5_Yale_University_chairperson_of,227,left,5,1478,B,A,branch_b
+ann3,gpt-5.4-nano,mab_1_ASM_Clermont_Auvergne_sport,228,right,5,2210,A,B,branch_b
+ann3,gpt-5.4-nano,mab_2_Nick_Folk_plays_position,229,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_7_ABC_Weekend_Special_original_broadcaster,230,right,5,17800,B,A,branch_a
+ann3,gpt-5.4-nano,mab_7_Bruce_Grobbelaar_plays_position,231,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_2_Rodney_Peete_educated_at,232,right,5,2261,A,B,branch_b
+ann3,gpt-5.4-nano,mab_6_Channel_4_hq_city,233,right,4,4023,A,B,branch_b
+ann3,gpt-5.4-nano,mab_6_Caleb_Hanie_plays_position,234,left,4,3817,A,B,branch_a
+ann3,gpt-5.4-nano,mab_5_Revolver_performed_by,235,left,5,1615,B,A,branch_b
+ann3,gpt-5.4-nano,mab_5_Burnley_F.C._head_coach_of,236,left,5,2273,A,B,branch_a
+ann3,gpt-5.4-nano,mab_1_Tony_Harrison_educated_at,237,right,5,2262,A,B,branch_b
+ann3,gpt-5.4-nano,mab_3_The_Dresden_Files_author_of,238,left,5,12079,A,B,branch_a
+ann3,gpt-5.4-nano,mab_0_Madame_du_Barry_citizen_of,239,ambiguous,2,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_1_Naruto_created_in_country,240,left,5,1936,B,A,branch_b
+ann3,gpt-5.4-nano,mab_1_United_States_of_America_gov_head,241,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_1_Shawn_Bradley_plays_position,242,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,"mab_7_William_Cavendish,_4th_Duke_of_Devonshire_works_in_field",243,right,5,15284,A,B,branch_b
+ann3,gpt-5.4-nano,mab_6_Frank_Zappa_died_in_city,244,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_3_University_of_Southern_California_hq_city,245,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_1_2009_WNBA_season_sport,246,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,"mab_4_University_of_California,_Berkeley_hq_city",247,right,5,114,B,A,branch_a
+ann3,gpt-5.4-nano,mab_1_Chiang_Kai-shek_child_is,248,ambiguous,2,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_0_Vijay_Mallya_citizen_of,249,left,5,329,B,A,branch_b
+ann3,gpt-5.4-nano,mab_5_Charles_Baudelaire_educated_at,250,left,2,1963,B,A,branch_b
+ann3,gpt-5.4-nano,mab_5_starting_pitcher_sport,251,left,2,2251,B,A,branch_b
+ann3,gpt-5.4-nano,mab_3_Carlos_Kleiber_citizen_of,252,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_4_Madame_du_Barry_citizen_of,253,ambiguous,2,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_0_wide_receiver_sport,254,right,4,252,B,A,branch_a
+ann3,gpt-5.4-nano,mab_7_William_Randolph_Hearst_citizen_of,255,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_7_Warren_Ellis_speaks_language,256,ambiguous,2,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_1_Boyd_Raeburn_music_type,257,right,5,1310,A,B,branch_b
+ann3,gpt-5.4-nano,mab_7_Jailhouse_Rock_performed_by,258,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_2_AP1000_produced_by,259,left,2,3569,A,B,branch_a
+ann3,gpt-5.4-nano,mab_5_Jaya_Bhaduri_Bachchan_citizen_of,260,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_0_The_Vampyre_written_in_language,261,right,5,426,A,B,branch_b
+ann3,gpt-5.4-nano,mab_7_Rick_DiPietro_educated_at,262,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_6_Sweet_Caroline_performed_by,263,ambiguous,2,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_7_University_of_Southern_California_hq_city,264,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_6_Bob_Bradley_sport,265,right,5,4071,A,B,branch_b
+ann3,gpt-5.4-nano,mab_2_J._Hoberman_citizen_of,266,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_2_Cardinal_Stritch_University_religion,267,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_3_George_Mikan_plays_position,268,ambiguous,1,,B,A,ambiguous
+ann3,gpt-5.4-nano,mab_2_Spain_official_language,269,ambiguous,1,,A,B,ambiguous
+ann3,gpt-5.4-nano,mab_1_Punk'd_created_by,270,right,5,996,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_1_Shawn_Bradley_plays_position,1,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Bob_Ney_religion,2,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Michael_Feinstein_citizen_of,3,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_John_V_Palaiologos_died_in_city,4,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_University_of_Glasgow_hq_city,5,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Steve_Cooley_religion,6,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Chiang_Kai-shek_child_is,7,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_John_Stuart_Mill_married_to,8,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_University_of_Milan_hq_city,9,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Lucrețiu_Pătrășcanu_employed_by,10,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Revolver_performed_by,11,right,2,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),"mab_7_William_Cavendish,_4th_Duke_of_Devonshire_works_in_field",12,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Channel_4_hq_city,13,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Oliver_Nelson_music_type,14,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Albert_R._Broccoli_citizen_of,15,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_Aladdin_Sane_performed_by,16,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Kim_Tae-hee_citizen_of,17,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Brigham_Young_University_hq_city,18,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_P._G._Wodehouse_speaks_language,19,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),"mab_3_William_Cavendish,_4th_Duke_of_Devonshire_works_in_field",20,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Frank_Zappa_died_in_city,21,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Telmex_ceo_of,22,left,2,,A,B,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_5_Gazeta_Wyborcza_hq_city,23,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_ABC_Weekend_Special_original_broadcaster,24,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Girl_Meets_World_original_broadcaster,25,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_Slovakia_national_football_team_sport,26,left,1,,A,B,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_3_Warren_Ellis_speaks_language,27,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Jailhouse_Rock_performed_by,28,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_George_Mikan_plays_position,29,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Rodney_Peete_educated_at,30,right,4,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_4_A_Wizard_of_Earthsea_author_of,31,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_SpaceShipOne_produced_by,32,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Krysten_Ritter_citizen_of,33,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Carlos_Kleiber_citizen_of,34,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_A_Wizard_of_Earthsea_author_of,35,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Steven_Isserlis_citizen_of,36,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_George_Mikan_plays_position,37,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_P._G._Wodehouse_speaks_language,38,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Ireland_continent,39,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_Israel_continent,40,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_Charles_Messier_citizen_of,41,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_United_States_of_America_official_language,42,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_Charles_Messier_citizen_of,43,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Charles_Baudelaire_educated_at,44,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_University_of_Glasgow_hq_city,45,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Helle_Thorning-Schmidt_citizen_of,46,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Tony_Harrison_educated_at,47,right,3,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_5_Netflix_ceo_of,48,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Roy_Hodgson_sport,49,right,5,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_5_Smalcald_Articles_author_of,50,right,5,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_0_New_Firm_sport,51,left,5,,A,B,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_3_Sheffield_United_F.C._head_coach_of,52,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Steven_Isserlis_citizen_of,53,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_Roy_Rogers_married_to,54,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_The_Vampyre_written_in_language,55,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_The_Partridge_Family_original_broadcaster,56,right,2,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_5_Punk'd_created_by,57,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Taxman_performed_by,58,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_J._Hoberman_citizen_of,59,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_William_Randolph_Hearst_citizen_of,60,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_George_Bernard_Shaw_works_in_field,61,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_2009_WNBA_season_sport,62,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Naruto_created_in_country,63,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Mona_Lisa_created_by,64,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Silvio_Berlusconi_sport,65,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Jules_Verne_child_is,66,left,2,,A,B,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_5_Burnley_F.C._head_coach_of,67,left,2,,B,A,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_3_Letter_from_Birmingham_Jail_author_of,68,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_Sophia_Hawthorne_married_to,69,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Revenge_original_broadcaster,70,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Mashrafe_Mortaza_religion,71,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Steve_Cooley_religion,72,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Monica_citizen_of,73,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_AP1000_produced_by,74,right,1,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_3_William_Randolph_Hearst_citizen_of,75,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Telmex_ceo_of,76,left,2,,A,B,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_7_Ron_Dennis_employed_by,77,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_tight_end_works_in_field,78,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Revolver_performed_by,79,left,2,,B,A,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_2_Caleb_Hanie_plays_position,80,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Nick_Folk_plays_position,81,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Jake_Arrieta_plays_position,82,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Joe_Hockey_citizen_of,83,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_The_Art_of_War_created_in_country,84,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Warren_Ellis_speaks_language,85,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Mona_Lisa_created_by,86,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Indiana_Jones_created_by,87,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_Colin_Irwin_citizen_of,88,right,2,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_6_Nick_Folk_plays_position,89,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_Kingdom_of_Ireland_religion,90,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_midfielder_sport,91,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_George_Bernard_Shaw_works_in_field,92,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_University_of_Southern_California_hq_city,93,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Charles_M._Schulz_famous_for,94,right,3,,B,A,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_4_Sable_citizen_of,95,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Bob_Ney_religion,96,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Burnley_F.C._head_coach_of,97,right,2,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_0_Lou_Reed_educated_at,98,left,2,,B,A,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_6_Bob_Bradley_sport,99,left,1,,B,A,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_1_Gazeta_Wyborcza_hq_city,100,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Sweet_Caroline_performed_by,101,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Caleb_Hanie_plays_position,102,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_University_of_Milan_hq_city,103,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Cardinal_Stritch_University_religion,104,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Brigham_Young_University_hq_city,105,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_Congolese_Party_of_Labour_chairperson_of,106,left,2,,A,B,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_3_The_Art_of_War_created_in_country,107,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Blackbird_performed_by,108,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Lucrețiu_Pătrășcanu_employed_by,109,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_London_office_role_of_Mayor,110,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_starting_pitcher_sport,111,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Revenge_original_broadcaster,112,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_wide_receiver_sport,113,right,4,,B,A,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_4_placekicker_sport,114,right,3,,B,A,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_1_Jaya_Bhaduri_Bachchan_citizen_of,115,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_country_rock_created_in_country,116,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Frank_Zappa_died_in_city,117,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_John_V_Palaiologos_died_in_city,118,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Bruce_Grobbelaar_plays_position,119,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_Buddhism_founded_by,120,right,2,,B,A,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_7_Sheffield_United_F.C._head_coach_of,121,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Kim_Tae-hee_citizen_of,122,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_The_Vampyre_written_in_language,123,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_Tang_Empire_capital_of,124,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Roy_Hodgson_sport,125,left,5,,B,A,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_1_Bob_Bradley_sport,126,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_The_Marriage_of_Figaro_author_of,127,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_Sophia_Hawthorne_married_to,128,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_John_Stuart_Mill_married_to,129,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_starting_pitcher_sport,130,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Tiny_Tim_created_by,131,left,3,,B,A,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_1_Madonna_director_of,132,right,5,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_3_Timofey_Mozgov_plays_position,133,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Channel_4_hq_city,134,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_University_of_Southern_California_hq_city,135,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_SpaceShipOne_produced_by,136,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_Sketches_by_Boz_author_of,137,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Indiana_Jones_created_by,138,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_tight_end_works_in_field,139,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_judo_founded_by,140,right,5,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_0_Vijay_Mallya_citizen_of,141,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_Colin_Irwin_citizen_of,142,right,2,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_6_Spain_official_language,143,left,2,,A,B,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_4_Madame_du_Barry_citizen_of,144,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Rick_DiPietro_educated_at,145,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Cambodia_office_role_of_Prime_Minister,146,right,1,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_5_United_States_of_America_gov_head,147,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Ireland_continent,148,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Blackbird_performed_by,149,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Sweet_Caroline_performed_by,150,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_John_Hoeven_citizen_of,151,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Nigel_Martyn_plays_position,152,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Bob_Bradley_sport,153,left,1,,B,A,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_1_Satyajit_Ray_child_is,154,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Jailhouse_Rock_performed_by,155,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_New_Firm_sport,156,right,5,,B,A,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_4_Israel_continent,157,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Nintendo_founded_by,158,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Naruto_created_in_country,159,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_Past_Masters_performed_by,160,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Joe_Hockey_citizen_of,161,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Rick_DiPietro_educated_at,162,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_Lou_Reed_educated_at,163,right,2,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_5_Karunas_citizen_of,164,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_wide_receiver_sport,165,right,4,,B,A,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_4_Congolese_Party_of_Labour_chairperson_of,166,right,2,,B,A,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_2_Punk'd_created_by,167,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_Past_Masters_performed_by,168,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_United_States_of_America_official_language,169,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_judo_founded_by,170,right,5,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_4_Aladdin_Sane_performed_by,171,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Jim_Kelly_plays_position,172,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_Buddhism_founded_by,173,left,2,,A,B,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_5_Boyd_Raeburn_music_type,174,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Michael_Feinstein_citizen_of,175,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_The_Marriage_of_Figaro_author_of,176,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Mashrafe_Mortaza_religion,177,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Yale_University_chairperson_of,178,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_Wilhelm_II_educated_at,179,left,4,,A,B,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_4_pesäpallo_created_in_country,180,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_John_Galt_created_by,181,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Greece_capital_of,182,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Tony_Harrison_educated_at,183,right,3,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_3_Ron_Dennis_employed_by,184,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_Tang_Empire_capital_of,185,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Charles_M._Schulz_famous_for,186,left,3,,A,B,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_6_Punk'd_created_by,187,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_United_States_of_America_gov_head,188,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Laurance_Rockefeller_citizen_of,189,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Albert_R._Broccoli_citizen_of,190,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_The_Dresden_Files_author_of,191,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_J._Hoberman_citizen_of,192,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Zeenat_Aman_citizen_of,193,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_Sable_citizen_of,194,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_2009_WNBA_season_sport,195,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Sketches_by_Boz_author_of,196,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Letter_from_Birmingham_Jail_author_of,197,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_Roy_Rogers_married_to,198,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_Wilhelm_II_educated_at,199,left,4,,A,B,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_2_Cardinal_Stritch_University_religion,200,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Chiang_Kai-shek_child_is,201,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Zeenat_Aman_citizen_of,202,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Taxman_performed_by,203,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Punk'd_created_by,204,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_Sketches_by_Boz_author_of,205,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Boyd_Raeburn_music_type,206,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Madonna_director_of,207,right,5,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),"mab_4_University_of_California,_Berkeley_hq_city",208,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Spain_official_language,209,right,2,,B,A,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_3_Luigi_Delneri_sport,210,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Cambodia_office_role_of_Prime_Minister,211,right,1,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_5_ASM_Clermont_Auvergne_sport,212,right,5,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_6_John_Hoeven_citizen_of,213,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Netflix_ceo_of,214,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_The_Dresden_Files_author_of,215,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_John_Galt_created_by,216,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Silvio_Berlusconi_sport,217,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_Madame_du_Barry_citizen_of,218,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Bruce_Grobbelaar_plays_position,219,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Monica_citizen_of,220,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_Vijay_Mallya_citizen_of,221,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Greece_capital_of,222,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_Krysten_Ritter_citizen_of,223,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_1995_NBA_Finals_sport,224,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Regina_Ip_works_in_field,225,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Nigel_Martyn_plays_position,226,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_country_rock_created_in_country,227,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Laurance_Rockefeller_citizen_of,228,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Oliver_Nelson_music_type,229,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_AP1000_produced_by,230,left,1,,B,A,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_2_Helle_Thorning-Schmidt_citizen_of,231,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_British_Broadcasting_Corporation_director_of,232,left,4,,A,B,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_0_placekicker_sport,233,left,3,,A,B,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_0_Oscar_Wilde_died_in_city,234,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_The_Second_Coming_author_of,235,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_Oscar_Wilde_died_in_city,236,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Jaya_Bhaduri_Bachchan_citizen_of,237,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Girl_Meets_World_original_broadcaster,238,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Karunas_citizen_of,239,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_6_Tiny_Tim_created_by,240,left,3,,B,A,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_1_Smalcald_Articles_author_of,241,right,5,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_1_Jim_Kelly_plays_position,242,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Sketches_by_Boz_author_of,243,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Nintendo_founded_by,244,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Timofey_Mozgov_plays_position,245,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_London_office_role_of_Mayor,246,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Regina_Ip_works_in_field,247,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_Jake_Arrieta_plays_position,248,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Indonesia_head_of_state,249,left,2,,A,B,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_7_Luigi_Delneri_sport,250,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_The_Partridge_Family_original_broadcaster,251,left,2,,B,A,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_5_Charles_Baudelaire_educated_at,252,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_British_Broadcasting_Corporation_director_of,253,left,4,,A,B,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_5_Indonesia_head_of_state,254,right,2,,B,A,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_6_Rodney_Peete_educated_at,255,right,4,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_7_1995_NBA_Finals_sport,256,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_3_ABC_Weekend_Special_original_broadcaster,257,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_ASM_Clermont_Auvergne_sport,258,right,5,,A,B,branch_b
+ann4,local NLI (nli-deberta-v3-small),mab_0_Kingdom_of_Ireland_religion,259,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_4_Slovakia_national_football_team_sport,260,right,1,,B,A,branch_a
+ann4,local NLI (nli-deberta-v3-small),mab_5_Shawn_Bradley_plays_position,261,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Bob_Bradley_sport,262,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_pesäpallo_created_in_country,263,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_2_The_Second_Coming_author_of,264,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Satyajit_Ray_child_is,265,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_7_Carlos_Kleiber_citizen_of,266,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_1_Yale_University_chairperson_of,267,ambiguous,1,,A,B,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_0_midfielder_sport,268,ambiguous,1,,B,A,ambiguous
+ann4,local NLI (nli-deberta-v3-small),mab_5_Jules_Verne_child_is,269,right,2,,B,A,branch_a
+ann4,local NLI (nli-deberta-v3-small),"mab_0_University_of_California,_Berkeley_hq_city",270,ambiguous,1,,A,B,ambiguous

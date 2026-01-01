@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this reconciliation problem. So, the common ancestor has a value for \"user|delivery_dropoff_location\" which is \"Building management requires all parcels left at the front desk.\" Now, Branch A and Branch B have different updates.\n\nFirst, looking at Branch A: their value is \"Leave every package directly outside the apartment door.\" The source is \"user\" and confidence is 0.95. That's pretty high confidence and user-sourced, which is usually reliable.\n\nBranch B has a value of \"Packages should be delivered to the front desk only.\" Their source is \"inference\" with confidence 0.55. Lower confidence and inferred, which is less trustworthy.\n\nThe common ancestor's value was about front desk. Branch A changed it to outside the door. Branch B kept it as front desk but maybe with a different phrasing. Wait, the ancestor's value was front desk, and Branch B's value is also front desk, but phrased differently. Wait, no: the ancestor's value was \"Building management requires all parcels left at the front desk.\" Branch B's value is \"Packages should be delivered to the front desk only.\" So both are about front desk, but Branch A changed it to outside the door. \n\nSo the conflict is between Branch A's user update (high confidence) and Branch B's inferred update (lower confidence). The ancestor's value was front desk. Now, Branch A says outside the door, which is a different location. Branch B is reinforcing the front desk. \n\nSince the user's update (Branch A) is more confident and directly from the user, it's more trustworthy. The inference from Branch B is less certain. So the resolution should keep Branch A's value. The ancestor's value was front desk, but Branch A's user input overrides that. Unless there's a reason to think Branch B's inference is correct, but since it's inferred, it's less reliable. So the answer is to keep Branch A's value.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"delivery_dropoff_location\",\n      \"resolution\": \"kept_from_a\",\n      \"value\": \"Leave every package directly outside the apartment door.\",\n      \"justification\": \"Branch A's user-sourced update with high confidence directly overrides the ancestor's value, while Branch B's inferred value has lower confidence and aligns with the ancestor's original front-desk instruction.\"\n    }\n  ]\n}",
+  "model": "qwen3:8b",
+  "input_tokens": 514,
+  "output_tokens": 513,
+  "raw": {
+    "id": "chatcmpl-597",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this reconciliation problem. So, the common ancestor has a value for \"user|delivery_dropoff_location\" which is \"Building management requires all parcels left at the front desk.\" Now, Branch A and Branch B have different updates.\n\nFirst, looking at Branch A: their value is \"Leave every package directly outside the apartment door.\" The source is \"user\" and confidence is 0.95. That's pretty high confidence and user-sourced, which is usually reliable.\n\nBranch B has a value of \"Packages should be delivered to the front desk only.\" Their source is \"inference\" with confidence 0.55. Lower confidence and inferred, which is less trustworthy.\n\nThe common ancestor's value was about front desk. Branch A changed it to outside the door. Branch B kept it as front desk but maybe with a different phrasing. Wait, the ancestor's value was front desk, and Branch B's value is also front desk, but phrased differently. Wait, no: the ancestor's value was \"Building management requires all parcels left at the front desk.\" Branch B's value is \"Packages should be delivered to the front desk only.\" So both are about front desk, but Branch A changed it to outside the door. \n\nSo the conflict is between Branch A's user update (high confidence) and Branch B's inferred update (lower confidence). The ancestor's value was front desk. Now, Branch A says outside the door, which is a different location. Branch B is reinforcing the front desk. \n\nSince the user's update (Branch A) is more confident and directly from the user, it's more trustworthy. The inference from Branch B is less certain. So the resolution should keep Branch A's value. The ancestor's value was front desk, but Branch A's user input overrides that. Unless there's a reason to think Branch B's inference is correct, but since it's inferred, it's less reliable. So the answer is to keep Branch A's value.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"delivery_dropoff_location\",\n      \"resolution\": \"kept_from_a\",\n      \"value\": \"Leave every package directly outside the apartment door.\",\n      \"justification\": \"Branch A's user-sourced update with high confidence directly overrides the ancestor's value, while Branch B's inferred value has lower confidence and aligns with the ancestor's original front-desk instruction.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794790133,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 513,
+      "prompt_tokens": 514,
+      "total_tokens": 1027,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|delivery_dropoff_location\": \"Building management requires all parcels left at the front desk.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|delivery_dropoff_location\": {\n    \"value\": \"Leave every package directly outside the apartment door.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|delivery_dropoff_location\": {\n    \"value\": \"Packages should be delivered to the front desk only.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

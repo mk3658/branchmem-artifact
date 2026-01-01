@@ -1,0 +1,48 @@
+{
+  "text": "UNSURE",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 160,
+  "output_tokens": 6,
+  "raw": {
+    "id": "chatcmpl-E4kyTLsxw9sHpJkufZwEmFm8J4HyP",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "UNSURE",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802589,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 160,
+      "total_tokens": 166,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "User memory:\n- user.real_estate_appraiser_trainee_scope (background constraint): I am registered only as an appraiser trainee and must work under a supervisory appraiser.\n- user.real_estate_appraiser_trainee_scope: I can independently sign residential appraisal reports without any supervising appraiser.\n\nBased only on this memory, is the following currently true of the user?\nStatement: \"I can independently sign residential appraisal reports without any supervising appraiser.\"\nAnswer with exactly one word: YES, NO, or UNSURE.",
+  "system": "You answer strictly from the user memory provided. If the memory does not support the statement, answer NO. If the memory is unresolved, contradictory, or insufficient, answer UNSURE. Respect any stated constraints in the memory."
+}

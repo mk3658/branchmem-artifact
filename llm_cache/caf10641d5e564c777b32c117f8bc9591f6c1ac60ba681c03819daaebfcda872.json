@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"left\",\"confidence_1_5\":2,\"evidence_span\":\"4514\"}",
+  "model": "gpt-5.4-nano-2026-03-17",
+  "input_tokens": 341,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkFs4OPI0aUoQde1oPdIqm8rRuCoQ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"left\",\"confidence_1_5\":2,\"evidence_span\":\"4514\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794692804,
+    "model": "gpt-5.4-nano-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 341,
+      "total_tokens": 364,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Kim Tae-hee\nRelation: citizen_of\nPreviously recorded value (may be stale, may be empty): South Korea\n\nCandidate LEFT:  United States of America\nCandidate RIGHT: Iran\n\nEvidence lines (numbered, in original order):\n4500. savate was created in the country of United States of America.\n4502. Gennady Rozhdestvensky died in the city of United States of America.\n4514. Henry McMaster is a citizen of United States of America.\n4525. Lisa Marie Presley is a citizen of United States of America.\n4547. The headquarters of University of Tirana is located in the city of Tirana.\n4566. Tomokazu Seki is a citizen of United States of America.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"18280\"}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 436,
+  "output_tokens": 29,
+  "raw": {
+    "id": "chatcmpl-EkMzkOESpdG8e9HsakcS2lEGQUSR5",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"18280\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794720188,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 29,
+      "prompt_tokens": 436,
+      "total_tokens": 465,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Charles M. Schulz\nRelation: famous_for\nPreviously recorded value (may be stale, may be empty): Peanuts\n\nCandidate LEFT:  A Nightmare on Elm Street\nCandidate RIGHT: The Thorn Birds\n\nEvidence lines (numbered, in original order):\n275. A Charlie Brown Christmas was created by Charles M. Schulz.\n547. Charles M. Schulz is a citizen of United States of America.\n2229. Colleen McCullough is famous for The Thorn Birds.\n2887. Charlie Brown was created by Charles M. Schulz.\n4433. The Thorn Birds was written in the language of English.\n6510. Charles M. Schulz is a citizen of United Kingdom.\n7184. Charles M. Schulz speaks the language of English.\n7269. Dallas was created by Charles M. Schulz.\n9220. Charles M. Schulz is famous for Peanuts.\n10653. Snoopy was created by Charles M. Schulz.\n15361. A Nightmare on Elm Street was created in the country of United States of America.\n17904. The Thorn Birds was written in the language of French.\n18280. Charles M. Schulz is famous for A Nightmare on Elm Street.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

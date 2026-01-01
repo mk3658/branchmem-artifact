@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"ambiguous\",\"confidence_1_5\":1,\"evidence_span\":\"\"}",
+  "model": "gpt-5.4-nano-2026-03-17",
+  "input_tokens": 646,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkG210zXA5TJCgXHoDGmXXxMvzNke",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"ambiguous\",\"confidence_1_5\":1,\"evidence_span\":\"\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794693421,
+    "model": "gpt-5.4-nano-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 646,
+      "total_tokens": 669,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: University of Southern California\nRelation: hq_city\nPreviously recorded value (may be stale, may be empty): Los Angeles\n\nCandidate LEFT:  Israel\nCandidate RIGHT: RAAF Base Glenbrook\n\nEvidence lines (numbered, in original order):\n11249. Colin Irwin is a citizen of Israel.\n11824. James Russell Lowell is a citizen of Israel.\n11966. Moshe Ya'alon is a citizen of Israel.\n12070. Jessie's Girl was created in the country of Israel.\n12129. Shirley Williams is a citizen of Israel.\n12456. Jesse Orosco is a citizen of Israel.\n12823. Catherine II of Russia is a citizen of Israel.\n12963. The chairperson of Israeli Labor Party is Amir Peretz.\n13057. erhu was created in the country of Israel.\n13405. Kokhav Nolad was created in the country of Israel.\n13705. The capital of Israel is Jerusalem.\n13787. Monk was created in the country of Israel.\n14261. Jorge Masvidal is a citizen of Israel.\n14389. Jeune Afrique was created in the country of Israel.\n14583. Jerry Buss is employed by University of Southern California.\n14620. Chen Guangcheng is a citizen of Israel.\n14847. Richard Bushman is a citizen of Israel.\n14956. The univeristy where Samuel Beckett was educated is University of Southern California.\n14982. Gerrit Rietveld is a citizen of Israel.\n15000. The capital of Israel is Quchan.\n15004. Milutin Milankovi\u0107 is employed by University of Southern California.\n15012. Shalom Hanoch is a citizen of Israel.\n15162. The univeristy where Louis Zamperini was educated is University of Southern California.\n16017. The Prime Minister of Israel is Felipe VI of Spain.\n16345. George Lucas is a citizen of Israel.\n16374. We Found Love was created in the country of Israel.\n16552. The univeristy where Wilhelm Reich was educated is University of Southern California.\n16993. The President of Israel is Sonny Perdue.\n17624. The chairperson of Israeli Labor Party is Mark Carney.\n17718. Dax Shepard is a citizen of Israel.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

@@ -1,0 +1,48 @@
+{
+  "text": "{\"items\":[{\"type\":\"immutable_constraint\",\"predicate\":\"earliest_allowed_call_time\",\"ancestor_value\":\"Union rules forbid any cast call before six in the morning.\",\"update_value\":\"The cast call is set for five thirty in the morning.\",\"keep_value\":\"The cast call cannot be earlier than six in the morning.\",\"why_correct\":\"the standing union rule still prohibits any earlier call\"},{\"type\":\"legitimate_override\",\"predicate\":\"friday_rehearsal_call_time\",\"ancestor_value\":\"Friday rehearsal call is at noon.\",\"update_value\":\"Friday rehearsal call is now at one in the afternoon.\",\"keep_value\":\"Friday rehearsal call remains at noon.\",\"why_correct\":\"the newer explicit change supersedes the older recorded time\"},{\"type\":\"independent_observation\",\"predicate\":\"current_load_in_call_time\",\"ancestor_value\":\"Load-in call was seven this past week.\",\"update_value\":\"Load-in call is eight this week.\",\"keep_value\":\"Load-in call was seven this past week.\",\"why_correct\":\"the content itself marks this week as the current value\"},{\"type\":\"ambiguous\",\"predicate\":\"saturday_soundcheck_call_time\",\"ancestor_value\":\"Saturday includes a full soundcheck before doors open.\",\"update_value\":\"Saturday soundcheck call is at ten in the morning.\",\"keep_value\":\"Saturday soundcheck call is at eleven in the morning.\",\"why_correct\":\"the two conflicting times are equally supported and the background fact does not decide\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 639,
+  "output_tokens": 281,
+  "raw": {
+    "id": "chatcmpl-EkS2D1si3TU2Nkx2tM30iJJ1C0dVx",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"items\":[{\"type\":\"immutable_constraint\",\"predicate\":\"earliest_allowed_call_time\",\"ancestor_value\":\"Union rules forbid any cast call before six in the morning.\",\"update_value\":\"The cast call is set for five thirty in the morning.\",\"keep_value\":\"The cast call cannot be earlier than six in the morning.\",\"why_correct\":\"the standing union rule still prohibits any earlier call\"},{\"type\":\"legitimate_override\",\"predicate\":\"friday_rehearsal_call_time\",\"ancestor_value\":\"Friday rehearsal call is at noon.\",\"update_value\":\"Friday rehearsal call is now at one in the afternoon.\",\"keep_value\":\"Friday rehearsal call remains at noon.\",\"why_correct\":\"the newer explicit change supersedes the older recorded time\"},{\"type\":\"independent_observation\",\"predicate\":\"current_load_in_call_time\",\"ancestor_value\":\"Load-in call was seven this past week.\",\"update_value\":\"Load-in call is eight this week.\",\"keep_value\":\"Load-in call was seven this past week.\",\"why_correct\":\"the content itself marks this week as the current value\"},{\"type\":\"ambiguous\",\"predicate\":\"saturday_soundcheck_call_time\",\"ancestor_value\":\"Saturday includes a full soundcheck before doors open.\",\"update_value\":\"Saturday soundcheck call is at ten in the morning.\",\"keep_value\":\"Saturday soundcheck call is at eleven in the morning.\",\"why_correct\":\"the two conflicting times are equally supported and the background fact does not decide\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794739561,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 281,
+      "prompt_tokens": 639,
+      "total_tokens": 920,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Domain: stage call times\n\nWrite FOUR memory-conflict items in this domain, one of each type. In every item an\nassistant has an older recorded value for one key, and a newer incoming update that\nconflicts with it. Use the SAME entity \"user\" and a DIFFERENT snake_case predicate per item.\n\n1. \"immutable_constraint\": `ancestor_value` states a STANDING RULE or hard limit that cannot\n   simply be overridden by a later preference (a rule imposed by someone else, a physical\n   limit, a contractual or safety requirement). `update_value` is an assertion that would\n   VIOLATE that rule. `keep_value` is a statement consistent with the rule. The correct\n   resolution is `keep_value`, because the rule still holds.\n\n2. \"legitimate_override\": `ancestor_value` states an ORDINARY, revisable recorded value with\n   no standing-rule force. `update_value` is a genuine, explicit correction or change of that\n   value. `keep_value` restates the now-stale ancestor value. The correct resolution is\n   `update_value`, because the newer statement supersedes a stale one.\n\n3. \"independent_observation\": two observations of a fact that changes over time, where the\n   CONTENT of the values itself says which is current (e.g. one says \"as of last season\", the\n   other \"as of this week\"). The correct resolution is the one the content marks as current;\n   put that text in `update_value` and the superseded text in `keep_value`.\n\n4. \"ambiguous\": two equally well-warranted, mutually exclusive values with nothing in the\n   content to choose between them. Correct behaviour is to decline to answer. For THIS type\n   only, `ancestor_value` must be a NEUTRAL background fact in the domain that bears on\n   neither value and does not restate either of them, so that the ancestor gives no evidence.\n\nRules for every item: `ancestor_value`, `update_value` and `keep_value` must each read as a\nnatural standalone statement of 4 to 18 words; they must be mutually distinguishable in\nmeaning, not rewordings; nothing in any value may mention sources, who said it, confidence,\nreliability, timestamps in clock form, or how trustworthy it is.\n\nRespond with strict JSON only:\n{\"items\": [\n  {\"type\": \"immutable_constraint\", \"predicate\": \"<snake_case>\", \"ancestor_value\": \"...\",\n    \"update_value\": \"...\", \"keep_value\": \"...\", \"why_correct\": \"<one clause>\"},\n  {\"type\": \"legitimate_override\", ...},\n  {\"type\": \"independent_observation\", ...},\n  {\"type\": \"ambiguous\", ...}\n]}\n",
+  "system": "You author evaluation items for a benchmark on reconciling conflicting entries in an AI assistant's long-term memory. You write realistic, mundane, non-sensitive items about everyday logistics. You never write medical, dietary, allergy, religious, financial-hardship or disability content. You output strict JSON only."
+}

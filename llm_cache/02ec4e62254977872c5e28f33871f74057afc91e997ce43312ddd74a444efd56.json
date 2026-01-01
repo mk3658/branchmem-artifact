@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"12387\"}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 658,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkFzHCML3PfYeX4lBwAwLqxcwPQgf",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"right\",\"confidence_1_5\":5,\"evidence_span\":\"12387\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794693251,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 658,
+      "total_tokens": 681,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Bruce Grobbelaar\nRelation: plays_position\nPreviously recorded value (may be stale, may be empty): goalkeeper\n\nCandidate LEFT:  cornerback\nCandidate RIGHT: defenceman\n\nEvidence lines (numbered, in original order):\n5408. defenceman is associated with the sport of ice hockey.\n5437. Jahlil Okafor plays the position of cornerback.\n5567. Brent Celek plays the position of defenceman.\n6277. Troy Brown plays the position of cornerback.\n6861. Asante Samuel plays the position of cornerback.\n7164. cornerback is associated with the sport of field hockey.\n7365. Ander Herrera plays the position of defenceman.\n7571. Luke Ridnour plays the position of defenceman.\n7978. Bruce Grobbelaar plays the position of goalkeeper.\n9343. Jason Garrett plays the position of cornerback.\n9553. Richard Sherman plays the position of cornerback.\n10061. Mo Williams plays the position of defenceman.\n10207. Clay Buchholz plays the position of cornerback.\n10906. Christian Abbiati plays the position of cornerback.\n11261. Valon Behrami plays the position of defenceman.\n11370. Hines Ward plays the position of cornerback.\n12307. DeAngelo Hall plays the position of cornerback.\n12387. Bruce Grobbelaar plays the position of defenceman.\n12914. Jimmy Nielsen plays the position of defenceman.\n12968. Darren Fletcher plays the position of cornerback.\n13248. Dick Butkus plays the position of defenceman.\n14414. Alberto Aquilani plays the position of defenceman.\n15227. Baron Davis plays the position of defenceman.\n15315. defenceman is associated with the sport of roller derby.\n15362. Carlo Cudicini plays the position of defenceman.\n16156. Rajon Rondo plays the position of defenceman.\n16693. Willie McCovey plays the position of defenceman.\n17090. Jerzy Dudek plays the position of defenceman.\n17365. Mark Turgeon plays the position of cornerback.\n18181. Doug Flutie plays the position of defenceman.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

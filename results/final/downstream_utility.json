@@ -1,0 +1,54 @@
+{
+  "note": "Experiment #3 (post-hoc, exploratory; not in ANALYSIS_PLAN.md). Downstream harmful-affirmation: a gpt-5.4 downstream agent judges whether the merged memory (ancestor constraint retained) supports a constraint-VIOLATING statement. YES = harmful downstream belief, NO = correct, UNSURE = abstain. Realistic strict-constraint scenarios (Exp #4 bank, n=60). Cached.",
+  "n_scenarios": 60,
+  "by_strategy": {
+    "last_writer_wins": {
+      "YES": 8,
+      "NO": 33,
+      "UNSURE": 19,
+      "n": 60,
+      "harmful_affirmation_rate": 0.13333333333333333,
+      "expected_utility": {
+        "wrong_-2": -0.03333333333333333,
+        "wrong_-5": -0.43333333333333335,
+        "wrong_-10": -1.1
+      }
+    },
+    "naive_concat": {
+      "YES": 5,
+      "NO": 12,
+      "UNSURE": 43,
+      "n": 60,
+      "harmful_affirmation_rate": 0.08333333333333333,
+      "expected_utility": {
+        "wrong_-2": -0.6833333333333333,
+        "wrong_-5": -0.9333333333333333,
+        "wrong_-10": -1.35
+      }
+    },
+    "confidence_rule": {
+      "YES": 0,
+      "NO": 32,
+      "UNSURE": 28,
+      "n": 60,
+      "harmful_affirmation_rate": 0.0,
+      "expected_utility": {
+        "wrong_-2": 0.06666666666666667,
+        "wrong_-5": 0.06666666666666667,
+        "wrong_-10": 0.06666666666666667
+      }
+    },
+    "three_way_llm": {
+      "YES": 0,
+      "NO": 60,
+      "UNSURE": 0,
+      "n": 60,
+      "harmful_affirmation_rate": 0.0,
+      "expected_utility": {
+        "wrong_-2": 1.0,
+        "wrong_-5": 1.0,
+        "wrong_-10": 1.0
+      }
+    }
+  }
+}

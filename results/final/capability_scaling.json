@@ -1,0 +1,50 @@
+{
+  "note": "Experiment #2 (post-hoc, exploratory; not in ANALYSIS_PLAN.md). Single-call ThreeWayLLMMerge abstention decomposition on semantic_resolvable (seed 3001, n=150) across the model ladder. Uniform temp=0.0/max_tokens=8000; all calls served from the content-hash cache. Capability governs CALIBRATION: only the frontier reaches a wrong-commit-free selective-resolution regime.",
+  "rule_baseline": {
+    "accuracy": 0.0,
+    "commit_rate": 0.0,
+    "note": "equal confidence -> always flags"
+  },
+  "models": {
+    "llama-3.1-8b": {
+      "n_keys": 150,
+      "accuracy": 0.14,
+      "commit_rate": 0.38,
+      "conditional_on_commit_accuracy": 0.3684210526315789,
+      "wrong_commit_rate": 0.24,
+      "n_committed": 57,
+      "n_wrong_committed": 36,
+      "capability_rank": 1
+    },
+    "gpt-5.4-nano": {
+      "n_keys": 150,
+      "accuracy": 0.0,
+      "commit_rate": 0.16666666666666666,
+      "conditional_on_commit_accuracy": 0.0,
+      "wrong_commit_rate": 0.16666666666666666,
+      "n_committed": 25,
+      "n_wrong_committed": 25,
+      "capability_rank": 2
+    },
+    "claude-haiku-4-5": {
+      "n_keys": 150,
+      "accuracy": 0.0,
+      "commit_rate": 0.0,
+      "conditional_on_commit_accuracy": null,
+      "wrong_commit_rate": 0.0,
+      "n_committed": 0,
+      "n_wrong_committed": 0,
+      "capability_rank": 3
+    },
+    "gpt-5.4": {
+      "n_keys": 150,
+      "accuracy": 0.4666666666666667,
+      "commit_rate": 0.4666666666666667,
+      "conditional_on_commit_accuracy": 1.0,
+      "wrong_commit_rate": 0.0,
+      "n_committed": 70,
+      "n_wrong_committed": 0,
+      "capability_rank": 4
+    }
+  }
+}

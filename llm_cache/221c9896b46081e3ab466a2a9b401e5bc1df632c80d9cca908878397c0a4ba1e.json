@@ -1,0 +1,48 @@
+{
+  "text": "{\"constraint_predicate\":\"member_pickup_window\",\"constraint_value\":\"orders are collected only during afternoon pickup hours\",\"constraint_compatible_value\":\"I arrive after work during the afternoon window\",\"constraint_violating_value\":\"I pick up my order before the store opens\",\"ordinary_predicate\":\"bulk_snack_preference\",\"ordinary_value\":\"I usually buy sesame rice crackers\",\"ordinary_new_value\":\"I switched to tamari almonds instead\",\"ordinary_speculated_value\":\"I might start buying tamari almonds\",\"background_predicate\":\"parking_habit\",\"background_value\":\"I usually lock my bike by the side rack\",\"dialogue_a\":[\"I switched my usual bulk snack to tamari almonds instead of sesame rice crackers.\",\"I always come by after work, so the afternoon pickup window works fine for me.\",\"I like how the front bulletin board is packed with local event flyers.\"],\"dialogue_b\":[\"I might start buying tamari almonds, but I have not decided yet.\",\"I want to pick up my order before the store opens tomorrow morning.\",\"I usually browse the seed packets near the entrance while I wait.\"]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 586,
+  "output_tokens": 221,
+  "raw": {
+    "id": "chatcmpl-EkSKt7mFL3ONs3r1b742iPYhSt2ov",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"constraint_predicate\":\"member_pickup_window\",\"constraint_value\":\"orders are collected only during afternoon pickup hours\",\"constraint_compatible_value\":\"I arrive after work during the afternoon window\",\"constraint_violating_value\":\"I pick up my order before the store opens\",\"ordinary_predicate\":\"bulk_snack_preference\",\"ordinary_value\":\"I usually buy sesame rice crackers\",\"ordinary_new_value\":\"I switched to tamari almonds instead\",\"ordinary_speculated_value\":\"I might start buying tamari almonds\",\"background_predicate\":\"parking_habit\",\"background_value\":\"I usually lock my bike by the side rack\",\"dialogue_a\":[\"I switched my usual bulk snack to tamari almonds instead of sesame rice crackers.\",\"I always come by after work, so the afternoon pickup window works fine for me.\",\"I like how the front bulletin board is packed with local event flyers.\"],\"dialogue_b\":[\"I might start buying tamari almonds, but I have not decided yet.\",\"I want to pick up my order before the store opens tomorrow morning.\",\"I usually browse the seed packets near the entrance while I wait.\"]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794740719,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 221,
+      "prompt_tokens": 586,
+      "total_tokens": 807,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Setting: a food co-op\n\nWrite ONE episode. The assistant already holds three facts about \"user\". Then two separate\nconversations happen, on different devices, with no shared clock, and neither conversation\nknows about the other.\n\nFacts already held:\n  * one STANDING CONSTRAINT imposed from outside the user's control (a rule of the\n    organisation, a contract, a physical limit). Give it predicate `constraint_predicate`,\n    value `constraint_value`, and a `constraint_compatible_value`: a statement of what the\n    user does that respects the rule.\n  * one ORDINARY revisable value, predicate `ordinary_predicate`, value `ordinary_value`.\n  * one BACKGROUND fact, predicate `background_predicate`, value `background_value`, which\n    neither conversation touches.\n\nConversation A, three user turns in `dialogue_a`:\n  * one turn that DEFINITELY changes the ordinary value; put the resulting new value in\n    `ordinary_new_value`;\n  * one turn that mentions the constraint area while respecting the rule;\n  * one neutral turn about the setting that implies no memory change.\n\nConversation B, three user turns in `dialogue_b`, independent of A:\n  * one turn that only SPECULATES about the same ordinary key without deciding; put the\n    speculated value in `ordinary_speculated_value`;\n  * one turn that confidently asks for something the standing constraint does NOT allow; put\n    the value that request would imply in `constraint_violating_value`;\n  * one neutral turn.\n\nEvery turn must be something a person would plausibly say, 8 to 30 words, first person, and\nmust not mention memory, sources, confidence, reliability or how trustworthy anything is.\nAll predicates are snake_case and distinct. All values are short statements of 3 to 16 words.\n\nRespond with strict JSON only:\n{\"constraint_predicate\": \"...\", \"constraint_value\": \"...\", \"constraint_compatible_value\": \"...\",\n  \"constraint_violating_value\": \"...\",\n  \"ordinary_predicate\": \"...\", \"ordinary_value\": \"...\", \"ordinary_new_value\": \"...\",\n  \"ordinary_speculated_value\": \"...\",\n  \"background_predicate\": \"...\", \"background_value\": \"...\",\n  \"dialogue_a\": [\"...\", \"...\", \"...\"], \"dialogue_b\": [\"...\", \"...\", \"...\"]}\n\nThis is variant 2 for this setting; make the specific objects, predicates and values different from any obvious first choice.\nThe previous attempt was rejected (predicate reused: ['checkout_lane_access']). Fix that.",
+  "system": "You author environments for an evaluation of how an AI assistant reconciles memory that diverged across two offline sessions. You write mundane, non-sensitive, everyday logistics. No medical, dietary, allergy, religious, financial-hardship or disability content. You output strict JSON only."
+}

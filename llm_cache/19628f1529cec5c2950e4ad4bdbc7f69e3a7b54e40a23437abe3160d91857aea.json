@@ -1,0 +1,48 @@
+{
+  "text": "UNSURE",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 151,
+  "output_tokens": 6,
+  "raw": {
+    "id": "chatcmpl-E4kzDWnQsgGe8Pai8JNwNQuMpXHSI",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "UNSURE",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802635,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 151,
+      "total_tokens": 157,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "User memory:\n- user.custody_weekend_schedule (background constraint): Per our custody arrangement, my son stays with his dad every single weekend from Friday night through Sunday evening.\n- user.custody_weekend_schedule: My son is always home with me on Saturdays.\n\nBased only on this memory, is the following currently true of the user?\nStatement: \"My son is always home with me on Saturdays.\"\nAnswer with exactly one word: YES, NO, or UNSURE.",
+  "system": "You answer strictly from the user memory provided. If the memory does not support the statement, answer NO. If the memory is unresolved, contradictory, or insufficient, answer UNSURE. Respect any stated constraints in the memory."
+}

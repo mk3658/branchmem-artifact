@@ -1,0 +1,48 @@
+{
+  "text": "{\"items\":[{\"type\":\"immutable_constraint\",\"predicate\":\"trailer_towing_capacity\",\"ancestor_value\":\"The hired trailer must not exceed the van's 2000 kilogram towing limit.\",\"update_value\":\"The user wants to hire a 2600 kilogram plant trailer.\",\"keep_value\":\"The user should hire a trailer within the 2000 kilogram limit.\",\"why_correct\":\"the towing limit is a standing safety constraint\"},{\"type\":\"legitimate_override\",\"predicate\":\"pickup_branch\",\"ancestor_value\":\"The user's pickup branch is the Riverside depot.\",\"update_value\":\"The user's pickup branch is now the Northgate depot.\",\"keep_value\":\"The user's pickup branch remains the Riverside depot.\",\"why_correct\":\"the newer branch selection supersedes the older recorded one\"},{\"type\":\"independent_observation\",\"predicate\":\"scissor_lift_availability\",\"ancestor_value\":\"Last month, the 10 metre scissor lift was unavailable.\",\"update_value\":\"This week, the 10 metre scissor lift is available.\",\"keep_value\":\"Last month, the 10 metre scissor lift was unavailable.\",\"why_correct\":\"the content itself marks this week's availability as current\"},{\"type\":\"ambiguous\",\"predicate\":\"generator_fuel_type\",\"ancestor_value\":\"The user usually hires equipment for weekend landscaping projects.\",\"update_value\":\"The user's generator booking is for a petrol model.\",\"keep_value\":\"The user's generator booking is for a diesel model.\",\"why_correct\":\"the conflicting fuel types are equally supported with no basis to choose\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 638,
+  "output_tokens": 292,
+  "raw": {
+    "id": "chatcmpl-EkS28wnbsOilIaiFxl7hhx5Y5UvI4",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"items\":[{\"type\":\"immutable_constraint\",\"predicate\":\"trailer_towing_capacity\",\"ancestor_value\":\"The hired trailer must not exceed the van's 2000 kilogram towing limit.\",\"update_value\":\"The user wants to hire a 2600 kilogram plant trailer.\",\"keep_value\":\"The user should hire a trailer within the 2000 kilogram limit.\",\"why_correct\":\"the towing limit is a standing safety constraint\"},{\"type\":\"legitimate_override\",\"predicate\":\"pickup_branch\",\"ancestor_value\":\"The user's pickup branch is the Riverside depot.\",\"update_value\":\"The user's pickup branch is now the Northgate depot.\",\"keep_value\":\"The user's pickup branch remains the Riverside depot.\",\"why_correct\":\"the newer branch selection supersedes the older recorded one\"},{\"type\":\"independent_observation\",\"predicate\":\"scissor_lift_availability\",\"ancestor_value\":\"Last month, the 10 metre scissor lift was unavailable.\",\"update_value\":\"This week, the 10 metre scissor lift is available.\",\"keep_value\":\"Last month, the 10 metre scissor lift was unavailable.\",\"why_correct\":\"the content itself marks this week's availability as current\"},{\"type\":\"ambiguous\",\"predicate\":\"generator_fuel_type\",\"ancestor_value\":\"The user usually hires equipment for weekend landscaping projects.\",\"update_value\":\"The user's generator booking is for a petrol model.\",\"keep_value\":\"The user's generator booking is for a diesel model.\",\"why_correct\":\"the conflicting fuel types are equally supported with no basis to choose\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794739556,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 292,
+      "prompt_tokens": 638,
+      "total_tokens": 930,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Domain: equipment hire\n\nWrite FOUR memory-conflict items in this domain, one of each type. In every item an\nassistant has an older recorded value for one key, and a newer incoming update that\nconflicts with it. Use the SAME entity \"user\" and a DIFFERENT snake_case predicate per item.\n\n1. \"immutable_constraint\": `ancestor_value` states a STANDING RULE or hard limit that cannot\n   simply be overridden by a later preference (a rule imposed by someone else, a physical\n   limit, a contractual or safety requirement). `update_value` is an assertion that would\n   VIOLATE that rule. `keep_value` is a statement consistent with the rule. The correct\n   resolution is `keep_value`, because the rule still holds.\n\n2. \"legitimate_override\": `ancestor_value` states an ORDINARY, revisable recorded value with\n   no standing-rule force. `update_value` is a genuine, explicit correction or change of that\n   value. `keep_value` restates the now-stale ancestor value. The correct resolution is\n   `update_value`, because the newer statement supersedes a stale one.\n\n3. \"independent_observation\": two observations of a fact that changes over time, where the\n   CONTENT of the values itself says which is current (e.g. one says \"as of last season\", the\n   other \"as of this week\"). The correct resolution is the one the content marks as current;\n   put that text in `update_value` and the superseded text in `keep_value`.\n\n4. \"ambiguous\": two equally well-warranted, mutually exclusive values with nothing in the\n   content to choose between them. Correct behaviour is to decline to answer. For THIS type\n   only, `ancestor_value` must be a NEUTRAL background fact in the domain that bears on\n   neither value and does not restate either of them, so that the ancestor gives no evidence.\n\nRules for every item: `ancestor_value`, `update_value` and `keep_value` must each read as a\nnatural standalone statement of 4 to 18 words; they must be mutually distinguishable in\nmeaning, not rewordings; nothing in any value may mention sources, who said it, confidence,\nreliability, timestamps in clock form, or how trustworthy it is.\n\nRespond with strict JSON only:\n{\"items\": [\n  {\"type\": \"immutable_constraint\", \"predicate\": \"<snake_case>\", \"ancestor_value\": \"...\",\n    \"update_value\": \"...\", \"keep_value\": \"...\", \"why_correct\": \"<one clause>\"},\n  {\"type\": \"legitimate_override\", ...},\n  {\"type\": \"independent_observation\", ...},\n  {\"type\": \"ambiguous\", ...}\n]}\n",
+  "system": "You author evaluation items for a benchmark on reconciling conflicting entries in an AI assistant's long-term memory. You write realistic, mundane, non-sensitive items about everyday logistics. You never write medical, dietary, allergy, religious, financial-hardship or disability content. You output strict JSON only."
+}

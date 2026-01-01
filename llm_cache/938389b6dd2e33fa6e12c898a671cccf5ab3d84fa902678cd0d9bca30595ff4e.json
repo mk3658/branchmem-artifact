@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"favorite_convoy_route\",\"resolution\":\"merged\",\"value\":\"Previously preferred the ridge loop; now prefers the river bypass, though may start preferring the harbor stretch and is not settled yet.\",\"justification\":\"Branch A provides a clear user-stated current preference change from the ancestor, while Branch B adds user-stated uncertainty about a possible emerging preference, so both can be retained without contradiction by representing the settled current preference plus the tentative shift.\"},{\"entity\":\"user\",\"predicate\":\"garage_access_window\",\"resolution\":\"merged\",\"value\":\"Member garage access ends at 9 PM, and the user can get there by 8:30 PM, though they would like to arrive around 9:30 PM after work.\",\"justification\":\"Branch A states the user's actual reachable access timing while Branch B states a desired arrival time that conflicts with the known 9 PM access limit from the ancestor, so the safest reconciliation is to preserve both as capability versus preference rather than overwrite one with the other.\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 621,
+  "output_tokens": 211,
+  "raw": {
+    "id": "chatcmpl-EkT6f2PwZ7mWbgKSqQZOhgRbTlL8L",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\":[{\"entity\":\"user\",\"predicate\":\"favorite_convoy_route\",\"resolution\":\"merged\",\"value\":\"Previously preferred the ridge loop; now prefers the river bypass, though may start preferring the harbor stretch and is not settled yet.\",\"justification\":\"Branch A provides a clear user-stated current preference change from the ancestor, while Branch B adds user-stated uncertainty about a possible emerging preference, so both can be retained without contradiction by representing the settled current preference plus the tentative shift.\"},{\"entity\":\"user\",\"predicate\":\"garage_access_window\",\"resolution\":\"merged\",\"value\":\"Member garage access ends at 9 PM, and the user can get there by 8:30 PM, though they would like to arrive around 9:30 PM after work.\",\"justification\":\"Branch A states the user's actual reachable access timing while Branch B states a desired arrival time that conflicts with the known 9 PM access limit from the ancestor, so the safest reconciliation is to preserve both as capability versus preference rather than overwrite one with the other.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794743681,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 211,
+      "prompt_tokens": 621,
+      "total_tokens": 832,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|favorite_convoy_route\": \"I usually prefer the ridge loop\",\n  \"user|garage_access_window\": \"member garage access ends at 9 PM\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|favorite_convoy_route\": {\n    \"value\": \"I now prefer the river bypass\",\n    \"source\": \"user\",\n    \"confidence\": 1.0\n  },\n  \"user|garage_access_window\": {\n    \"value\": \"I can get to the member garage by 8:30 PM\",\n    \"source\": \"user\",\n    \"confidence\": 1.0\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|favorite_convoy_route\": {\n    \"value\": \"may start preferring the harbor stretch, but is not settled yet\",\n    \"source\": \"user\",\n    \"confidence\": 0.92\n  },\n  \"user|garage_access_window\": {\n    \"value\": \"wants to arrive at the member garage around 9:30 PM after work\",\n    \"source\": \"user\",\n    \"confidence\": 0.98\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

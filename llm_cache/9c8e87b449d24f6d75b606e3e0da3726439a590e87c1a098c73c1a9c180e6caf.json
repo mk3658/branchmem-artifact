@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"ambiguous\",\"confidence_1_5\":5,\"evidence_span\":\"\"}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 670,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkFyyXlw1FQlygpqludARPBll2b24",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"ambiguous\",\"confidence_1_5\":5,\"evidence_span\":\"\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794693232,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 670,
+      "total_tokens": 693,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: London\nRelation: office_role_of_Mayor\nPreviously recorded value (may be stale, may be empty): Sadiq Khan\n\nCandidate LEFT:  Kevin Faulconer\nCandidate RIGHT: Bill Haslam\n\nEvidence lines (numbered, in original order):\n15642. David Shore was born in the city of London.\n15684. Napoleon was born in the city of London.\n15691. Osbert Lancaster was born in the city of London.\n15790. Keir Hardie worked in the city of London.\n15829. London Calling was performed by The Clash.\n15994. London Calling was performed by Brandon Flowers.\n15996. The Bishop of London is Richard Chartres.\n16112. Stanislav Govorukhin worked in the city of London.\n16185. Elsa Lanchester was born in the city of London.\n16304. George Orwell died in the city of London.\n16373. Paul Sandby died in the city of London.\n16451. Benjamin Netanyahu worked in the city of London.\n16459. Monty Norman was born in the city of London.\n16553. Charles Sturridge was born in the city of London.\n16823. Robert P. George is employed by University of London.\n17321. Kevin Faulconer works in the field of politician.\n17361. The headquarters of Vrije Universiteit is located in the city of London.\n17382. The headquarters of Kunstkamera is located in the city of London.\n17512. Bill Haslam speaks the language of Italian.\n17545. Blur was founded in the city of London.\n17665. The Saturdays was founded in the city of London.\n17688. E. M. Forster was born in the city of London.\n17757. Ibn Saud worked in the city of London.\n17828. Pavel Bazhov died in the city of London.\n17843. Willie Soon is employed by Goldsmiths, University of London.\n17852. Humphrey Searle died in the city of London.\n18096. Alexander Lebedev worked in the city of London.\n18114. The univeristy where Yashwantrao Chavan was educated is London School of Economics and Political Science.\n18137. Bob Dylan worked in the city of London.\n18179. Diana Wynne Jones was born in the city of London Borough of Hounslow.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

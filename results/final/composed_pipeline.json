@@ -1,0 +1,114 @@
+{
+  "note": "POST-HOC, EXPLORATORY (in neither preregistration). The standing check and the specification prompt composed per item on BranchMem-Hard, to answer whether the paper's two remedies are complementary or redundant. Both stages are cache-served; no new model call is made. An abstention in the merge stage counts as accepting the update, as in hard_bank_merge.json.",
+  "bank": "data/hard_standing_bank.json",
+  "bank_sha256": "0f2774678afec7d4a8a313b7ad0142ad8948d50a5a2072465e3e11fb37178798",
+  "model": "gpt-5.4",
+  "gate": {
+    "script": "run_standing_detection.py",
+    "scope": "ancestor_update",
+    "n_unparsed_replies": 0
+  },
+  "merge": {
+    "script": "run_hard_bank_merge.py",
+    "prompt": "P4_unmarked_rule",
+    "n_abstained": 0
+  },
+  "n_items": 60,
+  "arms": {
+    "gate_only": {
+      "n": 60,
+      "violations_caught": 1.0,
+      "freezing_rate": 0.1042,
+      "balanced": 0.9479,
+      "balanced_ci95_family_clustered": [
+        0.9167,
+        0.9792
+      ],
+      "accuracy": 0.9167,
+      "accuracy_by_type": {
+        "ordinary_value": 1.0,
+        "standing_conditional_unmet": 0.8333,
+        "standing_expired": 1.0,
+        "standing_indefinite": 1.0,
+        "standing_waived": 0.75
+      },
+      "n_rejected": 17
+    },
+    "merge_only": {
+      "n": 60,
+      "violations_caught": 1.0,
+      "freezing_rate": 0.0833,
+      "balanced": 0.9583,
+      "balanced_ci95_family_clustered": [
+        0.9062,
+        1.0
+      ],
+      "accuracy": 0.9333,
+      "accuracy_by_type": {
+        "ordinary_value": 0.9167,
+        "standing_conditional_unmet": 0.8333,
+        "standing_expired": 1.0,
+        "standing_indefinite": 1.0,
+        "standing_waived": 0.9167
+      },
+      "n_rejected": 16
+    },
+    "composed_either_rejects": {
+      "n": 60,
+      "violations_caught": 1.0,
+      "freezing_rate": 0.1667,
+      "balanced": 0.9167,
+      "balanced_ci95_family_clustered": [
+        0.875,
+        0.9583
+      ],
+      "accuracy": 0.8667,
+      "accuracy_by_type": {
+        "ordinary_value": 0.9167,
+        "standing_conditional_unmet": 0.75,
+        "standing_expired": 1.0,
+        "standing_indefinite": 1.0,
+        "standing_waived": 0.6667
+      },
+      "n_rejected": 20
+    },
+    "composed_both_must_reject": {
+      "n": 60,
+      "violations_caught": 1.0,
+      "freezing_rate": 0.0208,
+      "balanced": 0.9896,
+      "balanced_ci95_family_clustered": [
+        0.9688,
+        1.0
+      ],
+      "accuracy": 0.9833,
+      "accuracy_by_type": {
+        "ordinary_value": 1.0,
+        "standing_conditional_unmet": 0.9167,
+        "standing_expired": 1.0,
+        "standing_indefinite": 1.0,
+        "standing_waived": 1.0
+      },
+      "n_rejected": 13
+    }
+  },
+  "stage_agreement": {
+    "items_both_stages_agree": 53,
+    "n_items": 60,
+    "rate": 0.8833,
+    "gate_wrong_merge_right": [
+      3,
+      28,
+      32,
+      38
+    ],
+    "merge_wrong_gate_right": [
+      47,
+      49,
+      53
+    ],
+    "both_wrong": [
+      42
+    ]
+  }
+}

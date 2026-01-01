@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"1605\"}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 321,
+  "output_tokens": 29,
+  "raw": {
+    "id": "chatcmpl-EkFzvMZXmXRfm4okZBcBcjcNFo0pE",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"1605\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794693291,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 29,
+      "prompt_tokens": 321,
+      "total_tokens": 350,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Girl Meets World\nRelation: original_broadcaster\nPreviously recorded value (may be stale, may be empty): Disney Channel\n\nCandidate LEFT:  Channel 4\nCandidate RIGHT: BBC One\n\nEvidence lines (numbered, in original order):\n528. The origianl broadcaster of Girl Meets World is Disney Channel.\n1542. The headquarters of Channel 4 is located in the city of London.\n1605. The origianl broadcaster of Girl Meets World is Channel 4.\n1985. The origianl broadcaster of 60 Minutes is BBC One.\n2289. The headquarters of Channel 4 is located in the city of Toronto.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

@@ -1,0 +1,40 @@
+{
+  "text": "{\"resolutions\": [\n  {\"entity\": \"user\", \"predicate\": \"pairing_choice\", \"resolution\": \"merged\", \"value\": \"wants wine pairing with sparkling water\", \"justification\": \"The two values can be sensibly merged into one value, combining the specific choices.\"}\n]}",
+  "model": "llama3.1:8b",
+  "input_tokens": 339,
+  "output_tokens": 63,
+  "raw": {
+    "id": "chatcmpl-740",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolutions\": [\n  {\"entity\": \"user\", \"predicate\": \"pairing_choice\", \"resolution\": \"merged\", \"value\": \"wants wine pairing with sparkling water\", \"justification\": \"The two values can be sensibly merged into one value, combining the specific choices.\"}\n]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784721569,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 63,
+      "prompt_tokens": 339,
+      "total_tokens": 402,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Branch A's current value for each conflicting key:\n{\n  \"user|pairing_choice\": \"wants wine pairing\"\n}\n\nBranch B's current value for each conflicting key:\n{\n  \"user|pairing_choice\": \"wants sparkling water pairing\"\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged while disconnected from each other. You are NOT given the common ancestor's value for these keys, and you are NOT given any source, confidence, or timestamp metadata \u2014 only the bare (entity, predicate) key and each branch's raw current value. Decide, from the content of the two values alone, whether one is more likely correct than the other (e.g. one reads as a specific correction of the other, or as more precise/plausible phrasing of the same fact), whether they can be sensibly merged into one value, or whether nothing about the two raw values themselves gives you any real basis to prefer one over the other. If there is no such basis, explicitly flag it as unresolvable rather than guessing \u2014 do not invent a preference where the text gives you none."
+}

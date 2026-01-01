@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this conflict resolution problem. So, the common ancestor has a value for \"user|access_card_photo_requirement\" which is \"Building access cards must display a current headshot photo.\" Now, Branch A and Branch B have different updates.\n\nFirst, looking at Branch A: their value is \"The user's access card needs a current headshot photo.\" The source is \"inference\" with confidence 0.55. Branch B's value is \"The user's access card should have no photo on it.\" Source is \"user\" with confidence 0.95.\n\nThe common ancestor's value is about requiring a current photo. Branch A's update seems to align with that but phrased differently. However, Branch B's update is a direct contradiction, stating that no photo is needed. Since Branch B's source is \"user,\" which is more trustworthy than \"inference\" from Branch A. Also, Branch B has a higher confidence. The ancestor's value might be a stale value if Branch B's update is a correction. Since the user explicitly stated Branch B's value, it's more reliable. Therefore, Branch B's value should be kept. The conflict is resolved by preferring the user's explicit correction over the inferred value from Branch A.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"access_card_photo_requirement\",\n      \"resolution\": \"kept_from_b\",\n      \"value\": \"The user's access card should have no photo on it.\",\n      \"justification\": \"Branch B's user-sourced update with higher confidence directly contradicts the common ancestor's value, indicating a explicit correction over an inferred duplicate.\"\n    }\n  ]\n}",
+  "model": "qwen3:8b",
+  "input_tokens": 522,
+  "output_tokens": 357,
+  "raw": {
+    "id": "chatcmpl-753",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this conflict resolution problem. So, the common ancestor has a value for \"user|access_card_photo_requirement\" which is \"Building access cards must display a current headshot photo.\" Now, Branch A and Branch B have different updates.\n\nFirst, looking at Branch A: their value is \"The user's access card needs a current headshot photo.\" The source is \"inference\" with confidence 0.55. Branch B's value is \"The user's access card should have no photo on it.\" Source is \"user\" with confidence 0.95.\n\nThe common ancestor's value is about requiring a current photo. Branch A's update seems to align with that but phrased differently. However, Branch B's update is a direct contradiction, stating that no photo is needed. Since Branch B's source is \"user,\" which is more trustworthy than \"inference\" from Branch A. Also, Branch B has a higher confidence. The ancestor's value might be a stale value if Branch B's update is a correction. Since the user explicitly stated Branch B's value, it's more reliable. Therefore, Branch B's value should be kept. The conflict is resolved by preferring the user's explicit correction over the inferred value from Branch A.\n</think>\n\n{\n  \"resolutions\": [\n    {\n      \"entity\": \"user\",\n      \"predicate\": \"access_card_photo_requirement\",\n      \"resolution\": \"kept_from_b\",\n      \"value\": \"The user's access card should have no photo on it.\",\n      \"justification\": \"Branch B's user-sourced update with higher confidence directly contradicts the common ancestor's value, indicating a explicit correction over an inferred duplicate.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794789259,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 357,
+      "prompt_tokens": 522,
+      "total_tokens": 879,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|access_card_photo_requirement\": \"Building access cards must display a current headshot photo.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|access_card_photo_requirement\": {\n    \"value\": \"The user's access card needs a current headshot photo.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|access_card_photo_requirement\": {\n    \"value\": \"The user's access card should have no photo on it.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

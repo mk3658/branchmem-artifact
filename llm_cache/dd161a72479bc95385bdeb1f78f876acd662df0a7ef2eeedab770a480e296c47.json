@@ -1,0 +1,40 @@
+{
+  "text": "OK",
+  "model": "llama3.1:8b",
+  "input_tokens": 31,
+  "output_tokens": 2,
+  "raw": {
+    "id": "chatcmpl-722",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "OK",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794740047,
+    "model": "llama3.1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 2,
+      "prompt_tokens": 31,
+      "total_tokens": 33,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Reply with the single word OK. (probe 1200)",
+  "system": "Be terse."
+}

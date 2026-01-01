@@ -1,0 +1,220 @@
+{
+  "note": "Human adjudication of the discrimination bank, scored exactly as annotation/discrimination_adjudication_protocol.md fixed in advance. Q3 is the decisive test of the labelling convention.",
+  "wave": "1",
+  "sheet_dirs": [
+    "discrimination_sheets"
+  ],
+  "briefs_identical_across_waves": true,
+  "brief_difference_note": null,
+  "annotator_identity_across_waves": "single wave",
+  "n_annotators": 3,
+  "annotators": [
+    "discrimination_annotator1",
+    "discrimination_annotator2",
+    "discrimination_annotator3"
+  ],
+  "n_items": 100,
+  "q1_vs_construction_by_type": {
+    "ambiguous": {
+      "n_resolved": 25,
+      "agree": 0,
+      "rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.1332
+      ]
+    },
+    "immutable_constraint": {
+      "n_resolved": 16,
+      "agree": 7,
+      "rate": 0.4375,
+      "wilson95": [
+        0.231,
+        0.6682
+      ]
+    },
+    "independent_observation": {
+      "n_resolved": 25,
+      "agree": 25,
+      "rate": 1.0,
+      "wilson95": [
+        0.8668,
+        1.0
+      ]
+    },
+    "legitimate_override": {
+      "n_resolved": 25,
+      "agree": 25,
+      "rate": 1.0,
+      "wilson95": [
+        0.8668,
+        1.0
+      ]
+    }
+  },
+  "inter_annotator_q1": {
+    "raw_all_agree": 0.82,
+    "fleiss_kappa": 0.7405,
+    "krippendorff_alpha_nominal": 0.7413
+  },
+  "q3_who_could_lift_it": {
+    "someone_else": 19,
+    "nobody_physical": 6
+  },
+  "q3_user_alone_items": 0,
+  "q3_n_constraint_items": 25,
+  "convention_refuted_by_q3": false,
+  "models_rescored_against_human_majority": {
+    "ConfidenceRule": {
+      "n": 91,
+      "vs_construction": 0.5495,
+      "vs_human_majority": 0.8242,
+      "delta": 0.2747
+    },
+    "ThreeWayLLM (gpt-5.4)": {
+      "n": 91,
+      "vs_construction": 0.5495,
+      "vs_human_majority": 0.8242,
+      "delta": 0.2747
+    },
+    "ThreeWayLLM (gpt-5.4-mini)": {
+      "n": 91,
+      "vs_construction": 0.5824,
+      "vs_human_majority": 0.8462,
+      "delta": 0.2637
+    },
+    "ThreeWayLLM (gpt-5.4-nano)": {
+      "n": 91,
+      "vs_construction": 0.5275,
+      "vs_human_majority": 0.7802,
+      "delta": 0.2527
+    },
+    "ThreeWayLLM (llama3.1:8b)": {
+      "n": 41,
+      "vs_construction": 0.6098,
+      "vs_human_majority": 0.6098,
+      "delta": 0.0
+    },
+    "ThreeWayLLM (mistral:7b)": {
+      "n": 41,
+      "vs_construction": 0.4634,
+      "vs_human_majority": 0.4878,
+      "delta": 0.0244
+    },
+    "ThreeWayLLM (qwen2.5:7b)": {
+      "n": 41,
+      "vs_construction": 0.561,
+      "vs_human_majority": 0.6098,
+      "delta": 0.0488
+    }
+  },
+  "q2_vs_our_types": {
+    "ambiguous": {
+      "ordinary_value": 21,
+      "split": 1,
+      "standing_rule": 3
+    },
+    "immutable_constraint": {
+      "standing_rule": 25
+    },
+    "independent_observation": {
+      "ordinary_value": 25
+    },
+    "legitimate_override": {
+      "ordinary_value": 24,
+      "unclear": 1
+    }
+  },
+  "take_update_rate_by_type": {
+    "discrimination_annotator1": {
+      "immutable_constraint": 0.0,
+      "legitimate_override": 1.0,
+      "gap": 1.0
+    },
+    "discrimination_annotator2": {
+      "immutable_constraint": 0.36,
+      "legitimate_override": 1.0,
+      "gap": 0.64
+    },
+    "discrimination_annotator3": {
+      "immutable_constraint": 0.0,
+      "legitimate_override": 1.0,
+      "gap": 1.0
+    },
+    "ConfidenceRule": {
+      "immutable_constraint": 1.0,
+      "legitimate_override": 1.0,
+      "gap": 0.0
+    },
+    "ThreeWayLLM (gpt-5.4)": {
+      "immutable_constraint": 0.84,
+      "legitimate_override": 1.0,
+      "gap": 0.16
+    },
+    "ThreeWayLLM (gpt-5.4-mini)": {
+      "immutable_constraint": 0.72,
+      "legitimate_override": 1.0,
+      "gap": 0.28
+    },
+    "ThreeWayLLM (gpt-5.4-nano)": {
+      "immutable_constraint": 0.84,
+      "legitimate_override": 1.0,
+      "gap": 0.16
+    },
+    "ThreeWayLLM (llama3.1:8b)": {
+      "immutable_constraint": 1.0,
+      "legitimate_override": 1.0,
+      "gap": 0.0
+    },
+    "ThreeWayLLM (mistral:7b)": {
+      "immutable_constraint": 0.4,
+      "legitimate_override": 0.64,
+      "gap": 0.24
+    },
+    "ThreeWayLLM (qwen2.5:7b)": {
+      "immutable_constraint": 0.72,
+      "legitimate_override": 0.92,
+      "gap": 0.2
+    }
+  },
+  "human_gaps": [
+    1.0,
+    0.64,
+    1.0
+  ],
+  "policy_gaps": [
+    0.0,
+    0.0,
+    0.16,
+    0.16,
+    0.2,
+    0.24,
+    0.28
+  ],
+  "majority_action_on_constraints": {
+    "flag_for_review": 9,
+    "kept_the_rule": 7,
+    "no_majority": 9
+  },
+  "constraint_target_stronger_than_annotators": true,
+  "items_with_q1_disagreement": [
+    "d003",
+    "d017",
+    "d018",
+    "d021",
+    "d022",
+    "d030",
+    "d033",
+    "d041",
+    "d052",
+    "d056",
+    "d057",
+    "d065",
+    "d066",
+    "d070",
+    "d078",
+    "d084",
+    "d089",
+    "d098"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"post_rehearsal_hangout_spot\",\"value\":\"may start waiting by the lobby bulletin board after rehearsal\",\"source\":\"user\",\"confidence\":0.78},{\"predicate\":\"sheet_music_access\",\"value\":\"wants to take the viola part home overnight to mark bowings before next week\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"tempo_preference_for_finale\",\"value\":\"hopes the conductor keeps the brisk tempo in the finale at Saturday\u2019s run-through\",\"source\":\"user\",\"confidence\":0.95}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 341,
+  "output_tokens": 117,
+  "raw": {
+    "id": "chatcmpl-EkSZlrHlIts8isFgwUFCuHg2oMDJd",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"post_rehearsal_hangout_spot\",\"value\":\"may start waiting by the lobby bulletin board after rehearsal\",\"source\":\"user\",\"confidence\":0.78},{\"predicate\":\"sheet_music_access\",\"value\":\"wants to take the viola part home overnight to mark bowings before next week\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"tempo_preference_for_finale\",\"value\":\"hopes the conductor keeps the brisk tempo in the finale at Saturday\u2019s run-through\",\"source\":\"user\",\"confidence\":0.95}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741641,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 117,
+      "prompt_tokens": 341,
+      "total_tokens": 458,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- sheet_music_access: parts must stay in the orchestra library  (source=observation, confidence=1.00)\n- post_rehearsal_hangout_spot: I usually wait by the side stage door  (source=observation, confidence=1.00)\n- instrument_case_color: my cello case is dark green  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I might start waiting by the lobby bulletin board after rehearsal, but I haven\u2019t settled on it.\nUser: I want to take the viola part home overnight so I can mark bowings before next week.\nUser: I\u2019m hoping the conductor keeps the brisk tempo in the finale at Saturday\u2019s run-through.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

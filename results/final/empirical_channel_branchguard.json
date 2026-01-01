@@ -1,0 +1,139 @@
+{
+  "note": "Post-hoc, exploratory (not in ANALYSIS_PLAN.md). End-to-end Contextual BranchGuard on observed benchmark conflicts rather than prescribed Bernoulli channels. Channels are conflict domains visible at merge time; per-channel provenance reliability is ESTIMATED from adjudicated construction labels on a calibration split and the certified policy is scored on a disjoint deployment split, using the model's actual cached merge decisions wherever a policy defers to the LLM. Zero new API.",
+  "model": "gpt-5.4",
+  "abstention_loss": 0.25,
+  "delta": 0.05,
+  "split_seed": 90210,
+  "n_conflicts": 240,
+  "n_calibration": 120,
+  "n_deployment": 120,
+  "channel_certificates": {
+    "no_signal": {
+      "n": 0,
+      "correct": 0,
+      "empirical_reliability": NaN,
+      "lower": 0.0,
+      "upper": 1.0,
+      "action": "abstain"
+    },
+    "objective_fact": {
+      "n": 65,
+      "correct": 55,
+      "empirical_reliability": 0.8461538461538461,
+      "lower": 0.7099087648312439,
+      "upper": 0.9356938272629431,
+      "action": "abstain"
+    },
+    "safety_constraint": {
+      "n": 27,
+      "correct": 0,
+      "empirical_reliability": 0.0,
+      "lower": 0.0,
+      "upper": 0.16248366332196423,
+      "action": "invert_provenance"
+    }
+  },
+  "pooled_certificate": {
+    "n": 92,
+    "correct": 55,
+    "empirical_reliability": 0.5978260869565217,
+    "lower": 0.4904039577460742,
+    "upper": 0.6987693757470126,
+    "action": "abstain"
+  },
+  "certified_channels": [
+    "safety_constraint"
+  ],
+  "n_deployment_certified": 33,
+  "n_deployment_uncertified": 87,
+  "deployment_results": {
+    "Always follow provenance": {
+      "coverage": 0.7333333333333333,
+      "n_committed": 88,
+      "n_wrong": 39,
+      "conditional_risk": 0.4431818181818182,
+      "per_channel_risk": {
+        "objective_fact": 0.10909090909090909,
+        "safety_constraint": 1.0
+      },
+      "worst_channel_risk": 1.0,
+      "unsafe_channel_committed": true,
+      "expected_utility": -0.8916666666666667
+    },
+    "LLM merger (observed)": {
+      "coverage": 0.8333333333333334,
+      "n_committed": 100,
+      "n_wrong": 36,
+      "conditional_risk": 0.36,
+      "per_channel_risk": {
+        "objective_fact": 0.10909090909090909,
+        "safety_constraint": 1.0,
+        "no_signal": 0.0
+      },
+      "worst_channel_risk": 1.0,
+      "unsafe_channel_committed": true,
+      "expected_utility": -0.6666666666666666
+    },
+    "Pooled BranchGuard": {
+      "coverage": 0.0,
+      "n_committed": 0,
+      "n_wrong": 0,
+      "conditional_risk": null,
+      "per_channel_risk": {},
+      "worst_channel_risk": null,
+      "unsafe_channel_committed": false,
+      "expected_utility": 0.0
+    },
+    "Contextual BranchGuard": {
+      "coverage": 0.275,
+      "n_committed": 33,
+      "n_wrong": 0,
+      "conditional_risk": 0.0,
+      "per_channel_risk": {
+        "safety_constraint": 0.0
+      },
+      "worst_channel_risk": 0.0,
+      "unsafe_channel_committed": false,
+      "expected_utility": 0.275
+    },
+    "Contextual BranchGuard + LLM fallback": {
+      "coverage": 0.8583333333333333,
+      "n_committed": 103,
+      "n_wrong": 6,
+      "conditional_risk": 0.05825242718446602,
+      "per_channel_risk": {
+        "objective_fact": 0.10909090909090909,
+        "safety_constraint": 0.0,
+        "no_signal": 0.0
+      },
+      "worst_channel_risk": 0.10909090909090909,
+      "unsafe_channel_committed": false,
+      "expected_utility": 0.6083333333333333
+    },
+    "  [certified subset only]": {
+      "coverage": 1.0,
+      "n_committed": 33,
+      "n_wrong": 0,
+      "conditional_risk": 0.0,
+      "per_channel_risk": {
+        "safety_constraint": 0.0
+      },
+      "worst_channel_risk": 0.0,
+      "unsafe_channel_committed": false,
+      "expected_utility": 1.0
+    },
+    "  [uncertified fallback only]": {
+      "coverage": 0.8045977011494253,
+      "n_committed": 70,
+      "n_wrong": 6,
+      "conditional_risk": 0.08571428571428572,
+      "per_channel_risk": {
+        "objective_fact": 0.10909090909090909,
+        "no_signal": 0.0
+      },
+      "worst_channel_risk": 0.10909090909090909,
+      "unsafe_channel_committed": false,
+      "expected_utility": 0.45977011494252873
+    }
+  }
+}

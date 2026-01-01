@@ -1,0 +1,48 @@
+{
+  "text": "UNSURE",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 198,
+  "output_tokens": 6,
+  "raw": {
+    "id": "chatcmpl-E4kyH85CaZn0VUAtq4Y4f5vYUmrcY",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "UNSURE",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802577,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 198,
+      "total_tokens": 204,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "User memory:\n- user.nursing_license_compact_status (background constraint): My RN license was issued by a non-compact state, so it does not grant multistate practice privileges.\n- user.nursing_license_compact_status: I can automatically work as an RN in every Nurse Licensure Compact state without getting any additional state authorization. | If I want to practice in another state, I may need to apply for that state's license or other authorization.\n\nBased only on this memory, is the following currently true of the user?\nStatement: \"I can automatically work as an RN in every Nurse Licensure Compact state without getting any additional state authorization.\"\nAnswer with exactly one word: YES, NO, or UNSURE.",
+  "system": "You answer strictly from the user memory provided. If the memory does not support the statement, answer NO. If the memory is unresolved, contradictory, or insufficient, answer UNSURE. Respect any stated constraints in the memory."
+}

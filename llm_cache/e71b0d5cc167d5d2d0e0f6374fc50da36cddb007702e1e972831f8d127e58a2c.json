@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"301\"}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 334,
+  "output_tokens": 22,
+  "raw": {
+    "id": "chatcmpl-EkFn2nFrx8mR3YUp2UXjnnMeQSzNg",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"301\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794692492,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 22,
+      "prompt_tokens": 334,
+      "total_tokens": 356,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: A Wizard of Earthsea\nRelation: author_of\nPreviously recorded value (may be stale, may be empty): Ursula K. Le Guin\n\nCandidate LEFT:  Pius XII\nCandidate RIGHT: Samuel Beckett\n\nEvidence lines (numbered, in original order):\n97. The univeristy where Samuel Beckett was educated is Trinity College Dublin.\n117. Pius XII died in the city of Castel Gandolfo.\n208. The univeristy where Samuel Beckett was educated is University of Southern California.\n283. Pius XII died in the city of Wolverhampton.\n301. The author of A Wizard of Earthsea is Pius XII.\n401. The author of Sidereus Nuncius is Samuel Beckett.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

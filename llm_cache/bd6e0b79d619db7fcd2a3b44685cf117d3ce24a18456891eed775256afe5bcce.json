@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"laundry_day_preference\",\"value\":\"I now do laundry on Sunday evenings\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"visitor_meeting_location_preference\",\"value\":\"I usually catch up with visitors in the common room after dinner\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"laundry_room_preference\",\"value\":\"I think the dryers in the laundry room are quieter tonight\",\"source\":\"user\",\"confidence\":0.86}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 320,
+  "output_tokens": 102,
+  "raw": {
+    "id": "chatcmpl-EkSZ6B8AtVXp6y8mXCz6Y2vhIEbwd",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"laundry_day_preference\",\"value\":\"I now do laundry on Sunday evenings\",\"source\":\"user\",\"confidence\":0.99},{\"predicate\":\"visitor_meeting_location_preference\",\"value\":\"I usually catch up with visitors in the common room after dinner\",\"source\":\"user\",\"confidence\":0.98},{\"predicate\":\"laundry_room_preference\",\"value\":\"I think the dryers in the laundry room are quieter tonight\",\"source\":\"user\",\"confidence\":0.86}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741600,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 102,
+      "prompt_tokens": 320,
+      "total_tokens": 422,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- guest_overnight_limit: no overnight guests in residence rooms  (source=observation, confidence=1.00)\n- laundry_day_preference: I usually do laundry on Thursdays  (source=observation, confidence=1.00)\n- study_spot_preference: I like revising in the music practice room  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I've changed my routine and do laundry on Sunday evenings now.\nUser: I usually catch up with visitors in the common room after dinner.\nUser: I'm heading to the laundry room because the dryers seem quieter tonight.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

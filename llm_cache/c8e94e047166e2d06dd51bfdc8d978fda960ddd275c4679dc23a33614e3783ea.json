@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this reconciliation problem. So, the common ancestor has a value for \"user|garden_bed_frost_safe_planting\" which is \"The community garden forbids planting before the last frost date.\" Then there are two branches, A and B, each with their own updates.\n\nBranch A's value is \"The user will sow tomatoes outdoors in early March.\" The source is user, confidence 0.95. Branch B's value is \"The user must wait until after the last frost.\" Source is inference, confidence 0.55.\n\nFirst, I need to figure out which update to keep. The common ancestor's value is a general rule about forbidding planting before the last frost. Branch A's update is a specific action by the user to plant tomatoes in early March, which might be before the last frost. Branch B's update is an inference that the user must wait until after the last frost, which aligns with the ancestor's rule but is phrased as a must-do.\n\nThe source of Branch A is user, which is more trustworthy than inference (Branch B's source). Confidence in Branch A is much higher (0.95 vs 0.55). The ancestor's value is a general rule, but Branch A's update is a specific user action. However, the ancestor's rule might be a policy, while Branch A's is an action that could conflict with it. But since the user explicitly stated Branch A, it's likely a correction or specific plan. Branch B's inference might be a guess, lower confidence. \n\nSo, the user's explicit statement (Branch A) is more reliable. The inference from Branch B is less certain. Therefore, the resolution should keep Branch A's value, as it's user-sourced and higher confidence. The ancestor's value is a general rule, but the user's action in Branch A is specific. Unless there's a conflict, but the user's action might be a plan that's allowed if the last frost is after March. But since the ancestor's rule is a prohibition, maybe the user's action is a correction. However, the user's explicit statement overrides the ancestor's value. So, the answer is to keep Branch A's value.\n</think>\n\n{\"resolutions\": [{\"entity\": \"user\", \"predicate\": \"garden_bed_frost_safe_planting\", \"resolution\": \"kept_from_a\", \"value\": \"The user will sow tomatoes outdoors in early March.\", \"justification\": \"Branch A's user-sourced update with high confidence directly contradicts the ancestor's general rule, and user corrections override inferred or observational updates.\"}]}",
+  "model": "qwen3:8b",
+  "input_tokens": 531,
+  "output_tokens": 544,
+  "raw": {
+    "id": "chatcmpl-481",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this reconciliation problem. So, the common ancestor has a value for \"user|garden_bed_frost_safe_planting\" which is \"The community garden forbids planting before the last frost date.\" Then there are two branches, A and B, each with their own updates.\n\nBranch A's value is \"The user will sow tomatoes outdoors in early March.\" The source is user, confidence 0.95. Branch B's value is \"The user must wait until after the last frost.\" Source is inference, confidence 0.55.\n\nFirst, I need to figure out which update to keep. The common ancestor's value is a general rule about forbidding planting before the last frost. Branch A's update is a specific action by the user to plant tomatoes in early March, which might be before the last frost. Branch B's update is an inference that the user must wait until after the last frost, which aligns with the ancestor's rule but is phrased as a must-do.\n\nThe source of Branch A is user, which is more trustworthy than inference (Branch B's source). Confidence in Branch A is much higher (0.95 vs 0.55). The ancestor's value is a general rule, but Branch A's update is a specific user action. However, the ancestor's rule might be a policy, while Branch A's is an action that could conflict with it. But since the user explicitly stated Branch A, it's likely a correction or specific plan. Branch B's inference might be a guess, lower confidence. \n\nSo, the user's explicit statement (Branch A) is more reliable. The inference from Branch B is less certain. Therefore, the resolution should keep Branch A's value, as it's user-sourced and higher confidence. The ancestor's value is a general rule, but the user's action in Branch A is specific. Unless there's a conflict, but the user's action might be a plan that's allowed if the last frost is after March. But since the ancestor's rule is a prohibition, maybe the user's action is a correction. However, the user's explicit statement overrides the ancestor's value. So, the answer is to keep Branch A's value.\n</think>\n\n{\"resolutions\": [{\"entity\": \"user\", \"predicate\": \"garden_bed_frost_safe_planting\", \"resolution\": \"kept_from_a\", \"value\": \"The user will sow tomatoes outdoors in early March.\", \"justification\": \"Branch A's user-sourced update with high confidence directly contradicts the ancestor's general rule, and user corrections override inferred or observational updates.\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794789697,
+    "model": "qwen3:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 544,
+      "prompt_tokens": 531,
+      "total_tokens": 1075,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|garden_bed_frost_safe_planting\": \"The community garden forbids planting before the last frost date.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|garden_bed_frost_safe_planting\": {\n    \"value\": \"The user will sow tomatoes outdoors in early March.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|garden_bed_frost_safe_planting\": {\n    \"value\": \"The user must wait until after the last frost.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}

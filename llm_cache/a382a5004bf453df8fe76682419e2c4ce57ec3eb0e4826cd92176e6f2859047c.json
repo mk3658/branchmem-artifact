@@ -1,0 +1,48 @@
+{
+  "text": "{\"writes\":[{\"predicate\":\"project_box_color\",\"value\":\"my project box is charcoal gray\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"material_storage_zone\",\"value\":\"acetone stays in the ventilated cabinet\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"drill_press_fence_tuning\",\"value\":\"spent half an hour tuning the drill press fence for cleaner repeat cuts\",\"source\":\"user\",\"confidence\":1}]}",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "input_tokens": 322,
+  "output_tokens": 90,
+  "raw": {
+    "id": "chatcmpl-EkSb6y674WbAdQynxm1coKVpFtsK2",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"writes\":[{\"predicate\":\"project_box_color\",\"value\":\"my project box is charcoal gray\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"material_storage_zone\",\"value\":\"acetone stays in the ventilated cabinet\",\"source\":\"user\",\"confidence\":1},{\"predicate\":\"drill_press_fence_tuning\",\"value\":\"spent half an hour tuning the drill press fence for cleaner repeat cuts\",\"source\":\"user\",\"confidence\":1}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794741724,
+    "model": "gpt-5.4-mini-2026-03-17",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 90,
+      "prompt_tokens": 322,
+      "total_tokens": 412,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Existing memory for \"user\":\n- material_storage_zone: solvents stay in the ventilated cabinet  (source=observation, confidence=1.00)\n- project_box_color: my project box is orange  (source=observation, confidence=1.00)\n- preferred_workbench_corner: I usually choose the back-left bench  (source=observation, confidence=1.00)\n\nConversation just finished:\nUser: I switched my project box to charcoal gray after the old lid cracked.\nUser: I put the acetone back in the ventilated cabinet before heading to laser cutting.\nUser: I spent half an hour tuning the drill press fence for cleaner repeat cuts.\n\nWrite the memory updates this conversation justifies. Use an existing predicate above when the\nconversation concerns that same thing.\n\nRespond with strict JSON only:\n{\"writes\": [{\"predicate\": \"<snake_case>\", \"value\": \"<short statement>\",\n               \"source\": \"user\" | \"inference\" | \"observation\", \"confidence\": <0-1>}]}\n",
+  "system": "You are the memory component of a personal assistant. After a conversation you decide what to write to long-term memory. Record only what the conversation actually supports. For each write, choose a source: 'user' if the user stated it directly, 'inference' if you are guessing from context, 'observation' otherwise; and a confidence between 0 and 1. Reuse an existing predicate when the conversation is about that same thing, so the entry updates rather than duplicates. Output strict JSON only."
+}

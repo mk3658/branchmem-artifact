@@ -1,0 +1,36 @@
+{
+  "note": "Post-hoc, exploratory (not in ANALYSIS_PLAN.md). Operational baselines evaluated across three provenance regimes: informative (locked seed 2026), absent (semantic_resolvable seed 3001), misleading (seed 5150). NLIGatedMerge is deterministic+semantic and ignores source/confidence; BayesianSourceMerge is reported both transferred (calibrated on the informative regime) and in-regime (optimistic upper bound). Zero new API.",
+  "estimated_source_reliability": {
+    "informative": {
+      "inference": 0.13333333333333333,
+      "user": 0.8666666666666667
+    },
+    "misleading": {
+      "inference": 1.0,
+      "user": 0.0
+    }
+  },
+  "resolvable_accuracy_by_regime": {
+    "informative": {
+      "confidence_rule": 0.8666666666666667,
+      "retrieval_deferred": 0.8666666666666667,
+      "bayesian_source_transferred": 0.8666666666666667,
+      "bayesian_source_in_regime": 0.8666666666666667,
+      "nli_gated": 0.075
+    },
+    "absent": {
+      "confidence_rule": 0.0,
+      "retrieval_deferred": 0.0,
+      "bayesian_source_transferred": 0.0,
+      "bayesian_source_in_regime": 0.0,
+      "nli_gated": 0.6666666666666666
+    },
+    "misleading": {
+      "confidence_rule": 0.0,
+      "retrieval_deferred": 0.0,
+      "bayesian_source_transferred": 0.0,
+      "bayesian_source_in_regime": 1.0,
+      "nli_gated": 0.7
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "text": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"12714\"}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 336,
+  "output_tokens": 23,
+  "raw": {
+    "id": "chatcmpl-EkFl53AOmyPU2YpYJcrFEy0e6W2SC",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"resolution\":\"left\",\"confidence_1_5\":5,\"evidence_span\":\"12714\"}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794692371,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 336,
+      "total_tokens": 359,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Entity: Sheffield United F.C.\nRelation: head_coach_of\nPreviously recorded value (may be stale, may be empty): Chris Wilder\n\nCandidate LEFT:  David Healy\nCandidate RIGHT: Michael O'Neill\n\nEvidence lines (numbered, in original order):\n8220. The head coach of Sheffield United F.C. is Chris Wilder.\n9758. Michael O'Neill is associated with the sport of baseball.\n11194. David Healy is associated with the sport of association football.\n12140. David Healy is associated with the sport of baseball.\n12714. The head coach of Sheffield United F.C. is David Healy.\n13360. The head coach of Central Coast Mariners FC is Michael O'Neill.\n\nRespond with strict JSON only, no other text:\n{\"resolution\": \"left\" | \"right\" | \"ambiguous\",\n  \"confidence_1_5\": <integer 1-5>,\n  \"evidence_span\": \"<the single line number you relied on, or empty>\"}\n",
+  "system": "You are adjudicating which of two candidate values is correct for a fact, using only the numbered evidence lines you are given. The evidence is a numbered log in which LATER lines supersede EARLIER lines about the same subject and relation. Decide which candidate the evidence supports as the current value. You are not told where either candidate came from, and you must not guess from the candidates' plausibility as world knowledge: the log may contain counterfactual statements, and the log is the only authority. If the evidence genuinely does not determine an answer, say so rather than guessing."
+}

@@ -1,0 +1,48 @@
+{
+  "text": "{\"items\":[\n  {\n    \"predicate\":\"cat_allergy_exposure\",\n    \"ancestor_predicate\":\"cat_allergy_exposure\",\n    \"ancestor_value\":\"gets immediate hives and wheezing from being around cats, so cannot live with a cat\",\n    \"branch_a_value\":\"has two pet cats at home and sleeps with them every night\",\n    \"branch_b_value\":\"avoids homes with cats and does not keep any cats\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"dog_ownership_status\",\n    \"ancestor_predicate\":\"dog_ownership_status\",\n    \"ancestor_value\":\"their lease explicitly bans dogs of any kind in the apartment\",\n    \"branch_a_value\":\"currently keeps a dog in the apartment\",\n    \"branch_b_value\":\"does not own a dog while living in that apartment\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"rabbit_contact\",\n    \"ancestor_predicate\":\"rabbit_contact\",\n    \"ancestor_value\":\"had anaphylaxis to rabbit dander and was told never to handle rabbits\",\n    \"branch_a_value\":\"volunteers every weekend cuddling rabbits at a rescue\",\n    \"branch_b_value\":\"stays away from rabbits and does not touch them\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"bird_in_home\",\n    \"ancestor_predicate\":\"bird_in_home\",\n    \"ancestor_value\":\"their partner has a severe bird-feather allergy, so no birds are allowed in the home\",\n    \"branch_a_value\":\"keeps a pet parakeet in the living room\",\n    \"branch_b_value\":\"has no pet birds in the home\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"horse_stable_visits\",\n    \"ancestor_predicate\":\"horse_stable_visits\",\n    \"ancestor_value\":\"being in a horse stable triggers such severe asthma that they cannot enter stables at all\",\n    \"branch_a_value\":\"works daily inside a horse stable feeding and grooming horses\",\n    \"branch_b_value\":\"avoids horse stables completely\",\n    \"correct_branch\":\"b\"\n  }\n]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 252,
+  "output_tokens": 434,
+  "raw": {
+    "id": "chatcmpl-E4kpPJE6vjtvwM4XgLH7HsmJySCtc",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"items\":[\n  {\n    \"predicate\":\"cat_allergy_exposure\",\n    \"ancestor_predicate\":\"cat_allergy_exposure\",\n    \"ancestor_value\":\"gets immediate hives and wheezing from being around cats, so cannot live with a cat\",\n    \"branch_a_value\":\"has two pet cats at home and sleeps with them every night\",\n    \"branch_b_value\":\"avoids homes with cats and does not keep any cats\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"dog_ownership_status\",\n    \"ancestor_predicate\":\"dog_ownership_status\",\n    \"ancestor_value\":\"their lease explicitly bans dogs of any kind in the apartment\",\n    \"branch_a_value\":\"currently keeps a dog in the apartment\",\n    \"branch_b_value\":\"does not own a dog while living in that apartment\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"rabbit_contact\",\n    \"ancestor_predicate\":\"rabbit_contact\",\n    \"ancestor_value\":\"had anaphylaxis to rabbit dander and was told never to handle rabbits\",\n    \"branch_a_value\":\"volunteers every weekend cuddling rabbits at a rescue\",\n    \"branch_b_value\":\"stays away from rabbits and does not touch them\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"bird_in_home\",\n    \"ancestor_predicate\":\"bird_in_home\",\n    \"ancestor_value\":\"their partner has a severe bird-feather allergy, so no birds are allowed in the home\",\n    \"branch_a_value\":\"keeps a pet parakeet in the living room\",\n    \"branch_b_value\":\"has no pet birds in the home\",\n    \"correct_branch\":\"b\"\n  },\n  {\n    \"predicate\":\"horse_stable_visits\",\n    \"ancestor_predicate\":\"horse_stable_visits\",\n    \"ancestor_value\":\"being in a horse stable triggers such severe asthma that they cannot enter stables at all\",\n    \"branch_a_value\":\"works daily inside a horse stable feeding and grooming horses\",\n    \"branch_b_value\":\"avoids horse stables completely\",\n    \"correct_branch\":\"b\"\n  }\n]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1784802027,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 434,
+      "prompt_tokens": 252,
+      "total_tokens": 686,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Domain: pet ownership and animal allergies\n\nProduce 5 DISTINCT items as strict JSON: {\"items\": [\n  {\"predicate\": \"<snake_case key>\",\n    \"ancestor_predicate\": \"<same snake_case key>\",\n    \"ancestor_value\": \"<the background constraint, e.g. 'is severely lactose intolerant'>\",\n    \"branch_a_value\": \"<a value that STRICTLY CONTRADICTS the constraint>\",\n    \"branch_b_value\": \"<a value COMPATIBLE with the constraint>\",\n    \"correct_branch\": \"b\"}\n]}\nRules: branch_a_value must be logically impossible given ancestor_value; branch_b_value\nmust be consistent with it; both must be plausible things a user might say; correct_branch\nis always \"b\". No two items may share a predicate. Output JSON only.",
+  "system": "You author test items for a memory-reconciliation benchmark. Each item is a STRICT logical incompatibility: given a stated background constraint, exactly one of two candidate values is logically INCOMPATIBLE with it and the other is compatible. Not a mere preference or soft default -- a genuine contradiction a careful reader would catch. Vary phrasing and entities; make them read like real user memory notes, not templates."
+}

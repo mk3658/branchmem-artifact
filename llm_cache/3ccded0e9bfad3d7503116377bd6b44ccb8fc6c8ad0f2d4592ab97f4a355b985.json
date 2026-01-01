@@ -1,0 +1,48 @@
+{
+  "text": "{\"items\":[{\"type\":\"immutable_constraint\",\"predicate\":\"toll_tag_mounting_limit\",\"ancestor_value\":\"The toll tag must stay on the windshield only.\",\"update_value\":\"The toll tag can be moved onto the dashboard.\",\"keep_value\":\"The toll tag stays mounted on the windshield.\",\"why_correct\":\"the mounting rule still applies\"},{\"type\":\"legitimate_override\",\"predicate\":\"preferred_toll_payment_method\",\"ancestor_value\":\"The user pays tolls with the blue transponder.\",\"update_value\":\"The user now pays tolls through the plate account.\",\"keep_value\":\"The user still pays tolls with the blue transponder.\",\"why_correct\":\"the newer payment method supersedes the old one\"},{\"type\":\"independent_observation\",\"predicate\":\"usual_toll_route_status\",\"ancestor_value\":\"The express toll lane was closed last month.\",\"update_value\":\"The express toll lane is open this week.\",\"keep_value\":\"The express toll lane was closed last month.\",\"why_correct\":\"the content identifies this week as current\"},{\"type\":\"ambiguous\",\"predicate\":\"default_toll_crossing\",\"ancestor_value\":\"The user keeps toll receipts in the glove compartment.\",\"update_value\":\"The user usually crosses at the Harbor Bridge toll.\",\"keep_value\":\"The user usually crosses at the East Tunnel toll.\",\"why_correct\":\"neither conflicting crossing is better supported\"}]}",
+  "model": "gpt-5.4-2026-03-05",
+  "input_tokens": 639,
+  "output_tokens": 264,
+  "raw": {
+    "id": "chatcmpl-EkRweZfgJHjbaxtDA9K9EraXtJkI4",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"items\":[{\"type\":\"immutable_constraint\",\"predicate\":\"toll_tag_mounting_limit\",\"ancestor_value\":\"The toll tag must stay on the windshield only.\",\"update_value\":\"The toll tag can be moved onto the dashboard.\",\"keep_value\":\"The toll tag stays mounted on the windshield.\",\"why_correct\":\"the mounting rule still applies\"},{\"type\":\"legitimate_override\",\"predicate\":\"preferred_toll_payment_method\",\"ancestor_value\":\"The user pays tolls with the blue transponder.\",\"update_value\":\"The user now pays tolls through the plate account.\",\"keep_value\":\"The user still pays tolls with the blue transponder.\",\"why_correct\":\"the newer payment method supersedes the old one\"},{\"type\":\"independent_observation\",\"predicate\":\"usual_toll_route_status\",\"ancestor_value\":\"The express toll lane was closed last month.\",\"update_value\":\"The express toll lane is open this week.\",\"keep_value\":\"The express toll lane was closed last month.\",\"why_correct\":\"the content identifies this week as current\"},{\"type\":\"ambiguous\",\"predicate\":\"default_toll_crossing\",\"ancestor_value\":\"The user keeps toll receipts in the glove compartment.\",\"update_value\":\"The user usually crosses at the Harbor Bridge toll.\",\"keep_value\":\"The user usually crosses at the East Tunnel toll.\",\"why_correct\":\"neither conflicting crossing is better supported\"}]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794739216,
+    "model": "gpt-5.4-2026-03-05",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 264,
+      "prompt_tokens": 639,
+      "total_tokens": 903,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "prompt": "Domain: road tolls\n\nWrite FOUR memory-conflict items in this domain, one of each type. In every item an\nassistant has an older recorded value for one key, and a newer incoming update that\nconflicts with it. Use the SAME entity \"user\" and a DIFFERENT snake_case predicate per item.\n\n1. \"immutable_constraint\": `ancestor_value` states a STANDING RULE or hard limit that cannot\n   simply be overridden by a later preference (a rule imposed by someone else, a physical\n   limit, a contractual or safety requirement). `update_value` is an assertion that would\n   VIOLATE that rule. `keep_value` is a statement consistent with the rule. The correct\n   resolution is `keep_value`, because the rule still holds.\n\n2. \"legitimate_override\": `ancestor_value` states an ORDINARY, revisable recorded value with\n   no standing-rule force. `update_value` is a genuine, explicit correction or change of that\n   value. `keep_value` restates the now-stale ancestor value. The correct resolution is\n   `update_value`, because the newer statement supersedes a stale one.\n\n3. \"independent_observation\": two observations of a fact that changes over time, where the\n   CONTENT of the values itself says which is current (e.g. one says \"as of last season\", the\n   other \"as of this week\"). The correct resolution is the one the content marks as current;\n   put that text in `update_value` and the superseded text in `keep_value`.\n\n4. \"ambiguous\": two equally well-warranted, mutually exclusive values with nothing in the\n   content to choose between them. Correct behaviour is to decline to answer. For THIS type\n   only, `ancestor_value` must be a NEUTRAL background fact in the domain that bears on\n   neither value and does not restate either of them, so that the ancestor gives no evidence.\n\nRules for every item: `ancestor_value`, `update_value` and `keep_value` must each read as a\nnatural standalone statement of 4 to 18 words; they must be mutually distinguishable in\nmeaning, not rewordings; nothing in any value may mention sources, who said it, confidence,\nreliability, timestamps in clock form, or how trustworthy it is.\n\nRespond with strict JSON only:\n{\"items\": [\n  {\"type\": \"immutable_constraint\", \"predicate\": \"<snake_case>\", \"ancestor_value\": \"...\",\n    \"update_value\": \"...\", \"keep_value\": \"...\", \"why_correct\": \"<one clause>\"},\n  {\"type\": \"legitimate_override\", ...},\n  {\"type\": \"independent_observation\", ...},\n  {\"type\": \"ambiguous\", ...}\n]}\n",
+  "system": "You author evaluation items for a benchmark on reconciling conflicting entries in an AI assistant's long-term memory. You write realistic, mundane, non-sensitive items about everyday logistics. You never write medical, dietary, allergy, religious, financial-hardship or disability content. You output strict JSON only."
+}

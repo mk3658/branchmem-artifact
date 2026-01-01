@@ -1,0 +1,40 @@
+{
+  "text": "<think>\nOkay, let's tackle this reconciliation problem. The user provided two branches for the same key: `user|snow_chain_clearance`. Both have a common ancestor that mentions chains up to 9 millimeters.\n\nBranch A has an update from a user source with high confidence (0.95). They say to use 16mm snow chains on front tyres. Branch B's inference is lower confidence (0.55) and restates the original info about 9mm clearance, but in different wording.\n\nThe key here is that both branches are updating the same entity/predicate. The common ancestor already has a value from user input: \"The wheel arches only allow chains up to 9 millimeters.\" \n\nNow, Branch A's update comes from a user source with high confidence, suggesting a correction or new information (16mm). Branch B is an inference with low confidence that doesn't change the existing info but rephrases it. Since both branches have conflicting values for the same key, and there's no clear way to determine which one is correct without more context, this conflict can't be resolved based on the given data.\n</think>\n{\"resolutions\": [\n  {\"entity\": \"user\", \"predicate\": \"snow_chain_clearance\", \"resolution\": \"flagged_unresolved\", \"value\": null, \"justification\": \"Both branches provide conflicting information with no clear evidence to prefer one over the other.\"}\n]}",
+  "model": "deepseek-r1:8b",
+  "input_tokens": 511,
+  "output_tokens": 295,
+  "raw": {
+    "id": "chatcmpl-324",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "<think>\nOkay, let's tackle this reconciliation problem. The user provided two branches for the same key: `user|snow_chain_clearance`. Both have a common ancestor that mentions chains up to 9 millimeters.\n\nBranch A has an update from a user source with high confidence (0.95). They say to use 16mm snow chains on front tyres. Branch B's inference is lower confidence (0.55) and restates the original info about 9mm clearance, but in different wording.\n\nThe key here is that both branches are updating the same entity/predicate. The common ancestor already has a value from user input: \"The wheel arches only allow chains up to 9 millimeters.\" \n\nNow, Branch A's update comes from a user source with high confidence, suggesting a correction or new information (16mm). Branch B is an inference with low confidence that doesn't change the existing info but rephrases it. Since both branches have conflicting values for the same key, and there's no clear way to determine which one is correct without more context, this conflict can't be resolved based on the given data.\n</think>\n{\"resolutions\": [\n  {\"entity\": \"user\", \"predicate\": \"snow_chain_clearance\", \"resolution\": \"flagged_unresolved\", \"value\": null, \"justification\": \"Both branches provide conflicting information with no clear evidence to prefer one over the other.\"}\n]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794787687,
+    "model": "deepseek-r1:8b",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "fp_ollama",
+    "usage": {
+      "completion_tokens": 295,
+      "prompt_tokens": 511,
+      "total_tokens": 806,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  },
+  "prompt": "Common ancestor value for each key (null if the key didn't exist yet):\n{\n  \"user|snow_chain_clearance\": \"The wheel arches only allow chains up to 9 millimeters.\"\n}\n\nBranch A's current value/source/confidence for each conflicting key:\n{\n  \"user|snow_chain_clearance\": {\n    \"value\": \"Use 16 millimeter snow chains on the front tyres.\",\n    \"source\": \"user\",\n    \"confidence\": 0.95\n  }\n}\n\nBranch B's current value/source/confidence for each conflicting key:\n{\n  \"user|snow_chain_clearance\": {\n    \"value\": \"Use snow chains no thicker than 9 millimeters.\",\n    \"source\": \"inference\",\n    \"confidence\": 0.55\n  }\n}\n\nFor EACH key listed above, decide how to reconcile it. Respond with strict JSON only,\nno other text, in this exact shape:\n\n{\"resolutions\": [\n  {\"entity\": \"...\", \"predicate\": \"...\", \"resolution\": \"kept_from_a\" | \"kept_from_b\" | \"merged\" | \"flagged_unresolved\",\n    \"value\": \"<the reconciled value, or null if flagged_unresolved>\", \"justification\": \"<one sentence>\"}\n]}\n",
+  "system": "You are reconciling two independently-updated branches of an agent's memory that diverged from a common ancestor while disconnected from each other. For each conflicting (entity, predicate) key, you are given the common ancestor's value (if any) and each branch's current value, source, and confidence. 'source' is how that update was recorded: \"user\" means the user explicitly stated or corrected it; \"inference\" means the agent inferred or guessed it; \"observation\" means the agent observed it indirectly. Resolve each conflict using whatever signal actually distinguishes the two updates \u2014 e.g. a user-sourced, higher-confidence update is ordinarily more trustworthy than an inferred, lower-confidence one; the ancestor value can indicate which branch's update is more likely a genuine correction vs. a stale duplicate. Do NOT use timestamps to decide, even if you can infer relative recency \u2014 two branches that were disconnected from each other have no shared clock, so 'later' does not mean 'more correct' here. If source, confidence, and ancestor context give no real basis to prefer one branch over the other (e.g. both are equally plausible, equally-sourced preference changes), explicitly flag it as unresolvable rather than guessing."
+}
